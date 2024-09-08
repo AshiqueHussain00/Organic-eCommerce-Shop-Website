@@ -51,6 +51,6 @@ The **Organic eCommerce Shop Website** is a responsive, user-friendly online pla
 
 ## Contributors
 
-- **Ashique Hussain** - [ashiquehussain@example.com](mailto:ashiquehussain@example.com)
+- **Ashique Hussain Ansari** - [ashiquehussain@example.com](mailto:ashiquehussain@example.com)
 - **Contributor 2** - [contributor2@example.com](mailto:contributor2@example.com)
 - **Contributor 3** - [contributor3@example.com](mailto:contributor3@example.com)
