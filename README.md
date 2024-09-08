@@ -1,8 +1,8 @@
-# Organic eCommerce Shop Website
+# Organic E-Commerce Shop Website
 
 ## Overview
 
-The **Organic eCommerce Shop Website** is a responsive, user-friendly online platform for selling organic products. The website is designed to provide a seamless shopping experience, showcasing a variety of organic products with an intuitive interface, appealing design, and easy navigation. The project is built using modern web technologies including ReactJS, Vite, Tailwind CSS, and other essential tools.
+The **Organic E-Commerce Shop Website** is a responsive, user-friendly online platform for selling organic products. The website is designed to provide a seamless shopping experience, showcasing a variety of organic products with an intuitive interface, appealing design, and easy navigation. The project is built using modern web technologies including ReactJS, Vite, Tailwind CSS, and other essential tools.
 
 ## Features
 
