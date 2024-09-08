@@ -26,7 +26,6 @@ The **Organic eCommerce Shop Website** is a responsive, user-friendly online pla
 - **State Management**: React Hooks, Context API
 - **Animations**: Framer Motion
 - **Form Handling**: React Hook Form
-<!-- - **API Integration**: Axios (for backend integration) -->
 - **Version Control**: Git
 
 ## Installation
