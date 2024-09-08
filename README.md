@@ -21,13 +21,13 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 
 ## Tech Stack
 
-- **Frontend**: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS Logo" width="20" height="20"/> ReactJS, Vite
+- **Frontend**: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS Logo" width="20" height="20"/> ReactJS, <img src="https://www.svgrepo.com/show/354521/vitejs.svg" alt="ReactJS Logo" width="20" height="20"/>  Vite
 -  **Styling**: <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Logo" width="20" height="20"/> Tailwind CSS, Custom Fonts (Poppins, Montserrat)
 -  **Icons**:<img src="https://raw.githubusercontent.com/react-icons/react-icons/master/react-icons.svg" alt="React Icons Logo" width="20" height="20"/> React Icons
 -  **Routing**:<img src="https://www.svgrepo.com/show/354262/react-router.svg" alt="React Router Logo" width="20" height="20"/> React Router
--  **State Management**: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Hooks Logo" width="20" height="20"/>React Hooks, Context API
--  **Animations**:<img src="https://framer.com/images/shared/framer-motion/framermotion.png" alt="Framer Motion Logo" width="20" height="20"/> Framer Motion
--  **Form Handling**: <img src="https://raw.githubusercontent.com/react-hook-form/logo/master/logo.png" alt="React Hook Form Logo" width="20" height="20"/> React Hook Form
+-  **State Management**: React Hooks, Context API
+-  **Animations**:<img src="https://cdn.worldvectorlogo.com/logos/framer-motion.svg" alt="Framer Motion Logo" width="20" height="20"/> Framer Motion
+-  **Form Handling**: React Hook Form
 -  **Version Control**: <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="Git Logo" width="20" height="20"/> Git
 
 ## Project Structure
