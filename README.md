@@ -35,7 +35,7 @@ The following is an overview of the directory structure of the **Organic eCommer
     
     Organic-eCommerce-Shop-Website/
     ├── public/
-    │   └── index.html
+    │   └── logo.svg
     ├── src/
     │   ├── assets/             # Static assets (images, fonts, etc.)
     │   ├── components/         # Reusable React components
@@ -48,6 +48,7 @@ The following is an overview of the directory structure of the **Organic eCommer
     │   └── router.jsx          # React Router setup
     ├── .gitignore              # Git ignore file
     ├── tailwind.config.js      # Tailwind CSS configuration
+    ├── index.html              # index file
     ├── vite.config.js          # Vite configuration
     ├── package.json            # Project dependencies and scripts
     └── README.md               # Project documentation
