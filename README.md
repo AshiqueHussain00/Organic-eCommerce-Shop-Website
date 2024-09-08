@@ -29,6 +29,8 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 - **Version Control**: Git
 ## Tech Stack
 
+## Tech Stack
+
 - ![ReactJS Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) **Frontend**: ReactJS, Vite
 - ![Tailwind CSS Logo](https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg) **Styling**: Tailwind CSS, Custom Fonts (Poppins, Montserrat)
 - ![React Icons](https://raw.githubusercontent.com/react-icons/react-icons/master/logo/react-icons.svg) **Icons**: React Icons
@@ -37,6 +39,7 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 - ![Framer Motion Logo](https://framer.com/images/shared/framer-motion/framermotion.png) **Animations**: Framer Motion
 - ![React Hook Form Logo](https://raw.githubusercontent.com/react-hook-form/logo/master/logo.png) **Form Handling**: React Hook Form
 - ![Git Logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg) **Version Control**: Git
+
 
 
 ## Project Structure
