@@ -32,7 +32,7 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 
 The following is an overview of the directory structure of the **Organic eCommerce Shop Website**:
 
-    ```bash
+    
     Organic-eCommerce-Shop-Website/
     ├── public/
     │   └── index.html
