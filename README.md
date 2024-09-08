@@ -31,25 +31,25 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 ## Project Structure
 
 The following is an overview of the directory structure of the **Organic eCommerce Shop Website**:
-
-Organic-eCommerce-Shop-Website/
-├── public/
-│   └── index.html
-├── src/
-│   ├── assets/             # Static assets (images, fonts, etc.)
-│   ├── components/         # Reusable React components
-│   ├── pages/              # Page components (Home, Product, Checkout, etc.)
-│   ├── hooks/              # Custom React hooks
-│   ├── context/            # Context API for state management
-│   ├── styles/             # Tailwind CSS and custom styles
-│   ├── App.jsx             # Main application component
-│   ├── main.jsx            # Entry point for React
-│   └── router.jsx          # React Router setup
-├── .gitignore              # Git ignore file
-├── tailwind.config.js      # Tailwind CSS configuration
-├── vite.config.js          # Vite configuration
-├── package.json            # Project dependencies and scripts
-└── README.md               # Project documentation
+ ```bash
+    Organic-eCommerce-Shop-Website/
+    ├── public/
+    │   └── index.html
+    ├── src/
+    │   ├── assets/             # Static assets (images, fonts, etc.)
+    │   ├── components/         # Reusable React components
+    │   ├── pages/              # Page components (Home, Product, Checkout, etc.)
+    │   ├── hooks/              # Custom React hooks
+    │   ├── context/            # Context API for state management
+    │   ├── styles/             # Tailwind CSS and custom styles
+    │   ├── App.jsx             # Main application component
+    │   ├── main.jsx            # Entry point for React
+    │   └── router.jsx          # React Router setup
+    ├── .gitignore              # Git ignore file
+    ├── tailwind.config.js      # Tailwind CSS configuration
+    ├── vite.config.js          # Vite configuration
+    ├── package.json            # Project dependencies and scripts
+    └── README.md               # Project documentation
 
 
 ## Installation
