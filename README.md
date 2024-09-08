@@ -31,7 +31,7 @@ The **Organic eCommerce Shop Website** is a responsive, user-friendly online pla
 
 ## Installation
 
-To run this project locally, follow these steps:
+### To run this project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
