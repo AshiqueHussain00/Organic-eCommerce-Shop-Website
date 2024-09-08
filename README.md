@@ -73,6 +73,20 @@ The following is an overview of the directory structure of the **Organic eCommer
 5. **Open the project in your browser:**
    ```bash
    http://localhost:3000
+   OS-Specific Notes:
+###For Windows:###
+Make sure to run the terminal as Administrator when installing packages and running the server to avoid permission issues.
+1. **For macOS and Linux:**
+- If you encounter any permissions errors during installation, try running:
+    ```bash
+    sudo npm install
+- You might also need to install build tools like Xcode Command Line Tools (macOS) or build-essential (Linux), especially for compiling native Node modules:
+2. **MacOS:**
+    ```bash
+    xcode-select --install
+3. **Linux (Debian/Ubuntu):**
+    ```bash
+    sudo apt-get install build-essential
 
 ## Contributors
 
