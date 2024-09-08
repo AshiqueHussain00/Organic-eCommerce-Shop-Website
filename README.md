@@ -36,15 +36,20 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/AshiqueHussain00/Organic-eCommerce-Shop-Website.git
+   
 2. **Navigate into the project directory:**
+    ```bash
    cd Organic-eCommerce-Shop-Website
 3. **Install and run the project:**
+    ```bash
    npm install
 4. **Start the development server**
+   ```bash
    npm run dev
 5. **Open the project in your browser:**
+   ```bash
    http://localhost:3000
-   ```
+
 
 Contributors
 Ashique Hussain - [email@example.com]
