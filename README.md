@@ -31,14 +31,17 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 
 ## Tech Stack
 
-- ![ReactJS Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) **Frontend**: ReactJS, Vite
-- ![Tailwind CSS Logo](https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg) **Styling**: Tailwind CSS, Custom Fonts (Poppins, Montserrat)
-- ![React Icons](https://raw.githubusercontent.com/react-icons/react-icons/master/logo/react-icons.svg) **Icons**: React Icons
-- ![React Router Logo](https://upload.wikimedia.org/wikipedia/commons/2/22/React-icon.svg) **Routing**: React Router
-- ![React Hooks](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) **State Management**: React Hooks, Context API
-- ![Framer Motion Logo](https://framer.com/images/shared/framer-motion/framermotion.png) **Animations**: Framer Motion
-- ![React Hook Form Logo](https://raw.githubusercontent.com/react-hook-form/logo/master/logo.png) **Form Handling**: React Hook Form
-- ![Git Logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg) **Version Control**: Git
+## Tech Stack
+
+- <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS Logo" width="20" height="20"/> **Frontend**: ReactJS, Vite
+- <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Logo" width="20" height="20"/> **Styling**: Tailwind CSS, Custom Fonts (Poppins, Montserrat)
+- <img src="https://raw.githubusercontent.com/react-icons/react-icons/master/logo/react-icons.svg" alt="React Icons Logo" width="20" height="20"/> **Icons**: React Icons
+- <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/React-icon.svg" alt="React Router Logo" width="20" height="20"/> **Routing**: React Router
+- <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React Hooks Logo" width="20" height="20"/> **State Management**: React Hooks, Context API
+- <img src="https://framer.com/images/shared/framer-motion/framermotion.png" alt="Framer Motion Logo" width="20" height="20"/> **Animations**: Framer Motion
+- <img src="https://raw.githubusercontent.com/react-hook-form/logo/master/logo.png" alt="React Hook Form Logo" width="20" height="20"/> **Form Handling**: React Hook Form
+- <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="Git Logo" width="20" height="20"/> **Version Control**: Git
+
 
 
 
