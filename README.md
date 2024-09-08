@@ -26,7 +26,7 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 - **Icons**: <img src="https://raw.githubusercontent.com/react-icons/react-icons/master/react-icons.svg" alt="React Icons Logo" width="20" height="20" style="vertical-align: middle;"/> React Icons
 - **Routing**: <img src="https://www.svgrepo.com/show/354262/react-router.svg" alt="React Router Logo" width="20" height="20" style="vertical-align: middle;"/> React Router
 - **State Management**: React Hooks, Context API
-- **Animations**: <img src="https://cdn.worldvectorlogo.com/logos/framer-motion.svg" alt="Framer Motion Logo" width="20" height="20" style="vertical-align: middle;"/> Framer Motion
+- **Animations**: <img src="https://cdn.worldvectorlogo.com/logos/framer-motion.svg" alt="Framer Motion Logo" width="20" height="20" style="padding:2px"/> Framer Motion
 - **Form Handling**: React Hook Form
 - **Version Control**: <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="Git Logo" width="20" height="20" style="vertical-align: middle;"/> Git
 
