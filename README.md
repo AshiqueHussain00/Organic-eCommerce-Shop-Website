@@ -50,8 +50,8 @@ To run this project locally, follow these steps:
    ```bash
    http://localhost:3000
 
+## Contributors
 
-Contributors
-Ashique Hussain - [email@example.com]
-Contributor 2 - [contributor2@example.com]
-Contributor 3 - [contributor3@example.com]
+- **Ashique Hussain** - [ashiquehussain@example.com](mailto:ashiquehussain@example.com)
+- **Contributor 2** - [contributor2@example.com](mailto:contributor2@example.com)
+- **Contributor 3** - [contributor3@example.com](mailto:contributor3@example.com)
