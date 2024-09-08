@@ -31,7 +31,8 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 ## Project Structure
 
 The following is an overview of the directory structure of the **Organic eCommerce Shop Website**:
- ```bash
+
+    ```bash
     Organic-eCommerce-Shop-Website/
     ├── public/
     │   └── index.html
