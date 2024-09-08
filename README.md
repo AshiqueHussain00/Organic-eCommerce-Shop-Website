@@ -19,8 +19,6 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 
 ## Tech Stack
 
-## Tech Stack
-
 - **Frontend**: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="ReactJS Logo" width="20" height="20" style="vertical-align: middle;"/> ReactJS, <img src="https://www.svgrepo.com/show/354521/vitejs.svg" alt="Vite Logo" width="20" height="20" style="vertical-align: middle;"/> Vite
 - **Styling**: <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg" alt="Tailwind CSS Logo" width="20" height="20" style="vertical-align: middle;"/> Tailwind CSS, Custom Fonts (Poppins, Montserrat)
 - **Icons**: <img src="https://raw.githubusercontent.com/react-icons/react-icons/master/react-icons.svg" alt="React Icons Logo" width="20" height="20" style="vertical-align: middle;"/> React Icons
