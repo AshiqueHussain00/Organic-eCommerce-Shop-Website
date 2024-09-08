@@ -26,7 +26,7 @@ The **Organic eCommerce Shop Website** is a responsive, user-friendly online pla
 - **State Management**: React Hooks, Context API
 - **Animations**: Framer Motion
 - **Form Handling**: React Hook Form
-- **API Integration**: Axios (for backend integration)
+<!-- - **API Integration**: Axios (for backend integration) -->
 - **Version Control**: Git
 
 ## Installation
@@ -36,3 +36,17 @@ To run this project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/AshiqueHussain00/Organic-eCommerce-Shop-Website.git
+2. **Navigate into the project directory:**
+   cd Organic-eCommerce-Shop-Website
+3. **Install and run the project:**
+   npm install
+4. **Start the development server**
+   npm run dev
+5. **Open the project in your browser:**
+   http://localhost:3000
+   ```
+
+Contributors
+Ashique Hussain - [email@example.com]
+Contributor 2 - [contributor2@example.com]
+Contributor 3 - [contributor3@example.com]
