@@ -59,7 +59,7 @@ The following is an overview of the directory structure of the **Organic eCommer
 ### To run this project locally, follow these steps:
 
 1. **Clone the repository**:
-   ```bash
+   
    git clone https://github.com/AshiqueHussain00/Organic-eCommerce-Shop-Website.git
    
 2. **Navigate into the project directory:**
