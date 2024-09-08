@@ -27,12 +27,22 @@ The **Organic E-Commerce Shop Website** is a responsive, user-friendly online pl
 - **Animations**: Framer Motion
 - **Form Handling**: React Hook Form
 - **Version Control**: Git
+## Tech Stack
+
+- ![ReactJS Logo](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) **Frontend**: ReactJS, Vite
+- ![Tailwind CSS Logo](https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg) **Styling**: Tailwind CSS, Custom Fonts (Poppins, Montserrat)
+- ![React Icons](https://raw.githubusercontent.com/react-icons/react-icons/master/logo/react-icons.svg) **Icons**: React Icons
+- ![React Router Logo](https://upload.wikimedia.org/wikipedia/commons/2/22/React-icon.svg) **Routing**: React Router
+- ![React Hooks](https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg) **State Management**: React Hooks, Context API
+- ![Framer Motion Logo](https://framer.com/images/shared/framer-motion/framermotion.png) **Animations**: Framer Motion
+- ![React Hook Form Logo](https://raw.githubusercontent.com/react-hook-form/logo/master/logo.png) **Form Handling**: React Hook Form
+- ![Git Logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg) **Version Control**: Git
+
 
 ## Project Structure
 
 The following is an overview of the directory structure of the **Organic eCommerce Shop Website**:
 
-    ```graphql
     Organic-eCommerce-Shop-Website/
     ├── public/
     │   └── logo.svg
@@ -52,7 +62,7 @@ The following is an overview of the directory structure of the **Organic eCommer
     ├── vite.config.js          # Vite configuration
     ├── package.json            # Project dependencies and scripts
     └── README.md               # Project documentation
-    ```
+    
 ## Installation
 
 ### To run this project locally, follow these steps:
