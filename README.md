@@ -52,8 +52,7 @@ The following is an overview of the directory structure of the **Organic eCommer
     ├── vite.config.js          # Vite configuration
     ├── package.json            # Project dependencies and scripts
     └── README.md               # Project documentation
-
-
+    ```
 ## Installation
 
 ### To run this project locally, follow these steps:
