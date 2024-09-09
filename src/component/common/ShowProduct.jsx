@@ -1,5 +1,7 @@
 import React from 'react'
 import Veg from '../../assets/common/categories/Vege.svg'
+import SmallProductCard from './SmallProductCard';
+
 
 
 const products = [
@@ -98,57 +100,26 @@ const ShowProduct = ({ isHotSale = true }) => {
     const bestSellerData = products.filter(product => product.isBestSeller === true);
     const topRatedProduct = products.filter(product => product.rating >= 4);
 
+ 
+
     return (
         <section className='w-full py-10'>
 
             {/* --------- container -------- */}
 
-            <div className='w-11/12 xmd:w-10/12 mx-auto border-2 border-red-600 grid grid-cols-4'>
+            <div className='w-11/12 xmd:w-10/12 mx-auto border-2 border-red-600 grid grid-cols-4 gap-x-6'>
 
 
 
                 {/* -------- hot deals ----- */}
                 <div className='flex flex-col border-2 border-red-700 gap-y-4'>
 
-                    <h1 className='text-xl'>Hot Deals</h1>
+                    <h1 className='text-xl font-medium'>Hot Deals</h1>
 
                     {
                         hotDealData.slice(0, 3).map((product , index) => (
-                            <div className='flex gap-x-3  border border-gray-100 pr-4 py-3 rounded-lg  transition-all duration-200 hover:border-branding-success green-shadow group' key={index}>
 
-                                <div>
-                                    <img src={product.image} alt={product.productName} />
-                                </div>
-
-                               {/* -------- content  ------- */}
-                                <div className='flex flex-col  justify-center '>
-
-                                    {/* ----- product name ------ */}
-
-                                    <p className='text-sm'>{product.productName}</p>
-
-                                    {/* ---- price -- */}
-
-                                    <p>{`$${product.price}`}</p>
-
-                                    {/* Rating (Stars) */}
-                                    <div className="flex items-center mb-4">
-                                        {[...Array(5)].map((_, i) => (
-                                            <svg
-                                                key={i}
-                                                className={`w-5 h-5 ${i < product.rating ? 'text-branding-warning' : 'text-gray-300'}`}
-                                                fill="currentColor"
-                                                viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z" />
-                                            </svg>
-                                        ))}
-                                    </div>
-
-                                </div>
-
-                            </div>
+                           <SmallProductCard key={index} product={product}/>
                         ))
                     }
 
