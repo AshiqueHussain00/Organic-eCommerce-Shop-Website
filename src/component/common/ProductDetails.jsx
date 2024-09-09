@@ -2,8 +2,8 @@ import LimitedProductCard from './LimitedProductCard';
 import ProductCard from './ProductCard';
 
 const ProductDetails = () => {
-     // Example handlers
-     const handleAddToCart = () => {
+    // Example handlers
+    const handleAddToCart = () => {
         console.log("Add to Cart clicked");
     };
 
@@ -14,26 +14,18 @@ const ProductDetails = () => {
     const handleQuickView = () => {
         console.log("Quick View clicked");
     };
+
     const products = [
         {
             imageSrc: 'https://placehold.jp/302x302.png',
             productName: 'Green Apple',
             price: '14.99',
+            oldPrice: '29.99', 
             rating: 4,
             isSale: true,
             isBestSeller: false,
             saleText: 'Discount!',
             bestSellerText: ''
-        },
-        {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Red Apple',
-            price: '12.99',
-            rating: 5,
-            isSale: false,
-            isBestSeller: true,
-            saleText: '',
-            bestSellerText: 'Top Pick!'
         },
         {
             imageSrc: 'https://placehold.jp/302x302.png',
@@ -65,52 +57,104 @@ const ProductDetails = () => {
             saleText: 'Sale 50%',
             bestSellerText: 'Best Seller'
         },
+        {
+            imageSrc: 'https://placehold.jp/302x302.png',
+            productName: 'Mango',
+            price: '19.99',
+            rating: 5,
+            isSale: true,
+            isBestSeller: true,
+            saleText: 'Sale 50%',
+            bestSellerText: 'Best Seller'
+        },
+        {
+            imageSrc: 'https://placehold.jp/302x302.png',
+            productName: 'Mango',
+            price: '19.99',
+            rating: 5,
+            isSale: true,
+            isBestSeller: true,
+            saleText: 'Sale 50%',
+            bestSellerText: 'Best Seller'
+        },
+        {
+            imageSrc: 'https://placehold.jp/302x302.png',
+            productName: 'Mango',
+            price: '19.99',
+            rating: 5,
+            isSale: true,
+            isBestSeller: true,
+            saleText: 'Sale 50%',
+            bestSellerText: 'Best Seller'
+        },
+        {
+            imageSrc: 'https://placehold.jp/302x302.png',
+            productName: 'Mango',
+            price: '19.99',
+            rating: 5,
+            isSale: true,
+            isBestSeller: true,
+            saleText: 'Sale 50%',
+            bestSellerText: 'Best Seller'
+        },
+        
+        {
+            imageSrc: 'https://placehold.jp/302x302.png',
+            productName: 'Mango',
+            price: '19.99',
+            rating: 5,
+            isSale: true,
+            isBestSeller: true,
+            saleText: 'Sale 50%',
+            bestSellerText: 'Best Seller'
+        },
     ];
-    
-   // Example product data
-   const product = {
-    imageSrc: 'https://placehold.jp/525x466.png', // Replace with actual image URL
-    productName: 'Sample Product',
-    price: '29.99',
-    oldPrice: '39.99', // Optional, only include if there is an old price
-    rating: 4, // Out of 5
-    feedbackCount: 123, // Number of reviews
-    isSale: true,
-    isBestSeller: true,
-    countdownDate: new Date().getTime() + 1000 * 60 * 60 * 24 * 3 // 1 week from now
-};
 
+    const product = {
+        imageSrc: 'https://placehold.jp/525x466.png', 
+        productName: 'Sample Product',
+        price: '29.99',
+        oldPrice: '39.99', 
+        rating: 4, 
+        feedbackCount: 123, 
+        isSale: true,
+        isBestSeller: true,
+        countdownDate: new Date().getTime() + 1000 * 60 * 60 * 24 * 3 
+    };
 
     return (
-        <section>
-            <div className='w-10/12 mx-auto '>
+        <section className="py-8">
+            <div className='w-10/12 mx-auto'>
+                <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 ">
+                    {/* LimitedProductCard occupies the first two rows of the first column */}
+                    <div className="col-span-1 row-span-1 mmd:col-span-2 mmd:row-span-2">
+                        <LimitedProductCard
+                            imageSrc={product.imageSrc}
+                            productName={product.productName}
+                            price={product.price}
+                            oldPrice={product.oldPrice}
+                            rating={product.rating}
+                            feedbackCount={product.feedbackCount}
+                            onAddToCart={handleAddToCart}
+                            onWishlist={handleWishlist}
+                            onQuickView={handleQuickView}
+                            isSale={product.isSale}
+                            isBestSeller={product.isBestSeller}
+                            countdownDate={product.countdownDate}
+                        />
+                    </div>
 
-                <div className="flex justify-center">
-                <LimitedProductCard
-                imageSrc={product.imageSrc}
-                productName={product.productName}
-                price={product.price}
-                oldPrice={product.oldPrice}
-                rating={product.rating}
-                feedbackCount={product.feedbackCount}
-                onAddToCart={handleAddToCart}
-                onWishlist={handleWishlist}
-                onQuickView={handleQuickView}
-                isSale={product.isSale}
-                isBestSeller={product.isBestSeller}
-                countdownDate={product.countdownDate}
-            />
-                </div>
-
-                {/* Responsive grid layout with consistent card sizes */}
-                {/* <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-
+                    {/* Adjusted Product Cards Layout */}
                     {products.map((product, index) => (
-                        <div className="flex justify-center" key={index}>
+                        <div
+                            key={index}
+                            className="mmd:col-span-1 "
+                        >
                             <ProductCard
                                 imageSrc={product.imageSrc}
                                 productName={product.productName}
                                 price={product.price}
+                                oldPrice={product.oldPrice}
                                 rating={product.rating}
                                 onAddToCart={() => handleAddToCart(product.productName)}
                                 isSale={product.isSale}
@@ -120,10 +164,9 @@ const ProductDetails = () => {
                             />
                         </div>
                     ))}
-                </div> */}
+                </div>
             </div>
         </section>
     );
 };
-
 export default ProductDetails;

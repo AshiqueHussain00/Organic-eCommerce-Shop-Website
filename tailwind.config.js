@@ -145,8 +145,10 @@ export default {
       xl: '1280px',
       // => @media (min-width: 1280px) { ... }
 
-      xxl: '1390px'
+      xxl: '1390px',
       // => @media (min-width: 1390px) { ... }
+      '1490px': '1490px',
+  // => @media (min-width: 1490px) { ... }
     },
     extend: {}
   },
