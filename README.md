@@ -72,9 +72,14 @@ The following is an overview of the directory structure of the **Organic eCommer
    npm run dev
 5. **Open the project in your browser:**
    ```bash
-   http://localhost:3000
+   http://localhost:4000
 
 ## Contributors
+<!-- <a href="https://github.com/AshiqueHussain00/Organic-eCommerce-Shop-Website/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=othneildrew/Best-README-Template" alt="contrib.rocks image" />
+</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 - **Ashique Hussain Ansari** - [ansariazad7864@gmail.com](mailto:ansariazad7864@gmail.com)
 - **Khan Mushafiya** - [kmushafiya003@gmail.com](mailto:kmushafiya003@gmail.com)
