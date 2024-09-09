@@ -127,7 +127,7 @@ const ProductDetails = () => {
             <div className='w-10/12 mx-auto'>
                 <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 ">
                     {/* LimitedProductCard occupies the first two rows of the first column */}
-                    <div className="col-span-1 row-span-1 mmd:col-span-2 mmd:row-span-2">
+                    <div className="xs:col-span-2 xs:row-span-2">
                         <LimitedProductCard
                             imageSrc={product.imageSrc}
                             productName={product.productName}

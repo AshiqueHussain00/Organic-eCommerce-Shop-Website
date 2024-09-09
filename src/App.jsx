@@ -7,14 +7,14 @@ function App() {
 
 
   return (
-  
-      <div className='max-w-[100vw] border-4 border-green-500 min-h-screen overflow-x-hidden font-poppins'>
 
-        <Category/>
+    <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
+      <ProductDetails />
+      <Category />
 
-      </div>
-       
- 
+    </div>
+
+
   )
 }
 

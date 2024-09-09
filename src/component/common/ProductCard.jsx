@@ -38,40 +38,44 @@ const ProductCard = ({
             />
 
             {/* Product Name */}
-            <div className='flex gap-[4rem]'>
-                <div>
-                    <h2 className="text-base font-medium text-gray-500 md:text-lg lg:text-xl">{productName}</h2>
+            <div className='flex items-start'>
+    <div className="mr-8 md:mr-6 lg:mr-4 xl:mr-2">
+        <h2 className="text-base font-medium text-gray-500 md:text-lg lg:text-xl">{productName}</h2>
 
-                    {/* Product Prices */}
-                    <p className="flex gap-2 text-sm text-gray-700 md:text-lg lg:text-xl">
-                        ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>}
-                    </p>
-                    {/* Rating (Stars) */}
-                    <div className="flex items-center mb-4">
-                        {[...Array(5)].map((_, i) => (
-                            <svg
-                                key={i}
-                                className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                                fill="currentColor"
-                                viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z" />
-                            </svg>
-                        ))}
-                    </div>
-                </div>
+        {/* Product Prices */}
+        <p className="flex gap-2 text-sm text-gray-700 md:text-lg lg:text-xl">
+            ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>}
+        </p>
 
-                {/* Add to Cart Button */}
-                <div className='pt-6'>
-                    <button
-                        onClick={onAddToCart}
-                        className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
-                    >
-                        <PiHandbag size={25} />
-                    </button>
-                </div>
-            </div>
+        {/* Rating (Stars) */}
+        <div className="flex items-center mb-4">
+            {[...Array(5)].map((_, i) => (
+                <svg
+                    key={i}
+                    className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z" />
+                </svg>
+            ))}
+        </div>
+    </div>
+
+    {/* Add to Cart Button */}
+    <div className="p-2 ml-auto">
+        <button
+            onClick={onAddToCart}
+            className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
+        >
+            <PiHandbag size={25} />
+        </button>
+    </div>
+</div>
+
+
+
         </div>
     );
 };
