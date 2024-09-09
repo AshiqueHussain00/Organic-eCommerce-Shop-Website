@@ -4,6 +4,7 @@ const ProductCard = ({
     imageSrc,
     productName,
     price,
+    oldPrice,
     rating,
     onAddToCart,
     isSale,
@@ -12,18 +13,17 @@ const ProductCard = ({
     bestSellerText = 'Best Seller' // Default text for Best Seller
 }) => {
     return (
-        <div className="relative flex flex-col items-center p-2 transition duration-200 bg-white border border-gray-400 hover:border-primary hover:border-2 hover:scale-[100rem]">
-            
-             {/* Sale and Best Seller Tags */}
-             
-             <div className="absolute flex space-x-2 top-2 left-2">
+        <div className="relative flex flex-col items-center  transition duration-200 bg-white border-2 border-gray-400 hover:border-primary hover:border-2 hover:scale-[100rem]">
+            {/* Sale and Best Seller Tags */}
+            {/* Sale and Best Seller Tags */}
+            <div className="absolute flex space-x-2 top-2 left-2">
                 {isSale && (
-                    <div className="px-2 py-1 text-xs bg-blue-600 rounded text-white-100">
+                    <div className="px-2 py-1 text-xs font-semibold bg-blue-600 rounded text-white-100">
                         {saleText}
                     </div>
                 )}
                 {isBestSeller && (
-                    <div className="px-2 py-1 text-xs rounded text-white-100 bg-danger">
+                    <div className="px-2 py-1 text-xs font-semibold rounded text-white-100 bg-danger">
                         {bestSellerText}
                     </div>
                 )}
@@ -34,7 +34,7 @@ const ProductCard = ({
             <img
                 src={imageSrc}
                 alt={productName}
-                className="object-cover w-full h-48 mb-4 rounded-md"
+                className="object-cover w-full h-48 mb-4 "
             />
 
             {/* Product Name */}
@@ -42,9 +42,10 @@ const ProductCard = ({
                 <div>
                     <h2 className="text-base font-medium text-gray-500 md:text-lg lg:text-xl">{productName}</h2>
 
-                    {/* Product Price */}
-                    <p className="text-sm text-gray-700 md:text-xl lg:text-2xl">${price}</p>
-
+                    {/* Product Prices */}
+                    <p className="flex gap-2 text-sm text-gray-700 md:text-lg lg:text-xl">
+                        ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>}
+                    </p>
                     {/* Rating (Stars) */}
                     <div className="flex items-center mb-4">
                         {[...Array(5)].map((_, i) => (

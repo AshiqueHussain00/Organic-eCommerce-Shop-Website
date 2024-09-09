@@ -7,17 +7,17 @@ const LimitedProductCard = ({
     imageSrc,
     productName,
     price,
-    oldPrice, // Add this prop for the "before" price
+    oldPrice,
     rating,
-    feedbackCount, // Add this prop for the number of feedbacks
+    feedbackCount,
     onAddToCart,
     onWishlist,
     onQuickView,
     isSale,
     isBestSeller,
-    saleText = "Sale", // Default text for Sale
-    bestSellerText = "Best Seller", // Default text for Best Seller
-    countdownDate, // Date object for countdown
+    saleText = "Sale",
+    bestSellerText = "Best Seller",
+    countdownDate,
 }) => {
     const [timeLeft, setTimeLeft] = useState({});
     const [showCountdown, setShowCountdown] = useState(false);
@@ -33,7 +33,6 @@ const LimitedProductCard = ({
             } else {
                 setShowCountdown(true);
 
-                // Calculate remaining time in days, hours, minutes, and seconds
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -43,15 +42,15 @@ const LimitedProductCard = ({
             }
         };
 
-        calculateTimeLeft(); // Calculate immediately when component mounts
-        const intervalId = setInterval(calculateTimeLeft, 1000); // Update every second
+        calculateTimeLeft();
+        const intervalId = setInterval(calculateTimeLeft, 1000);
 
-        return () => clearInterval(intervalId); // Clean up interval on component unmount
+        return () => clearInterval(intervalId);
     }, [countdownDate]);
 
     return (
-        <div>
-            <div className="relative flex flex-col items-center p-2 transition duration-200 bg-white border border-gray-400 hover:border-primary hover:border-2">
+        <div className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
+            <div className="relative flex flex-col items-center transition duration-200 bg-white border-2 border-gray-400 hover:border-primary hover:border-2 ">
 
                 {/* Sale and Best Seller Tags */}
                 <div className="absolute flex space-x-2 top-2 left-2">
@@ -71,72 +70,71 @@ const LimitedProductCard = ({
                 <img
                     src={imageSrc}
                     alt={productName}
-                    className="object-cover w-full h-48 mb-2 rounded-md"
+                    className="object-cover w-full mb-2 h-[35vh] sm:h-[40vh] md:h-[45vh] lg:h-[50vh] xl:h-[46.5vh]"
                 />
 
+
                 {/* Add to Cart, Wishlist, and Quick View Buttons */}
-                <div className="flex gap-5 p-5 pt-2">
+                <div className="flex gap-3 p-3 sm:gap-4 lg:gap-5 sm:p-4 lg:p-5">
                     <button
                         onClick={onWishlist}
-                        className="p-3 bg-gray-200 border rounded-full hover:bg-primary hover:text-white-100"
+                        className="p-2 bg-gray-200 border rounded-full sm:p-3 hover:bg-primary hover:text-white-100"
                     >
-                        <FaRegHeart size={25} />
+                        <FaRegHeart size={20} sm={25} />
                     </button>
                     <button
                         onClick={onAddToCart}
-                        className="flex gap-5 px-20 py-3 font-medium bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
+                        className="flex items-center gap-2 px-5 py-2 font-medium bg-gray-200 rounded-full sm:gap-3 sm:px-8 sm:py-3 hover:bg-primary hover:text-white-100"
                     >
-                        <span>Add To Cart</span>
-                        <PiHandbag size={25} />
+                        <span className="text-sm sm:text-base">Add To Cart</span>
+                        <PiHandbag size={20} sm={25} />
                     </button>
                     <button
                         onClick={onQuickView}
-                        className="p-3 bg-gray-200 border rounded-full hover:bg-primary hover:text-white-100"
+                        className="p-2 bg-gray-200 border rounded-full sm:p-3 hover:bg-primary hover:text-white-100"
                     >
-                        <MdOutlineRemoveRedEye size={25} />
+                        <MdOutlineRemoveRedEye size={20} sm={25} />
                     </button>
                 </div>
 
                 {/* Product Name */}
-                <div className="flex gap-5 text-center">
-                    <div>
-                        <h2 className="text-base font-medium text-gray-500 md:text-lg lg:text-xl">
-                            {productName}
-                        </h2>
+                <div className="text-center">
+                    <h2 className="text-sm font-medium text-gray-500 sm:text-base lg:text-lg">
+                        {productName}
+                    </h2>
 
-                        {/* Product Prices */}
-                        <p className="text-sm text-gray-700 md:text-xl lg:text-2xl">
-                        ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>} 
-                        </p>
+                    {/* Product Prices */}
+                    <p className="text-base text-gray-700 sm:text-lg lg:text-xl">
+                        ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>}
+                    </p>
 
-                        {/* Rating (Stars) and Feedback Count */}
-                        <div className="flex items-center justify-center mb-4">
-                            <div className="flex">
-                                {[...Array(5)].map((_, i) => (
-                                    <svg
-                                        key={i}
-                                        className={`w-5 h-5 ${i < rating ? "text-yellow-800" : "text-gray-300"}`}
-                                        fill="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z" />
-                                    </svg>
-                                ))}
-                            </div>
-                            <span className="ml-2 text-sm text-gray-600">({feedbackCount} reviews)</span>
+                    {/* Rating (Stars) and Feedback Count */}
+                    <div className="flex items-center justify-center mb-4">
+                        <div className="flex">
+                            {[...Array(5)].map((_, i) => (
+                                <svg
+                                    key={i}
+                                    className={`w-4 sm:w-5 h-4 sm:h-5 ${i < rating ? "text-yellow-800" : "text-gray-300"}`}
+                                    fill="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.46 13.97 5.82 21z" />
+                                </svg>
+                            ))}
                         </div>
+                        <span className="ml-2 text-xs text-gray-600 sm:text-sm">({feedbackCount} reviews)</span>
                     </div>
                 </div>
 
                 {/* Countdown Timer */}
-                <div className="text-gray-400">
-                    <h1>Hurry up! Offer ends in :</h1>
+                <div className="text-center">
+                    <h1 className="text-sm text-gray-400">Hurry up! Offer ends in :</h1>
                 </div>
-                    
+
                 {showCountdown && (
-                    <div className="p-2 text-lg text-center">
-                        <div className="flex justify-center gap-4">
+                    <div className="p-2 text-sm text-center sm:text-lg">
+                        <div className="flex justify-center gap-2 sm:gap-4">
                             <div className="flex flex-col items-center">
                                 <span>{timeLeft.days}</span>
                                 <span className="text-xs">Days</span>
@@ -159,7 +157,6 @@ const LimitedProductCard = ({
                         </div>
                     </div>
                 )}
-
             </div>
         </div>
     );
