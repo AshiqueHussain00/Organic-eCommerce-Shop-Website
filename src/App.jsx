@@ -1,16 +1,17 @@
 import './App.css'
-import HeaderBottom from './component/home3/headerBottom'
+import ProductDetails from './component/common/Productdetails'
+
 
 function App() {
-  
+
 
   return (
-    <>
-      <div className='w-full mx-auto font-poppins'>
-<h1 className='text-red-100'>hi</h1>
-      </div>
-       
-    </>
+
+    <div className='w-full mx-auto font-poppins'>
+    <ProductDetails/>
+
+    </div>
+
   )
 }
 
