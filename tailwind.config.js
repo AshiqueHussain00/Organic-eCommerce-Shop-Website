@@ -18,6 +18,7 @@ export default {
       hard_primary: '#2C742F',
       warning: '#FF8A00',
       danger: '#EA4B48',
+     "branding-success": '#2C742F',
       red: {
         100: '#fee2e2',
         200: '#fecaca',
@@ -85,7 +86,7 @@ export default {
         900: '#171717'
       },
       gray: {
-        100: '#f3f4f6',
+        100: '#E6E6E6',
         200: '#e5e7eb',
         300: '#d1d5db',
         400: '#9ca3af',
@@ -93,7 +94,7 @@ export default {
         600: '#4b5563',
         700: '#374151',
         800: '#1f2937',
-        900: '#111827'
+        900: '#1A1A1A'
       },
       greenGray: {
         100: '#edf2f7',

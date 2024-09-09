@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.green-shadow:hover{
+    box-shadow: 0px 0px 12px 0px #20B52652;
+    ;
+}
