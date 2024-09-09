@@ -108,23 +108,24 @@ const ShowProduct = ({ isHotSale = true }) => {
 
 
                 {/* -------- hot deals ----- */}
-                <div className='flex flex-col'>
+                <div className='flex flex-col border-2 border-red-700 gap-y-4'>
 
-                    <h1>Hot Deals</h1>
+                    <h1 className='text-xl'>Hot Deals</h1>
 
                     {
                         hotDealData.slice(0, 3).map((product , index) => (
-                            <div className='flex ' key={index}>
+                            <div className='flex gap-x-3  border border-gray-100 pr-4 py-3 rounded-lg  transition-all duration-200 hover:border-branding-success green-shadow group' key={index}>
 
                                 <div>
                                     <img src={product.image} alt={product.productName} />
                                 </div>
 
-                                <div className='flex flex-col'>
+                               {/* -------- content  ------- */}
+                                <div className='flex flex-col  justify-center '>
 
                                     {/* ----- product name ------ */}
 
-                                    <p>{product.productName}</p>
+                                    <p className='text-sm'>{product.productName}</p>
 
                                     {/* ---- price -- */}
 
