@@ -7,7 +7,7 @@ const Category = () => {
     <section className='w-full '>
 
         {/* ---------- container ---------- */}
-        <div>
+        <div className='w-10/12 mx-auto border-2 border-red-600'>
 
         </div>
 
