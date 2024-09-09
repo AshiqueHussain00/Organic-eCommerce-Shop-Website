@@ -1,7 +1,7 @@
-import image1 from '../../assets/home3/delivery-truck.png'
-import image2 from  '../../assets/home3/headphones 1.png'
-import image3 from '../../assets/home3/shopping-bag.png'
-import image4 from '../../assets/home3/package.png'
+import image1 from '../../assets/home3/truck-icon.png'
+import image2 from  '../../assets/home3/headphone-icon.png'
+import image3 from '../../assets/home3/shoppingbag-icon.png'
+import image4 from '../../assets/home3/money-back-icon.png'
 
 export const HeaderBottomData = [
     {
@@ -23,7 +23,7 @@ export const HeaderBottomData = [
         id: 3,
         image: image3,
         title : '100% Secure Payment',
-        description: 'We enure your money is save'
+        description: 'We ensure your money is save'
 
     },
 
