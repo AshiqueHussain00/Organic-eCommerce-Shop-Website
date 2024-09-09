@@ -1,5 +1,6 @@
 import './App.css'
-import HeaderBottom from './component/home3/headerBottom'
+import HeaderBottom from './component/home3/HeaderBottom'
+import Banner from './component/home3/Banner'
 
 function App() {
   
@@ -7,8 +8,9 @@ function App() {
   return (
     <>
       <div className='w-full mx-auto font-poppins'>
-{/* <h1 className='text-red-100'>hi</h1> */}
-    <HeaderBottom/>
+             {/* <h1 className='text-red-100'>hi</h1> */}
+             {/* <HeaderBottom/> */}
+               <Banner/>
       </div>
        
     </>

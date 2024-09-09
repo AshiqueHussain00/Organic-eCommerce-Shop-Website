@@ -18,6 +18,7 @@ export default {
       hard_primary: '#2C742F',
       warning: '#FF8A00',
       danger: '#EA4B48',
+      yellow:'#FCC900',
       red: {
         100: '#fee2e2',
         200: '#fecaca',
@@ -94,7 +95,8 @@ export default {
         700: '#2d3748',
         800: '#1a202c',
         900: '#171923'
-      }
+      },
+      
     },
     screens: {
       dxs: '300px',
