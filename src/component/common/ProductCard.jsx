@@ -13,8 +13,9 @@ const ProductCard = ({
 }) => {
     return (
         <div className="relative flex flex-col items-center p-2 transition duration-200 bg-white border border-gray-400 hover:border-primary hover:border-2 hover:scale-[100rem]">
-            {/* Sale and Best Seller Tags */}
+            
              {/* Sale and Best Seller Tags */}
+             
              <div className="absolute flex space-x-2 top-2 left-2">
                 {isSale && (
                     <div className="px-2 py-1 text-xs bg-blue-600 rounded text-white-100">
