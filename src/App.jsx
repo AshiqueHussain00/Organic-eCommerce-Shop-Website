@@ -1,6 +1,7 @@
 import './App.css'
-import ProductDetails from './component/common/Productdetails'
+
 import ShowProduct from './component/common/ShowProduct'
+import Home1 from './component/home1/Home1'
 
 
 
@@ -11,7 +12,7 @@ function App() {
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <ShowProduct/>
-      <ProductDetails/>
+      <Home1/>
 
 
     </div>

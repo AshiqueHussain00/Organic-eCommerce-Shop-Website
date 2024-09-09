@@ -1,5 +1,5 @@
-import LimitedProductCard from './LimitedProductCard';
-import ProductCard from './ProductCard';
+import LimitedProductCard from '../../common/LimitedProductCard';
+import ProductCard from '../../common/ProductCard';
 
 const ProductDetails = () => {
     // Example handlers
