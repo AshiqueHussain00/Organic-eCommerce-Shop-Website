@@ -1,12 +1,12 @@
 import './App.css'
-
+import Testimonial from './component/common/Testimonial'
 function App() {
   
 
   return (
     <>
       <div className='w-full mx-auto font-poppins'>
-<h1>hi</h1>
+          <Testimonial/>   
       </div>
        
     </>
