@@ -9,12 +9,12 @@ function HeaderBottom() {
                     {HeaderBottomData.map((item) => (
                        <li key = {item.id} className="flex flex-col items-center justify-center xxl:flex-row gap-3 p-2 hover:bg-primary hover:rounded-md   focus:text-white-200 cursor-pointer  group">
                            <div>
-                                <img src = {item.image}  className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 group-hover:bg-transparent"></img>
+                                <img src = {item.image}  className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 group-hover:bg-transparent"></img>
                            </div>
 
                            <div className="text-center">
-                              <h4 className="text-gray-800 text-base item-center font-semibold group-hover:text-white-200">{item.title}</h4>
-                              <p className="text-gray-400 text-sm font-normal group-hover:text-white-200 ">{item.description}</p>
+                              <h4 className="text-gray-800 text-sm sm:text-base item-center font-semibold group-hover:text-white-200">{item.title}</h4>
+                              <p className="text-gray-500 text-xs sm:text-sm font-normal group-hover:text-white-200 ">{item.description}</p>
                            </div>
                        </li>
                     )) }
