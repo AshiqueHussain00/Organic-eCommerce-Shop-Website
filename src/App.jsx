@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className='w-full mx-auto font-poppins'>
+      <div className='max-w-[100vh] min-h-screen overflow-x-hidden font-poppins'>
 <h1 className='text-red-100'>hi</h1>
       </div>
        

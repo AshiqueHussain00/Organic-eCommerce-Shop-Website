@@ -1,10 +1,17 @@
 import React from 'react'
-
+import { categories } from '../../data/common/category'
 
 
 const Category = () => {
   return (
-    <div>Category</div>
+    <section className='w-full '>
+
+        {/* ---------- container ---------- */}
+        <div>
+
+        </div>
+
+    </section>
   )
 }
 
