@@ -13,7 +13,7 @@ const Category = () => {
             <Link to={category.path} key={category.id}>
             <div className='border border-gray-100 flex flex-col gap-y-4 items-center py-4 xl:px-3 px-2 rounded-lg  transition-all duration-200 hover:border-branding-success green-shadow group' >
                 <div>
-                <img src={category.image} alt="" />
+                <img src={category.image} alt={category.title} />
                 </div>
 
                 <p className=' text-[16px] xxl:text-lg text-gray-900 leading-[27px] font-medium transition-all duration-200 group-hover:text-branding-success text-center'>{category.title}</p>

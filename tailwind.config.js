@@ -19,6 +19,7 @@ export default {
       warning: '#FF8A00',
       danger: '#EA4B48',
      "branding-success": '#2C742F',
+     "branding-warning": '#FF8A00',
       red: {
         100: '#fee2e2',
         200: '#fecaca',
