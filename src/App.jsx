@@ -1,8 +1,9 @@
 import './App.css'
-import HeaderBottom from './component/home3/headerBottom'
+import ProductDetails from './component/common/Productdetails'
+
 
 function App() {
-  
+
 
   return (
     <>
