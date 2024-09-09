@@ -1,4 +1,5 @@
 import './App.css'
+import HeaderBottom from './component/home3/headerBottom'
 
 function App() {
   
