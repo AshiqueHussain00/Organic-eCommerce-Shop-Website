@@ -1,4 +1,6 @@
 import './App.css'
+import ProductDetails from './component/common/Productdetails';
+import Navbar from './component/common/navbar';
 
 import ShowProduct from './component/common/ShowProduct'
 import Home1 from './component/home1/Home1'
@@ -13,6 +15,7 @@ function App() {
   return (
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
+      <Navbar/>
       {/* <ShowProduct/>
       <Home1/> */}
     <Banner/>
