@@ -18,7 +18,8 @@ export default {
       hard_primary: '#2C742F',
       warning: '#FF8A00',
       danger: '#EA4B48',
-      yellow:'#FCC900',
+     "branding-success": '#2C742F',
+     "branding-warning": '#FF8A00',
       red: {
         100: '#fee2e2',
         200: '#fecaca',
@@ -52,6 +53,18 @@ export default {
         800: '#065f46',
         900: '#064e3b'
       },
+      yellow: {
+        50:'#FCC900',
+        100: '#FFFDE7',
+        200: '#FFF9C4',
+        300: '#FFF59D',
+        400: '#FFF176',
+        500: '#FFEB3B',
+        600: '#FDD835',
+        700: '#FBC02D',
+        800: '#F9A825',
+        900: '#F57F17',
+      },
       white: {
         100: '#ffffff',
         200: '#f9fafb',
@@ -75,7 +88,7 @@ export default {
         900: '#171717'
       },
       gray: {
-        100: '#f3f4f6',
+        100: '#E6E6E6',
         200: '#e5e7eb',
         300: '#d1d5db',
         400: '#9ca3af',
@@ -83,7 +96,7 @@ export default {
         600: '#4b5563',
         700: '#374151',
         800: '#1f2937',
-        900: '#111827'
+        900: '#1A1A1A'
       },
       greenGray: {
         100: '#edf2f7',
@@ -135,8 +148,10 @@ export default {
       xl: '1280px',
       // => @media (min-width: 1280px) { ... }
 
-      xxl: '1390px'
+      xxl: '1390px',
       // => @media (min-width: 1390px) { ... }
+      '1490px': '1490px',
+  // => @media (min-width: 1490px) { ... }
     },
     extend: {}
   },

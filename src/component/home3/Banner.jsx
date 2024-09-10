@@ -83,7 +83,7 @@ function Banner() {
                             {item.id === 3 && (
                                 <h3 className="text-black-900 text-center text-sm sm:text-base md:text-lg font-semibold">
                                     {item.heading3_1}
-                                    <span className="text-yellow p-1 rounded-md font-medium ml-1 sm:ml-2 bg-black-900">
+                                    <span className="text-yellow-50 p-2 rounded-md font-semibold ml-1 sm:ml-2 bg-black-900">
                                         {item.heading3_2}
                                     </span>
                                 </h3>
