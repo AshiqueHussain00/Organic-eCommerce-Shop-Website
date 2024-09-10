@@ -1,25 +1,22 @@
 import './App.css'
+
+
+import ShowProduct from './component/common/ShowProduct'
 import Home5 from './component/Home5/Home5'
-import ProductDetails from './component/common/Productdetails'
+
 
 
 function App() {
 
 
   return (
-    <>
-      <div className='w-full mx-auto font-poppins'>
-          <Home5 />   
-      </div>
-       
-   
+    
+   <div>
+<Home5/>
+   </div>
 
-    {/* <div className='w-full mx-auto font-poppins'>
-    <ProductDetails/>
-
-    </div> */}
-    </>
   )
+    
 }
 
 export default App

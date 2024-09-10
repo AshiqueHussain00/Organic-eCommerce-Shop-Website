@@ -4,6 +4,7 @@ const ProductCard = ({
     imageSrc,
     productName,
     price,
+    oldPrice,
     rating,
     onAddToCart,
     isSale,
@@ -12,17 +13,17 @@ const ProductCard = ({
     bestSellerText = 'Best Seller' // Default text for Best Seller
 }) => {
     return (
-        <div className="relative flex flex-col items-center p-2 transition duration-200 bg-white border border-gray-400 hover:border-primary hover:border-2 hover:scale-[100rem]">
+        <div className="relative flex flex-col   transition duration-200 bg-white border-2 border-gray-400 hover:border-primary hover:border-2 hover:scale-[100rem]">
             {/* Sale and Best Seller Tags */}
-             {/* Sale and Best Seller Tags */}
-             <div className="absolute flex space-x-2 top-2 left-2">
+            {/* Sale and Best Seller Tags */}
+            <div className="absolute flex space-x-2 top-2 left-2">
                 {isSale && (
-                    <div className="px-2 py-1 text-xs bg-blue-600 rounded text-white-100">
+                    <div className="px-2 py-1 text-xs font-semibold bg-blue-600 rounded text-white-100">
                         {saleText}
                     </div>
                 )}
                 {isBestSeller && (
-                    <div className="px-2 py-1 text-xs rounded text-white-100 bg-danger">
+                    <div className="px-2 py-1 text-xs font-semibold rounded text-white-100 bg-danger">
                         {bestSellerText}
                     </div>
                 )}
@@ -33,16 +34,18 @@ const ProductCard = ({
             <img
                 src={imageSrc}
                 alt={productName}
-                className="object-cover w-full h-48 mb-4 rounded-md"
+                className="object-cover w-full h-48 mb-4"
             />
 
             {/* Product Name */}
-            <div className='flex gap-[4rem]'>
-                <div>
-                    <h2 className="text-base font-medium text-gray-500 md:text-lg lg:text-xl">{productName}</h2>
+            <div className='flex items-start p-2'>
+                <div className="mr-8 md:mr-6 lg:mr-4 xl:mr-1">
+                    <h2 className="text-xl font-medium text-gray-500 ">{productName}</h2>
 
-                    {/* Product Price */}
-                    <p className="text-sm text-gray-700 md:text-xl lg:text-2xl">${price}</p>
+                    {/* Product Prices */}
+                    <p className="flex gap-2 text-xl text-gray-700 ">
+                        ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>}
+                    </p>
 
                     {/* Rating (Stars) */}
                     <div className="flex items-center mb-4">
@@ -61,7 +64,7 @@ const ProductCard = ({
                 </div>
 
                 {/* Add to Cart Button */}
-                <div className='pt-6'>
+                <div className="p-2 ml-auto">
                     <button
                         onClick={onAddToCart}
                         className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
@@ -70,6 +73,9 @@ const ProductCard = ({
                     </button>
                 </div>
             </div>
+
+
+
         </div>
     );
 };
