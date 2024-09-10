@@ -6,3 +6,17 @@
     box-shadow: 0px 0px 12px 0px #20B52652;
     ;
 }
+
+.hot-sale{
+    background-image: url('./assets//common/sale/hot-deal.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.summer-sale{
+    background-image: url('./assets//common/sale/summer-sale.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
