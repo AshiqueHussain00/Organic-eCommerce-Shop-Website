@@ -1,8 +1,8 @@
 import './App.css'
 
 
-import ProductCard from './component/common/ProductCard'
-import HomeOneHerosection from './component/home1/home-component/HomeOneHerosection'
+import HeroBottom4 from './component/common/HeroBottom4'
+
 
 
 
@@ -12,11 +12,8 @@ function App() {
   return (
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-    
-    <HomeOneHerosection/>
- 
-   
-   
+      {/* <ShowProduct/> */}
+    <HeroBottom4/>
 
 
     </div>
