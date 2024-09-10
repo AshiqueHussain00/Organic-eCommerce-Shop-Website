@@ -16,7 +16,7 @@ export const BannerData = [
         id:2,
         image: image2,
         heading1 : '85% FAT FREE',
-        heading2 : 'Low-Fat Meat',
+        heading2 : 'Low-Fat  Meat',
         isTimer: false,
         heading3_1: 'Started at',
         heading3_2: '$79.99',

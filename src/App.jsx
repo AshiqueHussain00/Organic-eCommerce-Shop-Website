@@ -1,5 +1,5 @@
 import './App.css'
-import HeaderBottom from './component/home3/HeaderBottom'
+import HeaderBottom from './component/home3/headerBottom'
 import Banner from './component/home3/Banner'
 
 function App() {
