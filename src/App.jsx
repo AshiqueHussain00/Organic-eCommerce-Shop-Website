@@ -1,5 +1,6 @@
 import './App.css'
-import ProductDetails from './component/common/Productdetails'
+import ProductDetails from './component/common/Productdetails';
+import Navbar from './component/common/navbar';
 
 
 function App() {
@@ -8,7 +9,9 @@ function App() {
   return (
 
     <div className='w-full mx-auto font-poppins'>
-    <ProductDetails/>
+       <Navbar/>
+    
+   
 
     </div>
 
