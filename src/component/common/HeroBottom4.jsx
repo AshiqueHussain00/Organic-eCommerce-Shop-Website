@@ -6,7 +6,7 @@ function HeroBottom4() {
         <section>
             <div className="w-full xmd:w-10/12 mx-auto  bg-white-200 text-black-800">
 
-                <ul className="xxl:w-full flex flex-row items-center flex-wrap justify-center p-4 gap-4 sm:gap-6 md:gap-0">
+                <ul className="xxl:w-full flex items-center flex-wrap justify-center p-4 gap-4 sm:gap-6 md:gap-0">
                     {HeaderBottomData.map((item, index) => (
                         <li
                             key={item.id}
