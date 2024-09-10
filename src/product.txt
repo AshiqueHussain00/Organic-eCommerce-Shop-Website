@@ -1,0 +1,11 @@
+we should add the following data to our product data:
+
+            imageSrc: 'https://placehold.jp/302x302.png',
+            productName: 'Green Apple',
+            price: '14.99',
+            oldPrice: '29.99', 
+            rating: 4,
+            isSale: true,
+            isBestSeller: false,
+            saleText: 'Discount!',
+            bestSellerText: ''
