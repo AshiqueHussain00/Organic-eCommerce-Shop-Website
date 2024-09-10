@@ -1,14 +1,23 @@
 import './App.css'
-import Testimonial from './component/common/Testimonial'
+import Home5 from './component/Home5/Home5'
+import ProductDetails from './component/common/Productdetails'
+
+
 function App() {
-  
+
 
   return (
     <>
       <div className='w-full mx-auto font-poppins'>
-          <Testimonial/>   
+          <Home5 />   
       </div>
        
+   
+
+    {/* <div className='w-full mx-auto font-poppins'>
+    <ProductDetails/>
+
+    </div> */}
     </>
   )
 }
