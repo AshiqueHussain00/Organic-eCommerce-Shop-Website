@@ -64,9 +64,19 @@ const Home5 = () => {
   ];
 
   return (
-    <div>
-      <TestimonialCard testimonialsData={testimonialsData} showButtons={true} />
-    </div>
+    <section>
+      
+
+        {/* Existing Testimonials Component */}
+        <TestimonialCard
+          testimonialsData={testimonialsData}
+          showButtons={true}
+          bgColor="rgb(242,242,242)"
+          autoplay={true} // Adjust autoplay as needed
+          showHeading={true}
+        />
+      
+    </section>
   );
 };
 

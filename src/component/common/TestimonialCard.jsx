@@ -25,7 +25,7 @@ const TestimonialCard = ({ testimonial }) => {
       </p>
 
       {/* Testimonial Details: Image, Name, Role, and Rating */}
-      <div className=" flex items-center justify-between p-2 sm:flex flex-col sm:items-center md:flex md:flex-row">
+      <div className="flex items-center justify-between p-2 sm:flex flex-col sm:items-center md:flex md:flex-row">
         <div className="flex items-center">
           {/* User's Profile Image */}
           <img src={testimonial.img} alt={testimonial.name} className="w-12 h-12 rounded-full" />
@@ -54,7 +54,7 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 // Testimonials component that holds the Swiper carousel and controls
-const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rgb(242,242,242)' }) => {
+const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rgb(242,242,242)', showHeading = true, autoplay = true }) => {
   // Swiper configuration settings for slides, breakpoints, and navigation
   const swiperSettings = {
     slidesPerView: 1,
@@ -73,6 +73,10 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
       nextEl: '.custom-swiper-button-next', // Custom next button
       prevEl: '.custom-swiper-button-prev', // Custom previous button
     },
+    autoplay: autoplay ? {
+      delay: 5000, // Adjust delay as needed
+      disableOnInteraction: false,
+    } : false, // Autoplay setting
     modules: [Navigation, Pagination, Autoplay, EffectFade], // Swiper modules for additional features
   };
 
@@ -87,11 +91,13 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
       <div style={{ backgroundColor: bgColor }}>
         <div className="w-10/12 mx-auto relative p-10">
           <div className="relative">
-            {/* Section Title */}
-            <h2 className="text-xl mb-3 sm:text-3xl font-bold break-words leading-snug sm:leading-normal">
-              <span className="block sm:inline ml-2">Client</span>
-              <span className="block sm:inline ml-2">Testimonials</span>
-            </h2>
+            {/* Conditionally render Section Title */}
+            {showHeading && (
+              <h2 className="text-xl mb-3 sm:text-3xl font-bold break-words leading-snug sm:leading-normal">
+                <span className="block sm:inline ml-2">Client</span>
+                <span className="block sm:inline ml-2">Testimonials</span>
+              </h2>
+            )}
 
             {/* Custom Navigation Buttons for Swiper */}
             {showButtons && (
