@@ -54,6 +54,7 @@ export default {
         900: '#064e3b'
       },
       yellow: {
+        50:'#FCC900',
         100: '#FFFDE7',
         200: '#FFF9C4',
         300: '#FFF59D',
@@ -107,7 +108,8 @@ export default {
         700: '#2d3748',
         800: '#1a202c',
         900: '#171923'
-      }
+      },
+      
     },
     screens: {
       dxs: '300px',

@@ -1,7 +1,7 @@
-import image1 from '../../assets/home3/truck-icon.png'
-import image2 from  '../../assets/home3/headphone-icon.png'
-import image3 from '../../assets/home3/shoppingbag-icon.png'
-import image4 from '../../assets/home3/money-back-icon.png'
+import image1 from '../../assets/home3/truck-icon.svg'
+import image2 from  '../../assets/home3/headphone-icon.svg'
+import image3 from '../../assets/home3/shoppingbag-icon.svg'
+import image4 from '../../assets/home3/money-back-icon.svg'
 
 export const HeaderBottomData = [
     {
