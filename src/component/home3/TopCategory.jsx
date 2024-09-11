@@ -92,7 +92,7 @@ function TopCategory() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="h-[40px] w-[40px] sm:h-[40px] sm:w-[40px] md:h-[40px] md:w-[40px] lg:h-[60px] lg:w-[60px] object-cover" // Responsive image size
+                    className="h-[50px] w-[50px]  md:h-[60px] md:w-[60px] object-cover" // Responsive image size
                   />
                 </div>
                 <div className="flex flex-col items-center">
