@@ -3,6 +3,7 @@ import Veg from '../../assets/common/categories/Vege.svg'
 import { useState, useEffect } from 'react'
 import ProductCard from '../common/ProductCard'
 import { useNavigate } from 'react-router-dom'
+import './home4Common.css'
 
 const productData = [
     {
