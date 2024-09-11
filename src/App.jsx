@@ -1,5 +1,6 @@
 import './App.css'
-
+import HeaderBottom from './component/home3/headerBottom'
+import TopCategory from './component/home3/TopCategory'
 
 
 
@@ -12,7 +13,8 @@ function App() {
    
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-      
+      {/* <HeaderBottom/> */}
+      <TopCategory/>
   
     </div>
 
