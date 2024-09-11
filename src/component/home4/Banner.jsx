@@ -38,7 +38,7 @@ const Banner = () => {
                 {
                     bannerData.map((card) => (
 
-                        <div className={`${card.class} flex rounded-lg w-[95%] xsm:w-[85%] xs:w-[75%] sm:w-[60%] mmd:w-full 
+                        <div key={card.id} className={`${card.class} flex rounded-lg w-[95%] xsm:w-[85%] xs:w-[75%] sm:w-[60%] mmd:w-full 
                          ${card.id === 2 ? "justify-end " : "justify-start"
                             }
                         `}>

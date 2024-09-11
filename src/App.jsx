@@ -1,7 +1,9 @@
 
 
 import './App.css'
-import Home1 from './component/home1/Home1'
+import ProductSection from './component/home4/ProductSection';
+import Banner from './component/home4/Banner';
+import FeaturedProduct from './component/home4/FeaturedProduct';
 
 
 function App() {
@@ -11,7 +13,11 @@ function App() {
    
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-    <Home1/>
+
+      <ProductSection/>
+      <Banner/>
+      <FeaturedProduct/>
+  
     </div>
   );
 }
