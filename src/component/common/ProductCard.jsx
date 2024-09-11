@@ -1,8 +1,10 @@
 import { PiHandbag } from "react-icons/pi";
 import { IoEyeOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const ProductCard = ({
     imageSrc,
@@ -17,15 +19,35 @@ const ProductCard = ({
     bestSellerText = 'Best Seller' // Default text for Best Seller
 }) => {
 
-    const [isHover, setIsHover] = useState(false)
+    const [isHover, setIsHover] = useState(false);
 
+    // Animation controls
+    const controls = useAnimation();
+    const [ref, inView] = useInView({ threshold: 0 });
+
+    useEffect(() => {
+        if (inView) {
+            controls.start("visible");
+        } else {
+            controls.start("hidden");
+        }
+    }, [controls, inView]);
+
+    const cardVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    };
 
     return (
-        <div
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={controls}
+            variants={cardVariants}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow" >
-            {/* Sale and Best Seller Tags */}
+            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow"
+        >
             {/* Sale and Best Seller Tags */}
             <div className="absolute flex space-x-2 top-2 left-2">
                 {isSale && (
@@ -40,28 +62,17 @@ const ProductCard = ({
                 )}
             </div>
 
-
-            {/* ------------ wishlist aur watch icon---------- */}
-
-            <div className={`absolute flex flex-col items-center gap-y-3 top-4 right-2 
-                  ${isHover ? "opacity-100" : "opacity-0"
-                }
-                `}>
-
-                {/* ------ wishlist ----- */}
-
+            {/* Wishlist and Watch Icons */}
+            <div className={`absolute flex flex-col items-center gap-y-3 top-4 right-2 ${isHover ? "opacity-100" : "opacity-0"}`}>
+                {/* Wishlist */}
                 <Link to="/wishlist" className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <GoHeart />
                 </Link>
-
-                {/* ------- view ------- */}
-
+                {/* View */}
                 <div className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <IoEyeOutline />
                 </div>
-
             </div>
-
 
             {/* Product Image */}
             <img
@@ -73,7 +84,7 @@ const ProductCard = ({
             {/* Product Name */}
             <div className='flex items-start p-2'>
                 <div className="mr-8 md:mr-6 lg:mr-4 xl:mr-1">
-                    <h2 className="text-[16px] font-normal text-gren-gray-scale-700 ">{productName}</h2>
+                    <h2 className="text-[16px] font-normal text-green-gray-scale-700 ">{productName}</h2>
 
                     {/* Product Prices */}
                     <p className="flex gap-3 mt-2 text-lg font-medium text-green-gray-scale-900 ">
@@ -106,10 +117,7 @@ const ProductCard = ({
                     </button>
                 </div>
             </div>
-
-
-
-        </div>
+        </motion.div>
     );
 };
 
