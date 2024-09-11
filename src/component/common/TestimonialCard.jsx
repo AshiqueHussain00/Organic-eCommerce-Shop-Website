@@ -15,7 +15,7 @@ const TestimonialCard = ({ testimonial }) => {
   return (
     <div className="bg-white bg-[rgb(252,252,252)] p-4 rounded-lg shadow-lg mx-2">
       {/* Quote Icon */}
-      <div className="flex mb-4 text-green-500 text-3xl">
+      <div className="flex mb-4 text-3xl text-green-500">
         <img src={quote} alt="Quote" />
       </div>
 
@@ -25,11 +25,11 @@ const TestimonialCard = ({ testimonial }) => {
       </p>
 
       {/* Testimonial Details: Image, Name, Role, and Rating */}
-      <div className="flex items-center justify-between p-2 sm:flex flex-col sm:items-center md:flex md:flex-row">
+      <div className="flex flex-col items-center justify-between p-2 sm:flex sm:items-center md:flex md:flex-row">
         <div className="flex items-center">
           {/* User's Profile Image */}
           <img src={testimonial.img} alt={testimonial.name} className="w-12 h-12 rounded-full" />
-          
+
           {/* User's Name and Role */}
           <div className="ml-4">
             <h4 className="font-bold text-gray-800 text-[0.8rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.1rem]">
@@ -89,22 +89,22 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
     <section>
       {/* Container with dynamic background color passed via bgColor prop */}
       <div style={{ backgroundColor: bgColor }}>
-        <div className="w-10/12 mx-auto relative p-10">
+        <div className="relative w-10/12 p-10 mx-auto">
           <div className="relative">
             {/* Conditionally render Section Title */}
             {showHeading && (
-              <h2 className="text-xl mb-3 sm:text-3xl font-bold break-words leading-snug sm:leading-normal">
-                <span className="block sm:inline ml-2">Client</span>
-                <span className="block sm:inline ml-2">Testimonials</span>
+              <h2 className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal">
+                <span className="block ml-2 sm:inline">Client</span>
+                <span className="block ml-2 sm:inline">Testimonials</span>
               </h2>
             )}
 
             {/* Custom Navigation Buttons for Swiper */}
             {showButtons && (
-              <div className="absolute top-1/2 right-2 transform -translate-y-1/2 flex space-x-2">
+              <div className="absolute flex space-x-2 transform -translate-y-1/2 top-1/2 right-2">
                 <button className="custom-swiper-button-prev p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
                   {/* Left Arrow Icon */}
-                  <FaArrowLeft className="arrowleft text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
+                  <FaArrowLeft className="text-xs arrowleft sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
                 <button className="arrowright custom-swiper-button-next p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
                   {/* Right Arrow Icon */}
@@ -124,7 +124,7 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
           </Swiper>
 
           {/* Custom Pagination Dots */}
-          <div className="custom-swiper-pagination mx-auto"></div>
+          <div className="mx-auto custom-swiper-pagination"></div>
         </div>
       </div>
     </section>

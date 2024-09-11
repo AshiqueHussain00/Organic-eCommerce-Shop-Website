@@ -84,7 +84,7 @@ const Home5 = () => {
         />
       {/* Instagram Section */}
       <div className="mt-8">
-        <h2 className="text-2xl font-bold text-center mb-4">Follow Us on Instagram</h2>
+        <h2 className="mb-4 text-2xl font-bold text-center">Follow Us on Instagram</h2>
         <FollowInstagram images={instagramImages} instagramUrl="https://www.instagram.com/yourprofile" />
       </div>
     </section>
