@@ -109,6 +109,20 @@ const Home5 = () => {
 <Herosection/>
        
        <LatestNews data={newsData}/>
+
+        {/* Existing Testimonials Component */}
+        <TestimonialCard
+          testimonialsData={testimonialsData}
+          showButtons={true}
+          bgColor="rgb(242,242,242)"
+          autoplay={true} // Adjust autoplay as needed
+          showHeading={true}
+        />
+      {/* Instagram Section */}
+      <div className="mt-8">
+        <h2 className="mb-4 text-2xl font-bold text-center">Follow Us on Instagram</h2>
+        <FollowInstagram images={instagramImages} instagramUrl="https://www.instagram.com/yourprofile" />
+      </div>
     </section>
   );
 };

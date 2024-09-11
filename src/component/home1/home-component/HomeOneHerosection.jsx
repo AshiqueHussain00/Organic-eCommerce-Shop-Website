@@ -1,16 +1,43 @@
+import { useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import bannar1 from '../../../assets/home1/banner1.svg';
 import bannar2 from '../../../assets/home1/banner2.svg';
 import bannar3 from '../../../assets/home1/banner3.svg';
 
 const HomeOneHerosection = () => {
+  // Animation controls
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.1 }); // Fires when 10% of the component is in view
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    } else {
+      controls.start('hidden');
+    }
+  }, [controls, inView]);
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
+
   return (
-    <section className="w-full py-10 bg-white">
+    <motion.section
+      className="w-full py-10 bg-white"
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={sectionVariants}
+    >
       <div className="w-11/12 mx-auto">
         <div className="grid grid-cols-1 gap-4 mx-auto lg:grid-cols-3 text-white-100">
 
           {/* Left Main Section */}
-          <div
+          <motion.div
             className="flex flex-col justify-center p-6 text-white rounded-lg lg:col-span-2"
             style={{
               backgroundImage: `url(${bannar1})`,
@@ -18,6 +45,7 @@ const HomeOneHerosection = () => {
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
             }}
+            variants={sectionVariants}
           >
             <div>
               <h1 className="mb-4 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
@@ -27,8 +55,6 @@ const HomeOneHerosection = () => {
                 <h2 className="mb-4">Sale up to <span className="p-2 font-bold rounded-lg bg-warning text-white-100">30% OFF</span></h2> {/* Increased mb from 2 to 4 */}
                 <h3 className="text-sm text-gray-300">Free shipping on all your order.</h3>
               </p>
-
-
             </div>
             <div className="w-full sm:w-[70%] md:w-[50%]">
               <Link
@@ -38,12 +64,12 @@ const HomeOneHerosection = () => {
                 Shop now →
               </Link>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Small Sections */}
           <div className="flex flex-col space-y-4">
             {/* Top Right */}
-            <div
+            <motion.div
               className="relative p-6 text-black bg-gray-100 rounded-lg"
               style={{
                 backgroundImage: `url(${bannar2})`,
@@ -51,6 +77,7 @@ const HomeOneHerosection = () => {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
               }}
+              variants={sectionVariants}
             >
               <div className="text-black-900">
                 <h2 className="text-xl font-bold sm:text-2xl md:text-3xl">Summer Sale</h2>
@@ -65,10 +92,10 @@ const HomeOneHerosection = () => {
                   Shop now →
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
             {/* Bottom Right */}
-            <div
+            <motion.div
               className="flex flex-col items-center justify-center p-6 text-center bg-green-900 rounded-lg sm:p-10 md:px-10"
               style={{
                 backgroundImage: `url(${bannar3})`,
@@ -76,6 +103,7 @@ const HomeOneHerosection = () => {
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
               }}
+              variants={sectionVariants}
             >
               <div>
                 <h2 className="mb-2 text-lg font-bold text-white sm:text-xl md:text-2xl">Best Deal</h2>
@@ -90,11 +118,11 @@ const HomeOneHerosection = () => {
                   Shop now →
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
