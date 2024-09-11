@@ -93,7 +93,7 @@ const products = [
 
 
 
-const ShowProduct = ({ isHotSale = false }) => {
+const ShowProduct = ({ isHotSale = true }) => {
 
     const hotDealData = products.filter(product => product.isSale === true);
     const bestSellerData = products.filter(product => product.isBestSeller === true);

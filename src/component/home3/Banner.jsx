@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import arrow from '../../assets/home3/Arrow.svg'
+import arrow from '../../assets/home3/banner/Arrow.svg'
 import { BannerData } from '../../data/home3/BannerData'
 
 function Banner() {
