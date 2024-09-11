@@ -20,6 +20,13 @@ export default {
       danger: '#EA4B48',
      "branding-success": '#2C742F',
      "branding-warning": '#FF8A00',
+
+     "green-gray-scale": {
+
+      400 : '#7A997C',
+       700 : "#2B572E",
+       900: '#002603',
+     },
       red: {
         100: '#fee2e2',
         200: '#fecaca',
@@ -88,11 +95,12 @@ export default {
         900: '#171717'
       },
       gray: {
+        50 : '#EDF2EE',
         100: '#E6E6E6',
         200: '#e5e7eb',
         300: '#d1d5db',
         400: '#9ca3af',
-        500: '#6b7280',
+        500: '#808080',
         600: '#4b5563',
         700: '#374151',
         800: '#1f2937',

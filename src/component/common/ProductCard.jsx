@@ -1,4 +1,8 @@
 import { PiHandbag } from "react-icons/pi";
+import { IoEyeOutline } from "react-icons/io5";
+import { GoHeart } from "react-icons/go";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({
     imageSrc,
@@ -12,21 +16,50 @@ const ProductCard = ({
     saleText = 'Sale',         // Default text for Sale
     bestSellerText = 'Best Seller' // Default text for Best Seller
 }) => {
+
+    const [isHover, setIsHover] = useState(false)
+
+
     return (
-        <div className="relative flex flex-col   transition duration-200 bg-white border-2 border-gray-400 hover:border-primary hover:border-2 hover:scale-[100rem]">
+        <div
+            onMouseEnter={() => setIsHover(true)}
+            onMouseLeave={() => setIsHover(false)}
+            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow" >
             {/* Sale and Best Seller Tags */}
             {/* Sale and Best Seller Tags */}
             <div className="absolute flex space-x-2 top-2 left-2">
                 {isSale && (
-                    <div className="px-2 py-1 text-xs font-semibold bg-blue-600 rounded text-white-100">
+                    <div className="px-2 py-1 text-sm font-semibold bg-blue-600 rounded text-white-100">
                         {saleText}
                     </div>
                 )}
                 {isBestSeller && (
-                    <div className="px-2 py-1 text-xs font-semibold rounded text-white-100 bg-danger">
+                    <div className="px-2 py-1 text-sm font-semibold rounded text-white-100 bg-danger">
                         {bestSellerText}
                     </div>
                 )}
+            </div>
+
+
+            {/* ------------ wishlist aur watch icon---------- */}
+
+            <div className={`absolute flex flex-col items-center gap-y-3 top-4 right-2 
+                  ${isHover ? "opacity-100" : "opacity-0"
+                }
+                `}>
+
+                {/* ------ wishlist ----- */}
+
+                <Link to="/wishlist" className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                    <GoHeart />
+                </Link>
+
+                {/* ------- view ------- */}
+
+                <div className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                    <IoEyeOutline />
+                </div>
+
             </div>
 
 
@@ -34,25 +67,25 @@ const ProductCard = ({
             <img
                 src={imageSrc}
                 alt={productName}
-                className="object-cover w-full h-48 mb-4"
+                className="object-cover w-full h-48 mb-4 "
             />
 
             {/* Product Name */}
             <div className='flex items-start p-2'>
                 <div className="mr-8 md:mr-6 lg:mr-4 xl:mr-1">
-                    <h2 className="text-xl font-medium text-gray-500 ">{productName}</h2>
+                    <h2 className="text-[16px] font-normal text-gren-gray-scale-700 ">{productName}</h2>
 
                     {/* Product Prices */}
-                    <p className="flex gap-2 text-xl text-gray-700 ">
-                        ${price} {oldPrice && <span className="text-gray-400 line-through">${oldPrice}</span>}
+                    <p className="flex gap-3 mt-2 text-lg font-medium text-green-gray-scale-900 ">
+                        ${price} {oldPrice && <span className="line-through text-green-gray-scale-400">${oldPrice}</span>}
                     </p>
 
                     {/* Rating (Stars) */}
-                    <div className="flex items-center mb-4">
+                    <div className="flex items-center mt-2 mb-4">
                         {[...Array(5)].map((_, i) => (
                             <svg
                                 key={i}
-                                className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+                                className={`w-5 h-5 ${i < rating ? 'text-branding-warning' : 'text-gray-300'}`}
                                 fill="currentColor"
                                 viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -69,7 +102,7 @@ const ProductCard = ({
                         onClick={onAddToCart}
                         className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
                     >
-                        <PiHandbag size={25} />
+                        <PiHandbag className="text-xl" />
                     </button>
                 </div>
             </div>
