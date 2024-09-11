@@ -1,9 +1,9 @@
 import './App.css'
 
+import Home1 from './component/home1/Home1'
 
-import HeroBottom4 from './component/common/HeroBottom4'
-import ProductSection from './component/home4/ProductSection'
-
+import ShowProduct from './component/common/ShowProduct'
+import Home5 from './component/home5/Home5'
 
 
 
@@ -12,15 +12,12 @@ function App() {
 
 
   return (
+    
+   
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-
-
-
-      {/* <ShowProduct/> */}
-      <ProductSection/>
-    <HeroBottom4/>
-
+      
+     <Home5/>
 
     </div>
 
@@ -29,6 +26,7 @@ function App() {
 
 
   )
+    
 }
 
 export default App

@@ -24,7 +24,7 @@ const ProductCard = ({
         <div
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col bg-white-100  transition duration-200 bg-white hover:border hover:border-primary  green-shadow" >
+            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow" >
             {/* Sale and Best Seller Tags */}
             {/* Sale and Best Seller Tags */}
             <div className="absolute flex space-x-2 top-2 left-2">
@@ -44,23 +44,22 @@ const ProductCard = ({
             {/* ------------ wishlist aur watch icon---------- */}
 
             <div className={`absolute flex flex-col items-center gap-y-3 top-4 right-2 
-                  ${
-                    isHover ? "opacity-100" : "opacity-0"
-                  }
+                  ${isHover ? "opacity-100" : "opacity-0"
+                }
                 `}>
 
-                    {/* ------ wishlist ----- */}
+                {/* ------ wishlist ----- */}
 
-                <Link to="/wishlist" className='grid place-items-center border border-gray-100 xl:text-xl xlg:text-lg sm:text-xl text-lg py-2 px-2 rounded-full cursor-pointer transition-all duration-200 hover:bg-primary hover:text-white-100 hover:border-none'>
+                <Link to="/wishlist" className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <GoHeart />
-                </Link>  
+                </Link>
 
-                 {/* ------- view ------- */}
+                {/* ------- view ------- */}
 
-                 <div className='grid place-items-center  border border-gray-100 xl:text-xl xlg:text-lg sm:text-xl text-lg py-2 px-2 rounded-full cursor-pointer transition-all duration-200 hover:bg-primary hover:text-white-100 hover:border-none'>
-                                    <IoEyeOutline />
-                                </div>
-                 
+                <div className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                    <IoEyeOutline />
+                </div>
+
             </div>
 
 
@@ -78,11 +77,11 @@ const ProductCard = ({
 
                     {/* Product Prices */}
                     <p className="flex gap-3 mt-2 text-lg font-medium text-green-gray-scale-900 ">
-                        ${price} {oldPrice && <span className="text-green-gray-scale-400 line-through">${oldPrice}</span>}
+                        ${price} {oldPrice && <span className="line-through text-green-gray-scale-400">${oldPrice}</span>}
                     </p>
 
                     {/* Rating (Stars) */}
-                    <div className="flex items-center mb-4 mt-2">
+                    <div className="flex items-center mt-2 mb-4">
                         {[...Array(5)].map((_, i) => (
                             <svg
                                 key={i}
