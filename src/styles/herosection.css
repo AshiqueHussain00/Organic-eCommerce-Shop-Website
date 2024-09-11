@@ -1,0 +1,64 @@
+/* Custom styles for Swiper pagination dots */
+.custom-swiper-pagination {
+    display: flex;
+    justify-content: center; /* Center the pagination dots */
+    margin-top: 2rem; /* Optional: Adjust the spacing between the content and pagination */
+    margin-bottom: 1rem; /* Ensure spacing from the bottom */
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet {
+    background-color: #00b200; /* Green color for pagination dots */
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px; /* Add spacing between dots */
+}
+
+.custom-swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #007a00; /* Darker green color for the active dot */
+}
+
+/* Custom styles for Swiper navigation buttons */
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+    background-color: white; /* Default background */
+    color: black; /* Default arrow color */
+    border: 1px solid gray; /* Default border */
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.custom-swiper-button-next:hover,
+.custom-swiper-button-prev:hover {
+    background-color: #00B207; /* Change background on hover */
+    color: white; /* Change arrow color on hover */
+    border-color: #00B207; /* Optional: border color change */
+}
+
+/* Ensure arrow icon color changes on hover */
+.custom-swiper-button-next .fa,
+.custom-swiper-button-prev .fa {
+    transition: color 0.3s ease;
+}
+
+.custom-swiper-button-next:hover .fa,
+.custom-swiper-button-prev:hover .fa {
+    color: white; /* Ensure arrow color changes on hover */
+}
+
+/* Position buttons on the sides */
+.custom-swiper-button-next,
+.custom-swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.custom-swiper-button-next {
+    right: 10px; /* Adjust positioning to your preference */
+}
+
+.custom-swiper-button-prev {
+    left: 10px; /* Adjust positioning to your preference */
+}
