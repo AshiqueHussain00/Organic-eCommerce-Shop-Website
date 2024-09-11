@@ -1,21 +1,13 @@
-import { motion } from 'framer-motion';
-import LimitedProductCard from '../../common/LimitedProductCard';
+import React from 'react'
 import ProductCard from '../../common/ProductCard';
+import { motion } from 'framer-motion';
 import { Link } from "react-router-dom"
 
-const ProductDetails = () => {
-    // Example handlers
+const PopularProducts = () => {
     const handleAddToCart = () => {
         console.log("Add to Cart clicked");
     };
 
-    const handleWishlist = () => {
-        console.log("Add to Wishlist clicked");
-    };
-
-    const handleQuickView = () => {
-        console.log("Quick View clicked");
-    };
 
     const products = [
         {
@@ -98,16 +90,8 @@ const ProductDetails = () => {
             isBestSeller: true,
             saleText: 'Sale 50%',
             bestSellerText: 'Best Seller'
-        },  {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: true,
-            isBestSeller: true,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
         },
+
         {
             imageSrc: 'https://placehold.jp/302x302.png',
             productName: 'Mango',
@@ -118,7 +102,6 @@ const ProductDetails = () => {
             saleText: 'Sale 50%',
             bestSellerText: 'Best Seller'
         },
-
         {
             imageSrc: 'https://placehold.jp/302x302.png',
             productName: 'Mango',
@@ -131,61 +114,28 @@ const ProductDetails = () => {
         },
     ];
 
-    const product = {
-        imageSrc: 'https://placehold.jp/525x466.png',
-        productName: 'Sample Product',
-        price: '29.99',
-        oldPrice: '39.99',
-        rating: 4,
-        feedbackCount: 123,
-        isSale: true,
-        isBestSeller: true,
-        countdownDate: new Date().getTime() + 1000 * 60 * 60 * 24 * 3
-    };
+
 
     // Define the animation
     const cardAnimation = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0 },
     };
-
     return (
-        <section className="relative w-full py-8 pb-10 bg-gray-50">
+        <section className='relative w-full pb-10'>
             <div className='w-10/12 mx-auto'>
                 <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
-                    <h1 className="text-[2rem] font-semibold">Hot Deals</h1>
+                    <h1 className="text-[2rem] font-semibold">Popular Products</h1>
                     <Link className="font-medium text-primary">View All →</Link>
                 </div>
                 <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-                    {/* LimitedProductCard occupies the first two rows of the first column */}
-                    <motion.div
-                        className="xs:col-span-2 xs:row-span-2"
-                        initial="hidden"
-                        animate="visible"
-                        transition={{ duration: 0.5 }}
-                        variants={cardAnimation}
-                    >
-                        <LimitedProductCard
-                            imageSrc={product.imageSrc}
-                            productName={product.productName}
-                            price={product.price}
-                            oldPrice={product.oldPrice}
-                            rating={product.rating}
-                            feedbackCount={product.feedbackCount}
-                            onAddToCart={handleAddToCart}
-                            onWishlist={handleWishlist}
-                            onQuickView={handleQuickView}
-                            isSale={product.isSale}
-                            isBestSeller={product.isBestSeller}
-                            countdownDate={product.countdownDate}
-                        />
-                    </motion.div>
+
 
                     {/* Adjusted Product Cards Layout */}
                     {products.map((product, index) => (
                         <motion.div
                             key={index}
-                            className="mmd:col-span-1"
+                            className=""
                             initial="hidden"
                             animate="visible"
                             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -208,6 +158,7 @@ const ProductDetails = () => {
                 </div>
             </div>
         </section>
-    );
-};
-export default ProductDetails;
+    )
+}
+
+export default PopularProducts

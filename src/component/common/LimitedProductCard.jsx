@@ -49,8 +49,8 @@ const LimitedProductCard = ({
     }, [countdownDate]);
 
     return (
-        <div className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-            <div className="relative flex flex-col items-center transition duration-200 bg-white border-2 border-gray-400 hover:border-primary hover:border-2 ">
+        <div className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white-100">
+            <div className="relative flex flex-col items-center transition duration-200 bg-white border-2 border-white-100 hover:border-primary hover:border-2 ">
 
                 {/* Sale and Best Seller Tags */}
                 <div className="absolute flex space-x-2 top-2 left-2">
@@ -98,7 +98,7 @@ const LimitedProductCard = ({
                 </div>
 
                 {/* Product Name */}
-                <div className="text-center">
+                <div className="text-center ">
                     <h2 className="text-sm font-medium text-gray-500 sm:text-base lg:text-lg">
                         {productName}
                     </h2>
