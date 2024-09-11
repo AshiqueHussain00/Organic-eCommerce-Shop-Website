@@ -1,31 +1,19 @@
+
+
 import './App.css'
-import ProductSection from "./component/home4/ProductSection"
-import Banner from './component/home4/Banner'
-
-
+import Home1 from './component/home1/Home1'
 
 
 function App() {
-
-
   return (
+    
     
    
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-      
-      <ProductSection/>
-      <Banner/>
-   
-  
+    <Home1/>
     </div>
-
-
-
-
-
-  )
-    
+  );
 }
 
-export default App
+export default App;
