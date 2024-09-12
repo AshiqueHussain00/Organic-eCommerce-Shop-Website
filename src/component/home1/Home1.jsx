@@ -7,6 +7,7 @@ import ProductCategory from './home-component/ProductCategory'
 import PopularProducts from './home-component/PopularProducts'
 import FeaturedProducts from './home-component/FeaturedProducts'
 import HomeTestimonial from './home-component/HomeTestimonial'
+import HomeLatestNews from './home-component/HomeLatestNews'
 
 function Home1() {
     return (
@@ -18,6 +19,7 @@ function Home1() {
             <Banners/>
             <ProductDetails />
             <ProductOffer/>
+            <HomeLatestNews/>
             <FeaturedProducts/>
             <HomeTestimonial/>
           
