@@ -3,20 +3,23 @@ import { FaArrowRight, FaCheck } from 'react-icons/fa';
 import BG from '../../../assets/home5/trusted/BG.svg';
 import image1 from '../../../assets/home5/trusted/image1.svg';
 import image2 from '../../../assets/home5/trusted/image2.svg';
+import leaf from '../../../assets/home5/trusted/leaf.svg';
 
 const Trusted = () => {
   return (
     <section>
-      <div className="bg-no-repeat bg-cover bg-left" style={{ backgroundImage: `url(${BG})` }}>
+      <div className="bg-no-repeat bg-contain " style={{ backgroundImage: `url(${BG})` }}>
         <div className="relative w-10/12 p-4 mx-auto gap-4 flex flex-col md:flex-row items-center justify-between">
           {/* Left Section - Images */}
-          <div className="flex flex-col md:flex-row gap-2 w-full md:w-1/2">
-            {/* First Image */}
-            <div className="w-full ">
-              <img src={image1} alt="Farmer holding apples" className="rounded-lg w-full  md:h-full object-cover" />
+          <div className="relative flex flex-col md:flex-row gap-2 w-full md:w-1/2">
+            {/* Container for First Image and Leaf */}
+            <div className="relative mx-auto h-[30%] md:h-[50%]">
+              <img src={image1} alt="Farmer holding apples" className="rounded-lg w-full md:h-full object-cover" />
+              {/* Leaf Image */}
+              <img src={leaf} alt="Leaf decoration" className="absolute bottom-[-40px] left-[-30px] w-16 h-16 md:w-24 md:h-24 object-cover" />
             </div>
-            {/* Second Image */}
-            <div className="w-full">
+            {/* Second Image - Larger on lg and above */}
+            <div className="mx-auto">
               <img src={image2} alt="Person picking apples" className="rounded-lg w-full h-[40vh] md:h-full object-cover" />
             </div>
           </div>

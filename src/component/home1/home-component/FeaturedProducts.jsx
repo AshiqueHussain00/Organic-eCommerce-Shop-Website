@@ -67,65 +67,11 @@ const FeaturedProducts = () => {
   ];
 
   // Define animations for the scroll direction
-  const cardAnimationUp = {
+  const cardAnimation = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0 },
   };
 
-  const cardAnimationDown = {
-    hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
-  };
-
-  // Detect the scroll direction
-  useEffect(() => {
-    let lastScrollTop = window.pageYOffset;
-
-    const handleScroll = () => {
-      const currentScroll = window.pageYOffset;
-
-      if (currentScroll > lastScrollTop) {
-        setScrollDirection('down');
-      } else {
-        setScrollDirection('up');
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative values on scroll up
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  // Use Intersection Observer to detect when the component is in the viewport
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold: 0.2, // Trigger when 20% of the component is visible
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
 
   return (
     <section ref={ref} className="relative w-full pb-10">
@@ -137,26 +83,27 @@ const FeaturedProducts = () => {
         <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {/* Product Cards Layout */}
           {products.map((product, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              animate={isVisible ? 'visible' : 'hidden'} // Trigger animation based on visibility
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              variants={scrollDirection === 'down' ? cardAnimationDown : cardAnimationUp} // Different animation for scroll up/down
-            >
-              <ProductCard
-                imageSrc={product.imageSrc}
-                productName={product.productName}
-                price={product.price}
-                oldPrice={product.oldPrice}
-                rating={product.rating}
-                onAddToCart={() => handleAddToCart(product.productName)}
-                isSale={product.isSale}
-                isBestSeller={product.isBestSeller}
-                saleText={product.saleText}
-                bestSellerText={product.bestSellerText}
-              />
-            </motion.div>
+             <motion.div
+             key={index}
+             className=""
+             initial="hidden"
+             animate="visible"
+             transition={{ duration: 0.5, delay: index * 0.1 }}
+             variants={cardAnimation}
+         >
+             <ProductCard
+                 imageSrc={product.imageSrc}
+                 productName={product.productName}
+                 price={product.price}
+                 oldPrice={product.oldPrice}
+                 rating={product.rating}
+                 onAddToCart={() => handleAddToCart(product.productName)}
+                 isSale={product.isSale}
+                 isBestSeller={product.isBestSeller}
+                 saleText={product.saleText}
+                 bestSellerText={product.bestSellerText}
+             />
+         </motion.div>
           ))}
         </div>
       </div>

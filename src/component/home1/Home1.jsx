@@ -1,5 +1,5 @@
 import ProductDetails from './home-component/ProductDetails'
-import HomeOneHerosection from './home-component/HomeOneHerosection'
+import HomeHerosection from './home-component/HomeHerosection'
 import HeaderBottom from '../common/HeaderBottom'
 import ProductOffer from './home-component/ProductOffer'
 import Banners from '../common/Banners'
@@ -12,7 +12,7 @@ import HomeLatestNews from './home-component/HomeLatestNews'
 function Home1() {
     return (
         <div>
-            <HomeOneHerosection />
+            <HomeHerosection />
             <HeaderBottom/>
             <ProductCategory/>
             <PopularProducts/>

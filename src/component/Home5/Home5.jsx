@@ -17,7 +17,8 @@ import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
 import FeaturedProduct from "../home4/FeaturedProduct";
 import Category from "../common/Category";
-import Trusted from './home5-component/Trusted'
+import Trusted from './home5-component/Trusted';
+import HappyCustomer from "./home5-component/HappyCustomer";
 
 const Home5 = () => {
   // news data
@@ -148,6 +149,10 @@ const Home5 = () => {
           images={instagramImages}
           instagramUrl="https://www.instagram.com/yourprofile"
         />
+
+      </div>
+      <div className="w-full">
+        <HappyCustomer/>
       </div>
     </section>
   );
