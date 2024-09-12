@@ -1,14 +1,14 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
-import '../../styles/swiper.css';
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "../../styles/swiper.css";
 
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import quote from '../../assets/common/Testimonial/quote.svg';
+import quote from "../../assets/common/Testimonial/quote.svg";
 
 // TestimonialCard component to display individual testimonial data
 const TestimonialCard = ({ testimonial }) => {
@@ -28,7 +28,11 @@ const TestimonialCard = ({ testimonial }) => {
       <div className="flex flex-col items-center justify-between p-2 sm:flex sm:items-center md:flex md:flex-row">
         <div className="flex items-center">
           {/* User's Profile Image */}
-          <img src={testimonial.img} alt={testimonial.name} className="w-12 h-12 rounded-full" />
+          <img
+            src={testimonial.img}
+            alt={testimonial.name}
+            className="w-12 h-12 rounded-full"
+          />
 
           {/* User's Name and Role */}
           <div className="ml-4">
@@ -45,7 +49,9 @@ const TestimonialCard = ({ testimonial }) => {
         <div className="flex mt-2 ">
           {/* Display star icons based on rating value */}
           {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
-            <span key={i} className="text-[#FF8A00] text-[1rem] ">★</span>
+            <span key={i} className="text-[#FF8A00] text-[1rem] ">
+              ★
+            </span>
           ))}
         </div>
       </div>
@@ -54,7 +60,13 @@ const TestimonialCard = ({ testimonial }) => {
 };
 
 // Testimonials component that holds the Swiper carousel and controls
-const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rgb(242,242,242)', showHeading = true, autoplay = true }) => {
+const Testimonials = ({
+  testimonialsData = [],
+  showButtons = true,
+  bgColor = "rgb(242,242,242)",
+  showHeading = true,
+  autoplay = true,
+}) => {
   // Swiper configuration settings for slides, breakpoints, and navigation
   const swiperSettings = {
     slidesPerView: 1,
@@ -67,16 +79,18 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
     loop: false, // No infinite looping
     pagination: {
       clickable: true,
-      el: '.custom-swiper-pagination', // Custom pagination class
+      el: ".custom-swiper-pagination", // Custom pagination class
     },
     navigation: {
-      nextEl: '.custom-swiper-button-next', // Custom next button
-      prevEl: '.custom-swiper-button-prev', // Custom previous button
+      nextEl: ".custom-swiper-button-next", // Custom next button
+      prevEl: ".custom-swiper-button-prev", // Custom previous button
     },
-    autoplay: autoplay ? {
-      delay: 5000, // Adjust delay as needed
-      disableOnInteraction: false,
-    } : false, // Autoplay setting
+    autoplay: autoplay
+      ? {
+          delay: 5000, // Adjust delay as needed
+          disableOnInteraction: false,
+        }
+      : false, // Autoplay setting
     modules: [Navigation, Pagination, Autoplay, EffectFade], // Swiper modules for additional features
   };
 
