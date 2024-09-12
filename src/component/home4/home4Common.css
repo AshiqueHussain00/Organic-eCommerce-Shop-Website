@@ -44,3 +44,28 @@
     background-size: cover;
 
   }
+  .video-container .video-react .video-react-big-play-button {
+    display: none; 
+  }
+
+  /* .overlay{
+    background: rgba(0, 0, 0, 0.5);
+  } */
+
+  .video-container {
+    position: relative;
+    border-radius: 15px; /* Set the border radius */
+    overflow: hidden; /* Hide overflow to ensure border radius effect */
+  }
+  
+  .video-container .video-react {
+    width: 100%;
+    height: 100%;
+
+
+  }
+  
+  .video-container .video-react video {
+    border-radius: 16px; 
+  } 
+
