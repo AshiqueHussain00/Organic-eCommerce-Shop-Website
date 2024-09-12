@@ -4,9 +4,10 @@ import ProductSection from '../../home4/ProductSection'
 import Banner from '../../home4/Banner'
 import BestDealSection from '../../home4/BestDealSection'
 import FeaturedProduct from '../../home4/FeaturedProduct'
+import TestimonialSection from '../../home4/TestimonialSection'
 import VideoSection from '../../home4/VideoSection'
 import LatestNewsSection from '../../home4/LatestNewsSection'
-import TestimonialSection from '../../home4/TestimonialSection'
+
 
 const Home4 = () => {
   return (
@@ -16,9 +17,10 @@ const Home4 = () => {
         <Banner/>
         <BestDealSection/>
         <FeaturedProduct/>
+        <TestimonialSection/>
         <VideoSection/>
         <LatestNewsSection/>
-        <TestimonialSection/>
+       
     </div>
   )
 }
