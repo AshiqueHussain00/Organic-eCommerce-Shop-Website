@@ -23,9 +23,11 @@ export default {
      "branding-warning": '#FF8A00',
 
      "green-gray-scale": {
-
+      
+      50 : "#EDF2EE",
       400 : '#7A997C',
       500 : '#618062',
+      600: "#406B42",
        700 : "#2B572E",
        900: '#002603',
      },
