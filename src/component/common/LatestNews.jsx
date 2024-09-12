@@ -15,11 +15,15 @@ const LatestNews = ({ data }) => {
           xs:w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/4 space-x-1"
         >
           <div className="relative">
-            <img
-              src={item.img}
-              alt={`news-${index}`}
-              className="w-full object-cover rounded-lg"
-            />
+            <div className=' overflow-hidden rounded-lg'>
+
+
+              <img
+                src={item.img}
+                alt={`news-${index}`}
+                className="w-full object-cover rounded-lg transition-all duration-700  group-hover:scale-110"
+              />
+            </div> 
             <div className="absolute bg-white-200 bottom-3 left-3 bg-white p-2 w-16 h-auto rounded-md shadow-md">
               <div className="flex flex-col items-center">
                 <span className="text-gray-800 font-bold text-lg">

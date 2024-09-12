@@ -15,7 +15,7 @@ const TestimonialCard = ({ testimonial }) => {
   return (
     <div className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2">
       {/* Quote Icon */}
-      <div className="flex mb-4 text-3xl p-4  text-green-500">
+      <div className="flex p-4 mb-4 text-3xl text-green-500">
         <img src={quote} alt="Quote" />
       </div>
 
@@ -46,7 +46,7 @@ const TestimonialCard = ({ testimonial }) => {
         </div>
 
         {/* User's Star Rating */}
-        <div className="flex  mt-2  ">
+        <div className="flex mt-2 ">
           {/* Display star icons based on rating value */}
           {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
             <span key={i} className="text-[#FF8A00] text-[1rem] ">
@@ -105,10 +105,13 @@ const Testimonials = ({
       <div style={{ backgroundColor: bgColor }}>
         <div className="relative w-10/12 p-10 mx-auto">
           <div className="relative">
+
             {/* Conditionally render Section Title */}
 
             {showHeading && (
+
               <h2 className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal">
+
                 <span className="block ml-2 sm:inline">Client</span>
                 <span className="block ml-2 sm:inline">Testimonials</span>
               </h2>
@@ -116,17 +119,19 @@ const Testimonials = ({
 
             {/* Custom Navigation Buttons for Swiper */}
             {showButtons && (
-              <div className=" absolute flex   space-x-4 transform -translate-y-1/2 top-1/2 right-14">
+              <div className="absolute flex space-x-4 transform -translate-y-1/2  top-1/2 right-14">
                 {/* Left Arrow (Previous) Icon Second */}
                 <button className="custom-swiper-button-prev  p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
-                  <FaArrowRight className="text-xs arrowleft  sm:text-sm md:text-base lg:text-lg hover:text-white" />
+                  <FaArrowRight className="text-xs arrowleft sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
                 {/* Right Arrow (Next) Icon First */}
                 <button className="custom-swiper-button-next right-2 p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
                   <FaArrowLeft className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
+
               </div>
             )}
+
           </div>
 
           {/* Swiper Carousel with Testimonial Cards */}
