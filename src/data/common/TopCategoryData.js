@@ -1,9 +1,9 @@
-import image1 from '../../assets/home3/topCategory/Vegetable.svg'
-import image2 from '../../assets/home3/topCategory/Fruits.svg'
-import image3 from '../../assets/home3/topCategory/Fish.svg'
-import image4 from '../../assets/home3/topCategory/Meat.svg'
-import image5 from '../../assets/home3/topCategory/SoftDrink.svg'
-import image6 from '../../assets/home3/topCategory/Snacks.svg'
+import image1 from '../../assets/common/topCategory/Vegetable.svg'
+import image2 from '../../assets/common/topCategory/Fruits.svg'
+import image3 from '../../assets/common/topCategory/Fish.svg'
+import image4 from '../../assets/common/topCategory/Meat.svg'
+import image5 from '../../assets/common/topCategory/SoftDrink.svg'
+import image6 from '../../assets/common/topCategory/Snacks.svg'
 
 export const TopCategoryData = [
     {

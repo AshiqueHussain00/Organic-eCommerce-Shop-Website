@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
-import { BannerData } from '../../data/home3/BannerData'
+import { BannerData } from '../../data/common/BannerData'
 
 function Banners() {
 
