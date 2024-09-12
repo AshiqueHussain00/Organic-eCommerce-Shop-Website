@@ -3,6 +3,7 @@ import Veg from '../../assets/common/categories/Vege.svg'
 import { useState, useEffect } from 'react'
 import ProductCard from '../common/ProductCard'
 import { useNavigate } from 'react-router-dom'
+import './home4Common.css'
 
 const productData = [
     {
@@ -205,13 +206,13 @@ const ProductSection = () => {
         <section className='w-full relative bg-gray-50 py-40 pb-20'>
 
             {/* --------- container ----------- */}
-            <div className='w-11/12 xmd:w-10/12 mx-auto flex flex-col gap-y-8 items-center border-2 border-green-800'>
+            <div className='w-11/12 xmd:w-10/12 mx-auto flex flex-col gap-y-8 items-center '>
 
-                <h1 className='font-semibold text-[40px] text-center'>Introducing Our Products</h1>
+                <h1 className='font-semibold text-4xl sm:text-[40px] text-center'>Introducing Our Products</h1>
 
                 {/* ------------ category (filter) ------------ */}
 
-                <div className='flex border-2 md:w-[80%] gap-x-12 justify-center'>
+                <div className='flex flex-wrap xs:no-wrap  md:w-[80%] gap-y-4 gap-x-6 sm:gap-x-12 justify-center'>
                     {
                         categories.map((category, index) => (
                             <div onClick={() => setSelectedcategory(category.toLowerCase())} key={index} className={` grid place-items-center px-2 cursor-pointer
@@ -224,7 +225,7 @@ const ProductSection = () => {
                         ))
                     }
 
-                    <div onClick={()=> navigate("/shop") } className={` grid place-items-center px-2 cursor-pointer text-gray-500 leading-8 transition-all duration-200 hover:text-primary
+                    <div onClick={() => navigate("/shop")} className={` grid place-items-center px-2 cursor-pointer text-gray-500 leading-8 transition-all duration-200 hover:text-primary
                         }
                 `}>
                         View All
@@ -236,7 +237,7 @@ const ProductSection = () => {
 
                 {/* -------------- products ----------- */}
 
-                <div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xs:gap-1 gap-2 xlg:grid-cols-4 border-2 border-red-600 w-[95%] xxs:w-[80%] xs:w-full'>
+                <div className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xs:gap-1 gap-2 xlg:grid-cols-4  w-[95%] xxs:w-[80%] xs:w-full'>
 
                     {
                         selectedCategory === "all" ?
