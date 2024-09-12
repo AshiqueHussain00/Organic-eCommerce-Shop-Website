@@ -10,15 +10,16 @@ import post3 from "../../assets/common/followinstagram/post3.svg";
 import post4 from "../../assets/common/followinstagram/post4.svg";
 import post5 from "../../assets/common/followinstagram/post5.svg";
 import post6 from "../../assets/common/followinstagram/post6.svg";
-import Herosection from "./home5-component/Herosection";
+import Herosection from "./home5/Herosection";
 import img1 from "../../assets/common/latestnews/img1.svg";
 import img2 from "../../assets/common/latestnews/img2.svg";
 import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
 import FeaturedProduct from "../home4/FeaturedProduct";
-import Category from "../common/Category";
-import Trusted from './home5-component/Trusted';
-import HappyCustomer from "./home5-component/HappyCustomer";
+
+import Trusted from './home5/Trusted';
+import HappyCustomer from "./home5/HappyCustomer";
+import TopCategory from "../home3/home-component/TopCategory";
 
 const Home5 = () => {
   // news data
@@ -127,7 +128,7 @@ const Home5 = () => {
     <section>
       <Herosection />
       <FeaturedProduct />
-      <Category />
+      <TopCategory/>
 
       <LatestNews data={newsData} />
       <Trusted/>

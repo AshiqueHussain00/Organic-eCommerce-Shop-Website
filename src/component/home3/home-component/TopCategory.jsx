@@ -173,7 +173,7 @@ function TopCategory() {
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <button
           onClick={scrollLeft}
-          className="p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300"
+          className="p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207]  hover:border-[#00B207] transition-colors duration-300"
         >
           <FiArrowLeft className="arrowleft text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
         </button>
@@ -214,7 +214,9 @@ function TopCategory() {
               <li
                 key={item.id}
                 className="flex flex-col items-center justify-center px-2 sm:px-4 py-2 border-2 border-gray-200 
-                w-[160px] h-[170px]  md:w-[170px] md:h-[180px] lg:w-[190px] lg:h-[200px] hover:border-2 hover:border-green-600 hover:shadow-lg transition-all duration-300 cursor-pointer"
+                w-[160px] h-[170px]  md:w-[170px] md:h-[180px] lg:w-[190px] lg:h-[200px] hover:border-2 hover:border-green-600 hover:shadow-[2px_5px_8px_10px_rgba(0,_178,_7,_0.1)]
+
+ transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-center justify-center flex-grow">
                   <img
