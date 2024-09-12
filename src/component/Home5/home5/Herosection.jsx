@@ -93,12 +93,12 @@ const Herosection = () => {
           </Swiper>
 
           {/* Left Navigation Button */}
-          <div className="custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl">
+          <div className="custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
             <FaArrowLeft className="fa" />
           </div>
 
           {/* Right Navigation Button */}
-          <div className="custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl">
+          <div className="custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
             <FaArrowRight className="fa" />
           </div>
 

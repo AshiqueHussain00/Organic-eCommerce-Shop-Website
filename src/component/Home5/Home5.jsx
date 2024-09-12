@@ -20,6 +20,8 @@ import FeaturedProduct from "../home4/FeaturedProduct";
 import Trusted from './home5/Trusted';
 import HappyCustomer from "./home5/HappyCustomer";
 import TopCategory from "../home3/home-component/TopCategory";
+import Steps from "./home5/Steps";
+import Newsletter from "./home5/Newsletter";
 
 const Home5 = () => {
   // news data
@@ -132,7 +134,7 @@ const Home5 = () => {
 
       <LatestNews data={newsData} />
       <Trusted/>
-
+      
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}
@@ -154,6 +156,12 @@ const Home5 = () => {
       </div>
       <div className="w-full">
         <HappyCustomer/>
+      </div>
+      <div>
+        <Steps/>
+      </div>
+      <div>
+      <Newsletter/>
       </div>
     </section>
   );
