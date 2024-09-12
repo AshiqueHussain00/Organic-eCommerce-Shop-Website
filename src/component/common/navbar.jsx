@@ -120,7 +120,7 @@ const Navbar = () => {
                 <div
                   className={`absolute top-full left-0 mt-8 bg-white-200 text-black-900 border-2 p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 dropdown-animation
                     ${
-                      item.title.toLowerCase() === "blog" ? "w-[500px] h-[150px]" : "w-[100px]"
+                      item.title.toLowerCase() === "blog" ? "w-[500px] h-[200px]" : "w-[150px]"
                     }
                   `}
                 >
