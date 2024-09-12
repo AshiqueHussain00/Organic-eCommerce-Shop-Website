@@ -1,9 +1,8 @@
 /* Custom styles for Swiper pagination dots */
 .custom-swiper-pagination {
-    display: flex;
-    justify-content: center; /* Center the pagination dots */
-    margin-top: 2rem; /* Optional: Adjust the spacing between the content and pagination */
-    margin-bottom: 1rem; /* Ensure spacing from the bottom */
+  margin-left: 50%;
+  padding: 10px;
+    position: relative; /* Ensure proper alignment within its container */
 }
 
 .custom-swiper-pagination .swiper-pagination-bullet {
@@ -56,9 +55,28 @@
 }
 
 .custom-swiper-button-next {
-    right: 10px; /* Adjust positioning to your preference */
+    right: 20%; /* Adjust positioning to your preference */
 }
 
 .custom-swiper-button-prev {
-    left: 10px; /* Adjust positioning to your preference */
+    left: 20%; /* Adjust positioning to your preference */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .custom-swiper-button-next,
+    .custom-swiper-button-prev {
+        padding: 8px; /* Smaller padding for smaller screens */
+        font-size: 1.5rem; /* Adjust the icon size */
+        border-width: 1px; /* Thinner border for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-swiper-button-next,
+    .custom-swiper-button-prev {
+        padding: 6px; /* Further smaller padding for very small screens */
+        font-size: 1rem; /* Smaller icon size */
+        border-width: 0.8px; /* Keep border width consistent */
+    }
 }
