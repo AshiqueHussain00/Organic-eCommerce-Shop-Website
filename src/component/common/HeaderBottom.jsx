@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderBottomData } from '../../data/home3/HeaderBottomData';
+import { HeaderBottomData } from '../../data/common/HeaderBottomData';
 
 function HeaderBottom() {
   return (

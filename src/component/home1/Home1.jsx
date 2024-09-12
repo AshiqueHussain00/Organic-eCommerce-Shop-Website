@@ -1,8 +1,8 @@
 import ProductDetails from './home-component/ProductDetails'
 import HomeOneHerosection from './home-component/HomeOneHerosection'
-import HeaderBottom from '../home3/HeaderBottom'
+import HeaderBottom from '../common/HeaderBottom'
 import ProductOffer from './home-component/ProductOffer'
-import Banner from '../../component/home3/Banner'
+import Banners from '../common/Banners'
 import ProductCategory from './home-component/ProductCategory'
 import PopularProducts from './home-component/PopularProducts'
 import FeaturedProducts from './home-component/FeaturedProducts'
@@ -15,7 +15,7 @@ function Home1() {
             <HeaderBottom/>
             <ProductCategory/>
             <PopularProducts/>
-            <Banner/>
+            <Banners/>
             <ProductDetails />
             <ProductOffer/>
             <FeaturedProducts/>

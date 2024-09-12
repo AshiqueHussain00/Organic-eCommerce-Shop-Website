@@ -1,6 +1,6 @@
-import image1 from '../../assets/home3/banner/BestDeals.svg'
-import image3 from '../../assets/home3/banner/SummerSales.svg'
-import image2 from '../../assets/home3/banner/FatFree.svg'
+import image1 from '../../assets/common/banner/BestDeals.svg'  
+import image3 from '../../assets/common/banner/SummerSales.svg'
+import image2 from '../../assets/common/banner/FatFree.svg'
 
 export const BannerData = [
     {
