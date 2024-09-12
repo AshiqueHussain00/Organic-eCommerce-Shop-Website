@@ -37,34 +37,11 @@ const BestDealSection = () => {
         return () => clearInterval(intervalId);
     }, []);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentScrollY = window.scrollY;
-
-            if (currentScrollY > lastScrollY.current) {
-                // Scrolling down - hide section
-                setIsVisible(false);
-            } else {
-                // Scrolling up - show section
-                setIsVisible(true);
-            }
-
-            lastScrollY.current = currentScrollY;
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
+ 
     return (
-        <motion.section
+        <section
             className='relative w-full bg-gray-50'
-            initial={{ opacity: 1, y: 0 }}
-            animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : -100 }} 
-            transition={{ duration: 0.5 }}
+            
         >
             <motion.div 
                 className='flex flex-col items-center justify-center w-11/12 gap-10 pt-10 mx-auto xl:flex-row'
@@ -136,7 +113,7 @@ const BestDealSection = () => {
                     />
                 </motion.div>
             </motion.div>
-        </motion.section>
+        </section>
     );
 };
 
