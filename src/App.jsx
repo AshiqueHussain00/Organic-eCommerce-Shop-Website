@@ -1,19 +1,15 @@
 
 import './App.css'
-
-import Home5 from './component/Home5/Home5';
 import Home4 from './component/page/homepage/home4';
+import Home1 from './component/home1/HOme1';
 
 function App() {
   return (
     
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
 
-     
-<Home4/>
-
-    
-  
+    <Home4/>
+  {/* <Home1/> */}
     </div>
   );
 }
