@@ -18,12 +18,14 @@ export default {
       hard_primary: '#2C742F',
       warning: '#FF8A00',
       danger: '#EA4B48',
+      "light-branding-success" : "#00B207",
      "branding-success": '#2C742F',
      "branding-warning": '#FF8A00',
 
      "green-gray-scale": {
 
       400 : '#7A997C',
+      500 : '#618062',
        700 : "#2B572E",
        900: '#002603',
      },

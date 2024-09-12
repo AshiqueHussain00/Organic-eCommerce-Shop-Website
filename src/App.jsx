@@ -6,9 +6,6 @@ import Home1 from './component/home1/HOme1';
 function App() {
   return (
     
-    
-   
-
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
 
     <HOme4/>
