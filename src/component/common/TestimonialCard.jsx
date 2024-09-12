@@ -101,17 +101,19 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
 
             {/* Custom Navigation Buttons for Swiper */}
             {showButtons && (
-              <div className="absolute flex space-x-2 transform -translate-y-1/2 top-1/2 right-2">
-                <button className="custom-swiper-button-prev p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
-                  {/* Left Arrow Icon */}
-                  <FaArrowLeft className="text-xs arrowleft sm:text-sm md:text-base lg:text-lg hover:text-white" />
-                </button>
-                <button className="arrowright custom-swiper-button-next p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
-                  {/* Right Arrow Icon */}
-                  <FaArrowRight className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
-                </button>
-              </div>
-            )}
+  <div className=" absolute flex   space-x-4 transform -translate-y-1/2 top-1/2 right-14">
+    {/* Left Arrow (Previous) Icon Second */}
+    <button className="custom-swiper-button-prev  p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
+      <FaArrowRight className="text-xs arrowleft  sm:text-sm md:text-base lg:text-lg hover:text-white" />
+    </button>
+    {/* Right Arrow (Next) Icon First */}
+    <button className="custom-swiper-button-next right-2 p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
+      <FaArrowLeft className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
+    </button>
+    
+  </div>
+)}
+
           </div>
 
           {/* Swiper Carousel with Testimonial Cards */}
