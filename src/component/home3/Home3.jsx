@@ -9,11 +9,11 @@ import ClientTestimonials from './home-component/ClientTestimonials'
 function Home3() {
   return (
     <div>
-      <HeaderBottom/>
-      <TopCategory/>
-       <Banners/>
-     <NewestProducts/>
-        <ClientTestimonials/>
+      <HeaderBottom />
+      <TopCategory />
+      <Banners />
+      <NewestProducts />
+      <ClientTestimonials />
     </div>
   )
 }
