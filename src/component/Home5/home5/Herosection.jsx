@@ -82,7 +82,7 @@ const Herosection = () => {
                       <span className="text-[rgb(255,138,0)] font-bold">{slide.sale}</span>
                     </p>
                     <p className="text-gray-600 text-sm">{slide.p}</p>
-                    <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg bg-[rgb(0,178,7)]">
+                    <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg bg-[rgb(0,178,7)] hover:shadow-[2px_4px_6px_8px_rgba(0,_178,_7,_0.1)]">
                       <span className='font-poppins text-white-300'>Shop now</span>
                       <span className='font-poppins text-white-300'><FaArrowRight /></span>
                     </button>

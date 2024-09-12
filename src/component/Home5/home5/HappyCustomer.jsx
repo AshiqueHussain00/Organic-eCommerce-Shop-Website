@@ -45,7 +45,7 @@ const HappyCustomer = () => {
   return (
     <section className="relative ">
       <div className="bg-cover" style={{ backgroundImage: `url(${BG})` }}>
-        <div className="absolute inset-0 bg-black opacity-50 border-2 border-red-600 w-full"></div>
+        <div className="absolute inset-0 bg-black opacity-50  w-full"></div>
         <div className="relative z-10 py-4 w-10/12 mx-auto ">
           <div className="flex  flex-col md:flex-row justify-between items-center rounded-lg shadow-md p-4">
             <div className="text-center p-2 ">

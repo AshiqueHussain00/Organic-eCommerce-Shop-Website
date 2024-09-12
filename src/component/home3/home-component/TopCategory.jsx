@@ -50,7 +50,6 @@
 //     return (
 //       <div  style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
-
 //         <button onClick={scrollLeft} className="p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
 //           {/* Left Arrow Icon */}
 //           <FiArrowLeft className="arrowleft text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
@@ -68,7 +67,6 @@
 //         >
 //           {children}
 //         </div>
-
 
 //         <button onClick={scrollRight} className=" p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
 //           {/* Right Arrow Icon */}
@@ -88,7 +86,7 @@
 //             {TopCategoryData.map((item) => (
 //               <li
 //                 key={item.id}
-//                 className="flex flex-col items-center justify-center  px-2 sm:px-4 py-2 border-2 border-gray-200 
+//                 className="flex flex-col items-center justify-center  px-2 sm:px-4 py-2 border-2 border-gray-200
 //                 w-[150px] h-[160px] sm:w-[140px] sm:h-[180px] md:w-[150px] md:h-[180px] lg:w-[190px] lg:h-[200px] hover:border-2 hover:border-green-600 hover:shadow-lg transition-all duration-300 cursor-pointer" // Responsive width and height
 //               >
 //                 <div className="flex items-center justify-center flex-grow">
@@ -114,13 +112,12 @@
 //     </section>
 //   );
 
-
 // }
 // export default TopCategory;
 
-import React, { useRef, useEffect } from 'react';
-import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-import { TopCategoryData } from '../../../data/common/TopCategoryData';
+import React, { useRef, useEffect } from "react";
+import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import { TopCategoryData } from "../../../data/common/TopCategoryData";
 
 function TopCategory() {
   const ScrollableContainer = ({ children, isLoading }) => {
@@ -134,12 +131,12 @@ function TopCategory() {
 
       const container = scrollContainerRef.current;
       if (container) {
-        container.addEventListener('scroll', handleScroll);
+        container.addEventListener("scroll", handleScroll);
       }
 
       return () => {
         if (container) {
-          container.removeEventListener('scroll', handleScroll);
+          container.removeEventListener("scroll", handleScroll);
         }
       };
     }, []);
@@ -148,7 +145,7 @@ function TopCategory() {
       const container = scrollContainerRef.current;
       if (container) {
         const scrollAmount = window.innerWidth < 640 ? 120 : 160; // Adjust scroll amount for smaller screens
-        container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
       }
     };
 
@@ -156,21 +153,35 @@ function TopCategory() {
       const container = scrollContainerRef.current;
       if (container) {
         const scrollAmount = window.innerWidth < 640 ? 120 : 160; // Adjust scroll amount for smaller screens
-        container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        container.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
     };
 
     if (isLoading) {
       return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '50px' }}>
-          <div className="spinner"></div> {/* Custom spinner or use a library */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: "50px",
+          }}
+        >
+          <div className="spinner"></div>{" "}
+          {/* Custom spinner or use a library */}
           <p>Loading..</p>
         </div>
       );
     }
 
     return (
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
         <button
           onClick={scrollLeft}
           className="p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207]  hover:border-[#00B207] transition-colors duration-300"
@@ -181,11 +192,11 @@ function TopCategory() {
         <div
           ref={scrollContainerRef}
           style={{
-            display: 'flex',
-            overflowX: 'auto',
-            gap: '1rem',
-            whiteSpace: 'nowrap',
-            scrollbarWidth: 'none', // Hide scrollbar on Firefox
+            display: "flex",
+            overflowX: "auto",
+            gap: "1rem",
+            whiteSpace: "nowrap",
+            scrollbarWidth: "none", // Hide scrollbar on Firefox
           }}
           className="hide-scrollbar" // Add a custom class for hiding the scrollbar
         >
@@ -206,7 +217,9 @@ function TopCategory() {
     <section>
       <div className="w-10/12 sm:w-11/12 mx-auto pt-5 pb-10">
         <div className="pt-10 pb-10 flex justify-center">
-          <h1 className="text-[2rem] text-center font-semibold">Top Category</h1>
+          <h1 className="text-[2rem] text-center font-semibold">
+            Top Category
+          </h1>
         </div>
         <ScrollableContainer>
           <ul className=" flex items-center justify-center gap-5 p-2">
@@ -214,9 +227,7 @@ function TopCategory() {
               <li
                 key={item.id}
                 className="flex flex-col items-center justify-center px-2 sm:px-4 py-2 border-2 border-gray-200 
-                w-[160px] h-[170px]  md:w-[170px] md:h-[180px] lg:w-[190px] lg:h-[200px] hover:border-2 hover:border-green-600 hover:shadow-[2px_5px_8px_10px_rgba(0,_178,_7,_0.1)]
-
- transition-all duration-300 cursor-pointer"
+                w-[160px] h-[170px]  md:w-[170px] md:h-[180px] lg:w-[190px] lg:h-[200px] hover:border-2 hover:border-green-600 hover:shadow-[2px_5px_8px_10px_rgba(0,_178,_7,_0.1)] transition-all duration-300 cursor-pointer"
               >
                 <div className="flex items-center justify-center flex-grow">
                   <img
@@ -226,8 +237,12 @@ function TopCategory() {
                   />
                 </div>
                 <div className="flex flex-col items-center">
-                  <h3 className="text-center text-sm sm:text-base font-medium">{item.title}</h3>
-                  <p className="text-center text-xs sm:text-sm text-gray-500">{item.description}</p>
+                  <h3 className="text-center text-sm sm:text-base font-medium">
+                    {item.title}
+                  </h3>
+                  <p className="text-center text-xs sm:text-sm text-gray-500">
+                    {item.description}
+                  </p>
                 </div>
               </li>
             ))}
@@ -239,5 +254,3 @@ function TopCategory() {
 }
 
 export default TopCategory;
-
-
