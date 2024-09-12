@@ -20,6 +20,7 @@
 
   .custom-swiper-button-next,
 .custom-swiper-button-prev {
+  
   background-color: white; /* Default background */
   color: black; /* Default arrow color */
   border: 1px solid gray; /* Default border */

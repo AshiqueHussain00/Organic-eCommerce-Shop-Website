@@ -5,6 +5,11 @@ import { CiSearch } from "react-icons/ci";
 import { PiPhoneCallLight } from "react-icons/pi";
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoHeartOutline } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
+import { IoReorderThreeOutline } from "react-icons/io5";
+
+//import someModule from 'some-module';
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,10 +21,34 @@ const Navbar = () => {
   return (
     <>
       {/* Store Location */}
-      <div className="flex justify-left items-center px-4 py-2 bg-white-100">
-        <FaMapMarkerAlt className="mr-2" />
-        <span>Store location: Lincoln-344, Illinois, Chicago, USA</span>
+   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div className="flex items-center justify-between h-16">
+    <div className="flex items-center">
+      <CiLocationOn size={24} className="mr-2" />
+      <span>Store location: Lincoln-344, Illinois, Chicago, USA</span>
+    </div>
+    <div className="flex space-x-4">
+      {/* Currency Dropdown */}
+     
+      {/* Language Dropdown */}
+      <div className="relative">
+        <select className="px-2 py-1 bg-white-100">
+          <option value="en">Eng</option>
+          <option value="hn">Hin</option>
+          
+        </select>
       </div>
+       <div className="relative">
+        <select className="px-2 py-1 bg-white-100">
+          <option value="usd">USD</option>
+          <option value="inr">INR</option>
+          
+        </select>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Horizontal Line */}
       <hr className="border-t-1 border-gray-200 my-4" />
@@ -28,8 +57,8 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center">
-              <img src="/path/to/logo.png" alt="Logo" className="h-10" />
+            <div className="flex items-left">
+              <img src="/public/logo.svg" alt="Logo" className="h-10" />
             </div>
 
             {/* Search Bar */}
@@ -38,14 +67,14 @@ const Navbar = () => {
                   <CiSearch className="text-gray-900 text-3xl mr-2" />
     
                     {/* Input field */}
-                      <input 
+                      <input  
                    type="text" 
                  placeholder="Search" 
-                    className="w-full p-2 text-black rounded-md focus:outline-none" 
+                    className="w-full text-black rounded-md focus:outline-none" 
               />
 
             {/* Search Button */}
-                 <button className="bg-primary text-white px-4 py-2 rounded-md ml-2">
+                 <button className="bg-primary text-white px-4 py-2 rounded-md ">
                   Search
              </button>
                   </div>
@@ -71,48 +100,70 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="bg-gray-800 text-white-100 px-2">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="hidden md:flex space-x-16 items-center justify-between">
-              {/* Left-side links */}
-              <div className="flex space-x-6">
-                {navData.map((item) => (
-                  <div key={item.id} className="group relative">
-                    <a href={item.path || '#'} className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-xl flex items-center">
-                      {item.title}
-                      {item.dropdown && <FaChevronDown className="ml-2" />}
-                    </a>
-                    {item.dropdown && (
-                     <div className="absolute left-0 mt-2 w-48 bg-white-500 text-black-900 rounded-md shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                     {/* Dropdown items */}
-                     {item.dropdown.map((dropdownItem) => (
-                       <a key={dropdownItem.id} href={dropdownItem.path || '#'} className="block px-4 py-2 text-sm hover:bg-gray-100 flex items-center">
-                         {dropdownItem.icon && <span className="mr-2">{dropdownItem.icon}</span>}
-                         {dropdownItem.title}
-                       </a>
-                     ))}
-                   </div>
-                   
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Right-side Icons */}
-              <div className="flex space-x-4">
-                <a href="/wishlist" className="text-white hover:bg-gray-700 p-2 rounded-full">
-                  <IoHeartOutline size={24} />
-                </a>
-                <a href="/cart" className="text-white hover:bg-gray-700 p-2 rounded-full">
-                  <HiOutlineShoppingBag  size={24} />
-                </a>
-                <a href="/account" className="text-white hover:bg-gray-700 p-2 rounded-full">
-                  <FaRegUser size={24} />
-                </a>
-              </div>
-            </div>
+        <nav className=" relative w-11/12 mx-auto bg-gray-800 text-white-100 mt-4 max-w-7xl mx-auto px-4 sm:px-6 h-16">
+      <div className="hidden lg:flex space-x-20 items-center justify-between h-full">
+        {/* Left-side links */}
+        <div className="flex space-x-6">
+          <div className="h-full bg-primary flex items-center justify-center">
+            <IoReorderThreeOutline size={34} />
           </div>
-        </nav>
+          {navData.map((item) => (
+            <div key={item.id} className="group relative">
+              <a
+                href={item.path || '#'}
+                className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-md flex items-center"
+              >
+                {item.title}
+                {item.dropdown && <FaChevronDown className="ml-2" />}
+              </a>
+              {item.dropdown && (
+                <div
+                  className={`absolute top-full left-0 mt-8 bg-white-200 text-black-900 border-2 p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 dropdown-animation
+                    ${
+                      item.title.toLowerCase() === "blog" ? "w-[500px] h-[200px]" : "w-[150px]"
+                    }
+                  `}
+                >
+                  <div
+                    className={`${
+                      item.title.toLowerCase() === "blog" ? "grid grid-cols-4 gap-1 justify-center items-center" : ""
+                    }`}
+                  >
+                    {item.dropdown.map((dropdownItem) => (
+                      <div key={dropdownItem.id} className="flex items-center mr-4">
+                        {item.title.toLowerCase() === "blog" ? (
+                          <img
+                            src={dropdownItem.image}
+                            alt={dropdownItem.title}
+                            className="w-24 h-24 object-cover"
+                          />
+                        ) : (
+                          ""
+                        )}
+                        <span className="ml-2">{dropdownItem.title}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Right-side Icons */}
+        <div className="flex space-x-4">
+          <a href="/wishlist" className="text-white hover:bg-gray-700 p-2 rounded-full">
+            <IoHeartOutline size={24} />
+          </a>
+          <a href="/cart" className="text-white hover:bg-gray-700 p-2 rounded-full">
+            <HiOutlineShoppingBag size={24} />
+          </a>
+          <a href="/account" className="text-white hover:bg-gray-700 p-2 rounded-full">
+            <FaRegUser size={24} />
+          </a>
+        </div>
+      </div>
+    </nav>
 
         {/* Mobile Menu */}
         {isOpen && (
