@@ -81,12 +81,12 @@ function TopCategory() {
     <section>
       <div className="w-11/12 mx-auto p-4">
         <ScrollableContainer>
-          <ul className="flex flex-wrap smd:flex-nowrap  smd:flex-row justify-center gap-4 mx-8">
+          <ul className="flex items-center justify-center gap-5 mx-5 p-2">
             {TopCategoryData.map((item) => (
               <li
                 key={item.id}
-                className="flex flex-col items-center justify-between px-4 py-2 border-2 border-gray-200 
-                w-[160px] h-[180px] sm:w-[140px] sm:h-[180px] md:w-[150px] md:h-[180px] lg:w-[150px] lg:h-[180px] hover:border-2 hover:border-green-600 hover:shadow-lg transition-all duration-300 cursor-pointer" // Responsive width and height
+                className="flex flex-col items-center justify-center  px-2 sm:px-4 py-2 border-2 border-gray-200 
+                w-[140px] h-[150px] sm:w-[140px] sm:h-[180px] md:w-[150px] md:h-[180px] lg:w-[150px] lg:h-[180px] hover:border-2 hover:border-green-600 hover:shadow-lg transition-all duration-300 cursor-pointer" // Responsive width and height
               >
                 <div className="flex items-center justify-center flex-grow">
                   <img
@@ -114,3 +114,6 @@ function TopCategory() {
 
 }
 export default TopCategory;
+
+
+
