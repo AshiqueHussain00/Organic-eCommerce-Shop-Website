@@ -91,9 +91,13 @@ const Testimonials = ({ testimonialsData = [], showButtons = true, bgColor = 'rg
       <div style={{ backgroundColor: bgColor }}>
         <div className="relative w-10/12 p-10 mx-auto">
           <div className="relative">
+            
             {/* Conditionally render Section Title */}
+
             {showHeading && (
+              
               <h2 className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal">
+                
                 <span className="block ml-2 sm:inline">Client</span>
                 <span className="block ml-2 sm:inline">Testimonials</span>
               </h2>

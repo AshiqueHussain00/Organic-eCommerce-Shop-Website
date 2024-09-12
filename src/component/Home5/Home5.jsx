@@ -17,6 +17,8 @@ import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
 import FeaturedProduct from "../home4/FeaturedProduct";
 import Category from "../common/Category";
+import Trusted from './home5-component/Trusted'
+
 const Home5 = () => {
   // news data
 
@@ -127,6 +129,7 @@ const Home5 = () => {
       <Category />
 
       <LatestNews data={newsData} />
+      <Trusted/>
 
       {/* Existing Testimonials Component */}
       <TestimonialCard
