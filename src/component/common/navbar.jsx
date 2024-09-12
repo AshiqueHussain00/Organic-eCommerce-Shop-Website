@@ -7,6 +7,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { IoHeartOutline } from "react-icons/io5";
 import { CiLocationOn } from "react-icons/ci";
 import { IoReorderThreeOutline } from "react-icons/io5";
+
 //import someModule from 'some-module';
 
 
@@ -99,7 +100,7 @@ const Navbar = () => {
         </div>
 
         {/* Desktop Menu */}
-        <nav className="bg-gray-800 text-white-100 mt-4 max-w-7xl mx-auto px-4 sm:px-6 h-16">
+        <nav className=" relative w-11/12 mx-auto bg-gray-800 text-white-100 mt-4 max-w-7xl mx-auto px-4 sm:px-6 h-16">
       <div className="hidden lg:flex space-x-20 items-center justify-between h-full">
         {/* Left-side links */}
         <div className="flex space-x-6">
@@ -116,41 +117,30 @@ const Navbar = () => {
                 {item.dropdown && <FaChevronDown className="ml-2" />}
               </a>
               {item.dropdown && (
-                <div className={`absolute center-0 mt-4 bg-white text-black-900 border-2 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                <div
+                  className={`absolute top-full left-0 mt-8 bg-white-200 text-black-900 border-2 p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 z-50 dropdown-animation
                     ${
-                    item.title.toLowerCase() === "blog" ? "w-[500px] h-[150px]": "w-[100px]"
-                  }
-                `}>
-                  <div className={`
-                  ${
-                    item.title.toLowerCase() === "blog" ? "grid grid-cols-4 gap-1 justify-center items-center": ""
-                  }
-                    `}>
+                      item.title.toLowerCase() === "blog" ? "w-[500px] h-[150px]" : "w-[100px]"
+                    }
+                  `}
+                >
+                  <div
+                    className={`${
+                      item.title.toLowerCase() === "blog" ? "grid grid-cols-4 gap-1 justify-center items-center" : ""
+                    }`}
+                  >
                     {item.dropdown.map((dropdownItem) => (
-                      <div key={dropdownItem.id}>
-                          
-                      {
-                        item.title.toLowerCase() === "all categories" ? (<p></p>) : ( <span>   </span>)
-                      }
-            
-                      <a
-                      
-                        href={dropdownItem.path || '#'}
-                        className="flex items-center mt-2"
-                      >
-                        
-                        {
-                          item.title.toLowerCase() === "blog" ? (
-                        <img
-                          src={dropdownItem.image}
-                          alt={dropdownItem.title}
-                          className="w-24 h-24 object-cover"
-                        />
-                          ):""
-                        }
-                        
-                        <span>{dropdownItem.title}</span>
-                      </a>
+                      <div key={dropdownItem.id} className="flex items-center mr-4">
+                        {item.title.toLowerCase() === "blog" ? (
+                          <img
+                            src={dropdownItem.image}
+                            alt={dropdownItem.title}
+                            className="w-24 h-24 object-cover"
+                          />
+                        ) : (
+                          ""
+                        )}
+                        <span className="ml-2">{dropdownItem.title}</span>
                       </div>
                     ))}
                   </div>
