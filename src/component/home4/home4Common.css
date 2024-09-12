@@ -1,0 +1,46 @@
+
+
+/* --------ProductSection-------- */
+
+.underline-custom {
+    position: relative;
+    display: inline-block;
+  }
+
+.underline-custom::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    background-color: #00B207;
+    bottom: -2px; /* Adjust this value for spacing between text and underline */
+    width: 100%;
+    height: 2px; /* Adjust this value for the thickness of the underline */
+ 
+  }
+
+  /* ---------- Banner --------- */
+
+  .milk-bg{
+    background-image: url('../../assets/home4/milk.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+  }
+
+  .drink-bg{
+    background-image: url('../../assets/home4/drinks.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }
+
+  .breakfast-bg{
+
+    background-image: url('../../assets/home4/breakfast.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+  }

@@ -1,10 +1,9 @@
 
 import './App.css'
-import HeaderBottom from './component/home3/headerBottom'
-import TopCategory from './component/home3/TopCategory'
-import Home5 from './component/Home5/Home5'
-import Banner from './component/home3/Banner'
-
+import ProductSection from './component/home4/ProductSection';
+import Banner from './component/home4/Banner';
+import Banners from './component/home3/Banners';
+import FeaturedProduct from './component/home4/FeaturedProduct';
 
 
 function App() {
@@ -14,11 +13,11 @@ function App() {
    
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-    
-      {/* <Home5/> */}
-      {/* <TopCategory/> */}
+
+      <ProductSection/>
+      <Banners/>
       <Banner/>
-      
+      <FeaturedProduct/>
   
     </div>
   );

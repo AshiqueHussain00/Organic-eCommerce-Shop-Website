@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import arrow from '../../assets/home3/banner/Arrow.svg'
+import { FaArrowRight } from "react-icons/fa6";
 import { BannerData } from '../../data/home3/BannerData'
 
-function Banner() {
+function Banners() {
 
     const [days, setDays] = useState('00');
     const [hours, setHours] = useState('00');
@@ -26,7 +26,7 @@ function Banner() {
     }, []);
     return (
         <section>
-            <div className="w-10/12 xmd:w-11/12 mx-auto bg-white-100">
+            <div className="w-10/12 pt-5 pb-10 mx-auto xmd:w-11/12 bg-white-100">
                 <ul className="flex flex-row flex-wrap items-center justify-center gap-6 p-2 xxs:p-4">
 
 
@@ -48,8 +48,8 @@ function Banner() {
                             </h3>
 
                             {item.id === 1 && (
-                                <div className="text-gray-100 text-center">
-                                    <div className="text-xl sm:text-2xl md:text-3xl font-normal flex justify-center gap-2 sm:gap-4">
+                                <div className="text-center text-gray-100">
+                                    <div className="flex justify-center gap-2 text-xl font-normal sm:text-2xl md:text-3xl sm:gap-4">
                                         <div className="flex flex-col items-center">
                                             <span>{days}</span>
                                             <span className="text-[10px] sm:text-xs">DAYS</span>
@@ -74,27 +74,27 @@ function Banner() {
                             )}
 
                             {item.id === 2 && (
-                                <h3 className="text-gray-100 text-center text-sm sm:text-base md:text-lg font-medium">
+                                <h3 className="text-sm font-medium text-center text-gray-100 sm:text-base md:text-lg">
                                     {item.heading3_1}
-                                    <span className="text-warning ml-1 sm:ml-2 font-semibold">{item.heading3_2}</span>
+                                    <span className="ml-1 font-semibold text-warning sm:ml-2">{item.heading3_2}</span>
                                 </h3>
                             )}
 
                             {item.id === 3 && (
-                                <h3 className="text-black-900 text-center text-sm sm:text-base md:text-lg font-semibold">
+                                <h3 className="text-sm font-semibold text-center text-black-900 sm:text-base md:text-lg">
                                     {item.heading3_1}
-                                    <span className="text-yellow-50 p-2 rounded-md font-semibold ml-1 sm:ml-2 bg-black-900">
+                                    <span className="p-2 ml-1 font-semibold rounded-md text-yellow-50 sm:ml-2 bg-black-900">
                                         {item.heading3_2}
                                     </span>
                                 </h3>
                             )}
 
                             <div className="flex items-center justify-center mt-4 sm:mt-5 md:mt-6">
-                                <button className="flex items-center text-xs sm:text-sm bg-white-100 px-3 py-2 sm:px-5 sm:py-3 rounded-3xl font-bold text-green-600">
+                                <button className='flex gap-x-2 mmd:gap-x-1 lg:gap-x-3 items-center font-semibold bg-white-100 text-primary transition-all duration-200  hover:text-white-100 hover:bg-primary lg:px-5 mmd:px-3 px-4 py-2 rounded-3xl'>
+
                                     Shop Now
-                                    <span className="ml-2">
-                                        <img src={arrow} alt="arrow" />
-                                    </span>
+                                    <FaArrowRight />
+
                                 </button>
                             </div>
                         </li>
@@ -109,4 +109,4 @@ function Banner() {
     )
 }
 
-export default Banner
+export default Banners;

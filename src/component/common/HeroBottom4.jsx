@@ -4,24 +4,28 @@ import { HeaderBottomData } from '../../data/home3/HeaderBottomData';
 function HeroBottom4() {
     return (
         <section>
-            <div className="w-full xmd:w-10/12 mx-auto  bg-white-200 text-black-800">
+            <div className="w-11/12 mx-auto xmd:w-9/12 bg-white-200 text-black-800">
 
-                <ul className="xxl:w-full flex items-center flex-wrap justify-center p-4 gap-4 sm:gap-6 md:gap-0">
-                    {HeaderBottomData.map((item, index) => (
-                        <li
-                            key={item.id}
-                            className={`flex flex-col items-center justify-center xxl:items-start gap-3 p-2 hover:bg-primary hover:rounded-md focus:text-white-200 cursor-pointer group`}
-                        >
-                            <div>
-                                <img src={item.image} className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 group-hover:bg-transparent" alt={item.title}></img>
-                            </div>
+                <ul className="flex flex-wrap items-center justify-center gap-4 p-4 border rounded-lg shadow-xl xxl:w-full sm:gap-6 md:gap-0">
+                    {HeaderBottomData.map((item, index) => {
+                        const IconComponent = item.icon;
+                        return (
+                            <li
+                                key={index}
+                                className={`flex flex-col items-center justify-center xxl:items-start gap-3 p-4 hover:bg-primary hover:rounded-md focus:text-white-200 cursor-pointer group`}
+                            >
+                                <div className="flex items-center justify-center w-16 h-16 transition-all duration-300 ease-in-out border-2 rounded-full bg-gray-50 ">
+                                    {/* Render icon as a component */}
+                                    <IconComponent className="text-2xl transition-colors duration-300 ease-in-out text-primary " />
+                                </div>
 
-                            <div className="text-center xxl:text-start">
-                                <h4 className="text-gray-800 text-sm sm:text-base md:text-lg items-center font-semibold group-hover:text-white-200">{item.title}</h4>
-                                <p className="text-gray-500 text-xs sm:text-sm md:text-base font-normal group-hover:text-white-200">{item.description}</p>
-                            </div>
-                        </li>
-                    ))}
+                                <div className="text-center xxl:text-start">
+                                    <h4 className="items-center text-sm font-semibold text-gray-800 sm:text-base md:text-lg group-hover:text-white-200">{item.title}</h4>
+                                    <p className="text-xs font-normal text-gray-500 sm:text-sm md:text-base group-hover:text-white-200">{item.description}</p>
+                                </div>
+                            </li>
+                        )
+                    })}
                 </ul>
 
 
