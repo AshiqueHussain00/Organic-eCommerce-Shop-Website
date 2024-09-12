@@ -15,7 +15,8 @@ import img1 from '../../assets/common/latestnews/img1.svg'
 import img2 from '../../assets/common/latestnews/img2.svg'
 import img3 from '../../assets/common/latestnews/img3.svg'
 import img4 from '../../assets/common/latestnews/img4.svg'
-
+import FeaturedProduct from '../home4/FeaturedProduct';
+import Category from '../common/Category';
 const Home5 = () => {
   const newsData = [
     {
@@ -107,6 +108,9 @@ const Home5 = () => {
     <section>
       
 <Herosection/>
+       <FeaturedProduct/>
+       <Category/>
+
        
        <LatestNews data={newsData}/>
 

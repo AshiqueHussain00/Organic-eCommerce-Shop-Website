@@ -13,14 +13,14 @@ import quote from '../../assets/common/Testimonial/quote.svg';
 // TestimonialCard component to display individual testimonial data
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="bg-white bg-[rgb(252,252,252)] p-4 rounded-lg shadow-lg mx-2">
+    <div className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2">
       {/* Quote Icon */}
-      <div className="flex mb-4 text-3xl text-green-500">
+      <div className="flex mb-4 text-3xl p-4  text-green-500">
         <img src={quote} alt="Quote" />
       </div>
 
       {/* Testimonial Compliment Text */}
-      <p className="text-[#585757] text-[0.7rem] sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] font-poppins mb-4">
+      <p className="text-[#585757] text-center text-[0.7rem] p-3 sm:text-[0.8rem] md:text-[0.8rem] lg:text-[1rem] font-poppins mb-4">
         {testimonial.compliment}
       </p>
 
@@ -32,20 +32,20 @@ const TestimonialCard = ({ testimonial }) => {
 
           {/* User's Name and Role */}
           <div className="ml-4">
-            <h4 className="font-bold text-gray-800 text-[0.8rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.1rem]">
+            <h4 className="font-bold text-gray-800 text-[0.6rem] sm:text-[0.7rem] md:text-[0.9rem] lg:text-[1rem]">
               {testimonial.name}
             </h4>
-            <span className="text-gray-500 text-[0.8rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.1rem]">
+            <span className="text-gray-500 text-[0.6rem] sm:text-[0.7rem] md:text-[0.9rem] lg:text-[1rem]">
               {testimonial.role}
             </span>
           </div>
         </div>
 
         {/* User's Star Rating */}
-        <div className="flex mt-4">
+        <div className="flex  mt-2  ">
           {/* Display star icons based on rating value */}
           {[...Array(Math.floor(testimonial.rating))].map((_, i) => (
-            <span key={i} className="text-[#FF8A00] text-xl">★</span>
+            <span key={i} className="text-[#FF8A00] text-[1rem] ">★</span>
           ))}
         </div>
       </div>
