@@ -1,8 +1,8 @@
 
-
 import './App.css'
 import ProductSection from './component/home4/ProductSection';
 import Banner from './component/home4/Banner';
+import Banners from './component/common/Banners';
 import FeaturedProduct from './component/home4/FeaturedProduct';
 
 

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import arrow from '../../assets/home3/banner/Arrow.svg'
+import { FaArrowRight } from "react-icons/fa6";
 import { BannerData } from '../../data/home3/BannerData'
 
-function Banner() {
+function Banners() {
 
     const [days, setDays] = useState('00');
     const [hours, setHours] = useState('00');
     const [minutes, setMinutes] = useState('00');
     const [seconds, setSeconds] = useState('00');
 
-    const deadline = "September, 11, 2024";
+    const deadline = "September, 25, 2024";
 
     const getTime = () => {
         const time = Date.parse(deadline) - Date.now();
@@ -90,11 +90,11 @@ function Banner() {
                             )}
 
                             <div className="flex items-center justify-center mt-4 sm:mt-5 md:mt-6">
-                                <button className="flex items-center px-3 py-2 text-xs font-bold text-green-600 sm:text-sm bg-white-100 sm:px-5 sm:py-3 rounded-3xl">
+                                <button className='flex gap-x-2 mmd:gap-x-1 lg:gap-x-3 items-center font-semibold bg-white-100 text-primary transition-all duration-200  hover:text-white-100 hover:bg-primary lg:px-5 mmd:px-3 px-4 py-2 rounded-3xl'>
+
                                     Shop Now
-                                    <span className="ml-2">
-                                        <img src={arrow} alt="arrow" />
-                                    </span>
+                                    <FaArrowRight />
+
                                 </button>
                             </div>
                         </li>
@@ -109,4 +109,4 @@ function Banner() {
     )
 }
 
-export default Banner
+export default Banners;
