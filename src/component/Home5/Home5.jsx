@@ -11,7 +11,7 @@ import post4 from "../../assets/common/followinstagram/post4.svg";
 import post5 from "../../assets/common/followinstagram/post5.svg";
 import post6 from "../../assets/common/followinstagram/post6.svg";
 import Herosection from "./home5/Herosection";
-import img1 from "../../assets/common/latestnews/img1.svg";
+import newsBG from '../../assets/common/latestnews/newsBG.svg'
 import img2 from "../../assets/common/latestnews/img2.svg";
 import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
@@ -132,11 +132,14 @@ const Home5 = () => {
       <FeaturedProduct />
       <TopCategory/>
 
-      <div className="">
-       <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
-        <h1 className="text-center text-4xl font-[600] font-poppins">Latest News</h1>
+      <div
+      className="bg-cover  bg-no-repeat"
+      style={{ backgroundImage: `url(${newsBG})` }}
+    >
+      <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
+      <h1 className="text-center text-4xl font-[600] font-poppins">Latest News</h1>
       <LatestNews data={newsData} />
-      </div>
+    </div>
       <Trusted/>
       
       {/* Existing Testimonials Component */}

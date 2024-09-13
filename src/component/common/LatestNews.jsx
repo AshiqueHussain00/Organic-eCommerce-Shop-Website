@@ -7,11 +7,11 @@ import { FaArrowRight } from "react-icons/fa";
 
 const LatestNews = ({ data }) => {
   return (
-    <div className="latest-news w-10/12   mx-auto  flex flex-wrap ">
+    <div className="latest-news w-10/12 mx-auto  flex flex-wrap ">
       {data.map((item, index) => (
         <div
           key={index}
-          className="news-item flex flex-col  mx-auto m-4 border p-4 rounded-lg shadow-md
+          className="news-item  bg-white-200 flex flex-col  mx-auto m-4 border p-4 rounded-lg shadow-md
           xs:w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/4 xxl:w-1/4 space-x-1"
         >
           <div className="relative">
