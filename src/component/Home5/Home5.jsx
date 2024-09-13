@@ -10,13 +10,19 @@ import post3 from "../../assets/common/followinstagram/post3.svg";
 import post4 from "../../assets/common/followinstagram/post4.svg";
 import post5 from "../../assets/common/followinstagram/post5.svg";
 import post6 from "../../assets/common/followinstagram/post6.svg";
-import Herosection from "./home5-component/Herosection";
-import img1 from "../../assets/common/latestnews/img1.svg";
+import Herosection from "./home5/Herosection";
+import newsBG from '../../assets/common/latestnews/newsBG.svg'
 import img2 from "../../assets/common/latestnews/img2.svg";
 import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
 import FeaturedProduct from "../home4/FeaturedProduct";
-import Category from "../common/Category";
+import '../../index.css'
+import Trusted from './home5/Trusted';
+import HappyCustomer from "./home5/HappyCustomer";
+import TopCategory from "../home3/home-component/TopCategory";
+import Steps from "./home5/Steps";
+import Newsletter from "./home5/Newsletter";
+
 const Home5 = () => {
   // news data
 
@@ -124,10 +130,18 @@ const Home5 = () => {
     <section>
       <Herosection />
       <FeaturedProduct />
-      <Category />
+      <TopCategory/>
 
+      <div
+      className="bg-cover  bg-no-repeat"
+      style={{ backgroundImage: `url(${newsBG})` }}
+    >
+      <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
+      <h1 className="text-center text-4xl font-[600] font-poppins">Latest News</h1>
       <LatestNews data={newsData} />
-
+    </div>
+      <Trusted/>
+      
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}
@@ -145,6 +159,16 @@ const Home5 = () => {
           images={instagramImages}
           instagramUrl="https://www.instagram.com/yourprofile"
         />
+
+      </div>
+      <div className="w-full">
+        <HappyCustomer/>
+      </div>
+      <div>
+        <Steps/>
+      </div>
+      <div>
+      <Newsletter/>
       </div>
     </section>
   );
