@@ -90,6 +90,7 @@ const TestimonialSection = () => {
             delay: 5000, // Adjust delay as needed
             disableOnInteraction: false,
         } : false, // Autoplay setting
+        
         modules: [Navigation, Pagination, Autoplay, EffectFade], // Swiper modules for additional features
     };
 

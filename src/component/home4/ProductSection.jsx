@@ -203,7 +203,7 @@ const ProductSection = () => {
 
 
     return (
-        <section className='w-full relative bg-gray-50 py-40 pb-20'>
+        <section className='w-full relative bg-gray-50 md:pt-56 pt-72 pb-20'>
 
             {/* --------- container ----------- */}
             <div className='w-11/12 xmd:w-10/12 mx-auto flex flex-col gap-y-8 items-center '>
