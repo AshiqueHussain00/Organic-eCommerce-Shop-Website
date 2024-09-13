@@ -10,7 +10,7 @@ function App() {
   return (
     
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-
+      <Homepage2/>
     {/* <Home4/> */}
   {/* <Home1/> */}
   {/* <Home5/> */}
