@@ -23,8 +23,8 @@ const Navbar = () => {
   };
 
   return (
-    <section className="relative mx-auto">
-      <div className="w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px] sm:px-6 lg:px-8">
+    <section className="relative w-full mx-auto">
+      <div className=" mt-8 mx-auto xs:max-h-[500px] sm:px-6 lg:px-8">
         <header className="bg-white-100 text-black-800">
           {/* Store Location */}
           <div className="flex items-center justify-between h-6">
@@ -50,7 +50,7 @@ const Navbar = () => {
           </div>
 
           {/* Horizontal Line */}
-          <hr className="border-t-1 border-gray-200 my-4" />
+          <hr className="my-4 border-gray-200 border-t-1" />
 
           {/* Main Navbar */}
           <div className="px-4 sm:px-6 lg:px-8">
@@ -61,22 +61,22 @@ const Navbar = () => {
               </div>
 
               {/* Search Bar */}
-              <div className="hidden md:flex flex-grow items-center justify-center space-x-2">
-                <div className="p-1 bg-white rounded-md flex border border-sm items-center ">
-                  <CiSearch className="text-gray-900 text-3xl mr-2" />
+              <div className="items-center justify-center flex-grow hidden space-x-2 md:flex">
+                <div className="flex items-center p-1 bg-white border rounded-md border-sm ">
+                  <CiSearch className="mr-2 text-3xl text-gray-900" />
                   <input
                     type="text"
                     placeholder="Search"
                     className="w-full text-black rounded-md focus:outline-none"
                   />
-                  <button className="bg-primary h-full px-4 py-2 text-white-100 rounded-md">
+                  <button className="h-full px-4 py-2 rounded-md bg-primary text-white-100">
                     Search
                   </button>
                 </div>
               </div>
 
               {/* Customer Service & Phone */}
-              <div className="hidden sm:flex ml-auto items-right space-x-1">
+              <div className="hidden ml-auto space-x-1 sm:flex items-right">
                 <PiPhoneCallLight className="text-5xl" />
                 <span className="flex flex-col">
                   <span>Customer Services</span>
@@ -94,7 +94,7 @@ const Navbar = () => {
           </div>
 
           {/* Desktop Menu */}
-          <nav className="hidden lg:flex bg-gray-800 text-white-100 mt-2 h-16">
+          <nav className="hidden h-16 mt-2 bg-gray-800 lg:flex text-white-100">
             <div className="flex items-center justify-between w-full">
               {/* Left-side Links */}
               <div className="flex space-x-4">
@@ -102,10 +102,10 @@ const Navbar = () => {
                   <IoReorderThreeOutline size={34} />
                 </div>
                 {navData.map((item) => (
-                  <div key={item.id} className="group relative">
+                  <div key={item.id} className="relative group">
                     <a
                       href={item.path || '#'}
-                      className="px-3 py-6 rounded-md text-sm font-medium hover:bg-gray-700 hover:text-md flex items-center"
+                      className="flex items-center px-3 py-6 text-sm font-medium rounded-md hover:bg-gray-700 hover:text-md"
                     >
                       {item.title}
                       {item.dropdown && <FaChevronDown className="ml-2" />}
@@ -122,7 +122,7 @@ const Navbar = () => {
                                 <img
                                   src={dropdownItem.image}
                                   alt={dropdownItem.title}
-                                  className="w-24 h-24 object-cover"
+                                  className="object-cover w-24 h-24"
                                 />
                               )}
                               <span className="ml-2">{dropdownItem.title}</span>
@@ -137,13 +137,13 @@ const Navbar = () => {
 
               {/* Right-side Icons */}
               <div className="flex space-x-4">
-                <a href="/wishlist" className="text-white hover:bg-gray-700 p-2 rounded-full">
+                <a href="/wishlist" className="p-2 text-white rounded-full hover:bg-gray-700">
                   <IoHeartOutline size={24} />
                 </a>
-                <a href="/cart" className="text-white hover:bg-gray-700 p-2 rounded-full">
+                <a href="/cart" className="p-2 text-white rounded-full hover:bg-gray-700">
                   <HiOutlineShoppingBag size={24} />
                 </a>
-                <a href="/account" className="text-white hover:bg-gray-700 p-2 rounded-full">
+                <a href="/account" className="p-2 text-white rounded-full hover:bg-gray-700">
                   <FaRegUser size={24} />
                 </a>
               </div>
@@ -152,14 +152,14 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="md:hidden bg-gray-800 text-white-100">
+          <div className="bg-gray-800 md:hidden text-white-100">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               {navData.map((item) => (
                 <div key={item.id}>
                   <a
                     href={item.path || '#'}
                     onClick={() => toggleDropdown(item.id)} // Toggle dropdown on click
-                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 flex justify-between items-center"
+                    className="flex items-center justify-between block px-3 py-2 text-base font-medium rounded-md hover:bg-gray-700"
                   >
                     {item.title}
                     {item.dropdown && <FaChevronDown />}
@@ -178,14 +178,14 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Icons */}
-            <div className="flex justify-center space-x-4 mt-4">
-              <a href="/wishlist" className="text-white hover:bg-gray-700 p-2 rounded-full">
+            <div className="flex justify-center mt-4 space-x-4">
+              <a href="/wishlist" className="p-2 text-white rounded-full hover:bg-gray-700">
                 <IoHeartOutline size={24} />
               </a>
-              <a href="/cart" className="text-white hover:bg-gray-700 p-2 rounded-full">
+              <a href="/cart" className="p-2 text-white rounded-full hover:bg-gray-700">
                 <HiOutlineShoppingBag size={24} />
               </a>
-              <a href="/account" className="text-white hover:bg-gray-700 p-2 rounded-full">
+              <a href="/account" className="p-2 text-white rounded-full hover:bg-gray-700">
                 <FaRegUser size={24} />
               </a>
             </div>
