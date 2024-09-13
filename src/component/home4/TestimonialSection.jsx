@@ -5,8 +5,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 import '../../styles/swiper.css';
-import customer1 from "../../assets/common/Testimonial/customer1.svg";
-import customer2 from "../../assets/common/Testimonial/customer2.svg";
+import customer1 from  "../../assets/common/Testimonial/customer1.svg"
+
 
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
@@ -25,7 +25,7 @@ const testimonialsData = [
     },
     {
         name: "Dianne Russell",
-        img: customer2,
+        img: customer1,
         role: "Customer",
         compliment:
             "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
@@ -33,7 +33,7 @@ const testimonialsData = [
     },
     {
         name: "Dianne Russell",
-        img: customer2,
+        img: customer1,
         role: "Customer",
         compliment:
             "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
@@ -41,7 +41,7 @@ const testimonialsData = [
     },
     {
         name: "Dianne Russell",
-        img: customer2,
+        img: customer1,
         role: "Customer",
         compliment:
             "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
@@ -49,7 +49,7 @@ const testimonialsData = [
     },
     {
         name: "Dianne Russell",
-        img: customer2,
+        img: customer1,
         role: "Customer",
         compliment:
             "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
@@ -57,7 +57,7 @@ const testimonialsData = [
     },
     {
         name: "Dianne Russell",
-        img: customer2,
+        img: customer1,
         role: "Customer",
         compliment:
             "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
@@ -70,12 +70,13 @@ const TestimonialSection = () => {
     // Swiper configuration settings for slides, breakpoints, and navigation
     const swiperSettings = {
         slidesPerView: 1,
+        spaceBetween: 16,
         breakpoints: {
-            640: { slidesPerView: 1 },
+            640: { slidesPerView: 1  },
             768: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
+            1024: { slidesPerView: 3  },
         },
-        spaceBetween: 20,
+       
         loop: false, // No infinite looping
         pagination: {
             clickable: true,
@@ -98,13 +99,14 @@ const TestimonialSection = () => {
     }
 
     return (
-        <section className='w-full pt-24 pb-72 bg-green-gray-scale-50'>
+        <section className='w-full pt-24 pb-16 xsm:pb-24 xs:pb-32 sm:pb-40 xlg:pb-60 xxl:pb-80 bg-green-gray-scale-50'>
             {/* Container  */}
            
-                <div className="relative w-11/12 xmd:w-10/12  mx-auto border-2 border-red-500 pb-16">
+                <div className="relative w-11/12 xmd:w-10/12  mx-auto pb-16">
                    
-                        <h2 className="text-center xmd:text-[40px] text-4xl font-semibold mb-10 leading-[48px] tracking-wide">
+                        <h2 className="text-center xmd:text-[40px] text-4xl font-semibold md:mb-10 mb-16 leading-[48px] tracking-wide">
                             What our Client Says
+                            
                         </h2>
 
 

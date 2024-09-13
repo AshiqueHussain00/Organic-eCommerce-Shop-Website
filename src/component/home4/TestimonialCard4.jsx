@@ -10,11 +10,11 @@ import { RxTriangleDown } from "react-icons/rx";
 
 const TestimonialCard4 = ({data}) => {
   return (
-    <div className='relative  z-10 flex flex-col gap-y-6' >
+    <div className='relative  z-10 flex flex-col items-center gap-y-8 xsm:w-[90%]  sm:w-[80%] mx-auto md:mx-0 md:w-full' >
 
       {/* -----------  card -------- */}
 
-      <div className='flex flex-col bg-white-100 py-12 px-6 gap-y-6 rounded-xl relative z-10'>
+      <div className='flex flex-col items-center bg-white-100 pt-12  xs:px-6 px-4 gap-y-6 rounded-xl relative z-10'>
 
         <div className='text-4xl text-light-branding-success flex justify-center'><BiSolidQuoteAltRight/></div>
 
@@ -23,7 +23,7 @@ const TestimonialCard4 = ({data}) => {
         </p>
 
         {/* --------- triangle ------ */}
-      <div className='text-white-100 absolute text-5xl bottom-[-26px] left-[170px] z-50'>
+      <div className='text-white-100 relative text-5xl bottom-[-25px]  z-20'>
                <RxTriangleDown/>
       </div>
 
@@ -34,11 +34,22 @@ const TestimonialCard4 = ({data}) => {
 
 
 
-      {/* ------------ img -------------- */}
+      {/* ------------ img section-------------- */}
 
-      <div>
-  helllo
-  helllo
+      <div className='flex flex-col items-center gap-y-4'>
+        <div>
+        <img src={data.img} alt={data.name} />
+        </div>
+
+        <div className='flex flex-col '>
+
+        <h2 className='text-center font-meidum text-gray-900' >{data.name}</h2>
+        <p className='text-center text-sm text-green-gray-scale-500'>{data.role}</p>
+
+        </div>
+
+     
+    
       </div>
 
 
