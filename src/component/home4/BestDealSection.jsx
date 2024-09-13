@@ -8,7 +8,7 @@ const BestDealSection = () => {
     const [showCountdown, setShowCountdown] = useState(false);
     const [isVisible, setIsVisible] = useState(true); // State to handle visibility based on scroll
 
-    const countdownDate = useRef(new Date().getTime() + 1000 * 60 * 60 * 24 * 3);
+    const countdownDate = useRef(new Date().getTime() + 1000 * 60 * 60 * 24 * 9);
     const lastScrollY = useRef(0);
 
     useEffect(() => {
@@ -67,7 +67,7 @@ const BestDealSection = () => {
                     transition={{ delay: 0.2, duration: 0.5 }}
                 >
                     <h3 className='text-primary'>Best Deal</h3>
-                    <h1 className="mt-5 mb-4 text-xl leading-tight md:text-4xl lg:text-[2.6rem] text-black-900 font-semibold">
+                    <h1 className="w-[90%] mt-5 mb-4 text-2xl leading-[40px] md:text-4xl lg:text-[2.6rem] text-black-900 font-semibold">
                         Our Special Products Deal of the Month
                     </h1>
                     {showCountdown && (
@@ -78,24 +78,26 @@ const BestDealSection = () => {
                             transition={{ delay: 0.4, duration: 0.5 }}
                         >
                             <div className="flex justify-center gap-1 sm:gap-4">
-                                <div className="flex flex-col items-center p-3 rounded-lg bg-white-100">
-                                    <span>{timeLeft.days}</span>
-                                    <span className="text-xs">Days</span>
+                                <div className="flex flex-col gap-y-1 items-center py-3 xs:px-5 px-3 rounded-lg bg-white-100">
+                                    <span className='text-3xl'>{
+                                        timeLeft.days < 10 ? `0${timeLeft.days}` : `${timeLeft.days}`
+                                        }</span>
+                                    <span className="text-sm text-green-gray-scale-500 ">Days</span>
                                 </div>
                                 <span className='pt-5'>:</span>
-                                <div className="flex flex-col items-center p-3 rounded-lg bg-white-100">
-                                    <span>{timeLeft.hours}</span>
-                                    <span className="text-xs">Hours</span>
+                                <div className="flex flex-col gap-y-1 items-center py-3 xs:px-5 px-3 rounded-lg bg-white-100">
+                                    <span className='text-3xl'>{timeLeft.hours}</span>
+                                    <span className="text-sm text-green-gray-scale-500">Hours</span>
                                 </div>
                                 <span className='pt-5'>:</span>
-                                <div className="flex flex-col items-center p-3 rounded-lg bg-white-100">
-                                    <span>{timeLeft.minutes}</span>
-                                    <span className="text-xs">Mins</span>
+                                <div className="flex flex-col gap-y-1 items-center py-3 xs:px-5 px-3 rounded-lg bg-white-100">
+                                    <span className='text-3xl'>{timeLeft.minutes}</span>
+                                    <span className="text-sm text-green-gray-scale-500">Mins</span>
                                 </div>
-                                <span className='pt-5'>:</span>
-                                <div className="flex flex-col items-center p-3 rounded-lg bg-white-100">
-                                    <span>{timeLeft.seconds}</span>
-                                    <span className="text-xs">Secs</span>
+                                <span className='pt-5 '>:</span>
+                                <div className="flex flex-col gap-y-1 items-center py-3 xs:px-5 px-3 rounded-lg bg-white-100">
+                                    <span className='text-3xl'>{timeLeft.seconds}</span>
+                                    <span className="text-sm text-green-gray-scale-500">Secs</span>
                                 </div>
                             </div>
                         </motion.div>

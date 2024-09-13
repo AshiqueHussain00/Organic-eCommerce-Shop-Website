@@ -24,7 +24,7 @@ const VideoSection = () => {
 
 
     return (
-        <section className='w-full  '>
+        <section className='w-full  h-[800px] absolute top-[790px] xxs:top-[760px] xs:top-[720px] lg:top-[750px] clg:top-[720px] z-50'>
 
             {/* ---------- container --------- */}
 
