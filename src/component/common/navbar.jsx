@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="w-full">
+    <section className="relative w-full mx-auto">
       <div className="w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px] sm:px-6 lg:px-8">
         <header className="bg-white-100 text-black-800">
           {/* Store Location */}
@@ -97,8 +97,8 @@ const Navbar = () => {
           <nav className="hidden lg:flex bg-gray-800 text-white-100 mt-2 h-16">
             <div className="flex items-center justify-between w-full">
               {/* Left-side Links */}
-              <div className="flex space-x-3">
-                <div className="h-full px-4 py-3.5 bg-primary flex left-0">
+              <div className="flex space-x-4">
+                <div className="h-full px-4 py-4 bg-primary flex left-0">
                   <IoReorderThreeOutline size={34} />
                 </div>
                 {navData.map((item) => (
