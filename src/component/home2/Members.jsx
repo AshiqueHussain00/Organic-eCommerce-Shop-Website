@@ -27,8 +27,9 @@ const membersData = [
 ];
 
 // Define the Card component
-const Card = ({ title, description, image }) => {
+const Card = ({ title, image }) => {
   return (
+   
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
       <img src={image} alt={title} className="w-full h-auto object-cover" />
       {/* <div className="p-4">
@@ -43,11 +44,14 @@ const Card = ({ title, description, image }) => {
 // Define the Members component that renders multiple Card components
 const Members = () => {
   return (
-    <div className="text-center mb-6">
-      <p>Team</p>
-        <h2 className="text-2xl font-semibold mb-2">Our Profesionals Members</h2> {/* Display title */}
+    <section className='w-full'>
+       <div className='w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px]'>
+    <div className="text-center mb-6 mt-12 text-primary">
+      <p>TEAM</p>
+      
+        <h2 className="text-3xl text-black-900 mb-2">Our Profesionals Members</h2> {/* Display title */}
      
-    <div className="w-11/12 mx-auto max-w-7xl mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div className="max-w-6xl mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       
      
       {membersData.map((card) => (
@@ -59,6 +63,8 @@ const Members = () => {
       ))}
     </div>
     </div>
+    </div>
+     </section>
   );
 };
 

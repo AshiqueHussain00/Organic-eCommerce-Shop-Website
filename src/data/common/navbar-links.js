@@ -2,6 +2,7 @@ import blog1 from '../../assets/blog/blog1.png';
 import agro1 from '../../assets/blog/agro1.jpg';
 import agro2 from '../../assets/blog/agro2.jpg';
 import blog4 from '../../assets/blog/blog4.png';
+//import { FaAppleAlt, FaCarrot, FaFish, FaDrumstickBite, FaWineBottle, FaIceCream, FaBreadSlice, FaCheese, FaUtensils, FaList } from 'react-icons/fa';
 
 export const navData = [
   {
@@ -19,15 +20,29 @@ export const navData = [
       { id: 19, title: 'Cooking' },
       { id: 20, title: 'View All category' }
     ]
+    // const dropdown = [
+    //   { id: 11, title: 'Fresh Fruit', icon: <FaAppleAlt /> },
+    //   { id: 12, title: 'Vegetables', icon: <FaCarrot /> },
+    //   { id: 13, title: 'River fish', icon: <FaFish /> },
+    //   { id: 14, title: 'Chicken and meat', icon: <FaDrumstickBite /> },
+    //   { id: 15, title: 'Drink & Water', icon: <FaWineBottle /> },
+    //   { id: 16, title: 'Yogurt & Ice-Cream', icon: <FaIceCream /> },
+    //   { id: 17, title: 'Cake & Bread', icon: <FaBreadSlice /> },
+    //   { id: 18, title: 'Butter & Cream', icon: <FaCheese /> },
+    //   { id: 19, title: 'Cooking', icon: <FaUtensils /> },
+    //   { id: 20, title: 'View All category', icon: <FaList /> }
+    // ];
+    
   },
   {
     id: 2,
     title: 'Home',
+    path: '',
     dropdown: [
-      { id: 21, title: 'Home1', path: '' },
-      { id: 22, title: 'Home2', path: '' },
-      { id: 23, title: 'Home3', path: '' },
-      { id: 24, title: 'Home4', path: '' }
+      { id: 21, title: 'Home1', path: './compnent/home1' },
+      { id: 22, title: 'Home2', path: './component/home2' },
+      { id: 23, title: 'Home3', path: './component/home3' },
+      { id: 24, title: 'Home4', path: './component/home4' }
     ]
   },
   {

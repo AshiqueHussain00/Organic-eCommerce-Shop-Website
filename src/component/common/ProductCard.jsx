@@ -67,7 +67,7 @@ const ProductCard = ({
             <img
                 src={imageSrc}
                 alt={productName}
-                className="object-cover w-48 sm:w-full h-30  sm:h-48 mb-4 "
+                className="object-cover w-auto mb-4 sm:w-full h-30 sm:h-48 "
             />
 
             {/* Product Name */}

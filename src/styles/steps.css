@@ -1,0 +1,14 @@
+/* styles.css */
+.image-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .image-container img {
+    transition: filter 0.3s ease;
+  }
+  
+  .image-container:hover img {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(20%) hue-rotate(90deg);
+  }
+  

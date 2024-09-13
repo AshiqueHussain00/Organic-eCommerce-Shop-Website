@@ -3,7 +3,8 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
-      poppins: ['Poppins', 'sans-serif']
+      poppins: ['Poppins', 'sans-serif'],
+      caveat: ['Caveat', 'cursive'],
     },
     fontWeight: {
       thin: 300,
@@ -18,12 +19,16 @@ export default {
       hard_primary: '#2C742F',
       warning: '#FF8A00',
       danger: '#EA4B48',
+      "light-branding-success" : "#00B207",
      "branding-success": '#2C742F',
      "branding-warning": '#FF8A00',
 
      "green-gray-scale": {
-
+      
+      50 : "#EDF2EE",
       400 : '#7A997C',
+      500 : '#618062',
+      600: "#406B42",
        700 : "#2B572E",
        900: '#002603',
      },
@@ -132,6 +137,9 @@ export default {
       xs: '500px',
       // => @media (min-width: 500px) { ... }
 
+      ssm: '600px',
+      // => @media (min-width: 640px) { ... }
+      
       sm: '640px',
       // => @media (min-width: 640px) { ... }
 
