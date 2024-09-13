@@ -29,11 +29,11 @@ const bannerData = [
 
 const Banner = () => {
     return (
-        <section className='w-full relative  bg-white-100 py-20'>
+        <section  className='w-full relative  bg-white-100 py-20'>
 
             {/* --------- container ------------ */}
 
-            <div className=' w-11/12 xmd:w-10/12 mx-auto   grid justify-items-center grid-cols-1 gap-y-6 mmd:grid-cols-3 gap-x-2 lg:gap-x-4 xl:gap-x-6 '>
+            <div data-aos="fade-right" className=' w-11/12 xmd:w-10/12 mx-auto   grid justify-items-center grid-cols-1 gap-y-6 mmd:grid-cols-3 gap-x-2 lg:gap-x-4 xl:gap-x-6 '>
 
                 {
                     bannerData.map((card) => (

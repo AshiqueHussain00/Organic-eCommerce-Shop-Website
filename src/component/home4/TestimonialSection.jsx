@@ -105,7 +105,7 @@ const TestimonialSection = () => {
            
                 <div className="relative w-11/12 xmd:w-10/12  mx-auto pb-16">
                    
-                        <h2 className="text-center xmd:text-[40px] text-4xl font-semibold md:mb-10 mb-16 leading-[48px] tracking-wide">
+                        <h2 data-aos="fade-up" className="text-center xmd:text-[40px] text-4xl font-semibold md:mb-10 mb-16 leading-[48px] tracking-wide">
                             What our Client Says
                             
                         </h2>

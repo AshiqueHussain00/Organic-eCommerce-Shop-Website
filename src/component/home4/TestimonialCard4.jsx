@@ -10,7 +10,7 @@ import { RxTriangleDown } from "react-icons/rx";
 
 const TestimonialCard4 = ({data}) => {
   return (
-    <div className='relative  z-10 flex flex-col items-center gap-y-8 xsm:w-[90%]  sm:w-[80%] mx-auto md:mx-0 md:w-full' >
+    <div data-aos="fade-up" className='relative  z-10 flex flex-col items-center gap-y-8 xsm:w-[90%]  sm:w-[80%] mx-auto md:mx-0 md:w-full' >
 
       {/* -----------  card -------- */}
 
