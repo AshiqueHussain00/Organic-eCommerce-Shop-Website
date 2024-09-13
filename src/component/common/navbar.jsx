@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <section className="relative w-full mx-auto">
+    <section className="relative mx-auto">
       <div className="w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px] sm:px-6 lg:px-8">
         <header className="bg-white-100 text-black-800">
           {/* Store Location */}
@@ -62,14 +62,14 @@ const Navbar = () => {
 
               {/* Search Bar */}
               <div className="hidden md:flex flex-grow items-center justify-center space-x-2">
-                <div className="p-1 bg-white rounded-md flex border border-sm items-center">
+                <div className="p-1 bg-white rounded-md flex border border-sm items-center ">
                   <CiSearch className="text-gray-900 text-3xl mr-2" />
                   <input
                     type="text"
                     placeholder="Search"
                     className="w-full text-black rounded-md focus:outline-none"
                   />
-                  <button className="bg-primary text-white px-4 py-2 rounded-md">
+                  <button className="bg-primary h-full px-4 py-2 text-white-100 rounded-md">
                     Search
                   </button>
                 </div>
@@ -98,7 +98,7 @@ const Navbar = () => {
             <div className="flex items-center justify-between w-full">
               {/* Left-side Links */}
               <div className="flex space-x-4">
-                <div className="h-full px-4 py-4 bg-primary flex left-0">
+                <div className="h-full px-4 py-4 bg-primary">
                   <IoReorderThreeOutline size={34} />
                 </div>
                 {navData.map((item) => (
