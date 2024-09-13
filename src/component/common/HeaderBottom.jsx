@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { HeaderBottomData } from '../../data/common/HeaderBottomData';
 
 const HeaderBottom = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('down');
   const ref = useRef(null);
 
@@ -35,30 +34,11 @@ const HeaderBottom = () => {
     };
   }, []);
 
-  // Check if the section is in view
-  useEffect(() => {
-    const handleScroll = () => {
-      const rect = ref.current.getBoundingClientRect();
-      const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
-      setIsVisible(isVisible);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll); // Check visibility on resize
-
-    handleScroll(); // Initial check
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
-    };
-  }, []);
-
   return (
     <motion.section
       ref={ref}
       initial="hidden"
-      animate={isVisible ? 'visible' : 'hidden'}
+      animate="visible"
       variants={cardAnimation}
       transition={{ duration: 0.8 }}
     >
@@ -70,7 +50,7 @@ const HeaderBottom = () => {
               <motion.li
                 key={index}
                 initial="hidden"
-                animate={isVisible ? 'visible' : 'hidden'}
+                animate="visible"
                 variants={cardAnimation}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex flex-col items-center justify-center gap-2 p-2 border-b-4 cursor-pointer border-white-100 xxl:flex-row group hover:border-primary hover:border-b-4"
