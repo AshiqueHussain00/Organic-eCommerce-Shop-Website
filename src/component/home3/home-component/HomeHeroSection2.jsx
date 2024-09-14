@@ -6,13 +6,16 @@ import bestdealImage1 from "../../../assets/home4/bestdeal1.svg"; // Path to you
 
 const slides = [
   {
+    Subtitle:"WELCOME TO SHOPERY",
     title: "Fresh & Healthy Organic Food",
-    subtitle: "Sale up to 30% OFF",
+    subtitle_1: "Sale up to",
+    subtitle_2 : "30% OFF",
     description: "Free shipping on all your orders, we deliver, you enjoy.",
     buttonText: "Shop Now",
     image: bestdealImage1, // First slide image
   },
   {
+    Subtitle:"WELCOME TO SHOPERY",
     title: "100% Organic Vegetables",
     subtitle: "Special Discount for Today",
     description: "Discover our wide range of organic products.",
@@ -20,6 +23,7 @@ const slides = [
     image: bestdealImage1, // Second slide image
   },
   {
+    Subtitle:"WELCOME TO SHOPERY",
     title: "Fresh Fruits & Vegetables",
     subtitle: "Save Big on All Organic Products",
     description: "Fresh from farm to your door, shop now.",
@@ -65,12 +69,15 @@ const HomeHeroSection2 = () => {
             }`}
           >
             {/* Content */}
-            <div className="relative z-10 flex flex-col items-start justify-center flex-1 max-w-lg px-4 text-left md:px-8 lg:px-16">
+            <div className="relative z-10 flex flex-col items-start justify-center flex-1 max-w-lg px-4 text-left md:px-8 lg:px-16 mx-8">
+              <h1 className="mb-2 text-sm font-bold text-green-500 md:text-base">
+                {slide.Subtitle}
+              </h1>
               <h1 className="mb-2 text-2xl font-bold text-gray-800 md:text-4xl lg:text-5xl">
                 {slide.title}
               </h1>
               <h2 className="mb-1 text-lg text-gray-700 md:text-xl lg:text-2xl">
-                {slide.subtitle}
+                {slide.subtitle_1} <span className="text-warning">{slide.subtitle_2}</span>
               </h2>
               <p className="mb-3 text-sm text-gray-600 md:text-base lg:text-lg">
                 {slide.description}
