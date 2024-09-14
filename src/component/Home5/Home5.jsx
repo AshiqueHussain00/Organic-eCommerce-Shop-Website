@@ -1,6 +1,6 @@
 import React from "react";
 import LatestNews from "../common/LatestNews";
-import HeaderBottom from '../common/HeaderBottom'
+import HeaderBottom from "../common/HeaderBottom";
 import TestimonialCard from "../common/TestimonialCard";
 import FollowInstagram from "../common/FollowInstagram";
 import customer1 from "../../assets/common/Testimonial/customer1.svg";
@@ -12,13 +12,13 @@ import post4 from "../../assets/common/followinstagram/post4.svg";
 import post5 from "../../assets/common/followinstagram/post5.svg";
 import post6 from "../../assets/common/followinstagram/post6.svg";
 import Herosection from "./home5/Herosection";
-import newsBG from '../../assets/common/latestnews/newsBG.svg'
+import newsBG from "../../assets/common/latestnews/newsBG.svg";
 import img2 from "../../assets/common/latestnews/img2.svg";
 import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
 import FeaturedProducts from "./home5/FeaturedProducts";
-import '../../index.css'
-import Trusted from './home5/Trusted';
+import "../../index.css";
+import Trusted from "./home5/Trusted";
 import HappyCustomer from "./home5/HappyCustomer";
 import TopCategory from "../home3/home-component/TopCategory";
 import Steps from "./home5/Steps";
@@ -130,20 +130,26 @@ const Home5 = () => {
   return (
     <section>
       <Herosection autoplay={true} />
-      <HeaderBottom/>
-      <FeaturedProducts/>
-      <TopCategory/>
+     <HeaderBottom
+  flexDirection="row"
+  alignItems="center"
+  justifyContent="center"
+/>
+      <FeaturedProducts />
+      <TopCategory />
 
       <div
-      className="bg-cover  bg-no-repeat"
-      style={{ backgroundImage: `url(${newsBG})` }}
-    >
-      <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
-      <h1 className="text-center text-4xl font-[600] font-poppins">Latest News</h1>
-      <LatestNews data={newsData} />
-    </div>
-      <Trusted/>
-      
+        className="bg-cover  bg-no-repeat"
+        style={{ backgroundImage: `url(${newsBG})` }}
+      >
+        <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
+        <h1 className="text-center text-4xl font-[600] font-poppins">
+          Latest News
+        </h1>
+        <LatestNews data={newsData} />
+      </div>
+      <Trusted />
+
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}
@@ -161,16 +167,15 @@ const Home5 = () => {
           images={instagramImages}
           instagramUrl="https://www.instagram.com/yourprofile"
         />
-
       </div>
       <div className="w-full">
-        <HappyCustomer/>
+        <HappyCustomer />
       </div>
       <div>
-        <Steps/>
+        <Steps />
       </div>
       <div>
-      <Newsletter/>
+        <Newsletter />
       </div>
     </section>
   );

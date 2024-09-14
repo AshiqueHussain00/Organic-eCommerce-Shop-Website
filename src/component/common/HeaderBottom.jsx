@@ -1,8 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import { HeaderBottomData } from '../../data/common/HeaderBottomData';
 
-const HeaderBottom = () => {
+const HeaderBottom = ({
+  innerFlexDirection = 'row',
+  innerAlignItems = 'center',
+  innerJustifyContent = 'center'
+}) => {
   const [scrollDirection, setScrollDirection] = useState('down');
   const ref = useRef(null);
 
@@ -43,7 +48,10 @@ const HeaderBottom = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="w-11/12 mx-auto xmd:w-11/12 bg-white-200 text-black-800">
-        <ul data-aos="fade-right" className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20">
+        <ul
+          data-aos="fade-right"
+          className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20"
+        >
           {HeaderBottomData.map((item, index) => {
             const IconComponent = item.icon;
             return (
@@ -53,15 +61,23 @@ const HeaderBottom = () => {
                 animate="visible"
                 variants={cardAnimation}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="flex flex-col items-center justify-center gap-2 p-2 border-b-4 cursor-pointer border-white-100 xxl:flex-row group hover:border-primary hover:border-b-4"
+                className="flex flex-col items-center justify-center gap-2 p-2 border-b-4 cursor-pointer border-white-100 group hover:border-primary hover:border-b-4"
               >
-                <div className="flex items-center justify-center w-16 h-16 transition-all duration-300 ease-in-out bg-gray-100 border-2 rounded-full group-hover:border-primary group-hover:bg-primary group-hover:text-white">
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: innerFlexDirection,
+                    alignItems: innerAlignItems,
+                    justifyContent: innerJustifyContent,
+                  }}
+                  className="w-16 h-16 transition-all duration-300 ease-in-out bg-gray-100 border-2 rounded-full group-hover:border-primary group-hover:bg-primary group-hover:text-white"
+                >
                   {/* Render icon as a component */}
                   <IconComponent className="text-2xl transition-colors duration-300 ease-in-out text-primary group-hover:text-white-100" />
                 </div>
 
                 <div className="text-center">
-                  <h4 className="text-sm font-semibold text-gray-800 sm:text-base item-center">
+                  <h4 className="text-sm font-semibold text-gray-800 sm:text-base">
                     {item.title}
                   </h4>
                   <p className="text-xs font-normal text-gray-500 sm:text-sm">
@@ -75,6 +91,13 @@ const HeaderBottom = () => {
       </div>
     </motion.section>
   );
+};
+
+// Define PropTypes for better type checking
+HeaderBottom.propTypes = {
+  innerFlexDirection: PropTypes.oneOf(['row', 'column']),
+  innerAlignItems: PropTypes.oneOf(['start', 'center', 'end']),
+  innerJustifyContent: PropTypes.oneOf(['start', 'center', 'end', 'between', 'around']),
 };
 
 export default HeaderBottom;
