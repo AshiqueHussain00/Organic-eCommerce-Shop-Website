@@ -28,10 +28,10 @@ const App = () => {
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       {/* <Homepage2/> */}
-      <Home4/>
+      {/* <Home4/> */}
       {/* <Home1/> */}
       {/* <Home5/> */}
-      {/* <Home3 /> */}
+      <Home3 />
     </div>
   );
 };

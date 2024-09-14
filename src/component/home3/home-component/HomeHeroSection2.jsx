@@ -6,26 +6,28 @@ import bestdealImage1 from "../../../assets/home4/bestdeal1.svg"; // Path to you
 
 const slides = [
   {
-    Subtitle:"WELCOME TO SHOPERY",
+    Subtitle: "WELCOME TO SHOPERY",
     title: "Fresh & Healthy Organic Food",
     subtitle_1: "Sale up to",
-    subtitle_2 : "30% OFF",
+    subtitle_2: "30% OFF",
     description: "Free shipping on all your orders, we deliver, you enjoy.",
     buttonText: "Shop Now",
     image: bestdealImage1, // First slide image
   },
   {
-    Subtitle:"WELCOME TO SHOPERY",
+    Subtitle: "WELCOME TO SHOPERY",
     title: "100% Organic Vegetables",
-    subtitle: "Special Discount for Today",
+    subtitle_1: "Special Discount for ",
+    subtitle_2: "Today",
     description: "Discover our wide range of organic products.",
     buttonText: "Explore",
     image: bestdealImage1, // Second slide image
   },
   {
-    Subtitle:"WELCOME TO SHOPERY",
+    Subtitle: "WELCOME TO SHOPERY",
     title: "Fresh Fruits & Vegetables",
-    subtitle: "Save Big on All Organic Products",
+    subtitle_1: "Save Big on",
+    subtitle_2: "All Organic Products",
     description: "Fresh from farm to your door, shop now.",
     buttonText: "Buy Now",
     image: bestdealImage1, // Third slide image
@@ -58,9 +60,9 @@ const HomeHeroSection2 = () => {
   };
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] lg:h-[500px] overflow-hidden bg-gray-50">
+    <div className="relative w-full h-[500px] md:h-[650px] lg:h-[500px] overflow-hidden bg-gray-50">
       {/* Slides */}
-      <div className="flex w-11/12 mx-auto transition-transform duration-1000 ease-in-out">
+      <div className="flex w-11/12 mx-auto   transition-transform duration-1000 ease-in-out">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -68,21 +70,25 @@ const HomeHeroSection2 = () => {
               currentSlide === index ? "translate-x-0" : "translate-x-full"
             }`}
           >
+           
+           <div className="flex  flex-wrap md:flex-row">
+            
             {/* Content */}
-            <div className="relative z-10 flex flex-col items-start justify-center flex-1 max-w-lg px-4 text-left md:px-8 lg:px-16 mx-8">
-              <h1 className="mb-2 text-sm font-bold text-green-500 md:text-base">
+            <div className="relative z-10 flex flex-col items-start justify-center flex-1 max-w-lg px-4 text-left md:px-6 lg:px-10 xl:px-16 mx-6 md:mx-12 lg:mx-16 xl:mx-24 space-y-3 md:space-y-5">
+              <h1 className="mb-2 text-xs font-bold text-green-500 md:text-sm lg:text-base">
                 {slide.Subtitle}
               </h1>
-              <h1 className="mb-2 text-2xl font-bold text-gray-800 md:text-4xl lg:text-5xl">
+              <h1 className="mb-2 text-xl font-bold text-gray-800 md:text-2xl lg:text-4xl xl:text-5xl">
                 {slide.title}
               </h1>
-              <h2 className="mb-1 text-lg text-gray-700 md:text-xl lg:text-2xl">
-                {slide.subtitle_1} <span className="text-warning">{slide.subtitle_2}</span>
+              <h2 className="mb-1 text-base text-gray-700 md:text-lg lg:text-xl">
+                {slide.subtitle_1}{" "}
+                <span className="text-warning">{slide.subtitle_2}</span>
               </h2>
               <p className="mb-3 text-sm text-gray-600 md:text-base lg:text-lg">
                 {slide.description}
               </p>
-              <button className="px-6 py-2 text-sm transition duration-200 rounded-full shadow-xl bg-white-100 text-black-900 hover:text-white-100 md:text-lg lg:text-xl hover:bg-primary">
+              <button className="px-4 py-2 text-xs transition duration-200 rounded-full shadow-xl bg-white-100 text-black-900 hover:text-white-100 md:text-lg lg:text-xl hover:bg-primary">
                 {slide.buttonText}
               </button>
             </div>
@@ -92,9 +98,11 @@ const HomeHeroSection2 = () => {
               <img
                 src={slide.image}
                 alt="Best Deal"
-                className=""
+                className="w-full h-full max-w-xs md:max-w-sm  lg:max-w-md"
               />
             </div>
+           </div>
+
           </div>
         ))}
       </div>
@@ -102,24 +110,24 @@ const HomeHeroSection2 = () => {
       {/* Navigation Buttons */}
       <button
         onClick={handlePrevSlide}
-        className="absolute p-3 text-black transition transform -translate-y-1/2 bg-white rounded-full shadow-lg left-4 top-1/2 hover:bg-gray-200"
+        className="absolute p-3 text-black transition transform -translate-y-1/2 bg-white rounded-full shadow-lg left-6 md:left-8 lg:left-16 top-1/2 hover:bg-gray-200"
       >
         <FaChevronLeft />
       </button>
       <button
         onClick={handleNextSlide}
-        className="absolute p-3 text-black transition transform -translate-y-1/2 bg-white rounded-full shadow-lg right-4 top-1/2 hover:bg-gray-200"
+        className="absolute p-3 text-black transition transform -translate-y-1/2 bg-white rounded-full shadow-lg right-6 md:right-8 lg:right-16 top-1/2 hover:bg-gray-200"
       >
         <FaChevronRight />
       </button>
 
       {/* Slide Indicator Dots */}
-      <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-6 left-1/2">
+      <div className="absolute flex space-x-2 transform -translate-x-1/2 bottom-16 left-1/2">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => handleDotClick(index)}
-            className={`w-3 h-3 rounded-full transition ${
+            className={`w-2 h-2 rounded-full transition ${
               currentSlide === index ? "bg-green-500" : "bg-gray-300"
             }`}
           ></button>
@@ -130,3 +138,4 @@ const HomeHeroSection2 = () => {
 };
 
 export default HomeHeroSection2;
+
