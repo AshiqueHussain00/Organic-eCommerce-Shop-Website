@@ -36,13 +36,14 @@ const ProductOffer = () => {
         }}
       >
         <motion.div
+      
           className='flex flex-col pt-10 pb-10 lg:pb-10 lg:pr-0'
           ref={ref}
           initial='hidden'
           animate={controls}
           variants={animationVariants}
         >
-          <div>
+          <div >
             <h3 className='text-white-100'>SUMMER SALE</h3>
             <h1 className="mt-5 mb-4 text-4xl leading-tight md:text-4xl lg:text-5xl text-white-100">
               <span className='font-semibold text-warning'>37%</span> <span>OFF</span>

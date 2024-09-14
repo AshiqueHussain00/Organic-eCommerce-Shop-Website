@@ -106,7 +106,7 @@ const ShowProduct = ({ isHotSale = true }) => {
 
             {/* --------- container -------- */}
 
-            <div className='w-11/12 xmd:w-10/12 xlg:w-11/12 xl:w-10/12 mx-auto grid xlg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-8 gap-x-6 justify-items-center'>
+            <div  className='w-11/12 xmd:w-10/12 xlg:w-11/12 xl:w-10/12 mx-auto grid xlg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-8 gap-x-6 justify-items-center'>
 
 
 

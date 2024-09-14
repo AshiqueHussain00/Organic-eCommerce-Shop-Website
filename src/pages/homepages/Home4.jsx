@@ -15,10 +15,8 @@ const Home4 = () => {
       <div className='relative'>
         <HeroSection />
         <HeroBottom4 />
-        </div>
-        <ProductSection />
-
-    
+      </div>
+      <ProductSection />
 
       <Banner />
       <BestDealSection />

@@ -77,8 +77,8 @@ function NewestProducts() {
         visible: { opacity: 1, y: 0 },
     };
     return (
-        <section className='relative w-full pb-10'>
-            <div className='w-10/12 mx-auto'>
+        <section  className='relative w-full pb-10'>
+            <div data-aos = "fade-right" className='w-10/12 mx-auto'>
                 <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
                     <h1 className="text-[2rem] font-semibold">Newest Products</h1>
                     <Link className="font-medium text-primary">View All →</Link>

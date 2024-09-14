@@ -108,16 +108,16 @@ const ShowProductshp3 = ({ isHotSale = false }) => {
 
 
     return (
-        <section className='w-full py-10'>
+        <section  className='w-full py-10'>
 
             {/* --------- container -------- */}
 
-            <div className='w-11/12 xmd:w-10/12 xlg:w-11/12 xl:w-10/12 mx-auto grid xlg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-8 gap-x-6 justify-items-center'>
+            <div  className='w-11/12 xmd:w-10/12 xlg:w-11/12 xl:w-10/12 mx-auto grid xlg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-8 gap-x-6 justify-items-center'>
 
 
 
                 {/* -------- hot deals ----- */}
-                <div className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                <div data-aos = "fade-right"  className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
 
                     <h1 className='text-xl font-semibold'>Hot Deals</h1>
 
@@ -132,9 +132,9 @@ const ShowProductshp3 = ({ isHotSale = false }) => {
                 </div>
 
                 {/* --------- best Seller -------- */}
-                <div className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                <div data-aos = "fade-up" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
 
-                    <h1 className='text-xl font-semibold'>Best Seller</h1>
+                    <h1  data-aos = "fade-up" className='text-xl font-semibold'>Best Seller</h1>
 
                     {
                         bestSellerData.slice(0, 3).map((product, index) => (
@@ -148,9 +148,9 @@ const ShowProductshp3 = ({ isHotSale = false }) => {
 
                 {/* --------- top rated ------------- */}
 
-                <div className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                <div  data-aos = "fade-up" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
 
-                    <h1 className='text-xl font-semibold'>Top Rated</h1>
+                    <h1  data-aos = "fade-up" className='text-xl font-semibold'>Top Rated</h1>
 
                     {
                        topRatedProduct.slice(0, 3).map((product, index) => (
@@ -164,7 +164,7 @@ const ShowProductshp3 = ({ isHotSale = false }) => {
 
                 {/* -------------- sales -------------- */}
 
-                <div className={`flex flex-col items-center gap-y-4 py-8 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%] 
+                <div data-aos = "fade-left" className={`flex flex-col items-center gap-y-4 py-8 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%] 
                 ${
                     isHotSale ? "hot-sale" : "summer-sale"
                 }

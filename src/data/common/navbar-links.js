@@ -2,24 +2,34 @@ import blog1 from '../../assets/blog/blog1.png';
 import agro1 from '../../assets/blog/agro1.jpg';
 import agro2 from '../../assets/blog/agro2.jpg';
 import blog4 from '../../assets/blog/blog4.png';
-//import { FaAppleAlt, FaCarrot, FaFish, FaDrumstickBite, FaWineBottle, FaIceCream, FaBreadSlice, FaCheese, FaUtensils, FaList } from 'react-icons/fa';
+
+import { LuApple } from "react-icons/lu";
+import { PiCarrot } from "react-icons/pi";
+import { PiFishSimpleLight } from "react-icons/pi";
+import { TbMeat } from "react-icons/tb";
+import { PiWineDuotone } from "react-icons/pi";
+import { IoIceCreamOutline } from "react-icons/io5";
+import { GiCupcake } from "react-icons/gi";
+import { PiCheeseLight } from "react-icons/pi";
+import { GiHotMeal } from "react-icons/gi";
+import { IoAddOutline } from "react-icons/io5";
 
 export const navData = [
   {
-    id: 1,
-    title: ' All Categories ',
-    dropdown: [
-      { id: 11, title: `Fresh Fruite` },
-      { id: 12, title: `Vegetables` },
-      { id: 13, title: 'River fish' },
-      { id: 14, title: 'Chicken and meat', path: '' },
-      { id: 15, title: 'Drink & Water', path: '' },
-      { id: 16, title: 'Yogurt & Ice-Cream' },
-      { id: 17, title: 'Cake & Bread' },
-      { id: 18, title: 'Butter & Cream' },
-      { id: 19, title: 'Cooking' },
-      { id: 20, title: 'View All category' }
-    ]
+    // id: 1,
+    // title: ' All Categories ',
+    // dropdown: [
+    //   { id: 11, title: `Fresh Fruite` },
+    //   { id: 12, title: `Vegetables` },
+    //   { id: 13, title: 'River fish' },
+    //   { id: 14, title: 'Chicken and meat', path: '' },
+    //   { id: 15, title: 'Drink & Water', path: '' },
+    //   { id: 16, title: 'Yogurt & Ice-Cream' },
+    //   { id: 17, title: 'Cake & Bread' },
+    //   { id: 18, title: 'Butter & Cream' },
+    //   { id: 19, title: 'Cooking' },
+    //   { id: 20, title: 'View All category' }
+    // ]
     // const dropdown = [
     //   { id: 11, title: 'Fresh Fruit', icon: <FaAppleAlt /> },
     //   { id: 12, title: 'Vegetables', icon: <FaCarrot /> },
@@ -114,3 +124,57 @@ export const navData = [
     path: '/contact-us'
   }
 ];
+
+export const allCategoryDropdown = [
+  { id: 11,
+    title: `Fresh Fruits` ,
+    path: "/shop/fruits",
+    icon: LuApple,
+   },
+ { id: 12,
+   title: `Vegetables`,
+   path: "/shop/vegetables",
+   icon: PiCarrot,
+   },
+ { id: 13,
+   title: 'River fish',
+   icon: PiFishSimpleLight,
+   path:'/shop/fish',
+   },
+ { id: 14,
+   title: 'Chicken and meat',
+    path: '/shop/chicken&meat' ,
+    icon: TbMeat,
+  },
+ { id: 15,
+   title: 'Drink & Water',
+    path: '/shop/drinks&water',
+    icon: PiWineDuotone
+   },
+ { id: 16,
+   title: 'Yogurt & Ice-Cream',
+   path: '/shop/yogurt&ice-cream',
+   icon: IoIceCreamOutline,
+   },
+ { id: 17,
+   title: 'Cake & Bread',
+   path: "/shop/cake&bread",
+   icon: GiCupcake,
+   },
+ { id: 18,
+   title: 'Butter & Cream',
+   path: "/shop/butter&cream",
+   icon:  PiCheeseLight,
+
+   },
+ { id: 19,
+   title: 'Cooking',
+   path: "/shop/cooking",
+   icon: GiHotMeal,
+   },
+ { id: 20,
+   title: 'View all Category',
+   path: "/shop",
+   icon : IoAddOutline,
+   }
+]

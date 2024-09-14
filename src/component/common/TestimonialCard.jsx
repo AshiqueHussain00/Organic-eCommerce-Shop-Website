@@ -13,7 +13,7 @@ import quote from "../../assets/common/Testimonial/quote.svg";
 // TestimonialCard component to display individual testimonial data
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2">
+    <div data-aos="fade-up" className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2">
       {/* Quote Icon */}
       <div className="flex p-4 mb-4 text-3xl text-green-500">
         <img src={quote} alt="Quote" />
@@ -110,7 +110,7 @@ const Testimonials = ({
 
             {showHeading && (
 
-              <h2 className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal">
+              <h2 data-aos="fade-right" className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal">
 
                 <span className="block ml-2 sm:inline">Client</span>
                 <span className="block ml-2 sm:inline">Testimonials</span>
@@ -135,7 +135,7 @@ const Testimonials = ({
           </div>
 
           {/* Swiper Carousel with Testimonial Cards */}
-          <Swiper {...swiperSettings}>
+          <Swiper  {...swiperSettings}>
             {testimonialsData.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <TestimonialCard testimonial={testimonial} />

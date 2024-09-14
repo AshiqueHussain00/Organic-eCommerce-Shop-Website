@@ -153,10 +153,10 @@ const ProductDetails = () => {
         <section className="relative w-full py-8 pb-10 bg-gray-50">
             <div className='w-10/12 mx-auto'>
                 <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
-                    <h1 className="text-[2rem] font-semibold">Hot Deals</h1>
-                    <Link className="font-medium text-primary">View All →</Link>
+                    <h1 data-aos="fade-right" className="text-[2rem] font-semibold">Hot Deals</h1>
+                    <Link data-aos="fade-left" className="font-medium text-primary">View All →</Link>
                 </div>
-                <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+                <div data-aos="fade-up" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
                     {/* LimitedProductCard occupies the first two rows of the first column */}
                     <motion.div
                         className="xs:col-span-2 xs:row-span-2"

@@ -41,10 +41,10 @@ const HeaderBottom = () => {
       animate="visible"
       variants={cardAnimation}
       transition={{ duration: 0.8 }}
-      className='w-full absolute z-50 bottom-[-250px] xsm:bottom-[-200px] md:bottom-[-100px] xlg:bottom-[-70px]'
+      className='w-full absolute z-50 bottom-[-220px] xsm:bottom-[-200px] md:bottom-[-140px] xlg:bottom-[-60px]'
     >
       <div className="w-11/12 mx-auto xmd:w-11/12 bg-white-200 text-black-800">
-        <ul className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20">
+        <ul data-aos = "fade-right" className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20">
           {HeaderBottomData.map((item, index) => {
             const IconComponent = item.icon;
             return (
