@@ -6,7 +6,7 @@ const FollowInstagram = ({ images, instagramUrl }) => {
   return (
    <section className='relative w-full'>
     <div className='w-10/12 pb-20 mx-auto'>
-    <div className="grid gap-8  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
+    <div className="grid gap-8 grid-cols-2  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 ">
       {images.map((image, index) => (
         <a
           href={instagramUrl} 

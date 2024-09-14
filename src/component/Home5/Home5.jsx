@@ -1,5 +1,6 @@
 import React from "react";
 import LatestNews from "../common/LatestNews";
+import HeaderBottom from '../common/HeaderBottom'
 import TestimonialCard from "../common/TestimonialCard";
 import FollowInstagram from "../common/FollowInstagram";
 import customer1 from "../../assets/common/Testimonial/customer1.svg";
@@ -15,7 +16,7 @@ import newsBG from '../../assets/common/latestnews/newsBG.svg'
 import img2 from "../../assets/common/latestnews/img2.svg";
 import img3 from "../../assets/common/latestnews/img3.svg";
 import img4 from "../../assets/common/latestnews/img4.svg";
-import FeaturedProduct from "../home4/FeaturedProduct";
+import FeaturedProducts from "./home5/FeaturedProducts";
 import '../../index.css'
 import Trusted from './home5/Trusted';
 import HappyCustomer from "./home5/HappyCustomer";
@@ -129,7 +130,8 @@ const Home5 = () => {
   return (
     <section>
       <Herosection />
-      <FeaturedProduct />
+      <HeaderBottom/>
+      <FeaturedProducts/>
       <TopCategory/>
 
       <div
