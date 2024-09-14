@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'; 
@@ -48,7 +47,7 @@ const HomeHeroSection2 = () => {
   return (
     <section className='w-full xxl:pt-10 pt-16 pb-80 md:pb-56 bg-green-gray-scale-50'>
       <div
-        className='relative w-11/12 lg:w-10/12  h-auto mx-auto py-4 '
+        className='relative w-11/12 lg:w-9/12  h-auto mx-auto py-4 '
       >
         <div className="relative flex flex-col md:flex-row items-center mx-auto w-full h-full">
           <Swiper

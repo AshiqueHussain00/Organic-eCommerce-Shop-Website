@@ -29,7 +29,7 @@ const App = () => {
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar/>
-       <Homepage2/> 
+       {/* <Homepage2/>  */}
       {/* <Home4/> */}
       {/* <Home1/> */}
       {/* <Home5/> */}
