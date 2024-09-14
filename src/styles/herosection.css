@@ -1,25 +1,4 @@
-.custom-swiper-pagination {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 8px;
-    z-index: 10;
-  }
-  
-  .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: rgba(0, 0, 0, 0.5); /* Default bullet color */
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .swiper-pagination-bullet-active {
-    background-color: rgb(0, 178, 7); /* Active bullet color */
-  }
+
   
   
 

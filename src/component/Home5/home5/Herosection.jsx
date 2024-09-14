@@ -1,9 +1,9 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'; // Import Pagination module
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import 'swiper/css/pagination'; // Import pagination CSS
 import { GoArrowLeft, GoArrowRight } from "react-icons/go"; // Import icons
 import '../../../styles/herosection.css'
 import Image from '../../../assets/home5/herosection/Image.svg'; // Image path
@@ -45,19 +45,23 @@ const Herosection = () => {
       >
         <div className="relative flex flex-col md:flex-row items-center mx-auto w-full h-full">
           <Swiper
-            modules={[Navigation, Pagination]}
+            modules={[Navigation, Pagination, Autoplay]} // Include Pagination module
             spaceBetween={20}
             slidesPerView={1}
             loop={true}
+            autoplay={{
+              delay: 3000,  // Autoplay delay in milliseconds (3 seconds)
+              disableOnInteraction: false,  // Continue autoplay after user interactions
+            }}
             navigation={{
               nextEl: '.custom-swiper-button-next',
               prevEl: '.custom-swiper-button-prev',
             }}
             pagination={{
               clickable: true,
-              el: '.custom-swiper-pagination',  // Correct class for pagination
-              bulletClass: 'swiper-pagination-bullet',  // Correct bullet class
-              bulletActiveClass: 'swiper-pagination-bullet-active',  // Correct active bullet class
+              el: '.custom-swiper-pagination',
+              bulletClass: 'swiper-pagination-bullet',
+              bulletActiveClass: 'swiper-pagination-bullet-active',
             }}
             className="w-full md:w-10/12 h-full"
           >
@@ -95,17 +99,17 @@ const Herosection = () => {
           </Swiper>
 
           {/* Left Navigation Button */}
-          <div className="custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+          <div className="custom-swiper-button-prev absolute left-20 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
             <GoArrowLeft className="fa" />
           </div>
 
           {/* Right Navigation Button */}
-          <div className="custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+          <div className="custom-swiper-button-next absolute right-20 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
             <GoArrowRight className="fa" />
           </div>
 
           {/* Pagination Container */}
-          <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10"></div>
+          <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-1000000"></div>
         </div>
       </div>
     </section>
