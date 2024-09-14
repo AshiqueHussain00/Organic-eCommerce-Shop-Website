@@ -1,10 +1,12 @@
 import React from 'react'
 import { HeaderBottomData } from '../../data/common/HeaderBottomData';
 
+
 function HeroBottom4() {
     return (
    
-            <div className="w-11/12 mx-auto xmd:w-10/12 bg-white-200 text-black-800 rounded-xl">
+       <div data-aos="fade-up" className='w-full absolute z-50 bottom-[-220px] xsm:bottom-[-200px] md:bottom-[-140px] xlg:bottom-[-100px]'>
+            <div className="w-11/12 mx-auto xmd:w-10/12 bg-white-200 text-black-800 rounded-xl ">
 
                 <ul className="grid md:grid-cols-4 grid-cols-2   shadow-xl rounded-xl">
                     {HeaderBottomData.map((item, index) => {
@@ -46,6 +48,8 @@ function HeroBottom4() {
                     })}
                 </ul>
 
+
+            </div>
 
             </div>
        

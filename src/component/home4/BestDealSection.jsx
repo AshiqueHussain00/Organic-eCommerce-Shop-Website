@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import bestdeal1 from '../../assets/home4/bestdeal1.svg';
 import bestdeal2 from '../../assets/home4/bestdeal2.svg';
+import { GoArrowRight } from "react-icons/go";
 
 const BestDealSection = () => {
     const [timeLeft, setTimeLeft] = useState({});
@@ -37,51 +38,43 @@ const BestDealSection = () => {
         return () => clearInterval(intervalId);
     }, []);
 
- 
+
     return (
         <section
             className='relative w-full bg-gray-50'
-            
+
         >
-            <motion.div 
+            <div data-aos="fade-up"
                 className='flex flex-col items-center justify-center w-11/12 gap-10 pt-10 mx-auto xl:flex-row'
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                
             >
-                <motion.div
+                <div data-aos="fade-right"
                     className="flex justify-center"
-                    initial={{ scale: 0.8 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.5 }}
+                    
                 >
                     <img
                         src={bestdeal1}
                         alt='best Deal'
                     />
-                </motion.div>
-                <motion.div 
+                </div>
+                <div data-aos="fade-up"
                     className='text-center align-bottom'
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
+                    
                 >
                     <h3 className='text-primary'>Best Deal</h3>
-                    <h1 className="w-[90%] mt-5 mb-4 text-2xl leading-[40px] md:text-4xl lg:text-[2.6rem] text-black-900 font-semibold">
+                    <h1 className="mt-5 mb-4 text-2xl leading-[40px] md:text-4xl lg:text-3xl text-black-900 font-semibold">
                         Our Special Products Deal of the Month
                     </h1>
                     {showCountdown && (
-                        <motion.div 
+                        <div
                             className="p-2 text-sm text-center sm:text-2xl text-primary"
-                            initial={{ opacity: 0, y: -20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.4, duration: 0.5 }}
+                            
                         >
                             <div className="flex justify-center gap-1 sm:gap-4">
                                 <div className="flex flex-col gap-y-1 items-center py-3 xs:px-5 px-3 rounded-lg bg-white-100">
                                     <span className='text-3xl'>{
                                         timeLeft.days < 10 ? `0${timeLeft.days}` : `${timeLeft.days}`
-                                        }</span>
+                                    }</span>
                                     <span className="text-sm text-green-gray-scale-500 ">Days</span>
                                 </div>
                                 <span className='pt-5'>:</span>
@@ -99,22 +92,28 @@ const BestDealSection = () => {
                                     <span className='text-3xl'>{timeLeft.seconds}</span>
                                     <span className="text-sm text-green-gray-scale-500">Secs</span>
                                 </div>
+                               
                             </div>
-                        </motion.div>
+                        </div>
                     )}
-                </motion.div>
-                <motion.div
+                     <div className='flex justify-center mt-6'>
+                                    <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg transition-all duration-200 text-white-100 bg-light-branding-success hover:bg-branding-success ">
+                                        <span className='font-poppins text-white-300'>Shop now</span>
+                                        <span className='font-poppins text-white-300'><GoArrowRight /></span>
+                                    </button>
+
+                                </div>
+                </div>
+                <div data-aos="fade-left"
                     className="flex justify-center"
-                    initial={{ scale: 0.8 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.5 }}
+                   
                 >
                     <img
                         src={bestdeal2}
                         alt='best Deal'
                     />
-                </motion.div>
-            </motion.div>
+                </div>
+            </div>
         </section>
     );
 };

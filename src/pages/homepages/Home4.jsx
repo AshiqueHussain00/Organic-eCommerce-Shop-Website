@@ -1,3 +1,4 @@
+import HeroSection from '../../component/home4/HeroSection'
 import HeroBottom4 from '../../component/home4/HeroBottom4'
 import ProductSection from '../../component/home4/ProductSection'
 import Banner from '../../component/home4/Banner'
@@ -9,24 +10,31 @@ import LatestNewsSection from '../../component/home4/LatestNewsSection'
 
 const Home4 = () => {
   return (
-    <div>
-      <HeroBottom4 />
-      <ProductSection />
+    <div >
+
+      <div className='relative'>
+        <HeroSection />
+        <HeroBottom4 />
+        </div>
+        <ProductSection />
+
+    
+
       <Banner />
       <BestDealSection />
       <FeaturedProduct />
       <div className='relative '>
         <TestimonialSection />
 
-     
-       <VideoSection/>
-       <LatestNewsSection/>
+
+        <VideoSection />
+        <LatestNewsSection />
 
 
         {/* ------------- white section---------- */}
         <div className='w-full h-[1000px] xxs:h-[1150px] xsm:h-[1100px] xs:h-[1000px] ssm:h-[1120px] md:h-[1400px] xmd:h-[730px] lg:h-[800px] xxl:h-[900px] bg-white-100  relative z-10'>
 
-         
+
 
         </div>
 
@@ -35,13 +43,13 @@ const Home4 = () => {
 
         </div>
 
-      
+
 
 
       </div>
 
 
-   
+
 
 
     </div>

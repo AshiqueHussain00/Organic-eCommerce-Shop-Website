@@ -94,9 +94,9 @@ const FeaturedProduct = () => {
         {/* --------- container --------- */}
         <div className='w-11/12 xmd:w-10/12 mx-auto  flex flex-col gap-y-8'>
 
-            <h1 className='text-center xmd:text-[40px] text-4xl font-semibold'>Featured Products</h1>
+            <h1 data-aos="fade-left" className='text-center xmd:text-[40px] text-4xl font-semibold'>Featured Products</h1>
 
-            <div className='w-full xxs:w-[80%] mx-auto xs:w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xxl:grid-cols-5 gap-x-1 gap-y-1'>
+            <div data-aos="fade-right" className='w-full xxs:w-[80%] mx-auto xs:w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xxl:grid-cols-5 gap-x-1 gap-y-1'>
                 {
                     featuredProduct.slice(0,5).map((product) => (
                         <ProductCard
