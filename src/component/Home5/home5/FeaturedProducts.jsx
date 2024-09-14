@@ -7,6 +7,7 @@ import chinesecabbage from '../../../assets/home5/featuredproduct/chinesecabbage
 import greenapple from '../../../assets/home5/featuredproduct/greenapple.svg'
 import ladiesfinger from '../../../assets/home5/featuredproduct/ladiesfinger.svg'
 import greencapsicum from '../../../assets/home5/featuredproduct/greencapsicum.svg'
+import corn from '../../../assets/home5/featuredproduct/corn.svg'
 const FeaturedProducts = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('down');
@@ -56,6 +57,16 @@ const FeaturedProducts = () => {
       rating: 4,
       isSale: false,
       isBestSeller: false,
+      saleText: '',
+      bestSellerText: 'Best Seller',
+    },
+    {
+      imageSrc: corn,
+      productName: 'Corn',
+      price: '14.99',
+      rating: 4,
+      isSale: false,
+      isBestSeller: true,
       saleText: '',
       bestSellerText: 'Best Seller',
     },
