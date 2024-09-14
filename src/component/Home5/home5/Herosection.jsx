@@ -40,7 +40,7 @@ const Herosection = () => {
   return (
     <section>
       <div
-        className='relative w-full h-auto mx-auto bg-[#EDF2EE]'
+        className='relative w-full h-auto mx-auto bg-[#EDF2EE] lg:py-10'
         style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
         <div className="relative flex flex-col md:flex-row items-center mx-auto w-full h-full">
@@ -50,7 +50,7 @@ const Herosection = () => {
             slidesPerView={1}
             loop={true}
             autoplay={{
-              delay: 3000,  // Autoplay delay in milliseconds (3 seconds)
+              delay: 4000,  // Autoplay delay in milliseconds (3 seconds)
               disableOnInteraction: false,  // Continue autoplay after user interactions
             }}
             navigation={{
@@ -58,12 +58,10 @@ const Herosection = () => {
               prevEl: '.custom-swiper-button-prev',
             }}
             pagination={{
-              clickable: true,
-              el: '.custom-swiper-pagination',
-              bulletClass: 'swiper-pagination-bullet',
-              bulletActiveClass: 'swiper-pagination-bullet-active',
+              clickable: true, // Enable clickable pagination
+           
             }}
-            className="w-full md:w-10/12 h-full"
+            className="w-full md:w-10/12 h-full p-4"
           >
             {heroSection.map((slide, index) => (
               <SwiperSlide key={index}>
@@ -99,17 +97,16 @@ const Herosection = () => {
           </Swiper>
 
           {/* Left Navigation Button */}
-          <div className="custom-swiper-button-prev absolute left-20 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+          <div className="custom-swiper-button-prev absolute left-12 top-1/2 transform -translate-y-1/2 z-10 text-xl cursor-pointer">
             <GoArrowLeft className="fa" />
           </div>
 
           {/* Right Navigation Button */}
-          <div className="custom-swiper-button-next absolute right-20 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+          <div className="custom-swiper-button-next absolute right-12 top-1/2 transform -translate-y-1/2 z-10 text-xl cursor-pointer">
             <GoArrowRight className="fa" />
           </div>
+          <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 md:bottom-8"></div>
 
-          {/* Pagination Container */}
-          <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-1000000"></div>
         </div>
       </div>
     </section>
