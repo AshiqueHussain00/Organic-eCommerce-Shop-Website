@@ -7,7 +7,8 @@ import chinesecabbage from '../../../assets/home5/featuredproduct/chinesecabbage
 import greenapple from '../../../assets/home5/featuredproduct/greenapple.svg'
 import ladiesfinger from '../../../assets/home5/featuredproduct/ladiesfinger.svg'
 import greencapsicum from '../../../assets/home5/featuredproduct/greencapsicum.svg'
-const FeaturedProducts = () => {
+import corn from '../../../assets/home5/featuredproduct/corn.svg'
+const BestSeller = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('down');
   const ref = useRef(null);
@@ -59,6 +60,16 @@ const FeaturedProducts = () => {
       saleText: '',
       bestSellerText: 'Best Seller',
     },
+    {
+        imageSrc: corn,
+        productName: 'Corn',
+        price: '14.99',
+        rating: 4,
+        isSale: false,
+        isBestSeller: true,
+        saleText: '',
+        bestSellerText: 'Best Seller',
+      },
   ];
 
   // Define animations for the scroll direction
@@ -72,7 +83,7 @@ const FeaturedProducts = () => {
     <section ref={ref} className="relative w-full pb-2 ">
       <div className="w-10/12 mx-auto">
         <div className="flex flex-col  items-center justify-between pt-10 pb-10 xs:flex-row">
-          <h1 className="text-[2rem] font-semibold">Featured Products</h1>
+          <h1 className="text-[2rem] font-semibold">Best Seller Products</h1>
           <Link className="font-medium text-primary">View All →</Link>
         </div>
         <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
@@ -107,4 +118,4 @@ const FeaturedProducts = () => {
   );
 };
 
-export default FeaturedProducts;
+export default BestSeller;
