@@ -129,7 +129,7 @@ const Home5 = () => {
 
   return (
     <section>
-      <Herosection />
+      <Herosection autoplay={true} />
       <HeaderBottom/>
       <FeaturedProducts/>
       <TopCategory/>

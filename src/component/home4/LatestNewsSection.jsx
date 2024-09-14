@@ -39,7 +39,7 @@ const newsData = [
 const LatestNewsSection = () => {
     return (
         <section className='w-full absolute z-50 bottom-[150px] xs:bottom-[120px] ssm:bottom-[60px] sm:bottom-[100px] xmd:bottom-[140px]  xxl:bottom-[150px] py-4 '>
-            <div className="w-11/12 xmd:w-10/12 mx-auto flex flex-col gap-y-8 items-center">
+            <div data-aos="fade-left" className="w-11/12 xmd:w-10/12 mx-auto flex flex-col gap-y-8 items-center">
 
             <h1 className='text-center text-4xl sm:text-[40px] font-semibold text-gray-900'>Latest News</h1>
 

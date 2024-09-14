@@ -27,7 +27,7 @@ function Banners() {
     return (
         <section>
             <div className="w-10/12 pt-5 pb-10 mx-auto xmd:w-11/12 bg-white-100">
-                <ul className="flex flex-row flex-wrap items-center justify-center gap-6 p-2 xxs:p-4">
+                <ul data-aos="fade-left" className="flex flex-row flex-wrap items-center justify-center gap-6 p-2 xxs:p-4">
 
 
                     {BannerData.map((item) => (

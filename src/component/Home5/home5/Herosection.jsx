@@ -1,11 +1,11 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination } from 'swiper/modules'; 
+import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa'; // Import icons
-import '../../../styles/herosection.css'; // Import the custom CSS file
+import { GoArrowLeft, GoArrowRight } from "react-icons/go"; // Import icons
+import '../../../styles/herosection.css'
 import Image from '../../../assets/home5/herosection/Image.svg'; // Image path
 import BG from '../../../assets/home5/herosection/BG.svg'; // Background image path
 
@@ -55,7 +55,9 @@ const Herosection = () => {
             }}
             pagination={{
               clickable: true,
-              el: '.custom-swiper-pagination',
+              el: '.custom-swiper-pagination',  // Correct class for pagination
+              bulletClass: 'swiper-pagination-bullet',  // Correct bullet class
+              bulletActiveClass: 'swiper-pagination-bullet-active',  // Correct active bullet class
             }}
             className="w-full md:w-10/12 h-full"
           >
@@ -84,7 +86,7 @@ const Herosection = () => {
                     <p className="text-gray-600 text-sm">{slide.p}</p>
                     <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg bg-[rgb(0,178,7)] hover:shadow-[2px_4px_6px_8px_rgba(0,_178,_7,_0.1)]">
                       <span className='font-poppins text-white-300'>Shop now</span>
-                      <span className='font-poppins text-white-300'><FaArrowRight /></span>
+                      <span className='font-poppins text-white-300'><GoArrowRight /></span>
                     </button>
                   </div>
                 </div>
@@ -94,16 +96,16 @@ const Herosection = () => {
 
           {/* Left Navigation Button */}
           <div className="custom-swiper-button-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
-            <FaArrowLeft className="fa" />
+            <GoArrowLeft className="fa" />
           </div>
 
           {/* Right Navigation Button */}
           <div className="custom-swiper-button-next absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
-            <FaArrowRight className="fa" />
+            <GoArrowRight className="fa" />
           </div>
 
           {/* Pagination Container */}
-          <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-999"></div>
+          <div className="custom-swiper-pagination absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10"></div>
         </div>
       </div>
     </section>

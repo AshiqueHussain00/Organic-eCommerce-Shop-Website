@@ -28,7 +28,7 @@ const VideoSection = () => {
 
             {/* ---------- container --------- */}
 
-            <div className='w-11/12 xmd:w-10/12  video-container  mx-auto  rounded-2xl xs:max-h-[700px] '>
+            <div data-aos="fade-right" className='w-11/12 xmd:w-10/12  video-container  mx-auto  rounded-2xl xs:max-h-[700px] '>
 
                 <Player
                     ref={videoRef}
