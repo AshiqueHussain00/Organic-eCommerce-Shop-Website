@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Category = () => {
   return (
-    <div className='grid w-full grid-cols-2 xlg:grid-cols-6 mmd:grid-cols-5 md:grid-cols-4 xs:grid-cols-3 gap-y-6 xl:gap-x-6 gap-x-3'>
+    <div data-aos="fade-up" className='grid w-full grid-cols-2 xlg:grid-cols-6 mmd:grid-cols-5 md:grid-cols-4 xs:grid-cols-3 gap-y-6 xl:gap-x-6 gap-x-3'>
      
      {
         categories.map((category)=> (

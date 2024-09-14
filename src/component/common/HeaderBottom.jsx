@@ -43,7 +43,7 @@ const HeaderBottom = () => {
       transition={{ duration: 0.8 }}
     >
       <div className="w-11/12 mx-auto xmd:w-11/12 bg-white-200 text-black-800">
-        <ul className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20">
+        <ul data-aos="fade-right" className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20">
           {HeaderBottomData.map((item, index) => {
             const IconComponent = item.icon;
             return (
