@@ -6,9 +6,9 @@ import mail from "../../../assets/home5/newsletter/mail.svg";
 
 const Newsletter = () => {
   return (
-    <div className="w-10/12  mx-auto py-4 flex flex-col md:flex-row justify-evenly items-stretch space-y-4 md:space-y-0 md:space-x-4">
+    <div className="w-10/12 mx-auto py-4 flex flex-col md:flex-row justify-evenly items-stretch space-y-4 md:space-y-0 md:space-x-4">
       {/* Location Section */}
-      <div className="relative flex flex-col items-left space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 h-full md:basis-1/4">
+      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
         {/* Icon with Background */}
         <div className="relative">
           <img src={BG} alt="Background" className="w-12 h-12 opacity-30" />
@@ -20,17 +20,17 @@ const Newsletter = () => {
         </div>
 
         {/* Location Text */}
-        <div className="text-sm font-[500] font-poppins">OUR LOCATION</div>
+        <div className="text-sm font-medium font-poppins">OUR LOCATION</div>
 
         {/* Address */}
-        <div className="text-xs font-[400] font-poppins text-[#666666] text-left">
+        <div className="text-xs font-normal font-poppins text-[#666666] text-left">
           1901 Thornridge Cir. Shiloh, <br />
           Washington DC 20020, United States
         </div>
       </div>
 
       {/* Call Section */}
-      <div className="relative flex flex-col items-left space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 h-full md:basis-1/4">
+      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
         {/* Icon with Background */}
         <div className="relative">
           <img src={BG} alt="Background" className="w-12 h-12 opacity-30" />
@@ -54,7 +54,7 @@ const Newsletter = () => {
       </div>
 
       {/* Newsletter Subscribe Section */}
-      <div className="relative flex flex-col items-left space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 h-full md:basis-1/2">
+      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
         {/* Icon with Background */}
         <div className="relative">
           <img src={BG} alt="Background" className="w-12 h-12 opacity-30" />
@@ -69,7 +69,7 @@ const Newsletter = () => {
         <div className="text-sm font-medium">SUBSCRIBE NEWSLETTER</div>
 
         {/* Email Input */}
-        <div className="relative flex items-center">
+        <div className="relative w-full flex items-center">
           <input
             type="email"
             className="border rounded-full p-2 pr-20 w-full"

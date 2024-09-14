@@ -8,7 +8,7 @@ import image5 from '../../../assets/home3/newestProducts/Corn.svg'
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom"
 
-function NewestProducts() {
+function FeaturedProducts() {
   
     const handleAddToCart = () => {
         console.log("Add to Cart clicked");
@@ -77,13 +77,13 @@ function NewestProducts() {
         visible: { opacity: 1, y: 0 },
     };
     return (
-        <section  className='relative w-full pb-10'>
-            <div data-aos = "fade-right" className='w-10/12 mx-auto'>
-                <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
-                    <h1 className="text-[2rem] font-semibold">Newest Products</h1>
-                    <Link className="font-medium text-primary">View All →</Link>
+        <section className='relative w-full pb-10 mt-60 md:mt-32  smd:mt-24'>
+            <div className='w-10/12 mx-auto'>
+                <div className="flex flex-col items-center justify-between pt-10 pb-10">
+                    <h1 className="text-[1.8rem] md:text-[2rem] font-semibold text-center">Featured Products</h1>
+
                 </div>
-                <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+                <div data-aos = "fade-left" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
 
 
                     {/* Adjusted Product Cards Layout */}
@@ -117,4 +117,4 @@ function NewestProducts() {
 
 }
 
-export default NewestProducts
+export default FeaturedProducts;

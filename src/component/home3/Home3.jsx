@@ -1,6 +1,8 @@
 import React from 'react'
-
-import HeaderBottom from '../common/HeaderBottom'
+import HeaderBottom from '../home3/home-component/HeaderBottom'
+import FeaturedProducts from './home-component/FeaturedProducts'
+import ShowProduct from '../common/ShowProduct'
+import ShowProductshp3 from './home-component/showProductshp3'
 import TopCategory from './home-component/TopCategory'
 import Banners from '../common/Banners'
 import NewestProducts from './home-component/NewestProducts'
@@ -11,8 +13,13 @@ import HomeHeroSection2 from './home-component/HomeHeroSection2'
 function Home3() {
   return (
     <div>
-      <HomeHeroSection2/>
+     
+      <div className="relative">
+      <HomeHeroSection2 />
       <HeaderBottom />
+    </div>
+      <FeaturedProducts/>
+      <ShowProductshp3/>
       <TopCategory />
       <Banners />
       <NewestProducts />

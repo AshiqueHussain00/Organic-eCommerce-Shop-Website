@@ -71,7 +71,7 @@ const ClientTestimonials = () => {
     ];
     const instagramImages = [post1, post2, post3, post4, post5, post6];
     return (
-        <section className='relative w-full'>
+        <section data-aos="fade-left" className='relative w-full'>
             <div >
                 <TestimonialCard
                     testimonialsData={testimonialsData}

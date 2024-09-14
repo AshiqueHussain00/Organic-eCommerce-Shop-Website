@@ -215,7 +215,7 @@ function TopCategory() {
 
   return (
     <section>
-      <div className="w-10/12 sm:w-11/12 mx-auto pt-5 pb-10">
+      <div data-aos="fade-left" className="w-10/12 sm:w-11/12 mx-auto pt-5 pb-10 mt-16">
         <div className="pt-10 pb-10 flex justify-center">
           <h1 className="text-[2rem] text-center font-semibold">
             Top Category
