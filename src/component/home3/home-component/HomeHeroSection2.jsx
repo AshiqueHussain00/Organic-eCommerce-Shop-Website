@@ -82,7 +82,7 @@ const HomeHeroSection2 = () => {
                       {slide.headingFirstPart} <br /> {slide.headingSecondPart}
                     </h1>
                      
-                    <p className="text-2xl xs:text-3xl md:text-4xl xxl:text-2xl font-bold text-gray-800 leading-tight">
+                    <p className="text-base xs:text-lg md:text-2xl font-bold text-gray-800 leading-tight">
                       {slide.sale_1} <span className="text-warning"> {slide.sale_2}</span>
                     </p>
                     
