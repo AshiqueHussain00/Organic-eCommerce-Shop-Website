@@ -114,7 +114,7 @@ const Navbar = () => {
                 <div className="flex space-x-4">
                   {/* ----------- all category -------- */}
                   <div
-                   className="relative group h-full  ">
+                    className="relative group h-full  ">
 
 
                     <div className="  flex items-center ">
@@ -129,29 +129,35 @@ const Navbar = () => {
                       </span>
                     </div>
 
-                    <div className='bg-white-100 text-gray-600 border right-0 left-0 absolute  z-[999] mt-4 transition-opacity duration-300 opacity-0 group-hover:opacity-100'>
+                    <div className='bg-white-100 text-gray-600  right-0 left-0 absolute  z-[999]  transition-opacity duration-300 hidden group-hover:block'>
+
+                      <div className='border mt-4'>
 
 
-                      {
-                        allCategoryDropdown.map((item, index) => {
-                          const IconComponent = item.icon;
-                          return (
 
-                            <div key={index} className={
-                              ` cursor-pointer flex gap-x-3 text-gray-500 items-center px-3 transition-all duration-200 hover:text-white-100 group hover:bg-primary 
+
+                        {
+                          allCategoryDropdown.map((item, index) => {
+                            const IconComponent = item.icon;
+                            return (
+
+                              <div key={index} className={
+                                ` cursor-pointer flex gap-x-3 text-gray-500 items-center px-3 transition-all duration-200 hover:text-white-100 group hover:bg-primary 
           ${item.title.toLowerCase() === "view all category" ? "border" : ""
-                              }
+                                }
         `
-                            } onClick={() => navigate(`${item.path}`)}>
-                              <span className='text-3xl  transition-all duration-200 py-3   '>
-                                <IconComponent />
-                              </span>
-                              <p className='transition-all duration-200 py-3  text-black-900 hover:text-white-100 '
-                              >{item.title}</p>
-                            </div>
-                          )
-                        })
-                      }
+                              } onClick={() => navigate(`${item.path}`)}>
+                                <span className='text-3xl  transition-all duration-200 py-3   '>
+                                  <IconComponent />
+                                </span>
+                                <p className='transition-all duration-200 py-3  text-black-900 hover:text-white-100 '
+                                >{item.title}</p>
+                              </div>
+                            )
+                          })
+                        }
+
+                      </div>
                     </div>
 
 
