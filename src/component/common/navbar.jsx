@@ -179,7 +179,7 @@ const Navbar = () => {
                       </a>
                       {item.dropdown && (
                         <div
-                          className={`absolute top-full left-0 mt-4 bg-white-200 text-black-900 border-2 p-4 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95  z-50 dropdown-animation
+                          className={`absolute top-full left-0 mt-4 bg-white-200 text-black-900 border-2 p-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-95 group-hover:scale-100 z-10
         ${item.title.toLowerCase() === 'blog' ? 'w-[500px] h-[200px]' : 'w-[150px]'}`}
                         >
                           <div className={`${item.title.toLowerCase() === 'blog' ? 'grid grid-cols-4 gap-1' : ''}`}>
@@ -192,7 +192,7 @@ const Navbar = () => {
                                     className="object-cover w-24 h-24"
                                   />
                                 )}
-                                <span className="ml-2">{dropdownItem.title}</span>
+                                <span className="ml-1">{dropdownItem.title}</span>
                               </div>
                             ))}
                           </div>
@@ -222,45 +222,54 @@ const Navbar = () => {
 
           {/* Mobile Menu */}
           {isOpen && (
-            <div className="bg-gray-800 md:hidden text-white-100">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                {navData.map((item) => (
-                  <div key={item.id}>
-                    <a
-                      href={item.path || '#'}
-                      onClick={() => toggleDropdown(item.id)} // Toggle dropdown on click
-                      className="flex items-center justify-between block px-3 py-2 text-base font-medium rounded-md hover:bg-gray-700"
-                    >
-                      {item.title}
-                      {item.dropdown && <FaChevronDown />}
-                    </a>
-                    {item.dropdown && openDropdownId === item.id && (
-                      <div className="ml-4">
-                        {item.dropdown.map((dropdownItem) => (
-                          <a key={dropdownItem.id} href={dropdownItem.path || '#'} className="block px-4 py-2 hover:bg-gray-700">
-                            {dropdownItem.title}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-
-              {/* Mobile Icons */}
-              <div className="flex justify-center mt-4 space-x-4">
-                <a href="/wishlist" className="p-2 text-white rounded-full hover:bg-gray-700">
-                  <IoHeartOutline size={24} />
+  <div className="bg-gray-800 md:hidden text-white-100">
+    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      {navData.map((item) => (
+        <div key={item.id}>
+          <a
+            href={item.path || '#'}
+            onClick={() => toggleDropdown(item.id)} // Toggle dropdown on click
+            className="flex items-center justify-between block px-3 py-2 text-base font-medium rounded-md hover:bg-gray-700"
+          >
+            {item.title}
+            {item.dropdown && <FaChevronDown />}
+          </a>
+          {item.dropdown && openDropdownId === item.id && (
+            <div className="ml-4">
+              {item.dropdown.map((dropdownItem) => (
+                <a key={dropdownItem.id} href={dropdownItem.path || '#'} className="block px-4 py-2 hover:bg-gray-700">
+                  {/* Check if the item contains an image */}
+                  {dropdownItem.image && (
+                    <img
+                      src={dropdownItem.image}
+                      alt={dropdownItem.title}
+                      className="w-30 h-30 object-cover rounded-md" // Ensure the image is visible and responsive
+                    />
+                  )}
+                  {dropdownItem.title}
                 </a>
-                <a href="/cart" className="p-2 text-white rounded-full hover:bg-gray-700">
-                  <HiOutlineShoppingBag size={24} />
-                </a>
-                <a href="/account" className="p-2 text-white rounded-full hover:bg-gray-700">
-                  <FaRegUser size={24} />
-                </a>
-              </div>
+              ))}
             </div>
           )}
+        </div>
+      ))}
+    </div>
+
+    {/* Mobile Icons */}
+    <div className="flex justify-center mt-4 space-x-4">
+      <a href="/wishlist" className="p-2 text-white rounded-full hover:bg-gray-700">
+        <IoHeartOutline size={24} />
+      </a>
+      <a href="/cart" className="p-2 text-white rounded-full hover:bg-gray-700">
+        <HiOutlineShoppingBag size={24} />
+      </a>
+      <a href="/account" className="p-2 text-white rounded-full hover:bg-gray-700">
+        <FaRegUser size={24} />
+      </a>
+    </div>
+  </div>
+)}
+
 
         </header>
       </div>
