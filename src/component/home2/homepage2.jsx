@@ -12,7 +12,7 @@ import HomeTestimonial from '../../component/home1/home-component/HomeTestimonia
 function Homepage2() {
     return (
         <div>
-             <Navbar/>
+             {/* <Navbar/> */}
      <Home2/>
      <HeaderBottom/>
      <PopularCategory/>

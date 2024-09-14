@@ -1,7 +1,7 @@
-import blog1 from '../../assets/blog/blog1.png';
 import agro1 from '../../assets/blog/agro1.jpg';
 import agro2 from '../../assets/blog/agro2.jpg';
-import blog4 from '../../assets/blog/blog4.png';
+import agro3 from '../../assets/blog/agro3.jpg';
+import agro5 from '../../assets/blog/agro5.jpg';
 
 import { LuApple } from "react-icons/lu";
 import { PiCarrot } from "react-icons/pi";
@@ -94,22 +94,22 @@ export const navData = [
       {
         id: 51,
         path: '',
-        image: blog1 // Use the imported image variable
+        image: agro1 // Use the imported image variable
       },
       {
         id: 52,
        path: '',
-        image: agro1 // Use the imported image variable
+        image: agro2 // Use the imported image variable
       },
       {
         id: 53,
        path: '',
-        image: agro2 // Use the imported image variable
+        image: agro3 // Use the imported image variable
       },
       {
         id: 54,
        path: '',
-        image: blog4 // Use the imported image variable
+        image: agro5 // Use the imported image variable
       }
     ]
   },
