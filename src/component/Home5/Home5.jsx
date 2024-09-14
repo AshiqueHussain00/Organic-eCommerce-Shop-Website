@@ -23,7 +23,8 @@ import HappyCustomer from "./home5/HappyCustomer";
 import TopCategory from "../home3/home-component/TopCategory";
 import Steps from "./home5/Steps";
 import Newsletter from "./home5/Newsletter";
-
+import CountdownTimer from "./home5/CountdownTimer";
+import ShowProduct from "../common/ShowProduct";
 const Home5 = () => {
   // news data
 
@@ -149,7 +150,8 @@ const Home5 = () => {
         <LatestNews data={newsData} />
       </div>
       <Trusted />
-
+     <CountdownTimer/>
+<ShowProduct/>
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}

@@ -2,7 +2,10 @@ import React, { useEffect, useState, useRef } from 'react';
 import ProductCard from '../../common/ProductCard';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import chinesecabbage from '../../../assets/home5/featuredproduct/chinesecabbage.svg'
+import greenapple from '../../../assets/home5/featuredproduct/greenapple.svg'
+import ladiesfinger from '../../../assets/home5/featuredproduct/ladiesfinger.svg'
+import greencapsicum from '../../../assets/home5/featuredproduct/greencapsicum.svg'
 const FeaturedProducts = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('down');
@@ -14,30 +17,21 @@ const FeaturedProducts = () => {
 
   const products = [
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: greenapple,
       productName: 'Green Apple',
       price: '14.99',
       oldPrice: '29.99',
       rating: 4,
-      isSale: true,
-      isBestSeller: false,
-      saleText: 'Discount!',
-      bestSellerText: '',
+      isSale: false,
+      isBestSeller: true,
+      saleText: '',
+      bestSellerText: 'Sale 50%',
     },
+   
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Banana',
-      price: '9.99',
-      rating: 3,
-      isSale: true,
-      isBestSeller: false,
-      saleText: 'Sale',
-      bestSellerText: '',
-    },
-    {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Orange',
-      price: '7.99',
+      imageSrc: chinesecabbage,
+      productName: 'Chinese Cabbage',
+      price: '14.99',
       rating: 4,
       isSale: false,
       isBestSeller: false,
@@ -45,22 +39,22 @@ const FeaturedProducts = () => {
       bestSellerText: '',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Mango',
+      imageSrc:greencapsicum,
+      productName: 'Green Capsicum',
       price: '19.99',
       rating: 5,
-      isSale: true,
-      isBestSeller: true,
+      isSale: false,
+      isBestSeller: false,
       saleText: 'Sale 50%',
       bestSellerText: 'Best Seller',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Pineapple',
+      imageSrc: ladiesfinger,
+      productName: 'Ladies Finger',
       price: '12.99',
       rating: 4,
       isSale: false,
-      isBestSeller: true,
+      isBestSeller: false,
       saleText: '',
       bestSellerText: 'Best Seller',
     },
