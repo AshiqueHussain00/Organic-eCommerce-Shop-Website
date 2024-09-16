@@ -1,14 +1,15 @@
 import React from 'react'
-import TestimonialCard from '../../common/TestimonialCard'
-import FollowInstagram from '../../common/FollowInstagram';
-import customer1 from '../../../assets/common/Testimonial/customer1.svg';
-import customer2 from '../../../assets/common/Testimonial/customer2.svg';
-import post1 from '../../../assets/common/followinstagram/post1.svg'
-import post2 from '../../../assets/common/followinstagram/post2.svg'
-import post3 from '../../../assets/common/followinstagram/post3.svg'
-import post4 from '../../../assets/common/followinstagram/post4.svg'
-import post5 from '../../../assets/common/followinstagram/post5.svg'
-import post6 from '../../../assets/common/followinstagram/post6.svg'
+import TestimonialCard from '../common/TestimonialCard'
+import FollowInstagram from '../common/FollowInstagram';
+import customer1 from '../../assets/common/Testimonial/customer1.svg';
+import customer2 from '../../assets/common/Testimonial/customer2.svg';
+import post1 from '../../assets/common/followinstagram/post1.svg'
+import post2 from '../../assets/common/followinstagram/post2.svg'
+import post3 from '../../assets/common/followinstagram/post3.svg'
+import post4 from '../../assets/common/followinstagram/post4.svg'
+import post5 from '../../assets/common/followinstagram/post5.svg'
+import post6 from '../../assets/common/followinstagram/post6.svg'
+import '../../styles/swiper.css'
 
 const HomeTestimonial = () => {
     const testimonialsData = [

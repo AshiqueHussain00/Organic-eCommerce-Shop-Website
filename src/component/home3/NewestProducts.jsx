@@ -1,10 +1,10 @@
 import React from 'react'
-import ProductCard from '../../common/ProductCard';
-import image1 from '../../../assets/home3/newestProducts/GreenApple.svg'
-import image2 from '../../../assets/home3/newestProducts/ChaineseCabbage.svg'
-import image3 from '../../../assets/home3/newestProducts/GreenLettuce.svg'
-import image4 from '../../../assets/home3/newestProducts/GreenChilli.svg'
-import image5 from '../../../assets/home3/newestProducts/Corn.svg'
+import ProductCard from '../common/ProductCard';
+import image1 from '../../assets/home3/newestProducts/GreenApple.svg'
+import image2 from '../../assets/home3/newestProducts/ChaineseCabbage.svg'
+import image3 from '../../assets/home3/newestProducts/GreenLettuce.svg'
+import image4 from '../../assets/home3/newestProducts/GreenChilli.svg'
+import image5 from '../../assets/home3/newestProducts/Corn.svg'
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom"
 

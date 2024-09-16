@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { HeaderBottomData } from '../../../data/common/HeaderBottomData'
+import { HeaderBottomData } from '../../data/common/HeaderBottomData'
 
 const HeaderBottom = () => {
   const [scrollDirection, setScrollDirection] = useState('down');

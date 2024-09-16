@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import BG from '../../../assets/home5/happycustomer/BG.svg';
+import BG from '../../assets/home5/happycustomer/BG.svg';
 
 const AnimatedNumber = ({ value, suffix = '' }) => {
   const [count, setCount] = useState(0);

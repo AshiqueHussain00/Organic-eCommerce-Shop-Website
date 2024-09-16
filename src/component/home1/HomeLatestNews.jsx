@@ -1,8 +1,8 @@
 import React from 'react'
-import LatestNews from '../../common/LatestNews'
-import img2 from "../../../assets/common/latestnews/img2.svg";
-import img3 from "../../../assets/common/latestnews/img3.svg";
-import img4 from "../../../assets/common/latestnews/img4.svg";
+import LatestNews from '../common/LatestNews'
+import img2 from "../../assets/common/latestnews/img2.svg";
+import img3 from "../../assets/common/latestnews/img3.svg";
+import img4 from "../../assets/common/latestnews/img4.svg";
 
 const HomeLatestNews = () => {
   const newsData = [

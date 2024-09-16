@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import LimitedProductCard from '../../common/LimitedProductCard';
-import ProductCard from '../../common/ProductCard';
+import LimitedProductCard from '../common/LimitedProductCard';
+import ProductCard from '../common/ProductCard';
 import { Link } from "react-router-dom"
+import Corn from '../../assets/home5/featuredproduct/corn.svg'
 
 const ProductDetails = () => {
     // Example handlers
@@ -19,7 +20,7 @@ const ProductDetails = () => {
 
     const products = [
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Green Apple',
             price: '14.99',
             oldPrice: '29.99',
@@ -30,7 +31,7 @@ const ProductDetails = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Banana',
             price: '9.99',
             rating: 3,
@@ -40,7 +41,7 @@ const ProductDetails = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Orange',
             price: '7.99',
             rating: 4,
@@ -50,7 +51,7 @@ const ProductDetails = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -60,7 +61,7 @@ const ProductDetails = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -70,7 +71,7 @@ const ProductDetails = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -80,7 +81,7 @@ const ProductDetails = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -90,7 +91,7 @@ const ProductDetails = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -99,7 +100,7 @@ const ProductDetails = () => {
             saleText: 'Sale 50%',
             bestSellerText: 'Best Seller'
         },  {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -109,7 +110,7 @@ const ProductDetails = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -120,7 +121,7 @@ const ProductDetails = () => {
         },
 
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Corn,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -132,7 +133,7 @@ const ProductDetails = () => {
     ];
 
     const product = {
-        imageSrc: 'https://placehold.jp/525x466.png',
+        imageSrc: Corn,
         productName: 'Sample Product',
         price: '29.99',
         oldPrice: '39.99',

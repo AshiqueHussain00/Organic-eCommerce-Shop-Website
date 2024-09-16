@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-import ProductCard from '../../common/ProductCard';
+import ProductCard from '../common/ProductCard';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import chinesecabbage from '../../../assets/home5/featuredproduct/chinesecabbage.svg'
-import greenapple from '../../../assets/home5/featuredproduct/greenapple.svg'
-import ladiesfinger from '../../../assets/home5/featuredproduct/ladiesfinger.svg'
-import greencapsicum from '../../../assets/home5/featuredproduct/greencapsicum.svg'
-import corn from '../../../assets/home5/featuredproduct/corn.svg'
+import chinesecabbage from '../../assets/home5/featuredproduct/chinesecabbage.svg'
+import greenapple from '../../assets/home5/featuredproduct/greenapple.svg'
+import ladiesfinger from '../../assets/home5/featuredproduct/ladiesfinger.svg'
+import greencapsicum from '../../assets/home5/featuredproduct/greencapsicum.svg'
+import corn from '../../assets/home5/featuredproduct/corn.svg'
 const FeaturedProducts = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('down');

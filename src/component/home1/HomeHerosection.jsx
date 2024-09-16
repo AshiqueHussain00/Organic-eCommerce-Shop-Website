@@ -1,9 +1,9 @@
 
 import { useAnimation, motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import bannar1 from '../../../assets/home1/banner1.svg';
-import bannar2 from '../../../assets/home1/banner2.svg';
-import bannar3 from '../../../assets/home1/banner3.svg';
+import bannar1 from '../../assets/home1/banner1.svg';
+import bannar2 from '../../assets/home1/banner2.svg';
+import bannar3 from '../../assets/home1/banner3.svg';
 
 const HomeHerosection = () => {
   // Animation controls
@@ -55,10 +55,10 @@ const HomeHerosection = () => {
               <h1 className="mb-4 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-5xl">
                 Fresh & Healthy <br /> Organic Food
               </h1>
-              <p className="p-2 mb-6 text-sm border-l-4 border-yellow-500 sm:text-base md:text-lg lg:text-xl">
+              <div className="p-2 mb-6 text-sm border-l-4 border-yellow-500 sm:text-base md:text-lg lg:text-xl">
                 <h2 className="mb-4">Sale up to <span className="p-2 font-bold text-white bg-yellow-500 rounded-lg">30% OFF</span></h2>
                 <h3 className="text-sm text-gray-300">Free shipping on all your orders.</h3>
-              </p>
+              </div>
             </div>
             <div className="w-full sm:w-[70%] md:w-[50%]">
               <Link

@@ -1,11 +1,11 @@
 import React from 'react';
-import bookoff from '../../../assets/home5/steps/bookoff.svg';
-import Vector from '../../../assets/home5/steps/Vector.svg';
-import group1 from '../../../assets/home5/steps/group1.svg';
-import group2 from '../../../assets/home5/steps/group2.svg';
-import mango from '../../../assets/home5/steps/mango.svg';
-import food from '../../../assets/home5/steps/food.svg';
-import '../../../styles/steps.css';
+import bookoff from '../../assets/home5/steps/bookoff.svg';
+import Vector from '../../assets/home5/steps/Vector.svg';
+import group1 from '../../assets/home5/steps/group1.svg';
+import group2 from '../../assets/home5/steps/group2.svg';
+import mango from '../../assets/home5/steps/mango.svg';
+import food from '../../assets/home5/steps/food.svg';
+import '../../styles/steps.css';
 
 const Steps = () => {
   return (

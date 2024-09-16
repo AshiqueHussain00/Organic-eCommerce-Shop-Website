@@ -1,7 +1,8 @@
 import React from 'react'
-import ProductCard from '../../common/ProductCard';
+import ProductCard from '../common/ProductCard';
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom"
+import Vege from '../../assets/home5/featuredproduct/chinesecabbage.svg'
 
 const PopularProducts = () => {
     const handleAddToCart = () => {
@@ -11,7 +12,7 @@ const PopularProducts = () => {
 
     const products = [
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Green Apple',
             price: '14.99',
             oldPrice: '29.99',
@@ -22,7 +23,7 @@ const PopularProducts = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc:  Vege,
             productName: 'Banana',
             price: '9.99',
             rating: 3,
@@ -32,7 +33,7 @@ const PopularProducts = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Orange',
             price: '7.99',
             rating: 4,
@@ -42,7 +43,7 @@ const PopularProducts = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -52,7 +53,7 @@ const PopularProducts = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -62,7 +63,7 @@ const PopularProducts = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -72,7 +73,7 @@ const PopularProducts = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -82,7 +83,7 @@ const PopularProducts = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -93,7 +94,7 @@ const PopularProducts = () => {
         },
 
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
@@ -103,7 +104,7 @@ const PopularProducts = () => {
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: Vege,
             productName: 'Mango',
             price: '19.99',
             rating: 5,

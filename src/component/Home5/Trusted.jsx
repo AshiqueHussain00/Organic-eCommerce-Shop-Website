@@ -1,9 +1,9 @@
 import React from 'react';
 import { FaArrowRight, FaCheck } from 'react-icons/fa';
-import BG from '../../../assets/home5/trusted/BG.svg';
-import image1 from '../../../assets/home5/trusted/image1.svg';
-import image2 from '../../../assets/home5/trusted/image2.svg';
-import leaf from '../../../assets/home5/trusted/leaf.svg';
+import BG from '../../assets/home5/trusted/BG.svg';
+import image1 from '../../assets/home5/trusted/image1.svg';
+import image2 from '../../assets/home5/trusted/image2.svg';
+import leaf from '../../assets/home5/trusted/leaf.svg';
 
 const Trusted = () => {
   return (

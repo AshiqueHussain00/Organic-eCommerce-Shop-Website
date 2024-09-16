@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import Category from "../../common/Category"
+import Category from "../common/Category"
 
 
 

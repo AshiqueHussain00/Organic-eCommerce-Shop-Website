@@ -1,8 +1,8 @@
 import React from "react";
-import BG from "../../../assets/home5/newsletter/BG.svg";
-import map from "../../../assets/home5/newsletter/map.svg";
-import call from "../../../assets/home5/newsletter/call.svg";
-import mail from "../../../assets/home5/newsletter/mail.svg";
+import BG from "../../assets/home5/newsletter/BG.svg";
+import map from "../../assets/home5/newsletter/map.svg";
+import call from "../../assets/home5/newsletter/call.svg";
+import mail from "../../assets/home5/newsletter/mail.svg";
 
 const Newsletter = () => {
   return (

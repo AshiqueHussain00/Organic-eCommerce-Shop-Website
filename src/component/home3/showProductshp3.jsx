@@ -1,12 +1,12 @@
 import React from 'react'
-import Veg from '../../../assets/common/categories/Vege.svg'
-import GreenApple from '../../../assets/home3/bestDeals/GreenApple.svg'
-import OrangeMalta from '../../../assets/home3/bestDeals/OrangeMalta.svg'
-import GreenLettuce from '../../../assets/home3/bestDeals/GreenLettuce.svg'
-import EggPlant from '../../../assets/home3/bestSellers/EggPlant.svg'
-import RedCapsicum from '../../../assets/home3/bestSellers/RedCapsicum.svg'
-import RedTomatos from '../../../assets/home3/bestSellers/RedTomatos.svg'
-import SmallProductCard from '../../common/SmallProductCard';
+import Veg from '../../assets/common/categories/Vege.svg'
+import GreenApple from '../../assets/home3/bestDeals/GreenApple.svg'
+import OrangeMalta from '../../assets/home3/bestDeals/OrangeMalta.svg'
+import GreenLettuce from '../../assets/home3/bestDeals/GreenLettuce.svg'
+import EggPlant from '../../assets/home3/bestSellers/EggPlant.svg'
+import RedCapsicum from '../../assets/home3/bestSellers/RedCapsicum.svg'
+import RedTomatos from '../../assets/home3/bestSellers/RedTomatos.svg'
+import SmallProductCard from '../common/SmallProductCard';
 import { FaArrowRight } from "react-icons/fa6";
 
 

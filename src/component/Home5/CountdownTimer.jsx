@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa6";
-import fruits from "../../../assets/home5/countdown/fruits.svg"; // Update paths accordingly
-import vegetables from "../../../assets/home5/countdown/vegetables.svg"; // Update paths accordingly
+import fruits from "../../assets/home5/countdown/fruits.svg"; // Update paths accordingly
+import vegetables from "../../assets/home5/countdown/vegetables.svg"; // Update paths accordingly
 
 const BannerData = [
   {

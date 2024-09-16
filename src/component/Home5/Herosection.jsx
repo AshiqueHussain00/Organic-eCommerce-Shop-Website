@@ -5,9 +5,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'; // Import pagination CSS
 import { GoArrowLeft, GoArrowRight } from "react-icons/go"; // Import icons
-import '../../../styles/herosection.css'
-import Image from '../../../assets/home5/herosection/Image.svg'; // Image path
-import BG from '../../../assets/home5/herosection/BG.svg'; // Background image path
+import '../../styles/herosection.css'
+import Image from '../../assets/home5/herosection/Image.svg'; // Image path
+import BG from '../../assets/home5/herosection/BG.svg'; // Background image path
 
 const heroSection = [
   {

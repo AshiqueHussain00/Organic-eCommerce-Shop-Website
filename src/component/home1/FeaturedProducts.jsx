@@ -1,7 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
-import ProductCard from '../../common/ProductCard';
+import ProductCard from '../common/ProductCard';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import Corn from '../../assets/home5/featuredproduct/corn.svg'
 
 const FeaturedProducts = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,7 +15,7 @@ const FeaturedProducts = () => {
 
   const products = [
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: Corn,
       productName: 'Green Apple',
       price: '14.99',
       oldPrice: '29.99',
@@ -25,7 +26,7 @@ const FeaturedProducts = () => {
       bestSellerText: '',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: Corn,
       productName: 'Banana',
       price: '9.99',
       rating: 3,
@@ -35,7 +36,7 @@ const FeaturedProducts = () => {
       bestSellerText: '',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: Corn,
       productName: 'Orange',
       price: '7.99',
       rating: 4,
@@ -45,7 +46,7 @@ const FeaturedProducts = () => {
       bestSellerText: '',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: Corn,
       productName: 'Mango',
       price: '19.99',
       rating: 5,
@@ -55,7 +56,7 @@ const FeaturedProducts = () => {
       bestSellerText: 'Best Seller',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: Corn,
       productName: 'Pineapple',
       price: '12.99',
       rating: 4,
