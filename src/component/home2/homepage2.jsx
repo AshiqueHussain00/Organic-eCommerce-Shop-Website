@@ -1,5 +1,4 @@
-import Navbar from '../../component/common/navbar'
-import Home2 from './home2'
+
 import VideoComponent from './video'
 import Members from './Members'
 import HeaderBottom from '../../component/common/HeaderBottom'
@@ -8,12 +7,13 @@ import HeaderBottom from '../../component/common/HeaderBottom'
 import PopularCategory from '../home1/home-component/ProductCategory'
  import FeaturedProducts from '../../component/home1/home-component/FeaturedProducts'
 import HomeTestimonial from '../../component/home1/home-component/HomeTestimonial'
+import BannerHome2 from './BannerHome2'
 
 function Homepage2() {
     return (
         <div>
-             {/* <Navbar/> */}
-     <Home2/>
+          
+     <BannerHome2/>
      <HeaderBottom/>
      <PopularCategory/>
      <FeaturedProducts/>
