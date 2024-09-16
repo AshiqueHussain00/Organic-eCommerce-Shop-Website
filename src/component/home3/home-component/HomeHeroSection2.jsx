@@ -69,7 +69,7 @@ const HomeHeroSection2 = () => {
               clickable: true,
               el: '.custom-swiper-pagination',
             }}
-            className="w-full md:w-10/12 h-full"
+            className="w-full relative md:w-10/12 h-full"
           >
             {heroSection.map((slide, index) => (
               <SwiperSlide key={index}>
@@ -116,7 +116,7 @@ const HomeHeroSection2 = () => {
           </Swiper>
 
           {/* Left Navigation Button */}
-          <div className="custom-swiper-button-prev hidden xsm:flex absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+          <div className="custom-swiper-button-prev hidden xsm:flex absolute  left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
             <GoArrowLeft className="fa" />
           </div>
 
