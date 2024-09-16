@@ -151,7 +151,7 @@ const ProductDetails = () => {
     };
 
     return (
-        <section className="relative w-full py-8 pb-10 bg-gray-50">
+        <section className="relative w-full py-12  bg-gray-50">
             <div className='w-10/12 mx-auto'>
                 <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
                     <h1 data-aos="fade-right" className="text-[2rem] font-semibold">Hot Deals</h1>

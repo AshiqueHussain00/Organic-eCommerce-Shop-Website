@@ -25,9 +25,9 @@ const ProductOffer = () => {
   }, [controls, inView]);
 
   return (
-    <section className='relative w-full pt-5'>
+    <section className='relative w-full py-12'>
       <div
-        className="flex flex-col items-center p-6 text-white lg:items-end lg:col-span-2 lg:pr-20"
+        className="w-11/12 xmd:w-10/12 mx-auto flex flex-col items-center p-6 text-white lg:items-end lg:col-span-2 lg:pr-20 rounded-lg"
         style={{
           backgroundImage: `url(${bannar1})`,
           backgroundPosition: 'center',

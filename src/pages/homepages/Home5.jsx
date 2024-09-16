@@ -132,28 +132,30 @@ const Home5 = () => {
   return (
     <section>
       <Herosection autoplay={true} />
-     <HeaderBottom
-  flexDirection="row"
-  alignItems="center"
-  justifyContent="center"
-/>
+      <HeaderBottom
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="center"
+      />
       <FeaturedProducts />
       <TopCategory />
 
       <div
-        className="bg-cover  bg-no-repeat"
+        className="bg-cover  bg-no-repeat w-11/12 xmd:w-10/12 mx-auto  flex flex-col gap-y-4"
         style={{ backgroundImage: `url(${newsBG})` }}
       >
         <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
-        <h1 className="text-center text-4xl font-[600] font-poppins">
+        <h1 className="text-center text-4xl font-[600] font-poppins mb-4">
           Latest News
         </h1>
         <LatestNews data={newsData} />
       </div>
+
+
       <Trusted />
-     <CountdownTimer/>
-     <BestSeller/>
-<ShowProduct/>
+      <CountdownTimer />
+      <BestSeller />
+      <ShowProduct />
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}

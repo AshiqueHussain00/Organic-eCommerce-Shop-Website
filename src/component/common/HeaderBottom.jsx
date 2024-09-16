@@ -47,7 +47,7 @@ const HeaderBottom = ({
       variants={cardAnimation}
       transition={{ duration: 0.8 }}
     >
-      <div className="w-11/12 mx-auto xmd:w-11/12 bg-white-200 text-black-800">
+      <div className="w-11/12 mx-auto mt-2 xmd:w-10/12 bg-white-200 text-black-800">
         <ul
           data-aos="fade-right"
           className="flex flex-wrap items-center justify-center gap-2 p-4 border rounded-lg shadow-xl sm:gap-20"
