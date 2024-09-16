@@ -1,7 +1,7 @@
 import { useAnimation, motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useInView } from 'react-intersection-observer'; // Make sure this import is correct
-import bannar1 from '../../../assets/home1/banner.png';
+import bannar1 from '../../assets/home1/banner.png';
 import { Link } from 'react-router-dom';
 
 const ProductOffer = () => {

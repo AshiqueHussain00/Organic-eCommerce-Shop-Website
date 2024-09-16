@@ -1,16 +1,17 @@
 import React from 'react'
-import TestimonialCard from '../../common/TestimonialCard'
-import FollowInstagram from '../../common/FollowInstagram';
-import customer1 from '../../../assets/common/Testimonial/customer1.svg';
-import customer2 from '../../../assets/common/Testimonial/customer2.svg';
-import post1 from '../../../assets/common/followinstagram/post1.svg'
-import post2 from '../../../assets/common/followinstagram/post2.svg'
-import post3 from '../../../assets/common/followinstagram/post3.svg'
-import post4 from '../../../assets/common/followinstagram/post4.svg'
-import post5 from '../../../assets/common/followinstagram/post5.svg'
-import post6 from '../../../assets/common/followinstagram/post6.svg'
+import TestimonialCard from '../common/TestimonialCard'
+import FollowInstagram from '../common/FollowInstagram';
+import customer1 from '../../assets/common/Testimonial/customer1.svg';
+import customer2 from '../../assets/common/Testimonial/customer2.svg';
+import post1 from '../../assets/common/followinstagram/post1.svg'
+import post2 from '../../assets/common/followinstagram/post2.svg'
+import post3 from '../../assets/common/followinstagram/post3.svg'
+import post4 from '../../assets/common/followinstagram/post4.svg'
+import post5 from '../../assets/common/followinstagram/post5.svg'
+import post6 from '../../assets/common/followinstagram/post6.svg'
+import '../../styles/swiper.css'
 
-const ClientTestimonials = () => {
+const HomeTestimonial = () => {
     const testimonialsData = [
         {
             name: 'Robert Fox',
@@ -71,8 +72,8 @@ const ClientTestimonials = () => {
     ];
     const instagramImages = [post1, post2, post3, post4, post5, post6];
     return (
-        <section data-aos="fade-left" className='relative w-full'>
-            <div >
+        <section className='relative w-full'>
+            <div data-aos="fade-right" >
                 <TestimonialCard
                     testimonialsData={testimonialsData}
                     showButtons={true}
@@ -89,4 +90,4 @@ const ClientTestimonials = () => {
     )
 }
 
-export default ClientTestimonials
+export default HomeTestimonial

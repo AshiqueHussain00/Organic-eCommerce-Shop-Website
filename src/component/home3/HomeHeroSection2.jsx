@@ -6,10 +6,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { GoArrowLeft,GoArrowRight } from "react-icons/go";
 
-import '../../../styles/herosection.css'; // Import the custom CSS file
-import '../../../styles/swiper.css'
-import bestdealImage1 from "../../../assets/home4/bestdeal1.svg";
-import bestdealImage2 from "../../../assets/home4/bestdeal2.svg"; 
+import '../../styles/herosection.css'; // Import the custom CSS file
+import '../../styles/swiper.css'
+import bestdealImage1 from "../../assets/home4/bestdeal1.svg";
+import bestdealImage2 from "../../assets/home4/bestdeal2.svg"; 
 
 
 
@@ -45,9 +45,9 @@ const heroSection = [
 
 const HomeHeroSection2 = () => {
   return (
-    <section className='w-full xxl:pt-10 pt-16 pb-80 md:pb-56 bg-green-gray-scale-50'>
+    <section className='w-full relative xxl:pt-10 pt-16 pb-80 md:pb-40 bg-green-gray-scale-50'>
       <div
-        className='relative w-11/12 lg:w-9/12  h-auto mx-auto py-4 '
+        className='relative w-11/12  h-auto mx-auto py-4 '
       >
         <div className="relative flex flex-col md:flex-row items-center mx-auto w-full h-full">
           <Swiper
@@ -73,7 +73,7 @@ const HomeHeroSection2 = () => {
           >
             {heroSection.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 items-center p-6">
+                <div className="flex flex-col md:grid md:grid-cols-2  items-center p-6 ">
                   
                   {/* Right Side: Text */}
                   <div data-aos="fade-left" className="space-y-4 text-center md:text-left">
@@ -115,20 +115,23 @@ const HomeHeroSection2 = () => {
             ))}
           </Swiper>
 
-          {/* Left Navigation Button */}
-          <div className="custom-swiper-button-prev hidden xsm:flex absolute left-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+         
+        </div>
+        
+      </div>
+
+        {/* Left Navigation Button */}
+        <div className="custom-swiper-button-prev hidden xsm:flex absolute left-4 top-64 z-10 text-2xl cursor-pointer">
             <GoArrowLeft className="fa" />
           </div>
 
           {/* Right Navigation Button */}
-          <div className="custom-swiper-button-next hidden xsm:flex absolute right-4 top-1/2 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
+          <div className="custom-swiper-button-next hidden xsm:flex absolute right-4 top-64 transform -translate-y-1/2 z-10 text-2xl cursor-pointer">
             <GoArrowRight className="fa" />
           </div>
 
           {/* Pagination Container */}
           <div className="custom-swiper-pagination  absolute bottom-4 left-1/2 transform -translate-x-1/2 z-50"></div>
-        </div>
-      </div>
     </section>
   );
 };

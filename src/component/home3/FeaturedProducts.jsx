@@ -1,9 +1,15 @@
 import React from 'react'
-import ProductCard from '../../common/ProductCard';
+import ProductCard from '../common/ProductCard';
+import image1 from '../../assets/home3/newestProducts/GreenApple.svg'
+import image2 from '../../assets/home3/newestProducts/ChaineseCabbage.svg'
+import image3 from '../../assets/home3/newestProducts/GreenLettuce.svg'
+import image4 from '../../assets/home3/newestProducts/GreenChilli.svg'
+import image5 from '../../assets/home3/newestProducts/Corn.svg'
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom"
 
-const PopularProducts = () => {
+function FeaturedProducts() {
+  
     const handleAddToCart = () => {
         console.log("Add to Cart clicked");
     };
@@ -11,28 +17,28 @@ const PopularProducts = () => {
 
     const products = [
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: image1,
             productName: 'Green Apple',
             price: '14.99',
             oldPrice: '29.99',
             rating: 4,
-            isSale: true,
+            isSale: false,
             isBestSeller: false,
             saleText: 'Discount!',
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: image2,
             productName: 'Banana',
             price: '9.99',
             rating: 3,
-            isSale: true,
+            isSale: false,
             isBestSeller: false,
             saleText: 'Sale',
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: image3,
             productName: 'Orange',
             price: '7.99',
             rating: 4,
@@ -42,73 +48,22 @@ const PopularProducts = () => {
             bestSellerText: ''
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: image4,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
-            isSale: true,
-            isBestSeller: true,
+            isSale: false,
+            isBestSeller: false,
             saleText: 'Sale 50%',
             bestSellerText: 'Best Seller'
         },
         {
-            imageSrc: 'https://placehold.jp/302x302.png',
+            imageSrc: image5,
             productName: 'Mango',
             price: '19.99',
             rating: 5,
-            isSale: true,
-            isBestSeller: true,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-        {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: true,
-            isBestSeller: true,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-        {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: true,
-            isBestSeller: true,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-        {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: true,
-            isBestSeller: true,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-
-        {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: true,
-            isBestSeller: true,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-        {
-            imageSrc: 'https://placehold.jp/302x302.png',
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: true,
-            isBestSeller: true,
+            isSale: false,
+            isBestSeller: false,
             saleText: 'Sale 50%',
             bestSellerText: 'Best Seller'
         },
@@ -122,13 +77,13 @@ const PopularProducts = () => {
         visible: { opacity: 1, y: 0 },
     };
     return (
-        <section className='relative w-full pb-10'>
+        <section className='relative w-full pb-10 mt-60 md:mt-32  smd:mt-24'>
             <div className='w-10/12 mx-auto'>
-                <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
-                    <h1 data-aos="fade-right" className="text-[2rem] font-semibold">Popular Products</h1>
-                    <Link data-aos="fade-left" className="font-medium text-primary">View All →</Link>
+                <div className="flex flex-col items-center justify-between pt-10 pb-10">
+                    <h1 className="text-[1.8rem] md:text-[2rem] font-semibold text-center">Featured Products</h1>
+
                 </div>
-                <div data-aos="fade-up" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+                <div data-aos = "fade-left" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
 
 
                     {/* Adjusted Product Cards Layout */}
@@ -159,6 +114,7 @@ const PopularProducts = () => {
             </div>
         </section>
     )
+
 }
 
-export default PopularProducts
+export default FeaturedProducts;

@@ -117,7 +117,7 @@
 
 import React, { useRef, useEffect } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { TopCategoryData } from "../../../data/common/TopCategoryData";
+import { TopCategoryData } from "../../data/common/TopCategoryData";
 
 function TopCategory() {
   const ScrollableContainer = ({ children, isLoading }) => {

@@ -1,9 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import ProductCard from '../../common/ProductCard';
+
+import ProductCard from '../common/ProductCard';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-const FeaturedProducts = () => {
+import chinesecabbage from '../../assets/home5/featuredproduct/chinesecabbage.svg'
+import greenapple from '../../assets/home5/featuredproduct/chinesecabbage.svg'
+import ladiesfinger from '../../assets/home5/featuredproduct/chinesecabbage.svg'
+import greencapsicum from '../../assets/home5/featuredproduct/chinesecabbage.svg'
+import corn from '../../assets/home5/featuredproduct/chinesecabbage.svg'
+const BestSeller = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollDirection, setScrollDirection] = useState('down');
   const ref = useRef(null);
@@ -14,30 +19,21 @@ const FeaturedProducts = () => {
 
   const products = [
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
+      imageSrc: greenapple,
       productName: 'Green Apple',
       price: '14.99',
       oldPrice: '29.99',
       rating: 4,
-      isSale: true,
-      isBestSeller: false,
-      saleText: 'Discount!',
-      bestSellerText: '',
+      isSale: false,
+      isBestSeller: true,
+      saleText: '',
+      bestSellerText: 'Sale 50%',
     },
+   
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Banana',
-      price: '9.99',
-      rating: 3,
-      isSale: true,
-      isBestSeller: false,
-      saleText: 'Sale',
-      bestSellerText: '',
-    },
-    {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Orange',
-      price: '7.99',
+      imageSrc: chinesecabbage,
+      productName: 'Chinese Cabbage',
+      price: '14.99',
       rating: 4,
       isSale: false,
       isBestSeller: false,
@@ -45,25 +41,35 @@ const FeaturedProducts = () => {
       bestSellerText: '',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Mango',
+      imageSrc:greencapsicum,
+      productName: 'Green Capsicum',
       price: '19.99',
       rating: 5,
-      isSale: true,
-      isBestSeller: true,
+      isSale: false,
+      isBestSeller: false,
       saleText: 'Sale 50%',
       bestSellerText: 'Best Seller',
     },
     {
-      imageSrc: 'https://placehold.jp/302x302.png',
-      productName: 'Pineapple',
+      imageSrc: ladiesfinger,
+      productName: 'Ladies Finger',
       price: '12.99',
       rating: 4,
       isSale: false,
-      isBestSeller: true,
+      isBestSeller: false,
       saleText: '',
       bestSellerText: 'Best Seller',
     },
+    {
+        imageSrc: corn,
+        productName: 'Corn',
+        price: '14.99',
+        rating: 4,
+        isSale: false,
+        isBestSeller: true,
+        saleText: '',
+        bestSellerText: 'Best Seller',
+      },
   ];
 
   // Define animations for the scroll direction
@@ -74,13 +80,13 @@ const FeaturedProducts = () => {
 
 
   return (
-    <section ref={ref} className="relative w-full pb-10">
+    <section ref={ref} className="relative w-full pb-2 ">
       <div className="w-10/12 mx-auto">
-        <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
-          <h1 data-aos="fade-right" className="text-[2rem] font-semibold">Featured Products</h1>
-          <Link data-aos="fade-left" className="font-medium text-primary">View All →</Link>
+        <div className="flex flex-col  items-center justify-between pt-10 pb-10 xs:flex-row">
+          <h1 className="text-[2rem] font-semibold">Best Seller Products</h1>
+          <Link className="font-medium text-primary">View All →</Link>
         </div>
-        <div data-aos="fade-up" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {/* Product Cards Layout */}
           {products.map((product, index) => (
              <motion.div
@@ -107,8 +113,9 @@ const FeaturedProducts = () => {
           ))}
         </div>
       </div>
+      
     </section>
   );
 };
 
-export default FeaturedProducts;
+export default BestSeller;
