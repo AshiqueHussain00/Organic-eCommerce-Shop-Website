@@ -13,7 +13,7 @@ import quote from "../../assets/common/Testimonial/quote.svg";
 // TestimonialCard component to display individual testimonial data
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div data-aos="fade-up" className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2">
+    <div data-aos="fade-up" className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2 mb-4">
       {/* Quote Icon */}
       <div className="flex p-4 mb-4 text-3xl text-green-500">
         <img src={quote} alt="Quote" />
@@ -66,6 +66,7 @@ const Testimonials = ({
   bgColor = "rgb(242,242,242)",
   showHeading = true,
   autoplay = true,
+  isPagination = true,
 }) => {
   // Swiper configuration settings for slides, breakpoints, and navigation
   const swiperSettings = {
@@ -100,17 +101,17 @@ const Testimonials = ({
   }
 
   return (
-    <section>
+    <section className="">
       {/* Container with dynamic background color passed via bgColor prop */}
       <div style={{ backgroundColor: bgColor }}>
-        <div className="relative w-10/12 p-10 mx-auto">
+        <div className="relative w-10/12 px-10 py-12 mx-auto">
           <div className="relative">
 
             {/* Conditionally render Section Title */}
 
             {showHeading && (
 
-              <h2 data-aos="fade-right" className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal">
+              <h2 data-aos="fade-right" className=" text-xl font-bold mb-6 leading-snug break-words sm:text-3xl sm:leading-normal">
 
                 <span className="block ml-2 sm:inline">Client</span>
                 <span className="block ml-2 sm:inline">Testimonials</span>
@@ -119,9 +120,9 @@ const Testimonials = ({
 
             {/* Custom Navigation Buttons for Swiper */}
             {showButtons && (
-              <div className="absolute flex space-x-4 transform -translate-y-1/2  top-1/2 right-14">
+              <div className="absolute flex  space-x-4 transform -translate-y-1/2  top-1/2 right-14">
                 {/* Left Arrow (Previous) Icon Second */}
-                <button className="custom-swiper-button-prev  p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
+                <button className="custom-swiper-button-prev   p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
                   <FaArrowRight className="text-xs arrowleft sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
                 {/* Right Arrow (Next) Icon First */}
@@ -144,7 +145,12 @@ const Testimonials = ({
           </Swiper>
 
           {/* Custom Pagination Dots */}
-          <div className="mx-auto custom-swiper-pagination"></div>
+          {
+            isPagination && (
+              <div className="mx-auto custom-swiper-pagination"></div>
+            )
+          }
+         
         </div>
       </div>
     </section>
