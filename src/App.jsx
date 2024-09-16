@@ -8,6 +8,8 @@ import Home1 from './pages/homepages/Home1';
 import Home3 from './pages/homepages/Home3';
 import Home4 from './pages/homepages/Home4';
 import Home5 from './pages/homepages/Home5'
+// import FilterSidebar from './component/common/FilterOne';
+import FilterOne from './component/common/FilterOne';
 
 const App = () => {
 
@@ -29,7 +31,7 @@ const App = () => {
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar/>
-     
+     <FilterOne/>
      <Routes>
 
       {/* ---------- homepages ------- */}

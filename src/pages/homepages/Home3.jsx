@@ -11,13 +11,13 @@ import HomeHeroSection2 from '../../component/home3/HomeHeroSection2'
 function Home3() {
   return (
     <div>
-     
+
       <div className="relative">
-      <HomeHeroSection2 />
-      <HeaderBottom />
-    </div>
-      <FeaturedProducts/>
-      <ShowProductshp3/>
+        <HomeHeroSection2 />
+        <HeaderBottom />
+      </div>
+      <FeaturedProducts />
+      <ShowProductshp3 />
       <TopCategory />
       <Banners />
       <NewestProducts />
