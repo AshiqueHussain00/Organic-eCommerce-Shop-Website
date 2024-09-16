@@ -8,7 +8,7 @@ const Newsletter = () => {
   return (
     <div className="w-10/12 mx-auto py-4 flex flex-col md:flex-row justify-evenly items-stretch space-y-4 md:space-y-0 md:space-x-4">
       {/* Location Section */}
-      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
+      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1 md:w-1/3 lg:w-[calc(50%/3)]">
         {/* Icon with Background */}
         <div className="relative">
           <img src={BG} alt="Background" className="w-12 h-12 opacity-30" />
@@ -30,7 +30,7 @@ const Newsletter = () => {
       </div>
 
       {/* Call Section */}
-      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
+      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1 md:w-1/3 lg:w-[calc(100%/3)]">
         {/* Icon with Background */}
         <div className="relative">
           <img src={BG} alt="Background" className="w-12 h-12 opacity-30" />
@@ -54,7 +54,7 @@ const Newsletter = () => {
       </div>
 
       {/* Newsletter Subscribe Section */}
-      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
+      <div className="relative flex flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1 md:w-1/2 lg:w-[calc(100%/3)]">
         {/* Icon with Background */}
         <div className="relative">
           <img src={BG} alt="Background" className="w-12 h-12 opacity-30" />
