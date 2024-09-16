@@ -19,8 +19,8 @@ function Home1() {
             <Banners/>
             <ProductDetails />
             <ProductOffer/>
-            <HomeLatestNews/>
             <FeaturedProducts/>
+            <HomeLatestNews/>
             <HomeTestimonial/>
           
         </div>

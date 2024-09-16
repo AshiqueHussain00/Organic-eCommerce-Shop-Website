@@ -32,9 +32,13 @@ const HomeLatestNews = () => {
     },
   ];
   return (
-   <section>
-    <div>
-        <LatestNews data={newsData}/>
+   <section className='py-12'>
+    <div className='w-11/12 xmd:w-10/12 mx-auto flex flex-col gap-y-6'>
+    <h1 data-aos="fade-left" className='text-center xmd:text-[40px] text-4xl font-semibold'>Latest News</h1>
+  
+    <LatestNews data={newsData}/>
+   
+      
     </div>
    </section>
   )
