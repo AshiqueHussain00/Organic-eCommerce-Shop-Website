@@ -1,9 +1,5 @@
 import './App.css'
-import Home1 from './component/home1/HOme1';
-import Home5 from './component/home5/Home5'
-import Home4 from './pages/homepages/Home4';
 
-import Home3 from './component/home3/Home3';
 import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -34,7 +30,7 @@ const App = () => {
       {/* <Home1/> */}
       {/* <Home5/> */}
       {/* <Home3 /> */}
-      <Home5/>
+    
     </div>
   );
 };

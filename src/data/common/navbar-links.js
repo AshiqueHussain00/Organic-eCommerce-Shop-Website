@@ -1,7 +1,7 @@
-import agro1 from '../../assets/blog/agro1.jpg';
-import agro2 from '../../assets/blog/agro2.jpg';
-import agro3 from '../../assets/blog/agro3.jpg';
-import agro5 from '../../assets/blog/agro5.jpg';
+import agro1 from '../../assets/common/navbar/blog/agro1.jpg';
+import agro2 from '../../assets/common/navbar/blog/agro2.jpg';
+import agro3 from '../../assets/common/navbar/blog/agro3.jpg';
+import agro5 from '../../assets/common/navbar/blog/agro5.jpg';
 
 import { LuApple } from "react-icons/lu";
 import { PiCarrot } from "react-icons/pi";
@@ -45,18 +45,20 @@ export const navData = [
     
   },
   {
-    id: 2,
+    id: 1,
     title: 'Home',
     path: '',
     dropdown: [
-      { id: 21, title: 'Home1', path: './compnent/home1' },
-      { id: 22, title: 'Home2', path: './component/home2' },
-      { id: 23, title: 'Home3', path: './component/home3' },
-      { id: 24, title: 'Home4', path: './component/home4' }
+      { id: 21, title: 'Home 1', path: '/' },
+      { id: 22, title: 'Home 2', path: './home2' },
+      { id: 23, title: 'Home 3', path: '/home3' },
+      { id: 24, title: 'Home 4', path: '/home4' },
+      { id: 25, title: 'Home 5', path: '/home5' },
+
     ]
   },
   {
-    id: 3,
+    id: 2,
     title: 'Shop',
     dropdown: [
       {
@@ -80,7 +82,7 @@ export const navData = [
     ]
   },
   {
-    id: 4,
+    id: 3,
     title: 'Pages',
     dropdown: [
       { id: 41, title: 'Pages1', path: '' },
@@ -88,7 +90,7 @@ export const navData = [
     ]
   },
   {
-    id: 5,
+    id: 4,
     title: 'Blog',
     dropdown: [
       {
@@ -114,12 +116,12 @@ export const navData = [
     ]
   },
   {
-    id: 6,
+    id: 5,
     title: 'About Us',
     path: '/about-us'
   },
   {
-    id: 7,
+    id: 6,
     title: 'Contact Us',
     path: '/contact-us'
   }
