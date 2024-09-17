@@ -1,21 +1,15 @@
-/* Custom styles for Swiper pagination dots */
-.custom-swiper-pagination {
-    display: flex;
-    justify-content: center; /* Center the pagination dots */
-    margin-top: 2rem; /* Optional: Adjust the spacing above the dots */
-  }
+ /* Active and default bullet styles */
+ /* .swiper-pagination-bullet {
+  background-color: #a7c4b9; 
+  width: 10px;
+  height: 10px;
   
-  .custom-swiper-pagination .swiper-pagination-bullet {
-    background-color: #00b200; /* Green color for pagination dots */
-    width: 10px;
-    height: 10px;
-   
-    border-radius: 50%;
-  }
-  
-  .custom-swiper-pagination .swiper-pagination-bullet-active {
-    background-color: #007a00; /* Darker green color for the active dot */
-  }
+  margin: 0 6px; 
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #28a745; 
+} */
   
 
   .custom-swiper-button-next,

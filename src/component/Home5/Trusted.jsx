@@ -11,7 +11,7 @@ const Trusted = () => {
       <div className="bg-no-repeat bg-contain " style={{ backgroundImage: `url(${BG})` }}>
         <div className="relative w-10/12 p-4 mx-auto gap-4 flex flex-col md:flex-row items-center justify-between">
           {/* Left Section - Images */}
-          <div className="relative flex flex-col md:flex-row gap-2 w-full md:w-1/2">
+          <div data-aos="fade-right" className="relative flex flex-col md:flex-row gap-2 w-full md:w-1/2">
             {/* Container for First Image and Leaf */}
             <div className="relative mx-auto h-[30%] md:h-[50%]">
               <img src={image1} alt="Farmer holding apples" className="rounded-lg w-full md:h-full object-cover" />
@@ -25,7 +25,7 @@ const Trusted = () => {
           </div>
 
           {/* Right Section - Text Content */}
-          <div className="p-4 md:w-1/2 mt-10 md:mt-0 flex flex-col items-start">
+          <div data-aos="fade-left" className="p-4 md:w-1/2 mt-10 md:mt-0 flex flex-col items-start">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-5 text-gray-800">
               100% Trusted Organic Food Store
             </h2>

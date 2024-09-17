@@ -9,7 +9,7 @@ import '../../styles/steps.css';
 
 const Steps = () => {
   return (
-    <div className="flex w-11/12 mx-auto items-center justify-center space-x-8 md:space-x-16 py-4 flex-wrap">
+    <div className=" flex w-11/12 mx-auto items-center justify-center space-x-8 md:space-x-16 py-4 flex-wrap">
       <div className="image-container">
         <img src={Vector} alt="Steps" className="w-12 md:w-16 lg:w-20 cursor-pointer" />
       </div>

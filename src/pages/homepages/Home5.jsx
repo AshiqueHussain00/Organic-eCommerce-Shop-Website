@@ -133,9 +133,9 @@ const Home5 = () => {
     <section>
       <Herosection autoplay={true} />
      <HeaderBottom
-  flexDirection="row"
-  alignItems="center"
-  justifyContent="center"
+              flexDirection="row"
+               alignItems="center"
+               justifyContent="center"
 />
       <FeaturedProducts />
       <TopCategory />
@@ -153,7 +153,7 @@ const Home5 = () => {
       <Trusted />
      <CountdownTimer/>
      <BestSeller/>
-<ShowProduct/>
+     <ShowProduct/>
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}
@@ -161,6 +161,7 @@ const Home5 = () => {
         bgColor="rgb(242,242,242)"
         autoplay={true} // Adjust autoplay as needed
         showHeading={true}
+        showPagination={false}
       />
       {/* Instagram Section */}
       <div className="mt-8">
