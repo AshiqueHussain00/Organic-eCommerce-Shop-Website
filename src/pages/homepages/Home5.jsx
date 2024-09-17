@@ -163,7 +163,7 @@ const Home5 = () => {
         bgColor="rgb(242,242,242)"
         autoplay={true} // Adjust autoplay as needed
         showHeading={true}
-        showPagination={true}
+        showPagination={false}
       />
       {/* Instagram Section */}
       <div className="mt-8">
