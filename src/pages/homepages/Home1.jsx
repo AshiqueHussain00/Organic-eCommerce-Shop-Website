@@ -8,6 +8,9 @@ import PopularProducts from '../../component/home1/PopularProducts'
 import FeaturedProducts from '../../component/home1/FeaturedProducts'
 import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import HomeLatestNews from '../../component/home1/HomeLatestNews'
+import Newsletter from '../../component/common/Newsletter'
+import NewsletterTwo from '../../component/common/NewsletterTwo'
+import NewsletterThree from '../../component/common/NewsletterThree'
 
 function Home1() {
     return (
@@ -22,6 +25,9 @@ function Home1() {
             <FeaturedProducts/>
             <HomeLatestNews/>
             <HomeTestimonial/>
+            <Newsletter/>
+            <NewsletterTwo/>
+            <NewsletterThree/>
           
         </div>
     )
