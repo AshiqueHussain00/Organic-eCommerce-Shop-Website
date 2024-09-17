@@ -6,14 +6,14 @@ import TopCategory from '../../component/home3/TopCategory'
 import Banners from '../../component/common/Banners'
 import NewestProducts from '../../component/home3/NewestProducts'
 import ClientTestimonials from '../../component/home3/ClientTestimonials'
-import HomeHeroSection2 from '../../component/home3/HomeHeroSection2'
+import HeroSection from '../../component/home3/HeroSection'
 
 function Home3() {
   return (
     <div>
 
       <div className="relative">
-        <HomeHeroSection2 />
+        <HeroSection/>
         <HeaderBottom />
       </div>
       <FeaturedProducts />

@@ -3,20 +3,20 @@
 /* Custom CSS to further adjust pagination bullets */
 @media (max-width: 768px) {
     .custom-swiper-pagination {
-      bottom: 12px !important; 
+      bottom: 12px !important; /* Move the bullets further down on smaller screens */
     }
   }
   
-  
+  /* Active and default bullet styles */
   .swiper-pagination-bullet {
-    background-color: #a7c4b9; 
+    background-color: #a7c4b9; /* Light green color for inactive bullets */
     width: 10px;
     height: 10px;
-    margin: 0 6px;
+    margin: 0 6px; /* Adjust bullet spacing */
   }
   
   .swiper-pagination-bullet-active {
-    background-color: #28a745; 
+    background-color: #28a745; /* Dark green for active bullet */
   }
   
 
@@ -60,7 +60,7 @@
 }
 
 .custom-swiper-button-next {
-    right: 9% !important; /* Adjust positioning to your preference */
+    right: 8% !important; /* Adjust positioning to your preference */
 }
 
 .custom-swiper-button-prev {

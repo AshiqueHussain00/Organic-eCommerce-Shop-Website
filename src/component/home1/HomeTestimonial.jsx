@@ -81,7 +81,7 @@ const HomeTestimonial = () => {
                     bgColor="rgb(242,242,242)"
                     autoplay={true} // Adjust autoplay as needed
                     showHeading={true}
-                    isPagination={false}
+                    showPagination={false}
                 />
                 </div>
             
