@@ -79,6 +79,7 @@ const ClientTestimonials = () => {
                     bgColor="rgb(242,242,242)"
                     autoplay={true} // Adjust autoplay as needed
                     showHeading={true}
+                    isPagination={true}
                 />
                 <div className="mt-8">
                     <h2 className="mb-4 text-2xl font-bold text-center">Follow Us on Instagram</h2>

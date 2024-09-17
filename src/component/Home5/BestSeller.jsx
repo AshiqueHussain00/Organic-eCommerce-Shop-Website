@@ -80,7 +80,7 @@ const BestSeller = () => {
 
 
   return (
-    <section ref={ref} className="relative w-full pb-2 ">
+    <section ref={ref} className="relative w-full pt-8 pb-16">
       <div className="w-10/12 mx-auto">
         <div className="flex flex-col  items-center justify-between pt-10 pb-10 xs:flex-row">
           <h1 className="text-[2rem] font-semibold">Best Seller Products</h1>

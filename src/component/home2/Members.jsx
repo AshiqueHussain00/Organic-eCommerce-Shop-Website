@@ -46,10 +46,10 @@ const Members = () => {
   return (
     <section className='w-full'>
        <div className='w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px]'>
-    <div className="text-center mb-6 mt-12 text-primary">
+    <div className="text-center tracking-wider mb-6 mt-12 text-primary">
       <p>TEAM</p>
       
-        <h2 className="text-3xl text-black-900 mb-2">Our Profesionals Members</h2> {/* Display title */}
+        <h2 className="text-3xl text-black-900 mb-2 font-semibold">Our Profesionals Members</h2> {/* Display title */}
      
     <div className="max-w-6xl mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
       

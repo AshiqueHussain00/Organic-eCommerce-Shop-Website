@@ -75,7 +75,7 @@ const FeaturedProducts = () => {
 
 
   return (
-    <section ref={ref} className="relative w-full pb-10">
+    <section ref={ref} className="relative w-full pt-12 py-20 ">
       <div className="w-10/12 mx-auto">
         <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
           <h1 data-aos="fade-right" className="text-[2rem] font-semibold">Featured Products</h1>
