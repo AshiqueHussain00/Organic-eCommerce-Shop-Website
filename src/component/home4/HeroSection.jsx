@@ -42,7 +42,7 @@ const HeroSection = () => {
   return (
     <section className='w-full xxl:pt-10 pt-16 pb-80 md:pb-56 '>
       <div
-        className='relative w-11/12 lg:w-10/12  h-auto mx-auto py-6 '
+        className='relative w-11/12  h-auto mx-auto py-6 '
       >
         <div className="relative flex flex-col md:flex-row items-center mx-auto w-full h-full">
           <Swiper
