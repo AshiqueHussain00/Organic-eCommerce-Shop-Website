@@ -1,12 +1,7 @@
 import React from 'react'
 import { BiSolidQuoteAltRight } from "react-icons/bi";
 import { RxTriangleDown } from "react-icons/rx";
-// name: "Dianne Russell",
-// img: customer2,
-// role: "Customer",
-// compliment:
-//     "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
-// rating: 5,
+
 
 const TestimonialCard4 = ({data}) => {
   return (

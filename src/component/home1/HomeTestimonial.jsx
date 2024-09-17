@@ -72,8 +72,9 @@ const HomeTestimonial = () => {
     ];
     const instagramImages = [post1, post2, post3, post4, post5, post6];
     return (
-        <section className='relative w-full h-auto'>
+        <section className='relative w-full '>
             <div data-aos="fade-right" >
+                <div className='py-10  '>
                 <TestimonialCard
                     testimonialsData={testimonialsData}
                     showButtons={true}
@@ -82,6 +83,8 @@ const HomeTestimonial = () => {
                     showHeading={true}
                     showPagination={false}
                 />
+                </div>
+            
                 <div className="mt-8">
                     <h2 className="mb-4 text-2xl font-bold text-center">Follow Us on Instagram</h2>
                     <FollowInstagram images={instagramImages} instagramUrl="https://www.instagram.com/yourprofile" />

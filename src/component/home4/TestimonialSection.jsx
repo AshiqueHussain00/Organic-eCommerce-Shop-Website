@@ -87,7 +87,7 @@ const TestimonialSection = () => {
             prevEl: '.custom-swiper-button-prev', // Custom previous button
         },
         autoplay: true ? {
-            delay: 5000, // Adjust delay as needed
+            delay: 2500, // Adjust delay as needed
             disableOnInteraction: false,
         } : false, // Autoplay setting
         

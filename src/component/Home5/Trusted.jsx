@@ -7,7 +7,7 @@ import leaf from '../../assets/home5/trusted/leaf.svg';
 
 const Trusted = () => {
   return (
-    <section>
+    <section className='py-20'>
       <div className="bg-no-repeat bg-contain " style={{ backgroundImage: `url(${BG})` }}>
         <div className="relative w-10/12 p-4 mx-auto gap-4 flex flex-col md:flex-row items-center justify-between">
           {/* Left Section - Images */}
