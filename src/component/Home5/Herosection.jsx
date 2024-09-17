@@ -67,16 +67,17 @@ const Herosection = () => {
               <SwiperSlide key={index}>
                 <div className="flex flex-col md:grid md:grid-cols-2 md:gap-4 items-center p-6">
                   {/* Left Side: Image */}
-                  <div className="flex justify-center mb-4 md:mb-0">
+                  <div data-aos="fade-right" className="flex justify-center mb-4 md:mb-0 data-aos:fade-left">
                     <img
                       src={slide.img}
                       alt={slide.headingFirstPart}
                       className="object-cover w-full h-full"
+                      loading='lazy'
                     />
                   </div>
 
                   {/* Right Side: Text */}
-                  <div className="space-y-4 text-center md:text-left">
+                  <div data-aos="fade-left" className="space-y-4 text-center md:text-left">
                     <p className="text-sm text-green-500">{slide.title}</p>
                     <h1 className="text-2xl md:text-3xl font-bold text-gray-800 leading-tight">
                       {slide.headingFirstPart} <br /> {slide.headingSecondPart}

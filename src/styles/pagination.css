@@ -1,20 +1,40 @@
-/* Custom CSS to further adjust pagination bullets */
-@media (max-width: 768px) {
-    .custom-swiper-pagination {
-      bottom: 12px !important; /* Move the bullets further down on smaller screens */
-    }
+/* Pagination styles */
+.swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+    padding: 5px;
   }
   
-  /* Active and default bullet styles */
   .swiper-pagination-bullet {
-    background-color: #a7c4b9 !important; /* Light green color for inactive bullets */
-    width: 10px !important;
-    height: 10px !important;
-    margin: 0 6px !important; /* Adjust bullet spacing */
+    width: 10px;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    
+    margin: 0 6px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
   }
   
   .swiper-pagination-bullet-active {
-    
-    background-color: #28a745 !important; /* Dark green for active bullet */
+    background-color: #00b207; /* Active bullet color */
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Optional hover effect */
+  .swiper-pagination-bullet:hover {
+    background-color: #00b207;
+    opacity: 0.7;
+  }
+  
+  .custom-swiper-buttons-container {
+    display: flex;
+    gap: 4px; /* Adjust the value as needed */
+  }
+  
+  .custom-swiper-button-prev,
+  .custom-swiper-button-next {
+    margin: 0; /* Ensure no additional margin is applied */
   }
   
