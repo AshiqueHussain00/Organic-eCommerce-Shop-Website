@@ -36,7 +36,7 @@ const HomeHerosection = () => {
       className="w-full py-10 bg-white"
      
     >
-      <div className="w-11/12 mx-auto">
+      <div className="w-11/12 xmd:w-10/12 mx-auto">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {/* Left Main Section */}
           <motion.div
