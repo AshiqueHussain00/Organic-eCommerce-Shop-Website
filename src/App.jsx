@@ -33,7 +33,7 @@ const App = () => {
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar/>
      {/* <Product/> */}
-     {/* <Vegetable/> */}
+     <Vegetable/>
      <Routes>
 
       {/* ---------- homepages ------- */}
