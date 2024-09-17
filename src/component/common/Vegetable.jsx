@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { vegetableData } from '../../data/common/vegetable-data'; // Assuming the vegetableData is imported correctly
-
+// import { CookingData  as vegetableData } from '../../data/common/CookingData';
 const Vegetable = () => {
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
