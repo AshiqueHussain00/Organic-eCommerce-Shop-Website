@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
+    "filter-data": "^0.6.1",
     "framer-motion": "^12.0.0-alpha.0",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
