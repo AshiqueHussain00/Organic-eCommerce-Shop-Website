@@ -10,6 +10,7 @@ import Home3 from './pages/homepages/Home3';
 import Home4 from './pages/homepages/Home4';
 import Home5 from './pages/homepages/Home5'
 import Product from './component/common/product';
+import Vegetable from './component/common/Vegetable';
 
 const App = () => {
 
@@ -31,7 +32,8 @@ const App = () => {
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar/>
-     <Product/>
+     {/* <Product/> */}
+     <Vegetable/>
      <Routes>
 
       {/* ---------- homepages ------- */}
