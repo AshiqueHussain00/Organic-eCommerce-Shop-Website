@@ -63,7 +63,7 @@ export const navData = [
     dropdown: [
       {
         id: 31,
-        title: 'shop1',
+        title: 'Shop 1',
         path: '',
         dropdown: [
           { id: 311, title: 'Fresh Fruite', path: '' },
@@ -72,7 +72,7 @@ export const navData = [
       },
       {
         id: 32,
-        title: 'shop2',
+        title: 'Shop 2',
         path: '',
         dropdown: [
           { id: 321, title: 'All Vegetables', path: '' },
