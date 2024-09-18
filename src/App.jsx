@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Shop2 from './pages/homepages/Shop2';
+
 
 // Lazy load the pages
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -12,7 +12,9 @@ const Home2 = lazy(() => import('./pages/homepages/Home2'));
 const Home3 = lazy(() => import('./pages/homepages/Home3'));
 const Home4 = lazy(() => import('./pages/homepages/Home4'));
 const Home5 = lazy(() => import('./pages/homepages/Home5'));
+
 const Shop1 = lazy(() => import('./pages/homepages/Shop1'));
+const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
 
 const App = () => {
