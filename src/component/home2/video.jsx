@@ -1,9 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
+//import ReactPlayer from 'react-player';
 //import Poster from '../../assets/home2/video1.svg'
 import videoFile from '../../assets/home2/Vegies.mp4'; // Renamed to avoid conflict with component name
-// import './home4Common.css';
+ //import './home4/home4Common.css';
  import { GoPlay } from "react-icons/go";
 
 const VideoComponent = () => {  // Renamed the component to `VideoComponent`

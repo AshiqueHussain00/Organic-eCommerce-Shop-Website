@@ -94,7 +94,7 @@ const FilterTwo = ({ products }) => {
     return (
         <div className="flex flex-col p-4">
             {/* Top Filters Section: Horizontally aligned */}
-            <div className="flex justify-between items-center w-full mb-6 space-x-4">
+            <div className="flex items-center justify-between w-full mb-6 space-x-4">
                 {/* Category Filter */}
                 <div className="flex-1">
                     <Select
@@ -141,7 +141,7 @@ const FilterTwo = ({ products }) => {
                 {/* Sort Order Dropdown */}
                 <div className="flex-1">
                     <select
-                        className="w-full border rounded p-2"
+                        className="w-full p-2 border rounded"
                         onChange={(e) => setSortOrder(e.target.value)}
                         value={sortOrder}
                     >
