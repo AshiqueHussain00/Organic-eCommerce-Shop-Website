@@ -14,7 +14,7 @@ const categories = [
   { value: "Bread & Bakery", label: "Bread & Bakery" },
 ];
 
-const ITEMS_PER_PAGE = 16; // Number of products to show per page
+const ITEMS_PER_PAGE = 16; // Default number of products to show per page
 
 const FilterTwo = ({ products }) => {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -29,6 +29,7 @@ const FilterTwo = ({ products }) => {
   });
   const [sortOrder, setSortOrder] = useState("latest"); // latest, price-low-to-high, price-high-to-low, highest-rating, lowest-rating
   const [currentPage, setCurrentPage] = useState(1); // Track current page
+  const [itemsPerPage, setItemsPerPage] = useState(ITEMS_PER_PAGE); // Number of products per page
 
   const handleRemoveFilter = (filterType) => {
     if (filterType === "category") {
@@ -39,27 +40,23 @@ const FilterTwo = ({ products }) => {
       setRating({ value: "all", label: "Select Rating" }); // Reset rating
     }
   };
-  // Calculate total number of pages based on filtered products
-  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
-  // Calculate the products to show on the current page
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
+
   const paginatedProducts = filteredProducts.slice(
-    (currentPage - 1) * ITEMS_PER_PAGE,
-    currentPage * ITEMS_PER_PAGE
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
   );
 
-  // Filter function that filters products based on category, price, and rating
   useEffect(() => {
     let filtered = products;
 
-    // Filter by category
     if (category.value !== "all") {
       filtered = filtered.filter(
         (product) => product.category === category.value
       );
     }
 
-    // Filter by price range
     if (priceRange.value !== "all") {
       const [minPrice, maxPrice] = priceRange.value.split("-").map(Number);
       filtered = filtered.filter(
@@ -69,14 +66,12 @@ const FilterTwo = ({ products }) => {
       );
     }
 
-    // Filter by rating
     if (rating.value !== "all") {
       filtered = filtered.filter(
         (product) => product.rating >= parseFloat(rating.value)
       );
     }
 
-    // Sort by selected order
     switch (sortOrder) {
       case "price-low-to-high":
         filtered = filtered.sort(
@@ -95,7 +90,7 @@ const FilterTwo = ({ products }) => {
         filtered = filtered.sort((a, b) => b.rating - a.rating);
         break;
       case "latest":
-        filtered = filtered.sort((a, b) => b.id.localeCompare(a.id)); // Assuming id represents product creation order
+        filtered = filtered.sort((a, b) => b.id.localeCompare(a.id));
         break;
       default:
         break;
@@ -103,89 +98,107 @@ const FilterTwo = ({ products }) => {
 
     setFilteredProducts(filtered);
     setCurrentPage(1); // Reset to first page when filters change
-  }, [category, priceRange, rating, sortOrder, products]);
+  }, [category, priceRange, rating, sortOrder, products, itemsPerPage]);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
 
-  // Map sort order to label
   const sortOrderLabel = {
     latest: "Latest",
     "price-low-to-high": "Price Low to High",
     "price-high-to-low": "Price High to Low",
-    "highest-rating": "Highest Rating",
     "lowest-rating": "Lowest Rating",
+    "highest-rating": "Highest Rating",
   };
 
   return (
     <div className="flex flex-col p-4">
       {/* Top Filters Section: Horizontally aligned */}
-      <div className="flex items-center justify-between w-full mb-6 space-x-4">
-        {/* Category Filter */}
-        <div className="flex-1">
-          <Select
-            options={categories} // Using the provided categories
-            onChange={setCategory}
-            value={category}
-            placeholder="Select By Category"
-          />
+      <div className="flex flex-wrap items-center justify-between w-full mb-6">
+        {/* Left Side Filters */}
+        <div className="flex flex-wrap space-x-4 mb-4 lg:mb-0 w-full lg:w-auto">
+          {/* Category Filter */}
+          <div className="flex-grow min-w-max">
+            <Select
+              options={categories}
+              onChange={setCategory}
+              value={category}
+              placeholder="Select Category"
+            />
+          </div>
+
+          {/* Price Range Filter */}
+          <div className="flex-grow min-w-max">
+            <Select
+              options={[
+                { value: "all", label: "All Prices" },
+                { value: "0-20", label: "$0 - $20" },
+                { value: "20-50", label: "$20 - $50" },
+                { value: "50-100", label: "$50 - $100" },
+                { value: "100-200", label: "$100 - $200" },
+              ]}
+              onChange={setPriceRange}
+              value={priceRange}
+              placeholder="Select Price"
+            />
+          </div>
+
+          {/* Rating Filter */}
+          <div className="flex-grow min-w-max">
+            <Select
+              options={[
+                { value: "all", label: "All Ratings" },
+                { value: "1", label: "1 Star & Up" },
+                { value: "2", label: "2 Stars & Up" },
+                { value: "3", label: "3 Stars & Up" },
+                { value: "4", label: "4 Stars & Up" },
+                { value: "5", label: "5 Stars" },
+              ]}
+              onChange={setRating}
+              value={rating}
+              placeholder="Select Rating"
+            />
+          </div>
         </div>
 
-        {/* Price Range Filter */}
-        <div className="flex-1">
-          <Select
-            options={[
-              { value: "all", label: "All Prices" },
-              { value: "0-20", label: "$0 - $20" },
-              { value: "20-50", label: "$20 - $50" },
-              { value: "50-100", label: "$50 - $100" },
-              { value: "100-200", label: "$100 - $200" },
-            ]}
-            onChange={setPriceRange}
-            value={priceRange}
-            placeholder="Select Price"
-          />
-        </div>
+        {/* Right Side Filters */}
+        <div className="flex flex-wrap space-x-4 w-full lg:w-auto">
+          {/* Sort Order Dropdown */}
+<div className="flex items-center space-x-2 min-w-max">
+  <span className="text-gray-700">Sort By:</span>
+  <select
+    className="p-2 border rounded"
+    onChange={(e) => setSortOrder(e.target.value)}
+    value={sortOrder}
+  >
+    <option value="latest">{sortOrderLabel[sortOrder]}</option>
+    <option value="price-low-to-high">Price Low to High</option>
+    <option value="price-high-to-low">Price High to Low</option>
+    <option value="highest-rating">Highest Rating</option>
+    <option value="lowest-rating">Lowest Rating</option>
+  </select>
+</div>
 
-        {/* Rating Filter */}
-        <div className="flex-1">
-          <Select
-            options={[
-              { value: "all", label: "All Ratings" },
-              { value: "1", label: "1 Star & Up" },
-              { value: "2", label: "2 Stars & Up" },
-              { value: "3", label: "3 Stars & Up" },
-              { value: "4", label: "4 Stars & Up" },
-              { value: "5", label: "5 Stars" },
-            ]}
-            onChange={setRating}
-            value={rating}
-            placeholder="Select Rating"
-          />
-        </div>
 
-        {/* Sort Order Dropdown */}
-        <div className="flex-1">
-          <select
-            className="w-full p-2 border rounded"
-            onChange={(e) => setSortOrder(e.target.value)}
-            value={sortOrder}
-          >
-            <option value="latest">Sort By: {sortOrderLabel[sortOrder]}</option>
-            <option value="price-low-to-high">Price Low to High</option>
-            <option value="price-high-to-low">Price High to Low</option>
-            <option value="highest-rating">Highest Rating</option>
-            <option value="lowest-rating">Lowest Rating</option>
-          </select>
+          {/* Items Per Page Dropdown */}
+<div className="flex items-center space-x-2 min-w-max">
+  <label className="text-gray-700">Show:</label>
+  <select
+    className="p-2 border rounded"
+    onChange={(e) => setItemsPerPage(Number(e.target.value))}
+    value={itemsPerPage}
+  >
+    <option value={8}>8</option>
+    <option value={16}>16</option>
+    <option value={24}>24</option>
+  </select>
+</div>
+
         </div>
       </div>
 
-      <div>
-        
-      </div>
-      
-      {/* Display active filters with close buttons */}
+             {/* Display active filters with close buttons */}
       
 <div className="mb-4 flex items-center justify-between  ">
   <div className="flex items-center">
@@ -217,55 +230,46 @@ const FilterTwo = ({ products }) => {
       )}
     </div>
   </div>
-  <h3>Showing {filteredProducts.length} products</h3>
+  <h3> {filteredProducts.length} results found</h3>
 </div>
 
-
-      {/* Product List */}
-      <div className="w-full">
-        
-        <div className="grid grid-cols-4 gap-4">
-          
-          {/* Adjusted grid-cols-4 for 4 products per row */}
-          {paginatedProducts.map((product) => (
+      {/* Display filtered products */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {paginatedProducts.length > 0 ? (
+          paginatedProducts.map((product) => (
             <ProductCard
-              key={product.id}
-              imageSrc={product.images[0].main}
-              productName={product.name}
-              price={product.price.discounted}
-              oldPrice={product.price.original}
-              rating={product.rating}
-              onAddToCart={() => handleAddToCart(product.name)}
-              isSale={!!product.promotions.discount}
-              saleText={product.promotions.discount}
-            />
-          ))}
-        </div>
+            key={product.id}
+            imageSrc={product.images[0].main}
+            productName={product.name}
+            price={product.price.discounted}
+            oldPrice={product.price.original}
+            rating={product.rating}
+            onAddToCart={() => handleAddToCart(product.name)}
+            isSale={!!product.promotions.discount}
+            saleText={product.promotions.discount}
+          />
+          ))
+        ) : (
+          <div className="col-span-full text-center">No products found</div>
+        )}
+      </div>
 
-        {/* Pagination Controls */}
-        <div className="flex justify-center mt-8 space-x-2">
-          {Array.from({ length: totalPages }, (_, index) => (
-            <button
-              key={index + 1}
-              className={`px-3 py-1 border rounded ${
-                currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200"
-              }`}
-              onClick={() => handlePageChange(index + 1)}
-            >
-              {index + 1}
-            </button>
-          ))}
-        </div>
+      {/* Pagination Controls */}
+      <div className="flex justify-center mt-4">
+        {Array.from({ length: totalPages }, (_, index) => (
+          <button
+            key={index}
+            className={`mx-1 px-3 py-1 border rounded ${
+              currentPage === index + 1 ? "bg-blue-500 text-white" : "bg-white"
+            }`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
       </div>
     </div>
   );
-};
-
-// Dummy function to mimic adding to cart
-const handleAddToCart = (productName) => {
-  alert(`Added ${productName} to cart!`);
 };
 
 export default FilterTwo;
