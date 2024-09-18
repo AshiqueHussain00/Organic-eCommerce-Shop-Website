@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { vegetableData } from '../../data/common/vegetable-data'; // Assuming the vegetableData is imported correctly
+// import { vegetableData } from '../../data/common/vegetable-data'; // Assuming the vegetableData is imported correctly
 // import { CookingData  as vegetableData } from '../../data/common/CookingData';
 // import { snacksData } from '../../data/common/snacks-data';
 const Vegetable = () => {
@@ -71,7 +71,7 @@ const Vegetable = () => {
                     <img
                         src={selectedProduct.currentImage || selectedProduct.images[0].main}
                         alt={selectedProduct.name}
-                        className="object-cover w-full rounded-lg shadow-lg h-96"
+                        className="object-contain w-full rounded-lg shadow-lg h-96"
                     />
                     <div className="flex mt-4 space-x-2 thumbnails">
                         {selectedProduct.images[0].thumbnails.map((thumbnail, index) => (
@@ -79,7 +79,7 @@ const Vegetable = () => {
                                 key={index}
                                 src={thumbnail}
                                 alt={`Thumbnail ${index + 1}`}
-                                className="object-cover w-16 h-16 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500"
+                                className="object-contain  w-16 h-16 border-2 border-gray-200 rounded-lg cursor-pointer hover:border-blue-500"
                                 onClick={() => handleImageChange(thumbnail)}
                             />
                         ))}
