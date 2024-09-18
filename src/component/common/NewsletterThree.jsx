@@ -5,7 +5,7 @@ import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from 'react-icons/f
 const NewsletterThree = () => {
     return (
         <div className="py-8 bg-gray-100">
-            <div className="flex flex-col items-center px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-col items-center px-4 mx-auto max-w-7xl sm:px-6  lg:flex-row lg:items-center lg:justify-between">
                 {/* Newsletter Section */}
                 <div className="flex flex-col w-full lg:flex-row lg:items-center lg:justify-between lg:gap-8">
                     {/* Text Section */}
@@ -17,13 +17,13 @@ const NewsletterThree = () => {
                     </div>
 
                     {/* Input and Button Section */}
-                    <div className="flex flex-col items-center w-full sm:flex-row sm:w-auto lg:items-center lg:gap-2">
+                    <div className="flex  flex-col items-center w-[400px] sm:flex-row sm:w-auto lg:items-center lg:gap-2">
                         <input
                             type="email"
                             placeholder="Your email address"
                             className="w-full px-4 py-2 border border-gray-300 rounded-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-gray-400"
                         />
-                        <button className="w-full px-4 py-2 mt-2 bg-gray-900 rounded-full text-white-100 sm:mt-0 sm:ml-2 sm:w-auto hover:bg-gray-700">
+                        <button className="w-full a px-4 py-2 mt-2 bg-primary rounded-full text-white-100 sm:mt-0 sm:ml-2 sm:w-auto hover:bg-gray-700">
                             Subscribe
                         </button>
                     </div>

@@ -1,9 +1,15 @@
+import React from 'react';
+import { useSelector , useDispatch } from 'react-redux';
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 import reviewimg1 from '../../assets/common/product/reviewimg1.svg'
 import reviewimg2 from '../../assets/common/product/reviewimg2.svg'
 import brand from '../../assets/common/product/brand.svg'
+import SingleItem from './SingleItem';
 
-export const snacksData = [
+
+
+
+const cart = [
     {
         id: "s1",
         name: "Tomato Ketchup",
@@ -87,7 +93,7 @@ export const snacksData = [
         },
         category: "Snacks",
         tags: ["Snacks", "Healthy", "Vegetarian", "Kid foods" , "Tiffin"],
-        rating: 3.7,
+        rating: 4.7,
         reviews: 10,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
@@ -159,7 +165,7 @@ export const snacksData = [
         },
         category: "Snacks",
         tags: ["Snacks", "Healthy", "Kid foods" , "Tiffin"],
-        rating: 3.5,
+        rating: 4.9,
         reviews: 9,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
@@ -231,7 +237,7 @@ export const snacksData = [
         },
         category: "Snacks",
         tags: ["Snacks", "Kid foods" , "Tiffin"],
-        rating: 2.8,
+        rating: 3.9,
         reviews: 12,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
@@ -292,220 +298,68 @@ export const snacksData = [
             organic: "100% Organic",
         },
     },
-    {
-        id: "s5",
-        name: "Banana Chips",
-        sku: "2SJ4243",
-        price: {
-            original: 21.0,
-            discounted:17.28,
-            discountPercentage: 64,
-        },
-        category: "Snacks",
-        tags: ["Snacks", "Kid foods" , "Tiffin"],
-        rating: 4.9,
-        reviews: 15,
-        inStock: false,
-        mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
-        images: [
-            {
-                main: "https://m.media-amazon.com/images/I/71Z2h6w3drL._SY741_.jpg",
-                thumbnails: [
-                    "https://m.media-amazon.com/images/I/71Q0ZKCdBtL._SX679_.jpg",
-                    'https://m.media-amazon.com/images/I/71gIFejwdYL._SX679_.jpg',
-                    'https://m.media-amazon.com/images/I/71XVM-lV9DL._SX679_.jpg',
-                    'https://tse4.mm.bing.net/th?id=OIP.OkDDBpIpCyy78_4ulJA5vwHaE7&pid=Api&P=0&h=180',
-                ],
-            },
-        ],
-        description: {
-            dec1: 'Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.',
-            dec2: 'Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. ',
-            dec3: ['100 g of fresh leaves provides.', 'Aliquam ac est at augue volutpat elementum.', 'Quisque nec enim eget sapien molestie.', 'Proin convallis odio volutpat finibus posuere.'],
-            dec4: 'Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. ',
-        },
-        additionalInformation: {
-            weight: "300g",
-            color: "-",
-            type: "-",
-            category: "Snacks",
-            stockStatus: "Not Available",
-            stockQuantity: 0,
-            // tags: ["Vegetables", "Healthy", "Chinese", "Cabbage", "Green Cabbage"],
-        },
-        customerFeedback: [
-            {
-                name: "John Doe",
-                reviewImg: reviewimg1,
-                feedback: "The product is really fresh and organic. I love it!",
-                rating: 5,
-            },
-            {
-                name: "Jane Smith",
-                coustomerimg: reviewimg2,
-                feedback: "Great product, fast delivery.",
-                rating: 4,
-            },
-        ],
-        promotions: {
-            discount: "64% Discount",
-            organic: "100% Organic",
-        },
-    },
-    {
-        id: "s6",
-        name: "Gujarati Khakra",
-        sku: "2SJ42753",
-        price: {
-            original: 60.0,
-            discounted:54.28,
-            discountPercentage: 82,
-        },
-        category: "Snacks",
-        tags: ["Snacks", "Kid foods" , "Vegetarian" , "Tiffin" , "Breakfast"],
-        rating: 2.5,
-        reviews: 15,
-        inStock: false,
-        mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
-        images: [
-            {
-                main: "https://m.media-amazon.com/images/I/81cU2tl-3EL._SX679_PIbundle-5,TopRight,0,0_AA679SH20_.jpg",
-                thumbnails: [
-                    "https://m.media-amazon.com/images/I/81d9ZbSP--L._SX679_.jpg",
-                    'https://m.media-amazon.com/images/I/81jJcc+mzwL._SX679_.jpg',
-                    'https://m.media-amazon.com/images/I/81c9xsS5AwL._SX679_.jpg',
-                    'https://m.media-amazon.com/images/I/81lj9NP5JxL._SX679_.jpg',
-                ],
-            },
-        ],
-        description: {
-            dec1: 'Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.',
-            dec2: 'Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. ',
-            dec3: ['100 g of fresh leaves provides.', 'Aliquam ac est at augue volutpat elementum.', 'Quisque nec enim eget sapien molestie.', 'Proin convallis odio volutpat finibus posuere.'],
-            dec4: 'Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. ',
-        },
-        additionalInformation: {
-            weight: "800gm",
-            color: "-",
-            type: "-",
-            category: "Snacks",
-            stockStatus: "Not Available",
-            stockQuantity: 0,
-            // tags: ["Vegetables", "Healthy", "Chinese", "Cabbage", "Green Cabbage"],
-        },
-        customerFeedback: [
-            {
-                name: "John Doe",
-                reviewImg: reviewimg1,
-                feedback: "The product is really fresh and organic. I love it!",
-                rating: 5,
-            },
-            {
-                name: "Jane Smith",
-                coustomerimg: reviewimg2,
-                feedback: "Great product, fast delivery.",
-                rating: 4,
-            },
-        ],
-        promotions: {
-            discount: "64% Discount",
-            organic: "100% Organic",
-        },
-    },
-    {
-        id: "s7",
-        name: "Organic Chakli",
-        sku: "2SJ42456",
-        price: {
-            original: 40.0,
-            discounted:32.28,
-            discountPercentage: 32,
-        },
-        category: "Snacks",
-        tags: ["Snacks", "Kid foods"  , "Tiffin" ],
-        rating: 3.9,
-        reviews: 25,
-        inStock: true,
-        mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
-        images: [
-            {
-                main: "https://m.media-amazon.com/images/I/51DqtmXiomL._SX679_.jpg",
-                thumbnails: [
-                    "https://m.media-amazon.com/images/I/51SXARVMl0L._SX679_.jpg",
-                    'https://m.media-amazon.com/images/I/714-31OgGZL._SX679_.jpg',
-                    'https://recipes.timesofindia.com/photo/58067399.cms?imgsize=432080',
-                    'http://4.bp.blogspot.com/-fpKbX40AEA0/TxhIT1rtfCI/AAAAAAAADOM/56YPW2oK2CM/s1600/chakli.jpg',
-                ],
-            },
-        ],
-        description: {
-            dec1: 'Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at mauris. Maecenas tincidunt ligula a sem vestibulum pharetra. Maecenas auctor tortor lacus, nec laoreet nisi porttitor vel. Etiam tincidunt metus vel dui interdum sollicitudin. Mauris sem ante, vestibulum nec orci vitae, aliquam mollis lacus. Sed et condimentum arcu, id molestie tellus. Nulla facilisi. Nam scelerisque vitae justo a convallis. Morbi urna ipsum, placerat quis commodo quis, egestas elementum leo. Donec convallis mollis enim. Aliquam id mi quam. Phasellus nec fringilla elit.',
-            dec2: 'Nulla mauris tellus, feugiat quis pharetra sed, gravida ac dui. Sed iaculis, metus faucibus elementum tincidunt, turpis mi viverra velit, pellentesque tristique neque mi eget nulla. Proin luctus elementum neque et pharetra. ',
-            dec3: ['100 g of fresh leaves provides.', 'Aliquam ac est at augue volutpat elementum.', 'Quisque nec enim eget sapien molestie.', 'Proin convallis odio volutpat finibus posuere.'],
-            dec4: 'Cras et diam maximus, accumsan sapien et, sollicitudin velit. Nulla blandit eros non turpis lobortis iaculis at ut massa. ',
-        },
-        additionalInformation: {
-            weight: "200gm",
-            color: "brown",
-            type: "-",
-            category: "Snacks",
-            stockStatus: "Available",
-            stockQuantity: 1230,
-            // tags: ["Vegetables", "Healthy", "Chinese", "Cabbage", "Green Cabbage"],
-        },
-        customerFeedback: [
-            {
-                name: "John Doe",
-                reviewImg: reviewimg1,
-                feedback: "The product is really fresh and organic. I love it!",
-                rating: 5,
-            },
-            {
-                name: "Jane Smith",
-                coustomerimg: reviewimg2,
-                feedback: "Great product, fast delivery.",
-                rating: 4,
-            },
-        ],
-        promotions: {
-            discount: "64% Discount",
-            organic: "100% Organic",
-        },
-    },
+   
 ]
+
+const CartBottom = () => {
+    
+    const cartItems = useSelector((state) => state.cart.items);
+    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+    const totalPrice = useSelector((state) => state.cart.totalPrice)
+    const dispatch = useDispatch();
+
+
+  return (
+    <div className='border-2 border-red-700 flex '>
+
+        {/* --------- left --------------- */}
+        <div className='w-[65%]'>
+
+            {/* ---------- upper ---------- */}
+
+            <div>
+
+              {/* -------- heading ----------- */}
+
+              <div className='grid grid-cols-6 border-2 border-blue-600 w-full'>
+
+                <div className='px-6 border col-span-2'>Product</div>
+                <div className='border'>Price</div>
+                <div className='border'>Quantity</div>
+                <div className='border'>SubTotal</div>
+                <div className='border'></div>
+
+              </div>
+
+
+              {/* ----------- content --------- */}
+              <div className='flex flex-col w-full border-2 border-blue-500'>
+                {
+                    cart.map((item) => (
+                        <SingleItem key={item.id} data={item}/>
+                    ))
+                }
+              </div>
+
+            </div>
+
+
+            {/* --------- bottom -------------- */}
+
+            <div>
+
+            </div>
+
+        </div>
+
+        {/* ---------- right --------------- */}
+
+        <div>
+
+        </div>
+
+    </div>
+  )
+}
+
+export default CartBottom

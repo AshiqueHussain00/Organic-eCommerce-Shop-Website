@@ -222,15 +222,15 @@ const Navbar = () => {
 
               {/* Right-side Icons */}
               <div className="flex space-x-4">
-                <a href="/wishlist" className="p-2 text-white rounded-full hover:bg-gray-700">
+                <Link to="/wishlist" className="p-2 text-white rounded-full hover:bg-gray-700">
                   <IoHeartOutline size={24} />
-                </a>
-                <a href="/cart" className="p-2 text-white rounded-full hover:bg-gray-700">
+                </Link>
+                <Link to="/cart" className="p-2 text-white rounded-full hover:bg-gray-700">
                   <HiOutlineShoppingBag size={24} />
-                </a>
-                <a href="/account" className="p-2 text-white rounded-full hover:bg-gray-700">
+                </Link>
+                <Link to="/account" className="p-2 text-white rounded-full hover:bg-gray-700">
                   <FaRegUser size={24} />
-                </a>
+                </Link>
               </div>
             </div>
           </nav>

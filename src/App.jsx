@@ -14,6 +14,8 @@ import Vegetable from './component/common/Vegetable';
 import FilterSidebar from './component/common/FilterOne';
 import FilterOne from './component/common/FilterOne';
 import ContactForm from './component/common/ContactForm';
+import Cart from './pages/Cart';
+import Wishlist from './pages/Wishlist';
 
 const App = () => {
 
@@ -48,6 +50,12 @@ const App = () => {
         <Route path='/home4' element={<Home4 />} />
         <Route path='/home5' element={<Home5 />} />
         <Route path='/contact-us' element={<ContactForm />} />
+
+
+        {/* ----------- Cart & Wishlist--------------- */}
+
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/wishlist' element={<Wishlist/>}/>
 
       </Routes>
 
