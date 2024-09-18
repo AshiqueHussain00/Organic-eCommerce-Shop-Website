@@ -26,6 +26,9 @@ import Newsletter from "../../component/Home5/Newsletter";
 import CountdownTimer from "../../component/Home5/CountdownTimer";
 import ShowProduct from "../../component/common/ShowProduct";
 import BestSeller from "../../component/Home5/BestSeller";
+
+import FilterTwo from "../../component/common/FilterTwo";
+import allproductData from "../../data/common/allproductData";
 const Home5 = () => {
   // news data
 
@@ -131,6 +134,7 @@ const Home5 = () => {
 
   return (
     <section>
+      <FilterTwo products={allproductData}/>
       <Herosection autoplay={true} />
      <HeaderBottom
               flexDirection="row"
