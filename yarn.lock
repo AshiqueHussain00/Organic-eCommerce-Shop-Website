@@ -2264,7 +2264,11 @@ lru-cache@^5.1.1:
 
 memoize-one@^5.1.1:
   version "5.2.1"
+<<<<<<< HEAD
+  resolved "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz"
+=======
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
+>>>>>>> 016d1b88131a323153b367d26eb673ae6c5cb675
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
 
 memoize-one@^6.0.0:
@@ -2476,7 +2480,11 @@ parse-json@^5.0.0:
 
 patch-package@^8.0.0:
   version "8.0.0"
+<<<<<<< HEAD
+  resolved "https://registry.npmjs.org/patch-package/-/patch-package-8.0.0.tgz"
+=======
   resolved "https://registry.yarnpkg.com/patch-package/-/patch-package-8.0.0.tgz#d191e2f1b6e06a4624a0116bcb88edd6714ede61"
+>>>>>>> 016d1b88131a323153b367d26eb673ae6c5cb675
   integrity sha512-da8BVIhzjtgScwDJ2TtKsfT5JFWz1hYoBl9rUQ1f38MC2HwnEIkK8VN3dKMKcP7P7bvvgzNDbfNHtx3MsQb5vA==
   dependencies:
     "@yarnpkg/lockfile" "^1.1.0"

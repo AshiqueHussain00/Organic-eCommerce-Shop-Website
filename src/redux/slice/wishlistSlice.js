@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const  initialState = {
-    items: [],
+    wishlistItems: [],
 }
 
 
@@ -14,16 +14,16 @@ const wishlistSlice = createSlice({
         addToWishlist : (state , action) => {
            
             const product = action.payload;
-            const existingItem = state.items.find(item=> item.id === product.id);
+            const existingItem = state.wishlistItems.find(item=> item.id === product.id);
             if(!existingItem){
-               state.items.push(product); 
+               state.wishlistItems.push(product); 
             }
         },
 
         removeFromWishlist : (state, action)=> {
              
             const productId = action.payload;
-            state.items.filter(item => item.id !== productId);
+            state.wishlistItems.filter(item => item.id !== productId);
         }
     }
 })
