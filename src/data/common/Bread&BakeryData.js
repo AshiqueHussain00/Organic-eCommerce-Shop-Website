@@ -30,12 +30,12 @@ export const BreadData = [
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
-                main: 'https://m.media-amazon.com/images/I/713ygtL7QiL._SL1500_.jpg',
+                main: 'https://m.media-amazon.com/images/I/71YLQwJhqDL._SL1500_.jpg',
                 thumbnails: [
-                    'https://m.media-amazon.com/images/I/71Cu4Xz4oEL._SL1500_.jpg',
-                    'https://m.media-amazon.com/images/I/91JtW+9wJ-L._SX679_.jpg',
-                    'https://m.media-amazon.com/images/I/81+e3A5q0xL._SX679_.jpg',
-                    'https://m.media-amazon.com/images/I/813RVOhyxRL._SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/71My3WgwRsL._SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/91ML8csk3VL._SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/91S5dMUXsxL._SL1500_.jpg',
+                    'https://m.media-amazon.com/images/I/91h9mjBiMrL._SL1500_.jpg',
                 ],
             },
         ],
