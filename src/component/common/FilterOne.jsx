@@ -1,223 +1,216 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import ProductCard from './ProductCard'; // Assume you have this component implemented.
 
-// Sample product data
-const products = [
-  {
-    id: 1,
-    name: "Fresh Apple",
-    category: "Fresh Fruit",
-    price: 200,
-    rating: 4.5,
-    tags: ["Healthy", "Vegetarian"],
-  },
-  {
-    id: 2,
-    name: "Broccoli",
-    category: "Vegetables",
-    price: 150,
-    rating: 4.0,
-    tags: ["Low fat", "Vegetarian", "Healthy"],
-  },
-  {
-    id: 3,
-    name: "Olive Oil",
-    category: "Cooking",
-    price: 500,
-    rating: 5.0,
-    tags: ["Healthy"],
-  },
-  {
-    id: 4,
-    name: "Chips",
-    category: "Snacks",
-    price: 50,
-    rating: 3.5,
-    tags: ["Kid foods"],
-  },
-  {
-    id: 5,
-    name: "Orange Juice",
-    category: "Beverages",
-    price: 120,
-    rating: 4.2,
-    tags: ["Healthy", "Low fat"],
-  },
-  {
-    id: 6,
-    name: "Shampoo",
-    category: "Beauty & Health",
-    price: 250,
-    rating: 4.8,
-    tags: ["Vitamins"],
-  },
-  {
-    id: 7,
-    name: "Whole Wheat Bread",
-    category: "Bread & Bakery",
-    price: 80,
-    rating: 4.3,
-    tags: ["Bread", "Healthy"],
-  },
+// Category options for filtering
+const categories = [
+    { value: 'all', label: 'All Products' },
+    { value: 'Fruits', label: 'Fresh Fruit' },
+    { value: 'Vegetables', label: 'Vegetables' },
+    { value: 'Cooking', label: 'Cooking' },
+    { value: 'Snacks', label: 'Snacks' },
+    { value: 'Beverages', label: 'Beverages' },
+    { value: 'Beauty-health', label: 'Beauty & Health' },
+    { value: 'Bread & Bakery', label: 'Bread & Bakery' },
 ];
 
-const FilterSidebar = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All Products");
-  const [priceRange, setPriceRange] = useState([50, 1500]);
-  const [selectedRating, setSelectedRating] = useState([]);
-  const [selectedTags, setSelectedTags] = useState([]);
+const FilterOne = ({ products = [] }) => {
+    // Local states for filters
+    const [filteredProducts, setFilteredProducts] = useState(products);
+    const [category, setCategory] = useState('all');
+    const [priceRange, setPriceRange] = useState([50, 1500]);
+    const [rating, setRating] = useState([]);
+    const [tags, setTags] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
 
-  const categories = [
-    "All Products",
-    "Fresh Fruit",
-    "Vegetables",
-    "Cooking",
-    "Snacks",
-    "Beverages",
-    "Beauty & Health",
-    "Bread & Bakery",
-  ];
+    const ITEMS_PER_PAGE = 16;
 
-  const tags = ["Healthy", "Low fat", "Vegetarian", "Kid foods", "Vitamins", "Bread"];
+    // Debugging Logs for Product Data and Filters
+    useEffect(() => {
+        console.log('Product Data:', products);
+        console.log('Current Filters:', { category, priceRange, rating, tags });
+    }, [products, category, priceRange, rating, tags]);
 
-  // Handle rating selection
-  const handleRatingChange = (rating) => {
-    if (selectedRating.includes(rating)) {
-      setSelectedRating(selectedRating.filter((r) => r !== rating));
-    } else {
-      setSelectedRating([...selectedRating, rating]);
-    }
-  };
+    // Effect for filtering products based on selected filters
+    useEffect(() => {
+        if (!products || products.length === 0) {
+            console.error('No products available or products prop is undefined');
+            setFilteredProducts([]);
+            return;
+        }
 
-  // Handle tag selection
-  const handleTagChange = (tag) => {
-    if (selectedTags.includes(tag)) {
-      setSelectedTags(selectedTags.filter((t) => t !== tag));
-    } else {
-      setSelectedTags([...selectedTags, tag]);
-    }
-  };
+        let filtered = products;
 
-  // Filter the products based on selected filters
-  const filteredProducts = products.filter((product) => {
-    // Category filter: "All Products" shows everything, otherwise filter by category
-    const categoryMatch =
-      selectedCategory === "All Products" || product.category === selectedCategory;
+        // Filter by category
+        if (category !== 'all') {
+            filtered = filtered.filter(product => product.category === category);
+        }
 
-    // Price filter
-    const priceMatch =
-      product.price >= priceRange[0] && product.price <= priceRange[1];
+        // Filter by price range
+        filtered = filtered.filter(product => {
+            if (!product.price || product.price.discounted === undefined) return false;
+            return product.price.discounted >= priceRange[0] && product.price.discounted <= priceRange[1];
+        });
 
-    // Rating filter (at least the selected rating or higher)
-    const ratingMatch =
-      selectedRating.length === 0 || selectedRating.includes(Math.floor(product.rating));
+        // Filter by rating
+        if (rating.length > 0) {
+            filtered = filtered.filter(product => rating.some(r => product.rating >= r));
+        }
 
-    // Tag filter (product must contain at least one selected tag)
-    const tagMatch =
-      selectedTags.length === 0 ||
-      selectedTags.some((tag) => product.tags.includes(tag));
+        // Filter by tags
+        if (tags.length > 0) {
+            filtered = filtered.filter(product => tags.some(tag => product.tags.includes(tag)));
+        }
 
-    return categoryMatch && priceMatch && ratingMatch && tagMatch;
-  });
+        console.log('Filtered products:', filtered);
+        setFilteredProducts(filtered);
+        setCurrentPage(1); // Reset pagination when filters change
+    }, [category, priceRange, rating, tags, products]);
 
-  return (
-    <div className="flex">
-      {/* Sidebar with filters */}
-      <div className="p-4 bg-white rounded-lg shadow-md w-80">
-        <h2 className="mb-4 text-lg font-bold">Filters</h2>
+    // Handle price range change (separate for min and max)
+    const handlePriceChange = (minOrMax, event) => {
+        const value = Number(event.target.value);
+        setPriceRange(prev =>
+            minOrMax === 'min' ? [value, prev[1]] : [prev[0], value]
+        );
+    };
 
-        {/* Category Filter */}
-        <div className="mb-4">
-          <h3 className="font-semibold">All Categories</h3>
-          <ul>
-            {categories.map((category) => (
-              <li key={category} className="mt-2">
-                <label>
-                  <input
-                    type="radio"
-                    value={category}
-                    checked={selectedCategory === category}
-                    onChange={() => setSelectedCategory(category)}
-                  />
-                  <span className="ml-2">{category}</span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+    // Handle rating checkbox change
+    const handleRatingChange = (event) => {
+        const value = Number(event.target.value);
+        setRating(prev => prev.includes(value) ? prev.filter(r => r !== value) : [...prev, value]);
+    };
 
-        {/* Price Filter */}
-        <div className="mb-4">
-          <h3 className="font-semibold">Price</h3>
-          <input
-            type="range"
-            min={50}
-            max={1500}
-            value={priceRange[1]}
-            onChange={(e) =>
-              setPriceRange([priceRange[0], parseInt(e.target.value)])
-            }
-          />
-          <div className="mt-2">
-            Price: ${priceRange[0]} - ${priceRange[1]}
-          </div>
-        </div>
+    // Handle tag checkbox change
+    const handleTagChange = (tag) => {
+        setTags(prev => prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]);
+    };
 
-        {/* Rating Filter */}
-        <div className="mb-4">
-          <h3 className="font-semibold">Rating</h3>
-          <ul>
-            {[5, 4, 3, 2, 1].map((rating) => (
-              <li key={rating} className="mt-2">
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={selectedRating.includes(rating)}
-                    onChange={() => handleRatingChange(rating)}
-                  />
-                  <span className="ml-2">{rating} & up</span>
-                </label>
-              </li>
-            ))}
-          </ul>
-        </div>
+    // Handle pagination change
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    };
 
-        {/* Tag Filter */}
-        <div className="mb-4">
-          <h3 className="font-semibold">Popular Tags</h3>
-          <div className="flex flex-wrap">
-            {tags.map((tag) => (
-              <label key={tag} className="mt-2 mr-2">
-                <input
-                  type="checkbox"
-                  checked={selectedTags.includes(tag)}
-                  onChange={() => handleTagChange(tag)}
-                />
-                <span className="ml-1">{tag}</span>
-              </label>
-            ))}
-          </div>
-        </div>
-      </div>
+    // Pagination logic
+    const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+    const paginatedProducts = filteredProducts.slice((currentPage - 1) * ITEMS_PER_PAGE, currentPage * ITEMS_PER_PAGE);
 
-      {/* Product List */}
-      <div className="flex-grow p-4 product-list">
-        <h2 className="mb-4 text-lg font-bold">Products</h2>
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => (
-            <div key={product.id} className="p-4 mb-4 border rounded-lg">
-              <h2 className="text-lg font-bold">{product.name}</h2>
-              <p>Category: {product.category}</p>
-              <p>Price: ${product.price}</p>
-              <p>Rating: {product.rating} ⭐</p>
-              <p>Tags: {product.tags.join(", ")}</p>
+    return (
+        <div className="flex p-4 space-x-4">
+            {/* Filter Section */}
+            <div className="w-1/4 space-y-6">
+                <div>
+                    <h4 className="font-bold">All Categories</h4>
+                    <div className="space-y-2">
+                        {categories.map(cat => (
+                            <label key={cat.value} className="block">
+                                <input
+                                    type="radio"
+                                    name="category"
+                                    value={cat.value}
+                                    checked={category === cat.value}
+                                    onChange={() => setCategory(cat.value)}
+                                    className="mr-2"
+                                />
+                                {cat.label}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+
+                <div>
+                    <h4 className="font-bold">Price</h4>
+                    <div className="flex items-center justify-between space-x-2">
+                        <input
+                            type="range"
+                            min="50"
+                            max="1500"
+                            value={priceRange[0]}
+                            onChange={(e) => handlePriceChange('min', e)}
+                            className="w-full"
+                        />
+                        <input
+                            type="range"
+                            min="50"
+                            max="1500"
+                            value={priceRange[1]}
+                            onChange={(e) => handlePriceChange('max', e)}
+                            className="w-full"
+                        />
+                    </div>
+                    <div>Price: ${priceRange[0]} - ${priceRange[1]}</div>
+                </div>
+
+                <div>
+                    <h4 className="font-bold">Rating</h4>
+                    <div className="space-y-2">
+                        {[5, 4, 3, 2, 1].map(r => (
+                            <label key={r} className="block">
+                                <input
+                                    type="checkbox"
+                                    value={r}
+                                    checked={rating.includes(r)}
+                                    onChange={handleRatingChange}
+                                    className="mr-2"
+                                />
+                                {r} & up
+                            </label>
+                        ))}
+                    </div>
+                </div>
+
+                <div>
+                    <h4 className="font-bold">Popular Tags</h4>
+                    <div className="space-y-2">
+                        {['Healthy', 'Low fat', 'Vegetarian', 'Kid foods', 'Vitamins', 'Bread'].map(tag => (
+                            <label key={tag} className="block">
+                                <input
+                                    type="checkbox"
+                                    value={tag}
+                                    onChange={() => handleTagChange(tag)}
+                                    className="mr-2"
+                                />
+                                {tag}
+                            </label>
+                        ))}
+                    </div>
+                </div>
             </div>
-          ))
-        ) : (
-          <p>No products found matching your criteria.</p>
-        )}
-      </div>
-    </div>
-  );
+
+            {/* Product List Section */}
+            <div className="w-3/4">
+                <h3>Showing {filteredProducts.length} products</h3>
+                {paginatedProducts.length === 0 ? (
+                    <p>No products found</p>
+                ) : (
+                    <div className="grid grid-cols-4 gap-4">
+                        {paginatedProducts.map(product => (
+                            <ProductCard
+                                key={product.id}
+                                imageSrc={product.images[0].main}
+                                productName={product.name}
+                                price={product.price.discounted}
+                                oldPrice={product.price.original}
+                                rating={product.rating}
+                            />
+                        ))}
+                    </div>
+                )}
+
+                {/* Pagination */}
+                <div className="flex justify-center mt-8 space-x-2">
+                    {Array.from({ length: totalPages }, (_, index) => (
+                        <button
+                            key={index + 1}
+                            className={`px-3 py-1 border rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+                            onClick={() => handlePageChange(index + 1)}
+                        >
+                            {index + 1}
+                        </button>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
 };
 
-export default FilterSidebar;
+export default FilterOne;
