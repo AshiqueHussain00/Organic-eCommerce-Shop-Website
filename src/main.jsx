@@ -5,12 +5,14 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { store } from './redux/store.js'
+import FilterTwo from './component/common/FilterTwo.jsx'
 
 createRoot(document.getElementById('root')).render(
 
-  <BrowserRouter>
-  <Provider store={store}>
-    <App />
-    </Provider>
-  </BrowserRouter>
+  // <BrowserRouter>
+  // <Provider store={store}>
+  //   <App />
+  //   </Provider>
+  // </BrowserRouter>
+<FilterTwo/>
 )
