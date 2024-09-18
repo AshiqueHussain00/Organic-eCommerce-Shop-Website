@@ -56,7 +56,7 @@ const FilterOne = ({ products }) => {
       filtered = filtered.filter(product => tags.every(tag => product.tags.includes(tag)));
     }
 
-    console.log('Filtered Products:', filtered); // Debugging statement
+    
 
     // Set the filtered products and reset pagination to the first page
     setFilteredProducts(filtered);

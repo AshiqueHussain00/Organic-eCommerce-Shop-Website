@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Shop2 from './pages/homepages/Shop2';
+import Loader from './component/common/Loader';
 
 // Lazy load the pages
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -32,7 +33,7 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
           <Route path='/' element={<Home1 />} />
