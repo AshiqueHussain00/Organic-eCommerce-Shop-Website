@@ -9,7 +9,7 @@ const LatestNews = ({ data }) => {
   return (
     <div className=' w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8 '>
       {data.map((item, index) => (
-        <div
+        <div data-aos="fade-right"
           key={index}
           className="news-item  bg-white-200 flex flex-col  mx-auto m-4 border p-4 rounded-lg shadow-md group
          "
