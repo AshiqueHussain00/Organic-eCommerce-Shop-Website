@@ -8,6 +8,7 @@ import image5 from '../../assets/home3/newestProducts/Corn.svg';
 import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa'; // Ensure FaArrowRight is imported
 
+
 function Fproducts() {
   // Define isHotSale (you can set it to true or false based on logic or state)
   const [isHotSale] = useState(true); // Example: set to true or false as needed
@@ -98,14 +99,34 @@ function Fproducts() {
             >
               {index === 0 ? (
                 // If it's the first card, show only the image
-                <div className="flex justify-center items-center">
-                  <img
-  src={product.imageSrc}
-  alt={product.productName || 'Featured Product'}
-  className="w-full max-w-[400px] h-[330px] border-2 border-gray-100 object-cover" // Responsive example
-/>
+              <div className="relative flex justify-center items-center">
+  {/* Image */}
+  <img
+    src={product.imageSrc}
+    alt={product.productName || 'Featured Product'}
+    className="w-full max-w-[400px] h-[330px] border-1 border-gray-100 object-cover"
+  />
 
-                </div>
+  {/* Overlay */}
+  <div className="absolute inset-0 flex-col justify-center items-center text-center text-black-900 bg-gray-100 bg-opacity-0 z-10">
+    {/* Sale Text */}
+    <div className="mb-2">
+      <p className="text-xs font-bold mt-8">SUMMER SALE</p>
+      <p className="text-3xl mt-3 text-primary font-bold">75% Off</p>
+    </div>
+
+    {/* Shop Now Button */}
+    <div className="flex justify-center items-center">
+    <button className="flex items-center justify-center gap-x-3 bg-white-100 text-branding-success font-semibold text-sm px-6 py-3 rounded-3xl group transition-all duration-200 hover:text-white hover:bg-primary">
+        Shop Now
+        <FaArrowRight/>
+    </button>
+</div>
+
+  </div>
+</div>
+
+              
               ) : (
                 // For other cards, render the full ProductCard component
                 <ProductCard

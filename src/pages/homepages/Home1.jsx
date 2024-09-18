@@ -10,9 +10,12 @@ import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import HomeLatestNews from '../../component/home1/HomeLatestNews'
 
 
+
+
 function Home1() {
     return (
         <div>
+           
             <HomeHerosection />
             <HeaderBottom/>
             <ProductCategory/>

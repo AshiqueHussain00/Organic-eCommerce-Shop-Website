@@ -4,7 +4,7 @@ import Members from '../../component/home2/Members'
 import HeaderBottom from '../../component/common/HeaderBottom'
  //import Banner from '../../component/home4/Banner'
  //import TopCategory from '../home3/home-component/TopCategory'
- import ShowProductshp3 from '../../component/home3/showProductshp3'
+ import ShowProductshp2 from '../../component/home2/showProductshp2'
 import PopularCategory from '../../component/home1/ProductCategory'
 import Fproducts from '../../component/home2/Fproducts'
 import HomeTestimonial from '../../component/home1/HomeTestimonial'
@@ -18,7 +18,7 @@ const Home2 = () => {
  <HeaderBottom/>
  <PopularCategory/>
  <Fproducts />
- <ShowProductshp3 />
+ <ShowProductshp2 />
  <VideoComponent/>
  <Members/>
  <HomeTestimonial/>
@@ -32,9 +32,9 @@ const Home2 = () => {
         <ProductOffer/>
       
         */}
-      
+
     </div>
-)
+  )
 }
 
 export default Home2
