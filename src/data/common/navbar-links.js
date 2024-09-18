@@ -15,35 +15,7 @@ import { GiHotMeal } from "react-icons/gi";
 import { IoAddOutline } from "react-icons/io5";
 
 export const navData = [
-  {
-    // id: 1,
-    // title: ' All Categories ',
-    // dropdown: [
-    //   { id: 11, title: `Fresh Fruite` },
-    //   { id: 12, title: `Vegetables` },
-    //   { id: 13, title: 'River fish' },
-    //   { id: 14, title: 'Chicken and meat', path: '' },
-    //   { id: 15, title: 'Drink & Water', path: '' },
-    //   { id: 16, title: 'Yogurt & Ice-Cream' },
-    //   { id: 17, title: 'Cake & Bread' },
-    //   { id: 18, title: 'Butter & Cream' },
-    //   { id: 19, title: 'Cooking' },
-    //   { id: 20, title: 'View All category' }
-    // ]
-    // const dropdown = [
-    //   { id: 11, title: 'Fresh Fruit', icon: <FaAppleAlt /> },
-    //   { id: 12, title: 'Vegetables', icon: <FaCarrot /> },
-    //   { id: 13, title: 'River fish', icon: <FaFish /> },
-    //   { id: 14, title: 'Chicken and meat', icon: <FaDrumstickBite /> },
-    //   { id: 15, title: 'Drink & Water', icon: <FaWineBottle /> },
-    //   { id: 16, title: 'Yogurt & Ice-Cream', icon: <FaIceCream /> },
-    //   { id: 17, title: 'Cake & Bread', icon: <FaBreadSlice /> },
-    //   { id: 18, title: 'Butter & Cream', icon: <FaCheese /> },
-    //   { id: 19, title: 'Cooking', icon: <FaUtensils /> },
-    //   { id: 20, title: 'View All category', icon: <FaList /> }
-    // ];
-    
-  },
+ 
   {
     id: 1,
     title: 'Home',
@@ -66,8 +38,8 @@ export const navData = [
         title: 'Shop 1',
         path: '',
         dropdown: [
-          { id: 311, title: 'Fresh Fruite', path: '' },
-          { id: 312, title: 'Vegetables', path: '' }
+          { id: 26, title: 'Fresh Fruite', path: '' },
+          { id: 27, title: 'Vegetables', path: '' }
         ]
       },
       {
@@ -75,8 +47,8 @@ export const navData = [
         title: 'Shop 2',
         path: '',
         dropdown: [
-          { id: 321, title: 'All Vegetables', path: '' },
-          { id: 322, title: 'All Fruits', path: '' }
+          { id: 28, title: 'All Vegetables', path: '' },
+          { id: 29, title: 'All Fruits', path: '' }
         ]
       }
     ]
