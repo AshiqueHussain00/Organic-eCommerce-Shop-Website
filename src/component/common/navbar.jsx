@@ -196,7 +196,7 @@ const Navbar = () => {
                           >
                             <div className={`${item.title.toLowerCase() === 'blog' ? 'grid grid-cols-4 gap-1' : ''}`}>
                               {item.dropdown.map((dropdownItem) => (
-                                <div key={dropdownItem.id} className="flex items-center mr-4  w-full h-full px-5 py-3 hover:bg-primary hover:text-white-100">
+                                <div key={dropdownItem.id} className="flex items-center mr-4  w-full h-full  transition-all duration-200   hover:bg-primary hover:text-white-100">
                                   {item.title.toLowerCase() === 'blog' && (
                                     <Link to="/">
                                       <img
@@ -206,7 +206,7 @@ const Navbar = () => {
                                       />
                                     </Link>
                                   )}
-                                  <Link to={dropdownItem.path} className="ml-1 ">{dropdownItem.title}</Link>
+                                  <Link to={dropdownItem.path} className=" px-5 py-3  w-full">{dropdownItem.title}</Link>
                                 </div>
                               ))}
                             </div>

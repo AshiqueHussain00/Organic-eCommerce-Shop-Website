@@ -50,21 +50,21 @@ const Testimonials = ({
   }
 
   return (
-    <section>
-      <div style={{ backgroundColor: bgColor }}>
+    <section >
+      <div style={{ backgroundColor: bgColor }} className="py-16">
         <div className="relative w-10/12 p-4 mx-auto ">
-          <div className="relative">
+          <div className="relative flex justify-between">
             {showHeading && (
               <h2
                 data-aos="fade-right"
-                className="mb-3 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal"
+                className="pb-8  text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal"
               >
                 <span className="block ml-2 sm:inline">Client</span>
                 <span className="block ml-2 sm:inline">Testimonials</span>
               </h2>
             )}
             {showButtons && (
-              <div className="absolute flex space-x-4   transform -translate-y-1/2 top-1/2 right-14">
+              <div className="absolute flex space-x-4   transform -translate-y-1/2 top-1/2 right-14 pb-8 ">
                 <button className="custom-swiper-button-prev ml-4  p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
                   <FaArrowRight className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
@@ -78,8 +78,8 @@ const Testimonials = ({
             {testimonialsData.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <div
-                  data-aos="fade-up"
-                  className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2"
+                  data-aos="fade-left"
+                  className="bg-white bg-[rgb(252,252,252)] rounded-lg shadow-lg mx-2 mt-8"
                 >
                   <div className="flex p-4 mb-4 text-3xl text-green-500">
                     <img src={quote} alt="Quote" />

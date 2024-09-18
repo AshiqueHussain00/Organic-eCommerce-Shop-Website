@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { vegetableData } from '../../data/common/vegetable-data'; // Assuming the vegetableData is imported correctly
 // import { CookingData  as vegetableData } from '../../data/common/CookingData';
+// import { snacksData } from '../../data/common/snacks-data';
 const Vegetable = () => {
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -26,14 +27,18 @@ const Vegetable = () => {
                 {vegetableData.map((product) => (
                     <div
                         key={product.id}
-                        className="p-4 bg-white border rounded-lg shadow hover:cursor-pointer"
+                        className="p-4 bg-white  border rounded-lg shadow hover:cursor-pointer"
                         onClick={() => handleProductSelect(product.id)}
                     >
+                        <div className='w-full h-48 mb-4 '>
                         <img
                             src={product.images[0].main}
                             alt={product.name}
-                            className="object-cover w-full h-48 mb-4 rounded-lg"
+                            className=" w-full h-full object-contain  rounded-lg"
                         />
+
+                        </div>
+                        
                         <h2 className="text-xl font-bold">{product.name}</h2>
                         <p className="text-gray-600">{product.mainDec}</p>
                     </div>

@@ -13,6 +13,7 @@ import Product from './component/common/product';
 import Vegetable from './component/common/Vegetable';
 import FilterSidebar from './component/common/FilterOne';
 import FilterOne from './component/common/FilterOne';
+import ContactForm from './component/common/ContactForm';
 
 const App = () => {
 
@@ -20,35 +21,36 @@ const App = () => {
   useEffect(() => {
     // Initialize AOS animations
     AOS.init({
-        once: true,
-        duration: 900,
-        easing: "ease-out-sine",
-        delay: 100,
+      once: true,
+      duration: 900,
+      easing: "ease-out-sine",
+      delay: 100,
     })
   }, []);
 
-    AOS.refresh();
- 
+  AOS.refresh();
+
 
   return (
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-      <Navbar/>
-   <FilterOne/>
-     {/* <Product/> */}
-     {/* <Vegetable/> */}
-     <Routes>
+      <Navbar />
+      {/* <FilterOne/> */}
+      {/* <Product/> */}
+      {/* <Vegetable/> */}
+      <Routes>
 
-      {/* ---------- homepages ------- */}
+        {/* ---------- homepages ------- */}
 
-      <Route path='/' element={<Home1/>}/>
-      <Route path='/home2' element={<Home2/>}/>
-      <Route path='/home3' element={<Home3/>}/>
-      <Route path='/home4' element={<Home4/>}/>
-      <Route path='/home5' element={<Home5/>}/>
+        <Route path='/' element={<Home1 />} />
+        <Route path='/home2' element={<Home2 />} />
+        <Route path='/home3' element={<Home3 />} />
+        <Route path='/home4' element={<Home4 />} />
+        <Route path='/home5' element={<Home5 />} />
+        <Route path='/contact-us' element={<ContactForm />} />
 
-     </Routes>
-    
+      </Routes>
+
     </div>
   );
 };
