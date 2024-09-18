@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ProductCard from './ProductCard'; // Assume you have this component implemented.
+import ProductCard from './ProductCard'; // Ensure this component is implemented properly.
 
-// Category options for filtering
 const categories = [
     { value: 'all', label: 'All Products' },
     { value: 'Fruits', label: 'Fresh Fruit' },
@@ -13,79 +12,77 @@ const categories = [
     { value: 'Bread & Bakery', label: 'Bread & Bakery' },
 ];
 
-const FilterOne = ({ products = [] }) => {
-    // Local states for filters
-    const [filteredProducts, setFilteredProducts] = useState(products);
-    const [category, setCategory] = useState('all');
-    const [priceRange, setPriceRange] = useState([50, 1500]);
-    const [rating, setRating] = useState([]);
-    const [tags, setTags] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+const FilterOne = ({ products }) => {
+    // State management
+    const [filteredProducts, setFilteredProducts] = useState(products || []);
+    const [category, setCategory] = useState('all'); // Default to 'all' categories
+    const [price, setPrice] = useState(1500); // Default single price
+    const [rating, setRating] = useState([]); // Array for multiple ratings filter
+    const [tags, setTags] = useState([]); // Array for tags filter
+    const [currentPage, setCurrentPage] = useState(1); // Pagination state
 
-    const ITEMS_PER_PAGE = 16;
+    const ITEMS_PER_PAGE = 16; // Define the number of items per page
 
-    // Debugging Logs for Product Data and Filters
+    // UseEffect to set initial filtered products to all products
     useEffect(() => {
-        console.log('Product Data:', products);
-        console.log('Current Filters:', { category, priceRange, rating, tags });
-    }, [products, category, priceRange, rating, tags]);
+        setFilteredProducts(products);
+    }, [products]);
 
-    // Effect for filtering products based on selected filters
+    // Filter products based on selected filters (category, price, rating, tags)
     useEffect(() => {
         if (!products || products.length === 0) {
-            console.error('No products available or products prop is undefined');
             setFilteredProducts([]);
             return;
         }
 
         let filtered = products;
 
-        // Filter by category
+        // Apply category filter
         if (category !== 'all') {
             filtered = filtered.filter(product => product.category === category);
         }
 
-        // Filter by price range
-        filtered = filtered.filter(product => {
-            if (!product.price || product.price.discounted === undefined) return false;
-            return product.price.discounted >= priceRange[0] && product.price.discounted <= priceRange[1];
-        });
+        // Apply price filter
+        filtered = filtered.filter(product => product.price.discounted <= price);
 
-        // Filter by rating
+        // Apply rating filter
         if (rating.length > 0) {
             filtered = filtered.filter(product => rating.some(r => product.rating >= r));
         }
 
-        // Filter by tags
+        // Apply tags filter
         if (tags.length > 0) {
-            filtered = filtered.filter(product => tags.some(tag => product.tags.includes(tag)));
+            filtered = filtered.filter(product => tags.every(tag => product.tags.includes(tag)));
         }
 
-        console.log('Filtered products:', filtered);
-        setFilteredProducts(filtered);
-        setCurrentPage(1); // Reset pagination when filters change
-    }, [category, priceRange, rating, tags, products]);
+        console.log('Filtered Products:', filtered); // Debugging statement
 
-    // Handle price range change (separate for min and max)
-    const handlePriceChange = (minOrMax, event) => {
+        // Set the filtered products and reset pagination to the first page
+        setFilteredProducts(filtered);
+        setCurrentPage(1);
+    }, [category, price, rating, tags, products]);
+
+    // Handle price change
+    const handlePriceChange = (event) => {
+        setPrice(Number(event.target.value));
+    };
+
+    // Handle rating filter changes
+    const handleRatingChange = (event) => {
         const value = Number(event.target.value);
-        setPriceRange(prev =>
-            minOrMax === 'min' ? [value, prev[1]] : [prev[0], value]
+        setRating(prev =>
+            prev.includes(value) ? prev.filter(r => r !== value) : [...prev, value]
         );
     };
 
-    // Handle rating checkbox change
-    const handleRatingChange = (event) => {
-        const value = Number(event.target.value);
-        setRating(prev => prev.includes(value) ? prev.filter(r => r !== value) : [...prev, value]);
-    };
-
-    // Handle tag checkbox change
+    // Handle tag filter changes
     const handleTagChange = (tag) => {
-        setTags(prev => prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]);
+        setTags(prev =>
+            prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+        );
     };
 
-    // Handle pagination change
+    // Handle pagination
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
@@ -119,25 +116,15 @@ const FilterOne = ({ products = [] }) => {
 
                 <div>
                     <h4 className="font-bold">Price</h4>
-                    <div className="flex items-center justify-between space-x-2">
-                        <input
-                            type="range"
-                            min="50"
-                            max="1500"
-                            value={priceRange[0]}
-                            onChange={(e) => handlePriceChange('min', e)}
-                            className="w-full"
-                        />
-                        <input
-                            type="range"
-                            min="50"
-                            max="1500"
-                            value={priceRange[1]}
-                            onChange={(e) => handlePriceChange('max', e)}
-                            className="w-full"
-                        />
-                    </div>
-                    <div>Price: ${priceRange[0]} - ${priceRange[1]}</div>
+                    <input
+                        type="range"
+                        min="5"
+                        max="50"
+                        value={price}
+                        onChange={handlePriceChange}
+                        className=""
+                    />
+                    <div>Price: ${price}</div>
                 </div>
 
                 <div>
