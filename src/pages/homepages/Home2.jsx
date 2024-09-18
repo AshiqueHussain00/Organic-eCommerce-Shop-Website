@@ -32,9 +32,9 @@ const Home2 = () => {
         <ProductOffer/>
       
         */}
-      
+
     </div>
-)
+  )
 }
 
 export default Home2

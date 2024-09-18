@@ -62,10 +62,10 @@ const FilterTwo = ({ products }) => {
                 filtered = filtered.sort((a, b) => b.price.discounted - a.price.discounted);
                 break;
             case 'lowest-rating':
-                filtered = filtered.sort((a, b) => b.rating - a.rating);
+                filtered = filtered.sort((a, b) => a.rating - b.rating);
                 break;
             case 'highest-rating':
-                filtered = filtered.sort((a, b) => a.rating - b.rating);
+                filtered = filtered.sort((a, b) => b.rating - a.rating);
                 break;
             case 'latest':
                 filtered = filtered.sort((a, b) => b.id.localeCompare(a.id)); // Assuming id represents product creation order
@@ -94,7 +94,7 @@ const FilterTwo = ({ products }) => {
     return (
         <div className="flex flex-col p-4">
             {/* Top Filters Section: Horizontally aligned */}
-            <div className="flex justify-between items-center w-full mb-6 space-x-4">
+            <div className="flex items-center justify-between w-full mb-6 space-x-4">
                 {/* Category Filter */}
                 <div className="flex-1">
                     <Select
@@ -141,22 +141,17 @@ const FilterTwo = ({ products }) => {
                 {/* Sort Order Dropdown */}
                 <div className="flex-1">
                     <select
-                        className="w-full border rounded p-2"
+                        className="w-full p-2 border rounded"
                         onChange={(e) => setSortOrder(e.target.value)}
                         value={sortOrder}
                     >
-                        <option value="latest">Latest</option>
+                        <option value="latest">Sort By: {sortOrderLabel[sortOrder]}</option>
                         <option value="price-low-to-high">Price Low to High</option>
                         <option value="price-high-to-low">Price High to Low</option>
                         <option value="highest-rating">Highest Rating</option>
                         <option value="lowest-rating">Lowest Rating</option>
                     </select>
                 </div>
-            </div>
-
-            {/* Sort Order Display */}
-            <div className="mb-4">
-                <h4>Sort By: {sortOrderLabel[sortOrder]}</h4>
             </div>
 
             {/* Product List */}
