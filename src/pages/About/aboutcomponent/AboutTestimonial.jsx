@@ -1,18 +1,16 @@
 import React from 'react'
-import TestimonialCard from '../common/TestimonialCard'
-import FollowInstagram from '../common/FollowInstagram';
-import Steps from '../../component/Home5/Steps'
-import customer1 from '../../assets/common/Testimonial/customer1.svg';
-import customer2 from '../../assets/common/Testimonial/customer2.svg';
-import post1 from '../../assets/common/followinstagram/post1.svg'
-import post2 from '../../assets/common/followinstagram/post2.svg'
-import post3 from '../../assets/common/followinstagram/post3.svg'
-import post4 from '../../assets/common/followinstagram/post4.svg'
-import post5 from '../../assets/common/followinstagram/post5.svg'
-import post6 from '../../assets/common/followinstagram/post6.svg'
-import '../../styles/swiper.css'
+import TestimonialCard from '../../../component/common/TestimonialCard'
+import customer1 from '../../../assets/common/Testimonial/customer1.svg';
+import customer2 from '../../../assets/common/Testimonial/customer2.svg';
+import post1 from '../../../assets/common/followinstagram/post1.svg'
+import post2 from '../../../assets/common/followinstagram/post2.svg'
+import post3 from '../../../assets/common/followinstagram/post3.svg'
+import post4 from '../../../assets/common/followinstagram/post4.svg'
+import post5 from '../../../assets/common/followinstagram/post5.svg'
+import post6 from '../../../assets/common/followinstagram/post6.svg'
+import '../../../styles/swiper.css'
 
-const HomeTestimonial = () => {
+const AboutTestimonial = () => {
     const testimonialsData = [
         {
             name: 'Robert Fox',
@@ -85,14 +83,11 @@ const HomeTestimonial = () => {
                     showPagination={false}
                 />
                 </div>
-            <Steps/>
-                <div className="mt-8">
-                    <h2 className="mb-4 text-2xl font-bold text-center">Follow Us on Instagram</h2>
-                    <FollowInstagram images={instagramImages} instagramUrl="https://www.instagram.com/yourprofile" />
-                </div>
+            
+                
             </div>
         </section>
     )
 }
 
-export default HomeTestimonial
+export default AboutTestimonial

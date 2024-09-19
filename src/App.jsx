@@ -19,7 +19,8 @@ const Home5 = lazy(() => import('./pages/homepages/Home5'));
 const Shop1 = lazy(() => import('./pages/homepages/Shop1'));
 const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
 
-
+//About 
+const About = lazy(() => import('./pages/About/About'))
 //Cart & Wishlist
 
 const Cart = lazy(()=> import('./pages/Cart'));
@@ -56,15 +57,13 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-<<<<<<< HEAD
-          <Route path='/shop1' element={<Shop1 />} /> 
-          <Route path='/shop2' element={<Shop2/>} />
-          <Route path='/contact-us' element={<ContactForm />} />
-=======
 
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />  
            <Route path='/shop2' element={<Shop2/>} /> 
+
+           {/* ------------ About --------------- */}
+           <Route path='/about-us' element={<About />} /> 
 
            {/* ------------ Cart & WishList--------------- */}
            <Route path='/cart' element={<Cart/>}/>
@@ -74,7 +73,6 @@ const App = () => {
 
            {/* ------------- Contact --------------- */}
            <Route path='/contact-us' element={<ContactForm />} />
->>>>>>> f7f2ee67f494d2dfc6ee247384aaf8f8046cdb42
         </Routes>
       </Suspense>
     </div>
