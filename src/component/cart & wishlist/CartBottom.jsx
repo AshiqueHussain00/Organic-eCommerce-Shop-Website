@@ -6,6 +6,7 @@ import reviewimg2 from '../../assets/common/product/reviewimg2.svg'
 import brand from '../../assets/common/product/brand.svg'
 import SingleItem from './SingleItem';
 import { useNavigate } from 'react-router-dom';
+import { calcDiscountPerc } from '../../utils/calcDiscountPerc';
 
 
 
@@ -406,7 +407,7 @@ const CartBottom = () => {
 
             {/* ---------- right --------------- */}
 
-            <div className='xxl:w-[30%] w-[33%] border flex'>
+            <div className='xxl:w-[30%] w-[33%] border flex flex-col'>
 
 
                 {/* -------- cart total card ---------- */}
