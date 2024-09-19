@@ -3,6 +3,7 @@ import ProductCard from "./ProductCard"; // Assume you have this component imple
 import Select from "react-select";
 import Saleofmonth from "./Saleofmonth";
 import fruits from '../../assets/home5/countdown/fruits.svg'
+import NewsletterThree from './NewsletterThree'
 // List of categories provided
 const categories = [
   { value: "all", label: "All Products" },
@@ -175,6 +176,8 @@ const FilterTwo = ({ products }) => {
   };
 
   return (
+   <section>
+    <div>
     <div className="flex flex-col w-10/12 mx-auto font-poppins ">
       <Saleofmonth
         image={fruits}
@@ -323,7 +326,13 @@ const FilterTwo = ({ products }) => {
       <div className="flex justify-center mt-8">
         {renderPagination()}
       </div>
+     
     </div>
+    </div>
+    <div className="p-4">
+     <NewsletterThree/>
+     </div>
+   </section>
   );
 };
 
