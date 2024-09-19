@@ -4,6 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import ProductDetailsDescription from './component/common/ProductDetailsDescription';
 
 import Loader from './component/common/Loader';
 
@@ -52,6 +53,7 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
+      {/* <ProductDetailsDescription/> */}
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
