@@ -5,6 +5,7 @@ import Saleofmonth from "./Saleofmonth";
 import fruits from "../../assets/home5/countdown/fruits.svg";
 import NewsletterThree from "./NewsletterThree";
 import '../../styles/dropdown.css'
+import {calcDiscountPerc} from '../../utils/calcDiscountPerc'
 // List of categories provided
 const categories = [
   { value: "all", label: "All Products" },
@@ -320,8 +321,8 @@ const FilterTwo = ({ products }) => {
                 oldPrice={product.price.original}
                 rating={product.rating}
                 onAddToCart={() => handleAddToCart(product.name)}
-                
-                
+                isSale={!!product.promotions.discount}
+                saleText={product.promotions.discount}
               />
             ))}
           </div>
