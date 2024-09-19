@@ -149,6 +149,7 @@ const Navbar = () => {
                           const IconComponent = item.icon
                           return (
                             <Link
+                            to={item.path}
                               key={index}
                               className={`cursor-pointer flex gap-x-3 text-gray-500 items-center px-3 transition-all duration-200 hover:text-white-100 group hover:bg-primary ${item.title.toLowerCase() === 'view all category'
                                   ? 'border'

@@ -318,10 +318,10 @@ const CartBottom = () => {
 
 
     return (
-        <div className='border-2 border-red-700 flex justify-between'>
+        <div className=' flex md:flex-row flex-col gap-y-6 md:justify-between'>
 
             {/* --------- left --------------- */}
-            <div className='xxl:w-[67%] w-[65%] flex flex-col gap-y-8'>
+            <div className='xxl:w-[67%] md:w-[65%] flex flex-col gap-y-8'>
 
                 {/* ---------- upper ---------- */}
 
@@ -329,19 +329,19 @@ const CartBottom = () => {
 
                     {/* -------- heading ----------- */}
 
-                    <div className='grid grid-cols-4 xmd:grid-cols-6 border w-full text-sm text-gray-500 text-medium uppercase py-3 rounded-t-md'>
+                    <div className='grid grid-cols-5 xsm:grid-cols-4 xs:grid-cols-6 md:grid-cols-4 xmd:grid-cols-6 border w-full xsm:text-sm text-[13px] font-semibold xsm:font-normal text-gray-500 text-medium uppercase py-3 sm:gap-x-0  gap-x-4 rounded-t-md x'>
 
-                        <div className='px-6 border col-span-3 xmd:col-span-2'>Product</div>
-                        <div className='border hidden xmd:flex justify-center '>Price</div>
-                        <div className='border hidden xmd:flex justify-center'>Quantity</div>
-                        <div className='border flex justify-center'>SubTotal</div>
+                        <div className='px-6 col-span-3 xsm:col-span-3 xs:col-span-2  md:col-span-3 xmd:col-span-2 '>Product</div>
+                        <div className='hidden xs:flex  md:hidden xmd:flex sm:justify-center '>Price</div>
+                        <div className='hidden xs:flex md:hidden xmd:flex sm:justify-center '>Quantity</div>
+                        <div className='flex justify-center col-span-2 xsm:col-span-1  pl-4 xsm:pl-0'>SubTotal</div>
                        
 
                     </div>
 
 
                     {/* -----------cart content --------- */}
-                    <div className='flex flex-col w-full border-2 border-blue-500'>
+                    <div className='flex flex-col w-full '>
                         {
                             cart.map((item) => (
                                 <SingleItem key={item.id} data={item} />
@@ -354,14 +354,14 @@ const CartBottom = () => {
                         {/* -- return to shop btn---- */}
                         <button
                             onClick={() => navigate('/shop1')}
-                            className='px-6 py-3 rounded-3xl tracking-wide bg-gray-50 transition-all duration-300 border border-gray-50 hover:border-gray-900'>
+                            className='xsm:px-6 px-4 xsm:py-3 py-2 rounded-3xl tracking-wide bg-gray-50 transition-all duration-300 border border-gray-50 hover:border-gray-900'>
                             Return to shop
                         </button>
 
                          {/* -- Update cart btn -- */}
                         <button
                             onClick={updateCart}
-                            className='px-6 py-3 rounded-3xl tracking-wide bg-gray-50 transition-all duration-300 border border-gray-50 hover:border-gray-900'>
+                            className='xsm:px-6 px-4 xsm:py-3 py-2 rounded-3xl tracking-wide bg-gray-50 transition-all duration-300 border border-gray-50 hover:border-gray-900'>
                             Update Cart
                         </button>
 
@@ -375,23 +375,23 @@ const CartBottom = () => {
 
                 {/* --------- bottom -------------- */}
 
-                <div className='border-2 border-red-300 px-4 py-6'>
+                <div className='xsm:px-4 px-2 py-6 border rounded-md'>
 
-                    <div className='flex gap-x-2 justify-between items-center'>
+                    <div className='flex xs:flex-row flex-col gap-y-3 gap-x-2 justify-between items-center'>
 
-                     <h2 className='w-max xl:text-xl text-lg font-semibold text-gray-900'>Coupon Code</h2>
-                     <div className='w-[70%] xl:w-[75%] xxl:w-[80%] relative  xlg:text-[16px] text-sm  '>
+                     <h2 className='xs:w-max xl:text-xl sm:text-lg  text-[16px] font-semibold text-gray-900'>Coupon Code</h2>
+                     <div className='w-full xs:w-[70%] xl:w-[75%] xxl:w-[80%] relative  xlg:text-[16px] text-sm  '>
 
                         <input
                          type="text"
                          name="coupon-code"
                          placeholder='Enter code'
-                         className='w-full border rounded-3xl py-3 px-4 outline-none focus:border-gray-900'
+                         className='w-full border rounded-3xl sm:py-3 py-2 px-4 outline-none focus:border-gray-900'
                           />
 
                           <button
 
-                          className='absolute bg-gray-800 text-white-100 rounded-3xl px-8 py-3 right-0 border border-gray-800'>
+                          className='absolute bg-gray-800 text-white-100 rounded-3xl px-4 xmd:px-8 sm:py-3 py-2 right-0 border text-sm xsm:text-[16px] border-gray-800'>
                             Apply Coupon
                           </button>
 
@@ -407,7 +407,7 @@ const CartBottom = () => {
 
             {/* ---------- right --------------- */}
 
-            <div className='xxl:w-[30%] w-[33%] border flex flex-col'>
+            <div className='xxl:w-[30%] md:w-[33%]  flex flex-col'>
 
 
                 {/* -------- cart total card ---------- */}
@@ -439,7 +439,7 @@ const CartBottom = () => {
                     </div>
 
 
-                    <button className='bg-primary py-3 rounded-3xl text-sm text-white-100 mt-3 '>
+                    <button className='bg-primary py-3 rounded-3xl md:text-sm text-[16px] font-semibold text-white-100 mt-3 transition-all duration-200 hover:bg-branding-success'>
                         Proceed to checkout
                     </button>
 

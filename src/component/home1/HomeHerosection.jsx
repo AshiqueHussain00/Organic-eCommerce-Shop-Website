@@ -7,9 +7,7 @@ import bannar3 from '../../assets/home1/banner3.svg';
 
 const HomeHerosection = () => {
   // Animation controls
-  const controls1 = useAnimation();
-  const controls2 = useAnimation();
-  const controls3 = useAnimation();
+
 
 
   // Animation variants
@@ -36,7 +34,7 @@ const HomeHerosection = () => {
       className="w-full py-10 bg-white"
      
     >
-      <div className="w-11/12 xmd:w-10/12 mx-auto">
+      <div className="w-11/12 mx-auto xmd:w-10/12">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
           {/* Left Main Section */}
           <motion.div

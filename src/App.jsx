@@ -22,6 +22,8 @@ const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
 // blog
 const Blog=lazy(()=>import('./component/common/Blog'))
 
+//About 
+const About = lazy(() => import('./pages/About/About'))
 //Cart & Wishlist
 
 const Cart = lazy(()=> import('./pages/Cart'));
@@ -65,6 +67,8 @@ const App = () => {
 
            {/* blog */}
            <Route path='/blog' element={<Blog/>} />
+           {/* ------------ About --------------- */}
+           <Route path='/about-us' element={<About />} /> 
 
            {/* ------------ Cart & WishList--------------- */}
            <Route path='/cart' element={<Cart/>}/>

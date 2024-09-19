@@ -24,7 +24,7 @@ const ProductCard = ({
         <div
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow" >
+            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
             {/* Sale and Best Seller Tags */}
           
             <div className="absolute flex space-x-2 top-2 left-2">
@@ -67,7 +67,7 @@ const ProductCard = ({
             <img
                 src={imageSrc}
                 alt={productName}
-                className="object-cover w-auto mb-4 sm:w-full h-30 sm:h-48 "
+                className="object-contain w-auto mb-4 sm:w-full h-30 sm:h-48 "
             />
 
             {/* Product Name */}
