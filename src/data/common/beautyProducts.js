@@ -5,9 +5,9 @@ import brand from '../../assets/common/product/brand.svg'
 
 export const beautyData = [
     {
-      "id": 1,
-      "productName": "Hydrating Face Moisturizer",
-      "brand": "GlowSkin",
+      "id": bp1,
+      "name": "Hydrating Face Moisturizer",
+      "sku": "BP8564",
       "category": "Skincare",
       "description": "A lightweight, hydrating moisturizer that provides long-lasting moisture.",
       "price": 24.99,
@@ -31,7 +31,7 @@ export const beautyData = [
       "stockStatus": "In Stock"
     },
     {
-      "id": 2,
+      "id": bp2,
       "productName": "Matte Liquid Lipstick",
       "brand": "LipLux",
       "category": "Makeup",
@@ -57,7 +57,7 @@ export const beautyData = [
       "stockStatus": "Out of Stock"
     },
     {
-      "id": 3,
+      "id": bp3,
       "productName": "Revitalizing Night Cream",
       "brand": "PureGlow",
       "category": "Skincare",
@@ -79,7 +79,7 @@ export const beautyData = [
       "stockStatus": "In Stock"
     },
     {
-      "id": 4,
+      "id": bp4,
       "productName": "Volumizing Mascara",
       "brand": "LashBoost",
       "category": "Makeup",
@@ -101,7 +101,7 @@ export const beautyData = [
       "stockStatus": "In Stock"
     },
     {
-      "id": 5,
+      "id": bp5,
       "productName": "Nourishing Hair Oil",
       "brand": "SilkyLocks",
       "category": "Haircare",
@@ -122,7 +122,7 @@ export const beautyData = [
       "stockStatus": "In Stock"
     },
     {
-      "id": 6,
+      "id": bp6,
       "productName": "Brightening Vitamin C Serum",
       "brand": "RadiantGlow",
       "category": "Skincare",
@@ -144,7 +144,7 @@ export const beautyData = [
       "stockStatus": "In Stock"
     },
     {
-      "id": 7,
+      "id": bp7,
       "productName": "Smoothing Hair Serum",
       "brand": "FrizzEase",
       "category": "Haircare",

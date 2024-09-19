@@ -182,7 +182,7 @@ const FilterTwo = ({ products }) => {
   return (
     <section>
       <div>
-        <div className="flex flex-col w-10/12  mx-auto font-poppins ">
+        <div className="flex flex-wrap flex-col w-10/12  mx-auto font-poppins  ">
           <Saleofmonth
             image={fruits}
             heading1="BEST DEALS"
@@ -311,7 +311,7 @@ const FilterTwo = ({ products }) => {
           </div>
 
           {/* Products Display Section */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {paginatedProducts.map((product) => (
               <ProductCard
                 key={product.id}
