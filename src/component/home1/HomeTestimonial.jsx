@@ -1,6 +1,7 @@
 import React from 'react'
 import TestimonialCard from '../common/TestimonialCard'
 import FollowInstagram from '../common/FollowInstagram';
+import Steps from '../../component/Home5/Steps'
 import customer1 from '../../assets/common/Testimonial/customer1.svg';
 import customer2 from '../../assets/common/Testimonial/customer2.svg';
 import post1 from '../../assets/common/followinstagram/post1.svg'
@@ -74,7 +75,7 @@ const HomeTestimonial = () => {
     return (
         <section className='relative w-full '>
             <div data-aos="fade-right" >
-                <div className='py-10  '>
+                <div className='py-10 '>
                 <TestimonialCard
                     testimonialsData={testimonialsData}
                     showButtons={true}
@@ -84,7 +85,7 @@ const HomeTestimonial = () => {
                     showPagination={false}
                 />
                 </div>
-            
+            <Steps/>
                 <div className="mt-8">
                     <h2 className="mb-4 text-2xl font-bold text-center">Follow Us on Instagram</h2>
                     <FollowInstagram images={instagramImages} instagramUrl="https://www.instagram.com/yourprofile" />

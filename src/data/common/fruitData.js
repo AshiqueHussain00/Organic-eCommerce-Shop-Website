@@ -1,4 +1,10 @@
-const fruitsData = [
+import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
+import reviewimg1 from '../../assets/common/product/reviewimg1.svg'
+import reviewimg2 from '../../assets/common/product/reviewimg2.svg'
+import brand from '../../assets/common/product/brand.svg'
+
+
+ const fruitsData = [
     {
         id: 'f1',
         name: "Green Apple",
@@ -1234,3 +1240,4 @@ const fruitsData = [
     },
     
 ];
+export default fruitsData;

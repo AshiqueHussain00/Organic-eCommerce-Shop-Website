@@ -13,23 +13,13 @@ export const beverageData = [
             discounted:31.28,
             discountPercentage: 26,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["drink"],
         rating: 4.7,
         reviews: 16,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -52,7 +42,7 @@ export const beverageData = [
             weight: "100gm",
             color: "brown",
             type: "-",
-            category: "beverages",
+            category: "Beverages",
             stockStatus: "Available",
             stockQuantity: 230,
             // tags: ["Vegetables", "Healthy", "Chinese", "Cabbage", "Green Cabbage"],
@@ -91,23 +81,14 @@ export const beverageData = [
             discounted:28.28,
             discountPercentage: 32,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["beverage" , "drink" , "juice"],
         rating: 3.9,
         reviews: 21,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
+      
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -130,7 +111,7 @@ export const beverageData = [
             weight: "600ml",
             color: "orange",
             type: "drink",
-            category: "beverages",
+            category: "Beverages",
             stockStatus: "Available",
             stockQuantity: 4530,
             // tags: ["beverage" , "drink" , "juice"],
@@ -169,23 +150,13 @@ export const beverageData = [
             discounted:14.28,
             discountPercentage: 10,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["beverage" , "drink" , "juice"],
-        rating: 4.1,
+        rating: 2.1,
         reviews: 16,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -208,7 +179,7 @@ export const beverageData = [
             weight: "2l",
             color: "black",
             type: "drink",
-            category: "beverages",
+            category: "Beverages",
             stockStatus: "Available",
             stockQuantity: 1250,
             // tags: ["beverage" , "drink" , "juice"],
@@ -247,23 +218,13 @@ export const beverageData = [
             discounted:13.28,
             discountPercentage: 35,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["beverage" , "yogurt"],
-        rating: 4.6,
+        rating: 3.2,
         reviews: 25,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -286,7 +247,7 @@ export const beverageData = [
             weight: "400gm",
             color: "white",
             type: "dairy",
-            category: "beverages",
+            category: "Beverages",
             stockStatus: "Available",
             stockQuantity: 1530,
             // tags: ["beverage" , "yogurt"],
@@ -325,23 +286,14 @@ export const beverageData = [
             discounted: 36.28,
             discountPercentage: 16,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["beverage" , "drink"],
         rating: 3.6,
         reviews: 16,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
+    
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -364,7 +316,7 @@ export const beverageData = [
             weight: "350gm",
             color: "brown",
             type: "drink",
-            category: "beverages",
+            category: "Beverages",
             stockStatus: "Available",
             stockQuantity: 6530,
             // tags: ["beverage" , "drink"],
@@ -403,23 +355,13 @@ export const beverageData = [
             discounted: 10.28,
             discountPercentage: 21,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["beverage" , "drink" , "juice"],
-        rating: 4.2,
+        rating: 2.8,
         reviews: 10,
         inStock: false,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -481,23 +423,14 @@ export const beverageData = [
             discounted: 41.28,
             discountPercentage: 6,
         },
-        category: "beverages",
+        category: "Beverages",
         tags: ["beverage" , "drink" , "juice"],
-        rating: 4.6,
+        rating: 4.2,
         reviews: 19,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
+      
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {

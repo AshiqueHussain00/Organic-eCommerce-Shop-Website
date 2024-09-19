@@ -1,13 +1,10 @@
 import React, { useState, useRef } from 'react';
 import { Player, ControlBar } from "video-react";
 import "video-react/dist/video-react.css";
-//import Poster from '../../assets/home2/video1.svg'
-import videoFile from '../../assets/home2/Vegies.mp4'; // Renamed to avoid conflict with component name
-// import './home4Common.css';
- import { GoPlay } from "react-icons/go";
+import videoFile from '../../assets/home2/Vegies.mp4';
+import { GoPlay } from "react-icons/go";
 
-const VideoComponent = () => {  // Renamed the component to `VideoComponent`
-
+const VideoComponent = () => {
     const videoRef = useRef(null);
     const [showOverlay, setShowOverlay] = useState(true);
 
@@ -19,27 +16,27 @@ const VideoComponent = () => {  // Renamed the component to `VideoComponent`
     };
 
     return (
-        <section className='w-full'>
-            {/* ---------- container --------- */}
-            <div className='w-11/12 xmd:w-10/12 mt-8 video-container mx-auto  xs:max-h-[500px]'>
+        <section className='relative w-full flex justify-center'>
+            {/* Container for the video */}
+            <div className='relative w-[95%] max-w-[1130px] mx-auto mt-2'>
                 <Player
                     ref={videoRef}
                     playsInline
-                   // poster={Poster}  
-                    src={videoFile}  
-                    muted={true}
+                    src={videoFile}
+                    // muted={true}
                     loop
+                    className="w-full h-auto" // Ensures video scales with the container size
                 >
-                    <ControlBar disableCompletely />
+                    
                 </Player>
 
                 {showOverlay && (
-                    <div className='absolute left-0 right-0 bottom-2 top-0 flex flex-col gap-y-4 xs:gap-y-6 justify-center items-center text-white-100 overlay text-center'>
-                        <h1 className='text-lg xs:text-xl sm:text-2xl md:text-3xl xmd:text-4xl xl:text-5xl w-[45%] xl:leading-[54px]'>
-                                We’re the Best Organic Farm in the World
-                            </h1>
+                    <div className='absolute inset-0 flex flex-col gap-y-4 justify-center items-center text-white-100 bg-black bg-opacity-30'>
+                        <h1 className='text-lg xs:text-xl sm:text-2xl md:text-3xl xmd:text-4xl xl:text-5xl w-[90%] text-center xl:leading-[54px]'>
+                            We’re the Best Organic Farm in the World
+                        </h1>
                         <div className='cursor-pointer text-4xl xs:text-5xl xmd:text-[60px]' onClick={handlePlay}>
-                            <GoPlay />  {/* Uncomment this line if you're importing GoPlay icon */}
+                            <GoPlay />
                         </div>
                     </div>
                 )}
@@ -48,4 +45,4 @@ const VideoComponent = () => {  // Renamed the component to `VideoComponent`
     );
 };
 
-export default VideoComponent;  // Renamed the export to `VideoComponent`
+export default VideoComponent;

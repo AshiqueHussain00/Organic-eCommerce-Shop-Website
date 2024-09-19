@@ -186,7 +186,25 @@ const ContactForm = () => {
                         <FaPinterestP size={25} />
                     </Link>
                 </div>
+                {/* Google Map Embed */}
+        <div className="mt-10 mapouter" style={{ position: 'relative', textAlign: 'right', height: '529px', width: '686px' }}>
+          <div className="gmap_canvas" style={{ overflow: 'hidden', background: 'none!important', height: '529px', width: '686px' }}>
+            <iframe
+              width="686"
+              height="529"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=delhi%2Cindia&t=&z=11&ie=UTF8&iwloc=&output=embed"
+              frameBorder="0"
+              scrolling="no"
+              marginHeight="0"
+              marginWidth="0"
+              style={{ border: 0 }}
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
             </div>
+            
         </div>
     );
 };

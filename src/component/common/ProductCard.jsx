@@ -3,8 +3,12 @@ import { IoEyeOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toast } from "react-hot-toast";
+import { addToCart } from "../../redux/slice/cartSlice";
 
 const ProductCard = ({
+    product,
     imageSrc,
     productName,
     price,
@@ -17,14 +21,28 @@ const ProductCard = ({
     bestSellerText = 'Best Seller' // Default text for Best Seller
 }) => {
 
-    const [isHover, setIsHover] = useState(false)
+    const [isHover, setIsHover] = useState(false);
+    const dispatch = useDispatch();
+
+
+    const handleAddToCart = (product)=>{
+    
+        if(product){
+
+            console.log(product)
+            dispatch(addToCart(product));
+            toast.success("Added to Cart!");
+        }
+
+
+    }
 
 
     return (
         <div
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow" >
+            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
             {/* Sale and Best Seller Tags */}
           
             <div className="absolute flex space-x-2 top-2 left-2">
@@ -67,7 +85,7 @@ const ProductCard = ({
             <img
                 src={imageSrc}
                 alt={productName}
-                className="object-cover w-auto mb-4 sm:w-full h-30 sm:h-48 "
+                className="object-contain w-auto mb-4 sm:w-full h-30 sm:h-48 "
             />
 
             {/* Product Name */}
@@ -97,9 +115,9 @@ const ProductCard = ({
                 </div>
 
                 {/* Add to Cart Button */}
-                <div className="p-2 ml-auto">
+                <div className="p-2 ml-auto bg-red ">
                     <button
-                        onClick={onAddToCart}
+                        onClick={()=> handleAddToCart(product)}
                         className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
                     >
                         <PiHandbag className="text-xl" />
