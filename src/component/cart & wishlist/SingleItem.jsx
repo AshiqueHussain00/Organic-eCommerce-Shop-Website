@@ -97,7 +97,7 @@ const SingleItem = ({data}) => {
 
         <div className='flex items-center gap-x-3  border  col-span-2'>
             <div className='xlg:w-[100px] w-[80px]'>
-            <img src={data.images[0].main} alt="" className='w-full h-full object-contain'/>
+            <img src={data.images[0].main} alt={data.name} className='w-full h-full object-contain'/>
             </div>
           
             <p className='tracking-wide'>{data.name}</p>
@@ -136,6 +136,10 @@ const SingleItem = ({data}) => {
     {/* ------------- for small screen -------------- */}
 
     <div className='xmd:hidden'>
+{/* 
+        <div>
+            <img src={data.images[0].main} alt={data.name} />
+        </div> */}
 
     </div>
 
