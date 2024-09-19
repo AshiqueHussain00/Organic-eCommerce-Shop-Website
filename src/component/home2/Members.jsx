@@ -37,43 +37,43 @@ const membersData = [
 // Define the Card component
 const Card = ({ title, image, description }) => {
   return (
-    <div className="relative bg-white-100 rounded-lg shadow-md overflow-hidden group">
+    <div className="relative overflow-hidden rounded-lg shadow-md bg-white-100 group">
       {/* Image */}
-      <img src={image} alt={title} className="w-full h-auto object-cover" />
+      <img src={image} alt={title} className="object-cover w-full h-auto" />
       
       {/* Overlay for icons (hidden initially, shown on hover) */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute inset-0 flex items-center justify-center gap-4 transition-opacity duration-300 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100">
         {/* Social Media Icons */}
-        <a href="#" className="relative text-white-100 text-xl hover:bg-primary rounded-full p-2 transition-colors duration-300">
+        <a href="#" className="relative p-2 text-xl transition-colors duration-300 rounded-full text-white-100 hover:bg-primary">
           <FaFacebookF />
-          <span className="absolute inset-0 flex justify-center items-center">
-            <span className="w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="w-6 h-6 transition-opacity duration-300 bg-white rounded-full opacity-0 group-hover:opacity-100"></span>
           </span>
         </a>
-        <a href="#" className="relative text-white-100 text-xl hover:bg-primary rounded-full p-2 transition-colors duration-300">
+        <a href="#" className="relative p-2 text-xl transition-colors duration-300 rounded-full text-white-100 hover:bg-primary">
           <FaTwitter />
-          <span className="absolute inset-0 flex justify-center items-center">
-            <span className="w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="w-6 h-6 transition-opacity duration-300 bg-white rounded-full opacity-0 group-hover:opacity-100"></span>
           </span>
         </a>
-        <a href="#" className="relative text-white-100 text-xl hover:bg-primary rounded-full p-2  transition-colors duration-300">
+        <a href="#" className="relative p-2 text-xl transition-colors duration-300 rounded-full text-white-100 hover:bg-primary">
           <FaPinterestP />
-          <span className="absolute inset-0 flex justify-center items-center">
-            <span className="w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="w-6 h-6 transition-opacity duration-300 bg-white rounded-full opacity-0 group-hover:opacity-100"></span>
           </span>
         </a>
-        <a href="#" className="relative text-white-100 text-xl hover:bg-primary rounded-full p-2  transition-colors duration-300">
+        <a href="#" className="relative p-2 text-xl transition-colors duration-300 rounded-full text-white-100 hover:bg-primary">
           <FaInstagram />
-          <span className="absolute inset-0 flex justify-center items-center">
-            <span className="w-6 h-6 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+          <span className="absolute inset-0 flex items-center justify-center">
+            <span className="w-6 h-6 transition-opacity duration-300 bg-white rounded-full opacity-0 group-hover:opacity-100"></span>
           </span>
         </a>
       </div>
 
       {/* Content (Title and Description) */}
       <div className="p-4">
-        <h2 className="text-sm font-semibold mb-1">{title}</h2> {/* Title */}
-        <p className="text-xs text-gray-600 mb-4">{description}</p> {/* Description */}
+        <h2 className="mb-1 text-sm font-semibold">{title}</h2> {/* Title */}
+        <p className="mb-4 text-xs text-gray-600">{description}</p> {/* Description */}
       </div>
     </div>
   );
@@ -82,16 +82,16 @@ const Card = ({ title, image, description }) => {
 // Define the Members component that renders multiple Card components
 const Members = () => {
   return (
-    <section className='w-full'>
-      <div className='w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px]'>
-        <div className="text-center tracking-wider mb-6 mt-12 text-primary">
+    <section className="flex items-center justify-center w-full">
+      <div className="w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px]">
+        <div className="mt-12 mb-6 tracking-wider text-center text-primary">
           <p>TEAM</p>
-          <h2 className="text-3xl text-black-900 mb-2 font-semibold">
+          <h2 className="mb-2 text-3xl font-semibold text-black-900">
             Our Professional Members
           </h2> {/* Display title */}
         </div>
 
-        <div className="max-w-6xl mt-10 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid max-w-6xl grid-cols-2 gap-8 mx-auto mt-10 sm:grid-cols-2 lg:grid-cols-4 justify-items-center">
           {membersData.map((card) => (
             <Card
               key={card.id}
