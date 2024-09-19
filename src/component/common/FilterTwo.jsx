@@ -320,8 +320,8 @@ const FilterTwo = ({ products }) => {
                 oldPrice={product.price.original}
                 rating={product.rating}
                 onAddToCart={() => handleAddToCart(product.name)}
-                isSale={!!product.promotions.discount}
-                saleText={product.promotions.discount}
+                
+                
               />
             ))}
           </div>
