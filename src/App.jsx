@@ -4,7 +4,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-// import Shop2 from './pages/homepages/Shop2';
+
 import Loader from './component/common/Loader';
 
 // Lazy load the pages
