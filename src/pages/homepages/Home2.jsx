@@ -4,6 +4,7 @@ import Members from '../../component/home2/Members'
 import HeaderBottom from '../../component/common/HeaderBottom'
  //import Banner from '../../component/home4/Banner'
  //import TopCategory from '../home3/home-component/TopCategory'
+ import Banners from '../../component/common/Banners'
  import ShowProductshp2 from '../../component/home2/showProductshp2'
 import PopularCategory from '../../component/home1/ProductCategory'
 import Fproducts from '../../component/home2/Fproducts'
@@ -16,6 +17,7 @@ const Home2 = () => {
       
  <BannerHome2/>
  <HeaderBottom/>
+ <Banners/>
  <PopularCategory/>
  <Fproducts />
  <ShowProductshp2 />
