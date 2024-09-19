@@ -35,7 +35,7 @@ const App = () => {
   return (
 
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <FilterOne/> */}
       {/* <Product/> */}
       {/* <Vegetable/> */}
@@ -45,7 +45,7 @@ const App = () => {
   
         {/* ---------- homepages ------- */}
 
-        <Route path='/' element={<Home1 />} />
+        {/* <Route path='/' element={<Home1 />} /> */}
         <Route path='/home2' element={<Home2 />} />
         <Route path='/home3' element={<Home3 />} />
         <Route path='/home4' element={<Home4 />} />
