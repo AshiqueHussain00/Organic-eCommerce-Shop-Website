@@ -21,9 +21,9 @@ const VideoComponent = () => {
             <div className='relative w-[95%] max-w-[1130px] mx-auto mt-2'>
                 <Player
                     ref={videoRef}
-                    //playsInline
+                    playsInline
                     src={videoFile}
-                    muted={true}
+                    // muted={true}
                     loop
                     className="w-full h-auto" // Ensures video scales with the container size
                 >
