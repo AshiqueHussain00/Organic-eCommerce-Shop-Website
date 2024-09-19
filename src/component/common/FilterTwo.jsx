@@ -149,7 +149,7 @@ const FilterTwo = ({ products }) => {
     }
 
     return (
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-2 font-poppins">
         {/* Previous Button */}
         <button
           onClick={() => handlePageChange(currentPage - 1)}
@@ -175,13 +175,14 @@ const FilterTwo = ({ products }) => {
   };
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col w-10/12 mx-auto font-poppins ">
       <Saleofmonth
         image={fruits}
         heading1="BEST DEALS"
         heading2="Sale of the Month"
         isTimer={true}
         deadline="September 25, 2024"
+         discount="56%"
       />
       {/* Top Filters Section: Horizontally aligned */}
       <div className="flex flex-wrap items-center justify-between w-full mb-6">
@@ -270,19 +271,19 @@ const FilterTwo = ({ products }) => {
       
             <div className="mb-4 flex items-center justify-between  ">
   <div className="flex items-center">
-    <span className="mr-4">Active Filters:</span>
+    <span className="mr-4 ">Active Filters:</span>
     <div className="flex flex-wrap items-center mt-1">
       {category.value !== "all" && (
         <button
-          className="mr-2 mb-2 inline-flex items-center px-3 py-1 bg-gray-200 text-gray-800 text-sm font-medium border rounded"
+          className="mr-2 mb-2 inline-flex items-center px-3 py-1  text-black-900 text-sm font-bold"
           onClick={() => handleRemoveFilter("category")}
         >
-          {category.label} <span className="ml-2">✕</span>
+          {category.label} <span className="ml-2 font-bold">✕</span>
         </button>
       )}
       {priceRange.value !== "all" && (
         <button
-          className="mr-2 mb-2 inline-flex items-center px-3 py-1 bg-gray-200 text-gray-800 text-sm font-medium border rounded"
+          className="mr-2 mb-2 inline-flex items-center px-3 py-1 text-black-900 text-sm font-bold"
           onClick={() => handleRemoveFilter("priceRange")}
         >
           {priceRange.label} <span className="ml-2">✕</span>
