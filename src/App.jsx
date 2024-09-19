@@ -14,6 +14,7 @@ import Vegetable from './component/common/Vegetable';
 import FilterSidebar from './component/common/FilterOne';
 import FilterOne from './component/common/FilterOne';
 import ContactForm from './component/common/ContactForm';
+import ProductDetailsDescription from './component/common/ProductDetailsDescription';
 
 const App = () => {
 
@@ -38,8 +39,10 @@ const App = () => {
       {/* <FilterOne/> */}
       {/* <Product/> */}
       {/* <Vegetable/> */}
+      <ProductDetailsDescription/>
+      
       <Routes>
-
+  
         {/* ---------- homepages ------- */}
 
         <Route path='/' element={<Home1 />} />

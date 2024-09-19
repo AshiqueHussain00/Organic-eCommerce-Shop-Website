@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 // import { vegetableData } from '../../data/common/vegetable-data'; // Assuming the vegetableData is imported correctly
-// import { CookingData  as vegetableData } from '../../data/common/CookingData';
+import { CookingData  as vegetableData } from '../../data/common/CookingData';
 // import { snacksData } from '../../data/common/snacks-data';
 const Vegetable = () => {
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
+    console.log(selectedProduct);
 
     // Function to handle product selection
     const handleProductSelect = (productId) => {
@@ -60,6 +61,7 @@ const Vegetable = () => {
 
             {/* Product Name and Brand */}
             <div className="flex items-center justify-between pb-4 mb-6 border-b">
+                
                 <h1 className="text-3xl font-extrabold text-gray-900">{selectedProduct.name}</h1>
                 <p className="text-xl font-semibold text-gray-700">{selectedProduct.brand}</p>
             </div>
