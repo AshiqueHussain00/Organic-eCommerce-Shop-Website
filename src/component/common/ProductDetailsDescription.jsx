@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { CookingData as vegetableData } from '../../data/common/CookingData';
+// import {BreadData as vegetableData} from '../../data/common/Bread&BakeryData'
+// import { vegetableData } from '../../data/common/vegetable-data'
 import { useParams } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -33,7 +35,7 @@ function ProductDetailsDescription() {
     const Increment = () => {
         // Only increment if the product is in stock
         if (selectedProduct.inStock) {
-            setAmount((amount) => amount + 1); 
+            setAmount((amount) => amount + 1);
         }
     };
 
@@ -71,21 +73,21 @@ function ProductDetailsDescription() {
 
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
-        <section className="w-full xxs:w-10/12 mx-auto">
+        <section className="w-full xxs:w-11/12 mx-auto">
             {/* IMAGES && DETAILS */}
-            <div className="flex flex-col smd:flex-row m-2 p-1 gap-4 smd:m-10 smd:p-12 smd:gap-12">
+            <div className="flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xmd:justify-between xxl:gap-6">
 
-                <div className="flex flex-col-reverse smd:flex-row  gap-4">
+                <div className="flex flex-col-reverse md:flex-row   gap-4 md:items-center md:justify-center">
                     {/* PRODUCT IMAGES */}
                     {/* Main Image and Thumbnails */}
 
-                    <div className="grid grid-cols-4 smd:grid-cols-1 gap-2 p-2 md:p-4 justify-items-center  thumbnails">
+                    <div className="grid grid-cols-4 md:grid-cols-1 gap-2 p-2  md:p-4 xmd:p-2 justify-items-center  xmd:gap-2 thumbnails">
                         {selectedProduct.images[0].thumbnails.map((thumbnail, index) => (
                             <img
                                 key={index}
                                 src={thumbnail}
                                 alt={`Thumbnail ${index + 1}`}
-                                className="object-contain w-[60px] h-[60px] md:w-[90px] md:h-[90px] border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-600"
+                                className="object-contain w-[60px] h-[60px] md:w-[90px] md:h-[80px]  border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-600"
                                 onClick={() => handleImageChange(thumbnail)}
                             />
                         ))}
@@ -97,7 +99,7 @@ function ProductDetailsDescription() {
                             <img
                                 src={selectedProduct.currentImage || selectedProduct.images[0].main}
                                 alt={selectedProduct.name}
-                                className="object-contain rounded-lg shadow-lg min-w-full h-auto md:h-[400px] md:w-[480px]"
+                                className="object-contain rounded-lg shadow-lg min-w-full h-auto md:h-[350px] md:w-[400px] "
                             />
                         </div>
                     </div>
@@ -109,14 +111,14 @@ function ProductDetailsDescription() {
 
                 {/* PRODUCT DETAILS */}
 
-                <div className="flex flex-col p-1 md:py-4 md:px-12">
+                <div className="flex flex-col p-1 md:py-4 md:px-12 xmd:px-8 lg:px-8 xxl:mx-2 xxl:px-32">
 
                     <div className="flex flex-col items-start gap-2 px-2">
 
                         {/* NAME && STOCK */}
-                        <div className="flex  flex-row items-center gap-2 text-start">
-                            <h2 className="text-3xl md:text-4xl font-semibold">{selectedProduct.name}</h2>
-                            <h3 className={`text-sm md:text-lg rounded-lg px-1 font-semibold ${selectedProduct.inStock ? 'text-green-600' : 'text-red-700'} ${selectedProduct.inStock ? 'bg-soft_primary' : 'bg-red-300'}`}>{selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}</h3>
+                        <div className="flex  flex-row  gap-1 md:gap-2 text-start justify-center items-center">
+                            <h2 className="text-2xl md:text-3xl  xlg:text-4xl font-semibold">{selectedProduct.name}</h2>
+                            <h3 className={`text-sm md:text-base rounded-lg px-2 py-2 font-semibold whitespace-nowrap  ${selectedProduct.inStock ? 'text-green-600' : 'text-red-700'} ${selectedProduct.inStock ? 'bg-soft_primary' : 'bg-red-300'}`}>{selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}</h3>
                         </div>
                         {/* RATING && SKU CODE */}
                         <div className="flex flex-row  items-center gap-6">
@@ -124,7 +126,7 @@ function ProductDetailsDescription() {
                                 let number = index + 0.5;
                                 return (<span key={index}>
                                     {selectedProduct.rating >= index + 1 ? (
-                                        <FaStar  className="text-yellow-800 h-[12px] w-[12px]" />
+                                        <FaStar className="text-yellow-800 h-[12px] w-[12px]" />
                                     ) : selectedProduct.rating >= number ? (
                                         <FaStarHalfAlt className="text-yellow-800 h-[12px] w-[12px]" />
                                     ) : (
@@ -152,9 +154,9 @@ function ProductDetailsDescription() {
                     <div className="flex flex-col gap-2">
                         {/* BRAND && SHARE ITEM */}
                         <div className="flex flex-row items-center justify-between gap-4 md:gap-12">
-                            <h3 className="text-sm  md:text-md font-semibold">Brand: <span className="text-xs md:text-sm font-medium">{selectedProduct.brand}</span></h3>
+                            <h3 className="text-sm  md:text-base  xmd:text-sm xlg:text-base font-semibold">Brand: <span className="text-xs md:text-sm xmd:text-xs xlg:text-sm font-medium">{selectedProduct.brand}</span></h3>
 
-                            <h3 className="flex space-x-2 md:space-x-4 text-xs md:text-md items-center font-semibold text-gray-800 mr-1">Share item:  {selectedProduct.socialMedia.map((social, index) => {
+                            <h3 className="flex space-x-2 md:space-x-4  xmd:space-x-2 text-xs md:text-base xmd:text-xs  xlg:text-base items-center font-semibold text-gray-800 mr-1">Share item:  {selectedProduct.socialMedia.map((social, index) => {
                                 const Icon = Object.values(social)[0];
                                 return (
                                     <a
@@ -164,7 +166,7 @@ function ProductDetailsDescription() {
                                         rel="noopener noreferrer"
                                         className="text-gray-600 transition hover:bg-primary hover:text-white-200 p-1 hover:rounded-full"
                                     >
-                                        <Icon className="h-[15px] w-[15px] md:h-[20px] md:w-[20px]" />
+                                        <Icon className="h-[15px] w-[15px] md:h-[20px] md:w-[20px] xmd:h-[15px] xmd:w-[15px]  xlg:h-[20px] xlg:w-[20px]" />
                                     </a>
                                 );
                             })}</h3>
@@ -182,27 +184,36 @@ function ProductDetailsDescription() {
                     <hr className="w-full border-t border-gray-300 my-4" />
 
                     {/* AMOUNT OF ITEM && ADD TO CART */}
-                    <div className="flex  flex-row gap-4 xxs:gap-4 md:gap-6 p-2 justify-items-center">
-                        {/* AMOUNT OF ITEM */}
-                        <div className="flex space-x-3  md:space-x-3 bg-white-300 rounded-full p-1 md:px-3 md:py-2 items-center ">
-                            <button onClick={Decrement} ><FaMinusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
-                            <div className="text-md md:text-lg">{amount}</div>
-                            <button onClick={Increment}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
+                    <div className="flex  flex-row lg:flex-col  gap-5 xxs:gap-4 md:gap-6 p-2 ">
+
+                       
+
+                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
+                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-2 xxs:px-4 md:px-12 xxl:px-20 py-2 bg-light-branding-success rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
+
                         </div>
 
-                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 items-center">
-                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-2 xxs:px-4 md:px-20 py-2 bg-light-branding-success rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
+                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
+                            <div className="flex space-x-3 lg:space-x-8 bg-white-300 rounded-full p-1 md:px-3 md:py-2 lg:justify-center items-center">
+                                <button onClick={Decrement} ><FaMinusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
+                                <div className="text-md md:text-lg">{amount}</div>
+                                <button onClick={Increment}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
+                            </div>
                             <button><GoHeart className="h-[25px] w-[25px] ml-2" /></button>
                         </div>
                     </div>
+
+
+
+
 
                     <hr className="w-full border-t border-gray-300 my-4" />
 
                     {/* CATEGORY && TAGS */}
 
                     <div className="flex flex-col gap-2">
-                        <h3 className="text-sm md:text-md flex font-semibold text-black-900">Categories: <span className="text-sm ml-2 font-medium text-gray-500">{selectedProduct.category}</span></h3>
-                        <h3 className="text-sm font-semibold">Tag: {""}<span>{selectedProduct.tags.map((tag, index) => (<span key={index} className="mr-2 text-sm font-medium text-gray-500">{tag}</span>))}</span></h3>
+                        <h3 className="text-sm md:text-base flex items-center font-semibold text-black-900 ">Categories: <span className="text-sm ml-2 font-medium text-gray-500">{selectedProduct.category}</span></h3>
+                        <h3 className="text-sm md:text-base font-semibold">Tag: {""}<span>{selectedProduct.tags.map((tag, index) => (<span key={index} className="mr-2 text-sm font-medium text-gray-500">{tag}</span>))}</span></h3>
                     </div>
                 </div>
 
