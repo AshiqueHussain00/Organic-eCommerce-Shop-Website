@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector , useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 import reviewimg1 from '../../assets/common/product/reviewimg1.svg'
 import reviewimg2 from '../../assets/common/product/reviewimg2.svg'
 import brand from '../../assets/common/product/brand.svg'
 import SingleItem from './SingleItem';
+import { useNavigate } from 'react-router-dom';
+import { calcDiscountPerc } from '../../utils/calcDiscountPerc';
 
 
 
@@ -20,12 +22,12 @@ const cart = [
             discountPercentage: 54,
         },
         category: "Snacks",
-        tags: ["Snacks", "Healthy", "Vegetarian", "Kid foods" , "Tiffin"],
+        tags: ["Snacks", "Healthy", "Vegetarian", "Kid foods", "Tiffin"],
         rating: 4.7,
         reviews: 6,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
+        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180",
         socialMedia: [
             { facebook: FaFacebookF },
             { instagram: FaInstagram },
@@ -92,7 +94,7 @@ const cart = [
             discountPercentage: 78,
         },
         category: "Snacks",
-        tags: ["Snacks", "Healthy", "Vegetarian", "Kid foods" , "Tiffin"],
+        tags: ["Snacks", "Healthy", "Vegetarian", "Kid foods", "Tiffin"],
         rating: 4.7,
         reviews: 10,
         inStock: true,
@@ -164,12 +166,12 @@ const cart = [
             discountPercentage: 64,
         },
         category: "Snacks",
-        tags: ["Snacks", "Healthy", "Kid foods" , "Tiffin"],
+        tags: ["Snacks", "Healthy", "Kid foods", "Tiffin"],
         rating: 4.9,
         reviews: 9,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
+        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180",
         socialMedia: [
             { facebook: FaFacebookF },
             { instagram: FaInstagram },
@@ -232,16 +234,16 @@ const cart = [
         sku: "2SJ5643",
         price: {
             original: 8.0,
-            discounted:6.28,
+            discounted: 6.28,
             discountPercentage: 79,
         },
         category: "Snacks",
-        tags: ["Snacks", "Kid foods" , "Tiffin"],
+        tags: ["Snacks", "Kid foods", "Tiffin"],
         rating: 3.9,
         reviews: 12,
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
+        brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180",
         socialMedia: [
             { facebook: FaFacebookF },
             { instagram: FaInstagram },
@@ -298,68 +300,158 @@ const cart = [
             organic: "100% Organic",
         },
     },
-   
+
 ]
 
 const CartBottom = () => {
-    
+
     const cartItems = useSelector((state) => state.cart.items);
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     const totalPrice = useSelector((state) => state.cart.totalPrice)
+
     const dispatch = useDispatch();
+    const navigate = useNavigate()
+
+    const updateCart = () => {
+
+    }
 
 
-  return (
-    <div className='border-2 border-red-700 flex '>
+    return (
+        <div className='border-2 border-red-700 flex justify-between'>
 
-        {/* --------- left --------------- */}
-        <div className='w-[65%]'>
+            {/* --------- left --------------- */}
+            <div className='xxl:w-[67%] w-[65%] flex flex-col gap-y-8'>
 
-            {/* ---------- upper ---------- */}
+                {/* ---------- upper ---------- */}
 
-            <div>
+                <div>
 
-              {/* -------- heading ----------- */}
+                    {/* -------- heading ----------- */}
 
-              <div className='grid grid-cols-6 border-2 border-blue-600 w-full'>
+                    <div className='grid grid-cols-4 xmd:grid-cols-6 border w-full text-sm text-gray-500 text-medium uppercase py-3 rounded-t-md'>
 
-                <div className='px-6 border col-span-2'>Product</div>
-                <div className='border'>Price</div>
-                <div className='border'>Quantity</div>
-                <div className='border'>SubTotal</div>
-                <div className='border'></div>
+                        <div className='px-6 border col-span-3 xmd:col-span-2'>Product</div>
+                        <div className='border hidden xmd:flex justify-center '>Price</div>
+                        <div className='border hidden xmd:flex justify-center'>Quantity</div>
+                        <div className='border flex justify-center'>SubTotal</div>
+                       
 
-              </div>
+                    </div>
 
 
-              {/* ----------- content --------- */}
-              <div className='flex flex-col w-full border-2 border-blue-500'>
-                {
-                    cart.map((item) => (
-                        <SingleItem key={item.id} data={item}/>
-                    ))
-                }
-              </div>
+                    {/* -----------cart content --------- */}
+                    <div className='flex flex-col w-full border-2 border-blue-500'>
+                        {
+                            cart.map((item) => (
+                                <SingleItem key={item.id} data={item} />
+                            ))
+                        }
+                    </div>
+                    {/* --------------  btn grp ------------ */}
+                    <div className='border py-5 px-4 flex justify-between text-sm rounded-b-md'>
+
+                        {/* -- return to shop btn---- */}
+                        <button
+                            onClick={() => navigate('/shop1')}
+                            className='px-6 py-3 rounded-3xl tracking-wide bg-gray-50 transition-all duration-300 border border-gray-50 hover:border-gray-900'>
+                            Return to shop
+                        </button>
+
+                         {/* -- Update cart btn -- */}
+                        <button
+                            onClick={updateCart}
+                            className='px-6 py-3 rounded-3xl tracking-wide bg-gray-50 transition-all duration-300 border border-gray-50 hover:border-gray-900'>
+                            Update Cart
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+                {/* --------- bottom -------------- */}
+
+                <div className='border-2 border-red-300 px-4 py-6'>
+
+                    <div className='flex gap-x-2 justify-between items-center'>
+
+                     <h2 className='w-max xl:text-xl text-lg font-semibold text-gray-900'>Coupon Code</h2>
+                     <div className='w-[70%] xl:w-[75%] xxl:w-[80%] relative  xlg:text-[16px] text-sm  '>
+
+                        <input
+                         type="text"
+                         name="coupon-code"
+                         placeholder='Enter code'
+                         className='w-full border rounded-3xl py-3 px-4 outline-none focus:border-gray-900'
+                          />
+
+                          <button
+
+                          className='absolute bg-gray-800 text-white-100 rounded-3xl px-8 py-3 right-0 border border-gray-800'>
+                            Apply Coupon
+                          </button>
+
+                     </div>
+
+                    </div>
+
+
+
+                </div>
 
             </div>
 
+            {/* ---------- right --------------- */}
 
-            {/* --------- bottom -------------- */}
+            <div className='xxl:w-[30%] w-[33%] border flex flex-col'>
 
-            <div>
+
+                {/* -------- cart total card ---------- */}
+                <div className='py-6 px-4 flex flex-col gap-y-3 border w-full h-max rounded-md'>
+
+                    <h2 className='text-xl font-semibold text-gray-900 leading-7 mb-3'>Cart Total</h2>
+
+                    <div className='flex justify-between border-b py-2 text-sm'>
+                        <span className='text-gray-700 font-normal'>Subtotal:</span>
+                        <span className='text-gray-900 font-semibold'>
+                            {/* $ {totalPrice} */}
+                            $ 2350
+                        </span>
+                    </div>
+
+                    <div className='flex justify-between border-b py-2 text-sm'>
+                        <span className='text-gray-700 font-normal'>Shipping:</span>
+                        <span className='text-gray-900 font-semibold'>
+                            Free
+                        </span>
+                    </div>
+
+                    <div className='flex justify-between text-sm'>
+                        <span className='text-gray-700 font-normal'>Total:</span>
+                        <span className='text-gray-900 font-semibold'>
+                            {/* $ {totalPrice} */}
+                            $ 2350
+                        </span>
+                    </div>
+
+
+                    <button className='bg-primary py-3 rounded-3xl text-sm text-white-100 mt-3 '>
+                        Proceed to checkout
+                    </button>
+
+
+
+
+                </div>
 
             </div>
 
         </div>
-
-        {/* ---------- right --------------- */}
-
-        <div>
-
-        </div>
-
-    </div>
-  )
+    )
 }
 
 export default CartBottom

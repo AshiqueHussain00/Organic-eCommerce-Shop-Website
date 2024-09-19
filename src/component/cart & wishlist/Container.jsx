@@ -10,7 +10,7 @@ const Container = ({isCart = true}) => {
 
         {/* ------------- container -------------------- */}
 
-        <div className="w-11/12 xmd:w-10/12 mx-auto border-2 border-red-800 py-16 flex flex-col gap-y-10">
+        <div className="w-11/12 xlg:w-10/12 mx-auto border-2 border-red-800 py-16 flex flex-col gap-y-10">
               
 
               {/* ------------ heading ----------- */}

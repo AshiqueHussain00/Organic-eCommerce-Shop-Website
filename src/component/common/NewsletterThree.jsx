@@ -4,14 +4,16 @@ import { FaFacebookF, FaTwitter, FaPinterestP, FaInstagram } from 'react-icons/f
 
 const NewsletterThree = () => {
     return (
-        <div className="py-8 bg-gray-100">
+        <section>
+            <div className='w-full bg-[rgb(237,236,236)]'>
+            <div className="py-8  ">
             <div className="flex flex-col items-center px-4 mx-auto max-w-7xl sm:px-6  lg:flex-row lg:items-center lg:justify-between">
                 {/* Newsletter Section */}
                 <div className="flex flex-col w-full lg:flex-row lg:items-center lg:justify-between lg:gap-8">
                     {/* Text Section */}
                     <div className="max-w-xs mb-4 lg:mb-0 lg:max-w-sm lg:text-left lg:mr-6">
-                        <h2 className="text-2xl font-semibold text-gray-900">Subscribe to our Newsletter</h2>
-                        <p className="text-sm text-gray-500">
+                        <h2 className="text-xl font-semibold text-gray-900">Subscribe our Newsletter</h2>
+                        <p className="text-[0.8rem] text-gray-500">
                             Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna.
                         </p>
                     </div>
@@ -46,6 +48,8 @@ const NewsletterThree = () => {
                 </div>
             </div>
         </div>
+            </div>
+        </section>
     );
 };
 
