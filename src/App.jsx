@@ -7,16 +7,29 @@ import { Route, Routes } from 'react-router-dom';
 
 import Loader from './component/common/Loader';
 
-// Lazy load the pages
+// Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
 const Home2 = lazy(() => import('./pages/homepages/Home2'));
 const Home3 = lazy(() => import('./pages/homepages/Home3'));
 const Home4 = lazy(() => import('./pages/homepages/Home4'));
 const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
+
+//Shop
 const Shop1 = lazy(() => import('./pages/homepages/Shop1'));
 const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
+
+
+//Cart & Wishlist
+
+const Cart = lazy(()=> import('./pages/Cart'));
+const Wishlist = lazy(()=> import('./pages/Wishlist'));
+
+
+//Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
+
+
 
 const App = () => {
 
@@ -43,9 +56,19 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          <Route path='/shop1' element={<Shop1 />} /> 
-          <Route path='/shop2' element={<Shop2/>} />
-          <Route path='/contact-us' element={<ContactForm />} />
+
+          {/* ------------- Shop ------------- */}
+          <Route path='/shop1' element={<Shop1 />} />  
+           <Route path='/shop2' element={<Shop2/>} /> 
+
+           {/* ------------ Cart & WishList--------------- */}
+           <Route path='/cart' element={<Cart/>}/>
+           <Route path='/wishlist' element={<Wishlist/>}/>
+
+
+
+           {/* ------------- Contact --------------- */}
+           <Route path='/contact-us' element={<ContactForm />} />
         </Routes>
       </Suspense>
     </div>
