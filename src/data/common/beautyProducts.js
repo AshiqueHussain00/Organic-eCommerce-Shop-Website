@@ -231,8 +231,8 @@ export const beautyData = [
     description: { dec1: 'Decongests and minimises pores.', dec2: 'Detoxifies skin without drying it out.', dec3: ['Decongests and minimises pores.','Soothes and calms inflamed skin.','Antibacterial and reduces excess oil production.'], dec4: 'helping manage dry skin, and preventing acne.' },
     additionalInformation: { weight: "0.1 kg", color: "Black", type: "Chemical", category: "Beauty", stockStatus: "Available", stockQuantity: 900 },
     customerFeedback: [
-        { name: "John Doe", reviewImg: 'img1.png', feedback: "Fresh and sweet!", rating: 5 },
-        { name: "Jane Smith", reviewImg: 'img2.png', feedback: "A bit too crunchy.", rating: 4 },
+        { name: "John Doe", reviewImg: 'img1.png', feedback: "Nice", rating: 5 },
+        { name: "Jane Smith", reviewImg: 'img2.png', feedback: "Suitable", rating: 4 },
     ],
     promotions: { discount: "5% Discount", organic: "30% Organic" },
 },
@@ -255,8 +255,8 @@ export const beautyData = [
   description: { dec1: 'Lipstick is a cosmetic product used to apply coloration and texture to lips', dec2: 'Different pigments are used to produce color, and minerals such as silica may be used to provide texture.', dec3: ['Lipstick has been prominent in several womens fashion trends','Soothes and calms inflamed skin.','Antibacterial and reduces sweet'], dec4: 'Matte lipsticks contain more filling agents like silica but do not have many emollients' },
   additionalInformation: { weight: "0.1 kg", color: "Black", type: "Chemical", category: "Beauty", stockStatus: "Available", stockQuantity: 900 },
   customerFeedback: [
-      { name: "John Doe", reviewImg: 'img1.png', feedback: "Fresh and sweet!", rating: 5 },
-      { name: "Jane Smith", reviewImg: 'img2.png', feedback: "A bit too crunchy.", rating: 4 },
+      { name: "John Doe", reviewImg: 'img1.png', feedback: "Nice lipstic", rating: 5 },
+      { name: "Jane Smith", reviewImg: 'img2.png', feedback: "Very good", rating: 4 },
   ],
   promotions: { discount: "10% Discount", organic: "10% Organic" },
 },
