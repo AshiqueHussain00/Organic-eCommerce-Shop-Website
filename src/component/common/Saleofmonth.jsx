@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
-function Saleofmonth({ image, heading1, heading2, isTimer, deadline }) {
+function Saleofmonth({ image, heading1, heading2, isTimer, deadline, discount }) {
   const [days, setDays] = useState("00");
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
@@ -27,7 +27,7 @@ function Saleofmonth({ image, heading1, heading2, isTimer, deadline }) {
 
   return (
     <section>
-      <div className="w-full mx-auto my-auto p-4 bg-white">
+      <div className="w-full mx-auto my-auto p-4 bg-white relative">
         <ul className="flex flex-row flex-wrap items-center justify-center ">
           <li
             style={{
@@ -39,8 +39,31 @@ function Saleofmonth({ image, heading1, heading2, isTimer, deadline }) {
               maxWidth: "1400px", // Max width on larger screens
               height: "300px",
             }}
-            className="p-6 bg-no-repeat flex flex-col md:flex-row items-center rounded-md"
+            className="p-6 bg-no-repeat flex flex-col md:flex-row items-center rounded-md relative"
           >
+            {/* Discount Badge */}
+            <div
+  className="
+    absolute transform bg-[#FF8A00] text-white-100 w-16 h-16 flex flex-col items-center justify-center rounded-full font-poppins
+    bottom-1 right-1
+    xs:bottom-1 xs:right-1
+    sm:bottom-4 sm:right-4
+    md:bottom-8 md:right-8
+    lg:top-1/2 lg:right-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2
+  "
+  style={{ backgroundColor: "#FF8A00" }}
+>
+  <span className="font-bold text-white">{discount}</span>
+  <span className="text-gray-300 text-sm">OFF</span>
+</div>
+
+
+
+
+
+
+
+
             {/* Content section */}
             <div className="flex my-auto flex-col items-start w-full md:w-2/3 ">
               <h3 className="text-gray-100 font-medium text-left text-base">
@@ -52,7 +75,7 @@ function Saleofmonth({ image, heading1, heading2, isTimer, deadline }) {
 
               {/* Countdown timer section */}
               {isTimer && (
-                <div className=" text-gray-100">
+                <div className="text-gray-100">
                   <div className="flex gap-2 text-2xl">
                     <div className="flex flex-col items-center">
                       <span className="text-[rgb(51,230,66)]">{days}</span>
