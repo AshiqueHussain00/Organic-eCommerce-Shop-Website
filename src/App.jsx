@@ -56,6 +56,11 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
+<<<<<<< HEAD
+          <Route path='/shop1' element={<Shop1 />} /> 
+          <Route path='/shop2' element={<Shop2/>} />
+          <Route path='/contact-us' element={<ContactForm />} />
+=======
 
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />  
@@ -69,6 +74,7 @@ const App = () => {
 
            {/* ------------- Contact --------------- */}
            <Route path='/contact-us' element={<ContactForm />} />
+>>>>>>> f7f2ee67f494d2dfc6ee247384aaf8f8046cdb42
         </Routes>
       </Suspense>
     </div>
