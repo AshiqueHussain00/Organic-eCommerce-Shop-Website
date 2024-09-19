@@ -309,6 +309,10 @@ const CartBottom = () => {
     const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     const totalPrice = useSelector((state) => state.cart.totalPrice)
 
+
+
+    console.log("Cart : " , cartItems);
+
     const dispatch = useDispatch();
     const navigate = useNavigate()
 

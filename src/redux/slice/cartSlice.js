@@ -28,8 +28,8 @@ const cartSlice = createSlice({
                 state.items.push({...product , quantity : 1 , totalPrice: action.payload.price.discounted})
             }
 
-            state.totalQuantity = state.totalQuantity + 1;
-            state.totalPrice = state.totalPrice + action.payload.price.discounted;
+            // state.totalQuantity = state.totalQuantity + 1;
+            // state.totalPrice = state.totalPrice + action.payload.price.discounted;
 
         },
         removeFromCart : (state , action) => {
@@ -39,8 +39,8 @@ const cartSlice = createSlice({
             const itemToRemove = state.items.find(item => item.id === productId);
 
             if(itemToRemove){
-                state.totalQuantity = state.totalQuantity - itemToRemove.quantity;
-                state.totalPrice = state.totalPrice - itemToRemove.totalPrice;
+                // state.totalQuantity = state.totalQuantity - itemToRemove.quantity;
+                // state.totalPrice = state.totalPrice - itemToRemove.totalPrice;
                 
             state.items.filter(item =>  item.id !== productId);
             }
@@ -54,8 +54,8 @@ const cartSlice = createSlice({
             if(existingItem){
                 existingItem.quantity = existingItem.quantity + 1;
                 existingItem.totalPrice = existingItem.totalPrice + existingItem.price.discounted;
-                state.totalQuantity = state.totalQuantity + 1;
-                state.totalPrice = state.totalPrice + existingItem.price.discounted
+                // state.totalQuantity = state.totalQuantity + 1;
+                // state.totalPrice = state.totalPrice + existingItem.price.discounted
             }
 
         },
@@ -69,8 +69,8 @@ const cartSlice = createSlice({
 
                 existingItem.quantity = existingItem.quantity - 1;
                 existingItem.totalPrice = existingItem.totalPrice - existingItem.price.discounted;
-                state.totalQuantity = state.totalQuantity - 1;
-                state.totalPrice = state.totalPrice - existingItem.price.discounted;
+                // state.totalQuantity = state.totalQuantity - 1;
+                // state.totalPrice = state.totalPrice - existingItem.price.discounted;
             }
 
         },

@@ -20,16 +20,6 @@ export const beverageData = [
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -98,16 +88,7 @@ export const beverageData = [
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
+      
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -176,16 +157,6 @@ export const beverageData = [
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -254,16 +225,6 @@ export const beverageData = [
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -332,16 +293,7 @@ export const beverageData = [
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
+    
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -410,16 +362,6 @@ export const beverageData = [
         inStock: false,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -488,16 +430,7 @@ export const beverageData = [
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: brand ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
+      
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
