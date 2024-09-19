@@ -1,0 +1,47 @@
+/* Dropdown Menu Styles */
+.custom-select {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    border: 1px solid #388E3C; /* Darker green border */
+    border-radius: 0.375rem; /* Rounded corners */
+  }
+  
+  .custom-select:hover {
+    background-color: #388E3C; /* Darker green on hover */
+  }
+  
+  .custom-select .react-select__control {
+    border-color: #388E3C; /* Darker green border */
+  }
+  
+  .custom-select .react-select__indicator {
+    color: white; /* White color for the dropdown indicator */
+  }
+  
+  .custom-select .react-select__menu {
+    background-color: #4CAF50; /* Green background for menu */
+    border: 1px solid #388E3C; /* Darker green border */
+    border-radius: 0.375rem; /* Rounded corners */
+  }
+  
+  .custom-select .react-select__option {
+    color: white; /* White text color for options */
+  }
+  
+  .custom-select .react-select__option--is-selected {
+    background-color: #388E3C; /* Darker green background for selected option */
+    color: white; /* White text color for selected option */
+  }
+  
+  .custom-select .react-select__option--is-focused {
+    background-color: #388E3C; /* Darker green background on hover */
+    color: white; /* White text color on hover */
+  }
+  
+  /* Custom select for Sort and Items Per Page */
+  .custome-select {
+    border: 1px solid #388E3C; /* Darker green border */
+    border-radius: 0.375rem; /* Rounded corners */
+    padding: 0.5rem; /* Padding for better spacing */
+  }
+  
