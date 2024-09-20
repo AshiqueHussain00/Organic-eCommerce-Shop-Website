@@ -2339,16 +2339,6 @@ const allproductData=[
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -2411,16 +2401,6 @@ const allproductData=[
         inStock: false,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -2483,16 +2463,6 @@ const allproductData=[
         inStock: false,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
@@ -2555,16 +2525,6 @@ const allproductData=[
         inStock: true,
         mainDec: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand: "https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180" ,
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/?lang=en', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
