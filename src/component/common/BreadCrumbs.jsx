@@ -11,8 +11,8 @@ function BreadCrumbs() {
     console.log(pathnames);
   return (
     <section>
-        <div className=" w-10/12 p-2 flex">
-        <Link to="/" ><GoHome className="h-[20px] w-[20px] mr-1"/></Link>
+        <div className=" w-10/12 p-2 flex ">
+        <Link to="/" ><GoHome className="h-[20px] w-[20px] mr-1 "/></Link>
       {pathnames.map((name , index)=>{
         breadcrumbPath += `${name}`;
         const isLast = index === pathnames.length - 1;
