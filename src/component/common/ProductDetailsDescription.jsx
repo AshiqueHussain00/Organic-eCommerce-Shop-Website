@@ -120,7 +120,7 @@ function ProductDetailsDescription() {
                         {/* NAME && STOCK */}
                         <div className="flex  flex-row  gap-1 md:gap-2 text-start justify-center items-center">
                             <h2 className="text-2xl md:text-3xl  xlg:text-4xl font-semibold">{selectedProduct.name}</h2>
-                            <h3 className={`text-sm md:text-base rounded-lg px-2 py-2 font-semibold whitespace-nowrap  ${selectedProduct.inStock ? 'text-green-600' : 'text-red-700'} ${selectedProduct.inStock ? 'bg-soft_primary' : 'bg-red-300'}`}>{selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}</h3>
+                            <h3 className={`text-sm md:text-base rounded-lg px-1 md:px-2  font-semibold whitespace-nowrap  ${selectedProduct.inStock ? 'text-green-600' : 'text-red-700'} ${selectedProduct.inStock ? 'bg-soft_primary' : 'bg-red-300'}`}>{selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}</h3>
                         </div>
                         {/* RATING && SKU CODE */}
                         <div className="flex flex-row  items-center gap-6">

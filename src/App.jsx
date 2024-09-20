@@ -3,8 +3,9 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,useNavigate } from 'react-router-dom';
 import ProductDetailsDescription from './component/common/ProductDetailsDescription';
+
 
 import Loader from './component/common/Loader';
 
@@ -22,7 +23,7 @@ const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
 
 // blog
 const Blog=lazy(()=>import('./component/common/Blog'))
-
+const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
 //About 
 const About = lazy(() => import('./pages/About/About'))
 //Cart & Wishlist
@@ -50,9 +51,20 @@ const App = () => {
 
   AOS.refresh();
 
+  const navigate = useNavigate();
+
+  const goToProductDetails = () => {
+    
+    
+    const id = 'v3'; 
+    const category = 'vegetable'
+
+    navigate(`/Category/${category}/${id}`);
+  };
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
+      <button onClick={goToProductDetails}>Go to Product Details</button>
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -68,7 +80,8 @@ const App = () => {
            <Route path='/shop2' element={<Shop2/>} /> 
 
            {/* blog */}
-           <Route path='/blog' element={<Blog/>} />
+           <Route path="/blog" element={<Blog />} />
+           <Route path="/blog/:id" element={<SingleBlog />} />
            {/* ------------ About --------------- */}
            <Route path='/about-us' element={<About />} /> 
 
