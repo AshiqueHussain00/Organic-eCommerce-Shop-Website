@@ -48,7 +48,7 @@ const Navbar = () => {
     setIsAllCategoriesOpen(!isAllCategoriesOpen)
 
   }
-  
+
   // const handleLinkClick = (path) => {
   //   navigate(path)
   //   setIsOpen(false) // Close the mobile menu
@@ -62,7 +62,7 @@ useEffect(()=> {
   setIsOpen(false);
   setIsAllCategoriesOpen(false)
 
-},[location.pathname])
+},[location.pathname]);
 
   return (
     <section className='relative w-full mx-auto'>
@@ -332,7 +332,7 @@ useEffect(()=> {
                               key={dropdownItem.id}
                               to={dropdownItem.path}
                               className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                              onClick={() => handleLinkClick(dropdownItem.path)}
+                            
                             >
                               {dropdownItem.title}
                             </Link>
@@ -344,7 +344,7 @@ useEffect(()=> {
                     <Link
                       to={item.path}
                       className='block px-3 py-2 font-medium rounded-md hover:text-white-100 text-black-900 hover:bg-gray-700'
-                      onClick={() => handleLinkClick(item.path)}
+     
                     >
                       {item.title}
                     </Link>
