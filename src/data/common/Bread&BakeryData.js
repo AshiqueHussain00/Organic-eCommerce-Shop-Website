@@ -17,17 +17,17 @@ export const BreadData = [
         inStock: true,
         mainDec: "English Oven Bread Whole Wheat is a hearty, nutritious bread made with whole wheat flour, perfect for a healthy diet and satisfying meals.",
         brand: "English Oven",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://m.media-amazon.com/images/I/71YLQwJhqDL._SL1500_.jpg',
@@ -91,17 +91,17 @@ export const BreadData = [
         inStock: true,
         mainDec: "English Oven Bread Brown is a nutritious, fiber-rich bread made with brown flour, perfect for a balanced diet and delicious meals.",
         brand: "English Oven",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://m.media-amazon.com/images/I/71zLJqDIGTL._SL1500_.jpg',
@@ -167,17 +167,17 @@ export const BreadData = [
         inStock: true,
         mainDec: "English Oven Fruit Bun is a delicious and sweet bun filled with dried fruits, perfect for a quick snack or a delightful treat.",
         brand: "English Oven",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://m.media-amazon.com/images/I/717z6-vfg5L._SX679_.jpg',
@@ -241,17 +241,17 @@ export const BreadData = [
         inStock: true,
         mainDec: "Pintola Rice Cake is a light and crispy snack made from high-quality rice, perfect for a healthy and satisfying snack any time of the day.",
         brand: "Pintola",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://m.media-amazon.com/images/I/61KxNptywWL._SX679_.jpg',
@@ -314,17 +314,17 @@ export const BreadData = [
         inStock: true,
         mainDec: "Lotte Choco Pie is a delicious treat featuring soft, fluffy cake layers filled with a rich, creamy marshmallow center and covered in smooth chocolate.",
         brand: "Lotte",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://m.media-amazon.com/images/I/817dgnh61GL._SX679_.jpg',
@@ -387,17 +387,17 @@ export const BreadData = [
         inStock: true,
         mainDec: "Britannia Gobble is a crunchy, flavorful biscuit that offers a delightful combination of taste and texture, perfect for snacking anytime.",
         brand: "Britannia",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://m.media-amazon.com/images/I/61n0fnxZhUL._SX679_.jpg',
