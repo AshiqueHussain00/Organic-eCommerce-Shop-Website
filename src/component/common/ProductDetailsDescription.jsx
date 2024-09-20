@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GoHeart } from "react-icons/go";
+import BreadCrumbs from './BreadCrumbs';
 
 
 function ProductDetailsDescription() {
@@ -74,6 +75,7 @@ function ProductDetailsDescription() {
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
         <section className="w-full xxs:w-11/12 mx-auto">
+            <BreadCrumbs/>
             {/* IMAGES && DETAILS */}
             <div className="flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xmd:justify-between xxl:gap-6">
 
@@ -118,7 +120,7 @@ function ProductDetailsDescription() {
                         {/* NAME && STOCK */}
                         <div className="flex  flex-row  gap-1 md:gap-2 text-start justify-center items-center">
                             <h2 className="text-2xl md:text-3xl  xlg:text-4xl font-semibold">{selectedProduct.name}</h2>
-                            <h3 className={`text-sm md:text-base rounded-lg px-2 py-2 font-semibold whitespace-nowrap  ${selectedProduct.inStock ? 'text-green-600' : 'text-red-700'} ${selectedProduct.inStock ? 'bg-soft_primary' : 'bg-red-300'}`}>{selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}</h3>
+                            <h3 className={`text-sm md:text-base rounded-lg px-1 md:px-2  font-semibold whitespace-nowrap  ${selectedProduct.inStock ? 'text-green-600' : 'text-red-700'} ${selectedProduct.inStock ? 'bg-soft_primary' : 'bg-red-300'}`}>{selectedProduct.inStock ? 'In Stock' : 'Out of Stock'}</h3>
                         </div>
                         {/* RATING && SKU CODE */}
                         <div className="flex flex-row  items-center gap-6">
@@ -156,7 +158,7 @@ function ProductDetailsDescription() {
                         <div className="flex flex-row items-center justify-between gap-4 md:gap-12">
                             <h3 className="text-sm  md:text-base  xmd:text-sm xlg:text-base font-semibold">Brand: <span className="text-xs md:text-sm xmd:text-xs xlg:text-sm font-medium">{selectedProduct.brand}</span></h3>
 
-                            <h3 className="flex space-x-2 md:space-x-4  xmd:space-x-2 text-xs md:text-base xmd:text-xs  xlg:text-base items-center font-semibold text-gray-800 mr-1">Share item:  {selectedProduct.socialMedia.map((social, index) => {
+                            {/* <h3 className="flex space-x-2 md:space-x-4  xmd:space-x-2 text-xs md:text-base xmd:text-xs  xlg:text-base items-center font-semibold text-gray-800 mr-1">Share item:  {selectedProduct.socialMedia.map((social, index) => {
                                 const Icon = Object.values(social)[0];
                                 return (
                                     <a
@@ -169,7 +171,7 @@ function ProductDetailsDescription() {
                                         <Icon className="h-[15px] w-[15px] md:h-[20px] md:w-[20px] xmd:h-[15px] xmd:w-[15px]  xlg:h-[20px] xlg:w-[20px]" />
                                     </a>
                                 );
-                            })}</h3>
+                            })}</h3> */}
 
                         </div>
 

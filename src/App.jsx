@@ -3,8 +3,9 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,useNavigate } from 'react-router-dom';
 import ProductDetailsDescription from './component/common/ProductDetailsDescription';
+
 
 import Loader from './component/common/Loader';
 
@@ -50,10 +51,20 @@ const App = () => {
 
   AOS.refresh();
 
+  const navigate = useNavigate();
+
+  const goToProductDetails = () => {
+    
+    
+    const id = 'v3'; 
+    const category = 'vegetable'
+
+    navigate(`/Category/${category}/${id}`);
+  };
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      {/* <ProductDetailsDescription/> */}
+      <button onClick={goToProductDetails}>Go to Product Details</button>
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -62,8 +73,9 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
+          <Route path='/Category/:category/:id' element={<ProductDetailsDescription/>}/>
 
-          {/* ------------- Shop ------------- */}
+          {/* ------------- Shop ------------- */} 
           <Route path='/shop1' element={<Shop1 />} />  
            <Route path='/shop2' element={<Shop2/>} /> 
 
