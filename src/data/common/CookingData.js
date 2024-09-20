@@ -17,17 +17,17 @@ export const CookingData = [
         inStock: true,
         mainDec: "Cooking oil is a versatile fat used in frying, baking, and dressing, enhancing flavor and texture in various dishes.",
         brand:"Organic India",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://organicindia.com/cdn/shop/files/613A0014_500x550.jpg?v=1695981451', 
@@ -96,17 +96,17 @@ export const CookingData = [
         inStock: true,
         mainDec: "Pink salt is a natural mineral-rich salt used for seasoning and enhancing the flavor of various dishes.",
         brand: "Himalayan Pure",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://organicindia.com/cdn/shop/products/Pinksalt_Benefit_500x550_crop_center.jpg?v=1672736574', 
@@ -172,17 +172,17 @@ export const CookingData = [
         inStock: true,
         mainDec: "Wheat dalia is a nutritious and versatile grain perfect for a range of healthy meals and snacks.",
         brand: "Pure Harvest",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://organicindia.com/cdn/shop/products/492579984_Image2_500x550_crop_center.jpg?v=1667894580',
@@ -249,17 +249,17 @@ export const CookingData = [
         inStock: true,
         mainDec: "Urad Whole is a nutritious black lentil, rich in protein and perfect for various savory dishes.",
         brand: "Natural Harvest",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://organicindia.com/cdn/shop/files/Uradwhole.jpg?v=1713869820',
@@ -326,17 +326,17 @@ export const CookingData = [
         inStock: true,
         mainDec: "Brown Channa is a nutritious legume known for its high fiber and protein content, ideal for various savory dishes.",
         brand: "Earth's Bounty",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://organicindia.com/cdn/shop/files/brown-chana-wip_500x550_crop_center.jpg?v=1713870611',
@@ -402,17 +402,17 @@ export const CookingData = [
         inStock: true,
         mainDec: "Turmeric Powder is a vibrant yellow spice known for its anti-inflammatory properties and distinct flavor, perfect for enhancing a variety of dishes.",
         brand: "Spice World",
-        socialMedia: [
-            { facebook: FaFacebookF },
-            { instagram: FaInstagram },
-            { pinterest: FaPinterestP },
-            { twitter: FaTwitter }
-        ],
-        actions: [
-            { like: FaHeart },
-            { views: FaEye }
-        ],
-        socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+        // socialMedia: [
+        //     { facebook: FaFacebookF },
+        //     { instagram: FaInstagram },
+        //     { pinterest: FaPinterestP },
+        //     { twitter: FaTwitter }
+        // ],
+        // actions: [
+        //     { like: FaHeart },
+        //     { views: FaEye }
+        // ],
+        // socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
         images: [
             {
                 main: 'https://organicindia.com/cdn/shop/products/492579990_Image1_500x550_crop_center.jpg?v=1667894141',
