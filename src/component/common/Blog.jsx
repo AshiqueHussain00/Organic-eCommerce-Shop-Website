@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import LatestNews from './LatestNews';
 import { blogData } from '../../data/common/blogData';
+import { LuSettings2 } from "react-icons/lu";
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Blog = () => {
     const [sortedData, setSortedData] = useState(blogData);
     const [sortOrder, setSortOrder] = useState('Latest');
     const [searchTerm, setSearchTerm] = useState('');
     const [filterVisible, setFilterVisible] = useState(false);
+    const [suggestions, setSuggestions] = useState([]);
+    const [showSuggestions, setShowSuggestions] = useState(false);
 
     // Create category counts from data
     const categories = blogData.reduce((acc, post) => {
@@ -14,62 +18,157 @@ const Blog = () => {
         return acc;
     }, {});
 
-    const tags = ['Healthy', 'Low Fat', 'Vegetarian'];
+    const tags = ['Healthy', 'Low Fat', 'Vegetarian', 'Bread', 'Kid foods', 'Vitamins', 'Snacks', 'Tiffin', 'Meat', 'Lunch', 'Dinner'];
 
-    const handleFilter = tag => {
-        if (tag) {
-            setSortedData(blogData.filter(post => post.tags && post.tags.includes(tag)));
-        } else {
-            setSortedData(blogData);
+    // Combined list of searchable terms (categories and tags)
+    const searchableTerms = [...Object.keys(categories), ...tags];
+
+    // Filter data based on search term, category, and tags
+    const filterData = (data) => {
+        let filteredData = data;
+
+        // Filter by search term (title, category, or tags)
+        if (searchTerm) {
+            const lowerSearch = searchTerm.toLowerCase();
+            filteredData = filteredData.filter(post =>
+                (post.title && post.title.toLowerCase().includes(lowerSearch)) ||
+                (post.category && post.category.toLowerCase().includes(lowerSearch)) ||
+                (post.tags && post.tags.some(tag => tag.toLowerCase().includes(lowerSearch)))
+            );
         }
+
+        return filteredData;
+    };
+
+    const handleFilter = (term) => {
+        setSearchTerm(term);  // Set search term when a suggestion is clicked
     };
 
     useEffect(() => {
+        // Apply filter and sorting when search term or sort order changes
+        let filteredData = filterData(blogData);
+
+        // Sort the filtered data
         if (sortOrder === 'Latest') {
-            setSortedData([...blogData].sort((a, b) => new Date(b.date) - new Date(a.date)));
+            filteredData = filteredData.sort((a, b) => new Date(b.date) - new Date(a.date));
         } else {
-            setSortedData([...blogData].sort((a, b) => new Date(a.date) - new Date(b.date)));
+            filteredData = filteredData.sort((a, b) => new Date(a.date) - new Date(b.date));
         }
-    }, [sortOrder, blogData]);
+
+        setSortedData(filteredData);
+    }, [searchTerm, sortOrder]); // Dependencies include searchTerm and sortOrder
+
+    useEffect(() => {
+        if (searchTerm) {
+            const lowerSearch = searchTerm.toLowerCase();
+            const matchedSuggestions = searchableTerms.filter(term =>
+                term.toLowerCase().includes(lowerSearch)
+            );
+            setSuggestions(matchedSuggestions);
+            setShowSuggestions(true);
+        } else {
+            setSuggestions([]);
+            setShowSuggestions(false);
+        }
+    }, [searchTerm]); // Only recalculate suggestions when searchTerm changes
+
+    const handleSuggestionClick = (suggestion) => {
+        setSearchTerm(suggestion);
+        setShowSuggestions(false);
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
 
     return (
         <div className="flex w-10/12 mx-auto">
             <div className="w-1/4 p-4 bg-gray-100"> {/* Sidebar on the left */}
-                <button onClick={() => setFilterVisible(!filterVisible)} className="mb-4 p-2 bg-blue-500 text-white rounded">Filter</button>
+                <button onClick={() => setFilterVisible(!filterVisible)} className="mb-4 flex items-center font-poppins font-[0.5rem] p-2 bg-primary text-white-200 text-white rounded-full ">
+                    Filter <LuSettings2 className="ml-4" />
+                </button>
                 {filterVisible && (
                     <>
-                        <input type="text" placeholder="Search by name..." onChange={e => setSearchTerm(e.target.value)} className="mb-2 p-2 border rounded w-full" />
-                        <input type="text" placeholder="Search by category..." onChange={e => handleFilter(e.target.value)} className="mb-4 p-2 border rounded w-full" />
+                        <div className="relative">
+                            <input
+                                type="text"
+                                placeholder="Search by title, category, or tag..."
+                                value={searchTerm}
+                                onChange={handleSearchChange}
+                                onFocus={() => searchTerm && setShowSuggestions(true)}
+                                onBlur={() => setTimeout(() => setShowSuggestions(false), 200)} // Delay to allow click
+                                className="mb-2 p-2 border rounded w-full"
+                            />
+                            {showSuggestions && suggestions.length > 0 && (
+                                <ul className="absolute bg-white-400 border border-[rgb(25,209,46)] rounded w-full max-h-40 overflow-y-auto z-10">
+                                    {suggestions.map((suggestion) => (
+                                        <li
+                                            key={suggestion} // Use suggestion as key
+                                            className="p-2 hover:bg-primary hover:text-white-300 cursor-pointer"
+                                            onClick={() => handleSuggestionClick(suggestion)}
+                                        >
+                                            {suggestion}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
                     </>
                 )}
-                <h2 className="font-bold text-lg mb-4">Top Categories</h2>
-                <ul>
-                    {Object.keys(categories).map((category, idx) => (
-                        <li key={idx} className="mb-2 cursor-pointer">{`${category} (${categories[category]})`}</li>
+                
+                <div>
+                    <h2 className="font-bold text-lg mb-4">Top Categories</h2>
+                    {Object.keys(categories).map((category) => (
+                        <ul
+                            key={category} // Key added here
+                            onClick={() => handleFilter(category)}
+                            className='mb-2 flex items-center justify-between rounded p-2 cursor-pointer hover:bg-primary hover:text-white-200'
+                        >
+                            <li className=" ">
+                                {`${category} `}
+                            </li>
+                            <li>
+                                {`(${categories[category]})`}
+                            </li>
+                        </ul>
                     ))}
-                </ul>
+                </div>
                 <h2 className="font-bold text-lg mb-4">Popular Tags</h2>
-                <ul>
-                    {tags.map((tag, idx) => (
-                        <li key={idx} className="mb-2 cursor-pointer" onClick={() => handleFilter(tag)}>{`${tag}`}</li>
+                <div className='flex flex-wrap'>
+                    {tags.map((tag) => (
+                        <span
+                            key={tag} // Use tag name as key
+                            className="mb-2 cursor-pointer border-2 text-black-900 rounded-full ml-2 p-2 font-[0.8rem] font-poppins hover:bg-primary hover:text-white-200"
+                            onClick={() => handleFilter(tag)}
+                        >
+                            {`${tag}`}
+                        </span>
                     ))}
-                </ul>
+                </div>
                 <h2 className="font-bold text-lg mb-4">Our Gallery</h2>
                 <div className="grid grid-cols-2 gap-2 mb-4">
-                    {blogData.slice(0, 8).map((post, idx) => (
-                        <img key={idx} src={post.img} alt="Gallery" className="w-full h-24 object-cover rounded" />
+                    {blogData.slice(0, 8).map((post) => (
+                        <img
+                            key={post.id} // Ensure each post has a unique id
+                            src={post.img}
+                            alt="Gallery"
+                            className="w-full h-24 object-cover rounded"
+                        />
                     ))}
                 </div>
                 <h2 className="font-bold text-lg mb-4">Recently Added</h2>
                 <ul>
-                    {blogData.sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 5).map((post, idx) => (
-                        <li key={idx} className="mb-2 cursor-pointer">{post.title}</li>
-                    ))}
+                    {blogData
+                        .slice()
+                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .slice(0, 5)
+                        .map((post) => (
+                            <li key={post.id} className="mb-2 cursor-pointer">{post.title}</li>
+                        ))}
                 </ul>
             </div>
             <div className="flex-1 p-4"> {/* Content area on the right */}
                 <div className="flex justify-between items-center mb-4">
-                    
                     <div className="sort-dropdown">
                         <label htmlFor="sort-by" className="mr-2 font-semibold">Sort By:</label>
                         <select
@@ -82,7 +181,7 @@ const Blog = () => {
                             <option value="Oldest">Oldest</option>
                         </select>
                     </div>
-                    <h3>{blogData.length} results Found</h3>
+                    <h3>{sortedData.length} results Found</h3>
                 </div>
                 <LatestNews data={sortedData} />
             </div>
