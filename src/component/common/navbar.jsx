@@ -23,6 +23,7 @@ const Navbar = () => {
 
 
   const cartItems = useSelector((state) => state.cart.cart);
+  const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -253,9 +254,15 @@ useEffect(()=> {
               <div className='flex space-x-4'>
                 <Link
                   to='/wishlist'
-                  className='p-2 text-white rounded-full hover:bg-gray-700'
+                  className='p-2 text-white rounded-full hover:bg-gray-700 relative'
                 >
                   <IoHeartOutline size={24} />
+                  {
+                      wishlistItems.length !== 0 ? (  <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                        {wishlistItems.length}
+                  </span>) : ""
+                    }
+
                 </Link>
 
                 
@@ -265,7 +272,7 @@ useEffect(()=> {
                   >
                     <HiOutlineShoppingBag size={24} />
                     {
-                      cartItems.length !== 0 ? (  <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                      cartItems.length !== 0 ? (  <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
                         {cartItems.length}
                   </span>) : ""
                     }
