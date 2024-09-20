@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 // import { toast } from "react-hot-toast";
 import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
+import { addToWishlist } from "../../redux/slice/wishlistSlice";
 
 const ProductCard = ({
     product,
@@ -30,6 +31,16 @@ const ProductCard = ({
         if(product){
             dispatch(addToCart(product));
             dispatch(calculateTotalPrice());
+    
+        }
+
+
+    }
+
+    const handleAddToWishlist = (product)=>{
+    
+        if(product){
+            dispatch(addToWishlist(product));
     
         }
 
@@ -67,9 +78,9 @@ const ProductCard = ({
 
                 {/* ------ wishlist ----- */}
 
-                <Link to="/wishlist" className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                <div onClick={()=> handleAddToWishlist(product)} className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <GoHeart />
-                </Link>
+                </div>
 
                 {/* ------- view ------- */}
 
