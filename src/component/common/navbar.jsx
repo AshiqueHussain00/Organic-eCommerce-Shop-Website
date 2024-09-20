@@ -255,9 +255,12 @@ const Navbar = () => {
                     className='p-2 text-white rounded-full hover:bg-gray-700 relative'
                   >
                     <HiOutlineShoppingBag size={24} />
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
-                          {cartItems.length}
-                    </span>
+                    {
+                      cartItems.length !== 0 ? (  <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                        {cartItems.length}
+                  </span>) : ""
+                    }
+                  
                   </Link>
 
                 
