@@ -37,7 +37,7 @@ const SingleItem = ({ data }) => {
         <div>
             <div className='hidden xs:grid md:hidden xmd:grid grid-cols-6 border py-4 font-normal text-gray-900 text-sm xl:text-[16px]'>
 
-                <div className='flex items-center gap-x-3    col-span-2'>
+                <div className='flex items-center gap-x-3    col-span-2 pl-2'>
                     <div className='xlg:w-[100px] w-[80px] xlg:h-[100px] h-[80px] '>
                         <img src={data.images[0].main} alt={data.name} className='w-full h-full object-contain' />
                     </div>

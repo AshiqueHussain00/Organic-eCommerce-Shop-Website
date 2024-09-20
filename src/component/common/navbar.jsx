@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import { navData } from '../../data/common/navbar-links'
 import {
   FaBars,
@@ -15,7 +16,8 @@ import { allCategoryDropdown } from '../../data/common/navbar-links'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../../assets/common/navbar/logo.svg'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux' 
+import { useLocation } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -23,6 +25,9 @@ const Navbar = () => {
   const cartItems = useSelector((state) => state.cart.cart);
 
   const navigate = useNavigate()
+  const location = useLocation()
+
+
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdownId, setOpenDropdownId] = useState(null) // Track open dropdown
   const [isAllCategoriesOpen, setIsAllCategoriesOpen] = useState(false) // For mobile all categories
@@ -43,12 +48,16 @@ const Navbar = () => {
     setIsAllCategoriesOpen(!isAllCategoriesOpen)
 
   }
-  const handleLinkClick = (path) => {
-    navigate(path)
-    setIsOpen(false) // Close the mobile menu
-    setOpenDropdownId(null) // Close all dropdowns
-    setIsAllCategoriesOpen(false) // Close all categories
-  }
+  
+
+
+
+useEffect(()=> {
+
+  setIsOpen(false);
+  setIsAllCategoriesOpen(false)
+
+},[location.pathname]);
 
   return (
     <section className='relative w-full mx-auto'>
@@ -252,12 +261,15 @@ const Navbar = () => {
                 
                   <Link
                     to='/cart'
-                    className='p-2 text-white rounded-full hover:bg-gray-700 relative'
+                    className='relative p-2 text-white rounded-full hover:bg-gray-700'
                   >
                     <HiOutlineShoppingBag size={24} />
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
-                          {cartItems.length}
-                    </span>
+                    {
+                      cartItems.length !== 0 ? (  <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                        {cartItems.length}
+                  </span>) : ""
+                    }
+                  
                   </Link>
 
                 
@@ -286,10 +298,10 @@ const Navbar = () => {
               {isAllCategoriesOpen && (
                 <div className='pl-4'>
                   {allCategoryDropdown.map((item, index) => (
-                    <Link
+                    <Link to={item.path}
                       key={index}
                       className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                      onClick={() => navigate(`${item.path}`)}
+                    
                     >
                       {item.title}
                     </Link>
@@ -315,7 +327,7 @@ const Navbar = () => {
                               key={dropdownItem.id}
                               to={dropdownItem.path}
                               className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                              onClick={() => handleLinkClick(dropdownItem.path)}
+                              
                             >
                               {dropdownItem.title}
                             </Link>
@@ -327,7 +339,7 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       className='block px-3 py-2 font-medium rounded-md hover:text-white-100 text-black-900 hover:bg-gray-700'
-                      onClick={() => handleLinkClick(item.path)}
+                    
                     >
                       {item.title}
                     </Link>

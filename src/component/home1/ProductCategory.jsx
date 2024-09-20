@@ -10,7 +10,7 @@ const ProductCategory = () => {
             <div className="w-10/12 mx-auto">
             <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
                     <h1 data-aos="fade-right" className="text-[2rem] font-semibold">Popular Categories</h1>
-                    <Link  data-aos="fade-left" className="font-medium text-primary">View All →</Link>
+                    <Link  data-aos="fade-left" className="font-medium text-primary" to="/shop1">View All →</Link>
                 </div>
                 <Category />
 
