@@ -16,17 +16,14 @@ import { allCategoryDropdown } from '../../data/common/navbar-links'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../../assets/common/navbar/logo.svg'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux' 
+import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 
 const Navbar = () => {
-
-
-  const cartItems = useSelector((state) => state.cart.cart);
+  const cartItems = useSelector(state => state.cart.cart)
 
   const navigate = useNavigate()
   const location = useLocation()
-
 
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdownId, setOpenDropdownId] = useState(null) // Track open dropdown
@@ -46,18 +43,12 @@ const Navbar = () => {
 
   const toggleAllCategories = () => {
     setIsAllCategoriesOpen(!isAllCategoriesOpen)
-
   }
-  
 
-
-
-useEffect(()=> {
-
-  setIsOpen(false);
-  setIsAllCategoriesOpen(false)
-
-},[location.pathname]);
+  useEffect(() => {
+    setIsOpen(false)
+    setIsAllCategoriesOpen(false)
+  }, [location.pathname])
 
   return (
     <section className='relative w-full mx-auto'>
@@ -97,7 +88,9 @@ useEffect(()=> {
             <div className='flex items-center justify-between h-16'>
               {/* Logo */}
               <div className='flex items-left'>
-                <img src={Logo} alt='Logo' className='h-10' />
+                <Link to='/home2'>
+                  <img src={Logo} alt='Logo' className='h-10' />
+                </Link>
               </div>
 
               {/* Search Bar */}
@@ -117,6 +110,7 @@ useEffect(()=> {
 
               {/* Customer Service & Phone */}
               <div className='hidden ml-auto space-x-1 xlg:flex items-right'>
+
                 <PiPhoneCallLight className='text-5xl' />
                 <span className='flex flex-col'>
                   <span>Customer Services</span>
@@ -127,7 +121,36 @@ useEffect(()=> {
               </div>
 
               {/* Mobile Menu Button */}
-              <div className='xlg:hidden'>
+              <div className='flex space-x-4 xlg:hidden'>
+               <div className='hidden sm:flex'>
+               <Link
+                  to='/wishlist'
+                  className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+                >
+                  <IoHeartOutline size={24} />
+                </Link>
+
+                <Link
+                  to='/cart'
+                  className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+                >
+                  <HiOutlineShoppingBag size={24} />
+                  {cartItems.length !== 0 ? (
+                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-16 right-[6rem]'>
+                      {cartItems.length}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </Link>
+
+                <Link
+                  to='/profile'
+                  className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+                >
+                  <FaRegUser size={24} />
+                </Link>
+               </div>
                 <button
                   onClick={toggleMenu}
                   aria-label='Toggle menu'
@@ -166,8 +189,8 @@ useEffect(()=> {
                               to={item.path}
                               key={index}
                               className={`cursor-pointer flex gap-x-3 text-gray-500 items-center px-3 transition-all duration-200 hover:text-white-100 group hover:bg-primary ${item.title.toLowerCase() === 'view all category'
-                                ? 'border'
-                                : ''
+                                  ? 'border'
+                                  : ''
                                 }`}
                               onClick={() => navigate(`${item.path}`)}
                             >
@@ -208,14 +231,14 @@ useEffect(()=> {
                         <div className='absolute left-0 z-10 h-0 overflow-hidden transition-all duration-300 top-full group-hover:h-auto'>
                           <div
                             className={`mt-4 bg-white-100 text-black-900 border-2 ${item.title.toLowerCase() === 'blog'
-                              ? 'w-[500px] h-[200px]'
-                              : 'w-[150px] h-auto'
+                                ? 'w-[500px] h-[200px]'
+                                : 'w-[150px] h-auto'
                               }`}
                           >
                             <div
                               className={`${item.title.toLowerCase() === 'blog'
-                                ? 'grid grid-cols-4 gap-1'
-                                : ''
+                                  ? 'grid grid-cols-4 gap-1'
+                                  : ''
                                 }`}
                             >
                               {item.dropdown.map(dropdownItem => (
@@ -258,21 +281,19 @@ useEffect(()=> {
                   <IoHeartOutline size={24} />
                 </Link>
 
-                
-                  <Link
-                    to='/cart'
-                    className='relative p-2 text-white rounded-full hover:bg-gray-700'
-                  >
-                    <HiOutlineShoppingBag size={24} />
-                    {
-                      cartItems.length !== 0 ? (  <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
-                        {cartItems.length}
-                  </span>) : ""
-                    }
-                  
-                  </Link>
-
-                
+                <Link
+                  to='/cart'
+                  className='relative p-2 text-white rounded-full hover:bg-gray-700'
+                >
+                  <HiOutlineShoppingBag size={24} />
+                  {cartItems.length !== 0 ? (
+                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                      {cartItems.length}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </Link>
 
                 <Link
                   to='/profile'
@@ -284,9 +305,39 @@ useEffect(()=> {
             </div>
           </nav>
 
+          {/* Icons */}
+          <div className='flex justify-center space-x-4 sm:hidden'>
+            <Link
+              to='/wishlist'
+              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+            >
+              <IoHeartOutline size={24} />
+            </Link>
+
+            <Link
+              to='/cart'
+              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+            >
+              <HiOutlineShoppingBag size={24} />
+              {cartItems.length !== 0 ? (
+                <span className='relative bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full  -top-10 -right-5'>
+                  {cartItems.length}
+                </span>
+              ) : (
+                ''
+              )}
+            </Link>
+
+            <Link
+              to='/profile'
+              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+            >
+              <FaRegUser size={24} />
+            </Link>
+          </div>
           {/* Mobile Menu */}
           {isOpen && (
-            <div className='px-2 pt-2 pb-3 space-y-1 xlg:hidden'>
+            <div className='absolute inset-0 z-50 px-2 pt-2 pb-3  xlg:hidden top-[10rem] bg-white-100'>
               {/* All Categories for Mobile */}
               <button
                 onClick={toggleAllCategories}
@@ -296,12 +347,12 @@ useEffect(()=> {
                 <FaChevronDown className='ml-auto' />
               </button>
               {isAllCategoriesOpen && (
-                <div className='pl-4'>
+                <div className='pl-4 bg-white-100'>
                   {allCategoryDropdown.map((item, index) => (
-                    <Link to={item.path}
+                    <Link
+                      to={item.path}
                       key={index}
                       className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                    
                     >
                       {item.title}
                     </Link>
@@ -312,22 +363,21 @@ useEffect(()=> {
               {navData.map(item => (
                 <div key={item.id}>
                   {item.dropdown ? (
-                    <div>
+                    <div className=''>
                       <button
                         onClick={() => toggleDropdown(item.id)}
-                        className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
+                        className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
                       >
                         {item.title}
                         <FaChevronDown className='ml-auto' />
                       </button>
                       {openDropdownId === item.id && (
-                        <div className='pl-4'>
+                        <div className='pt-2 pl-4 bg-white-100'>
                           {item.dropdown.map(dropdownItem => (
                             <Link
                               key={dropdownItem.id}
                               to={dropdownItem.path}
                               className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                              
                             >
                               {dropdownItem.title}
                             </Link>
@@ -338,17 +388,13 @@ useEffect(()=> {
                   ) : (
                     <Link
                       to={item.path}
-                      className='block px-3 py-2 font-medium rounded-md hover:text-white-100 text-black-900 hover:bg-gray-700'
-                    
+                      className='block px-3 py-2 font-medium rounded-md hover:text-white-100 text-black-900 hover:bg-gray-700 bg-white-100'
                     >
                       {item.title}
                     </Link>
                   )}
                 </div>
               ))}
-
-
-
             </div>
           )}
         </header>
