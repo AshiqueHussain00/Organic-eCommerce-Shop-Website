@@ -14,7 +14,7 @@ const categories = [
   { value: "Cooking", label: "Cooking" },
   { value: "Snacks", label: "Snacks" },
   { value: "Beverages", label: "Beverages" },
-  { value: "Beauty-health", label: "Beauty & Health" },
+  { value: "Beauty", label: "Beauty & Health" },
   { value: "Bread & Bakery", label: "Bread & Bakery" },
 ];
 
