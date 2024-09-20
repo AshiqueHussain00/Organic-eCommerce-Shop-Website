@@ -48,13 +48,8 @@ const Navbar = () => {
     setIsAllCategoriesOpen(!isAllCategoriesOpen)
 
   }
+  
 
-  // const handleLinkClick = (path) => {
-  //   navigate(path)
-  //   setIsOpen(false) // Close the mobile menu
-  //   setOpenDropdownId(null) // Close all dropdowns
-  //   setIsAllCategoriesOpen(false) // Close all categories
-  // }
 
 
 useEffect(()=> {
@@ -266,7 +261,7 @@ useEffect(()=> {
                 
                   <Link
                     to='/cart'
-                    className='p-2 text-white rounded-full hover:bg-gray-700 relative'
+                    className='relative p-2 text-white rounded-full hover:bg-gray-700'
                   >
                     <HiOutlineShoppingBag size={24} />
                     {
@@ -332,7 +327,7 @@ useEffect(()=> {
                               key={dropdownItem.id}
                               to={dropdownItem.path}
                               className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                            
+                              
                             >
                               {dropdownItem.title}
                             </Link>
@@ -344,7 +339,7 @@ useEffect(()=> {
                     <Link
                       to={item.path}
                       className='block px-3 py-2 font-medium rounded-md hover:text-white-100 text-black-900 hover:bg-gray-700'
-     
+                    
                     >
                       {item.title}
                     </Link>
