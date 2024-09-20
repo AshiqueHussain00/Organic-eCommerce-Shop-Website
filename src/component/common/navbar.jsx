@@ -15,8 +15,13 @@ import { allCategoryDropdown } from '../../data/common/navbar-links'
 import { useNavigate } from 'react-router-dom'
 import Logo from '../../assets/common/navbar/logo.svg'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+
+
+  const cartItems = useSelector((state) => state.cart.cart);
+
   const navigate = useNavigate()
   const [isOpen, setIsOpen] = useState(false)
   const [openDropdownId, setOpenDropdownId] = useState(null) // Track open dropdown
@@ -149,11 +154,11 @@ const Navbar = () => {
                           const IconComponent = item.icon
                           return (
                             <Link
-                            to={item.path}
+                              to={item.path}
                               key={index}
                               className={`cursor-pointer flex gap-x-3 text-gray-500 items-center px-3 transition-all duration-200 hover:text-white-100 group hover:bg-primary ${item.title.toLowerCase() === 'view all category'
-                                  ? 'border'
-                                  : ''
+                                ? 'border'
+                                : ''
                                 }`}
                               onClick={() => navigate(`${item.path}`)}
                             >
@@ -194,14 +199,14 @@ const Navbar = () => {
                         <div className='absolute left-0 z-10 h-0 overflow-hidden transition-all duration-300 top-full group-hover:h-auto'>
                           <div
                             className={`mt-4 bg-white-100 text-black-900 border-2 ${item.title.toLowerCase() === 'blog'
-                                ? 'w-[500px] h-[200px]'
-                                : 'w-[150px] h-auto'
+                              ? 'w-[500px] h-[200px]'
+                              : 'w-[150px] h-auto'
                               }`}
                           >
                             <div
                               className={`${item.title.toLowerCase() === 'blog'
-                                  ? 'grid grid-cols-4 gap-1'
-                                  : ''
+                                ? 'grid grid-cols-4 gap-1'
+                                : ''
                                 }`}
                             >
                               {item.dropdown.map(dropdownItem => (
@@ -243,12 +248,20 @@ const Navbar = () => {
                 >
                   <IoHeartOutline size={24} />
                 </Link>
-                <Link
-                  to='/cart'
-                  className='p-2 text-white rounded-full hover:bg-gray-700'
-                >
-                  <HiOutlineShoppingBag size={24} />
-                </Link>
+
+                
+                  <Link
+                    to='/cart'
+                    className='p-2 text-white rounded-full hover:bg-gray-700 relative'
+                  >
+                    <HiOutlineShoppingBag size={24} />
+                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                          {cartItems.length}
+                    </span>
+                  </Link>
+
+                
+
                 <Link
                   to='/profile'
                   className='p-2 text-white rounded-full hover:bg-gray-700'
