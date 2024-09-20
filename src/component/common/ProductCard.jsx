@@ -4,7 +4,7 @@ import { GoHeart } from "react-icons/go";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-// import { toast } from "react-hot-toast";
+import { toast } from "react-hot-toast";
 import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
 import { addToWishlist } from "../../redux/slice/wishlistSlice";
 
@@ -28,12 +28,15 @@ const ProductCard = ({
 
     const handleAddToCart = (product)=>{
     
-        if(product){
+        if(product.inStock){
             dispatch(addToCart(product));
             dispatch(calculateTotalPrice());
     
+        }else{
+            toast.error("Sorry , Product is Out of Stock")
         }
 
+     
 
     }
 

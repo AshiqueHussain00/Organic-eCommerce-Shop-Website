@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { addToWishlist, removeFromWishlist } from '../../redux/slice/wishlistSlice'
+import SingleWishItem from './SingleWishItem'
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 const WishlistBottom = () => {
 
@@ -17,9 +19,50 @@ const WishlistBottom = () => {
 
       {
         wishlistItems.length !== 0 ? (
-          <div className='border-2 border-green-600'>
+          <div className='border-2 border-green-600 '>
 
-            {/* ----------- heading ---------- */}
+
+            {/* ---------- upper part  ------ */}
+
+            <div className='flex flex-col'>
+
+             {/* ----------- heading ---------- */}
+             <div className='grid grid-cols-5 border sm:text-sm text-[13px] font-semibold xsm:font-normal text-gray-500 text-medium uppercase py-3 rounded-t-md w-full'>
+
+              <div className=' col-span-3 md:col-span-2 border pl-5'>Product</div>
+              <div className='border flex justify-center items-center'>Price</div>
+              <div className='border flex justify-center items-center text-center'>Stock Status</div>
+              <div className='md:flex hidden'>
+
+              </div>
+              </div>
+
+                {/* ------- products ------- */}
+              <div className='flex flex-col w-full '>
+
+                {
+                  wishlistItems.map((item ) => (
+                    <SingleWishItem data={item} key={item.id}/>
+                  ))
+                }
+
+              </div>
+
+
+
+             
+
+
+
+            </div>
+
+            {/* -------- bottom part ------- */}
+
+            <div>
+
+            </div>
+
+     
 
 
 
