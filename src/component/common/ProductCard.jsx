@@ -3,8 +3,12 @@ import { IoEyeOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+// import { toast } from "react-hot-toast";
+import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
 
 const ProductCard = ({
+    product,
     imageSrc,
     productName,
     price,
@@ -17,7 +21,20 @@ const ProductCard = ({
     bestSellerText = 'Best Seller' // Default text for Best Seller
 }) => {
 
-    const [isHover, setIsHover] = useState(false)
+    const [isHover, setIsHover] = useState(false);
+    const dispatch = useDispatch();
+
+
+    const handleAddToCart = (product)=>{
+    
+        if(product){
+            dispatch(addToCart(product));
+            dispatch(calculateTotalPrice());
+    
+        }
+
+
+    }
 
 
     return (
@@ -97,9 +114,9 @@ const ProductCard = ({
                 </div>
 
                 {/* Add to Cart Button */}
-                <div className="p-2 ml-auto">
+                <div className="p-2 ml-auto bg-red ">
                     <button
-                        onClick={onAddToCart}
+                        onClick={()=> handleAddToCart(product)}
                         className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
                     >
                         <PiHandbag className="text-xl" />
