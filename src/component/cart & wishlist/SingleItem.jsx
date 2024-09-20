@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { IoCloseCircleOutline } from "react-icons/io5";
-import { MdDeleteOutline } from "react-icons/md";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { removeFromCart, increaseQuantity, decreaseQuantity, calculateTotalPrice } from '../../redux/slice/cartSlice';
 
 
