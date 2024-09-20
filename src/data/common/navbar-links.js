@@ -64,7 +64,29 @@ export const navData = [
   {
     id: 4,
     title: 'Blog',
-    path:'/Blog',
+    path:'/Blog'
+    // dropdown: [
+    //   {
+    //     id: 51,
+    //     path: '',
+    //     image: agro1 // Use the imported image variable
+    //   },
+    //   {
+    //     id: 52,
+    //    path: '',
+    //     image: agro2 // Use the imported image variable
+    //   },
+    //   {
+    //     id: 53,
+    //    path: '',
+    //     image: agro3 // Use the imported image variable
+    //   },
+    //   {
+    //     id: 54,
+    //    path: '',
+    //     image: agro5 // Use the imported image variable
+    //   }
+    // ]
   },
   {
     id: 5,
