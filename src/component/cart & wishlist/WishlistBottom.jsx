@@ -27,11 +27,11 @@ const WishlistBottom = () => {
             <div className='flex flex-col'>
 
              {/* ----------- heading ---------- */}
-             <div className='grid grid-cols-5 border xsm:text-sm text-[13px] font-semibold xsm:font-normal text-gray-500 text-medium uppercase py-3 rounded-t-md w-full'>
+             <div className='grid grid-cols-5 border sm:text-sm text-[13px] font-semibold xsm:font-normal text-gray-500 text-medium uppercase py-3 rounded-t-md w-full'>
 
-              <div className=' col-span-3md:col-span-2 border pl-5'>Product</div>
+              <div className=' col-span-3 md:col-span-2 border pl-5'>Product</div>
               <div className='border flex justify-center items-center'>Price</div>
-              <div className='border flex justify-center items-center'>Stock Status</div>
+              <div className='border flex justify-center items-center text-center'>Stock Status</div>
               <div className='md:flex hidden'>
 
               </div>
