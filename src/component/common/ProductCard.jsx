@@ -4,8 +4,8 @@ import { GoHeart } from "react-icons/go";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toast } from "react-hot-toast";
-import { addToCart } from "../../redux/slice/cartSlice";
+// import { toast } from "react-hot-toast";
+import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
 
 const ProductCard = ({
     product,
@@ -28,10 +28,9 @@ const ProductCard = ({
     const handleAddToCart = (product)=>{
     
         if(product){
-
-            console.log(product)
             dispatch(addToCart(product));
-            toast.success("Added to Cart!");
+            dispatch(calculateTotalPrice());
+    
         }
 
 

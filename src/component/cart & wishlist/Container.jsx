@@ -15,7 +15,7 @@ const Container = ({isCart = true}) => {
 
               {/* ------------ heading ----------- */}
               <div className='flex items-center justify-center '>
-                <h1 className='text-[32px] font-semibold text-gray-900 leading-9 tracking-wide'>{isCart ? "My Shopping Cart" : "My Wishlist"}</h1>
+                <h1 className='text-[32px] font-semibold text-gray-900 leading-9 tracking-wide text-center'>{isCart ? "My Shopping Cart" : "My Wishlist"}</h1>
               </div>
 
               {/* -------------- bottom part ---------- */}
