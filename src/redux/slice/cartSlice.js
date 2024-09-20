@@ -46,7 +46,7 @@ const cartSlice = createSlice({
             const productId = action.payload;
           
             const itemToRemove = state.cart.find(item => item.id === productId);
-            // console.log("Item remove: " , itemToRemove);
+         
 
             if(itemToRemove){
                 // state.totalQuantity = state.totalQuantity - itemToRemove.quantity;
@@ -90,17 +90,7 @@ const cartSlice = createSlice({
             }
 
         },
-        
-    //   resetCart : (state) => {
 
-    //     state.cart = [];
-    //     state.totalItems = 0;
-    //     state.totalPrice = 0;
-
-    //     localStorage.removeItem("cart");
-    //     localStorage.removeItem("totalItems");
-    //     localStorage.removeItem("totalPrice");
-    //   },
 
         calculateTotalPrice : (state)=>{
                 

@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { MdDeleteOutline } from "react-icons/md";
 import { useDispatch, useSelector } from 'react-redux';
-import { removeFromCart , increaseQuantity , decreaseQuantity , calculateTotalPrice } from '../../redux/slice/cartSlice';
+import { removeFromCart, increaseQuantity, decreaseQuantity, calculateTotalPrice } from '../../redux/slice/cartSlice';
 
 
 const SingleItem = ({ data }) => {
@@ -10,21 +11,21 @@ const SingleItem = ({ data }) => {
     const dispatch = useDispatch();
 
     const handleIncremenet = (id) => {
-        if(id){
-           dispatch(increaseQuantity(id))
+        if (id) {
+            dispatch(increaseQuantity(id))
         }
 
     }
     const handleDecremenet = (id) => {
 
-        if(id) {
+        if (id) {
             dispatch(decreaseQuantity(id));
         }
 
     }
     const handleDelete = (id) => {
 
-        if(id){
+        if (id) {
             dispatch(removeFromCart(id));
             dispatch(calculateTotalPrice());
         }
@@ -64,7 +65,7 @@ const SingleItem = ({ data }) => {
 
                 <div className=' flex items-center justify-center'>
                     $ {data.totalPrice.toFixed(2)}
-                    
+
                 </div>
 
                 <div
@@ -79,15 +80,20 @@ const SingleItem = ({ data }) => {
 
             <div className='xmd:hidden xs:hidden grid md:grid grid-cols-4 border- xsm:text-[16px] text-sm border'>
 
-                <div className=' col-span-3 py-4 flex items-center gap-x-5'>
+                <div className=' col-span-3 py-6 flex items-center gap-x-5'>
 
-                    <div className='xsm:w-[100px] w-[80px]'>
+                    <div className='xsm:w-[100px] w-[80px] relative pl-3'>
                         <img src={data.images[0].main} alt={data.name} className='w-full h-full object-contain' />
+                        <div
+                            onClick={() => handleDelete(data.id)}
+                            className=' text-xl xs:text-2xl xlg:text-[28px]  flex items-center  cursor-pointer absolute top-[-20px] left-2 '>
+                            <IoCloseCircleOutline className='text-gray-700 transition-all duration-300 hover:text-gray-400' />
+                        </div>
                     </div>
 
                     <div className='flex flex-col gap-y-3'>
 
-                    <p className='tracking-wide'>{data.name}</p>
+                        <p className='tracking-wide'>{data.name}</p>
                         <p className=''>Price: <span className='text-[16px]'>$ {data.price.discounted}</span></p>
 
                         <div className='flex  items-center  gap-x-1 '>
@@ -103,6 +109,7 @@ const SingleItem = ({ data }) => {
                             </div>
 
                         </div>
+                       
 
                     </div>
 
@@ -110,7 +117,7 @@ const SingleItem = ({ data }) => {
 
                 <div className=' flex items-center justify-center'>
                     $ {data.totalPrice.toFixed(2)}
-                
+
                 </div>
 
 
