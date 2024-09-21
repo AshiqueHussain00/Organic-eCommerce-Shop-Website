@@ -9,6 +9,7 @@ import ProductDetailsDescription from './component/common/ProductDetailsDescript
 
 import Loader from './component/common/Loader';
 import SidebarToggle from './component/common/SidebarToggle';
+import CheckoutPage from './component/common/CheckoutPage';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -66,6 +67,7 @@ const App = () => {
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
       <SidebarToggle/>
+      <CheckoutPage/>
       
       {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
       <Suspense fallback={<Loader/>}>
