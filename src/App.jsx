@@ -8,6 +8,7 @@ import ProductDetailsDescription from './component/common/ProductDetailsDescript
 
 
 import Loader from './component/common/Loader';
+import SidebarToggle from './component/common/SidebarToggle';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -51,19 +52,21 @@ const App = () => {
 
   AOS.refresh();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const goToProductDetails = () => {
+  // const goToProductDetails = () => {
     
     
-    const id = 'v3'; 
-    const category = 'vegetable'
+  //   const id = 'v3'; 
+  //   const category = 'vegetable'
 
-    navigate(`/Category/${category}/${id}`);
-  };
+  //   navigate(`/Category/${category}/${id}`);
+  // };
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
+      <SidebarToggle/>
+      
       {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
       <Suspense fallback={<Loader/>}>
         <Routes>
