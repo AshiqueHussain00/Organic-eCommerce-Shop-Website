@@ -2,102 +2,16 @@ import React from 'react'
 import Veg from '../../assets/common/categories/Vege.svg'
 import SmallProductCard from './SmallProductCard';
 import { FaArrowRight } from "react-icons/fa6";
+import {allproductData} from '../../data/common/allproductData'
 
-
-
-const products = [
-    {
-
-        image: Veg,
-        productName: 'Green Apple',
-        price: '14.99',
-        oldPrice: '29.99',
-        rating: 1,
-        isSale: true,
-
-    },
-    {
-        image: Veg,
-        productName: 'Banana',
-        rating: 4,
-        price: '9.99',
-        isBestSeller: true,
-        isSale: false,
-
-    },
-    {
-        image: Veg,
-        productName: 'Orange',
-        price: '7.99',
-        rating: 4,
-        isSale: true,
-
-    },
-    {
-        image: Veg,
-        productName: 'Mango',
-        price: '19.99',
-        rating: 5,
-        isBestSeller: false,
-        isSale: true,
-
-
-    },
-    {
-        image: Veg,
-        productName: 'Mango',
-        price: '19.99',
-        rating: 5,
-        isBestSeller: false,
-        isSale: false,
-
-    },
-    {
-        image: Veg,
-        productName: 'Mango',
-        price: '19.99',
-        rating: 2,
-        isBestSeller: false,
-        isSale: false,
-
-    },
-    {
-        image: Veg,
-        productName: 'Mango',
-        price: '19.99',
-        rating: 4,
-        isBestSeller: false,
-        isSale: false,
-
-    },
-    {
-        image: Veg,
-        productName: 'Papaya',
-        price: '19.99',
-        rating: 3,
-        isBestSeller: true,
-        isSale: false,
-
-    },
-
-    {
-        image: Veg,
-        productName: 'Brinjal',
-        price: '19.99',
-        rating: 5,
-        isBestSeller: true,
-        isSale: true,
-
-    },
-];
 
 
 
 const ShowProduct = ({ isHotSale = true }) => {
 
-    const hotDealData = products.filter(product => product.isSale === true);
-    const bestSellerData = products.filter(product => product.isBestSeller === true);
-    const topRatedProduct = products.filter(product => product.rating >= 4);
+    const hotDealData = allproductData.filter(product => product.price.discounted < 20);
+    const bestSellerData = allproductData.filter(product => product.reviews > 5);
+    const topRatedProduct = allproductData.filter(product => product.rating >= 4);
 
 
 

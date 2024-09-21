@@ -4089,4 +4089,4 @@ const allproductData = [
         promotions: { discount: '7% Discount', organic: '30% Organic' }
     }
 ]
-export default allproductData
+export default allproductData;

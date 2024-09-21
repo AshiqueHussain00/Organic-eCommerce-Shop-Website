@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import ProductCard from '../common/ProductCard'
 import { useNavigate } from 'react-router-dom'
 import './home4Common.css'
+// import {allProductData} from '../../data/common/'
 
 const productData = [
     {
@@ -182,7 +183,7 @@ const productData = [
     },
 ]
 
-const categories = ["All", "Vegetable", "Fruit", "Meat & Fish"]
+const categories = ["All", "Vegetables", "Fruits", "Snacks"]
 
 const ProductSection = () => {
 
@@ -193,7 +194,7 @@ const ProductSection = () => {
     useEffect(() => {
 
         if (selectedCategory === "view all") {
-            navigate("/shop")
+            navigate("/shop1")
         }
 
     }, [selectedCategory])
@@ -225,7 +226,7 @@ const ProductSection = () => {
                         ))
                     }
 
-                    <div onClick={() => navigate("/shop")} className={` grid place-items-center px-2 cursor-pointer text-gray-500 leading-8 transition-all duration-200 hover:text-primary
+                    <div onClick={() => navigate("/shop1")} className={` grid place-items-center px-2 cursor-pointer text-gray-500 leading-8 transition-all duration-200 hover:text-primary
                         }
                 `}>
                         View All
@@ -237,7 +238,7 @@ const ProductSection = () => {
 
                 {/* -------------- products ----------- */}
 
-                <div  data-aos="fade-up" className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xs:gap-1 gap-2 xlg:grid-cols-4  w-[95%] xxs:w-[80%] xs:w-full'>
+                <div data-aos="fade-up" className='grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xs:gap-1 gap-2 xlg:grid-cols-4  w-[95%] xxs:w-[80%] xs:w-full'>
 
                     {
                         selectedCategory === "all" ?
