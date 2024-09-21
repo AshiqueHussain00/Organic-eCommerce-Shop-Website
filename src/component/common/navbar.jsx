@@ -350,7 +350,7 @@ const Navbar = () => {
               {/* All Categories for Mobile */}
               <button
                 onClick={toggleAllCategories}
-                className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100'
+                className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100'
               >
                 All Categories
                 <FaChevronDown className='ml-auto' />
