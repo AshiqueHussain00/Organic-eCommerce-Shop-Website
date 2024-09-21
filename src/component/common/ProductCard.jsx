@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
 import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
 import { addToWishlist } from "../../redux/slice/wishlistSlice";
+import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({
     product,
@@ -24,6 +25,7 @@ const ProductCard = ({
 
     const [isHover, setIsHover] = useState(false);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
 
     const handleAddToCart = (product)=>{
@@ -50,15 +52,21 @@ const ProductCard = ({
 
     }
 
+    const handlePageDescription = (category , product) => {
+          navigate(`/product/${category}/${id}`);
+
+    }
+
 
     return (
         <div
+           onClick={()=> handlePageDescription(product.category , product.id)}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
             className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
             {/* Sale and Best Seller Tags */}
           
-            <div className="absolute flex space-x-2 top-2 left-2">
+            <div className="absolute flex space-x-2 top-2 left-2" >
                 {isSale && (
                     <div className="px-2 py-1 text-sm font-semibold bg-blue-600 rounded text-white-100">
                         {saleText}
