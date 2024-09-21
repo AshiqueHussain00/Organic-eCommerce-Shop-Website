@@ -12,6 +12,8 @@ import BreadCrumbs from './BreadCrumbs';
 function ProductDetailsDescription() {
 
 
+    const {id} = useParams();
+
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
 
