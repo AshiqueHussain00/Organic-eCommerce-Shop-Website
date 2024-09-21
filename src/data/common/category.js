@@ -17,84 +17,84 @@ export const categories = [
         id : 1,
         title : "Fresh Fruit",
         image : fruit,
-        path : '/categories/fruits'
+        path : '/shop1'
 
      },
      {
         id: 2,
         title : "Fresh Vegetables",
         image : vegetable,
-        path : '/categories/fruits'
+        path : '/shop2'
 
      },
      {
         id: 3,
         title : "Meat & Fish",
         image : meatFish,
-        path : '/categories/meat&fissh'
+        path : '/shop1'
 
      },
      {
         id: 4,
         title : "Snacks",
         image : snacks,
-        path : '/categories/snack'
+        path : '/shop2'
 
      },
      {
         id: 5,
         title : "Beverages",
         image : beverage,
-        path : '/categories/beverages'
+        path : '/shop1'
 
      },
      {
         id: 6,
         title : "Beauty & Health",
         image : beautyHealth,
-        path : '/categories/beauty&health'
+        path : '/shop2'
 
      },
      {
         id: 7,
         title : "Bread & Bakery",
         image : breadBakery,
-        path : '/categories/bread&bakery'
+        path : '/shop1'
 
      },
      {
         id: 8,
         title : "Baking Needs",
         image : bakingNeeds,
-        path : '/categories/baking-needs'
+        path : '/shop2'
 
      },
      {
         id: 9,
         title : "Cooking",
         image : cooking,
-        path : '/categories/cooking'
+        path : '/shop1'
 
      },
      {
         id: 10,
         title : "Diabetic Food",
         image : diabeticFood,
-        path : '/categories/diabetic-food'
+        path : '/shop1'
 
      },
      {
         id: 11,
         title : "Dish Detergent",
         image : dishDetergent,
-        path : '/categories/dish-detergent'
+        path : '/shop1'
 
      },
      {
         id: 12,
         title : "Oil",
         image : oil,
-        path : '/categories/oil'
+        path : '/shop2'
 
      },
 
