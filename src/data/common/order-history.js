@@ -1,6 +1,6 @@
 
 
-const orderHistory = [
+export const orderHistory = [
 
     {
         id: "1",
