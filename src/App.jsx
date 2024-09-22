@@ -69,7 +69,7 @@ const App = () => {
       <Navbar />
       {/* <SidebarToggle/> */}
       {/* <CheckoutPage/> */}
-      <OrderHistory/>
+      {/* <OrderHistory/> */}
       
       {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
       <Suspense fallback={<Loader/>}>
