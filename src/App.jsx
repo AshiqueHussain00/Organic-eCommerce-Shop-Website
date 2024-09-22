@@ -66,8 +66,8 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      <SidebarToggle/>
-      <CheckoutPage/>
+      {/* <SidebarToggle/>
+      <CheckoutPage/> */}
       
       {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
       <Suspense fallback={<Loader/>}>
@@ -78,7 +78,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          <Route path='/product/:category/:id' element={<ProductDetailsDescription/>}/>
+          <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
 
           {/* ------------- Shop ------------- */} 
           <Route path='/shop1' element={<Shop1 />} />  
