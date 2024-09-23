@@ -9,7 +9,7 @@ import ProductDetailsDescription from './component/common/ProductDetailsDescript
 
 import Loader from './component/common/Loader';
 
-import OrderHistory from './component/common/OrderHistory';
+// import OrderHistory from './component/common/OrderHistory';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));

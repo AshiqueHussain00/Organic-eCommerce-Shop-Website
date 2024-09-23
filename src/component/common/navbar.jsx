@@ -277,7 +277,7 @@ const Navbar = () => {
               <div className='flex space-x-4'>
                 <Link
                   to='/wishlist'
-                  className='p-2 text-white rounded-full hover:bg-gray-700 relative'
+                  className='relative p-2 text-white rounded-full hover:bg-gray-700'
                 >
                   <IoHeartOutline size={24} />
                   {wishlistItems.length !== 0 ? (
