@@ -88,8 +88,10 @@ const ProductDetails = () => {
                             animate="visible"
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             variants={cardAnimation}
+
                         >
                             <ProductCard
+                               productId={product.id}
                                 imageSrc={product.images[0].main}
                                 productName={product.name}
                                 price={product.price.discounted}
@@ -99,6 +101,8 @@ const ProductDetails = () => {
                                 isSale={product.promotions?.discount ? true : false}
                                 saleText={product.promotions?.discount}
                                 bestSellerText={product.promotions?.bestSellerText}
+                                productCategory={product.category}
+
                             />
                         </motion.div>
                     ))}

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { CookingData as vegetableData } from '../../data/common/CookingData';
-// import {BreadData as vegetableData} from '../../data/common/Bread&BakeryData'
-// import { vegetableData } from '../../data/common/vegetable-data'
+import allproductData from '../../data/common/allproductData';
 import { useParams } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from "react-icons/hi2";
@@ -12,16 +11,22 @@ import BreadCrumbs from './BreadCrumbs';
 function ProductDetailsDescription() {
 
 
-    const {id} = useParams();
+    const {productCategory , productId} = useParams();
+    {console.log(productId);}
 
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const product = allproductData.find((item) => item.id === productId);
+    
+    
 
     // Function to handle product selection
-    const handleProductSelect = (productId) => {
-        const product = vegetableData.find((item) => item.id === productId);
-        setSelectedProduct(product);
-    };
+    useEffect(()=>{
+       if(product){
+           setSelectedProduct(product);
+       }
+    },[product])
+    
 
     // Function to handle image change on thumbnail click
     const handleImageChange = (imageSrc) => {
@@ -48,31 +53,35 @@ function ProductDetailsDescription() {
     };
 
     // If no product is selected, show the list of products
+    // if (!selectedProduct) {
+    //     return (
+    //         <div className="grid grid-cols-1 gap-6 p-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
+    //             {vegetableData.map((product) => (
+    //                 <div
+    //                     key={product.id}
+    //                     className="p-4 bg-white  border rounded-lg shadow hover:cursor-pointer"
+    //                     onClick={() => handleProductSelect(product.id)}
+    //                 >
+    //                     <div className='w-full h-48 mb-4 '>
+    //                         <img
+    //                             src={product.images[0].main}
+    //                             alt={product.name}
+    //                             className=" w-full h-full object-contain  rounded-lg"
+    //                         />
+
+    //                     </div>
+
+    //                     <h2 className="text-xl font-bold">{product.name}</h2>
+    //                     <p className="text-gray-600">{product.mainDec}</p>
+    //                 </div>
+    //             ))}
+    //         </div>
+    //     );
+    // }
+
     if (!selectedProduct) {
-        return (
-            <div className="grid grid-cols-1 gap-6 p-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
-                {vegetableData.map((product) => (
-                    <div
-                        key={product.id}
-                        className="p-4 bg-white  border rounded-lg shadow hover:cursor-pointer"
-                        onClick={() => handleProductSelect(product.id)}
-                    >
-                        <div className='w-full h-48 mb-4 '>
-                            <img
-                                src={product.images[0].main}
-                                alt={product.name}
-                                className=" w-full h-full object-contain  rounded-lg"
-                            />
-
-                        </div>
-
-                        <h2 className="text-xl font-bold">{product.name}</h2>
-                        <p className="text-gray-600">{product.mainDec}</p>
-                    </div>
-                ))}
-            </div>
-        );
-    }
+        return <h2>Product not found</h2>;
+      }
 
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
