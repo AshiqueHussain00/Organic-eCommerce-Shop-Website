@@ -58,11 +58,7 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      {/* <SidebarToggle/> */}
-      {/* <CheckoutPage/> */}
-      {/* <OrderHistory/> */}
-      
-      {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
+  
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
