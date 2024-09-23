@@ -141,27 +141,34 @@ const Navbar = () => {
 
               {/* Mobile Menu Button */}
               <div className='flex space-x-4 xlg:hidden'>
-                <div className='hidden sm:flex'>
-                  <Link
-                    to='/wishlist'
-                    className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
-                  >
-                    <IoHeartOutline size={24} />
-                  </Link>
+               <div className='hidden sm:flex'>
+               <Link
+                  to='/wishlist'
+                  className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
+                >
+                  <IoHeartOutline size={24} />
+                  {wishlistItems.length !== 0 ? (
+                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                      {wishlistItems.length}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </Link>
 
-                  <Link
-                    to='/cart'
-                    className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
-                  >
-                    <HiOutlineShoppingBag size={24} />
-                    {cartItems.length !== 0 ? (
-                      <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-16 right-[6rem]'>
-                        {cartItems.length}
-                      </span>
-                    ) : (
-                      ''
-                    )}
-                  </Link>
+                <Link
+                  to='/cart'
+                  className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
+                >
+                  <HiOutlineShoppingBag size={24} />
+                  {cartItems.length !== 0 ? (
+                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                      {cartItems.length}
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                </Link>
 
                   <Link
                     to='/profile'
@@ -315,7 +322,7 @@ const Navbar = () => {
 
                 <Link
                   to='/cart'
-                  className='relative p-2 text-white rounded-full hover:bg-gray-700'
+                  className='relative p-2 text-white rounded-full hover:bg-gray-700 '
                 >
                   <HiOutlineShoppingBag size={24} />
                   {cartItems.length !== 0 ? (
@@ -341,18 +348,25 @@ const Navbar = () => {
           <div className='flex justify-center space-x-4 sm:hidden'>
             <Link
               to='/wishlist'
-              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
             >
               <IoHeartOutline size={24} />
+              {wishlistItems.length !== 0 ? (
+                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                      {wishlistItems.length}
+                    </span>
+                  ) : (
+                    ''
+                  )}
             </Link>
 
             <Link
               to='/cart'
-              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
             >
               <HiOutlineShoppingBag size={24} />
               {cartItems.length !== 0 ? (
-                <span className='relative bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full  -top-10 -right-5'>
+                <span className='relative bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full  top-[-35px] right-[-10px]'>
                   {cartItems.length}
                 </span>
               ) : (

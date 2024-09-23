@@ -118,6 +118,7 @@
 import React, { useRef, useEffect } from "react";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 import { TopCategoryData } from "../../data/common/TopCategoryData";
+import { Link } from "react-router-dom";
 
 function TopCategory() {
   const ScrollableContainer = ({ children, isLoading }) => {
@@ -222,9 +223,10 @@ function TopCategory() {
           </h1>
         </div>
         <ScrollableContainer>
-          <ul className=" flex items-center justify-center gap-5 p-2">
+          <div className=" flex items-center justify-center gap-5 p-2">
             {TopCategoryData.map((item) => (
-              <li
+              <Link
+              to={"/shop1"}
                 key={item.id}
                 className="flex flex-col items-center justify-center px-2 sm:px-4 py-2 border-2 border-gray-200 
                 w-[160px] h-[170px]  md:w-[170px] md:h-[180px] lg:w-[190px] lg:h-[200px] hover:border-2 hover:border-green-600 hover:shadow-[2px_5px_8px_10px_rgba(0,_178,_7,_0.1)] transition-all duration-300 cursor-pointer"
@@ -244,9 +246,9 @@ function TopCategory() {
                     {item.description}
                   </p>
                 </div>
-              </li>
+              </Link>
             ))}
-          </ul>
+          </div>
         </ScrollableContainer>
       </div>
     </section>

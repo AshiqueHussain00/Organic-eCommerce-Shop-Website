@@ -3,7 +3,9 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+
 import ProductDetailsDescription from './component/common/ProductDetailsDescription';
 
 
@@ -24,23 +26,39 @@ const Shop1 = lazy(() => import('./pages/homepages/Shop1'));
 const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
 
 // blog
-const Blog = lazy(() => import('./component/common/Blog'))
-const SingleBlog = lazy(() => import('./component/common/SingleBlog'))
+const Blog=lazy(()=>import('./component/common/Blog'))
+const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
+
 
 //About 
 const About = lazy(() => import('./pages/About/About'))
+
 
 //Cart & Wishlist
 const Cart = lazy(() => import('./pages/Cart'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
 
 
+
 //Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
+const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
 
 
 
 const App = () => {
+
+  const location = useLocation();
+
+  
+  useEffect(()=> {
+    
+    window.scrollTo({
+      top: 10,
+    
+  });
+
+  }, [location.pathname])
 
   useEffect(() => {
     // Initialize AOS animations
@@ -89,6 +107,8 @@ const App = () => {
           <Route path='/contact-us' element={<ContactForm />} />
         </Routes>
       </Suspense>
+
+      <ScrollTop/>
     </div>
   );
 };

@@ -10,20 +10,20 @@ import { Link } from "react-router-dom"
 import allproductData from '../../data/common/allproductData';
 
 function FeaturedProducts() {
-  
+
     const handleAddToCart = () => {
         console.log("Add to Cart clicked");
     };
 
 
-    const ids = ['f1' , 'v2' , 'v4' , 'v5' , 'f13'];
-    
-    const products = (ids) =>{
-        return  allproductData.filter((product) => ids.includes(product.id));
+    const ids = ['f1', 'v2', 'v4', 'v5', 'f13'];
+
+    const products = (ids) => {
+        return allproductData.filter((product) => ids.includes(product.id));
     }
     const selectedProducts = products(ids);
-    
- 
+
+
 
 
 
@@ -39,7 +39,7 @@ function FeaturedProducts() {
                     <h1 className="text-[1.8rem] md:text-[2rem] font-semibold text-center">Featured Products</h1>
 
                 </div>
-                <div data-aos = "fade-left" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
+                <div data-aos="fade-left" className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
 
 
                     {/* Adjusted Product Cards Layout */}
@@ -53,18 +53,19 @@ function FeaturedProducts() {
                             variants={cardAnimation}
                         >
                             <ProductCard
-                               productId={product.id}
-                imageSrc={product.images[0].main} // Assuming product has images array
-                productName={product.name}
-                price={product.price.discounted}
-                oldPrice={product.price.original}
-                rating={product.rating}
-                onAddToCart={() => handleAddToCart(product.name)}
-                isSale={product.promotions?.discount ? true : false}
-                isBestSeller={product.promotions?.bestSellerText ? true : false}
-                saleText={product.promotions?.discount}
-                bestSellerText={product.promotions?.bestSellerText}
-                productCategory={product.category}
+                            product={product}
+                                productId={product.id}
+                                imageSrc={product.images[0].main} // Assuming product has images array
+                                productName={product.name}
+                                price={product.price.discounted}
+                                oldPrice={product.price.original}
+                                rating={product.rating}
+                                onAddToCart={() => handleAddToCart(product.name)}
+                                isSale={product.promotions?.discount ? true : false}
+                                isBestSeller={product.promotions?.bestSellerText ? true : false}
+                                saleText={product.promotions?.discount}
+                                bestSellerText={product.promotions?.bestSellerText}
+                                productCategory={product.category}
                             />
                         </motion.div>
                     ))}

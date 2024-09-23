@@ -28,7 +28,7 @@ const CartBottom = () => {
       {cartItems.length !== 0 ? (
         <div className='flex flex-col md:flex-row gap-y-6 md:justify-between'>
           {/* --------- left --------------- */}
-          <div className='xxl:w-[67%] md:w-[65%] flex flex-col gap-y-8'>
+          <div data-aos="fade-right" className='xxl:w-[67%] md:w-[65%] flex flex-col gap-y-8'>
             {/* ---------- upper ---------- */}
 
             <div>
@@ -100,7 +100,7 @@ const CartBottom = () => {
 
           {/* ---------- right --------------- */}
 
-          <div className='xxl:w-[30%] md:w-[33%]  flex flex-col'>
+          <div data-aos="fade-left" className='xxl:w-[30%] md:w-[33%]  flex flex-col'>
             {/* -------- cart total card ---------- */}
             <div className='flex flex-col w-full px-4 py-6 border rounded-md gap-y-3 h-max'>
               <h2 className='mb-3 text-xl font-semibold leading-7 text-gray-900'>
@@ -137,7 +137,7 @@ const CartBottom = () => {
         </div>
       ) : (
         <div className=' h-[300px] grid place-items-center'>
-          <div className='flex flex-col items-center gap-y-4'>
+          <div data-aos="fade-up" className='flex flex-col items-center gap-y-4 b'>
             <p className='text-2xl tracking-wider text-center text-gray-500 '>
               Your Cart is Empty !
             </p>

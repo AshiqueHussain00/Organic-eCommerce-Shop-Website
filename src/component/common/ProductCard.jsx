@@ -56,6 +56,7 @@ const ProductCard = ({
     const handleAddToWishlist = (product , events)=>{
     
         events.stopPropagation()
+        
         if(product){
             dispatch(addToWishlist(product));
     
