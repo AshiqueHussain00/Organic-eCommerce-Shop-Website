@@ -40,6 +40,7 @@ const PopularProducts = () => {
                             variants={cardAnimation}
                         >
                             <ProductCard
+                            product={product}
                                 productId = {product.id}
                                 imageSrc={product.images[0].main}
                                 productName={product.name}

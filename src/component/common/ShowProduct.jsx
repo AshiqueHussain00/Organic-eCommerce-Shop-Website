@@ -2,7 +2,7 @@ import React from 'react'
 import Veg from '../../assets/common/categories/Vege.svg'
 import SmallProductCard from './SmallProductCard';
 import { FaArrowRight } from "react-icons/fa6";
-import {allproductData} from '../../data/common/allproductData'
+import allproductData from '../../data/common/allproductData'
 
 
 
@@ -12,6 +12,9 @@ const ShowProduct = ({ isHotSale = true }) => {
     const hotDealData = allproductData.filter(product => product.price.discounted < 20);
     const bestSellerData = allproductData.filter(product => product.reviews > 5);
     const topRatedProduct = allproductData.filter(product => product.rating >= 4);
+
+    console.log("Hello")
+    console.log("Hot : " , hotDealData);
 
 
 

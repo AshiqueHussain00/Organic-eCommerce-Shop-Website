@@ -28,16 +28,22 @@ const ProductCard = ({
 
 }) => {
 
+
+   
     const [isHover, setIsHover] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
 
-    const handleAddToCart = (product)=>{
+    const handleAddToCart = (product , events)=>{
+
+        events.stopPropagation();
+
     
         if(product.inStock){
             dispatch(addToCart(product));
             dispatch(calculateTotalPrice());
+          
     
         }else{
             toast.error("Sorry , Product is Out of Stock")
@@ -47,8 +53,9 @@ const ProductCard = ({
 
     }
 
-    const handleAddToWishlist = (product)=>{
+    const handleAddToWishlist = (product , events)=>{
     
+        events.stopPropagation()
         if(product){
             dispatch(addToWishlist(product));
     
@@ -65,7 +72,7 @@ const ProductCard = ({
 
     return (
         <div
-           onClick={()=> handlePageDescription(productCategory , productId)}
+           onClick={(events)=> {handlePageDescription(productCategory , productId)}}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
             className="relative flex flex-col transition duration-200 bg-white cursor-pointer border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
@@ -97,7 +104,7 @@ const ProductCard = ({
 
                 {/* ------ wishlist ----- */}
 
-                <div onClick={()=> handleAddToWishlist(product)} className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                <div onClick={(events)=> handleAddToWishlist(product , events)} className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <GoHeart />
                 </div>
 
@@ -146,7 +153,7 @@ const ProductCard = ({
                 {/* Add to Cart Button */}
                 <div className="p-2 ml-auto bg-red ">
                     <button
-                        onClick={()=> handleAddToCart(product)}
+                        onClick={(events)=> {handleAddToCart(product , events)}}
                         className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
                     >
                         <PiHandbag className="text-xl" />

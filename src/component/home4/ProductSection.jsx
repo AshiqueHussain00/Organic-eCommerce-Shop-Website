@@ -4,184 +4,10 @@ import { useState, useEffect } from 'react'
 import ProductCard from '../common/ProductCard'
 import { useNavigate } from 'react-router-dom'
 import './home4Common.css'
-// import {allProductData} from '../../data/common/'
+import allproductData from '../../data/common/allproductData'
 
-const productData = [
-    {
-        id: 1,
-        category: "Vegetable",
-        products: [
-            {
-                id: 101,
-                imageSrc: Veg,
-                type: "Vegetable",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: true,
-                saleText: 'Discount!',
-                bestSellerText: 'Sale 50%'
-            },
-            {
-                id: 102,
-                imageSrc: Veg,
-                type: "Vegetable",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 103,
-                imageSrc: Veg,
-                type: "Vegetable",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 104,
-                imageSrc: Veg,
-                type: "Vegetable",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            }
-        ]
-    },
-    {
-        id: 2,
-        category: "Fruit",
-        products: [
-            {
-                id: 201,
-                imageSrc: Veg,
-                type: "fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 202,
-                imageSrc: Veg,
-                type: "fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 203,
-                imageSrc: Veg,
-                type: "Fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 204,
-                imageSrc: Veg,
-                type: "Fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            }
-        ]
-    },
-    {
-        id: 3,
-        category: "Meat & Fish",
-        products: [
-            {
-                id: 301,
-                imageSrc: Veg,
-                type: "fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 302,
-                imageSrc: Veg,
-                type: "fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 303,
-                imageSrc: Veg,
-                type: "Fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            },
-            {
-                id: 304,
-                imageSrc: Veg,
-                type: "Fruit",
-                productName: 'Green Apple',
-                price: '14.99',
-                oldPrice: '29.99',
-                rating: 4,
-                isSale: true,
-                isBestSeller: false,
-                saleText: 'Discount!',
-                bestSellerText: ''
-            }
-        ]
-    },
-]
+
+// console.log("ALl product: " , allproductData);
 
 const categories = ["All", "Vegetables", "Fruits", "Snacks"]
 
@@ -243,32 +69,35 @@ const ProductSection = () => {
                     {
                         selectedCategory === "all" ?
 
-                            productData.flatMap((item) => item.products).slice(0, 8).map((product, index) => (
+                            allproductData.slice(0, 8).map((product, index) => (
                                 <ProductCard
+                                product={product}
                                     key={index}
-                                    imageSrc={product.imageSrc}
-                                    productName={product.productName}
-                                    price={product.price}
-                                    oldPrice={product.oldPrice}
+                                    imageSrc={product.images[0].main}
+                                    productName={product.name}
+                                    price={product.price.discounted}
+                                    oldPrice={product.price.original}
                                     rating={product.rating}
-                                    isBestSeller={product.isBestSeller}
-                                    bestSellerText={product.bestSellerText}
+                                    // isBestSeller={product.isBestSeller}
+                                    // bestSellerText={product.bestSellerText}
 
                                 />
                             )) :
 
 
 
-                            productData.find((item) => item.category.toLowerCase() === selectedCategory).products.slice(0, 8).map((product, index) => (
+                            allproductData.filter((item) => item.category.toLowerCase() === selectedCategory).slice(0, 8).map((product, index) => (
                                 <ProductCard
-                                    key={index}
-                                    imageSrc={product.imageSrc}
-                                    productName={product.productName}
-                                    price={product.price}
-                                    oldPrice={product.oldPrice}
-                                    rating={product.rating}
-                                    isBestSeller={product.isBestSeller}
-                                    bestSellerText={product.bestSellerText}
+                                product={product}
+                                key={index}
+                                imageSrc={product.images[0].main}
+                                productName={product.name}
+                                price={product.price.discounted}
+                                oldPrice={product.price.original}
+                                rating={product.rating}
+                                // isBestSeller={product.isBestSeller}
+                                // bestSellerText={product.bestSellerText}
+
 
                                 />
 
