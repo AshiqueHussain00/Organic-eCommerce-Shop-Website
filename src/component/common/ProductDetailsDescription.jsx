@@ -190,7 +190,7 @@ function ProductDetailsDescription() {
                        
 
                         <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
-                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-2 xxs:px-4 md:px-12 xxl:px-20 py-2 bg-light-branding-success hover:bg-hard_primary rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
+                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-1 py-1 xxs:px-4 md:px-12 xxl:px-20 xxs:py-2 bg-light-branding-success hover:bg-hard_primary rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
 
                         </div>
 
@@ -200,7 +200,7 @@ function ProductDetailsDescription() {
                                 <div className="text-md md:text-lg">{amount}</div>
                                 <button onClick={Increment}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
                             </div>
-                            <button><GoHeart className="h-[25px] w-[25px] ml-2" /></button>
+                            <button><GoHeart className="h-[30px] w-[30px] md:h-[45px] p-1 md:w-[45px] ml-2 bg-white-300  md:p-2 rounded-full hover:bg-primary hover:text-white-200" /></button>
                         </div>
                     </div>
 

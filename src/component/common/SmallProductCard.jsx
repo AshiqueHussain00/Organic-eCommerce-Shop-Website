@@ -18,8 +18,9 @@ const SmallProductCard = ({ product }) => {
             className=' flex gap-x-3  border border-gray-100 pr-4 py-3  transition-all duration-200 hover:border-branding-success green-shadow group h-[140px] xlg:h-[130px]'>
 
             <div>
-                <img src={product.image} alt={product.productName} />
+                <img src={product.images[0].main} alt={product.name} />
             </div>
+         
 
             {/* -------- content  ------- */}
             <div className={`flex flex-col gap-y-2  justify-center 
@@ -28,7 +29,7 @@ const SmallProductCard = ({ product }) => {
 
                 {/* ----- product name ------ */}
 
-                <p className=' font-normal transition-colors duration-200 group-hover:text-branding-success'>{product.productName}</p>
+                <p className=' font-normal transition-colors duration-200 group-hover:text-branding-success'>{product.name}</p>
 
                 {/* --------- price and rating ----------- */}
 
@@ -46,7 +47,7 @@ const SmallProductCard = ({ product }) => {
             `}>
 
 
-                                <p className='text-sm font-medium'>{`$${product.price}`}</p>
+                                <p className='text-sm font-medium'>{`$${product.price.discounted}`}</p>
 
                                 {/* Rating (Stars) */}
                                 <div className="flex items-center mb-4">
