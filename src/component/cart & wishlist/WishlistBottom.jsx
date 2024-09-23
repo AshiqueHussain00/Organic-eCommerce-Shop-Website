@@ -53,7 +53,7 @@ const WishlistBottom = () => {
 
             {/* ---------- upper part  ------ */}
 
-            <div className='flex flex-col'>
+            <div data-aos="fade-right" className='flex flex-col'>
 
              {/* ----------- heading ---------- */}
              <div className='grid grid-cols-5 xs:grid-cols-6 md:grid-cols-5 border sm:text-sm text-[13px] font-semibold xsm:font-normal text-gray-500 text-medium uppercase py-3 rounded-t-md w-full'>
@@ -81,9 +81,9 @@ const WishlistBottom = () => {
 
             {/* -------- bottom part ------- */}
 
-            <div className='py-6  px-4 border rounded-b-md'>
+            <div  className='py-6  px-4 border rounded-b-md'>
 
-              <div className='flex gap-x-4 items-center'>
+              <div data-aos="fade-left" className='flex gap-x-4 items-center'>
                    <p>Share : </p>
                    <div className='flex xs:gap-x-4 gap-x-2 items-center'>
                     {
@@ -111,7 +111,7 @@ const WishlistBottom = () => {
         ) : (
           <div className=' h-[300px] grid place-items-center'>
 
-            <div className='flex flex-col gap-y-4 items-center'>
+            <div data-aos="fade-up" className='flex flex-col gap-y-4 items-center'>
 
               <p className='text-2xl text-gray-500  tracking-wider text-center '>Your Wishlist is Empty !</p>
               <button

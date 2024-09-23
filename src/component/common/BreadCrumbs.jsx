@@ -11,7 +11,7 @@ function BreadCrumbs() {
   console.log(pathnames)
   return (
     <section className='h-[100px]  flex items-center banner-bg text-white-100 '>
-      <div className='flex items-center mx-auto w-11/12 xmd:w-10/12 p-2 '>
+      <div data-aos="fade-right" className='flex items-center mx-auto w-11/12 xmd:w-10/12 p-2 '>
         <Link to='/'>
           <GoHome className='h-[20px] w-[20px] mr-1 ' />
         </Link>
@@ -21,6 +21,7 @@ function BreadCrumbs() {
 
           return isLast ? (
             <span
+        
               key={breadcrumbPath}
               className='flex items-center tracking-wider sm:text-lg text-green-600 capitalize'
             >
@@ -29,6 +30,7 @@ function BreadCrumbs() {
             </span>
           ) : (
             <span
+            
               key={breadcrumbPath}
               className='flex items-center text-white-100'
             >
