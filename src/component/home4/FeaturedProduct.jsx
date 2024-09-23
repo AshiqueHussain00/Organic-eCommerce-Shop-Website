@@ -1,6 +1,7 @@
 import React from 'react'
 import Veg from '../../assets/common/categories/Vege.svg'
 import ProductCard from '../common/ProductCard'
+import allproductData from '../../data/common/allproductData'
 
 
 const featuredProduct = [
@@ -98,16 +99,16 @@ const FeaturedProduct = () => {
 
             <div data-aos="fade-right" className='w-full xxs:w-[80%] mx-auto xs:w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xxl:grid-cols-5 gap-x-1 gap-y-1'>
                 {
-                    featuredProduct.slice(0,5).map((product) => (
+                    allproductData.slice(0,5).map((product) => (
                         <ProductCard
                         key={product.id}
-                        imageSrc={product.imageSrc}
-                        productName={product.productName}
-                        price={product.price}
-                        oldPrice={product.oldPrice}
+                        imageSrc={product.images[0].main}
+                        productName={product.name}
+                        price={product.price.discounted}
+                        oldPrice={product.original}
                         rating={product.rating}
-                        isBestSeller={product.isBestSeller}
-                        bestSellerText={product.bestSellerText}
+                        // isBestSeller={product.isBestSeller}
+                        // bestSellerText={product.bestSellerText}
 
                     />
                     ))
