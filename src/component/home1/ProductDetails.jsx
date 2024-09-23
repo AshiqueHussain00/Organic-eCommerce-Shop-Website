@@ -4,6 +4,8 @@ import ProductCard from '../common/ProductCard';
 import { Link } from "react-router-dom";
 import Corn from '../../assets/home5/featuredproduct/corn.svg';
 import allproductData from '../../data/common/allproductData'; // Assuming this is the correct import for your products data
+import { addToCart } from '../../redux/slice/cartSlice';
+import { addToWishlist } from '../../redux/slice/wishlistSlice';
 
 const ProductDetails = () => {
     // Example handlers
@@ -64,6 +66,7 @@ const ProductDetails = () => {
                         variants={cardAnimation}
                     >
                         <LimitedProductCard
+                           product={featuredProduct}
                             imageSrc={featuredProduct.imageSrc}
                             productName={featuredProduct.productName}
                             price={featuredProduct.price}
@@ -91,6 +94,7 @@ const ProductDetails = () => {
 
                         >
                             <ProductCard
+                            product={product}
                                productId={product.id}
                                 imageSrc={product.images[0].main}
                                 productName={product.name}
