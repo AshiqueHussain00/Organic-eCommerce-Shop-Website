@@ -18,17 +18,17 @@ const iconData = [
     path: "#"
   },
   {
-    id:1,
+    id:2,
     icon: FaTwitter,
     path: "#"
   },
   {
-    id:1,
+    id:3,
     icon: FaPinterestP,
     path: "#"
   },
   {
-    id:1,
+    id:4,
     icon: FaInstagram,
     path: "#"
   },
@@ -39,7 +39,7 @@ const WishlistBottom = () => {
   const navigate = useNavigate();
 
   const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
-  console.log(wishlistItems)
+
 
 
 
@@ -70,7 +70,7 @@ const WishlistBottom = () => {
               <div className='flex flex-col w-full '>
 
                 {
-                  wishlistItems.map((item ) => (
+                  wishlistItems.map((item , index ) => (
                     <SingleWishItem data={item} key={item.id}/>
                   ))
                 }

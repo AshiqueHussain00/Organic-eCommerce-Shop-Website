@@ -21,7 +21,10 @@ const wishlistSlice = createSlice({
                state.wishlistItems.push(product); 
                localStorage.setItem("wishlistItems" , JSON.stringify(state.wishlistItems));
                toast.success("Added to Wishlist")
+            }else{
+                toast.success("Already Added")
             }
+            
         },
 
         removeFromWishlist : (state, action)=> {
