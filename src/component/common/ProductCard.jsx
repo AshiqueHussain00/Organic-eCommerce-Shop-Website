@@ -8,9 +8,12 @@ import { toast } from "react-hot-toast";
 import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
 import { addToWishlist } from "../../redux/slice/wishlistSlice";
 import { useNavigate } from "react-router-dom";
+import ProductCategory from "../home1/ProductCategory";
 
 const ProductCard = ({
+   
     product,
+    productId,
     imageSrc,
     productName,
     price,
@@ -20,7 +23,9 @@ const ProductCard = ({
     isSale,
     isBestSeller,
     saleText = 'Sale',         // Default text for Sale
-    bestSellerText = 'Best Seller' // Default text for Best Seller
+    bestSellerText = 'Best Seller', // Default text for Best Seller
+    productCategory
+
 }) => {
 
     const [isHover, setIsHover] = useState(false);
@@ -52,7 +57,7 @@ const ProductCard = ({
 
     }
 
-    const handlePageDescription = (category , product) => {
+    const handlePageDescription = (category , id) => {
           navigate(`/product/${category}/${id}`);
 
     }
@@ -60,13 +65,16 @@ const ProductCard = ({
 
     return (
         <div
-           onClick={()=> handlePageDescription(product.category , product.id)}
+           onClick={()=> handlePageDescription(productCategory , productId)}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col transition duration-200 bg-white border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
+            className="relative flex flex-col transition duration-200 bg-white cursor-pointer border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
             {/* Sale and Best Seller Tags */}
-          
+
+           
+            
             <div className="absolute flex space-x-2 top-2 left-2" >
+                {/* {product.category} */}
                 {isSale && (
                     <div className="px-2 py-1 text-sm font-semibold bg-blue-600 rounded text-white-100">
                         {saleText}

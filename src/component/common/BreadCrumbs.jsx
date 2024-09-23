@@ -10,7 +10,7 @@ function BreadCrumbs() {
   let breadcrumbPath = ''
   console.log(pathnames)
   return (
-    <section className='h-[150px]  flex items-center banner-bg text-white-100 '>
+    <section className='h-[100px]  flex items-center banner-bg text-white-100 '>
       <div className='flex items-center mx-auto w-11/12 xmd:w-10/12 p-2 '>
         <Link to='/'>
           <GoHome className='h-[20px] w-[20px] mr-1 ' />

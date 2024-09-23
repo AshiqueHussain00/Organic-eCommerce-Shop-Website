@@ -50,6 +50,7 @@ const FeaturedProducts = () => {
               variants={cardAnimation}
             >
               <ProductCard
+                 productId={product.id}
                 imageSrc={product.images[0].main} // Assuming product has images array
                 productName={product.name}
                 price={product.price.discounted}
@@ -60,6 +61,7 @@ const FeaturedProducts = () => {
                 isBestSeller={product.promotions?.bestSellerText ? true : false}
                 saleText={product.promotions?.discount}
                 bestSellerText={product.promotions?.bestSellerText}
+                productCategory={product.category}
               />
             </motion.div>
           ))}

@@ -9,6 +9,8 @@ import ProductDetailsDescription from './component/common/ProductDetailsDescript
 
 import Loader from './component/common/Loader';
 import SidebarToggle from './component/common/SidebarToggle';
+import CheckoutPage from './component/common/CheckoutPage';
+import OrderHistory from './component/common/OrderHistory';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -65,7 +67,9 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      <SidebarToggle/>
+      {/* <SidebarToggle/> */}
+      {/* <CheckoutPage/> */}
+      {/* <OrderHistory/> */}
       
       {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
       <Suspense fallback={<Loader/>}>
@@ -76,7 +80,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          <Route path='/product/:category/:id' element={<ProductDetailsDescription/>}/>
+          <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
 
           {/* ------------- Shop ------------- */} 
           <Route path='/shop1' element={<Shop1 />} />  

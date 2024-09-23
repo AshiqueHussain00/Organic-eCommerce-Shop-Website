@@ -10,7 +10,7 @@ const allproductData = [
         price: { original: 40.0, discounted: 25.0, discountPercentage: 5 },
         category: 'Fruits',
         tags: ['Fruits', 'Healthy', 'Apple', 'Green'],
-        rating: 4.5,
+        rating: 3.9,
         reviews: 8,
         inStock: true,
         mainDec:
