@@ -71,6 +71,7 @@ const ProductSection = () => {
 
                             allproductData.slice(0, 8).map((product, index) => (
                                 <ProductCard
+                                product={product}
                                     key={index}
                                     imageSrc={product.images[0].main}
                                     productName={product.name}
@@ -87,6 +88,7 @@ const ProductSection = () => {
 
                             allproductData.filter((item) => item.category.toLowerCase() === selectedCategory).slice(0, 8).map((product, index) => (
                                 <ProductCard
+                                product={product}
                                 key={index}
                                 imageSrc={product.images[0].main}
                                 productName={product.name}

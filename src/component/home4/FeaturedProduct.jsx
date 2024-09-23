@@ -101,6 +101,7 @@ const FeaturedProduct = () => {
                 {
                     allproductData.slice(0,5).map((product) => (
                         <ProductCard
+                        product={product}
                         key={product.id}
                         imageSrc={product.images[0].main}
                         productName={product.name}
