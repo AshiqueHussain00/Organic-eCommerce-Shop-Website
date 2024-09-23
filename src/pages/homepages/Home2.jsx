@@ -11,11 +11,12 @@ import PopularCategory from '../../component/home1/ProductCategory'
 import Fproducts from '../../component/home2/Fproducts'
 import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import BannerHome2 from '../../component/home2/BannerHome2'
+import ProductTabs from '../../component/common/ProducDescription'
 
 const Home2 = () => {
   return (
     <div>
-
+   
       <BannerHome2 />
       <HeaderBottom />
       <Banners />
@@ -25,6 +26,7 @@ const Home2 = () => {
       <VideoComponent />
       <Members />
       <HomeTestimonial />
+      <ProductTabs/>
 
       {/* <HomeOneHerosection />
     

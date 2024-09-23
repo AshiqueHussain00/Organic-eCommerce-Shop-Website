@@ -7,6 +7,7 @@ import image4 from '../../assets/home3/newestProducts/GreenChilli.svg'
 import image5 from '../../assets/home3/newestProducts/Corn.svg'
 import { motion } from 'framer-motion';
 import { Link } from "react-router-dom"
+import allproductData from '../../data/common/allproductData';
 
 function FeaturedProducts() {
   
@@ -15,59 +16,14 @@ function FeaturedProducts() {
     };
 
 
-    const products = [
-        {
-            imageSrc: image1,
-            productName: 'Green Apple',
-            price: '14.99',
-            oldPrice: '29.99',
-            rating: 4,
-            isSale: false,
-            isBestSeller: false,
-            saleText: 'Discount!',
-            bestSellerText: ''
-        },
-        {
-            imageSrc: image2,
-            productName: 'Banana',
-            price: '9.99',
-            rating: 3,
-            isSale: false,
-            isBestSeller: false,
-            saleText: 'Sale',
-            bestSellerText: ''
-        },
-        {
-            imageSrc: image3,
-            productName: 'Orange',
-            price: '7.99',
-            rating: 4,
-            isSale: false,
-            isBestSeller: false,
-            saleText: '',
-            bestSellerText: ''
-        },
-        {
-            imageSrc: image4,
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: false,
-            isBestSeller: false,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-        {
-            imageSrc: image5,
-            productName: 'Mango',
-            price: '19.99',
-            rating: 5,
-            isSale: false,
-            isBestSeller: false,
-            saleText: 'Sale 50%',
-            bestSellerText: 'Best Seller'
-        },
-    ];
+    const ids = ['f1' , 'v2' , 'v4' , 'v5' , 'f13'];
+    
+    const products = (ids) =>{
+        return  allproductData.filter((product) => ids.includes(product.id));
+    }
+    const selectedProducts = products(ids);
+    
+ 
 
 
 
@@ -87,7 +43,7 @@ function FeaturedProducts() {
 
 
                     {/* Adjusted Product Cards Layout */}
-                    {products.map((product, index) => (
+                    {selectedProducts.map((product, index) => (
                         <motion.div
                             key={index}
                             className=""
@@ -97,16 +53,18 @@ function FeaturedProducts() {
                             variants={cardAnimation}
                         >
                             <ProductCard
-                                imageSrc={product.imageSrc}
-                                productName={product.productName}
-                                price={product.price}
-                                oldPrice={product.oldPrice}
-                                rating={product.rating}
-                                onAddToCart={() => handleAddToCart(product.productName)}
-                                isSale={product.isSale}
-                                isBestSeller={product.isBestSeller}
-                                saleText={product.saleText}
-                                bestSellerText={product.bestSellerText}
+                               productId={product.id}
+                imageSrc={product.images[0].main} // Assuming product has images array
+                productName={product.name}
+                price={product.price.discounted}
+                oldPrice={product.price.original}
+                rating={product.rating}
+                onAddToCart={() => handleAddToCart(product.name)}
+                isSale={product.promotions?.discount ? true : false}
+                isBestSeller={product.promotions?.bestSellerText ? true : false}
+                saleText={product.promotions?.discount}
+                bestSellerText={product.promotions?.bestSellerText}
+                productCategory={product.category}
                             />
                         </motion.div>
                     ))}

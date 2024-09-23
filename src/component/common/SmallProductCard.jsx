@@ -22,6 +22,7 @@ const SmallProductCard = ({ product }) => {
             <div className='w-[130px]'>
                 <img src={product.images[0].main} alt={product.name} className='h-full w-full object-cover' />
             </div>
+         
 
             {/* -------- content  ------- */}
             <div className={`flex flex-col gap-y-2  justify-center 
