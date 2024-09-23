@@ -3,10 +3,14 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes ,useNavigate } from 'react-router-dom';
 import ProductDetailsDescription from './component/common/ProductDetailsDescription';
 
+
 import Loader from './component/common/Loader';
+import SidebarToggle from './component/common/SidebarToggle';
+import CheckoutPage from './component/common/CheckoutPage';
+import OrderHistory from './component/common/OrderHistory';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -22,7 +26,7 @@ const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
 
 // blog
 const Blog=lazy(()=>import('./component/common/Blog'))
-
+const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
 //About 
 const About = lazy(() => import('./pages/About/About'))
 //Cart & Wishlist
@@ -50,10 +54,24 @@ const App = () => {
 
   AOS.refresh();
 
+  // const navigate = useNavigate();
+
+  // const goToProductDetails = () => {
+    
+    
+  //   const id = 'v3'; 
+  //   const category = 'vegetable'
+
+  //   navigate(`/Category/${category}/${id}`);
+  // };
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      {/* <ProductDetailsDescription/> */}
+      {/* <SidebarToggle/> */}
+      {/* <CheckoutPage/> */}
+      {/* <OrderHistory/> */}
+      
+      {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -62,13 +80,15 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
+          <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
 
-          {/* ------------- Shop ------------- */}
+          {/* ------------- Shop ------------- */} 
           <Route path='/shop1' element={<Shop1 />} />  
            <Route path='/shop2' element={<Shop2/>} /> 
 
            {/* blog */}
-           <Route path='/blog' element={<Blog/>} />
+           <Route path="/blog" element={<Blog />} />
+           <Route path="/blog/:id" element={<SingleBlog />} />
            {/* ------------ About --------------- */}
            <Route path='/about-us' element={<About />} /> 
 

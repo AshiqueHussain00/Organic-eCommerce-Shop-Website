@@ -4,12 +4,13 @@ import img3 from '../../assets/common/blog/img3.svg'
 
 export const blogData = [
     {
+      id:1,
       img: img1,
       date: "21 FEB",
       category: "Food",
       postedBy: "Admin",
       comments: 39,
-      category:"Fruit",
+      
       p: "Maecenas blandit risus elementum mauris malesuada.",
       tags:['health','low fat','vitamins'],
       readMore:{
@@ -20,18 +21,20 @@ export const blogData = [
         subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
         para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
         insideImg:[img1,img2],
+        para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
 
 
       }
     },
     {
+      id:2,
       img: img2,
       date: "23 JAN",
-      category: "Fruit",
+      category: "Vegetables",
       postedBy: "Admin",
       comments: 48,
       p: "Maecenas blandit risus elementum mauris malesuada.",
-      category:"Vegetables",
+     
       tags:['health','low fat','vitamins'],
       readMore:{
         title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
@@ -41,17 +44,19 @@ export const blogData = [
         subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
         para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
         insideImg:[img1,img2],
+        para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
     },
 },
     {
+      id:3,
       img: img3,
       date: "18 MAY",
       category: "Food",
       postedBy: "Admin",
       comments: 65,
       p: "Maecenas blandit risus elementum mauris malesuada.",
-      category:"Fruit",
-      tags:['health','low fat','vitamins'],
+     
+      tags:['Kid foods','low fat','vitamins'],
       readMore:{
         title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
         adminImg:img1,
@@ -60,17 +65,19 @@ export const blogData = [
         subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
         para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
         insideImg:[img3,img3],
+        para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
     },
     },
     {
+      id:4,
         img: img3,
         date: "18 MAY",
         category: "Cooking",
         postedBy: "Admin",
         comments: 65,
         p: "Maecenas blandit risus elementum mauris malesuada.",
-        category:"Fruit",
-        tags:['health','low fat','vitamins'],
+        
+        tags:['Healthy','Lunch','Dinner','Tiffin'],
         readMore:{
           title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
           adminImg:img1,
@@ -79,17 +86,19 @@ export const blogData = [
           subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
           para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
           insideImg:[img3,img3],
+          para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
       },
       },
       {
+        id:5,
         img: img3,
         date: "18 MAY",
         category: "Food",
         postedBy: "Admin",
         comments: 65,
         p: "Maecenas blandit risus elementum mauris malesuada.",
-        category:"Fruit",
-        tags:['health','low fat','vitamins'],
+        
+        tags:['Healthy','Lunch','Dinner','Tiffin'],
         readMore:{
           title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
           adminImg:img1,
@@ -98,17 +107,19 @@ export const blogData = [
           subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
           para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
           insideImg:[img3,img3],
+          para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
       },
       },
       {
+        id:6,
         img: img3,
         date: "18 MAY",
         category: "Snacks",
         postedBy: "Admin",
         comments: 65,
         p: "Maecenas blandit risus elementum mauris malesuada.",
-        category:"Fruit",
-        tags:['health','low fat','vitamins'],
+        
+        tags:['Snacks','Kid foods','Lunch','Dinner'],
         readMore:{
           title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
           adminImg:img1,
@@ -117,16 +128,18 @@ export const blogData = [
           subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
           para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
           insideImg:[img3,img3],
+          para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
       },
       },
       {
+        id:7,
         img: img3,
         date: "18 July",
         category: "Beauty & Health",
         postedBy: "Admin",
         comments: 65,
         p: "Maecenas blandit risus elementum mauris malesuada.",
-        category:"Fruit",
+       
         tags:['health','low fat','vitamins'],
         readMore:{
           title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
@@ -136,6 +149,28 @@ export const blogData = [
           subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
           para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
           insideImg:[img3,img3],
+          para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
+      },
+      },
+      {
+        id:8,
+        img: img3,
+        date: "18 July",
+        category: "Vegetables",
+        postedBy: "Admin",
+        comments: 65,
+        p: "Maecenas blandit risus elementum mauris malesuada.",
+       
+        tags:['health','low fat','vitamins'],
+        readMore:{
+          title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
+          adminImg:img1,
+          isOpen:true,
+          urls:['','','',''],
+          subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
+          para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
+          insideImg:[img3,img3],
+          para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
       },
       },
   ];

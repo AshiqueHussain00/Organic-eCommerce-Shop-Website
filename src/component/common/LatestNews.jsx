@@ -1,29 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { IoPersonOutline } from "react-icons/io5";
 import { GoTag } from "react-icons/go";
 import { LiaCommentsSolid } from "react-icons/lia";
-import { FaArrowRight } from "react-icons/fa";
 
 const LatestNews = ({ data }) => {
   return (
-    <div className=' w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8 '>
+    <div className='w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8'>
       {data.map((item, index) => (
-        <div data-aos="fade-right"
+        <div
+          data-aos="fade-right"
           key={index}
-          className="news-item  bg-white-200 flex flex-col  mx-auto m-4 border p-4 rounded-lg shadow-md group
-         "
+          className="news-item bg-white-200 flex flex-col mx-auto m-4 border p-4 rounded-lg shadow-md group"
         >
           <div className="relative">
-            <div className=' overflow-hidden rounded-lg'>
-
-
+            <div className='overflow-hidden rounded-lg'>
               <img
                 src={item.img}
                 alt={`news-${index}`}
-                className="w-full object-cover rounded-lg transition-all duration-700  group-hover:scale-110"
+                className="w-full object-cover rounded-lg transition-all duration-700 group-hover:scale-110"
               />
-            </div> 
+            </div>
             <div className="absolute bg-white-200 bottom-3 left-3 bg-white p-2 w-16 h-auto rounded-md shadow-md">
               <div className="flex flex-col items-center">
                 <span className="text-gray-800 font-bold text-lg">
@@ -54,10 +52,14 @@ const LatestNews = ({ data }) => {
           <p className="paragraph mt-2 text-gray-600 font-poppins font-semibold hover:text-[rgb(0,178,7)]">
             {item.p}
           </p>
-          <button className="read-more-btn mt-4 flex items-center text-green-600 hover:text-[rgb(0,178,7)]">
-            <span className="mr-2"><link rel="stylesheet" href="" />Read More</span>
-            <FaArrowRight />
-          </button>
+
+          {/* Corrected the Link to use the item's id */}
+          <Link
+            to={`/blog/${item.id}`} // Dynamic path to the SingleBlog component
+            className="mt-2 text-primary flex items-center group-hover:text-secondary group-hover:font-[700] transition-all"
+          >
+            Read More
+          </Link>
         </div>
       ))}
     </div>
@@ -67,12 +69,13 @@ const LatestNews = ({ data }) => {
 LatestNews.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired, // Added id as required
       img: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
       postedBy: PropTypes.string.isRequired,
       comments: PropTypes.number.isRequired,
-      p: PropTypes.string.isRequired, // Added p for paragraph
+      p: PropTypes.string.isRequired, // Paragraph content
     })
   ).isRequired,
 };

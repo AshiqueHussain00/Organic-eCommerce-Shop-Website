@@ -32,7 +32,7 @@ const HomeHerosection = () => {
   return (
     <section
       className="w-full py-10 bg-white"
-     
+
     >
       <div className="w-11/12 mx-auto xmd:w-10/12">
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
@@ -46,7 +46,7 @@ const HomeHerosection = () => {
               backgroundRepeat: 'no-repeat',
             }}
             initial="hidden"
-             animate="visible"
+            animate="visible"
             variants={banner1Animation}
           >
             <div>
@@ -72,7 +72,7 @@ const HomeHerosection = () => {
           <div className="flex flex-col space-y-4">
             {/* Top Right */}
             <motion.div
-              className="relative p-6 text-black bg-gray-100 rounded-lg"
+              className="p-6 text-black bg-gray-100 rounded-lg "
               style={{
                 backgroundImage: `url(${bannar2})`,
                 backgroundPosition: 'center',
@@ -108,7 +108,7 @@ const HomeHerosection = () => {
                 backgroundRepeat: 'no-repeat',
               }}
               initial="hidden"
-               animate="visible"
+              animate="visible"
               variants={banner3Animation}
             >
               <div>
