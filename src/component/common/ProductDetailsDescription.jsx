@@ -74,8 +74,10 @@ function ProductDetailsDescription() {
 
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
-        <section className="w-full xxs:w-11/12 mx-auto">
-            <BreadCrumbs/>
+        <section>
+               <BreadCrumbs/>
+            <div className="w-full xxs:w-11/12 mx-auto">
+           
             {/* IMAGES && DETAILS */}
             <div className="flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xxl:gap-0 justify-center">
 
@@ -222,7 +224,7 @@ function ProductDetailsDescription() {
 
             </div>
 
-
+            </div>
 
         </section>
     )
