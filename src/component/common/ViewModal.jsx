@@ -53,7 +53,7 @@ const ViewModal = () => {
         { views: FaEye }
     ];
 
-    console.log("Wish : " , wishlistItems);
+   
 
 
 
