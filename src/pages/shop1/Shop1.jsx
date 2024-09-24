@@ -1,5 +1,5 @@
 import React from 'react'
-import FilterOne from '../../component/common/FilterOne'
+import FilterOne from '../../component/shop1/FilterOne'
 import allproductData from '../../data/common/allproductData'
 import BreadCrumbs from '../../component/common/BreadCrumbs'
 

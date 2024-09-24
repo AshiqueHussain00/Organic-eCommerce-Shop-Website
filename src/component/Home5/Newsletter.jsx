@@ -6,7 +6,7 @@ import mail from "../../assets/home5/newsletter/mail.svg";
 
 const Newsletter = () => {
   return (
-    <div className="w-10/12 mx-auto py-4 flex flex-col md:flex-row justify-evenly items-stretch space-y-4 md:space-y-0 md:space-x-4">
+    <div className="flex flex-col items-stretch w-10/12 py-4 mx-auto space-y-4 md:flex-row justify-evenly md:space-y-0 md:space-x-4" >
       {/* Location Section */}
       <div data-aos="fade-right" className="relative flex  flex-col items-start space-y-2 border-2 border-[rgb(220,239,222)] rounded p-4 flex-1">
         {/* Icon with Background */}
@@ -15,7 +15,7 @@ const Newsletter = () => {
           <img
             src={map}
             alt="Location Icon"
-            className="absolute top-2 left-3 w-6 h-6"
+            className="absolute w-6 h-6 top-2 left-3"
           />
         </div>
 
@@ -37,7 +37,7 @@ const Newsletter = () => {
           <img
             src={call}
             alt="Call Icon"
-            className="absolute top-2 left-3 w-6 h-6"
+            className="absolute w-6 h-6 top-2 left-3"
           />
         </div>
 
@@ -61,7 +61,7 @@ const Newsletter = () => {
           <img
             src={mail}
             alt="Mail Icon"
-            className="absolute top-2 left-3 w-6 h-6"
+            className="absolute w-6 h-6 top-2 left-3"
           />
         </div>
 
@@ -69,10 +69,10 @@ const Newsletter = () => {
         <div className="text-sm font-medium">SUBSCRIBE NEWSLETTER</div>
 
         {/* Email Input */}
-        <div className="relative w-full flex items-center">
+        <div className="relative flex items-center w-full">
           <input
             type="email"
-            className="border rounded-full p-2 pr-20 w-full"
+            className="w-full p-2 pr-20 border rounded-full"
             placeholder="Your email address"
           />
           <button className="absolute right-0 bg-[#00B207] text-white rounded-full p-2">
