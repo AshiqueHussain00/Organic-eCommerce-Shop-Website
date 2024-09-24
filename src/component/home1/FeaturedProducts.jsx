@@ -50,8 +50,8 @@ const FeaturedProducts = () => {
               variants={cardAnimation}
             >
               <ProductCard
-              product={product}
-                 productId={product.id}
+                product={product}
+                productId={product.id}
                 imageSrc={product.images[0].main} // Assuming product has images array
                 productName={product.name}
                 price={product.price.discounted}

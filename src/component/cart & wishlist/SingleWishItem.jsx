@@ -105,7 +105,7 @@ ${data.inStock ? "bg-primary text-white-100" : " bg-gray-50 text-gray-400"
                     <button
                         onClick={() => handleAddToCart(data)}
                         className={` px-3 py-2 rounded-3xl text-sm
-                            ${data.inStock ? "bg-primary text-white-100" : " bg-gray-50 text-gray-400"
+                            ${data.inStock ? "bg-primary text-white-100 transition-all duration-200 hover:bg-branding-success" : " bg-gray-50 text-gray-400"
                             }
                         `}>
 
