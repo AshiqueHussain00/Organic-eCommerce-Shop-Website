@@ -1,5 +1,6 @@
 import React from "react";
 import { FiX } from "react-icons/fi"; // Import cross icon
+import { Link } from "react-router-dom"; // Import Link for navigation
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
@@ -54,9 +55,15 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <p className="font-bold text-gray-900">2 Products</p>
             <p className="font-bold text-gray-900">$26.00</p>
           </div>
-          <button className="w-full py-2 font-bold bg-green-500 rounded text-white-100 hover:bg-green-600">
-            Checkout
-          </button>
+          {/* Link to Checkout Page */}
+          <Link to="/cart">
+            <button
+              className="w-full py-2 font-bold border-2 rounded-full bg-primary text-white-100 hover:bg-white-100 hover:border-primary hover:text-primary"
+              onClick={toggleSidebar} // Close the sidebar when clicking the Checkout button
+            >
+              Checkout
+            </button>
+          </Link>
         </div>
       </div>
     </div>
