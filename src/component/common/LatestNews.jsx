@@ -19,7 +19,7 @@ const LatestNews = ({ data }) => {
               <img
                 src={item.img}
                 alt={`news-${index}`}
-                className="w-full object-cover rounded-lg transition-all duration-700 group-hover:scale-110"
+                className="w-full h-48 object-cover rounded-lg transition-all duration-700 group-hover:scale-110"
               />
             </div>
             <div className="absolute bg-white-200 bottom-3 left-3 bg-white p-2 w-16 h-auto rounded-md shadow-md">
