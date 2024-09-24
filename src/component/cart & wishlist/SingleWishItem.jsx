@@ -12,7 +12,8 @@ const SingleWishItem = ({ data }) => {
     const handleAddToCart = (product) => {
 
         if (product.inStock) {
-            dispatch(addToCart(product))
+            dispatch(addToCart(product));
+            toast.success("Added to Cart")
         } else {
             toast.error("Sorry , Product is Out of Stock")
         }
@@ -23,6 +24,7 @@ const SingleWishItem = ({ data }) => {
 
         console.log("Click hora hai")
         dispatch(removeFromWishlist(id))
+        toast.error("Remove from wishlist")
 
     }
 

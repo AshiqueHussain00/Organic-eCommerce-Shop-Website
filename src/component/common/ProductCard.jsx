@@ -43,6 +43,7 @@ const ProductCard = ({
 
         if (product.inStock) {
             dispatch(addToCart(product));
+            toast.success("Added to Cart")
             dispatch(calculateTotalPrice());
 
 
@@ -59,6 +60,7 @@ const ProductCard = ({
         events.stopPropagation()
         if (product) {
             dispatch(addToWishlist(product));
+            toast.success("Added to  Wishlist")
 
         }
 
@@ -69,6 +71,7 @@ const ProductCard = ({
         navigate(`/product/${category}/${id}`);
 
     }
+    
     const handleAddInView = (product, events) => {
 
         events.stopPropagation();

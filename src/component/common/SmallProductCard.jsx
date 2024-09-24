@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import { addToCart } from '../../redux/slice/cartSlice';
 import { toast } from 'react-hot-toast';
 import { addToWishlist } from '../../redux/slice/wishlistSlice';
+import { addInView } from '../../redux/slice/viewSlice';
 import { useDispatch } from 'react-redux';
 
 const SmallProductCard = ({ product }) => {
@@ -24,6 +25,7 @@ const SmallProductCard = ({ product }) => {
 
         if (product.inStock) {
             dispatch(addToCart(product));
+            toast.success("Added to Cart")
         } else {
 
             toast.success("Sorry, product is out of stock")
@@ -38,7 +40,18 @@ const SmallProductCard = ({ product }) => {
 
     if(product){
         dispatch(addToWishlist(product));
+        toast.success("Added to Wishlist")
     }
+    }
+
+    const handleInView = (product , events) =>{
+
+        events.stopPropagation();
+
+        if(product){
+            dispatch(addInView(product));
+            
+        }
     }
 
     return (
@@ -127,7 +140,9 @@ const SmallProductCard = ({ product }) => {
 
                             {/* ------- view ------- */}
 
-                            <div className='border border-gray-100 xl:text-xl xlg:text-lg sm:text-xl text-lg py-2 px-2 rounded-full cursor-pointer transition-all duration-200 hover:bg-primary hover:text-white-100 hover:border-none'>
+                            <div 
+                            onClick={(events) => handleInView(product, events)}
+                            className='border border-gray-100 xl:text-xl xlg:text-lg sm:text-xl text-lg py-2 px-2 rounded-full cursor-pointer transition-all duration-200 hover:bg-primary hover:text-white-100 hover:border-none'>
                                 <IoEyeOutline />
                             </div>
 
