@@ -1,12 +1,12 @@
 import React from 'react';
 import { FiCheckCircle, FiPhone, FiSmile, FiShield, FiTruck } from 'react-icons/fi';
-import aboutImage from '../../../assets/about/about2.svg'; // Replace with actual image path
+import aboutImage from '../../assets/about/about2.svg'; // Replace with actual image path
 
 const TrustedOrganicStore2 = () => {
   return (
     <section className="flex flex-col-reverse items-center w-full mx-auto xl:flex-row lg:items-start">
       {/* Image Section */}
-      <div className="mb-8 lg:mb-0">
+      <div className="mb-8 lg:mb-0" data-aos="fade-right">
         <img
           src={aboutImage} 
           alt="Farmer with organic food" 
@@ -15,7 +15,7 @@ const TrustedOrganicStore2 = () => {
       </div>
 
       {/* Text Section */}
-      <div className="flex flex-col justify-center w-11/12 space-y-6 lg:w-8/12 lg:pl-8">
+      <div className="flex flex-col justify-center w-11/12 space-y-6 lg:w-8/12 lg:pl-8" data-aos="fade-left">
         <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
           100% Trusted <br /> Organic Food Store
         </h2>

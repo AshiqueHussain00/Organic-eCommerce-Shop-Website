@@ -182,7 +182,7 @@ const FilterTwo = ({ products }) => {
   return (
     <section>
       <div>
-        <div className="flex flex-wrap flex-col w-10/12  mx-auto font-poppins  ">
+        <div className="flex flex-col flex-wrap w-10/12 mx-auto font-poppins ">
           <Saleofmonth
             image={fruits}
             heading1="BEST DEALS"
@@ -194,7 +194,7 @@ const FilterTwo = ({ products }) => {
           {/* Top Filters Section: Horizontally aligned */}
           <div className="flex flex-wrap items-center justify-between w-full mb-6">
             {/* Left Side Filters */}
-            <div className="flex flex-wrap space-x-4 mb-4 lg:mb-0 w-full lg:w-auto">
+            <div className="flex flex-wrap w-full mb-4 space-x-4 lg:mb-0 lg:w-auto">
               {/* Category Filter */}
               <div className="flex-grow min-w-max">
                 <Select
@@ -222,7 +222,7 @@ const FilterTwo = ({ products }) => {
               </div>
 
               {/* Rating Filter */}
-              <div className=" flex-grow min-w-max">
+              <div className="flex-grow min-w-max">
                 <Select
                   options={[
                     { value: "all", label: "All Ratings" },
@@ -240,7 +240,7 @@ const FilterTwo = ({ products }) => {
             </div>
 
             {/* Right Side Filters */}
-            <div className="flex flex-wrap space-x-4 w-full lg:w-auto">
+            <div className="flex flex-wrap w-full space-x-4 lg:w-auto">
               {/* Sort Order Dropdown */}
               <div className="flex items-center space-x-2 min-w-max">
                 <span className="text-gray-700">Sort By:</span>
@@ -275,14 +275,14 @@ const FilterTwo = ({ products }) => {
 
           {/* Display active filters with close buttons */}
 
-          <div className="relative mb-4 flex items-center justify-between  ">
-          <span className="absolute top-0 mb-3 left-0 w-full border-t border-gray-300"></span>
+          <div className="relative flex items-center justify-between mb-4 ">
+          <span className="absolute top-0 left-0 w-full mb-3 border-t border-gray-300"></span>
             <div className="flex items-center">
               <span className="mr-4 ">Active Filters:</span>
               <div className="flex flex-wrap items-center mt-1">
                 {category.value !== "all" && (
                   <button
-                    className="mr-2 mb-2 inline-flex items-center px-3 py-1  text-black-900 text-sm font-bold"
+                    className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-bold text-black-900"
                     onClick={() => handleRemoveFilter("category")}
                   >
                     {category.label} <span className="ml-2 font-bold">✕</span>
@@ -290,7 +290,7 @@ const FilterTwo = ({ products }) => {
                 )}
                 {priceRange.value !== "all" && (
                   <button
-                    className="mr-2 mb-2 inline-flex items-center px-3 py-1 text-black-900 text-sm font-bold"
+                    className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-bold text-black-900"
                     onClick={() => handleRemoveFilter("priceRange")}
                   >
                     {priceRange.label} <span className="ml-2">✕</span>
@@ -298,7 +298,7 @@ const FilterTwo = ({ products }) => {
                 )}
                 {rating.value !== "all" && (
                   <button
-                    className="mr-2 mb-2 inline-flex items-center px-3 py-1  text-black-900 text-sm font-bold"
+                    className="inline-flex items-center px-3 py-1 mb-2 mr-2 text-sm font-bold text-black-900"
                     onClick={() => handleRemoveFilter("rating")}
                   >
                     {rating.label} <span className="ml-2">✕</span>
@@ -307,11 +307,11 @@ const FilterTwo = ({ products }) => {
               </div>
             </div>
             <h3> {filteredProducts.length} results found</h3>
-            <div className="absolute bottom-0 left-0 mt-3 w-full border-b border-gray-300"></div>
+            <div className="absolute bottom-0 left-0 w-full mt-3 border-b border-gray-300"></div>
           </div>
 
           {/* Products Display Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 " >
             {paginatedProducts.map((product) => (
               <ProductCard
                product={product}
@@ -324,6 +324,7 @@ const FilterTwo = ({ products }) => {
                 onAddToCart={() => handleAddToCart(product.name)}
                 isSale={!!product.promotions.discount}
                 saleText={product.promotions.discount}
+               
               />
             ))}
           </div>

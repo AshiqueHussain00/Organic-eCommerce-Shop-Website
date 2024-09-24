@@ -84,11 +84,11 @@ const ProductCard = ({
 
 
     return (
-        <div
+        <div data-aos="zoom-in-up"
             onClick={(events) => { handlePageDescription(productCategory, productId) }}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col transition duration-200 bg-white cursor-pointer border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
+            className="relative flex flex-col pt-2 transition duration-200 bg-white border cursor-pointer bg-white-100 hover:border hover:border-primary green-shadow" >
             {/* Sale and Best Seller Tags */}
 
 

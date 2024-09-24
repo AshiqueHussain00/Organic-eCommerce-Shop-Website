@@ -13,7 +13,7 @@ createRoot(document.getElementById('root')).render(
 
   <BrowserRouter>
   <Provider store={store}>
-    <Toaster/>
+    <Toaster className="z-[99]"/>
     <App />
     </Provider>
   </BrowserRouter>
