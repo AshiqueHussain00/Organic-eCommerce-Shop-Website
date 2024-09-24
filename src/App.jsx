@@ -18,6 +18,10 @@ import CheckoutPage from './component/common/CheckoutPage';
 import OrderHistory from './component/common/OrderHistory';
 // import SidebarToggle from './component/common/SidebarToggle';
 
+
+//PANKAJ COMPONENT MAKING
+import Footer3 from './component/common/footer/Footer3';
+
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
 const Home2 = lazy(() => import('./pages/homepages/Home2'));

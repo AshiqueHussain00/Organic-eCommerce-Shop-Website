@@ -26,7 +26,7 @@ function ProductDetailsDescription() {
 
 
     const {productCategory , productId} = useParams();
-    {console.log(productId);}
+    // {console.log(productId);}
 
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -77,9 +77,9 @@ function ProductDetailsDescription() {
         <section className="w-full xxs:w-11/12 mx-auto">
             <BreadCrumbs/>
             {/* IMAGES && DETAILS */}
-            <div className="flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xmd:justify-between xxl:gap-6">
+            <div className="flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xxl:gap-0 justify-center">
 
-                <div className="flex flex-col-reverse md:flex-row   gap-4 md:items-center md:justify-center">
+                <div className="flex flex-col-reverse md:flex-row  gap-4 md:items-center md:justify-center">
                     {/* PRODUCT IMAGES */}
                     {/* Main Image and Thumbnails */}
 
@@ -89,7 +89,7 @@ function ProductDetailsDescription() {
                                 key={index}
                                 src={thumbnail}
                                 alt={`Thumbnail ${index + 1}`}
-                                className="object-contain w-[60px] h-[60px] md:w-[90px] md:h-[80px]  border-2 border-gray-200 rounded-lg cursor-pointer hover:border-green-600"
+                                className="object-contain w-[60px] h-[60px] md:w-[90px] md:h-[80px]  border-2 border-gray-200 rounded-sm cursor-pointer hover:border-green-600"
                                 onClick={() => handleImageChange(thumbnail)}
                             />
                         ))}
@@ -101,7 +101,7 @@ function ProductDetailsDescription() {
                             <img
                                 src={selectedProduct.currentImage || selectedProduct.images[0].main}
                                 alt={selectedProduct.name}
-                                className="object-contain rounded-lg shadow-lg min-w-full h-auto md:h-[350px] md:w-[400px] "
+                                className="object-contain rounded-sm shadow-lg min-w-full h-auto md:h-[350px] md:w-[400px] "
                             />
                         </div>
                     </div>
@@ -113,7 +113,7 @@ function ProductDetailsDescription() {
 
                 {/* PRODUCT DETAILS */}
 
-                <div className="flex flex-col p-1 md:py-4 md:px-12 xmd:px-8 lg:px-8 xxl:mx-2 xxl:px-32">
+                <div className="flex flex-col p-1 md:py-4 md:px-12 xmd:px-4 lg:px-8">
 
                     <div className="flex flex-col items-start gap-2 px-2">
 
@@ -185,21 +185,21 @@ function ProductDetailsDescription() {
                     <hr className="w-full border-t border-gray-300 my-4" />
 
                     {/* AMOUNT OF ITEM && ADD TO CART */}
-                    <div className="flex  flex-row lg:flex-col  gap-5 xxs:gap-4 md:gap-6 p-2 ">
+                    <div className="flex  flex-row  gap-5 xxs:gap-4 md:gap-6 p-2 ">
 
-                       
-
-                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
-                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-1 py-1 xxs:px-4 md:px-12 xxl:px-20 xxs:py-2 bg-light-branding-success hover:bg-hard_primary rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
-
-                        </div>
-
-                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
-                            <div className="flex space-x-3 lg:space-x-8 bg-white-300 rounded-full p-1 md:px-3 md:py-2 lg:justify-center items-center">
+                    <div className="flex space-x-3 lg:space-x-6 bg-white-300 rounded-full p-1 md:px-2 md:py-2  items-center">
                                 <button onClick={Decrement} ><FaMinusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
                                 <div className="text-md md:text-lg">{amount}</div>
                                 <button onClick={Increment}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
                             </div>
+
+                       
+
+                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
+                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
+                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-1 py-1 xxs:px-4 md:px-16 xmd:px-6 xxl:px-20 xxs:py-2 bg-light-branding-success hover:bg-hard_primary rounded-full whitespace-nowrap">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
+
+                        </div>
                             <button><GoHeart className="h-[30px] w-[30px] md:h-[45px] p-1 md:w-[45px] ml-2 bg-white-300  md:p-2 rounded-full hover:bg-primary hover:text-white-200" /></button>
                         </div>
                     </div>
