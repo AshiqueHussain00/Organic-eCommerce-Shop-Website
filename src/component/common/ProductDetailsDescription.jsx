@@ -222,7 +222,7 @@ function ProductDetailsDescription() {
 
             </div>
 
-            </div>
+            
 
         </section>
     )
