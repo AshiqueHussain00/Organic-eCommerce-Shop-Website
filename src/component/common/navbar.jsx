@@ -141,34 +141,34 @@ const Navbar = () => {
 
               {/* Mobile Menu Button */}
               <div className='flex space-x-4 xlg:hidden'>
-               <div className='hidden sm:flex'>
-               <Link
-                  to='/wishlist'
-                  className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
-                >
-                  <IoHeartOutline size={24} />
-                  {wishlistItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                      {wishlistItems.length}
-                    </span>
-                  ) : (
-                    ''
-                  )}
-                </Link>
+                <div className='hidden sm:flex'>
+                  <Link
+                    to='/wishlist'
+                    className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
+                  >
+                    <IoHeartOutline size={24} />
+                    {wishlistItems.length !== 0 ? (
+                      <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                        {wishlistItems.length}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                  </Link>
 
-                <Link
-                  to='/cart'
-                  className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
-                >
-                  <HiOutlineShoppingBag size={24} />
-                  {cartItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                      {cartItems.length}
-                    </span>
-                  ) : (
-                    ''
-                  )}
-                </Link>
+                  <Link
+                    to='/cart'
+                    className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
+                  >
+                    <HiOutlineShoppingBag size={24} />
+                    {cartItems.length !== 0 ? (
+                      <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                        {cartItems.length}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                  </Link>
 
                   <Link
                     to='/profile'
@@ -188,7 +188,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Menu */}
           <nav className='hidden mt-2 bg-gray-800 xlg:flex text-white-100 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between w-full'>
               {/* Left-side Links */}
@@ -206,12 +205,11 @@ const Navbar = () => {
                       </span>
                     </div>
 
-                    <div
-                      className='right-0 left-0 absolute z-[999] overflow-hidden h-0 group-hover:h-auto'>
-                      <div
-                        className='mt-4 border bg-white-100'>
+                    {/* Dropdown */}
+                    <div className='absolute z-[999] left-0 right-0 mt-2 overflow-hidden transition-all duration-700 ease-in-out max-h-0 group-hover:max-h-[600px]'>
+                      <div className='border bg-white-100'>
                         {allCategoryDropdown.map((item, index) => {
-                          const IconComponent = item.icon
+                          const IconComponent = item.icon;
                           return (
                             <Link
                               to={item.path}
@@ -229,11 +227,10 @@ const Navbar = () => {
                                 {item.title}
                               </p>
                             </Link>
-                          )
+                          );
                         })}
                       </div>
                     </div>
-
                   </div>
 
                   {/* Other Navbar Links */}
@@ -258,7 +255,7 @@ const Navbar = () => {
 
                       {item.dropdown && (
                         <div
-                          className='absolute left-0 z-10 h-0 overflow-hidden transition-all duration-300 top-full group-hover:h-auto'
+                          className='absolute left-0 z-10 overflow-hidden transition-all duration-500 top-full max-h-0 group-hover:max-h-[400px]'
                         >
                           <div
                             className={`mt-4 bg-white-100 text-black-900 border-2 ${item.title.toLowerCase() === 'blog'
@@ -275,7 +272,7 @@ const Navbar = () => {
                               {item.dropdown.map(dropdownItem => (
                                 <div
                                   key={dropdownItem.id}
-                                  className='flex items-center w-full h-full mr-4 transition-all duration-200 hover:bg-primary hover:text-white-100'
+                                  className='flex items-center w-full h-full mr-4 transition-all duration-500 hover:bg-primary hover:text-white-100'
                                 >
                                   {item.title.toLowerCase() === 'blog' && (
                                     <Link to='/'>
@@ -310,14 +307,11 @@ const Navbar = () => {
                   className='relative p-2 rounded-full text-white-100 hover:bg-gray-700'
                 >
                   <IoHeartOutline size={24} />
-                  {wishlistItems.length !== 0 ? (
+                  {wishlistItems.length !== 0 && (
                     <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
                       {wishlistItems.length}
                     </span>
-                  ) : (
-                    ''
                   )}
-
                 </Link>
 
                 <Link
@@ -325,12 +319,10 @@ const Navbar = () => {
                   className='relative p-2 text-white rounded-full hover:bg-gray-700 '
                 >
                   <HiOutlineShoppingBag size={24} />
-                  {cartItems.length !== 0 ? (
+                  {cartItems.length !== 0 && (
                     <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
                       {cartItems.length}
                     </span>
-                  ) : (
-                    ''
                   )}
                 </Link>
 
@@ -343,21 +335,20 @@ const Navbar = () => {
               </div>
             </div>
           </nav>
-
           {/* Icons */}
-          <div className='flex justify-center space-x-4 sm:hidden'>
+          <div className='flex justify-center pb-2 space-x-3 sm:hidden'>
             <Link
               to='/wishlist'
-              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
+              className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
             >
               <IoHeartOutline size={24} />
               {wishlistItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                      {wishlistItems.length}
-                    </span>
-                  ) : (
-                    ''
-                  )}
+                <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                  {wishlistItems.length}
+                </span>
+              ) : (
+                ''
+              )}
             </Link>
 
             <Link
@@ -366,7 +357,7 @@ const Navbar = () => {
             >
               <HiOutlineShoppingBag size={24} />
               {cartItems.length !== 0 ? (
-                <span className='relative bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full  top-[-35px] right-[-10px]'>
+                <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
                   {cartItems.length}
                 </span>
               ) : (
