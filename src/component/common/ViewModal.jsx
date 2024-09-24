@@ -111,12 +111,17 @@ const ViewModal = () => {
     const handleAddToCart = (product) => {
 
 
-        if (cart.find(item => item.id !== product.id)) {
+        if (cart.find(item => item.id === product.id)) {
+
+            
             dispatch(addToCart(product));
-            toast.success("Added to Cart")
 
         } else {
+
+            
             dispatch(addToCart(product));
+            toast.success("Added to Cart")
+          
         }
 
 
@@ -164,7 +169,7 @@ const ViewModal = () => {
     }
 
     return (
-        <motion.div className='fixed inset-0 z-[9] grid md:place-items-center justify-center bg-gray-900 bg-opacity-70 overflow-auto xsm:px-10 xxs:px-8 px-6 mmd:px-16  py-24'>
+        <motion.div className='fixed inset-0 z-[99] grid md:place-items-center justify-center bg-gray-900 bg-opacity-70 overflow-auto xsm:px-10 xxs:px-8 px-6 mmd:px-16  py-24'>
 
             <p className='absolute text-4xl cursor-pointer right-10 top-6 text-white-100' onClick={closeHandler}><MdOutlineClose /></p>
 
