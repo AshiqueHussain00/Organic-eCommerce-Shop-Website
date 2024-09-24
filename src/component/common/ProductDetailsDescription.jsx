@@ -1,25 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { CookingData as vegetableData } from '../../data/common/CookingData';
-// import {BreadData as vegetableData} from '../../data/common/Bread&BakeryData'
-// import { vegetableData } from '../../data/common/vegetable-data'
+import allproductData from '../../data/common/allproductData';
 import { useParams } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GoHeart } from "react-icons/go";
 import BreadCrumbs from './BreadCrumbs';
 
 
+const socialMedia =  [
+    { facebook: FaFacebookF },
+    { instagram: FaInstagram },
+    { pinterest: FaPinterestP },
+    { twitter: FaTwitter }
+];
+const actions =  [
+    { like: FaHeart },
+    { views: FaEye }
+];
+const socialLink = ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'];
+
+
 function ProductDetailsDescription() {
 
 
+    const {productCategory , productId} = useParams();
+    {console.log(productId);}
+
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const product = allproductData.find((item) => item.id === productId);
+    
+    
 
     // Function to handle product selection
-    const handleProductSelect = (productId) => {
-        const product = vegetableData.find((item) => item.id === productId);
-        setSelectedProduct(product);
-    };
+    useEffect(()=>{
+       if(product){
+           setSelectedProduct(product);
+       }
+    },[product])
+    
 
     // Function to handle image change on thumbnail click
     const handleImageChange = (imageSrc) => {
@@ -45,32 +66,11 @@ function ProductDetailsDescription() {
         setAmount((amount) => (amount >= 1 ? amount - 1 : 0));
     };
 
-    // If no product is selected, show the list of products
+    
+
     if (!selectedProduct) {
-        return (
-            <div className="grid grid-cols-1 gap-6 p-6 mx-auto sm:grid-cols-2 lg:grid-cols-3 max-w-7xl">
-                {vegetableData.map((product) => (
-                    <div
-                        key={product.id}
-                        className="p-4 bg-white  border rounded-lg shadow hover:cursor-pointer"
-                        onClick={() => handleProductSelect(product.id)}
-                    >
-                        <div className='w-full h-48 mb-4 '>
-                            <img
-                                src={product.images[0].main}
-                                alt={product.name}
-                                className=" w-full h-full object-contain  rounded-lg"
-                            />
-
-                        </div>
-
-                        <h2 className="text-xl font-bold">{product.name}</h2>
-                        <p className="text-gray-600">{product.mainDec}</p>
-                    </div>
-                ))}
-            </div>
-        );
-    }
+        return <h2>Product not found</h2>;
+      }
 
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
@@ -125,12 +125,10 @@ function ProductDetailsDescription() {
                         {/* RATING && SKU CODE */}
                         <div className="flex flex-row  items-center gap-6">
                             <h2 className="flex space-x-1">{Array.from({ length: 5 }, (elem, index) => {
-                                let number = index + 0.5;
+                                {/* let number = index + 0.5; */}
                                 return (<span key={index}>
-                                    {selectedProduct.rating >= index + 1 ? (
+                                    {selectedProduct.rating >= index  ? (
                                         <FaStar className="text-yellow-800 h-[12px] w-[12px]" />
-                                    ) : selectedProduct.rating >= number ? (
-                                        <FaStarHalfAlt className="text-yellow-800 h-[12px] w-[12px]" />
                                     ) : (
                                         <FaRegStar className="text-yellow-800 h-[12px] w-[12px]" />
                                     )}
@@ -158,11 +156,12 @@ function ProductDetailsDescription() {
                         <div className="flex flex-row items-center justify-between gap-4 md:gap-12">
                             <h3 className="text-sm  md:text-base  xmd:text-sm xlg:text-base font-semibold">Brand: <span className="text-xs md:text-sm xmd:text-xs xlg:text-sm font-medium">{selectedProduct.brand}</span></h3>
 
-                            {/* <h3 className="flex space-x-2 md:space-x-4  xmd:space-x-2 text-xs md:text-base xmd:text-xs  xlg:text-base items-center font-semibold text-gray-800 mr-1">Share item:  {selectedProduct.socialMedia.map((social, index) => {
-                                const Icon = Object.values(social)[0];
+                            <h3 className="flex space-x-2 md:space-x-4  xmd:space-x-2 text-xs md:text-base xmd:text-xs  xlg:text-base items-center font-semibold text-gray-800 mr-1">Share item:  {
+                               socialMedia.map((social, index) => {
+                              const Icon = Object.values(social)[0];
                                 return (
                                     <a
-                                        href={selectedProduct.socialLink[index]}
+                                        href={socialLink[index]}
                                         key={index}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -171,7 +170,7 @@ function ProductDetailsDescription() {
                                         <Icon className="h-[15px] w-[15px] md:h-[20px] md:w-[20px] xmd:h-[15px] xmd:w-[15px]  xlg:h-[20px] xlg:w-[20px]" />
                                     </a>
                                 );
-                            })}</h3> */}
+                            })}</h3>
 
                         </div>
 
@@ -191,7 +190,7 @@ function ProductDetailsDescription() {
                        
 
                         <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
-                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-2 xxs:px-4 md:px-12 xxl:px-20 py-2 bg-light-branding-success rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
+                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-1 py-1 xxs:px-4 md:px-12 xxl:px-20 xxs:py-2 bg-light-branding-success hover:bg-hard_primary rounded-full">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
 
                         </div>
 
@@ -201,7 +200,7 @@ function ProductDetailsDescription() {
                                 <div className="text-md md:text-lg">{amount}</div>
                                 <button onClick={Increment}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
                             </div>
-                            <button><GoHeart className="h-[25px] w-[25px] ml-2" /></button>
+                            <button><GoHeart className="h-[30px] w-[30px] md:h-[45px] p-1 md:w-[45px] ml-2 bg-white-300  md:p-2 rounded-full hover:bg-primary hover:text-white-200" /></button>
                         </div>
                     </div>
 

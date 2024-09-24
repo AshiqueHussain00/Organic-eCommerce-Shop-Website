@@ -66,18 +66,18 @@ const LatestNews = ({ data }) => {
   );
 };
 
-LatestNews.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired, // Added id as required
-      img: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-      postedBy: PropTypes.string.isRequired,
-      comments: PropTypes.number.isRequired,
-      p: PropTypes.string.isRequired, // Paragraph content
-    })
-  ).isRequired,
-};
+// LatestNews.propTypes = {
+//   data: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired, // Added id as required
+//       img: PropTypes.string.isRequired,
+//       date: PropTypes.string.isRequired,
+//       category: PropTypes.string.isRequired,
+//       postedBy: PropTypes.string.isRequired,
+//       comments: PropTypes.number.isRequired,
+//       p: PropTypes.string.isRequired, // Paragraph content
+//     })
+//   ).isRequired,
+// };
 
 export default LatestNews;

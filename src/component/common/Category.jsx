@@ -10,16 +10,16 @@ const Category = () => {
      {
         categories.map((category)=> (
 
-            <Link to={category.path} key={category.id}>
-            <div className='flex flex-col items-center px-2 py-4 transition-all duration-200 border border-gray-100 rounded-lg gap-y-4 xl:px-3 hover:border-branding-success green-shadow group' >
+            <div  key={category.id}>
+            <div className='flex flex-col items-center px-2 py-4 transition-all duration-200 border border-gray-100 rounded-lg gap-y-4 xl:px-3 group' >
                 <div>
                 <img src={category.image} alt={category.title} />
                 </div>
 
-                <p className=' text-[16px] xxl:text-lg text-gray-900 leading-[27px] font-medium transition-all duration-200 group-hover:text-branding-success text-center'>{category.title}</p>
+                <p className=' text-[16px] xxl:text-lg text-gray-900 leading-[27px] font-medium transition-all duration-200  text-center'>{category.title}</p>
              
             </div>
-            </Link>
+            </div>
         ))
      }
       

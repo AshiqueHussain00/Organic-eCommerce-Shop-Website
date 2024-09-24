@@ -19,6 +19,9 @@ const PopularProducts = () => {
     // Get the 10 products to display
     const products = fetchPopularProducts();
 
+   
+
+    
     return (
         <section className='relative w-full pb-10'>
             <div className='w-10/12 mx-auto'>
@@ -37,6 +40,8 @@ const PopularProducts = () => {
                             variants={cardAnimation}
                         >
                             <ProductCard
+                            product={product}
+                                productId = {product.id}
                                 imageSrc={product.images[0].main}
                                 productName={product.name}
                                 price={product.price.discounted}
@@ -45,6 +50,7 @@ const PopularProducts = () => {
                                 isSale={product.promotions?.discount ? true : false}
                                 saleText={product.promotions?.discount}
                                 bestSellerText={product.promotions?.bestSellerText}
+                                productCategory = {product.category}  
                             />
                         </motion.div>
                     ))}

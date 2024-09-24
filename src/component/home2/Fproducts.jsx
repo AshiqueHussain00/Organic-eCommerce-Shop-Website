@@ -6,6 +6,7 @@ import image3 from '../../assets/home3/newestProducts/GreenLettuce.svg';
 import image4 from '../../assets/home3/newestProducts/GreenChilli.svg';
 import image5 from '../../assets/home3/newestProducts/Corn.svg';
 import { motion } from 'framer-motion';
+import allproductData from '../../data/common/allproductData';
 import { FaArrowRight } from 'react-icons/fa'; // Ensure FaArrowRight is imported
 
 
@@ -89,7 +90,7 @@ function Fproducts() {
 
         {/* Product Cards Grid */}
         <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
-          {products.map((product, index) => (
+          {allproductData.slice(0,5).map((product, index) => (
             <motion.div
               key={index}
               initial="hidden"
@@ -99,47 +100,44 @@ function Fproducts() {
             >
               {index === 0 ? (
                 // If it's the first card, show only the image
-              <div className="relative flex justify-center items-center">
-  {/* Image */}
-  <img
-    src={product.imageSrc}
-    alt={product.productName || 'Featured Product'}
-    className="w-full max-w-[400px] h-[330px] border-1 border-gray-100 object-cover"
-  />
+                <div className="relative flex justify-center items-center summer-sale bg-green-400 h-full w-full border">
+                  {/* Image */}
+                 
 
-  {/* Overlay */}
-  <div className="absolute inset-0 flex-col justify-center items-center text-center text-black-900 bg-gray-100 bg-opacity-0 z-10">
-    {/* Sale Text */}
-    <div className="mb-2">
-      <p className="text-xs font-bold mt-8">SUMMER SALE</p>
-      <p className="text-3xl mt-3 text-primary font-bold">75% Off</p>
-    </div>
+                  {/* Overlay */}
+                  <div className="absolute inset-0 flex-col justify-center items-center text-center text-black-900 bg-gray-100 bg-opacity-0 z-10">
+                    {/* Sale Text */}
+                    <div className="mb-2">
+                      <p className="text-xs font-bold mt-8">SUMMER SALE</p>
+                      <p className="text-3xl mt-3 text-primary font-bold">75% Off</p>
+                    </div>
 
-    {/* Shop Now Button */}
-    <div className="flex justify-center items-center">
-    <button className="flex items-center justify-center gap-x-3 bg-white-100 text-branding-success font-semibold text-sm px-6 py-3 rounded-3xl group transition-all duration-200 hover:text-white hover:bg-primary">
-        Shop Now
-        <FaArrowRight/>
-    </button>
-</div>
+                    {/* Shop Now Button */}
+                    <div className="flex justify-center items-center">
+                      <button className="flex items-center justify-center gap-x-3 bg-white-100 text-branding-success font-semibold text-sm px-6 py-3 rounded-3xl group transition-all duration-200 hover:text-white-100 hover:bg-primary">
+                        Shop Now
+                        <FaArrowRight />
+                      </button>
+                    </div>
 
-  </div>
-</div>
+                  </div>
+                </div>
 
-              
+
               ) : (
                 // For other cards, render the full ProductCard component
                 <ProductCard
-                  imageSrc={product.imageSrc}
-                  productName={product.productName || 'Unknown Product'}
-                  price={product.price || '0.00'}
-                  oldPrice={product.oldPrice}
-                  rating={product.rating || 0}
-                  onAddToCart={() => handleAddToCart(product.productName)}
-                  isSale={product.isSale}
-                  isBestSeller={product.isBestSeller}
-                  saleText={product.saleText}
-                  bestSellerText={product.bestSellerText}
+                  product={product}
+                  key={index}
+                  imageSrc={product.images[0].main}
+                  productName={product.name}
+                  price={product.price.discounted}
+                  oldPrice={product.price.original}
+                  rating={product.rating}
+                // isBestSeller={product.isBestSeller}
+                // bestSellerText={product.bestSellerText}
+
+
                 />
               )}
             </motion.div>

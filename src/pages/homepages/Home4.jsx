@@ -7,6 +7,7 @@ import FeaturedProduct from '../../component/home4/FeaturedProduct'
 import TestimonialSection from '../../component/home4/TestimonialSection'
 import VideoSection from '../../component/home4/VideoSection'
 import LatestNewsSection from '../../component/home4/LatestNewsSection'
+import Newsletter from '../../component/common/Newsletter'
 
 const Home4 = () => {
   return (
@@ -37,14 +38,22 @@ const Home4 = () => {
         </div>
 
         {/* ---------- light green section ----------- */}
-        <div className='w-full xmd:h-[350px] h-[900px] xxl:h-[400px] bg-green-gray-scale-50 b relative z-10'>
+        <div className='w-full xmd:h-[350px] h-[900px] xxl:h-[400px] bg-green-gray-scale-50   relative z-10 flex '>
+
 
         </div>
 
 
 
 
+
       </div>
+
+
+<div className='w-full border border-gray-300 py-4 bg-green-gray-scale-50'>
+<Newsletter isHome4={true}/>
+</div>
+     
 
 
 
