@@ -18,10 +18,12 @@ import Logo from '../../assets/common/navbar/logo.svg'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion';
+// import { FaChevronDown } from 'react-icons/fa';
 
 const Navbar = () => {
   const cartItems = useSelector(state => state.cart.cart)
-  const wishlistItems = useSelector(state =>state.wishlist.wishlistItems);
+  const wishlistItems = useSelector(state => state.wishlist.wishlistItems);
 
   const navigate = useNavigate()
   const location = useLocation()
@@ -51,6 +53,22 @@ const Navbar = () => {
     setIsAllCategoriesOpen(false)
   }, [location.pathname])
 
+  const dropdownVariants = {
+    open: {
+      opacity: 1,
+      height: 'auto',
+      transition: {
+        duration: 0.3,
+      },
+    },
+    closed: {
+      opacity: 1,
+      height: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
   return (
     <section className='relative w-full mx-auto'>
       <div className='mt-8 mx-auto xs:max-h-[500px]'>
@@ -126,7 +144,7 @@ const Navbar = () => {
                <div className='hidden sm:flex'>
                <Link
                   to='/wishlist'
-                  className='p-2 rounded-full  hover:text-white-100 hover:bg-gray-700 relative '
+                  className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
                 >
                   <IoHeartOutline size={24} />
                   {wishlistItems.length !== 0 ? (
@@ -140,7 +158,7 @@ const Navbar = () => {
 
                 <Link
                   to='/cart'
-                  className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700  relative'
+                  className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
                 >
                   <HiOutlineShoppingBag size={24} />
                   {cartItems.length !== 0 ? (
@@ -152,13 +170,13 @@ const Navbar = () => {
                   )}
                 </Link>
 
-                <Link
-                  to='/profile'
-                  className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
-                >
-                  <FaRegUser size={24} />
-                </Link>
-               </div>
+                  <Link
+                    to='/profile'
+                    className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
+                  >
+                    <FaRegUser size={24} />
+                  </Link>
+                </div>
                 <button
                   onClick={toggleMenu}
                   aria-label='Toggle menu'
@@ -188,8 +206,10 @@ const Navbar = () => {
                       </span>
                     </div>
 
-                    <div className='right-0 left-0 absolute z-[999] overflow-hidden h-0 group-hover:h-auto'>
-                      <div className='mt-4 border bg-white-100'>
+                    <div
+                      className='right-0 left-0 absolute z-[999] overflow-hidden h-0 group-hover:h-auto'>
+                      <div
+                        className='mt-4 border bg-white-100'>
                         {allCategoryDropdown.map((item, index) => {
                           const IconComponent = item.icon
                           return (
@@ -197,8 +217,8 @@ const Navbar = () => {
                               to={item.path}
                               key={index}
                               className={`cursor-pointer flex gap-x-3 text-gray-500 items-center px-3 transition-all duration-200 hover:text-white-100 group hover:bg-primary ${item.title.toLowerCase() === 'view all category'
-                                  ? 'border'
-                                  : ''
+                                ? 'border'
+                                : ''
                                 }`}
                               onClick={() => navigate(`${item.path}`)}
                             >
@@ -213,6 +233,7 @@ const Navbar = () => {
                         })}
                       </div>
                     </div>
+
                   </div>
 
                   {/* Other Navbar Links */}
@@ -236,17 +257,19 @@ const Navbar = () => {
                       )}
 
                       {item.dropdown && (
-                        <div className='absolute left-0 z-10 h-0 overflow-hidden transition-all duration-300 top-full group-hover:h-auto'>
+                        <div
+                          className='absolute left-0 z-10 h-0 overflow-hidden transition-all duration-300 top-full group-hover:h-auto'
+                        >
                           <div
                             className={`mt-4 bg-white-100 text-black-900 border-2 ${item.title.toLowerCase() === 'blog'
-                                ? 'w-[500px] h-[200px]'
-                                : 'w-[150px] h-auto'
+                              ? 'w-[500px] h-[200px]'
+                              : 'w-[150px] h-auto'
                               }`}
                           >
                             <div
                               className={`${item.title.toLowerCase() === 'blog'
-                                  ? 'grid grid-cols-4 gap-1'
-                                  : ''
+                                ? 'grid grid-cols-4 gap-1'
+                                : ''
                                 }`}
                             >
                               {item.dropdown.map(dropdownItem => (
@@ -284,7 +307,7 @@ const Navbar = () => {
               <div className='flex space-x-4'>
                 <Link
                   to='/wishlist'
-                  className='p-2 text-white rounded-full hover:bg-gray-700 relative'
+                  className='relative p-2 rounded-full text-white-100 hover:bg-gray-700'
                 >
                   <IoHeartOutline size={24} />
                   {wishlistItems.length !== 0 ? (
@@ -294,7 +317,7 @@ const Navbar = () => {
                   ) : (
                     ''
                   )}
-                  
+
                 </Link>
 
                 <Link
@@ -325,7 +348,7 @@ const Navbar = () => {
           <div className='flex justify-center space-x-4 sm:hidden'>
             <Link
               to='/wishlist'
-              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 relative'
+              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
             >
               <IoHeartOutline size={24} />
               {wishlistItems.length !== 0 ? (
@@ -339,7 +362,7 @@ const Navbar = () => {
 
             <Link
               to='/cart'
-              className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700  relative'
+              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
             >
               <HiOutlineShoppingBag size={24} />
               {cartItems.length !== 0 ? (
@@ -360,7 +383,7 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu */}
           {isOpen && (
-            <div className='absolute inset-0 z-50 px-2 pt-2 pb-3  xlg:hidden top-[10rem] bg-white-100'>
+            <div className='absolute inset-0 z-50 px-2 pt-2  xlg:hidden top-[10rem] bg-white-100'>
               {/* All Categories for Mobile */}
               <button
                 onClick={toggleAllCategories}
@@ -369,19 +392,24 @@ const Navbar = () => {
                 All Categories
                 <FaChevronDown className='ml-auto' />
               </button>
-              {isAllCategoriesOpen && (
-                <div className='pl-4 bg-white-100'>
-                  {allCategoryDropdown.map((item, index) => (
-                    <Link
-                      to={item.path}
-                      key={index}
-                      className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-              )}
+
+              <motion.div
+                initial={false}
+                animate={isAllCategoriesOpen ? 'open' : 'closed'}
+                variants={dropdownVariants}
+                className='pl-4 overflow-hidden bg-white-100'
+              >
+                {allCategoryDropdown.map((item, index) => (
+                  <Link
+                    to={item.path}
+                    key={index}
+                    className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </motion.div>
+
               {/* Mobile Links */}
               {navData.map(item => (
                 <div key={item.id}>
@@ -394,19 +422,23 @@ const Navbar = () => {
                         {item.title}
                         <FaChevronDown className='ml-auto' />
                       </button>
-                      {openDropdownId === item.id && (
-                        <div className='pt-2 pl-4 bg-white-100'>
-                          {item.dropdown.map(dropdownItem => (
-                            <Link
-                              key={dropdownItem.id}
-                              to={dropdownItem.path}
-                              className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
-                            >
-                              {dropdownItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      )}
+
+                      <motion.div
+                        initial={false}
+                        animate={openDropdownId === item.id ? 'open' : 'closed'}
+                        variants={dropdownVariants}
+                        className='pt-0 pl-4 overflow-hidden bg-white-100'
+                      >
+                        {item.dropdown.map(dropdownItem => (
+                          <Link
+                            key={dropdownItem.id}
+                            to={dropdownItem.path}
+                            className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
+                          >
+                            {dropdownItem.title}
+                          </Link>
+                        ))}
+                      </motion.div>
                     </div>
                   ) : (
                     <Link
@@ -422,7 +454,7 @@ const Navbar = () => {
           )}
         </header>
       </div>
-    </section>
+    </section >
   )
 }
 

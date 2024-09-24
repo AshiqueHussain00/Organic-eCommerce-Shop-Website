@@ -28,7 +28,7 @@ const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
 //Shop
 const Shop1 = lazy(() => import('./pages/homepages/Shop1'));
-const Shop2 =lazy(()=>import('./pages/homepages/Shop2'))
+const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
 
 // blog
 const Blog=lazy(()=>import('./component/common/Blog'))
@@ -40,8 +40,9 @@ const About = lazy(() => import('./pages/About/About'))
 
 
 //Cart & Wishlist
-const Cart = lazy(()=> import('./pages/Cart'));
-const Wishlist = lazy(()=> import('./pages/Wishlist'));
+const Cart = lazy(() => import('./pages/Cart'));
+const Wishlist = lazy(() => import('./pages/Wishlist'));
+
 
 
 //Contact
@@ -86,22 +87,10 @@ const App = () => {
 
   // const navigate = useNavigate();
 
-  // const goToProductDetails = () => {
-    
-    
-  //   const id = 'v3'; 
-  //   const category = 'vegetable'
-
-  //   navigate(`/Category/${category}/${id}`);
-  // };
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      {/* <SidebarToggle/> */}
-      {/* <CheckoutPage/> */}
-      {/* <OrderHistory/> */}
-      
-      {/* <button onClick={goToProductDetails}>Go to Product Details</button> */}
+  
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -112,24 +101,24 @@ const App = () => {
           <Route path='/home5' element={<Home5 />} />
           <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
 
-          {/* ------------- Shop ------------- */} 
-          <Route path='/shop1' element={<Shop1 />} />  
-           <Route path='/shop2' element={<Shop2/>} /> 
+          {/* ------------- Shop ------------- */}
+          <Route path='/shop1' element={<Shop1 />} />
+          <Route path='/shop2' element={<Shop2 />} />
 
-           {/* blog */}
-           <Route path="/blog" element={<Blog />} />
-           <Route path="/blog/:id" element={<SingleBlog />} />
-           {/* ------------ About --------------- */}
-           <Route path='/about-us' element={<About />} /> 
+          {/* blog */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<SingleBlog />} />
+          {/* ------------ About --------------- */}
+          <Route path='/about-us' element={<About />} />
 
-           {/* ------------ Cart & WishList--------------- */}
-           <Route path='/cart' element={<Cart/>}/>
-           <Route path='/wishlist' element={<Wishlist/>}/>
+          {/* ------------ Cart & WishList--------------- */}
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/wishlist' element={<Wishlist />} />
 
 
 
-           {/* ------------- Contact --------------- */}
-           <Route path='/contact-us' element={<ContactForm />} />
+          {/* ------------- Contact --------------- */}
+          <Route path='/contact-us' element={<ContactForm />} />
         </Routes>
       </Suspense>
 
@@ -139,7 +128,7 @@ const App = () => {
       {
         product && <ViewModal/>
       }
-      
+
     </div>
   );
 };
