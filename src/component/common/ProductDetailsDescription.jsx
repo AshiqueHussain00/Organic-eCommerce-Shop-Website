@@ -74,12 +74,10 @@ function ProductDetailsDescription() {
 
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
-        <section>
-               <BreadCrumbs/>
-            <div className="w-full xxs:w-11/12 mx-auto">
-           
+        <section className="w-full">
+            <BreadCrumbs/>
             {/* IMAGES && DETAILS */}
-            <div className="flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xxl:gap-0 justify-center">
+            <div className="xxs:w-11/12 mx-auto flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xxl:gap-0 justify-center">
 
                 <div className="flex flex-col-reverse md:flex-row  gap-4 md:items-center md:justify-center">
                     {/* PRODUCT IMAGES */}

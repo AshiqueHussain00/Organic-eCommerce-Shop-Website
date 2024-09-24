@@ -21,6 +21,7 @@ const ViewModal = () => {
     const dispatch = useDispatch();
     const product = useSelector((state) => state.view.product);
     const cart = useSelector((state) => state.cart.cart);
+    const wishlistItems = useSelector((state)=> state.wishlist.wishlistItems);
 
     const [quantity, setQuantity] = useState(0)
 
@@ -51,6 +52,8 @@ const ViewModal = () => {
         { like: FaHeart },
         { views: FaEye }
     ];
+
+    console.log("Wish : " , wishlistItems);
 
 
 
@@ -108,12 +111,17 @@ const ViewModal = () => {
     const handleAddToCart = (product) => {
 
 
-        if (cart.find(item => item.id !== product.id)) {
+        if (cart.find(item => item.id === product.id)) {
+
+            
             dispatch(addToCart(product));
-            toast.success("Added to Cart")
 
         } else {
+
+            
             dispatch(addToCart(product));
+            toast.success("Added to Cart")
+          
         }
 
 
@@ -122,8 +130,17 @@ const ViewModal = () => {
     const handleAddToWishlist = (product) => {
 
 
-        dispatch(addToWishlist(product));
-        toast.success("Added to Wishlist")
+        if (wishlistItems.find(item => item.id === product.id)) {
+      
+             toast.success("Already Added");
+        } else{
+            
+            dispatch(addToWishlist(product));
+            toast.success("Added to Wishlist")
+
+        }
+
+   
     }
 
     const handleAddToIncrement = (product) => {
@@ -152,7 +169,7 @@ const ViewModal = () => {
     }
 
     return (
-        <motion.div className='fixed inset-0 z-[9] grid md:place-items-center justify-center bg-gray-900 bg-opacity-70 overflow-auto xsm:px-10 xxs:px-8 px-6 mmd:px-16  py-24'>
+        <motion.div className='fixed inset-0 z-[99] grid md:place-items-center justify-center bg-gray-900 bg-opacity-70 overflow-auto xsm:px-10 xxs:px-8 px-6 mmd:px-16  py-24'>
 
             <p className='absolute text-4xl cursor-pointer right-10 top-6 text-white-100' onClick={closeHandler}><MdOutlineClose /></p>
 
@@ -168,18 +185,18 @@ const ViewModal = () => {
 
                     {/* ----------- image part ------------ */}
 
-                    <div className='flex lg:max-w-[450px]  md:max-w-[300px]'>
+                    <div className='flex gap-x-6 lg:max-w-[500px]  md:max-w-[300px]'>
 
                         {/* ------- image list ------- */}
 
                         <div className='grid grid-cols-1 gap-y-5 h-full  py-10 w-[100px]'>
                             {
-                                imagesList.filter((image, index) => index !== selectedIndex).slice(0, 4).map((item, index) => (
+                                imagesList.map((item, index) => (
                                     <div
                                         onClick={() => setSelectedIndex(index)}
                                         key={index}
-                                        className='w-full transition-all duration-300 border cursor-pointer hover:scale-105'>
-                                        <img src={item} alt="product" className='object-cover w-full h-full xs:object-contain' />
+                                        className='transition-all duration-300 border cursor-pointer hover:scale-105 w-[60px] h-[60px] grid place-items-center'>
+                                        <img src={item} alt="product" className='object-cover w-full h-full ' />
                                     </div>
                                 ))
                             }
@@ -187,7 +204,7 @@ const ViewModal = () => {
                         </div>
 
                         {/* ----------- selected Image -------- */}
-                        <div className='h-[500px] xmd:p-4 p-2 flex items-cente '>
+                        <div className=' xmd:p-4 p-2 flex items-cente '>
 
                             <img src={imagesList[selectedIndex]} alt="product" className='object-contain w-full h-full ' />
 

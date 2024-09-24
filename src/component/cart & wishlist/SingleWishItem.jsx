@@ -22,7 +22,7 @@ const SingleWishItem = ({ data }) => {
 
     const handleRemoveFromWishlist = (id) => {
 
-        console.log("Click hora hai")
+   
         dispatch(removeFromWishlist(id))
         toast.error("Remove from wishlist")
 

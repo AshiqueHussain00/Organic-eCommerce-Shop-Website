@@ -16,7 +16,7 @@ const Category = () => {
                 <img src={category.image} alt={category.title} />
                 </div>
 
-                <p className=' text-[16px] xxl:text-lg text-gray-900 leading-[27px] font-medium transition-all duration-200  text-center'>{category.title}</p>
+                <p className=' text-sm xmd:text-[16px] xxl:text-lg text-gray-900 leading-[27px] font-medium transition-all duration-200  text-center'>{category.title}</p>
              
             </div>
             </div>
