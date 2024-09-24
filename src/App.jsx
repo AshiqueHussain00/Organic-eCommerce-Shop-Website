@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 
 
 import ProductDetailsDescription from './component/common/ProductDetailsDescription';
+import Account1 from './pages/Account1';
 
 
 import ViewModal from './component/common/ViewModal';
@@ -31,7 +32,7 @@ const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
 
 //Shop
-const Shop1 = lazy(() => import('./pages/shop1/Shop1'));
+const Shop1 = lazy(() => import('./pages/shop/Shop1'));
 const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
 
 // blog
@@ -125,6 +126,10 @@ const App = () => {
           <Route path='/contact-us' element={<ContactForm />} />
         </Routes>
       </Suspense>
+
+      {/* <Account1/> */}
+
+
 
       <ScrollTop/>
 

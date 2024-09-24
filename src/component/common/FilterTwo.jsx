@@ -315,6 +315,7 @@ const FilterTwo = ({ products }) => {
             {paginatedProducts.map((product) => (
               <ProductCard
                product={product}
+               productId={product.id}
                 key={product.id}
                 imageSrc={product.images[0].main}
                 productName={product.name}
@@ -324,6 +325,7 @@ const FilterTwo = ({ products }) => {
                 onAddToCart={() => handleAddToCart(product.name)}
                 isSale={!!product.promotions.discount}
                 saleText={product.promotions.discount}
+                productCategory={product.category}
                
               />
             ))}
