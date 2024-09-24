@@ -2204,8 +2204,8 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand:
-            'https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180',
+        brand: "kissan",
+            
 
         socialLink: [
             'https://www.facebook.com/',
@@ -2279,7 +2279,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Maggi",
 
         socialLink: [
             'https://www.facebook.com/',
@@ -2354,7 +2354,7 @@ const allproductData = [
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand:
-            'https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180',
+            'Cadbury',
 
         socialLink: [
             'https://www.facebook.com/',
@@ -2429,7 +2429,7 @@ const allproductData = [
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand:
-            'https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180',
+            'Bingo',
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -2502,8 +2502,8 @@ const allproductData = [
         inStock: false,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand:
-            'https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180',
+        brand:"Chedda's",
+            
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -2577,7 +2577,7 @@ const allproductData = [
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand:
-            'https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180',
+            'KMA',
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -2651,7 +2651,7 @@ const allproductData = [
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
         brand:
-            'https://tse1.mm.bing.net/th?id=OIP.r0gtL-F5uRAgZYthj_0qxgAAAA&pid=Api&P=0&h=180',
+            "Pure & Sure",
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -2727,7 +2727,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Nescafe",
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -2806,7 +2806,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Maaza",
 
         socialLink: [
             'https://www.facebook.com/',
@@ -2886,7 +2886,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Pepsi",
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -2965,7 +2965,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Mother Dairy",
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -3044,7 +3044,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Amazon",
 
         socialLink: [
             'https://www.facebook.com/',
@@ -3124,7 +3124,7 @@ const allproductData = [
         inStock: false,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Paper boat",
         socialLink: [
             'https://www.facebook.com/',
             'https://twitter.com/?lang=en',
@@ -3203,7 +3203,7 @@ const allproductData = [
         inStock: true,
         mainDec:
             'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nibh diam, blandit vel consequat nec, ultrices et ipsum. Nulla varius magna a consequat pulvinar. ',
-        brand: brand,
+        brand: "Pepsi",
 
         socialLink: [
             'https://www.facebook.com/',
@@ -4087,6 +4087,7 @@ const allproductData = [
             }
         ],
         promotions: { discount: '7% Discount', organic: '30% Organic' }
-    }
+    },
+    
 ]
 export default allproductData;

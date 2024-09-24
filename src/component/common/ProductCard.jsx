@@ -5,13 +5,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
-import { addToCart  , calculateTotalPrice} from "../../redux/slice/cartSlice";
+import { addToCart, calculateTotalPrice } from "../../redux/slice/cartSlice";
 import { addToWishlist } from "../../redux/slice/wishlistSlice";
 import { useNavigate } from "react-router-dom";
 import ProductCategory from "../home1/ProductCategory";
+import { addInView, removeInView } from "../../redux/slice/viewSlice";
 
 const ProductCard = ({
-   
+
     product,
     productId,
     imageSrc,
@@ -29,57 +30,69 @@ const ProductCard = ({
 }) => {
 
 
-   
+
     const [isHover, setIsHover] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
 
-    const handleAddToCart = (product , events)=>{
+    const handleAddToCart = (product, events) => {
 
         events.stopPropagation();
 
-    
-        if(product.inStock){
+
+        if (product.inStock) {
             dispatch(addToCart(product));
+            toast.success("Added to Cart")
             dispatch(calculateTotalPrice());
-          
-    
-        }else{
+
+
+        } else {
             toast.error("Sorry , Product is Out of Stock")
         }
 
-     
+
 
     }
 
-    const handleAddToWishlist = (product , events)=>{
-    
+    const handleAddToWishlist = (product, events) => {
+
         events.stopPropagation()
-        if(product){
+        if (product) {
             dispatch(addToWishlist(product));
-    
+            toast.success("Added to  Wishlist")
+
         }
 
 
     }
 
-    const handlePageDescription = (category , id) => {
-          navigate(`/product/${category}/${id}`);
+    const handlePageDescription = (category, id) => {
+        navigate(`/product/${category}/${id}`);
+
+    }
+    
+    const handleAddInView = (product, events) => {
+
+        events.stopPropagation();
+
+        if (product) {
+            dispatch(addInView(product));
+        }
 
     }
 
 
     return (
         <div
-           onClick={(events)=> {handlePageDescription(productCategory , productId)}}
+            onClick={(events) => { handlePageDescription(productCategory, productId) }}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
             className="relative flex flex-col transition duration-200 bg-white cursor-pointer border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
             {/* Sale and Best Seller Tags */}
 
-           
-            
+
+
             <div className="absolute flex space-x-2 top-2 left-2" >
                 {/* {product.category} */}
                 {isSale && (
@@ -104,13 +117,13 @@ const ProductCard = ({
 
                 {/* ------ wishlist ----- */}
 
-                <div onClick={(events)=> handleAddToWishlist(product , events)} className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                <div onClick={(events) => handleAddToWishlist(product, events)} className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <GoHeart />
                 </div>
 
                 {/* ------- view ------- */}
 
-                <div className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
+                <div onClick={(events) => handleAddInView(product, events)} className='grid px-2 py-2 text-lg transition-all duration-200 border border-gray-100 rounded-full cursor-pointer place-items-center xl:text-xl xlg:text-lg sm:text-xl hover:bg-primary hover:text-white-100 hover:border-none'>
                     <IoEyeOutline />
                 </div>
 
@@ -153,7 +166,7 @@ const ProductCard = ({
                 {/* Add to Cart Button */}
                 <div className="p-2 ml-auto bg-red ">
                     <button
-                        onClick={(events)=> {handleAddToCart(product , events)}}
+                        onClick={(events) => { handleAddToCart(product, events) }}
                         className="p-2 bg-gray-200 rounded-full hover:bg-primary hover:text-white-100"
                     >
                         <PiHandbag className="text-xl" />

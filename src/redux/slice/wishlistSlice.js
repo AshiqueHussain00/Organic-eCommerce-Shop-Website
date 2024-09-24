@@ -20,8 +20,11 @@ const wishlistSlice = createSlice({
             if(!existingItem){
                state.wishlistItems.push(product); 
                localStorage.setItem("wishlistItems" , JSON.stringify(state.wishlistItems));
-               toast.success("Added to Wishlist")
+            //    toast.success("Added to Wishlist")
+            }else{
+                toast.success("Already Added")
             }
+            
         },
 
         removeFromWishlist : (state, action)=> {
@@ -35,7 +38,7 @@ const wishlistSlice = createSlice({
             localStorage.setItem("wishlistItems" ,  JSON.stringify(state.wishlistItems))
 
             console.log("3")
-            toast.error("Remove from Wishlist")
+            // toast.error("Remove from Wishlist")
         }
     }
 })

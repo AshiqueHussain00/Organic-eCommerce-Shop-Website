@@ -103,7 +103,7 @@ const SingleBlog = () => {
       {/* Main Content */}
       <div className="flex-1 mr-8">
         {/* Big Image */}
-        <img src={blog.img} alt={readMore.title} className="w-full h-auto rounded-lg mb-4" />
+        <img loading='lazy' src={blog.img} alt={readMore.title} className="w-full h-auto rounded-lg mb-4" />
 
         {/* Icons: Tag, Human, Comments */}
         <div className="flex items-center mb-2 text-gray-700">
@@ -122,7 +122,7 @@ const SingleBlog = () => {
         <div className="flex justify-between items-center mb-4">
           {/* Left Side: Admin Info */}
           <div className="flex items-center">
-            <img src={readMore.adminImg} alt={blog.postedBy} className="w-12 h-12 rounded-full mr-3" />
+            <img loading='lazy' src={readMore.adminImg} alt={blog.postedBy} className="w-12 h-12 rounded-full mr-3" />
             <div>
               <p className="font-semibold">{blog.postedBy}</p>
               <p className="text-sm text-gray-600">{blog.date} • Opened ago 6 min</p>
@@ -133,7 +133,7 @@ const SingleBlog = () => {
             {/* Assuming readMore.urls has [facebook, twitter, instagram, share] */}
             {readMore.urls[0] && (
               <a href={readMore.urls[0]} target="_blank" rel="noopener noreferrer" className="text-blue-600">
-                <FaFacebook size={20} />
+                <FaFacebook  />
               </a>
             )}
             {readMore.urls[1] && (
@@ -169,6 +169,7 @@ const SingleBlog = () => {
         <div className="grid grid-cols-2 gap-4 mb-4">
           {readMore.insideImg.slice(0, 2).map((imgSrc, index) => (
             <img
+            loading='lazy'
               key={`inside-img-${index}`}
               src={imgSrc}
               alt={`Inside blog ${index + 1}`}
@@ -196,6 +197,7 @@ const SingleBlog = () => {
           onBlur={() => setTimeout(() => setShowSuggestions(false), 200)} // Delay to allow click
           className="mb-4 p-2 border rounded w-full"
         />
+        
         {showSuggestions && suggestions.length > 0 && (
           <ul className="absolute bg-white border border-green-500 rounded w-full max-h-40 overflow-y-auto z-10 mb-4">
             {suggestions.map((suggestion, idx) => (

@@ -32,7 +32,7 @@ const cartSlice = createSlice({
 
                 state.cart.push({...product , quantity : 1 , totalPrice: action.payload.price.discounted})
                 localStorage.setItem("cart" , JSON.stringify(state.cart))
-                toast.success("Added to Cart")
+                // toast.success("Added to Cart")
 
 
             }
@@ -55,7 +55,7 @@ const cartSlice = createSlice({
             state.cart = state.cart.filter(item =>  item.id !== productId);
             localStorage.setItem("cart" , JSON.stringify(state.cart));
       
-            toast.error("Product removed from cart")
+            // toast.error("Product removed from cart")
             }
 
 

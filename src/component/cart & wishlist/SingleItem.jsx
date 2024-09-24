@@ -1,6 +1,7 @@
 import React from 'react'
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { useDispatch } from 'react-redux';
+import { toast } from 'react-hot-toast';
 import { removeFromCart, increaseQuantity, decreaseQuantity, calculateTotalPrice } from '../../redux/slice/cartSlice';
 
 
@@ -26,6 +27,7 @@ const SingleItem = ({ data }) => {
 
         if (id) {
             dispatch(removeFromCart(id));
+            toast.error("Remove from Cart")
             dispatch(calculateTotalPrice());
         }
 

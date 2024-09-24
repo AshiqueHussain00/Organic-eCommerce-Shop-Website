@@ -19,7 +19,7 @@ const LatestNews = ({ data }) => {
               <img
                 src={item.img}
                 alt={`news-${index}`}
-                className="w-full object-cover rounded-lg transition-all duration-700 group-hover:scale-110"
+                className="w-full h-48 object-cover rounded-lg transition-all duration-700 group-hover:scale-110"
               />
             </div>
             <div className="absolute bg-white-200 bottom-3 left-3 bg-white p-2 w-16 h-auto rounded-md shadow-md">
@@ -66,18 +66,18 @@ const LatestNews = ({ data }) => {
   );
 };
 
-LatestNews.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired, // Added id as required
-      img: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
-      category: PropTypes.string.isRequired,
-      postedBy: PropTypes.string.isRequired,
-      comments: PropTypes.number.isRequired,
-      p: PropTypes.string.isRequired, // Paragraph content
-    })
-  ).isRequired,
-};
+// LatestNews.propTypes = {
+//   data: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       id: PropTypes.number.isRequired, // Added id as required
+//       img: PropTypes.string.isRequired,
+//       date: PropTypes.string.isRequired,
+//       category: PropTypes.string.isRequired,
+//       postedBy: PropTypes.string.isRequired,
+//       comments: PropTypes.number.isRequired,
+//       p: PropTypes.string.isRequired, // Paragraph content
+//     })
+//   ).isRequired,
+// };
 
 export default LatestNews;
