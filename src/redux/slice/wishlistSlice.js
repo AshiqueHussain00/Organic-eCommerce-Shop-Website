@@ -31,13 +31,13 @@ const wishlistSlice = createSlice({
              
             const productId = action.payload;
 
-            console.log("1")
+            
             state.wishlistItems = state.wishlistItems.filter(item => item.id !== productId);
 
-            console.log("2")
+    
             localStorage.setItem("wishlistItems" ,  JSON.stringify(state.wishlistItems))
 
-            console.log("3")
+         
             // toast.error("Remove from Wishlist")
         }
     }
