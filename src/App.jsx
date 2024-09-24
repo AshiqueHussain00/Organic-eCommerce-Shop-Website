@@ -12,6 +12,10 @@ import SidebarToggle from './component/common/SidebarToggle';
 import CheckoutPage from './component/common/CheckoutPage';
 import OrderHistory from './component/common/OrderHistory';
 
+
+//PANKAJ COMPONENT MAKING
+import Footer3 from './component/common/footer/Footer3';
+
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
 const Home2 = lazy(() => import('./pages/homepages/Home2'));
@@ -66,7 +70,8 @@ const App = () => {
   // };
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
-      <Navbar />
+      <Footer3/>
+      {/* <Navbar /> */}
       {/* <SidebarToggle/> */}
       {/* <CheckoutPage/> */}
       {/* <OrderHistory/> */}
