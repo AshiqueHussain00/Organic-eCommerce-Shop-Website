@@ -3,7 +3,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import { addToCart, calculateTotalPrice } from "../../redux/slice/cartSlice";
 import { addToWishlist } from "../../redux/slice/wishlistSlice";
@@ -30,7 +30,7 @@ const ProductCard = ({
 }) => {
 
 
-
+    const cart = useSelector((state) => state.cart.cart)
     const [isHover, setIsHover] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -41,7 +41,12 @@ const ProductCard = ({
         events.stopPropagation();
 
 
-        if (product.inStock) {
+
+        if(cart.find(item => item.id === product.id)){
+            
+            dispatch(addToCart(product));
+        }
+        else if (product.inStock) {
             dispatch(addToCart(product));
             toast.success("Added to Cart")
             dispatch(calculateTotalPrice());

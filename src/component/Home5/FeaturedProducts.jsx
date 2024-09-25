@@ -108,6 +108,7 @@ const FeaturedProducts = () => {
                  isBestSeller={product.isBestSeller}
                  saleText={product.saleText}
                  bestSellerText={product.bestSellerText}
+                
              />
          </motion.div>
           ))}

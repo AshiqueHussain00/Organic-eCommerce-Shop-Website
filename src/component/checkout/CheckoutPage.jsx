@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import BreadCrumbs from './BreadCrumbs';
+import BreadCrumbs from '../common/BreadCrumbs';
 
 const CheckoutPage = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -42,9 +42,9 @@ const CheckoutPage = () => {
     };
 
     return (
-        <section className='w-full'>
+        <section className='w-full '>
             <BreadCrumbs />
-            <div className="w-10/12 px-4 py-8 mx-auto">
+            <div className="w-10/12 px-4 py-16 mx-auto">
                 <ToastContainer />
 
                 <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -55,6 +55,7 @@ const CheckoutPage = () => {
                         {/* First Name, Last Name, and Company */}
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                             <div>
+                                <label>First Name</label>
                                 <input
                                     type="text"
                                     placeholder="Your first name"
@@ -65,6 +66,7 @@ const CheckoutPage = () => {
                             </div>
 
                             <div>
+                            <label>Last Name</label>
                                 <input
                                     type="text"
                                     placeholder="Your last name"
@@ -75,9 +77,10 @@ const CheckoutPage = () => {
                             </div>
 
                             <div>
+                            <label>Company name (optional)</label>
                                 <input
                                     type="text"
-                                    placeholder="Company name (optional)"
+                                    placeholder="Company name"
                                     {...register('companyName')}
                                     className="w-full p-2 border rounded"
                                 />
@@ -87,6 +90,7 @@ const CheckoutPage = () => {
                         {/* Address and ZIP */}
                         <div className="grid grid-cols-1 gap-4">
                             <div>
+                                <label>Address</label>
                                 <input
                                     type="text"
                                     placeholder="Street Address"
@@ -100,6 +104,7 @@ const CheckoutPage = () => {
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-4">
                             {/* Country */}
                             <div>
+                                <label>Country</label>
                                 <select
                                     {...register('country', { required: 'Country is required' })}
                                     className="w-full p-2 border rounded"
@@ -116,6 +121,7 @@ const CheckoutPage = () => {
 
                             {/* State */}
                             <div>
+                                <label>State</label>
                                 <select
                                     {...register('state', { required: 'State is required' })}
                                     className="w-full p-2 border rounded"
@@ -130,6 +136,7 @@ const CheckoutPage = () => {
                             </div>
 
                             <div>
+                                <label>Zip Code</label>
                                 <input
                                     type="text"
                                     placeholder="Zip Code"
@@ -143,6 +150,7 @@ const CheckoutPage = () => {
                         {/* Email and Phone */}
                         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                             <div>
+                                <label>Email</label>
                                 <input
                                     type="email"
                                     placeholder="Email Address"
@@ -153,6 +161,7 @@ const CheckoutPage = () => {
                             </div>
 
                             <div>
+                                <label>Phone Number</label>
                                 <input
                                     type="text"
                                     placeholder="Phone number"

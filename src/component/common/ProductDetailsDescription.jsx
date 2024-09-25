@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CookingData as vegetableData } from '../../data/common/CookingData';
 import allproductData from '../../data/common/allproductData';
 import { useParams } from 'react-router-dom';
@@ -7,15 +7,19 @@ import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } fro
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GoHeart } from "react-icons/go";
 import BreadCrumbs from './BreadCrumbs';
+import { addToCart, increaseQuantity, decreaseQuantity } from '../../redux/slice/cartSlice';
+import { addToWishlist } from '../../redux/slice/wishlistSlice';
+import { toast } from 'react-hot-toast';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-const socialMedia =  [
+const socialMedia = [
     { facebook: FaFacebookF },
     { instagram: FaInstagram },
     { pinterest: FaPinterestP },
     { twitter: FaTwitter }
 ];
-const actions =  [
+const actions = [
     { like: FaHeart },
     { views: FaEye }
 ];
@@ -25,22 +29,32 @@ const socialLink = ['https://www.facebook.com/', 'https://twitter.com/', 'https:
 function ProductDetailsDescription() {
 
 
-    const {productCategory , productId} = useParams();
+    const dispatch = useDispatch();
+    const cart = useSelector((state) => state.cart.cart);
+    const wishlistItems = useSelector((state) => state.wishlist.wishlistItems);
+
+    const [quantity, setQuantity] = useState(0)
+
+
+
+
+
+    const { productCategory, productId } = useParams();
     // {console.log(productId);}
 
     // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
     const product = allproductData.find((item) => item.id === productId);
-    
-    
+
+
 
     // Function to handle product selection
-    useEffect(()=>{
-       if(product){
-           setSelectedProduct(product);
-       }
-    },[product])
-    
+    useEffect(() => {
+        if (product) {
+            setSelectedProduct(product);
+        }
+    }, [product])
+
 
     // Function to handle image change on thumbnail click
     const handleImageChange = (imageSrc) => {
@@ -52,30 +66,106 @@ function ProductDetailsDescription() {
 
 
     //Product Quanitity Increment and Decrement
-    const [amount, setAmount] = useState(0);
+    // const [amount, setAmount] = useState(0);
 
-    const Increment = () => {
-        // Only increment if the product is in stock
-        if (selectedProduct.inStock) {
-            setAmount((amount) => amount + 1);
+    // const Increment = () => {
+    //     // Only increment if the product is in stock
+    //     if (selectedProduct.inStock) {
+    //         setAmount((amount) => amount + 1);
+    //     }
+    // };
+
+    // const Decrement = () => {
+    //     // Decrease amount only if greater than or equal to  1
+    //     setAmount((amount) => (amount >= 1 ? amount - 1 : 0));
+    // };
+
+    const handleAddToCart = (product) => {
+
+
+        if (cart.find(item => item.id === product.id)) {
+
+
+            dispatch(addToCart(product));
+
+        } else {
+
+
+            dispatch(addToCart(product));
+            toast.success("Added to Cart")
+
         }
-    };
 
-    const Decrement = () => {
-        // Decrease amount only if greater than or equal to  1
-        setAmount((amount) => (amount >= 1 ? amount - 1 : 0));
-    };
 
-    
+    }
+
+    const handleAddToWishlist = (product) => {
+
+
+        if (wishlistItems.find(item => item.id === product.id)) {
+
+            toast.success("Already Added");
+        } else {
+
+            dispatch(addToWishlist(product));
+            toast.success("Added to Wishlist")
+
+        }
+
+
+    }
+
+    const handleAddToIncrement = (product) => {
+
+
+
+        if (cart.find(item => item.id === product.id)) {
+            dispatch(increaseQuantity(product.id));
+
+        } else {
+            dispatch(addToCart(product));
+        }
+
+
+
+    }
+
+
+    const handleAddToDecrement = (product) => {
+
+        if (cart.find(item => item.id === product.id)) {
+            dispatch(decreaseQuantity(product.id));
+
+        }
+
+    }
+
+    useEffect(() => {
+
+        if (selectedProduct) {
+
+            let filterProduct = [];
+            filterProduct = cart.filter(item => item.id === selectedProduct.id)
+
+            if (filterProduct.length !== 0) {
+                setQuantity(filterProduct[0].quantity)
+            }
+        }
+
+
+
+    }, [cart])
+
+
 
     if (!selectedProduct) {
         return <h2>Product not found</h2>;
-      }
+    }
 
     //  SINGLE PRODUCT FULL DEATAILED DESCRIPTION
     return (
-        <section className="w-full">
-            <BreadCrumbs/>
+        <section className="w-full ">
+            <BreadCrumbs />
             {/* IMAGES && DETAILS */}
             <div className="xxs:w-11/12 mx-auto flex flex-col xmd:flex-row m-2 p-1 gap-4 xmd:m-2 xmd:px-2 lg:m-10 xmd:gap-4  xxl:gap-0 justify-center">
 
@@ -125,9 +215,9 @@ function ProductDetailsDescription() {
                         {/* RATING && SKU CODE */}
                         <div className="flex flex-row  items-center gap-6">
                             <h2 className="flex space-x-1">{Array.from({ length: 5 }, (elem, index) => {
-                                {/* let number = index + 0.5; */}
+                                {/* let number = index + 0.5; */ }
                                 return (<span key={index}>
-                                    {selectedProduct.rating >= index  ? (
+                                    {selectedProduct.rating >= index ? (
                                         <FaStar className="text-yellow-800 h-[12px] w-[12px]" />
                                     ) : (
                                         <FaRegStar className="text-yellow-800 h-[12px] w-[12px]" />
@@ -157,20 +247,20 @@ function ProductDetailsDescription() {
                             <h3 className="text-sm  md:text-base  xmd:text-sm xlg:text-base font-semibold">Brand: <span className="text-xs md:text-sm xmd:text-xs xlg:text-sm font-medium">{selectedProduct.brand}</span></h3>
 
                             <h3 className="flex space-x-2 md:space-x-4  xmd:space-x-2 text-xs md:text-base xmd:text-xs  xlg:text-base items-center font-semibold text-gray-800 mr-1">Share item:  {
-                               socialMedia.map((social, index) => {
-                              const Icon = Object.values(social)[0];
-                                return (
-                                    <a
-                                        href={socialLink[index]}
-                                        key={index}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-600 transition hover:bg-primary hover:text-white-200 p-1 hover:rounded-full"
-                                    >
-                                        <Icon className="h-[15px] w-[15px] md:h-[20px] md:w-[20px] xmd:h-[15px] xmd:w-[15px]  xlg:h-[20px] xlg:w-[20px]" />
-                                    </a>
-                                );
-                            })}</h3>
+                                socialMedia.map((social, index) => {
+                                    const Icon = Object.values(social)[0];
+                                    return (
+                                        <a
+                                            href={socialLink[index]}
+                                            key={index}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-gray-600 transition hover:bg-primary hover:text-white-200 p-1 hover:rounded-full"
+                                        >
+                                            <Icon className="h-[15px] w-[15px] md:h-[20px] md:w-[20px] xmd:h-[15px] xmd:w-[15px]  xlg:h-[20px] xlg:w-[20px]" />
+                                        </a>
+                                    );
+                                })}</h3>
 
                         </div>
 
@@ -187,20 +277,24 @@ function ProductDetailsDescription() {
                     {/* AMOUNT OF ITEM && ADD TO CART */}
                     <div className="flex  flex-row  gap-5 xxs:gap-4 md:gap-6 p-2 ">
 
-                    <div className="flex space-x-3 lg:space-x-6 bg-white-300 rounded-full p-1 md:px-2 md:py-2  items-center">
-                                <button onClick={Decrement} ><FaMinusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
-                                <div className="text-md md:text-lg">{amount}</div>
-                                <button onClick={Increment}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
-                            </div>
-
-                       
-
-                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
-                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
-                            <button className="flex items-center text-md md:text-lg font-medium text-white-200 px-1 py-1 xxs:px-4 md:px-16 xmd:px-6 xxl:px-20 xxs:py-2 bg-light-branding-success hover:bg-hard_primary rounded-full whitespace-nowrap">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
-
+                        <div className="flex space-x-3 lg:space-x-6 bg-white-300 rounded-full p-1 md:px-2 md:py-2  items-center">
+                            <button onClick={() => handleAddToDecrement(selectedProduct)} ><FaMinusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
+                            <div className="text-md md:text-lg">{quantity}</div>
+                            <button onClick={() => handleAddToIncrement(selectedProduct)}><FaPlusCircle style={{ color: 'gray' }} className="h-[20px] w-[20px] md:h-[25px] md:w-[25px]" /></button>
                         </div>
-                            <button><GoHeart className="h-[30px] w-[30px] md:h-[45px] p-1 md:w-[45px] ml-2 bg-white-300  md:p-2 rounded-full hover:bg-primary hover:text-white-200" /></button>
+
+
+
+                        <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
+                            <div className="flex space-x-3 xxs:space-x-4 md:space-x-6 justify-center">
+                                <button
+                                    onClick={() => handleAddToCart(selectedProduct)}
+                                    className="flex items-center text-md md:text-lg font-medium text-white-200 px-1 py-1 xxs:px-4 md:px-16 xmd:px-6 xxl:px-20 xxs:py-2 bg-light-branding-success hover:bg-hard_primary rounded-full whitespace-nowrap">Add to Cart <HiOutlineShoppingBag className="ml-2 h-[20px] w-[20px]" /></button>
+
+                            </div>
+                            <button onClick={() => handleAddToWishlist(selectedProduct)}>
+
+                                <GoHeart className="h-[30px] w-[30px] md:h-[45px] p-1 md:w-[45px] ml-2 bg-white-300  md:p-2 rounded-full hover:bg-primary hover:text-white-200" /></button>
                         </div>
                     </div>
 

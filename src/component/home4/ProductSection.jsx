@@ -72,12 +72,14 @@ const ProductSection = () => {
                             allproductData.slice(0, 8).map((product, index) => (
                                 <ProductCard
                                 product={product}
+                                productId={product.id}
                                     key={index}
                                     imageSrc={product.images[0].main}
                                     productName={product.name}
                                     price={product.price.discounted}
                                     oldPrice={product.price.original}
                                     rating={product.rating}
+                                    productCategory={product.category}
                                     // isBestSeller={product.isBestSeller}
                                     // bestSellerText={product.bestSellerText}
 
@@ -90,11 +92,13 @@ const ProductSection = () => {
                                 <ProductCard
                                 product={product}
                                 key={index}
+                                productId={product.id}
                                 imageSrc={product.images[0].main}
                                 productName={product.name}
                                 price={product.price.discounted}
                                 oldPrice={product.price.original}
                                 rating={product.rating}
+                                productCategory={product.category}
                                 // isBestSeller={product.isBestSeller}
                                 // bestSellerText={product.bestSellerText}
 

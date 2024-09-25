@@ -84,7 +84,7 @@ ${data.inStock ? "bg-primary text-white-100" : " bg-gray-50 text-gray-400"
             {/* ---------- price ---------- */}
 
             <div className=' flex items-center justify-center '>
-                $ {data.price.discounted}
+                $ {data.price.discounted.toFixed(2)}
             </div>
 
 

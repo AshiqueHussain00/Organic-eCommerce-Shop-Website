@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion';
+import Sidebar from './Sidebar'
 // import { FaChevronDown } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -53,6 +54,7 @@ const Navbar = () => {
     setIsAllCategoriesOpen(false)
   }, [location.pathname])
 
+
   const dropdownVariants = {
     open: {
       opacity: 1,
@@ -68,6 +70,11 @@ const Navbar = () => {
         duration: 0.3,
       },
     },
+  };
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
   return (
     <section className='relative w-full mx-auto'>
@@ -156,19 +163,31 @@ const Navbar = () => {
                     )}
                   </Link>
 
-                  <Link
-                    to='/cart'
-                    className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
-                  >
-                    <HiOutlineShoppingBag size={24} />
-                    {cartItems.length !== 0 ? (
-                      <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                        {cartItems.length}
-                      </span>
-                    ) : (
-                      ''
-                    )}
-                  </Link>
+                  {isSidebarOpen && (
+                  <div
+                    className="fixed inset-0 z-40 w-full bg-opacity-50 bg-black-800"
+                    onClick={toggleSidebar} // Clicking the background will close the sidebar
+                  ></div>
+                )}
+
+                {/* Sidebar Component */}
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+                {/* Cart button that opens sidebar */}
+                <Link
+                  to="/"
+                  className="relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700"
+                  onClick={toggleSidebar} // Also toggles the sidebar when clicked
+                >
+                  <HiOutlineShoppingBag size={24} />
+                  {cartItems.length !== 0 ? (
+                    <span className="absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center rounded-full top-[-4px] right-0">
+                      {cartItems.length}
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </Link>
 
                   <Link
                     to='/profile'
@@ -313,16 +332,33 @@ const Navbar = () => {
                     </span>
                   )}
                 </Link>
+                {/* 3-line menu button to open sidebar */}
 
+
+                {/* Background overlay when sidebar is open */}
+                {isSidebarOpen && (
+                  <div
+                    className="fixed z-40 w-full bg-opacity-50 -inset-4 bg-black-800"
+                    onClick={toggleSidebar} // Clicking the background will close the sidebar
+                  ></div>
+                )}
+
+                {/* Sidebar Component */}
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+                {/* Cart button that opens sidebar */}
                 <Link
-                  to='/cart'
-                  className='relative p-2 text-white rounded-full hover:bg-gray-700 '
+                  to="/"
+                  className="relative p-2 rounded-full text-white-100 hover:text-white-100 hover:bg-gray-700"
+                  onClick={toggleSidebar} // Also toggles the sidebar when clicked
                 >
                   <HiOutlineShoppingBag size={24} />
-                  {cartItems.length !== 0 && (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                  {cartItems.length !== 0 ? (
+                    <span className="absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center rounded-full top-[-4px] right-0">
                       {cartItems.length}
                     </span>
+                  ) : (
+                    ""
                   )}
                 </Link>
 
@@ -351,19 +387,31 @@ const Navbar = () => {
               )}
             </Link>
 
-            <Link
-              to='/cart'
-              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
-            >
-              <HiOutlineShoppingBag size={24} />
-              {cartItems.length !== 0 ? (
-                <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                  {cartItems.length}
-                </span>
-              ) : (
-                ''
-              )}
-            </Link>
+            {isSidebarOpen && (
+                  <div
+                    className="fixed z-40 w-full bg-opacity-50 -inset-3 bg-black-800"
+                    onClick={toggleSidebar} // Clicking the background will close the sidebar
+                  ></div>
+                )}
+
+                {/* Sidebar Component */}
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+                {/* Cart button that opens sidebar */}
+                <Link
+                  to="/"
+                  className="relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700"
+                  onClick={toggleSidebar} // Also toggles the sidebar when clicked
+                >
+                  <HiOutlineShoppingBag size={24} />
+                  {cartItems.length !== 0 ? (
+                    <span className="absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center rounded-full top-[-4px] right-0">
+                      {cartItems.length}
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </Link>
 
             <Link
               to='/profile'

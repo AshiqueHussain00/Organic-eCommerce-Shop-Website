@@ -128,12 +128,14 @@ function Fproducts() {
                 // For other cards, render the full ProductCard component
                 <ProductCard
                   product={product}
+                  productId={product.id}
                   key={index}
                   imageSrc={product.images[0].main}
                   productName={product.name}
                   price={product.price.discounted}
                   oldPrice={product.price.original}
                   rating={product.rating}
+                  productCategory={product.category}
                 // isBestSeller={product.isBestSeller}
                 // bestSellerText={product.bestSellerText}
 

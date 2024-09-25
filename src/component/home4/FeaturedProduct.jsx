@@ -103,11 +103,13 @@ const FeaturedProduct = () => {
                         <ProductCard
                         product={product}
                         key={product.id}
+                        productId={product.id}
                         imageSrc={product.images[0].main}
                         productName={product.name}
                         price={product.price.discounted}
                         oldPrice={product.original}
                         rating={product.rating}
+                        productCategory={product.category}
                         // isBestSeller={product.isBestSeller}
                         // bestSellerText={product.bestSellerText}
 

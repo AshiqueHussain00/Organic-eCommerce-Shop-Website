@@ -1,62 +1,157 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiX } from "react-icons/fi"; // Import cross icon
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector , useDispatch} from "react-redux";
+import { IoCloseCircleOutline } from "react-icons/io5";
+import { removeFromCart , calculateTotalPrice } from "../../redux/slice/cartSlice";
+import { toast } from "react-hot-toast";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart.cart);
+  const totalPrice = useSelector((state) => state.cart.totalPrice)
+
+  useEffect(() => {
+
+    if (isOpen) {
+
+      document.body.style.overflow = 'hidden';
+    } else {
+
+      document.body.style.overflow = 'auto';
+
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    }
+
+  }, [isOpen]);
+
+
+
+  const handleRemoveFromCart = (id) => {
+       if(id){
+        dispatch(removeFromCart(id));
+        dispatch(calculateTotalPrice());
+        toast.error("Remove from Cart!");
+       }
+  }
+
+
+
   return (
     <div
-      className={`fixed top-0 right-0 h-full w-64 bg-white-100 shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
-        isOpen ? "translate-x-0" : "translate-x-full"
-      }`}
+      className={`fixed top-0 right-0 h-full w-[460px] bg-white-100  text-gray-900 shadow-lg transform transition-transform duration-500 ease-in-out z-50 ${isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
     >
       {/* Cross button to close sidebar */}
       <button
-        className="absolute text-black-800 top-4 right-4 hover:text-gray-700"
+        className="absolute text-black-800 top-8 right-9 hover:text-gray-700"
         onClick={toggleSidebar}
       >
         <FiX size={28} />
       </button>
 
-      <div className="flex flex-col justify-between h-full p-6">
+      <div className="flex flex-col justify-between gap-y-6 h-full   p-6">
         {/* Cart Content */}
-        <div className="cart-items">
-          <h2 className="mb-4 text-lg font-bold">Shopping Cart</h2>
+        <div className="flex flex-col gap-y-8 ">
 
-          {/* Product 1 */}
-          <div className="flex items-center mb-4 cart-item">
-            <img
-              src="https://via.placeholder.com/50"
-              alt="Fresh Indian Orange"
-              className="object-cover w-12 h-12 mr-4 rounded"
-            />
-            <div>
-              <p className="text-gray-700">Fresh Indian Orange</p>
-              <p className="text-gray-500">1 kg - $12.00</p>
-            </div>
-          </div>
+          <h2 className="text-lg font-bold tracking-wider ">Shopping Card <span>({cart.length})</span></h2>
 
-          {/* Product 2 */}
-          <div className="flex items-center mb-4 cart-item">
-            <img
-              src="https://via.placeholder.com/50"
-              alt="Green Apple"
-              className="object-cover w-12 h-12 mr-4 rounded"
-            />
-            <div>
-              <p className="text-gray-700">Green Apple</p>
-              <p className="text-gray-500">1 kg - $14.00</p>
-            </div>
-          </div>
+
+          {
+            cart.length !== 0 ? (
+              <div className="flex flex-col gap-y-2 h-[450px] overflow-y-scroll border">
+                {
+                  cart.map((item, index) => (
+
+                    <div key={index} className="flex justify-between items-center border-b py-4 pl-2">
+
+                      <div className="flex items-center gap-x-5">
+
+                        <div className="w-[80px] h-[80px]">
+                          <img src={item.images[0].main} alt={item.name} className="w-full h-full object-contain" />
+                        </div>
+
+                        <div className="flex flex-col">
+
+                          <p>{item.name}</p>
+                          <p>$ {item.price.discounted.toFixed(2)}</p>
+
+                        </div>
+
+
+                      </div>
+
+                      <div
+                      onClick={()=> handleRemoveFromCart(item.id)}
+                       className="text-2xl mr-4 text-gray-600 cursor-pointer transition-all duration-200 hover:text-gray-400">
+                          <IoCloseCircleOutline/>
+                      </div>
+
+
+                    </div>
+                  ))
+                }
+
+              </div>
+            ) : (
+              <div className="h-[300px]  grid place-items-center text-xl tracking-wider  text-gray-400">
+                Cart is Empty
+              </div>
+            )
+          }
+
+
+
+
+
+
+
         </div>
 
         {/* Checkout Button - Positioned at the bottom */}
-        <div className="mt-auto checkout">
+        <div className="mt-auto checkout ">
           <div className="flex items-center justify-between mb-4">
-            <p className="font-bold text-gray-900">2 Products</p>
-            <p className="font-bold text-gray-900">$26.00</p>
+            <p className="font-bold text-gray-900">{cart.length} Products</p>
+            <p className="font-bold text-gray-900">$ {totalPrice.toFixed(2)}</p>
           </div>
-          <button className="w-full py-2 font-bold bg-green-500 rounded text-white-100 hover:bg-green-600">
-            Checkout
-          </button>
+
+          <div className="flex-col flex gap-y-4">
+
+            {/* Link to Checkout Page */}
+
+            <button
+
+              className="w-full py-2 font-bold border-2 rounded-full transition-all duration-300 bg-primary text-white-100 hover:bg-white-100 hover:border-primary hover:text-primary"
+              onClick={() => {
+                toggleSidebar()
+                navigate("/shopping-cart/checkout");
+              }}
+            >
+              Checkout
+            </button>
+
+            <button
+
+              className="w-full py-2 font-bold border-2 border-gray-50 rounded-full transition-all duration-300 bg-gray-50 text-primary hover:text-branding-success hover:border-branding-success "
+              onClick={() => {
+                toggleSidebar()
+                navigate("/shopping-cart");
+              }}
+            >
+              Go To Cart
+            </button>
+
+
+
+
+          </div>
+
         </div>
       </div>
     </div>
