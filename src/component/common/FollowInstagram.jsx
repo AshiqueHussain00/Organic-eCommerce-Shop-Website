@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import AOS from 'aos';  // Import AOS library
 import 'aos/dist/aos.css';  // Import AOS styles
 
+
 const FollowInstagram = ({ images, instagramUrl }) => {
   useEffect(() => {
     AOS.init({ duration: 1000 });  // Initialize AOS with animation duration of 1000ms

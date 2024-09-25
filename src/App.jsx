@@ -21,6 +21,7 @@ import OrderHistory from './component/common/OrderHistory';
 
 //PANKAJ COMPONENT MAKING
 import Footer3 from './component/common/footer/Footer3';
+import Footer4 from './component/common/footer/Footer4';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -94,7 +95,10 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-  
+      {/* <Footer4/> */}
+      {/* <Footer3/> */}
+     
+     
       <Suspense fallback={<Loader/>}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -104,7 +108,7 @@ const App = () => {
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
           <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
-
+          
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />
           <Route path='/shop2' element={<Shop2 />} />
@@ -127,7 +131,7 @@ const App = () => {
       </Suspense>
 
       <ScrollTop/>
-
+  
 
       {
         product && <ViewModal/>

@@ -8,6 +8,7 @@ import Banners from '../../component/common/Banners'
 import NewestProducts from '../../component/home3/NewestProducts'
 import ClientTestimonials from '../../component/home3/ClientTestimonials'
 import HeroSection from '../../component/home3/HeroSection'
+import Footer3 from '../../component/common/footer/Footer3'
 
 function Home3() {
   return (
@@ -24,6 +25,7 @@ function Home3() {
       <Banners />
       <NewestProducts />
       <ClientTestimonials />
+      <Footer3/>
     </div>
   )
 }

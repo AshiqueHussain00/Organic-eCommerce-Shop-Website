@@ -4,7 +4,14 @@ import { IoLogoGooglePlaystore } from 'react-icons/io5'
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 import { FaCcApplePay , FaCcVisa ,FaCcDiscover ,FaCcMastercard , } from 'react-icons/fa6';
 import { FiLock } from 'react-icons/fi';
-function Footer3() {
+
+import post1 from '../../../assets/common/followinstagram/post1.svg'
+import post2 from '../../../assets/common/followinstagram/post2.svg'
+import post3 from '../../../assets/common/followinstagram/post3.svg'
+import post4 from '../../../assets/common/followinstagram/post4.svg'
+import post5 from '../../../assets/common/followinstagram/post5.svg'
+import post6 from '../../../assets/common/followinstagram/post6.svg'
+function Footer4() {
     const FooterData = {
         shopery: {
             title: 'About Shopery',
@@ -51,6 +58,9 @@ function Footer3() {
 
         socialLink : ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
     }
+
+    const images = [post1, post2, post3, post4, post5, post6];
+    const instagramUrl="https://www.instagram.com/yourprofile";
   return (
     <section>
           <div className="w-full mx-auto p-6 md:px-16 py-8 bg-black-900"> 
@@ -95,31 +105,30 @@ function Footer3() {
 
                   {/* DOWNLOAD */}
             <div className="md:col-span-2 flex flex-col gap-2 md:gap-4 p-2">
-                <h2 className="text-white-200 text-lg font-medium whitespace-nowrap">Download our Mobile App</h2>
-                <div className="flex flex-col xxs:flex-row gap-2">
-
-                <div className="flex flex-row bg-gray-700 px-1 py-2 rounded-md gap-2 justify-center items-center">
-                        <div className="flex">
-                            <FaApple className="h-[45px] w-[45px] lg:h-[30px] lg:w-[30px] xl:h-[40px] xl:w-[40px]" style = {{color: 'white'}}/>
-                        </div>
-                        <div className="flex flex-col">
-                            <p className="text-gray-500 text-md lg:text-sm font-normal whitespace-nowrap">Download on the</p>
-                            <p className="text-white-200 text-lg   font-medium">App Store</p>
-                        </div>
-                    </div>
-                    
-                    <div className="flex flex-row  bg-gray-700 px-1 py-1 rounded-md gap-1 justify-center items-center">
-                        <div className="flex">
-                            <IoLogoGooglePlaystore className="h-[40px] w-[40px] lg:h-[25px] lg:w-[25px] xl:h-[40px] xl:w-[40px]" style = {{color: 'white'}}/>
-                        </div>
-                        <div className="flex flex-col">
-                            <p className="text-gray-500 text-md lg:text-sm xl: font-normal whitespace-nowrap">Download on the</p>
-                            <p className="text-white-200 text-lg  font-medium">Google play</p>
-                        </div>
-                    </div>
-                   
-                </div>
-                
+                <h2 className="text-white-200 text-lg font-medium whitespace-nowrap">Instagram</h2>
+               
+                <div className="grid gap-2 grid-cols-2  md:grid-cols-3 lg:grid-cols-3">
+          {images.map((image, index) => (
+            <a
+              href={instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={index}
+              className="relative overflow-hidden rounded-lg group"
+              aria-label={`View Instagram pic ${index + 1} on Instagram`}
+              data-aos={index % 2 === 0 ? 'fade-left' : 'fade-right'}  // Alternate AOS animation direction
+            >
+              <img
+                src={image}
+                alt={`Instagram pic ${index + 1}`}
+                className="object-cover md:w-[110px] md:h-[85px] xmd:w-[90px] xmd:h-[80px] transition-opacity duration-300 group-hover:opacity-70"
+              />
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                <FaInstagram className="text-2xl text-white-100" />
+              </div>
+            </a>
+          ))}
+        </div>
             </div>
                                                            {/* BOTTOM */}
                        
@@ -182,4 +191,4 @@ function Footer3() {
   )
 }
 
-export default Footer3;
+export default Footer4;
