@@ -8,7 +8,7 @@ function BreadCrumbs() {
   const { pathname } = useLocation()
   const pathnames = pathname.split('/').filter(x => x)
   let breadcrumbPath = ''
-  console.log(pathnames)
+  // console.log(pathnames)
   return (
     <section className='h-[100px]  flex items-center banner-bg text-white-100 '>
       <div data-aos="fade-right" className='flex items-center mx-auto w-11/12 xmd:w-10/12 p-2 '>
@@ -18,6 +18,12 @@ function BreadCrumbs() {
         {pathnames.map((name, index) => {
           breadcrumbPath += `${name}`
           const isLast = index === pathnames.length - 1
+
+          
+
+          if(name.includes("-")){
+            name = name.split("-").join(" ");
+          }
 
           return isLast ? (
             <span
@@ -32,7 +38,7 @@ function BreadCrumbs() {
             <span
             
               key={breadcrumbPath}
-              className='flex items-center text-white-100'
+              className='flex items-center text-white-100 capitalize'
             >
               <PiGreaterThanBold className='mx-2 text-white-100' />
               <Link to={breadcrumbPath}>{name}</Link>

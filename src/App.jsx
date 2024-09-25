@@ -15,7 +15,7 @@ import Account1 from './pages/Account1';
 import ViewModal from './component/common/ViewModal';
 import Loader from './component/common/Loader';
 import SidebarToggle from './component/common/SidebarToggle';
-import CheckoutPage from './component/common/CheckoutPage';
+import CheckoutPage from './component/checkout/CheckoutPage';
 import OrderHistory from './component/common/OrderHistory';
 // import SidebarToggle from './component/common/SidebarToggle';
 
@@ -47,6 +47,9 @@ const About = lazy(() => import('./pages/About/About'))
 //Cart & Wishlist
 const Cart = lazy(() => import('./pages/Cart'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
+
+//Checkout
+const Checkout = lazy(() => import('./pages/Checkout'));
 
 
 
@@ -120,10 +123,15 @@ const App = () => {
           <Route path='/cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
 
+            {/* ------------ Checkout ------------- */}
+
+            <Route path='/shopping-cart/checkout' element={<Checkout/>}/>
+
 
 
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
+
         </Routes>
       </Suspense>
 

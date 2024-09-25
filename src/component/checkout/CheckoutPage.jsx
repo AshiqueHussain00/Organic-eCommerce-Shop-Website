@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import BreadCrumbs from './BreadCrumbs';
+import BreadCrumbs from '../common/BreadCrumbs';
 
 const CheckoutPage = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -42,9 +42,9 @@ const CheckoutPage = () => {
     };
 
     return (
-        <section className='w-full'>
+        <section className='w-full '>
             <BreadCrumbs />
-            <div className="w-10/12 px-4 py-8 mx-auto">
+            <div className="w-10/12 px-4 py-16 mx-auto">
                 <ToastContainer />
 
                 <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-8 lg:grid-cols-3">
