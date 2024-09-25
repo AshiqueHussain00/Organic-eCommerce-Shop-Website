@@ -48,7 +48,7 @@ const SingleItem = ({ data }) => {
                 </div>
 
                 <div className=' flex items-center justify-center'>
-                    $ {data.price.discounted}
+                    $ {data.price.discounted.toFixed(2)}
                 </div>
 
                 <div className='flex  items-center justify-center gap-x-1 '>

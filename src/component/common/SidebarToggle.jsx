@@ -9,8 +9,10 @@ const SidebarToggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+
+
   return (
-    <div>
+    <div >
       {/* 3-line menu button to open sidebar */}
       {!isSidebarOpen && (
         <button
@@ -24,7 +26,7 @@ const SidebarToggle = () => {
       {/* Background overlay when sidebar is open */}
       {isSidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-opacity-50 bg-black-800"
+          className="fixed inset-0 z-40 bg-gray-900 bg-opacity-70"
           onClick={toggleSidebar} // Clicking the background will close the sidebar
         ></div>
       )}

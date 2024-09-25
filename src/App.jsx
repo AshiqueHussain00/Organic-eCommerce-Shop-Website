@@ -120,7 +120,7 @@ const App = () => {
           <Route path='/about-us' element={<About />} />
 
           {/* ------------ Cart & WishList--------------- */}
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/shopping-cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
 
             {/* ------------ Checkout ------------- */}
