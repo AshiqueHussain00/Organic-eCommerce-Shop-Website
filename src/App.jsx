@@ -3,7 +3,7 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes ,useNavigate } from 'react-router-dom';
+import { Route, Routes ,useNavigate ,Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -57,6 +57,8 @@ const Checkout = lazy(() => import('./pages/Checkout'));
 //Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
 
+//Error404
+import Error404 from './component/error/Error404';
 
 
 const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
@@ -101,6 +103,7 @@ const App = () => {
       <Navbar />
       {/* <Footer4/> */}
       {/* <Footer3/> */}
+      {/* <Error404/> */}
      
      
       <Suspense fallback={<Loader/>}>
@@ -135,6 +138,11 @@ const App = () => {
 
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
+
+
+          {/*---------------- Error----------------- */}
+          <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
+          <Route path="/404" element={<Error404 />} />
 
         </Routes>
       </Suspense>
