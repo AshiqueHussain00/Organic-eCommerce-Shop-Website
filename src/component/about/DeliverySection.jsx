@@ -1,13 +1,13 @@
 import React from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
-import about3 from '../../../assets/about/about3.svg';
+import about3 from '../../assets/about/about3.svg';
 
 const DeliverySection = () => {
     return (
         <section className="py-16 bg-white">
             <div className="container flex flex-col items-center justify-between w-10/12 gap-10 mx-auto lg:flex-row">
                 {/* Left Content */}
-                <div className="w-full text-left lg:w-1/2">
+                <div className="w-full text-left lg:w-1/2" data-aos="fade-right">
                     <h2 className="mb-4 text-3xl font-bold lg:text-4xl">
                         We Delivered, You Enjoy Your Order.
                     </h2>
@@ -36,7 +36,7 @@ const DeliverySection = () => {
                 </div>
 
                 {/* Right Image */}
-                <div className="flex justify-center w-full lg:w-1/2">
+                <div className="flex justify-center w-full lg:w-1/2" data-aos="fade-left">
                     <img
                         src={about3}
                         alt="Delivery"

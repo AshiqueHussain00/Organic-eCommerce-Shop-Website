@@ -19,6 +19,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion';
+import Sidebar from './Sidebar'
 // import { FaChevronDown } from 'react-icons/fa';
 
 const Navbar = () => {
@@ -52,6 +53,25 @@ const Navbar = () => {
     setIsOpen(false)
     setIsAllCategoriesOpen(false)
   }, [location.pathname])
+  const [isFixed, setIsFixed] = useState(false);
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 220) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   const dropdownVariants = {
     open: {
@@ -69,8 +89,30 @@ const Navbar = () => {
       },
     },
   };
+
+  const openVariants = {
+    open: {
+      opacity: 1,
+      y: 0 ,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    closed: {
+      opacity: 1,
+      y: -200,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
   return (
-    <section className='relative w-full mx-auto'>
+    <section className='relative z-[999] w-full mx-auto xl:text-base xlg:text-sm xs:text-base text-sm tracking-wide xl:tracking-normal shadow-lg py-6 xlg:py-0'>
       <div className='mt-8 mx-auto xs:max-h-[500px]'>
         <header className='bg-white-100 text-black-800'>
           {/* Store Location */}
@@ -106,7 +148,7 @@ const Navbar = () => {
           <div className='px-4 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between h-16'>
               {/* Logo */}
-              <div className='flex items-left'>
+              <div className='flex items-left '>
                 <Link to='/home2'>
                   <img src={Logo} alt='Logo' className='h-10' />
                 </Link>
@@ -141,32 +183,44 @@ const Navbar = () => {
 
               {/* Mobile Menu Button */}
               <div className='flex space-x-4 xlg:hidden'>
-               <div className='hidden sm:flex'>
-               <Link
-                  to='/wishlist'
-                  className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
-                >
-                  <IoHeartOutline size={24} />
-                  {wishlistItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                      {wishlistItems.length}
-                    </span>
-                  ) : (
-                    ''
-                  )}
-                </Link>
+                <div className='hidden sm:flex'>
+                  <Link
+                    to='/wishlist'
+                    className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
+                  >
+                    <IoHeartOutline size={24} />
+                    {wishlistItems.length !== 0 ? (
+                      <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                        {wishlistItems.length}
+                      </span>
+                    ) : (
+                      ''
+                    )}
+                  </Link>
 
+                  {isSidebarOpen && (
+                  <div
+                    className="fixed inset-0 z-40 w-full bg-opacity-50 bg-black-800"
+                    onClick={toggleSidebar} // Clicking the background will close the sidebar
+                  ></div>
+                )}
+
+                {/* Sidebar Component */}
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+                {/* Cart button that opens sidebar */}
                 <Link
-                  to='/cart'
-                  className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
+                  to="/"
+                  className="relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700"
+                  onClick={toggleSidebar} // Also toggles the sidebar when clicked
                 >
                   <HiOutlineShoppingBag size={24} />
                   {cartItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                    <span className="absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center rounded-full top-[-4px] right-0">
                       {cartItems.length}
                     </span>
                   ) : (
-                    ''
+                    ""
                   )}
                 </Link>
 
@@ -188,8 +242,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Desktop Menu */}
-          <nav className='hidden mt-2 bg-gray-800 xlg:flex text-white-100 sm:px-6 lg:px-8'>
+          <nav    className={`${
+              isFixed ? 'fixed top-0 left-0 w-full z-50 bg-gray-800' : ''
+            } hidden bg-gray-800 xlg:flex text-white-100 sm:px-6 lg:px-8 transition duration-500`}
+          >
             <div className='flex items-center justify-between w-full'>
               {/* Left-side Links */}
               <div className='flex justify-between'>
@@ -206,12 +262,11 @@ const Navbar = () => {
                       </span>
                     </div>
 
-                    <div
-                      className='right-0 left-0 absolute z-[999] overflow-hidden h-0 group-hover:h-auto'>
-                      <div
-                        className='mt-4 border bg-white-100'>
+                    {/* Dropdown */}
+                    <div className='absolute z-[999] left-0 right-0 mt-2 overflow-hidden transition-all duration-700 ease-in-out max-h-0 group-hover:max-h-[600px]'>
+                      <div className='border bg-white-100'>
                         {allCategoryDropdown.map((item, index) => {
-                          const IconComponent = item.icon
+                          const IconComponent = item.icon;
                           return (
                             <Link
                               to={item.path}
@@ -229,11 +284,10 @@ const Navbar = () => {
                                 {item.title}
                               </p>
                             </Link>
-                          )
+                          );
                         })}
                       </div>
                     </div>
-
                   </div>
 
                   {/* Other Navbar Links */}
@@ -258,7 +312,7 @@ const Navbar = () => {
 
                       {item.dropdown && (
                         <div
-                          className='absolute left-0 z-10 h-0 overflow-hidden transition-all duration-300 top-full group-hover:h-auto'
+                          className='absolute  left-0 z-10 overflow-hidden transition-all duration-500 top-full max-h-0 group-hover:max-h-[400px]'
                         >
                           <div
                             className={`mt-4 bg-white-100 text-black-900 border-2 ${item.title.toLowerCase() === 'blog'
@@ -275,7 +329,7 @@ const Navbar = () => {
                               {item.dropdown.map(dropdownItem => (
                                 <div
                                   key={dropdownItem.id}
-                                  className='flex items-center w-full h-full mr-4 transition-all duration-200 hover:bg-primary hover:text-white-100'
+                                  className='flex items-center w-full h-full mr-4 transition-all duration-500 hover:bg-primary hover:text-white-100 '
                                 >
                                   {item.title.toLowerCase() === 'blog' && (
                                     <Link to='/'>
@@ -310,27 +364,39 @@ const Navbar = () => {
                   className='relative p-2 rounded-full text-white-100 hover:bg-gray-700'
                 >
                   <IoHeartOutline size={24} />
-                  {wishlistItems.length !== 0 ? (
+                  {wishlistItems.length !== 0 && (
                     <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
                       {wishlistItems.length}
                     </span>
-                  ) : (
-                    ''
                   )}
-
                 </Link>
+                {/* 3-line menu button to open sidebar */}
 
+
+                {/* Background overlay when sidebar is open */}
+                {isSidebarOpen && (
+                  <div
+                    className="fixed z-40 w-full bg-opacity-50 -inset-4 bg-black-800"
+                    onClick={toggleSidebar} // Clicking the background will close the sidebar
+                  ></div>
+                )}
+
+                {/* Sidebar Component */}
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+                {/* Cart button that opens sidebar */}
                 <Link
-                  to='/cart'
-                  className='relative p-2 text-white rounded-full hover:bg-gray-700 '
+                  to="/"
+                  className="relative p-2 rounded-full text-white-100 hover:text-white-100 hover:bg-gray-700"
+                  onClick={toggleSidebar} // Also toggles the sidebar when clicked
                 >
                   <HiOutlineShoppingBag size={24} />
                   {cartItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-0 right-0'>
+                    <span className="absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center rounded-full top-[-4px] right-0">
                       {cartItems.length}
                     </span>
                   ) : (
-                    ''
+                    ""
                   )}
                 </Link>
 
@@ -343,36 +409,47 @@ const Navbar = () => {
               </div>
             </div>
           </nav>
-
           {/* Icons */}
-          <div className='flex justify-center space-x-4 sm:hidden'>
+          <div className='flex justify-center pb-2 space-x-3 sm:hidden'>
             <Link
               to='/wishlist'
-              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
+              className='relative p-2 rounded-full hover:text-white-100 hover:bg-gray-700 '
             >
               <IoHeartOutline size={24} />
               {wishlistItems.length !== 0 ? (
-                    <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
-                      {wishlistItems.length}
-                    </span>
-                  ) : (
-                    ''
-                  )}
-            </Link>
-
-            <Link
-              to='/cart'
-              className='relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700'
-            >
-              <HiOutlineShoppingBag size={24} />
-              {cartItems.length !== 0 ? (
-                <span className='relative bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full  top-[-35px] right-[-10px]'>
-                  {cartItems.length}
+                <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                  {wishlistItems.length}
                 </span>
               ) : (
                 ''
               )}
             </Link>
+
+            {isSidebarOpen && (
+                  <div
+                    className="fixed z-40 w-full bg-opacity-50 -inset-3 bg-black-800"
+                    onClick={toggleSidebar} // Clicking the background will close the sidebar
+                  ></div>
+                )}
+
+                {/* Sidebar Component */}
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+
+                {/* Cart button that opens sidebar */}
+                <Link
+                  to="/"
+                  className="relative p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700"
+                  onClick={toggleSidebar} // Also toggles the sidebar when clicked
+                >
+                  <HiOutlineShoppingBag size={24} />
+                  {cartItems.length !== 0 ? (
+                    <span className="absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center rounded-full top-[-4px] right-0">
+                      {cartItems.length}
+                    </span>
+                  ) : (
+                    ""
+                  )}
+                </Link>
 
             <Link
               to='/profile'
@@ -383,11 +460,11 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu */}
           {isOpen && (
-            <div className='absolute inset-0 z-50 px-2 pt-2  xlg:hidden top-[10rem] bg-white-100'>
+            <div className='absolute left-0 sm:top-[190px] top-[230px] right-0 z-[99] px-2 pt-2  xlg:hidden  bg-white-100 shadow-lg  pb-8  '>
               {/* All Categories for Mobile */}
               <button
                 onClick={toggleAllCategories}
-                className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100'
+                className='flex items-center w-full px-3 py-2 mb-3 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100'
               >
                 All Categories
                 <FaChevronDown className='ml-auto' />
@@ -397,7 +474,7 @@ const Navbar = () => {
                 initial={false}
                 animate={isAllCategoriesOpen ? 'open' : 'closed'}
                 variants={dropdownVariants}
-                className='pl-4 overflow-hidden bg-white-100'
+                className='flex flex-col pl-4 overflow-hidden bg-white-100 gap-y-2'
               >
                 {allCategoryDropdown.map((item, index) => (
                   <Link
@@ -411,13 +488,16 @@ const Navbar = () => {
               </motion.div>
 
               {/* Mobile Links */}
+              <div className='flex flex-col bg-white gap-y-3'>
+
+             
               {navData.map(item => (
-                <div key={item.id}>
+                <div key={item.id} className=''>
                   {item.dropdown ? (
                     <div className=''>
                       <button
                         onClick={() => toggleDropdown(item.id)}
-                        className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
+                        className='flex items-center w-full px-3 py-2 mb-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
                       >
                         {item.title}
                         <FaChevronDown className='ml-auto' />
@@ -427,7 +507,7 @@ const Navbar = () => {
                         initial={false}
                         animate={openDropdownId === item.id ? 'open' : 'closed'}
                         variants={dropdownVariants}
-                        className='pt-0 pl-4 overflow-hidden bg-white-100'
+                        className='flex flex-col pt-0 pl-4 overflow-hidden bg-white-100 gap-y-2'
                       >
                         {item.dropdown.map(dropdownItem => (
                           <Link
@@ -450,6 +530,7 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
+               </div>
             </div>
           )}
         </header>

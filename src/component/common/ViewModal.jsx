@@ -21,6 +21,7 @@ const ViewModal = () => {
     const dispatch = useDispatch();
     const product = useSelector((state) => state.view.product);
     const cart = useSelector((state) => state.cart.cart);
+    const wishlistItems = useSelector((state)=> state.wishlist.wishlistItems);
 
     const [quantity, setQuantity] = useState(0)
 
@@ -51,6 +52,8 @@ const ViewModal = () => {
         { like: FaHeart },
         { views: FaEye }
     ];
+
+   
 
 
 
@@ -108,12 +111,17 @@ const ViewModal = () => {
     const handleAddToCart = (product) => {
 
 
-        if (cart.find(item => item.id !== product.id)) {
+        if (cart.find(item => item.id === product.id)) {
+
+            
             dispatch(addToCart(product));
-            toast.success("Added to Cart")
 
         } else {
+
+            
             dispatch(addToCart(product));
+            toast.success("Added to Cart")
+          
         }
 
 
@@ -122,8 +130,17 @@ const ViewModal = () => {
     const handleAddToWishlist = (product) => {
 
 
-        dispatch(addToWishlist(product));
-        toast.success("Added to Wishlist")
+        if (wishlistItems.find(item => item.id === product.id)) {
+      
+             toast.success("Already Added");
+        } else{
+            
+            dispatch(addToWishlist(product));
+            toast.success("Added to Wishlist")
+
+        }
+
+   
     }
 
     const handleAddToIncrement = (product) => {
@@ -152,9 +169,9 @@ const ViewModal = () => {
     }
 
     return (
-        <motion.div className='fixed inset-0 z-[99999] grid md:place-items-center justify-center bg-gray-900 bg-opacity-70 overflow-auto xsm:px-10 xxs:px-8 px-6 mmd:px-16  py-24'>
+        <motion.div className='fixed inset-0 z-[99] grid md:place-items-center justify-center bg-gray-900 bg-opacity-70 overflow-auto xsm:px-10 xxs:px-8 px-6 mmd:px-16  py-24'>
 
-            <p className='absolute right-10 top-6 text-4xl cursor-pointer text-white-100' onClick={closeHandler}><MdOutlineClose /></p>
+            <p className='absolute text-4xl cursor-pointer right-10 top-6 text-white-100' onClick={closeHandler}><MdOutlineClose /></p>
 
 
             {/* -------------- modal ----------------- */}
@@ -168,18 +185,18 @@ const ViewModal = () => {
 
                     {/* ----------- image part ------------ */}
 
-                    <div className='flex lg:max-w-[450px]  md:max-w-[300px]'>
+                    <div className='flex gap-x-6 lg:max-w-[500px]  md:max-w-[300px]'>
 
                         {/* ------- image list ------- */}
 
                         <div className='grid grid-cols-1 gap-y-5 h-full  py-10 w-[100px]'>
                             {
-                                imagesList.filter((image, index) => index !== selectedIndex).slice(0, 4).map((item, index) => (
+                                imagesList.map((item, index) => (
                                     <div
                                         onClick={() => setSelectedIndex(index)}
                                         key={index}
-                                        className=' w-full  cursor-pointer transition-all duration-300 hover:scale-105 border'>
-                                        <img src={item} alt="product" className='w-full h-full xs:object-contain object-cover' />
+                                        className='transition-all duration-300 border cursor-pointer hover:scale-105 w-[60px] h-[60px] grid place-items-center'>
+                                        <img src={item} alt="product" className='object-cover w-full h-full ' />
                                     </div>
                                 ))
                             }
@@ -187,9 +204,9 @@ const ViewModal = () => {
                         </div>
 
                         {/* ----------- selected Image -------- */}
-                        <div className='h-[500px] xmd:p-4 p-2 flex items-cente '>
+                        <div className=' xmd:p-4 p-2 flex items-cente '>
 
-                            <img src={imagesList[selectedIndex]} alt="product" className='w-full h-full object-contain ' />
+                            <img src={imagesList[selectedIndex]} alt="product" className='object-contain w-full h-full ' />
 
                         </div>
 
@@ -201,13 +218,13 @@ const ViewModal = () => {
 
                         {/* ----------- 1st row --------- */}
 
-                        <div className='flex flex-col gap-y-3 border-b xs:pb-6 pb-4'>
+                        <div className='flex flex-col pb-4 border-b gap-y-3 xs:pb-6'>
 
                             <div className='flex items-center gap-x-4'>
-                                <h1 className='xlg:text-4xl xs:text-3xl text-2xl font-semibold'>{product.name}</h1>
+                                <h1 className='text-2xl font-semibold xlg:text-4xl xs:text-3xl'>{product.name}</h1>
                                 <p className='text-sm'>
                                     {
-                                        product.inStock ? (<span className='text-branding-success bg-green-100 py-1 xs:px-2 px-1'> In Stock</span>) : (<span className='text-red-600 bg-red-100 py-1 px-1 xs:px-2'> Out of Stock</span>)
+                                        product.inStock ? (<span className='px-1 py-1 bg-green-100 text-branding-success xs:px-2'> In Stock</span>) : (<span className='px-1 py-1 text-red-600 bg-red-100 xs:px-2'> Out of Stock</span>)
                                     }
                                 </p>
                             </div>
@@ -242,7 +259,7 @@ const ViewModal = () => {
                                 {/* ------ SKU Code ------- */}
 
                                 <p className='text-sm font-semibold'>
-                                    SKU: <span className='text-gray-700 font-normal'>{product.sku.toLocaleString()}</span>
+                                    SKU: <span className='font-normal text-gray-700'>{product.sku.toLocaleString()}</span>
                                 </p>
 
 
@@ -251,12 +268,12 @@ const ViewModal = () => {
 
 
                             {/* PRICE && DISCOUNT */}
-                            <div className="flex flex-row gap-2 items-center  text-sm">
-                                <p className="font-bold text-gray-400 flex flex-row items-center">
-                                    <span className="  text-gray-400 line-through">${product.price.original}</span>
-                                    <span className="ml-2 mr-2  text-green-500">${product.price.discounted}</span>
+                            <div className="flex flex-row items-center gap-2 text-sm">
+                                <p className="flex flex-row items-center font-bold text-gray-400">
+                                    <span className="text-gray-400 line-through ">${product.price.original}</span>
+                                    <span className="ml-2 mr-2 text-green-500">${product.price.discounted}</span>
                                 </p>
-                                <p className="font-semibold bg-red-100 p-1 rounded-lg text-red-500">{product.promotions.discount}</p>
+                                <p className="p-1 font-semibold text-red-500 bg-red-100 rounded-lg">{product.promotions.discount}</p>
 
                             </div>
 
@@ -266,14 +283,14 @@ const ViewModal = () => {
 
                         {/* ------------ 2nd row ---------- */}
 
-                        <div className="flex flex-col gap-y-4 xs:py-6 py-4 text-sm border-b">
+                        <div className="flex flex-col py-4 text-sm border-b gap-y-4 xs:py-6">
 
                             {/* BRAND && SHARE ITEM */}
-                            <div className="flex xmd:flex-row  md:flex-col xsm:flex-row flex-col items-center xmd:justify-between md:justify-start xsm:justify-between gap-4 ">
+                            <div className="flex flex-col items-center gap-4 xmd:flex-row md:flex-col xsm:flex-row xmd:justify-between md:justify-start xsm:justify-between ">
 
-                                <h3 className=" font-semibold">Brand: <span className=" font-medium text-xs">{product.brand}</span></h3>
+                                <h3 className="font-semibold ">Brand: <span className="text-xs font-medium ">{product.brand}</span></h3>
 
-                                <h3 className="flex gap-x-1 items-center font-semibold text-gray-800">Share Item: {
+                                <h3 className="flex items-center font-semibold text-gray-800 gap-x-1">Share Item: {
                                     socialMedia.map((social, index) => {
                                         const Icon = Object.values(social)[0];
                                         return (
@@ -282,7 +299,7 @@ const ViewModal = () => {
                                                 key={index}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-gray-600 transition hover:bg-primary hover:text-white-200 p-1 rounded-full"
+                                                className="p-1 text-gray-600 transition rounded-full hover:bg-primary hover:text-white-200"
                                             >
                                                 <Icon className="text-lg" />
                                             </a>
@@ -293,7 +310,7 @@ const ViewModal = () => {
 
                             {/* MAIN DESCRIPTION */}
 
-                            <div className='xmd:text-left md:text-center xsm:text-left text-center'>
+                            <div className='text-center xmd:text-left md:text-center xsm:text-left'>
                                 <p className="text-sm text-gray-500">{product.mainDec}</p>
                             </div>
 
@@ -301,19 +318,19 @@ const ViewModal = () => {
 
                         {/* ----------- 3rd row ------- */}
 
-                        <div className=' flex xs:py-6 py-4 justify-between border-b'>
+                        <div className='flex justify-between py-4 border-b xs:py-6'>
 
 
                             {/* ---------- quantity part ------ */}
 
-                            <div className='flex items-center border py-1 px-2 gap-x-2 rounded-3xl text-sm '>
+                            <div className='flex items-center px-2 py-1 text-sm border gap-x-2 rounded-3xl '>
                                 <div
                                     onClick={() => handleAddToDecrement(product)}
-                                    className='border  w-6 h-6 flex items-center justify-center rounded-full cursor-pointer text-lg bg-gray-50 transition-all duration-300  border-gray-50 hover:border-gray-900'>-</div>
+                                    className='flex items-center justify-center w-6 h-6 text-lg transition-all duration-300 border rounded-full cursor-pointer bg-gray-50 border-gray-50 hover:border-gray-900'>-</div>
                                 <div>{quantity}</div>
                                 <div
                                     onClick={() => handleAddToIncrement(product)}
-                                    className='  w-6 h-6 flex items-center justify-center rounded-full text-lg bg-gray-50 cursor-pointer transition-all duration-300 border border-gray-50 hover:border-gray-900'>+</div>
+                                    className='flex items-center justify-center w-6 h-6 text-lg transition-all duration-300 border rounded-full cursor-pointer bg-gray-50 border-gray-50 hover:border-gray-900'>+</div>
                             </div>
 
                             {/* ---------- Add to cart part ------- */}
@@ -337,7 +354,7 @@ const ViewModal = () => {
 
                             <div
                                 onClick={() => handleAddToWishlist(product)}
-                                className='items-center text-lg  bg-gray-50 w-8 h-8 grid place-items-center rounded-full hover:bg-primary hover:text-white-100 transition-all duration-200 cursor-pointer'>
+                                className='grid items-center w-8 h-8 text-lg transition-all duration-200 rounded-full cursor-pointer bg-gray-50 place-items-center hover:bg-primary hover:text-white-100'>
                                 <GoHeart />
                             </div>
 
@@ -349,10 +366,10 @@ const ViewModal = () => {
 
                         {/* ----------- 4th row --------- */}
 
-                        <div className="flex flex-col gap-2 xs:py-6 py-4">
+                        <div className="flex flex-col gap-2 py-4 xs:py-6">
 
-                            <h3 className="text-sm  flex items-center font-semibold text-black-900 ">Categories: <span className="text-sm ml-2 font-normal text-gray-500">{product.category}</span></h3>
-                            <h3 className="text-sm md:text-base font-semibold">Tag: {""}<span>{product.tags.map((tag, index) => (<span key={index} className="mr-2 text-sm font-normal text-gray-500"> {tag},</span>))}</span></h3>
+                            <h3 className="flex items-center text-sm font-semibold text-black-900 ">Categories: <span className="ml-2 text-sm font-normal text-gray-500">{product.category}</span></h3>
+                            <h3 className="text-sm font-semibold md:text-base">Tag: {""}<span>{product.tags.map((tag, index) => (<span key={index} className="mr-2 text-sm font-normal text-gray-500"> {tag},</span>))}</span></h3>
                         </div>
 
 

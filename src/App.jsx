@@ -3,20 +3,22 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes ,useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-import ProductDetailsDescription from './component/common/ProductDetailsDescription';
+
+
 
 
 import ViewModal from './component/common/ViewModal';
 import Loader from './component/common/Loader';
 import SidebarToggle from './component/common/SidebarToggle';
-import CheckoutPage from './component/common/CheckoutPage';
-import OrderHistory from './component/common/OrderHistory';
+import CheckoutPage from './component/checkout/CheckoutPage';
+
 // import SidebarToggle from './component/common/SidebarToggle';
+
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -27,30 +29,48 @@ const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
 
 //Shop
-const Shop1 = lazy(() => import('./pages/homepages/Shop1'));
+const Shop1 = lazy(() => import('./pages/shop/Shop1'));
 const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
 
 // blog
-const Blog=lazy(()=>import('./component/common/Blog'))
-const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
+const Blog = lazy(() => import('./component/common/Blog'))
+const SingleBlog = lazy(() => import('./component/common/SingleBlog'))
 
 
 //About 
 const About = lazy(() => import('./pages/About/About'))
+
+//ProductDetails
+import ProductDetailDescriptionPage from './pages/ProductDetailDescriptionPage';
 
 
 //Cart & Wishlist
 const Cart = lazy(() => import('./pages/Cart'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
 
+//Checkout
+const Checkout = lazy(() => import('./pages/Checkout'));
 
+
+// Account
+const Account = lazy(() => import('./pages/Account'));
+// const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
+const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
+const OrderHistory = lazy(()=> import('./component/account/OrderHistory'));
 
 //Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
 
+//Error404
+import Error404 from './component/error/Error404';
 
 
-const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
+//PANKAJ CURRENT COMPONENT
+import Setting from './component/account/Setting';
+
+
+
+const ScrollTop = lazy(() => import('./component/common/ScrollTop'))
 
 
 
@@ -58,16 +78,16 @@ const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
 const App = () => {
 
 
-  const product = useSelector((state)=> state.view.product)
+  const product = useSelector((state) => state.view.product)
   const location = useLocation();
 
-  
-  useEffect(()=> {
-    
+
+  useEffect(() => {
+
     window.scrollTo({
       top: 10,
-    
-  });
+
+    });
 
   }, [location.pathname])
 
@@ -83,15 +103,17 @@ const App = () => {
 
   AOS.refresh();
 
-  
+
 
   // const navigate = useNavigate();
 
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-  
-      <Suspense fallback={<Loader/>}>
+      {/* <Setting/> */}
+
+
+      <Suspense fallback={<Loader />}>
         <Routes>
           {/* ---------- homepages ------- */}
           <Route path='/' element={<Home1 />} />
@@ -99,7 +121,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
+          <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage />} />
 
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />
@@ -112,21 +134,47 @@ const App = () => {
           <Route path='/about-us' element={<About />} />
 
           {/* ------------ Cart & WishList--------------- */}
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/shopping-cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
+
+          {/* ------------ Checkout ------------- */}
+
+          <Route path='/shopping-cart/checkout' element={<Checkout />} />
+
+          {/* --------- Account ------- */}
+
+          <Route element={<Account />}>
+
+            <Route path='/account/order-history' element={<OrderHistory/>}/>
+            <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
+
+          </Route>
 
 
 
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
+
+
+          {/*---------------- Error----------------- */}
+          {/* <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
+          <Route path="/404" element={<Error404 />} /> */}
+
         </Routes>
+
+
+        <ScrollTop />
+
       </Suspense>
 
-      <ScrollTop/>
+
+
+
+
 
 
       {
-        product && <ViewModal/>
+        product && <ViewModal />
       }
 
     </div>

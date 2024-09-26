@@ -22,7 +22,7 @@ const SingleWishItem = ({ data }) => {
 
     const handleRemoveFromWishlist = (id) => {
 
-        console.log("Click hora hai")
+   
         dispatch(removeFromWishlist(id))
         toast.error("Remove from wishlist")
 
@@ -84,7 +84,7 @@ ${data.inStock ? "bg-primary text-white-100" : " bg-gray-50 text-gray-400"
             {/* ---------- price ---------- */}
 
             <div className=' flex items-center justify-center '>
-                $ {data.price.discounted}
+                $ {data.price.discounted.toFixed(2)}
             </div>
 
 

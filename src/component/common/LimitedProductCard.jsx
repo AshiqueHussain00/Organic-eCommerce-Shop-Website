@@ -49,7 +49,7 @@ const LimitedProductCard = ({
     }, [countdownDate]);
 
     return (
-        <div className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white-100">
+        <div className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white-100"  data-aos="zoom-in-up">
             <div className="relative flex flex-col items-center transition duration-200 bg-white border-2 border-white-100 hover:border-primary hover:border-2 ">
 
                 {/* Sale and Best Seller Tags */}

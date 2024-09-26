@@ -15,7 +15,7 @@ const ContactForm = () => {
 
     // Function to handle form submission
     const onSubmit = () => {
-        
+
         // Show success toast
         toast.success("Message sent successfully!", {
             position: "top-center",
@@ -35,7 +35,7 @@ const ContactForm = () => {
         <div className="min-h-screen py-12 bg-gradient-to-r from-blue-100 to-white-400">
             {/* Contact Form Section */}
             <ToastContainer />
-            <div className="flex justify-center mb-16">
+            <div className="flex justify-center mb-16" data-aos="zoom-in">
                 <div className="w-full max-w-4xl p-10 rounded-lg shadow-md bg-white-100 ">
                     <h1 className="mb-8 text-2xl font-bold text-center">Send us a message</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -48,7 +48,7 @@ const ContactForm = () => {
                                 <input
                                     type="text"
                                     id="firstName"
-                                    {...register('firstName' , {required: 'First name required'})}
+                                    {...register('firstName', { required: 'First name required' })}
                                     className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
                                     placeholder="First name"
                                 />
@@ -105,11 +105,11 @@ const ContactForm = () => {
                                 <input
                                     type="tel"
                                     id="phoneNumber"
-                                    {...register('phoneNumber', {required:'Number is requires'})}
+                                    {...register('phoneNumber', { required: 'Number is requires' })}
                                     className="w-full p-2 border rounded-lg focus:outline-none focus:ring focus:ring-green-300"
                                     placeholder="Phone number"
                                 />
-                                 {errors.phoneNumber && (
+                                {errors.phoneNumber && (
                                     <p className="mt-1 text-sm text-red-500">{errors.phoneNumber.message}</p>
                                 )}
                             </div>
@@ -146,8 +146,8 @@ const ContactForm = () => {
             </div>
 
             {/* Contact Information Section */}
-            <div className="flex flex-col items-center">
-                <div className="grid w-full max-w-5xl grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="flex flex-col items-center" >
+                <div className="grid w-full max-w-5xl grid-cols-1 gap-8 md:grid-cols-3"  data-aos="zoom-in-up">
                     {/* Location Card */}
                     <div className="flex flex-col items-center p-5 text-center rounded-lg shadow-md bg-white-100">
                         <FaMapMarkerAlt className="mb-4 text-3xl text-primary" />
@@ -172,7 +172,7 @@ const ContactForm = () => {
                 </div>
 
                 {/* Social Media Links */}
-                <div className="flex mt-8 space-x-8">
+                <div className="flex mt-8 space-x-8"  data-aos="zoom-in-up">
                     <Link to="#" className="p-2 text-gray-600 transition duration-300 scale-95 border rounded-full border-black-900 hover:text-white-100 hover:bg-primary hover:border-white-100">
                         <FaFacebookF size={25} />
                     </Link>
@@ -187,24 +187,24 @@ const ContactForm = () => {
                     </Link>
                 </div>
                 {/* Google Map Embed */}
-        <div className="mt-10 mapouter" style={{ position: 'relative', textAlign: 'right', height: '529px', width: '686px' }}>
-          <div className="gmap_canvas" style={{ overflow: 'hidden', background: 'none!important', height: '529px', width: '686px' }}>
-            <iframe
-              width="686"
-              height="529"
-              id="gmap_canvas"
-              src="https://maps.google.com/maps?q=delhi%2Cindia&t=&z=11&ie=UTF8&iwloc=&output=embed"
-              frameBorder="0"
-              scrolling="no"
-              marginHeight="0"
-              marginWidth="0"
-              style={{ border: 0 }}
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
+                <div className="mt-10 mapouter" style={{ position: 'relative', textAlign: 'right', height: '529px', width: '686px' }}  data-aos="zoom-in-up">
+                    <div className="gmap_canvas" style={{ overflow: 'hidden', background: 'none!important', height: '529px', width: '686px' }}>
+                        <iframe
+                            width="686"
+                            height="529"
+                            id="gmap_canvas"
+                            src="https://maps.google.com/maps?q=delhi%2Cindia&t=&z=11&ie=UTF8&iwloc=&output=embed"
+                            frameBorder="0"
+                            scrolling="no"
+                            marginHeight="0"
+                            marginWidth="0"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                        ></iframe>
+                    </div>
+                </div>
             </div>
-            
+
         </div>
     );
 };

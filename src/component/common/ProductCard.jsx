@@ -3,7 +3,7 @@ import { IoEyeOutline } from "react-icons/io5";
 import { GoHeart } from "react-icons/go";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch , useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import { addToCart, calculateTotalPrice } from "../../redux/slice/cartSlice";
 import { addToWishlist } from "../../redux/slice/wishlistSlice";
@@ -30,7 +30,7 @@ const ProductCard = ({
 }) => {
 
 
-
+    const cart = useSelector((state) => state.cart.cart)
     const [isHover, setIsHover] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -41,7 +41,12 @@ const ProductCard = ({
         events.stopPropagation();
 
 
-        if (product.inStock) {
+
+        if(cart.find(item => item.id === product.id)){
+            
+            dispatch(addToCart(product));
+        }
+        else if (product.inStock) {
             dispatch(addToCart(product));
             toast.success("Added to Cart")
             dispatch(calculateTotalPrice());
@@ -68,7 +73,7 @@ const ProductCard = ({
     }
 
     const handlePageDescription = (category, id) => {
-        navigate(`/product/${category}/${id}`);
+        navigate(`/product/${category}/${id}` ,  { state: { productId: true } });
 
     }
     
@@ -84,11 +89,11 @@ const ProductCard = ({
 
 
     return (
-        <div
+        <div data-aos="zoom-in-up"
             onClick={(events) => { handlePageDescription(productCategory, productId) }}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className="relative flex flex-col transition duration-200 bg-white cursor-pointer border bg-white-100 hover:border hover:border-primary green-shadow pt-2" >
+            className="relative flex flex-col pt-2 transition duration-200 bg-white border cursor-pointer bg-white-100 hover:border hover:border-primary green-shadow" >
             {/* Sale and Best Seller Tags */}
 
 

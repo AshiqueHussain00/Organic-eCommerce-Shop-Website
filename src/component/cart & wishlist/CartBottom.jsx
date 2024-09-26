@@ -20,7 +20,7 @@ const CartBottom = () => {
 
   const handleCheckout = () => {
     dispatch(calculateTotalPrice())
-    // navigate('/checkout')
+    navigate('/shopping-cart/checkout')
   }
 
   return (

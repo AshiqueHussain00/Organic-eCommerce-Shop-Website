@@ -9,7 +9,7 @@ function Banners() {
     const [minutes, setMinutes] = useState('00');
     const [seconds, setSeconds] = useState('00');
 
-    const deadline = "September, 25, 2024";
+    const deadline = "October, 02, 2024";
 
     const getTime = () => {
         const time = Date.parse(deadline) - Date.now();

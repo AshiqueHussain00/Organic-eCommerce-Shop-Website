@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import ProductCard from './ProductCard';
+import ProductCard from '../common/ProductCard';
 
 const categories = [
   { value: 'all', label: 'All Products' },
@@ -9,7 +9,7 @@ const categories = [
   { value: 'Cooking', label: 'Cooking' },
   { value: 'Snacks', label: 'Snacks' },
   { value: 'Beverages', label: 'Beverages' },
-  { value: 'Beauty-health', label: 'Beauty & Health' },
+  { value: 'Beauty', label: 'Beauty & Health' },
   { value: 'Bread & Bakery', label: 'Bread & Bakery' },
 ];
 
@@ -129,11 +129,11 @@ const FilterOne = ({ products }) => {
 
   return (
     <section className='relative w-full p-0 sm:p-4'>
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-4" >
         {/* Filter Section */}
-        <div className="p-4 lg:col-span-1">
-          <div>
-            <div className="flex items-center justify-between">
+        <div className="p-4 lg:col-span-1" data-aos="fade-right" >
+          <div >
+            <div className="flex items-center justify-between" >
               <h4 className="font-bold">All Categories</h4>
               <button onClick={() => setShowCategories(!showCategories)}>
                 {showCategories ? <FaChevronUp /> : <FaChevronDown />}
@@ -246,13 +246,14 @@ const FilterOne = ({ products }) => {
         </div>
 
         {/* Product Section */}
-        <div className="p-4 lg:col-span-3">
+        <div className="p-4 lg:col-span-3" >
           {filteredProducts.length === 0 ? (
             <div>No products found</div>
           ) : (
-            <div className="grid grid-cols-1 gap-4 xsm:grid-cols-2 md:grid-cols-2 mmd:grid-cols-3">
+            <div className="grid grid-cols-1 gap-4 xsm:grid-cols-2 md:grid-cols-2 mmd:grid-cols-3" >
               {paginatedProducts.map(product => (
                 <ProductCard
+                productId={product.id}
                   product={product}
                   key={product.id}
                   imageSrc={product.images[0].main}
@@ -260,6 +261,8 @@ const FilterOne = ({ products }) => {
                   price={product.price.discounted}
                   oldPrice={product.price.original}
                   rating={product.rating}
+                  productCategory={product.category}
+                  
                 />
               ))}
             </div>
@@ -270,7 +273,7 @@ const FilterOne = ({ products }) => {
             {Array.from({ length: totalPages }, (_, index) => (
               <button
                 key={index + 1}
-                className={`px-3 py-1 border rounded-full ${currentPage === index + 1 ? 'bg-primary text-white' : 'bg-gray-200'}`}
+                className={`px-3 py-1 border rounded-full ${currentPage === index + 1 ? 'bg-primary text-white-100' : 'bg-gray-200'}`}
                 onClick={() => handlePageChange(index + 1)}
               >
                 {index + 1}
