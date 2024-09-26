@@ -37,7 +37,7 @@ const membersData = [
 // Define the Card component
 const Card = ({ title, image, description }) => {
   return (
-    <div className="relative overflow-hidden rounded-lg shadow-md bg-white-100 group">
+    <div  className="relative overflow-hidden rounded-lg shadow-md bg-white-100 group">
       {/* Image */}
       <img src={image} alt={title} className="object-cover w-full h-auto" />
       
