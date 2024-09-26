@@ -37,7 +37,7 @@ const membersData = [
 // Define the Card component
 const Card = ({ title, image, description }) => {
   return (
-    <div  className="relative overflow-hidden rounded-lg shadow-md bg-white-100 group">
+    <div data-aos="fade-left"  className="relative overflow-hidden rounded-lg shadow-md bg-white-100 group">
       {/* Image */}
       <img src={image} alt={title} className="object-cover w-full h-auto" />
       
@@ -83,7 +83,7 @@ const Card = ({ title, image, description }) => {
 const Members = () => {
   return (
     <section className="flex items-center justify-center w-full">
-      <div className="w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px]">
+      <div data-aos="fade-left"className="w-11/12 xmd:w-10/12 mt-8 mx-auto xs:max-h-[500px]">
         <div className="mt-12 mb-6 tracking-wider text-center text-primary">
           <p>TEAM</p>
           <h2 className="mb-2 text-3xl font-semibold text-black-900">
