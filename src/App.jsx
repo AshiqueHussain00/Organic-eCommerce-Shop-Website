@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
-import ProductDetailsDescription from './component/common/ProductDetailsDescription';
+
 import Account1 from './pages/Account1';
 
 
@@ -19,10 +19,6 @@ import CheckoutPage from './component/checkout/CheckoutPage';
 import OrderHistory from './component/common/OrderHistory';
 // import SidebarToggle from './component/common/SidebarToggle';
 
-
-//PANKAJ COMPONENT MAKING
-import Footer3 from './component/common/footer/Footer3';
-import Footer4 from './component/common/footer/Footer4';
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -44,6 +40,9 @@ const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
 //About 
 const About = lazy(() => import('./pages/About/About'))
 
+//ProductDetails
+import ProductDetailDescriptionPage from './pages/ProductDetailDescriptionPage';
+
 
 //Cart & Wishlist
 const Cart = lazy(() => import('./pages/Cart'));
@@ -59,6 +58,10 @@ const ContactForm = lazy(() => import('./component/common/ContactForm'));
 
 //Error404
 import Error404 from './component/error/Error404';
+
+
+//PANKAJ CURRENT COMPONENT
+import Setting from './component/account/Setting';
 
 
 const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
@@ -101,9 +104,7 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      {/* <Footer4/> */}
-      {/* <Footer3/> */}
-      {/* <Error404/> */}
+      {/* <Setting/> */}
      
      
       <Suspense fallback={<Loader/>}>
@@ -114,7 +115,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          <Route path='/product/:productCategory/:productId' element={<ProductDetailsDescription/>}/>
+          <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage/>}/>
           
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />
