@@ -40,14 +40,8 @@ const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
 //About 
 const About = lazy(() => import('./pages/About/About'))
 
-<<<<<<< HEAD
-//Product
-
-const Product = lazy(()=> import('./pages/Product'))
-=======
 //ProductDetails
 import ProductDetailDescriptionPage from './pages/ProductDetailDescriptionPage';
->>>>>>> 9d879a5497a3f0a8a230e683cf737c3e5497d5ea
 
 
 //Cart & Wishlist
@@ -121,11 +115,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-<<<<<<< HEAD
-          <Route path='/product/:productCategory/:productId' element={<Product/>}/>
-=======
           <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage/>}/>
->>>>>>> 9d879a5497a3f0a8a230e683cf737c3e5497d5ea
           
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />
