@@ -12,7 +12,7 @@ import Fproducts from '../../component/home2/Fproducts'
 import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import BannerHome2 from '../../component/home2/BannerHome2'
 import ProductTabs from '../../component/common/ProducDescription'
-
+import Footer2 from '../../component/common/footer/footer2'
 const Home2 = () => {
   return (
     <div>
@@ -27,6 +27,8 @@ const Home2 = () => {
       <Members />
       <HomeTestimonial />
       <ProductTabs/>
+     
+            <Footer2/>
 
       {/* <HomeOneHerosection />
     
