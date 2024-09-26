@@ -66,7 +66,7 @@ const SmallProductCard = ({ product }) => {
             onClick={()=> handlePageDescription(product.category , product.id)}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-            className=' flex gap-x-3  border border-gray-100 pr-4 py-3  transition-all duration-400 hover:border-branding-success green-shadow group h-[140px] xlg:h-[130px]'>
+            className=' flex gap-x-3  border border-gray-100 pr-4 py-3  transition-all duration-400 hover:border-branding-success green-shadow group h-[140px] xlg:h-[130px] cursor-pointer'>
 
             <div className='w-[130px]'>
                 <img src={product.images[0].main} alt={product.name} className='h-full w-full object-cover' />

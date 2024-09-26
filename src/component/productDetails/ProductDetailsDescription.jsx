@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { CookingData as vegetableData } from '../../data/common/CookingData';
-import allproductData from '../../data/common/allproductData';
-import { useParams } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt, FaRegStar, FaPlusCircle, FaMinusCircle } from 'react-icons/fa';
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 import { HiOutlineShoppingBag } from "react-icons/hi2";
 import { GoHeart } from "react-icons/go";
-import BreadCrumbs from './BreadCrumbs';
+import BreadCrumbs from '../common/BreadCrumbs';
 import { addToCart, increaseQuantity, decreaseQuantity } from '../../redux/slice/cartSlice';
 import { addToWishlist } from '../../redux/slice/wishlistSlice';
 import { toast } from 'react-hot-toast';
@@ -26,7 +23,7 @@ const actions = [
 const socialLink = ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'];
 
 
-function ProductDetailsDescription() {
+function ProductDetailsDescription({product}) {
 
 
     const dispatch = useDispatch();
@@ -35,17 +32,8 @@ function ProductDetailsDescription() {
 
     const [quantity, setQuantity] = useState(0)
 
-
-
-
-
-    const { productCategory, productId } = useParams();
-    // {console.log(productId);}
-
-    // State to track the selected product (initially null to show product list)
+    // // State to track the selected product (initially null to show product list)
     const [selectedProduct, setSelectedProduct] = useState(null);
-    const product = allproductData.find((item) => item.id === productId);
-
 
 
     // Function to handle product selection
@@ -64,21 +52,6 @@ function ProductDetailsDescription() {
         } : null));
     };
 
-
-    //Product Quanitity Increment and Decrement
-    // const [amount, setAmount] = useState(0);
-
-    // const Increment = () => {
-    //     // Only increment if the product is in stock
-    //     if (selectedProduct.inStock) {
-    //         setAmount((amount) => amount + 1);
-    //     }
-    // };
-
-    // const Decrement = () => {
-    //     // Decrease amount only if greater than or equal to  1
-    //     setAmount((amount) => (amount >= 1 ? amount - 1 : 0));
-    // };
 
     const handleAddToCart = (product) => {
 
