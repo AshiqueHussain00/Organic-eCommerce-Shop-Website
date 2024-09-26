@@ -11,8 +11,9 @@ import PopularCategory from '../../component/home1/ProductCategory'
 import Fproducts from '../../component/home2/Fproducts'
 import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import BannerHome2 from '../../component/home2/BannerHome2'
-import ProductTabs from '../../component/common/ProducDescription'
+import ProductTabs from '../../component/productDetails/ProducDescription'
 import Footer2 from '../../component/common/footer/footer2'
+import NewsletterTwo from '../../component/common/NewsletterTwo'
 const Home2 = () => {
   return (
     <div>
@@ -27,7 +28,7 @@ const Home2 = () => {
       <Members />
       <HomeTestimonial />
       <ProductTabs/>
-     
+      <NewsletterTwo/>
             <Footer2/>
 
       {/* <HomeOneHerosection />
