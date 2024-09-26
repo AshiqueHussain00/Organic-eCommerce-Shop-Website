@@ -71,13 +71,30 @@ const Navbar = () => {
       },
     },
   };
+
+  const openVariants = {
+    open: {
+      opacity: 1,
+      y: 0 ,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    closed: {
+      opacity: 1,
+      y: -200,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
   return (
-    <section className='relative w-full mx-auto'>
+    <section className='relative z-[999] w-full mx-auto xl:text-base xlg:text-sm xs:text-base text-sm tracking-wide xl:tracking-normal shadow-lg py-6 xlg:py-0'>
       <div className='mt-8 mx-auto xs:max-h-[500px]'>
         <header className='bg-white-100 text-black-800'>
           {/* Store Location */}
@@ -113,7 +130,7 @@ const Navbar = () => {
           <div className='px-4 sm:px-6 lg:px-8'>
             <div className='flex items-center justify-between h-16'>
               {/* Logo */}
-              <div className='flex items-left'>
+              <div className='flex items-left '>
                 <Link to='/home2'>
                   <img src={Logo} alt='Logo' className='h-10' />
                 </Link>
@@ -256,7 +273,7 @@ const Navbar = () => {
                   {navData.map(item => (
                     <div
                       key={item.id}
-                      className='relative flex items-center group'
+                      className='relative  flex items-center group'
                     >
                       {item.dropdown ? (
                         <p className='flex items-center px-3 py-4 font-medium rounded-md cursor-pointer hover:bg-gray-700'>
@@ -274,7 +291,7 @@ const Navbar = () => {
 
                       {item.dropdown && (
                         <div
-                          className='absolute left-0 z-10 overflow-hidden transition-all duration-500 top-full max-h-0 group-hover:max-h-[400px]'
+                          className='absolute  left-0 z-10 overflow-hidden transition-all duration-500 top-full max-h-0 group-hover:max-h-[400px]'
                         >
                           <div
                             className={`mt-4 bg-white-100 text-black-900 border-2 ${item.title.toLowerCase() === 'blog'
@@ -291,7 +308,7 @@ const Navbar = () => {
                               {item.dropdown.map(dropdownItem => (
                                 <div
                                   key={dropdownItem.id}
-                                  className='flex items-center w-full h-full mr-4 transition-all duration-500 hover:bg-primary hover:text-white-100'
+                                  className='flex items-center w-full h-full mr-4 transition-all duration-500 hover:bg-primary hover:text-white-100 '
                                 >
                                   {item.title.toLowerCase() === 'blog' && (
                                     <Link to='/'>
@@ -422,11 +439,11 @@ const Navbar = () => {
           </div>
           {/* Mobile Menu */}
           {isOpen && (
-            <div className='absolute inset-0 z-50 px-2 pt-2  xlg:hidden top-[10rem] bg-white-100'>
+            <div className='absolute left-0 sm:top-[190px] top-[230px] right-0 z-[99] px-2 pt-2  xlg:hidden  bg-white-100 shadow-lg  pb-8  '>
               {/* All Categories for Mobile */}
               <button
                 onClick={toggleAllCategories}
-                className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100'
+                className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100  mb-3'
               >
                 All Categories
                 <FaChevronDown className='ml-auto' />
@@ -436,13 +453,13 @@ const Navbar = () => {
                 initial={false}
                 animate={isAllCategoriesOpen ? 'open' : 'closed'}
                 variants={dropdownVariants}
-                className='pl-4 overflow-hidden bg-white-100'
+                className='pl-4 overflow-hidden bg-white-100  flex flex-col gap-y-2'
               >
                 {allCategoryDropdown.map((item, index) => (
                   <Link
                     to={item.path}
                     key={index}
-                    className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
+                    className='block px-3 py-2  text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
                   >
                     {item.title}
                   </Link>
@@ -450,13 +467,16 @@ const Navbar = () => {
               </motion.div>
 
               {/* Mobile Links */}
+              <div className=' flex flex-col gap-y-3 bg-white'>
+
+             
               {navData.map(item => (
-                <div key={item.id}>
+                <div key={item.id} className=' '>
                   {item.dropdown ? (
                     <div className=''>
                       <button
                         onClick={() => toggleDropdown(item.id)}
-                        className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
+                        className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 mb-2'
                       >
                         {item.title}
                         <FaChevronDown className='ml-auto' />
@@ -466,7 +486,7 @@ const Navbar = () => {
                         initial={false}
                         animate={openDropdownId === item.id ? 'open' : 'closed'}
                         variants={dropdownVariants}
-                        className='pt-0 pl-4 overflow-hidden bg-white-100'
+                        className='pt-0 pl-4 overflow-hidden bg-white-100  flex flex-col gap-y-2'
                       >
                         {item.dropdown.map(dropdownItem => (
                           <Link
@@ -489,6 +509,7 @@ const Navbar = () => {
                   )}
                 </div>
               ))}
+               </div>
             </div>
           )}
         </header>
