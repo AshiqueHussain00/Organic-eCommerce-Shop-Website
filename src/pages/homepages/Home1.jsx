@@ -10,6 +10,7 @@ import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import HomeLatestNews from '../../component/home1/HomeLatestNews'
 import Newsletter from '../../component/Home5/Newsletter'
 import NewsletterThree from '../../component/common/NewsletterThree'
+import Footer1 from '../../component/common/footer/footer1'
 
 
 
@@ -29,7 +30,7 @@ function Home1() {
             <HomeLatestNews/>
             <HomeTestimonial/>
             <NewsletterThree/>
-            
+            <Footer1/>
             
           
         </div>
