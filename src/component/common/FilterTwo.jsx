@@ -190,6 +190,7 @@ const FilterTwo = ({ products }) => {
             isTimer={true}
             deadline="September 25, 2024"
             discount="56%"
+            textColor="text-white-100"
           />
           {/* Top Filters Section: Horizontally aligned */}
           <div className="flex flex-wrap items-center justify-between w-full mb-6">
