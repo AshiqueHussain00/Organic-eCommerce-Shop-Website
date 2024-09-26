@@ -6,10 +6,21 @@ import { GoHome } from 'react-icons/go'
 
 function BreadCrumbs() {
   const { pathname, state } = useLocation()
+
+ 
   const isErrorPage = pathname === '/404' || state?.is404;
-  const pathnames = pathname.split('/').filter(x => x)
+  let pathnames = pathname.split('/').filter(x => x)
   let breadcrumbPath = ''
   // console.log(pathnames)
+
+
+
+  if (state?.id || state?.productId) {
+
+    pathnames = pathnames.slice(0, pathnames.length - 1);
+
+  }
+
 
 
 

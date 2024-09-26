@@ -4,7 +4,7 @@ export const orderHistory = [
 
     {
         id: "1",
-        orderId: "#101",
+        orderId: "101",
         customerName: "Daniel Russell",
         date: "15 September, 2024",
         NoOfProducts: 3,
@@ -89,7 +89,7 @@ export const orderHistory = [
     },
     {
         id: "2",
-        orderId: "#102",
+        orderId: "102",
         customerName: "Daniel Russell",
         date: "1 September, 2024",
         NoOfProducts: 2,
@@ -153,7 +153,7 @@ export const orderHistory = [
     },
     {
         id: "3",
-        orderId: "#103",
+        orderId: "103",
         customerName: "Daniel Russell",
         date: "19 August, 2024",
         NoOfProducts: 3,
@@ -217,7 +217,7 @@ export const orderHistory = [
     },
     {
         id: "4",
-        orderId: "#104",
+        orderId: "104",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 2,
@@ -282,7 +282,7 @@ export const orderHistory = [
     },
     {
         id: "5",
-        orderId: "#105",
+        orderId: "105",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -367,7 +367,7 @@ export const orderHistory = [
     },
     {
         id: "6",
-        orderId: "#106",
+        orderId: "106",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -452,7 +452,7 @@ export const orderHistory = [
     },
     {
         id: "7",
-        orderId: "#107",
+        orderId: "107",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -537,7 +537,7 @@ export const orderHistory = [
     },
     {
         id: "8",
-        orderId: "#108",
+        orderId: "108",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 2,
@@ -622,7 +622,7 @@ export const orderHistory = [
     },
     {
         id: "9",
-        orderId: "#109",
+        orderId: "109",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 2,
@@ -706,8 +706,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "110",
-        orderId: "#110",
+        id: "10",
+        orderId: "110",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -791,8 +791,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "111",
-        orderId: "#111",
+        id: "11",
+        orderId: "111",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -876,8 +876,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "112",
-        orderId: "#112",
+        id: "12",
+        orderId: "112",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -961,8 +961,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "113",
-        orderId: "#113",
+        id: "13",
+        orderId: "113",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1046,8 +1046,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "114",
-        orderId: "#114",
+        id: "14",
+        orderId: "114",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1131,8 +1131,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "115",
-        orderId: "#115",
+        id: "15",
+        orderId: "115",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1216,8 +1216,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "116",
-        orderId: "#116",
+        id: "16",
+        orderId: "116",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1301,8 +1301,8 @@ export const orderHistory = [
         ]
     },
     {
-        id: "117",
-        orderId: "#117",
+        id: "17",
+        orderId: "117",
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,

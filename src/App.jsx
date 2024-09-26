@@ -3,20 +3,20 @@ import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes ,useNavigate ,Navigate } from 'react-router-dom';
+import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 
 
-import Account1 from './pages/Account1';
+
 
 
 import ViewModal from './component/common/ViewModal';
 import Loader from './component/common/Loader';
 import SidebarToggle from './component/common/SidebarToggle';
 import CheckoutPage from './component/checkout/CheckoutPage';
-import OrderHistory from './component/common/OrderHistory';
+
 // import SidebarToggle from './component/common/SidebarToggle';
 
 
@@ -33,8 +33,8 @@ const Shop1 = lazy(() => import('./pages/shop/Shop1'));
 const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
 
 // blog
-const Blog=lazy(()=>import('./component/common/Blog'))
-const SingleBlog=lazy(()=>import('./component/common/SingleBlog'))
+const Blog = lazy(() => import('./component/common/Blog'))
+const SingleBlog = lazy(() => import('./component/common/SingleBlog'))
 
 
 //About 
@@ -52,6 +52,11 @@ const Wishlist = lazy(() => import('./pages/Wishlist'));
 const Checkout = lazy(() => import('./pages/Checkout'));
 
 
+// Account
+const Account = lazy(() => import('./pages/Account'));
+// const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
+const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
+const OrderHistory = lazy(()=> import('./component/account/OrderHistory'));
 
 //Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
@@ -64,7 +69,8 @@ import Error404 from './component/error/Error404';
 import Setting from './component/account/Setting';
 
 
-const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
+
+const ScrollTop = lazy(() => import('./component/common/ScrollTop'))
 
 
 
@@ -72,16 +78,16 @@ const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
 const App = () => {
 
 
-  const product = useSelector((state)=> state.view.product)
+  const product = useSelector((state) => state.view.product)
   const location = useLocation();
 
-  
-  useEffect(()=> {
-    
+
+  useEffect(() => {
+
     window.scrollTo({
       top: 10,
-    
-  });
+
+    });
 
   }, [location.pathname])
 
@@ -97,7 +103,7 @@ const App = () => {
 
   AOS.refresh();
 
-  
+
 
   // const navigate = useNavigate();
 
@@ -105,9 +111,9 @@ const App = () => {
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
       {/* <Setting/> */}
-     
-     
-      <Suspense fallback={<Loader/>}>
+
+
+      <Suspense fallback={<Loader />}>
         <Routes>
           {/* ---------- homepages ------- */}
           <Route path='/' element={<Home1 />} />
@@ -115,8 +121,8 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage/>}/>
-          
+          <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage />} />
+
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />
           <Route path='/shop2' element={<Shop2 />} />
@@ -131,9 +137,18 @@ const App = () => {
           <Route path='/shopping-cart' element={<Cart />} />
           <Route path='/wishlist' element={<Wishlist />} />
 
-            {/* ------------ Checkout ------------- */}
+          {/* ------------ Checkout ------------- */}
 
-            <Route path='/shopping-cart/checkout' element={<Checkout/>}/>
+          <Route path='/shopping-cart/checkout' element={<Checkout />} />
+
+          {/* --------- Account ------- */}
+
+          <Route element={<Account />}>
+
+            <Route path='/account/order-history' element={<OrderHistory/>}/>
+            <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
+
+          </Route>
 
 
 
@@ -142,24 +157,24 @@ const App = () => {
 
 
           {/*---------------- Error----------------- */}
-          <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
-          <Route path="/404" element={<Error404 />} />
+          {/* <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
+          <Route path="/404" element={<Error404 />} /> */}
 
         </Routes>
 
 
-        <ScrollTop/>
-  
+        <ScrollTop />
+
       </Suspense>
 
-      {/* <Account1/> */}
 
 
 
-      
+
+
 
       {
-        product && <ViewModal/>
+        product && <ViewModal />
       }
 
     </div>
