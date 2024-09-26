@@ -7,11 +7,11 @@ const Account1 = () => {
 
         {/* -------- container ------- */}
 
-        <div className='w-11/12 xmd:w-10/12 mx-auto border-2 border-green pt-16 pb-24 flex gap-x-2'>
+        <div className='w-11/12 xmd:w-10/12 mx-auto border-2 border-green-300 pt-16 pb-24 flex gap-x-4'>
 
         {/* ----------- sidebar ------- */}
 
-        <div className='border-2 border-green-500 w-[340px] '>
+        <div className='border rounded-md w-[340px] '>
 
             <Sidebar/>
 
@@ -19,7 +19,7 @@ const Account1 = () => {
 
         {/* -------- other pages (content) ------ */}
 
-        <div className='border-2 border-red-500 w-full'>
+        <div className='border rounded-md w-full'>
 
         </div>
 

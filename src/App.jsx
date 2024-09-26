@@ -146,14 +146,17 @@ const App = () => {
           <Route path="/404" element={<Error404 />} />
 
         </Routes>
+
+
+        <ScrollTop/>
+  
       </Suspense>
 
       {/* <Account1/> */}
 
 
 
-      <ScrollTop/>
-  
+      
 
       {
         product && <ViewModal/>

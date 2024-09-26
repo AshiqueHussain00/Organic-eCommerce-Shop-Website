@@ -5,6 +5,8 @@ import { GoHeart } from "react-icons/go";
 import { BsHandbag } from "react-icons/bs";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiLogout } from "react-icons/ci";
+import { Link } from 'react-router-dom';
+import SidebardLink from './SidebardLink';
 
 
 
@@ -49,21 +51,35 @@ const navigation = [
 ]
 
 const Sidebar = () => {
-  return (
-    <div className='w-full py-4 flex flex-col'>
+    return (
+        <div className='w-full py-4 flex flex-col gap-y-3 '>
 
-        <h1>
-            Navigation
-        </h1>
+            <h1 className='py-3 pl-3 pr-2 text-xl font-meidum leading-8'>
+                Navigation
+            </h1>
 
-        <div>
+            <div className='flex flex-col gap-y-2'>
+
+                {
+                    navigation.map((nav) => {
+
+
+
+                        return (
+                            <SidebardLink nav={nav} key={nav.id}
+
+                            />
+                        )
+
+                    })
+                }
+
+            </div>
+
+
 
         </div>
-
-
-
-    </div>
-  )
+    )
 }
 
 export default Sidebar
