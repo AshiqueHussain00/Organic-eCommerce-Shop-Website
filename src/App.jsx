@@ -58,10 +58,11 @@ const ContactForm = lazy(() => import('./component/common/ContactForm'));
 
 //Error404
 import Error404 from './component/error/Error404';
+ 
+import Footer3 from './component/common/footer/Footer3';
+import Footer4 from './component/common/footer/Footer4';
 
 
-//PANKAJ CURRENT COMPONENT
-import Setting from './component/account/Setting';
 
 
 const ScrollTop = lazy(()=> import('./component/common/ScrollTop'))
@@ -104,7 +105,8 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-      {/* <Setting/> */}
+    
+      {/* <Footer4/> */}
      
      
       <Suspense fallback={<Loader/>}>

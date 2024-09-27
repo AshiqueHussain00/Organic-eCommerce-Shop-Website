@@ -53,7 +53,7 @@ function Footer3() {
     }
   return (
     <section>
-          <div className="w-full mx-auto p-6 md:px-16 py-8 bg-black-900"> 
+          <div className="w-full mx-auto p-6 md:px-16 py-2 bg-black-900"> 
 
          <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
                 
@@ -123,7 +123,7 @@ function Footer3() {
             </div>
                                                            {/* BOTTOM */}
                        
-                        <hr className="col-span-1 md:col-span-3 xmd:col-span-7 w-full border-t border-gray-500 my-4" />
+                        <hr className="col-span-1 md:col-span-3 xmd:col-span-7 w-full border-t border-gray-500 my-2" />
             </div>
 
             <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2 items-center">
@@ -140,7 +140,7 @@ function Footer3() {
                                          rel="noopener noreferrer"
                                          
                                      >
-                                         <Icon className="h-[30px] w-[30px] xmd:h-[25px] xmd:w-[25px] xlg:h-[30px] xlg:w-[30px] text-gray-600 transition hover:bg-primary hover:text-white-200 p-1 hover:rounded-full" />
+                                         <Icon className="h-[25px] w-[25px]  xlg:h-[30px] xlg:w-[30px] text-gray-600 transition hover:bg-primary hover:text-white-200 p-1 hover:rounded-full" />
                                      </a>
                                  );
                              })}
@@ -152,22 +152,22 @@ function Footer3() {
  
                                {/* MESSAGE */}
              <div className="col-span-1 md:col-span-1 xmd:col-span-3">
-                 <h2 className="text-gray-500 text-xs xlg:text-base ">Ecobazar eCommerce © 2021.All Rights Reserved</h2>
+                 <h2 className="text-gray-500 text-xs xlg:text-sm  text-center">Ecobazar eCommerce © 2021.All Rights Reserved</h2>
              </div>
                                 {/* ICON */}
              
              <div className="col-span-1 md:col-span-1 xmd:col-span-2 flex flex-row  gap-1 xlg:gap-3 items-center justify-center ">
-                 <FaCcApplePay className=" text-white-200  h-[45px] w-[45px] xmd:h-[60px] xmd:w-[65px] xlg:h-[50px] xlg:w-[55px] cursor-pointer"/>
-                 <FaCcVisa className=" text-white-200  h-[45px] w-[45px] xmd:h-[60px] xmd:w-[65px] xlg:h-[50px] xlg:w-[55px]"/>
-                 <FaCcDiscover className=" text-white-200 h-[45px] w-[45px] xmd:h-[60px] xmd:w-[65px] xlg:h-[50px] xlg:w-[55px]"/>
-                 <FaCcMastercard className=" text-white-200 h-[45px] w-[45px] xmd:h-[60px] xmd:w-[65px] xlg:h-[50px] xlg:w-[55px]"/>
+                 <FaCcApplePay className=" text-white-200  h-[45px] w-[45px]  xlg:h-[40px] xlg:w-[45px] cursor-pointer"/>
+                 <FaCcVisa className=" text-white-200  h-[45px] w-[45px]  xlg:h-[40px] xlg:w-[45px]"/>
+                 <FaCcDiscover className=" text-white-200 h-[45px] w-[45px]  xlg:h-[40px] xlg:w-[45px]"/>
+                 <FaCcMastercard className=" text-white-200 h-[45px] w-[45px]  xlg:h-[40px] xlg:w-[45px]"/>
                  <div>
                  <div className="flex flex-col gap-0 text-white-200  p-1 border-2 border-gray-600 rounded-md ">
                       <div className="flex flex-row align-items">
-                         <FaLock className="h-[10px] w-[10px] xlg:h-[15px] xlg:w-[15px]"/><span className="text-xs xlg:text-sm font-medium">Secure</span>
+                         <FaLock className="h-[10px] w-[10px] "/><span className="text-xs font-medium">Secure</span>
                       </div>
                       <div>
-                         <p className="text-xs xlg:text-base font-semibold">Payment</p>
+                         <p className="text-xs font-semibold">Payment</p>
                       </div>
                  </div>
                  </div>
