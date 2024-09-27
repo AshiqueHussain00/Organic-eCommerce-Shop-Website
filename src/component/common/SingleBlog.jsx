@@ -242,27 +242,27 @@ const SingleBlog = () => {
  
 
   return (
-    <div className="flex max-w-6xl mx-auto p-4">
+    <div className="w-10/12 dsx:w-10/12 flex flex-col-reverse  mx-auto p-4  sm:flex-col-reverse md:flex-col-reverse  lg:flex-row lg: ">
       {/* Main Content */}
       <div className="flex-1 mr-8">
         {/* Big Image */}
         <img loading='lazy' src={blog.img} alt={readMore.title} className="w-full h-auto rounded-lg mb-4" />
 
         {/* Icons: Tag, Human, Comments */}
-        <div className="flex items-center mb-2 text-gray-700">
+        <div className="flex items-center mb-2 text-gray-700 ">
           <GoTag className="mr-1" />
-          <span className="mr-4 text-primary">{blog.category}</span>
+          <span className="mr-4 text-primary text-[0.6rem] sm:text-[0.6rem] md:text-[0.8rem] lg:text-[1rem]">{blog.category}</span>
           <IoPersonOutline className="mr-1" />
-          <span className="mr-4 text-primary">By {blog.postedBy}</span>
+          <span className="mr-4 text-primary text-[0.6rem] sm:text-[0.6rem] md:text-[0.8rem] lg:text-[1rem]">By {blog.postedBy}</span>
           <LiaCommentsSolid className="mr-1 " />
-          <span className='text-primary'>{blog.comments} Comments</span>
+          <span className='text-primary text-[0.6rem] sm:text-[0.6rem] md:text-[0.8rem] lg:text-[1rem]'>{blog.comments} Comments</span>
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold mb-4">{readMore.title}</h1>
+        <h1 className=" font-bold mb-4 text-xl sm:text-xl md:text-2xl lg:text-3xl">{readMore.title}</h1>
 
         {/* Below Title: Admin Info and Social Icons */}
-        <div className="flex justify-between items-center mb-4">
+        <div className="dsx:flex dsx:justify-between dsx:justify-between  lg:flex justify-between  mb-4 ">
         <div className="flex items-center">
       <img
         loading="lazy"
@@ -270,7 +270,7 @@ const SingleBlog = () => {
         alt={blog.postedBy}
         className="w-12 h-12 rounded-full mr-3"
       />
-      <div>
+      <div className=''>
         <p className="font-semibold">{blog.postedBy}</p>
         <p className="text-sm text-gray-600">
           {blog.date} • Opened {timeAgo}
@@ -323,11 +323,11 @@ const SingleBlog = () => {
         <hr className="my-4" />
 
         {/* Subtitle */}
-        <h2 className="text-xl font-semibold mb-4">{readMore.subTitle}</h2>
+        <h2 className="text-base font-semibold mb-4 sm:text-lg md:text-xl lg:text-2xl">{readMore.subTitle}</h2>
 
         {/* Paragraphs (para1) */}
         {readMore.para1.map((paragraph, index) => (
-          <p key={index} className="mb-4 text-gray-700">{paragraph}</p>
+          <p key={index} className="text-sm font-poppins text-gray-700 mb-4 sm:text-sm text-justify md:text-base lg:text-lg">{paragraph}</p>
         ))}
 
         {/* Two Images */}
@@ -345,7 +345,7 @@ const SingleBlog = () => {
 
         {/* Optional para2 */}
         {readMore.para2 && (
-  <p className="mb-4 text-gray-700">{readMore.para2}</p>
+  <p className=" text-sm font-poppins text-gray-700 mb-4 sm:text-sm text-justify md:text-base lg:text-lg">{readMore.para2}</p>
 )}
  <div className='mx-auto'>
  <Saleofmonth
@@ -447,7 +447,7 @@ const SingleBlog = () => {
       </div>
 
       {/* Sidebar on the Right */}
-      <aside className="w-1/4 p-4  rounded-lg shadow-md">
+      <div className="w-10/12 p-4  rounded-lg shadow-md lg:w-1/4 ">
         {/* Search Input */}
         <input
           type="text"
@@ -538,7 +538,7 @@ const SingleBlog = () => {
               </li>
             ))}
         </ul>
-      </aside>
+      </div>
     </div>
   );
 };

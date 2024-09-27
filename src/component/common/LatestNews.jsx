@@ -5,9 +5,9 @@ import { IoPersonOutline } from "react-icons/io5";
 import { GoTag } from "react-icons/go";
 import { LiaCommentsSolid } from "react-icons/lia";
 
-const LatestNews = ({ data }) => {
+const LatestNews = ({ data ,containerClasses }) => {
   return (
-    <div className='w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8'>
+    <div className={containerClasses}>
       {data.map((item, index) => (
         <div
           data-aos="fade-right"
@@ -66,18 +66,22 @@ const LatestNews = ({ data }) => {
   );
 };
 
-// LatestNews.propTypes = {
-//   data: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.number.isRequired, // Added id as required
-//       img: PropTypes.string.isRequired,
-//       date: PropTypes.string.isRequired,
-//       category: PropTypes.string.isRequired,
-//       postedBy: PropTypes.string.isRequired,
-//       comments: PropTypes.number.isRequired,
-//       p: PropTypes.string.isRequired, // Paragraph content
-//     })
-//   ).isRequired,
-// };
-
+LatestNews.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired, // Added id as required
+      img: PropTypes.string.isRequired,
+      date: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      postedBy: PropTypes.string.isRequired,
+      comments: PropTypes.number.isRequired,
+      p: PropTypes.string.isRequired, // Paragraph content
+    })
+  ).isRequired,
+  containerClasses: PropTypes.string,
+};
+// Default value for containerClasses in case none is provided
+LatestNews.defaultProps = {
+  containerClasses: 'w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8',
+};
 export default LatestNews;

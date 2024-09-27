@@ -83,7 +83,7 @@ const Blog = () => {
 
     return (
         <div className="flex w-10/12 mx-auto">
-            <div className="w-1/4 p-4 "> {/* Sidebar on the left */}
+            <div className="w-1/4 flex-2 p-4 "> {/* Sidebar on the left */}
                 <button onClick={() => setFilterVisible(!filterVisible)} className="mb-4 flex items-center font-poppins font-[0.5rem] p-2 bg-primary text-white-200 text-white rounded-full ">
                     Filter <LuSettings2 className="ml-4" />
                 </button>
@@ -183,7 +183,12 @@ const Blog = () => {
                     </div>
                     <h3>{sortedData.length} results Found</h3>
                 </div>
-                <LatestNews data={sortedData} />
+               <div className='grid grid-rows-2'>
+               <LatestNews 
+               data={sortedData} 
+               containerClasses="w-full mx-auto grid  grid-cols-1 md:grid-cols-2 gap-x-14 lg:gap-x-4"
+               />
+               </div>
             </div>
         </div>
     );
