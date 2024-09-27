@@ -53,6 +53,24 @@ const Navbar = () => {
     setIsOpen(false)
     setIsAllCategoriesOpen(false)
   }, [location.pathname])
+  const [isFixed, setIsFixed] = useState(false);
+  // const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 220) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
 
   const dropdownVariants = {
@@ -224,7 +242,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          <nav className='hidden mt-2 bg-gray-800 xlg:flex text-white-100 sm:px-6 lg:px-8'>
+          <nav    className={`${
+              isFixed ? 'fixed top-0 left-0 w-full z-50 bg-gray-800' : ''
+            } hidden bg-gray-800 xlg:flex text-white-100 sm:px-6 lg:px-8 transition duration-500`}
+          >
             <div className='flex items-center justify-between w-full'>
               {/* Left-side Links */}
               <div className='flex justify-between'>
@@ -273,7 +294,7 @@ const Navbar = () => {
                   {navData.map(item => (
                     <div
                       key={item.id}
-                      className='relative  flex items-center group'
+                      className='relative flex items-center group'
                     >
                       {item.dropdown ? (
                         <p className='flex items-center px-3 py-4 font-medium rounded-md cursor-pointer hover:bg-gray-700'>
@@ -443,7 +464,7 @@ const Navbar = () => {
               {/* All Categories for Mobile */}
               <button
                 onClick={toggleAllCategories}
-                className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100  mb-3'
+                className='flex items-center w-full px-3 py-2 mb-3 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white-100'
               >
                 All Categories
                 <FaChevronDown className='ml-auto' />
@@ -453,13 +474,13 @@ const Navbar = () => {
                 initial={false}
                 animate={isAllCategoriesOpen ? 'open' : 'closed'}
                 variants={dropdownVariants}
-                className='pl-4 overflow-hidden bg-white-100  flex flex-col gap-y-2'
+                className='flex flex-col pl-4 overflow-hidden bg-white-100 gap-y-2'
               >
                 {allCategoryDropdown.map((item, index) => (
                   <Link
                     to={item.path}
                     key={index}
-                    className='block px-3 py-2  text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
+                    className='block px-3 py-2 text-gray-800 rounded-md hover:bg-gray-700 hover:text-white-100'
                   >
                     {item.title}
                   </Link>
@@ -467,16 +488,16 @@ const Navbar = () => {
               </motion.div>
 
               {/* Mobile Links */}
-              <div className=' flex flex-col gap-y-3 bg-white'>
+              <div className='flex flex-col bg-white gap-y-3'>
 
              
               {navData.map(item => (
-                <div key={item.id} className=' '>
+                <div key={item.id} className=''>
                   {item.dropdown ? (
                     <div className=''>
                       <button
                         onClick={() => toggleDropdown(item.id)}
-                        className='flex items-center w-full px-3 py-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700 mb-2'
+                        className='flex items-center w-full px-3 py-2 mb-2 font-medium text-left rounded-md bg-white-100 text-black-900 hover:text-white-100 focus:text-white-100 hover:bg-gray-700 focus:outline-none focus:bg-gray-700'
                       >
                         {item.title}
                         <FaChevronDown className='ml-auto' />
@@ -486,7 +507,7 @@ const Navbar = () => {
                         initial={false}
                         animate={openDropdownId === item.id ? 'open' : 'closed'}
                         variants={dropdownVariants}
-                        className='pt-0 pl-4 overflow-hidden bg-white-100  flex flex-col gap-y-2'
+                        className='flex flex-col pt-0 pl-4 overflow-hidden bg-white-100 gap-y-2'
                       >
                         {item.dropdown.map(dropdownItem => (
                           <Link
