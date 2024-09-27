@@ -5,7 +5,10 @@ import { IoPersonOutline } from "react-icons/io5";
 import { GoTag } from "react-icons/go";
 import { LiaCommentsSolid } from "react-icons/lia";
 
-const LatestNews = ({ data ,containerClasses }) => {
+const LatestNews = ({ 
+  data, 
+  containerClasses = 'w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8' 
+}) => {
   return (
     <div className={containerClasses}>
       {data.map((item, index) => (
@@ -80,8 +83,5 @@ LatestNews.propTypes = {
   ).isRequired,
   containerClasses: PropTypes.string,
 };
-// Default value for containerClasses in case none is provided
-LatestNews.defaultProps = {
-  containerClasses: 'w-full mx-auto xsm:w-[80%] xs:w-[70%] sm:w-[60%] mmd:w-full grid grid-cols-1 mmd:grid-cols-3 gap-x-4 lg:gap-x-6 xl:gap-x-8',
-};
+
 export default LatestNews;
