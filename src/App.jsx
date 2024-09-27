@@ -28,6 +28,7 @@ const Home4 = lazy(() => import('./pages/homepages/Home4'));
 const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
 
+
 //Shop
 const Shop1 = lazy(() => import('./pages/shop/Shop1'));
 const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
@@ -119,6 +120,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
+          
           <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage />} />
 
           {/* ------------- Shop ------------- */}
@@ -152,6 +154,9 @@ const App = () => {
 
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
+
+          
+          
 
 
           {/*---------------- Error----------------- */}
