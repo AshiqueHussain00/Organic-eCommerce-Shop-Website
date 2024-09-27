@@ -55,7 +55,7 @@ const OrderHistory = () => {
                             </thead>
                             <tbody>
                                 {currentOrders.map((order) => (
-                                    <tr key={order.id} className="hover:bg-gray-100">
+                                    <tr key={order.id} className="">
                                         <td className="px-4 py-2 border">#{order.orderId}</td>
                                         <td className="px-4 py-2 border">{order.date}</td>
                                         <td className="px-4 py-2 border">
@@ -67,7 +67,7 @@ const OrderHistory = () => {
                                                 <Link
                                                     to={`/account/order-history/order-detail/${order.orderId}`}
                                                     state={{ id: true }}
-                                                    className="ml-4 text-primary"
+                                                    className="ml-4 text-primary transition-all duration-300 hover:text-branding-success hover:underline"
                                                 >
                                                     View Details
                                                 </Link>
