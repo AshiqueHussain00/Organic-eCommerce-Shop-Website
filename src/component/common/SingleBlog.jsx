@@ -244,7 +244,7 @@ const SingleBlog = () => {
   return (
     <div className="w-10/12 dsx:w-10/12 flex flex-col-reverse  mx-auto p-4  sm:flex-col-reverse md:flex-col-reverse  lg:flex-row lg: ">
       {/* Main Content */}
-      <div className="flex-1 mr-8">
+      <div className="flex-1 mr-8 mx-auto">
         {/* Big Image */}
         <img loading='lazy' src={blog.img} alt={readMore.title} className="w-full h-auto rounded-lg mb-4" />
 
@@ -447,7 +447,7 @@ const SingleBlog = () => {
       </div>
 
       {/* Sidebar on the Right */}
-      <div className="w-10/12 p-4  rounded-lg shadow-md lg:w-1/4 ">
+      <div className="mx-auto w-10/12 p-4  lg:w-1/4 ">
         {/* Search Input */}
         <input
           type="text"
@@ -476,12 +476,12 @@ const SingleBlog = () => {
         <hr className="my-4" />
 
         {/* Top Categories */}
-        <h2 className="font-bold text-lg mb-2 border-black-500 border-b-2">Top Categories</h2>
+        <h2 className="font-bold text-[1.1rem] mb-2 border-black-500 border-b-2 ">Top Categories</h2>
         <ul className="text-sm mb-4 ">
           {Object.keys(categories).map((category) => (
             <li
               key={category}
-              className='mb-2 flex items-center justify-between rounded p-2 cursor-pointer hover:bg-primary hover:text-white-200'
+              className='mb-2 flex items-center justify-between text-[0.8rem] rounded p-2 cursor-pointer hover:bg-primary hover:text-white-200'
               onClick={() => handleCategoryClick(category)} // Navigate on category click
             >
               <span>{category}</span>
@@ -493,13 +493,13 @@ const SingleBlog = () => {
         <hr className="my-4" />
 
         {/* Popular Tags */}
-        <h2 className="font-bold text-lg mb-2 border-black-500 border-b-2 ">Popular Tags</h2>
+        <h2 className="font-bold text-[1.1rem] mb-2 border-black-500 border-b-2 ">Popular Tags</h2>
         <div className="flex flex-wrap mb-4">
           {tags.map((tag) => (
             <Link
               to={`/blog?category=${encodeURIComponent(tag)}`}
               key={tag}
-              className="mb-2 cursor-pointer border-2 text-black-900 rounded-full ml-2 p-2 font-[0.8rem] font-poppins hover:bg-primary hover:text-white-200"
+              className="mb-2 cursor-pointer border-2 text-black-900 rounded-full ml-2 p-2 text-[0.8rem] font-poppins hover:bg-primary hover:text-white-200"
             >
               {tag}
             </Link>

@@ -83,7 +83,7 @@ const Blog = () => {
 
     return (
         <div className="w-10/12  dsx:w-10/12 flex flex-col  mx-auto p-4  sm:flex-col  md:flex-col   lg:flex-row lg: ">
-            <div className="w-10/12 p-4  mx-auto  rounded-lg shadow-md lg:w-1/4  "> {/* Sidebar on the left */}
+            <div className="w-10/12 p-4  mx-auto  lg:w-1/4  "> {/* Sidebar on the left */}
                 <button onClick={() => setFilterVisible(!filterVisible)} className="mb-4 flex items-center font-poppins text-[0.8rem] p-2 bg-primary text-white-200 text-white rounded-full ">
                     Filter <LuSettings2 className="ml-4" />
                 </button>
