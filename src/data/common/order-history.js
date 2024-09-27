@@ -22,7 +22,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 335,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 84,
         orderedProduct: [
 
@@ -107,7 +107,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -171,7 +171,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -235,7 +235,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -300,7 +300,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -385,7 +385,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -470,7 +470,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -555,7 +555,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -640,7 +640,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -725,7 +725,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -810,7 +810,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -895,7 +895,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -980,7 +980,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -1065,7 +1065,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -1150,7 +1150,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -1235,7 +1235,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
@@ -1320,7 +1320,7 @@ export const orderHistory = [
         paymentMethod: "Paypal",
         subtotal: 201,
         discount: "20%",
-        shipping: "free",
+        shippingCharge: "free",
         totalPrice: 101,
         orderedProduct: [
 
