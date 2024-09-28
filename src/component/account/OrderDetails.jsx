@@ -161,7 +161,7 @@ const OrderDetails = () => {
 
 
   return (
-    <section className='w-full xmd:px-4 px-3 py-6'>
+    <section className='w-full xmd:px-4 px-3 xl:py-6 py-4'>
 
 
       {
@@ -206,9 +206,9 @@ const OrderDetails = () => {
 
                 <div className='flex flex-col xs:mb-0 mb-6'>
 
-                  <p className='border lg:rounded-tr-lg rounded-t-lg py-2 px-2 uppercase text-gray-400 text-sm font-medium'>Billing Address</p>
+                  <p className='border rounded-tr-lg lg:rounded-t-none rounded-t-lg py-2 px-2 uppercase text-gray-400 text-sm font-medium'>Billing Address</p>
 
-                  <div className='flex flex-col gap-y-5  px-2 py-5 border lg:rounded-bl-lg rounded-b-lg'>
+                  <div className='flex flex-col gap-y-5  px-2 py-5 border lg:rounded-b-none rounded-bl-lg rounded-b-lg'>
 
                     <div className='flex flex-col gap-y-1 '>
                       <h2 className='text-gray-900 font-normal xl:text-base text-sm'>{order.customerName}</h2>
@@ -235,9 +235,9 @@ const OrderDetails = () => {
 
                 <div className='flex flex-col   '>
 
-                  <p className='border lg:rounded-tr-lg rounded-t-lg py-2 px-2 uppercase text-gray-400 text-sm font-medium'>Shipping Address</p>
+                  <p className='border rounded-tr-lg lg:rounded-t-none rounded-t-lg py-2 px-2 uppercase text-gray-400 text-sm font-medium'>Shipping Address</p>
 
-                  <div className='flex flex-col gap-y-5  px-2 py-5 border lg:rounded-br-lg rounded-b-lg '>
+                  <div className='flex flex-col gap-y-5  px-2 py-5 border lg:rounded-b-none rounded-br-lg rounded-b-lg '>
 
                     <div className='flex flex-col gap-y-1 '>
                       <h2 className='text-gray-900 font-normal xl:text-base text-sm'>{order.customerName}</h2>
@@ -379,11 +379,11 @@ const OrderDetails = () => {
 
             {/* ------------ 3rd row -------- */}
 
-            <div className='flex justify-center border-2 border-green-500'>
+            <div className='flex justify-center'>
 
 
 
-              <div className=' grid grid-cols-4 w-full xxl:w-[90%] border border-red-700'>
+              <div className=' grid grid-cols-1 xs:grid-cols-4 gap-y-8 justify-items-center xs:justify-items-stretch w-full xxl:w-[90%] '>
 
 
                 {
@@ -392,10 +392,10 @@ const OrderDetails = () => {
 
 
                     return (
-                      <div key={data.id} className={`flex flex-col gap-y-3`}>
+                      <div key={data.id} className={`flex flex-col items-center xs:items-stretch gap-y-3 `}>
 
 
-                        <div className='flex items-center '>
+                        <div className='flex flex-col xs:flex-row items-center '>
 
                           <div className={`border-2 border-primary text-lg 
                           ${data.step > stepNumber ? "border-dashed bg-white-100 text-primary" : "bg-primary text-white-100"
@@ -409,7 +409,7 @@ const OrderDetails = () => {
 
                           {
                             data.step < 4 ? (
-                              <div className={`w-[65%] xxl:w-[75%] h-[8px] mx-auto 
+                              <div className={`hidden xs:flex w-[45%] mmd:w-[55%] xlg:w-[65%] xxl:w-[75%] h-[8px] mx-auto rounded-xl
                                 ${data.step < stepNumber ? "bg-primary" : "bg-gray-200"
                                 }
                               `}>
@@ -417,17 +417,30 @@ const OrderDetails = () => {
                               </div>
                             ) : ""
 
-
-
                           }
 
 
 
                         </div>
 
-                        <p className={`border w-max translate-x-[-6px] text-sm tracking-wider`}>
+                        <p className={` w-max xs:translate-x-[-6px] text-sm tracking-wider`}>
                           {data.title}
                         </p>
+
+                        {
+                          data.step < 4 ? (
+                            <div className={`w-[10px] h-[80px]  xs:hidden mx-auto rounded-xl
+                                ${data.step < stepNumber ? "bg-primary" : "bg-gray-200"
+                              }
+                              `}>
+
+                            </div>
+                          ) : ""
+
+
+
+                        }
+
 
 
 
@@ -450,7 +463,7 @@ const OrderDetails = () => {
 
               {/* ---------- heading --------- */}
 
-              <div className='grid grid-cols-5 border sm:text-sm text-[13px] font-semibold  text-gray-500 text-medium uppercase py-3 rounded-t-md w-full'>
+              <div className=' hidden xs:grid grid-cols-5 border sm:text-sm text-[13px] font-semibold  text-gray-500 text-medium uppercase py-3 rounded-t-md w-full'>
 
                 <div className=' col-span-2  pl-5 flex items-center'>Product</div>
                 <div className=' flex justify-center items-center'>Price</div>
@@ -458,7 +471,7 @@ const OrderDetails = () => {
                 <div className='flex justify-center items-center text-center'>Subtotal </div>
               </div>
 
-              {/* <h2 className='md:hidden block font-semibold mb-6'>Ordered Products</h2> */}
+              <h2 className='xs:hidden block font-semibold mb-6'>Ordered Products</h2>
 
 
               {/* ------- products ------- */}
@@ -480,7 +493,9 @@ const OrderDetails = () => {
 
 
         ) : (
-          <div>
+          <div className='w-full h-[300px] grid place-items-center'>
+
+            <h1 className='text-lg text-gray-600'>No Order Found</h1>
 
           </div>
         )

@@ -34,13 +34,13 @@ const SingleProduct = ({ item }) => {
 
                 {/* ---------- quantity --------- */}
 
-                <div className=' flex items-center justify-center xs:text-sm   text-[12px]'>
+                <div className=' flex items-center justify-center text-sm '>
                     x{item.quantity}
                 </div>
 
 
                 {/* ------ subtotal --------- */}
-                <div className=' flex items-center justify-center xs:text-sm  text-[12px]'>
+                <div className=' flex items-center justify-center text-sm '>
                     $ {(item.price * item.quantity).toFixed(2)}
                 </div>
 

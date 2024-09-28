@@ -50,18 +50,18 @@ function BreadCrumbs() {
             return isLast ? (
               <span
                 key={breadcrumbPath}
-                className='flex items-center tracking-wider sm:text-lg text-green-600 capitalize'
+                className='flex items-center tracking-wider text-sm sm:text-lg text-green-600 capitalize'
               >
-                <PiGreaterThanBold className='mx-2 text-white-100 text-sm ' />
+                <PiGreaterThanBold className='mx-2 text-white-100 ' />
                 {name}
               </span>
             )
               : (
                 <span
                   key={breadcrumbPath}
-                  className='flex items-center text-white-100 capitalize'
+                  className='flex items-center text-white-100 capitalize text-sm sm:text-lg'
                 >
-                  <PiGreaterThanBold className='mx-2 text-white-100' />
+                  <PiGreaterThanBold className='mx-2 text-white-100 ' />
                   <Link to={breadcrumbPath}>{name}</Link>
                 </span>
               );

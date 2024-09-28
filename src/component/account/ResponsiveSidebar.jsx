@@ -63,7 +63,7 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
 
     return (
         <div
-            className={`absolute border top-0 left-0 h-[500px] rounded-lg w-[340px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-6" : "translate-x-[-500px]"
+            className={`absolute border top-0 left-0 h-[500px] rounded-lg w-[340px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-2" : "translate-x-[-500px]"
                 }`}
         >
             {/* Cross button to close sidebar */}
@@ -71,7 +71,7 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
 
             
             <button
-                className=" text-black-800 w-max  hover:text-gray-700 px-8 py-4 "
+                className=" text-gray-800  w-max  hover:text-gray-500 px-8 py-4 "
                 onClick={() => setSideOpen(false)}
             >
                 <FiX size={28} />
