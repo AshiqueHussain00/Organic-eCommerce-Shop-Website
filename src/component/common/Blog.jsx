@@ -20,6 +20,20 @@ const Blog = () => {
 
     const tags = ['Healthy', 'Low Fat', 'Vegetarian', 'Bread', 'Kid foods', 'Vitamins', 'Snacks', 'Tiffin', 'Meat', 'Lunch', 'Dinner'];
 
+    // Preferred order for categories
+    const preferredCategoryOrder = [
+        'Fresh Fruit',
+        'Vegetables',
+        'Cooking',
+        'Snacks',
+        'Beverages',
+        'Beauty & Health',
+        'Bread & Bakery'
+    ];
+
+    // Sort categories based on preferred order
+    const sortedCategories = preferredCategoryOrder.filter(category => categories[category] !== undefined);
+
     // Combined list of searchable terms (categories and tags)
     const searchableTerms = [...Object.keys(categories), ...tags];
 
@@ -81,9 +95,12 @@ const Blog = () => {
         setSearchTerm(e.target.value);
     };
 
+    // Debugging: Check if blogData is being populated correctly
+    console.log("Blog Data:", blogData);
+
     return (
-        <div className="w-10/12  dsx:w-10/12 flex flex-col  mx-auto p-4  sm:flex-col  md:flex-col   lg:flex-row lg: ">
-            <div className="w-10/12 p-4  mx-auto  lg:w-1/4  "> {/* Sidebar on the left */}
+        <div className="w-10/12 dsx:w-10/12 flex flex-col mx-auto p-4 sm:flex-col md:flex-col lg:flex-row lg: ">
+            <div className="border-2 border-red-500 w-10/12 p-4 mx-auto lg:w-1/4 "> {/* Sidebar on the left */}
                 <button onClick={() => setFilterVisible(!filterVisible)} className="mb-4 flex items-center font-poppins text-[0.8rem] p-2 bg-primary text-white-200 text-white rounded-full ">
                     Filter <LuSettings2 className="ml-4" />
                 </button>
@@ -115,10 +132,10 @@ const Blog = () => {
                         </div>
                     </>
                 )}
-                
+
                 <div>
-                    <h2 className="font-bold  mb-4 text-[1.1rem] ">Top Categories</h2>
-                    {Object.keys(categories).map((category) => (
+                    <h2 className="font-bold mb-4 text-[1.1rem] ">Top Categories</h2>
+                    {sortedCategories.map((category) => (
                         <ul
                             key={category} // Key added here
                             onClick={() => handleFilter(category)}
@@ -133,7 +150,7 @@ const Blog = () => {
                         </ul>
                     ))}
                 </div>
-                <h2 className="font-bold  mb-4 text-[1.1rem] ">Popular Tags</h2>
+                <h2 className="font-bold mb-4 text-[1.1rem] ">Popular Tags</h2>
                 <div className='flex flex-wrap'>
                     {tags.map((tag) => (
                         <span
@@ -152,22 +169,25 @@ const Blog = () => {
                             key={post.id} // Ensure each post has a unique id
                             src={post.img}
                             alt="Gallery"
-                            className="w-full h-24 object-cover rounded"
+                            className="w-full h-24 object-cover rounded transition-transform transform hover:scale-110" // Added hover effect
                         />
                     ))}
                 </div>
-                <h2 className="font-bold text-[1.1rem] mb-4">Recently Added</h2>
+                <div className='h-auto'>
+                    <h2 className="font-bold text-[1.1rem] mb-4">Recently Added</h2>
+                </div>
                 <ul>
-                    {blogData
-                        .slice()
-                        .sort((a, b) => new Date(b.date) - new Date(a.date))
-                        .slice(0, 5)
+                    {sortedData.length > 0 && sortedData
+                        .slice(0, 3) // Get the latest 3 posts
                         .map((post) => (
-                            <li key={post.id} className="mb-2 cursor-pointer">{post.title}</li>
+                            <li key={post.id} className="mb-2 cursor-pointer">
+                                {post.title} {/* Display post title */}
+                            </li>
                         ))}
+                    {sortedData.length === 0 && <li>No recent posts available.</li>} {/* Message if no posts are available */}
                 </ul>
             </div>
-            <div className="mx-auto mt-4  flex-1 mr-8 sm:mt-0 lg:ml-4 "> {/* Content area on the right */}
+            <div className="border-2 border-green-gray-scale-600 mx-auto mt-4 flex-1 mr-8 sm:mt-0 lg:ml-4 "> {/* Content area on the right */}
                 <div className="flex justify-between items-center mb-4">
                     <div className="sort-dropdown">
                         <label htmlFor="sort-by" className="mr-2 font-semibold">Sort By:</label>
@@ -183,12 +203,12 @@ const Blog = () => {
                     </div>
                     <h3>{sortedData.length} results Found</h3>
                 </div>
-               <div className='grid grid-rows-2'>
-               <LatestNews 
-               data={sortedData} 
-               containerClasses="w-full mx-auto grid  grid-cols-1 md:grid-cols-2 gap-x-14 lg:gap-x-4"
-               />
-               </div>
+                <div className='grid grid-rows-2'>
+                    <LatestNews 
+                        data={sortedData} 
+                        containerClasses="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-14 lg:gap-x-6 gap-y-10"
+                    />
+                </div>
             </div>
         </div>
     );

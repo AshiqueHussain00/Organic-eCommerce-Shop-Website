@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from '../component/account/Sidebar'
+import Dashboard from '../component/account/Dashboard'
 import { Outlet } from 'react-router-dom'
 import BreadCrumbs from '../component/common/BreadCrumbs'
 import { HiDotsVertical } from "react-icons/hi";

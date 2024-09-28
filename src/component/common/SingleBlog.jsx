@@ -246,7 +246,16 @@ const SingleBlog = () => {
       {/* Main Content */}
       <div className="flex-1 mr-8 mx-auto">
         {/* Big Image */}
-        <img loading='lazy' src={blog.img} alt={readMore.title} className="w-full h-auto rounded-lg mb-4" />
+        
+  <img
+    loading="lazy"
+    src={blog.img}
+    alt={readMore.title}
+    className="mx-auto w-[100vw] h-[80vh] rounded-lg mb-4"
+  />
+
+
+
 
         {/* Icons: Tag, Human, Comments */}
         <div className="flex items-center mb-2 text-gray-700 ">
@@ -408,7 +417,7 @@ const SingleBlog = () => {
         </div>
         <button
           type="submit"
-          className="mt-4  px-4 py-2 rounded-full bg-white-200 border-2 hover:text-white-200 hover:bg-primary text-black-900"
+          className="mt-4  px-4 py-2 rounded-full  border-2 text-white-200 bg-primary hover:bg-white-200 hover:text-black-900"
         >
           Post Comment
         </button>
@@ -473,10 +482,10 @@ const SingleBlog = () => {
           </ul>
         )}
 
-        <hr className="my-4" />
+       
 
         {/* Top Categories */}
-        <h2 className="font-bold text-[1.1rem] mb-2 border-black-500 border-b-2 ">Top Categories</h2>
+        <h2 className="font-bold text-[1.1rem] mb-2 border-black-500 border-b-2 p-2 ">Top Categories</h2>
         <ul className="text-sm mb-4 ">
           {Object.keys(categories).map((category) => (
             <li
@@ -493,7 +502,7 @@ const SingleBlog = () => {
         <hr className="my-4" />
 
         {/* Popular Tags */}
-        <h2 className="font-bold text-[1.1rem] mb-2 border-black-500 border-b-2 ">Popular Tags</h2>
+        <h2 className="font-bold text-[1.1rem] mb-2 border-black-500 border-b-2 p-2 ">Popular Tags</h2>
         <div className="flex flex-wrap mb-4">
           {tags.map((tag) => (
             <Link
@@ -509,14 +518,14 @@ const SingleBlog = () => {
         <hr className="my-4" />
 
         {/* Our Gallery */}
-        <h2 className="font-bold text-lg mb-2 border-black-500 border-b-2">Our Gallery</h2>
+        <h2 className="font-bold text-lg mb-2 p-2 border-black-500 border-b-2">Our Gallery</h2>
         <div className="grid grid-cols-2 gap-2 mb-4">
           {blogData.slice(0, 8).map((post) => (
             <img
               key={post.id}
               src={post.img}
               alt={`Gallery ${post.id}`}
-              className="w-full h-24 object-cover rounded"
+              className="w-full h-24 object-cover rounded transition-transform transform hover:scale-110"
             />
           ))}
         </div>
