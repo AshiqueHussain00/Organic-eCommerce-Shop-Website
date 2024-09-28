@@ -2,12 +2,19 @@ import React from 'react'
 import { useRef, useEffect } from 'react'
 import { useOnclickOutside } from '../../hooks/useOnclickOutside'
 import { motion, AnimatePresence } from 'framer-motion';
-import { MdOutlineClose } from "react-icons/md";
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { resetCart } from '../../redux/slice/cartSlice';
+import { resetWishlist } from '../../redux/slice/wishlistSlice';
+import { toast } from 'react-hot-toast';
 
 
 const Logout = ({ isLogout, setIsLogout }) => {
 
     const myRef = useRef(null)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     useOnclickOutside(myRef, () => setIsLogout(false));
 
     const modalVariants = {
@@ -43,6 +50,17 @@ const Logout = ({ isLogout, setIsLogout }) => {
     }, [isLogout])
 
 
+    const logoutHandler = () => {
+
+        dispatch(resetCart());
+        dispatch(resetWishlist());
+        navigate("/");
+        toast.success("Logout Successfully");
+        setIsLogout(false);
+        
+
+    }
+
 
     return (
         <motion.div className='fixed inset-0 grid place-items-center  z-[9999] overflow-auto bg-gray-900 bg-opacity-10  backdrop-blur-sm text-gray-900' >
@@ -56,8 +74,6 @@ const Logout = ({ isLogout, setIsLogout }) => {
                     exit="exit"
                     className=' border border-primary rounded-lg p-8 sm:min-w-[420px] xs:min-w-[350px] min-w-[28px] min-h-[240px] flex flex-col justify-between gap-4 bg-white-100 relative' ref={myRef} onClick={(event) => event.stopPropagation()} >
 
-                    <p className='absolute text-2xl cursor-pointer right-10 top-6 text-gray-900' onClick={() => setIsLogout(false)}><MdOutlineClose /></p>
-
                     <div className='flex flex-col gap-y-6'>
                         <h2 className='xs:text-2xl text-xl font-semibold'> Logout</h2>
                         <p className='xs:text-[16px] text-sm'> Are you sure you want to logout?</p>
@@ -66,13 +82,17 @@ const Logout = ({ isLogout, setIsLogout }) => {
 
 
                     <div className='flex w-full gap-4'>
-                        <button className='border-2 w-full px-4 py-2 transition-all duration-200 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
+                        <button
+                        onClick={logoutHandler}
+                         className='border-2 w-full px-4 py-2 transition-all duration-200 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
                             Yes
                         </button>
 
                         {/* ------------- Cancel Button ---------------- */}
 
-                        <button className='border-2 w-full px-4 py-2 transition-all duration-200 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
+                        <button
+                        onClick={()=> setIsLogout(false)}
+                         className='border-2 w-full px-4 py-2 transition-all duration-200 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
 
                             No
                         </button>
