@@ -52,9 +52,9 @@ const navigation = [
 
 const Sidebar = () => {
     return (
-        <div className='w-full py-4 flex flex-col gap-y-3 '>
+        <div className='w-full py-4 hidden md:flex flex-col gap-y-3 '>
 
-            <h1 className='py-3 pl-3 pr-2 text-xl font-meidum leading-8'>
+            <h1 className='py-3 pl-3 pr-2 lg:text-xl smd:text-lg text-base font-meidum leading-8'>
                 Navigation
             </h1>
 

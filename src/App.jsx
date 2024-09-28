@@ -28,6 +28,7 @@ const Home4 = lazy(() => import('./pages/homepages/Home4'));
 const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
 
+
 //Shop
 const Shop1 = lazy(() => import('./pages/shop/Shop1'));
 const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
@@ -54,9 +55,11 @@ const Checkout = lazy(() => import('./pages/Checkout'));
 
 // Account
 const Account = lazy(() => import('./pages/Account'));
-// const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
+const CreateAccountForm = lazy(() => import('./component/account/CreateAccount'));
+const SignInForm = lazy(()=> import('./component/account/sign'))
+const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
 const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
-const OrderHistory = lazy(()=> import('./component/account/OrderHistory'));
+
 
 //Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
@@ -119,6 +122,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
+          
           <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage />} />
 
           {/* ------------- Shop ------------- */}
@@ -141,8 +145,12 @@ const App = () => {
 
           {/* --------- Account ------- */}
 
-          <Route element={<Account />}>
+          <Route path='/account/create-account' element={<CreateAccountForm/>}/>
+          <Route path='/account/login' element={<SignInForm/>}/>
 
+          <Route element={<Account />}>
+            
+         
             <Route path='/account/order-history' element={<OrderHistory/>}/>
             <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
 
@@ -153,10 +161,13 @@ const App = () => {
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
 
+          
+          
+
 
           {/*---------------- Error----------------- */}
-          {/* <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
-          <Route path="/404" element={<Error404 />} /> */}
+          <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
+          <Route path="/404" element={<Error404 />} />
 
         </Routes>
 
