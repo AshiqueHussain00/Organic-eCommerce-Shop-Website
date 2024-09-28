@@ -30,7 +30,7 @@ const Account1 = () => {
 
         <div className='border rounded-md xl:w-[340px] smd:w-[300px] w-[260px] h-max md:flex hidden '>
 
-          <Sidebar />
+          <Sidebar isLogout={isLogout} setIsLogout={setIsLogout}/>
 
         </div>
 
@@ -53,7 +53,7 @@ const Account1 = () => {
 
           }
 
-          <ResponsiveSidebar sideOpen={sideOpen} setSideOpen={setSideOpen} />
+          <ResponsiveSidebar sideOpen={sideOpen} setSideOpen={setSideOpen} isLogout={isLogout} setIsLogout={setIsLogout} />
 
 
 

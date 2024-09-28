@@ -51,7 +51,7 @@ const navigation = [
 
 
 
-const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
+const ResponsiveSidebar = ({ sideOpen, setSideOpen, setIsLogout }) => {
 
    const location = useLocation();
 
@@ -93,7 +93,7 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
 
 
                             return (
-                                <SidebardLink nav={nav} key={nav.id}
+                                <SidebardLink nav={nav} key={nav.id} setIsLogout={setIsLogout} 
 
                                 />
                             )
