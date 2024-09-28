@@ -4,8 +4,13 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEyeSlash } from "react-icons/fa"; // Importing eye icons from react-icons
 import { IoEyeOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const SignInForm = () => {
+
+  const navigate = useNavigate();
+
+
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     shouldUseNativeValidation: false,
   });
@@ -41,10 +46,10 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white-100 p-4 sm:p-6">
-      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md">
+    <div className="h-full flex py-24 justify-center bg-white-100 p-4 sm:px-6 ">
+      <div className="bg-white h-max p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md border">
         <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Sign In</h2>
-        <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4 sm:space-y-6">
+        <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4 sm:space-y-6 ">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
@@ -52,6 +57,7 @@ const SignInForm = () => {
             <input
               type="email"
               id="email"
+              placeholder="Email"
               {...register("email", { required: true })}
               className="mt-1 p-2 w-full border border-gray-300 rounded"
             />
@@ -67,6 +73,7 @@ const SignInForm = () => {
               <input
                 type={showPassword ? "text" : "password"} // Toggle input type
                 id="password"
+                placeholder="Password"
                 {...register("password", { required: true })}
                 className="mt-1 p-2 w-full border border-gray-300 rounded pr-10" // Adding padding to the right for the eye icon
               />
@@ -101,8 +108,9 @@ const SignInForm = () => {
           </div>
 
           <button
+          onClick={()=> navigate("/accont/dashboard")}
             type="submit"
-            className="w-full bg-primary text-white py-2 rounded-full hover:bg-blue-600 transition-colors duration-300"
+            className="w-full bg-primary  text-white-100 text-white py-2 rounded-full hover:bg-branding-success transition-all duration-300"
           >
             Login
           </button>
@@ -110,7 +118,7 @@ const SignInForm = () => {
           {/* Register Link */}
           <div className="text-center mt-4">
             <p className="text-sm text-gray-600">
-              Don't have an account? <a href="/register" className="text-blue-600 hover:underline">Register</a>
+              Don't have an account? <a href="/register" className="font-semibold hover:text-primary">Register</a>
             </p>
           </div>
         </form>

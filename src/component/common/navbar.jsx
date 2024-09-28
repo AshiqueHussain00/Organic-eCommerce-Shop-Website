@@ -401,7 +401,7 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to='/profile'
+                  to='/account/login'
                   className='p-2 text-white rounded-full hover:bg-gray-700'
                 >
                   <FaRegUser size={24} />
@@ -452,7 +452,7 @@ const Navbar = () => {
                 </Link>
 
             <Link
-              to='/profile'
+              to='/account/login'
               className='p-2 rounded-full text-black-900 hover:text-white-100 hover:bg-gray-700 '
             >
               <FaRegUser size={24} />
