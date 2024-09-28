@@ -55,18 +55,18 @@ const Checkout = lazy(() => import('./pages/Checkout'));
 
 // Account
 const Account = lazy(() => import('./pages/Account'));
-// const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
+const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
 const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
-const OrderHistory = lazy(()=> import('./component/account/OrderHistory'));
-const Dashboard = lazy (()=>import('./component/account/Dashboard'))
+const Dashboard =lazy(()=>import('./component/account/Dashboard'))
+const Setting = lazy(() => import('./component/account/Setting'))
+
+
 //Contact
 const ContactForm = lazy(() => import('./component/common/ContactForm'));
 
 //Error404
 import Error404 from './component/error/Error404';
  
-import Footer3 from './component/common/footer/Footer3';
-import Footer4 from './component/common/footer/Footer4';
 
 
 
@@ -112,6 +112,7 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
+     
       <Suspense fallback={<Loader />}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -148,6 +149,8 @@ const App = () => {
             <Route path='/account/order-history' element={<OrderHistory/>}/>
             <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
             <Route path ='/account/DashBoard' element={<Dashboard/>}/>
+            <Route path='/account/settings' element={<Setting/>}/>
+
           </Route>
 
 

@@ -5,7 +5,12 @@ import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } fro
 import {FaCcDiscover ,FaCcMastercard , } from 'react-icons/fa6';
 import { FaApplePay } from "react-icons/fa";
 import { SiVisa } from "react-icons/si";
-import Logo from '../../../assets/common/navbar/Logo.svg'
+import Logo from '../../../assets/home2/Bazarlogo.svg'
+import Img1 from '../../../assets/home2/image1.svg'
+import VisaImg from '../../../assets/home2/image2.svg'
+import DiscoverImg from '../../../assets/home2/image3.svg'
+import MastercardImg from '../../../assets/home2/image4.svg'
+import LockImg from '../../../assets/home2/image5.svg'
 function Footer2() {
     const FooterData = {
         shopery: {
@@ -53,11 +58,11 @@ function Footer2() {
     }
   return (
     <section>
-    <div className="w-full mx-auto p-6 md:px-16 py-8 bg-gray-100"> {/* Set background to white */}
-        <div className="gap-10 w-full grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
+    <div className="w-full mx-auto px-6 pt-16 pb-8 md:px-16 py-8 bg-gray-100"> {/* Set background to white */}
+        <div className="gap-10 w-full grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7  md:gap-2">
             {/* ABOUT SHOPERY */}
             <div className="col-span-1 xmd:col-span-2 flex flex-col gap-2 md:gap-1 p-2 text-black"> {/* Set text to black */}
-                <img src={FooterData.shopery.logo} alt="Shopery Logo" className="" />
+                <img src={FooterData.shopery.logo} alt="Shopery Logo" className="w-32" />
                 <p className="text-black text-base font-normal">{FooterData.shopery.para}</p>
                 <div className="flex flex-row gap-4 items-center text-sm lg:text-base">
       <span className="text-black-900 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
@@ -133,35 +138,26 @@ function Footer2() {
         </div>
 
 
-  
-        <div className="w-11/12 mx-auto grid grid-cols-1 bg-white md:grid-cols-2 xmd:grid-cols-7 gap-2 md:gap-2 items-center">
-        
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-4">
+  <div className="grid grid-cols-1 md:grid-cols-1 xmd:grid-cols-3 gap-4 items-center">
+    {/* MESSAGE on the left side */}
+    <div className="col-span-1 md:col-span-1 xmd:col-span-2 flex justify-start">
+      <h2 className="text-black text-xs xlg:text-base">
+        Ecobazar eCommerce © 2021. All Rights Reserved
+      </h2>
+    </div>
 
-            {/* MESSAGE */}
-            <div className="col-span-1 md:col-span-1 xmd:col-span-3">
-                <h2 className="text-black text-xs xlg:text-base">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
-            </div>
-
-            <div className="col-span-1 md:col-span-2 xmd:col-span-4 flex flex-row gap-1 xlg:gap-3 items-center justify-end"> {/* Adjusted col-span */}
-            <FaApplePay className="bg-white-100 h-[30px] w-[40px] xmd:h-[40px] xmd:w-[50px] xlg:h-[35px] xlg:w-[45px] cursor-pointer  p-1 border-2 border-gray-600 rounded-md" />
-
-    <SiVisa className="text-blue-900 h-[30px] w-[40px] xmd:h-[40px] xmd:w-[50px] xlg:h-[35px] xlg:w-[45px]  p-1 border-2 border-gray-600 rounded-md" />
-    <FaCcDiscover className="text-white-900 h-[30px] w-[40px] xmd:h-[40px] xmd:w-[50px] xlg:h-[35px] xlg:w-[45px]" />
-   
-    <div className="flex flex-col gap-0 text-black-900 p-0.5 border-2 border-gray-600 rounded-md"> {/* Reduced padding */}
-  <div className="flex flex-row items-center gap-1"> {/* Added gap to control spacing */}
-    <FaLock className="h-[8px] w-[8px] xlg:h-[10px] xlg:w-[10px]" /> {/* Small icon size */}
-    <span className="text-xs xlg:text-sm font-medium leading-tight">Secure</span> {/* Reduced line height */}
-  </div>
-  <div>
-    <p className="text-xs xlg:text-sm font-semibold leading-tight">Payment</p> {/* Reduced line height */}
+    {/* IMAGES on the right side */}
+    <div className="col-span-1 md:col-span-1 xmd:col-span-1 flex items-center justify-end space-x-2">
+      <img src={Img1} alt="Apple Pay"  />
+      <img src={VisaImg} alt="Visa"  />
+      <img src={DiscoverImg} alt="Discover"  />
+      <img src={MastercardImg} alt="Mastercard"  />
+      <img src={LockImg} alt="Lock"  />
+    </div>
   </div>
 </div>
 
-
-    <FaCcMastercard className="text-black-900 h-[30px] w-[40px] xmd:h-[40px] xmd:w-[50px] xlg:h-[35px] xlg:w-[45px]  p-1 border-2 border-gray-600 rounded-md" />
-  </div>
-        </div>
         </section>
         )
     }

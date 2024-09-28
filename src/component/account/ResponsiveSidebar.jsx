@@ -51,7 +51,7 @@ const navigation = [
 
 
 
-const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
+const ResponsiveSidebar = ({ sideOpen, setSideOpen, setIsLogout }) => {
 
    const location = useLocation();
 
@@ -63,7 +63,7 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
 
     return (
         <div
-            className={`absolute border top-0 left-0 h-[500px] rounded-lg w-[340px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-2" : "translate-x-[-500px]"
+            className={`absolute border top-[-46px] left-0 h-[500px] rounded-lg sm:w-[340px] xs:w-[300px] w-[280px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-5" : "translate-x-[-500px]"
                 }`}
         >
             {/* Cross button to close sidebar */}
@@ -93,7 +93,7 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
 
 
                             return (
-                                <SidebardLink nav={nav} key={nav.id}
+                                <SidebardLink nav={nav} key={nav.id} setIsLogout={setIsLogout} 
 
                                 />
                             )

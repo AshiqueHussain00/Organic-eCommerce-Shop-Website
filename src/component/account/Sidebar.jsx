@@ -50,7 +50,7 @@ const navigation = [
 
 ]
 
-const Sidebar = () => {
+const Sidebar = ({ setIsLogout}) => {
     return (
         <div className='w-full py-4 hidden md:flex flex-col gap-y-3 '>
 
@@ -66,7 +66,7 @@ const Sidebar = () => {
 
 
                         return (
-                            <SidebardLink nav={nav} key={nav.id}
+                            <SidebardLink nav={nav} key={nav.id} setIsLogout={setIsLogout} 
 
                             />
                         )

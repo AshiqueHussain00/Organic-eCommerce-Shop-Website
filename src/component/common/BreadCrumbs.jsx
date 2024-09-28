@@ -17,11 +17,9 @@ function BreadCrumbs() {
 
   if (state?.id || state?.productId) {
 
-    pathnames = pathnames.slice(0, pathnames.length - 1);
+    pathnames = pathnames.slice(0, pathnames.length -1);
 
   }
-
-
 
 
   return (
@@ -41,7 +39,7 @@ function BreadCrumbs() {
           // Dynamic breadcrumb for other routes
           pathnames.map((name, index) => {
             breadcrumbPath += `/${name}`;
-            const isLast = index === pathnames.length - 1;
+            const isLast = index === pathnames.length-1;
 
             if (name.includes('-')) {
               name = name.split('-').join(' ');
