@@ -39,10 +39,17 @@ const wishlistSlice = createSlice({
 
          
             // toast.error("Remove from Wishlist")
+        },
+
+        resetWishlist : (state)=> {
+               
+            state.wishlistItems = [];
+            localStorage.removeItem("wishlistItems");
+           
         }
     }
 })
 
 
-export const{addToWishlist , removeFromWishlist} = wishlistSlice.actions;
+export const{addToWishlist , removeFromWishlist , resetWishlist} = wishlistSlice.actions;
 export default wishlistSlice.reducer;
