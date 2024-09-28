@@ -63,7 +63,7 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen }) => {
 
     return (
         <div
-            className={`absolute border top-0 left-0 h-[500px] rounded-lg w-[340px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-2" : "translate-x-[-500px]"
+            className={`absolute border top-0 left-0 h-[500px] rounded-lg w-[340px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-5" : "translate-x-[-500px]"
                 }`}
         >
             {/* Cross button to close sidebar */}

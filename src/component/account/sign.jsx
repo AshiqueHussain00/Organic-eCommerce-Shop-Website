@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaEyeSlash } from "react-icons/fa"; // Importing eye icons from react-icons
 import { IoEyeOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignInForm = () => {
 
@@ -24,32 +25,25 @@ const SignInForm = () => {
   const onSubmit = (data) => {
     toast.success("Login Successful!", {
       position: "top-center",
-      style: { 
-        fontSize: '18px', 
-        padding: '30px',  
-        width: '300px',  
+      style: {
+        fontSize: '18px',
+        padding: '30px',
+        width: '300px',
       },
     });
     console.log(data);
+    
     reset(); // Resetting the form after successful submission
+    navigate("/account/dashboard")
   };
 
-  const onError = () => {
-    toast.error("Please check the fields and try again", {
-      position: "top-center",
-      style: { 
-        fontSize: '18px', 
-        padding: '20px', 
-        width: '400px',
-      },
-    });
-  };
+
 
   return (
     <div className="h-full flex py-24 justify-center bg-white-100 p-4 sm:px-6 ">
       <div className="bg-white h-max p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md border">
         <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Sign In</h2>
-        <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4 sm:space-y-6 ">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6 ">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700">
               Email
@@ -108,7 +102,7 @@ const SignInForm = () => {
           </div>
 
           <button
-          onClick={()=> navigate("/accont/dashboard")}
+            
             type="submit"
             className="w-full bg-primary  text-white-100 text-white py-2 rounded-full hover:bg-branding-success transition-all duration-300"
           >
@@ -118,7 +112,11 @@ const SignInForm = () => {
           {/* Register Link */}
           <div className="text-center mt-4">
             <p className="text-sm text-gray-600">
-              Don't have an account? <a href="/register" className="font-semibold hover:text-primary">Register</a>
+              Don't have an account? <a href="/register" className="font-semibold hover:text-primary">
+                <Link to="/account/create-account" >
+                  Register
+                </Link>
+              </a>
             </p>
           </div>
         </form>

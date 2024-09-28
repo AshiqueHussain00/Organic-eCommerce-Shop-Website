@@ -4,8 +4,12 @@ import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { FaEyeSlash } from "react-icons/fa"; // Importing eye icons from react-icons
 import { IoEyeOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const CreateAccountForm = () => {
+
+  const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors }, watch, reset } = useForm(); // Destructure reset
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false); // New state for confirm password visibility
@@ -17,14 +21,11 @@ const CreateAccountForm = () => {
     });
     console.log(data);
     reset(); // Reset the form fields after successful submission
+    navigate("/account/login")
+
   };
 
-  const onError = () => {
-    toast.error("Please fix the errors and try again.", {
-      position: "top-center",
-      style: { fontSize: '18px', padding: '20px', width: '400px' },
-    });
-  };
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -38,7 +39,7 @@ const CreateAccountForm = () => {
     <div className="min-h-screen flex items-center justify-center bg-white-100 px-4 sm:px-6 lg:px-8">
   <div className="bg-white p-6 sm:p-8 lg:p-12 rounded shadow-lg w-full max-w-sm sm:max-w-md lg:max-w-lg">
     <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center">Create Account</h2>
-    <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit,)} className="space-y-6">
           
           {/* Email Field */}
           <div>
@@ -130,9 +131,9 @@ const CreateAccountForm = () => {
         <div className="mt-4 text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{" "}
-            <a href="/login" className="text-blue-500 hover:underline">
+            <Link to="/account/login" className="text-blue-500 hover:underline">
               Login
-            </a>
+            </Link>
           </p>
         </div>
       </div>

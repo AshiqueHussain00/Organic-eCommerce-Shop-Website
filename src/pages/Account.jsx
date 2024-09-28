@@ -5,10 +5,12 @@ import BreadCrumbs from '../component/common/BreadCrumbs'
 import { HiDotsVertical } from "react-icons/hi";
 import { useState } from 'react';
 import ResponsiveSidebar from '../component/account/ResponsiveSidebar';
+import Logout from '../component/account/Logout';
 
 const Account1 = () => {
 
   const [sideOpen, setSideOpen] = useState(false)
+  const [isLogout , setIsLogout] = useState(false);
 
   const handleSidebar = () => {
     setSideOpen(!sideOpen);
@@ -67,6 +69,12 @@ const Account1 = () => {
         </div>
 
       </div>
+
+      {
+        isLogout && (
+          <Logout isLogout={isLogout} setIsLogout={setIsLogout}/>
+        )
+      }
 
 
 

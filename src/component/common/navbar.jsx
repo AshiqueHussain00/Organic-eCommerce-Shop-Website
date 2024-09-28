@@ -116,7 +116,7 @@ const Navbar = () => {
       <div className='mt-8 mx-auto xs:max-h-[500px]'>
         <header className='bg-white-100 text-black-800'>
           {/* Store Location */}
-          <div className='flex items-center justify-between h-6 mt-3 sm:px-6 lg:px-8'>
+          <div className='flex items-center justify-between h-6 mt-3 sm:px-6 px-4 lg:px-8'>
             <div className='flex items-center'>
               <CiLocationOn size={24} className='mr-2' />
               <span className='hidden sm:inline'>
@@ -417,7 +417,7 @@ const Navbar = () => {
             >
               <IoHeartOutline size={24} />
               {wishlistItems.length !== 0 ? (
-                <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid place-items-center  rounded-full top-[-4px] right-0'>
+                <span className='absolute bg-branding-success border border-white-100 text-white-100 text-[12px] w-[20px] h-[20px] grid  place-items-center  rounded-full top-[-4px] right-0'>
                   {wishlistItems.length}
                 </span>
               ) : (
