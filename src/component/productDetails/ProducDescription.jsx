@@ -28,6 +28,7 @@ function ProductTabs({ product }) {
         );
       case 'additionalInfo':
         return (
+          
           <div>
             <p>
               <strong>Weight:</strong> {selectedProduct.additionalInformation?.weight || 'N/A'}
@@ -72,7 +73,7 @@ function ProductTabs({ product }) {
   }
 
   return (
-    <div className="p-4 w-11/12 mx-auto">
+    <div className="w-10/12 mx-auto">
      
       {/* Tabs Navigation */}
       <div className="flex justify-center border-b mb-4">
