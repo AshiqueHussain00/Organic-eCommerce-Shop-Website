@@ -18,7 +18,7 @@ function Home1() {
     return (
         <div>
            
-            <HomeHerosection />
+         <HomeHerosection />
             <HeaderBottom/>
             <ProductCategory/>
             <PopularProducts/>
@@ -29,8 +29,8 @@ function Home1() {
             <HomeLatestNews/>
             <HomeTestimonial/>
             <NewsletterThree/>
-            
-            
+             
+          
           
         </div>
     )
