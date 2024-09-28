@@ -1,49 +1,58 @@
-import React, { useState } from 'react';
-import allproductData from '../../data/common/allproductData'; // Ensure this is correctly imported and has valid data
+import React, { useState, useEffect } from 'react';
 
-const ProductTabs = () => {
+function ProductTabs({ product }) {
   const [activeTab, setActiveTab] = useState('description');
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
-  // Function to render content based on the active tab
+  // Update selectedProduct whenever product prop changes
+  useEffect(() => {
+    if (product) {
+      setSelectedProduct(product);
+    }
+  }, [product]);
+
+  // Function to render content based on the active tab and selected product
   const renderContent = () => {
+    if (!selectedProduct) {
+      return <p>Product information is not available</p>; // Prevent error when selectedProduct is null
+    }
+
     switch (activeTab) {
       case 'description':
         return (
           <div>
-            <p>{allproductData.description?.dec1 || 'Description not available'}</p>
-            <p>{allproductData.description?.dec2 || 'Description not available'}</p>
-            <p>{allproductData.description?.dec3 || 'Description not available'}</p>
+            <p>{selectedProduct.description?.dec1 || 'Description not available'}</p>
+            <p>{selectedProduct.description?.dec2 || 'Description not available'}</p>
+            <p>{selectedProduct.description?.dec3 || 'Description not available'}</p>
           </div>
         );
       case 'additionalInfo':
         return (
           <div>
             <p>
-              <strong>Weight:</strong> {allproductData?.additionalInformation?.weight || 'N/A'}
+              <strong>Weight:</strong> {selectedProduct.additionalInformation?.weight || 'N/A'}
             </p>
             <p>
-              <strong>Color:</strong> {allproductData?.additionalInformation?.color || 'N/A'}
+              <strong>Color:</strong> {selectedProduct.additionalInformation?.color || 'N/A'}
             </p>
             <p>
-              <strong>Type:</strong> {allproductData?.additionalInformation?.type || 'N/A'}
+              <strong>Type:</strong> {selectedProduct.additionalInformation?.type || 'N/A'}
             </p>
             <p>
-              <strong>Stock Status:</strong> {allproductData?.additionalInformation?.stockStatus || 'N/A'}
+              <strong>Stock Status:</strong> {selectedProduct.additionalInformation?.stockStatus || 'N/A'}
             </p>
             <p>
-              <strong>Stock Quantity:</strong> {allproductData?.additionalInformation?.stockQuantity || 'N/A'}
+              <strong>Stock Quantity:</strong> {selectedProduct.additionalInformation?.stockQuantity || 'N/A'}
             </p>
           </div>
         );
       case 'feedback':
         return (
           <div>
-            {allproductData?.customerFeedback?.length > 0 ? (
-              allproductData.customerFeedback.map((feedback, index) => (
+            {selectedProduct.customerFeedback?.length > 0 ? (
+              selectedProduct.customerFeedback.map((feedback, index) => (
                 <div key={index} className="mb-4">
-                  <p>
-                    <strong>{feedback.name}</strong>
-                  </p>
+                  <p><strong>{feedback.name}</strong></p>
                   <p>{feedback.feedback}</p>
                   <p>Rating: {feedback.rating} ⭐</p>
                 </div>
@@ -63,25 +72,19 @@ const ProductTabs = () => {
       {/* Tabs Navigation */}
       <div className="flex justify-center border-b mb-4">
         <button
-          className={`py-2 px-4 font-semibold ${
-            activeTab === 'description' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'
-          }`}
+          className={`py-2 px-4 font-semibold ${activeTab === 'description' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'}`}
           onClick={() => setActiveTab('description')}
         >
           Description
         </button>
         <button
-          className={`py-2 px-4 font-semibold ${
-            activeTab === 'additionalInfo' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'
-          }`}
+          className={`py-2 px-4 font-semibold ${activeTab === 'additionalInfo' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'}`}
           onClick={() => setActiveTab('additionalInfo')}
         >
           Additional Info
         </button>
         <button
-          className={`py-2 px-4 font-semibold ${
-            activeTab === 'feedback' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'
-          }`}
+          className={`py-2 px-4 font-semibold ${activeTab === 'feedback' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'}`}
           onClick={() => setActiveTab('feedback')}
         >
           Feedback
@@ -93,14 +96,13 @@ const ProductTabs = () => {
         {/* Left Side: Tab Content */}
         <div>{renderContent()}</div>
 
-        {/* Right Side: Video - displayed only when activeTab is 'description' or 'additionalInfo' */}
+        {/* Right Side: Video */}
         {(activeTab === 'description' || activeTab === 'additionalInfo') && (
           <div className="flex flex-col items-center">
-            {/* Video */}
             <iframe
               width="75%"
               height="200"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" // Example video URL; replace with your actual video link
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
               title="Video Player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -111,12 +113,12 @@ const ProductTabs = () => {
             <div className="mt-4 bg-white-100 text-black-800 py-6 rounded-md text-sm font-semibold border border-gray-300 w-3/4 mx-auto">
               <div className="flex justify-between">
                 <div className="p-2 mb-2 flex-1 mr-4 text-sm">
-                  {allproductData?.promotions?.discount || 'No discount available'}
+                  {selectedProduct.promotions?.discount || 'No discount available'}
                   <br />
                   Save your 64% money with us
                 </div>
                 <div className="p-2 rounded mb-2 flex-1 ml-4">
-                  {allproductData?.promotions?.organic || 'No organic details available'}
+                  {selectedProduct.promotions?.organic || 'No organic details available'}
                   <br />
                   100% Organic vegetables
                 </div>
@@ -127,6 +129,6 @@ const ProductTabs = () => {
       </div>
     </div>
   );
-};
+}
 
 export default ProductTabs;
