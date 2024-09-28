@@ -62,7 +62,7 @@ function Footer2() {
         <div className="gap-10 w-full grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7  md:gap-2">
             {/* ABOUT SHOPERY */}
             <div className="col-span-1 xmd:col-span-2 flex flex-col gap-2 md:gap-1 p-2 text-black"> {/* Set text to black */}
-                <img src={FooterData.shopery.logo} alt="Shopery Logo" className="" />
+                <img src={FooterData.shopery.logo} alt="Shopery Logo" className="w-32" />
                 <p className="text-black text-base font-normal">{FooterData.shopery.para}</p>
                 <div className="flex flex-row gap-4 items-center text-sm lg:text-base">
       <span className="text-black-900 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
