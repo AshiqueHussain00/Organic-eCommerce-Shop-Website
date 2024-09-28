@@ -67,8 +67,13 @@ function ProductTabs({ product }) {
     }
   };
 
+  if (!selectedProduct) {
+    return <div>Loading product details...</div>; // Display loading state
+  }
+
   return (
     <div className="p-4 w-11/12 mx-auto">
+     
       {/* Tabs Navigation */}
       <div className="flex justify-center border-b mb-4">
         <button
@@ -113,6 +118,7 @@ function ProductTabs({ product }) {
             <div className="mt-4 bg-white-100 text-black-800 py-6 rounded-md text-sm font-semibold border border-gray-300 w-3/4 mx-auto">
               <div className="flex justify-between">
                 <div className="p-2 mb-2 flex-1 mr-4 text-sm">
+               
                   {selectedProduct.promotions?.discount || 'No discount available'}
                   <br />
                   Save your 64% money with us
