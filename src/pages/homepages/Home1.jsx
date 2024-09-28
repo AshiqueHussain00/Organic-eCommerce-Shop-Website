@@ -19,7 +19,7 @@ function Home1() {
     return (
         <div>
            
-            <HomeHerosection />
+         <HomeHerosection />
             <HeaderBottom/>
             <ProductCategory/>
             <PopularProducts/>

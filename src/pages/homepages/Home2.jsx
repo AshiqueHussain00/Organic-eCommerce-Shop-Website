@@ -14,11 +14,12 @@ import BannerHome2 from '../../component/home2/BannerHome2'
 import ProductTabs from '../../component/productDetails/ProducDescription'
 import Footer2 from '../../component/common/footer/footer2'
 import NewsletterTwo from '../../component/common/NewsletterTwo'
+
 const Home2 = () => {
   return (
     <div>
    
-      <BannerHome2 />
+       <BannerHome2 />
       <HeaderBottom />
       <Banners />
       <PopularCategory />
@@ -29,7 +30,9 @@ const Home2 = () => {
       <HomeTestimonial />
       <ProductTabs/>
       <NewsletterTwo/>
-            <Footer2/>
+            <Footer2/> 
+          
+
 
       {/* <HomeOneHerosection />
     
