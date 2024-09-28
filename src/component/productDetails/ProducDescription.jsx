@@ -10,9 +10,9 @@ const ProductTabs = () => {
       case 'description':
         return (
           <div>
-            <p>{allproductData?.description?.dec1 || 'Description not available'}</p>
-            <p>{allproductData?.description?.dec2 || 'Description not available'}</p>
-            <p>{allproductData?.description?.dec3 || 'Description not available'}</p>
+            <p>{allproductData.description?.dec1 || 'Description not available'}</p>
+            <p>{allproductData.description?.dec2 || 'Description not available'}</p>
+            <p>{allproductData.description?.dec3 || 'Description not available'}</p>
           </div>
         );
       case 'additionalInfo':

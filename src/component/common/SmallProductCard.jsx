@@ -57,7 +57,7 @@ const SmallProductCard = ({ product }) => {
     }
 
     const handlePageDescription = (category, id) => {
-        navigate(`/product/${category}/${id}`);
+        navigate(`/product/${category}/${id}` , { state: { productId: true } });
 
     }
 
