@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NewsletterThree from "../common/NewsletterThree";
 import Footer1 from "../common/footer/footer1";
+import BreadCrumbs from '../common/BreadCrumbs';
 
 const SignInForm = () => {
 
@@ -43,7 +44,7 @@ const SignInForm = () => {
 
   return (
     <section>
-
+       <BreadCrumbs />
       <div className="h-full flex py-24 justify-center bg-white-100 p-4 sm:px-6 ">
         <div className="bg-white h-max p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-sm sm:max-w-md border">
           <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-center">Sign In</h2>
