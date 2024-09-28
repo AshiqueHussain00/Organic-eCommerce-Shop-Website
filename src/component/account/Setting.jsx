@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, Controller, useWatch } from 'react-hook-form';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { ToastContainer, toast } from 'react-toastify'
+import Trusted from '../Home5/Trusted';
 
 
 const Setting = () => {
@@ -93,7 +94,7 @@ const Setting = () => {
                         <div className="mb-4">
                             <label className="block text-gray-700">First Name</label>
                             <input
-                                {...registerAccount('firstName')}
+                                {...registerAccount('firstName' , {required:true})}
                                 className="w-full px-4 py-2 border focus:outline-none border-gray-300 rounded-md focus:border-2  focus:border-green-600 "
                                 placeholder="Dianne"
                                 control={control}
@@ -102,7 +103,7 @@ const Setting = () => {
                         <div className="mb-4">
                             <label className="block text-gray-700">Last Name</label>
                             <input
-                                {...registerAccount('lastName')}
+                                {...registerAccount('lastName' , {required:true})}
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                                 placeholder="Russell"
                             />
@@ -110,7 +111,7 @@ const Setting = () => {
                         <div className="mb-4">
                             <label className="block text-gray-700">Email</label>
                             <input
-                                {...registerAccount('email')}
+                                {...registerAccount('email' , {required:true})}
                                 type="email"
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                                 placeholder="dianne@gmail.com"
@@ -119,7 +120,7 @@ const Setting = () => {
                         <div className="mb-4">
                             <label className="block text-gray-700">Phone Number</label>
                             <input
-                                {...registerAccount('phone')}
+                                {...registerAccount('phone' , {required: true})}
                                 type="tel"
                                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                                 placeholder="(603) 555-0123"
@@ -138,9 +139,9 @@ const Setting = () => {
                                 type="file"
                                 accept="image/*"
                                 onChange={handleImageUpload}
-                                className="absolute inset-0  cursor-pointer opacity-0"
+                                className="absolute inset-0 cursor-pointer opacity-0"
                             />
-                            <label className="block w-[100px] ml-4 md:ml-8 text-xs text-green-700 font-semibold text-center py-1  px-2 rounded-md border-2 border-green-700 cursor-pointer">
+                            <label className="block w-[100px] ml-4 md:ml-8 text-xs text-green-700 font-semibold text-center py-1  px-2 rounded-md border-2 border-green-700">
                                 Chose Image
                             </label>
 
@@ -164,7 +165,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">First Name</label>
                         <input
-                            {...registerBilling('billingFirstName')}
+                            {...registerBilling('billingFirstName' , {required: true})}
                             className="w-full px-4 py-2 border  rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                             placeholder="Dianne"
                         />
@@ -172,7 +173,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">Last Name</label>
                         <input
-                            {...registerBilling('billingLastName')}
+                            {...registerBilling('billingLastName' , {required:true})}
                             className="w-full px-4 py-2 border  rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                             placeholder="Russell"
                         />
@@ -190,7 +191,7 @@ const Setting = () => {
                 <div className="w-full mb-4">
                     <label className="block text-gray-700">Street Address</label>
                     <input
-                        {...registerBilling('streetAddress')}
+                        {...registerBilling('streetAddress' , {required: true})}
                         className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                         placeholder="Enter street address"
                     />
@@ -201,7 +202,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">Country/Region</label>
                         <select
-                            {...registerBilling('country')}
+                            {...registerBilling('country' , {required: true})}
                             className="w-full px-4 py-2 border-2 rounded-md text-gray-400 focus:outline-none focus:border-green-600"
                         >
                             <option value="">Select a country/region</option>
@@ -213,7 +214,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">State</label>
                         <select
-                            {...registerBilling('state')}
+                            {...registerBilling('state' , {required: true})}
                             className="w-full px-4 py-2 border-2 rounded-md text-gray-400 focus:outline-none focus:border-green-600"
                         >
                             <option value="">Select a state</option>
@@ -223,7 +224,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">Zip Code</label>
                         <input
-                            {...registerBilling('zipCode')}
+                            {...registerBilling('zipCode' , {required : true})}
                             className="w-full px-4 py-2 border-2 rounded-md focus:outline-none focus:border-green-600"
                             placeholder="Enter zip code"
                         />
@@ -234,7 +235,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">Email</label>
                         <input
-                            {...registerBilling('billingEmail')}
+                            {...registerBilling('billingEmail' , {required: true})}
                             type="email"
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                             placeholder="dianne.russell@gmail.com"
@@ -243,7 +244,7 @@ const Setting = () => {
                     <div className="w-full mb-4">
                         <label className="block text-gray-700">Phone</label>
                         <input
-                            {...registerBilling('billingPhone')}
+                            {...registerBilling('billingPhone' , {required: true})}
                             type="tel"
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                             placeholder="(603) 555-0123"
@@ -265,7 +266,7 @@ const Setting = () => {
                 <div className="mb-4 relative">
                     <label className="block text-gray-700">Current Password</label>
                     <input
-                        {...registerPassword('currentPassword')}
+                        {...registerPassword('currentPassword' ,{required: true})}
                         type={showCurrentPassword ? 'text' : 'password'}
                         className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                         placeholder="Enter current password"
@@ -285,7 +286,7 @@ const Setting = () => {
                     <div className="w-full mb-4 relative">
                         <label className="block text-gray-700">New Password</label>
                         <input
-                            {...registerPassword('newPassword')}
+                            {...registerPassword('newPassword' , {required: true})}
                             type={showNewPassword ? 'text' : 'password'}
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                             placeholder="Enter new password"
@@ -302,7 +303,7 @@ const Setting = () => {
                     <div className="w-full mb-4 relative">
                         <label className="block text-gray-700">Confirm Password</label>
                         <input
-                            {...registerPassword('confirmPassword')}
+                            {...registerPassword('confirmPassword' , {required: true})}
                             type={showConfirmPassword ? 'text' : 'password'}
                             className="w-full px-4 py-2 border rounded-md focus:outline-none focus:border-2 focus:border-green-600"
                             placeholder="Confirm new password"

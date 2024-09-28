@@ -69,7 +69,7 @@ import Error404 from './component/error/Error404';
  
 import Footer3 from './component/common/footer/Footer3';
 import Footer4 from './component/common/footer/Footer4';
-
+import Setting from './component/account/Setting'
 
 
 
