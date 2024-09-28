@@ -40,6 +40,8 @@ const SingleBlog = () => {
     email: '',
     message: '',
   });
+  
+  
 
   // State to manage checkbox for saving name and email
   const [saveInfo, setSaveInfo] = useState(false);
@@ -379,7 +381,7 @@ const SingleBlog = () => {
             placeholder="Full Name"
             value={formData.name}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="mb-2 p-2 border-2 border-gray-300 focus:border-primary focus:outline-none rounded w-full transition duration-200"
             required
           /></label>
           
@@ -389,7 +391,7 @@ const SingleBlog = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleInputChange}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="wmb-2 p-2 border-2 border-gray-300 focus:border-primary focus:outline-none rounded w-full transition duration-200"
             required
           /></label>
           
@@ -399,7 +401,7 @@ const SingleBlog = () => {
           placeholder="Your Comment"
           value={formData.message}
           onChange={handleInputChange}
-          className="w-full p-2 border border-gray-300 rounded h-32"
+          className=" h-32 mb-2 p-2 border-2 border-gray-300 focus:border-primary focus:outline-none rounded w-full transition duration-200"
           required
         ></textarea></label>
         {/* Save Info Checkbox */}
@@ -409,7 +411,7 @@ const SingleBlog = () => {
             id="saveInfo"
             checked={saveInfo}
             onChange={handleCheckboxChange}
-            className="mr-2"
+            className="mr-2 text-primary"
           />
           <label htmlFor="saveInfo" className="text-sm">
             Save my name and email in this browser for next time I comment
@@ -465,11 +467,11 @@ const SingleBlog = () => {
           onChange={handleSearchChange}
           onFocus={() => searchTerm && setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 200)} // Delay to allow click
-          className="mb-4 p-2 border rounded w-full"
+          className="mb-2 p-2 border-2 border-gray-300 focus:border-primary focus:outline-none rounded w-full transition duration-200"
         />
         
         {showSuggestions && suggestions.length > 0 && (
-          <ul className="absolute bg-white border border-green-500 rounded w-full max-h-40 overflow-y-auto z-10 mb-4">
+          <ul className="absolute bg-white-200 border border-green-500 rounded w-full max-h-40 overflow-y-auto z-10 mb-4">
             {suggestions.map((suggestion, idx) => (
               <li
                 key={`${suggestion}-${idx}`} // Ensure unique keys even if suggestions repeat
