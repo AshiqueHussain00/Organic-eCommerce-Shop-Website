@@ -43,11 +43,11 @@ function Footer1() {
             <img src={FooterData.shopery.logo} alt="Shopery Logo" className="w-32" />
             <p className="text-gray-400 text-sm sm:text-base">{FooterData.shopery.para}</p>
             <div className="flex items-center space-x-4">
-              <span className="text-white underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
+              <span className="text-white-100 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
                 {FooterData.shopery.number}
               </span>
               <span className="text-gray-500 font-medium">or</span>
-              <span className="text-white underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
+              <span className="text-white-100 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
                 {FooterData.shopery.email}
               </span>
             </div>
@@ -57,20 +57,20 @@ function Footer1() {
           <div className="grid grid-cols-2 gap-8 col-span-2">
             {/* MY ACCOUNT */}
             <div className="flex flex-col gap-4">
-              <h2 className="text-white text-lg font-medium">{FooterData.myAccount.title}</h2>
+              <h2 className="text-white-100 text-lg font-medium">{FooterData.myAccount.title}</h2>
               <ul className="space-y-2">
                 {FooterData.myAccount.para.map((item, index) => (
-                  <li key={index} className="hover:text-white cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
                 ))}
               </ul>
             </div>
 
             {/* HELPS */}
             <div className="flex flex-col gap-4">
-              <h2 className="text-white text-lg font-medium">{FooterData.helps.title}</h2>
+              <h2 className="text-white-100 text-lg font-medium">{FooterData.helps.title}</h2>
               <ul className="space-y-2">
                 {FooterData.helps.para.map((item, index) => (
-                  <li key={index} className="hover:text-white cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
                 ))}
               </ul>
             </div>
@@ -80,20 +80,20 @@ function Footer1() {
           <div className="grid grid-cols-2 gap-8 col-span-2">
             {/* PROXY */}
             <div className="flex flex-col gap-4">
-              <h2 className="text-white text-lg font-medium">{FooterData.proxy.title}</h2>
+              <h2 className="text-white-100 text-lg font-medium">{FooterData.proxy.title}</h2>
               <ul className="space-y-2">
                 {FooterData.proxy.para.map((item, index) => (
-                  <li key={index} className="hover:text-white cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
                 ))}
               </ul>
             </div>
 
             {/* CATEGORIES */}
             <div className="flex flex-col gap-4">
-              <h2 className="text-white text-lg font-medium">{FooterData.categories.title}</h2>
+              <h2 className="text-white-100 text-lg font-medium">{FooterData.categories.title}</h2>
               <ul className="space-y-2">
                 {FooterData.categories.para.map((item, index) => (
-                  <li key={index} className="hover:text-white cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
                 ))}
               </ul>
             </div>
