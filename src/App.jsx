@@ -59,6 +59,7 @@ const CreateAccountForm = lazy(() => import('./component/account/CreateAccount')
 const SignInForm = lazy(()=> import('./component/account/sign'))
 const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
 const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
+const Setting = lazy(() => import('./component/account/Setting'))
 
 
 //Contact
@@ -67,9 +68,8 @@ const ContactForm = lazy(() => import('./component/common/ContactForm'));
 //Error404
 import Error404 from './component/error/Error404';
  
-import Footer3 from './component/common/footer/Footer3';
-import Footer4 from './component/common/footer/Footer4';
-import Setting from './component/account/Setting'
+
+
 
 
 
@@ -154,6 +154,7 @@ const App = () => {
          
             <Route path='/account/order-history' element={<OrderHistory/>}/>
             <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
+            <Route path='/account/settings' element={<Setting/>}/>
 
           </Route>
 

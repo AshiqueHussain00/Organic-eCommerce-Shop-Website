@@ -6,6 +6,8 @@ import { HiDotsVertical } from "react-icons/hi";
 import { useState } from 'react';
 import ResponsiveSidebar from '../component/account/ResponsiveSidebar';
 import Logout from '../component/account/Logout';
+import Newsletter from '../component/common/NewsletterThree';
+import Footer1 from '../component/common/footer/footer1';
 
 const Account1 = () => {
 
@@ -76,6 +78,9 @@ const Account1 = () => {
         )
       }
 
+<Newsletter/>
+
+<Footer1/>
 
 
     </section>

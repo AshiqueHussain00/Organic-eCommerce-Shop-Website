@@ -8,6 +8,7 @@ import TestimonialSection from '../../component/home4/TestimonialSection'
 import VideoSection from '../../component/home4/VideoSection'
 import LatestNewsSection from '../../component/home4/LatestNewsSection'
 import Newsletter from '../../component/common/Newsletter'
+import Footer4 from '../../component/common/footer/Footer4'
 
 const Home4 = () => {
   return (
@@ -50,10 +51,12 @@ const Home4 = () => {
       </div>
 
 
-<div className='w-full border border-gray-300 py-4 bg-green-gray-scale-50'>
-<Newsletter isHome4={true}/>
-</div>
-     
+      <div className='w-full border border-gray-300 py-4 bg-green-gray-scale-50'>
+        <Newsletter isHome4={true} />
+      </div>
+
+      <Footer4/>
+
 
 
 

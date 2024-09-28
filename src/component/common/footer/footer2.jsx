@@ -58,8 +58,8 @@ function Footer2() {
     }
   return (
     <section>
-    <div className="w-full mx-auto p-6 md:px-16 py-8 bg-gray-100"> {/* Set background to white */}
-        <div className="gap-10 w-full grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
+    <div className="w-full mx-auto px-6 pt-16 pb-8 md:px-16 py-8 bg-gray-100"> {/* Set background to white */}
+        <div className="gap-10 w-full grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7  md:gap-2">
             {/* ABOUT SHOPERY */}
             <div className="col-span-1 xmd:col-span-2 flex flex-col gap-2 md:gap-1 p-2 text-black"> {/* Set text to black */}
                 <img src={FooterData.shopery.logo} alt="Shopery Logo" className="" />

@@ -34,8 +34,10 @@ const Setting = () => {
         }
     };
 
-    // State for image upload and image preview URL, default image URL, and file name
     const defaultImageUrl = 'https://shorturl.at/HT3tB'; // Anonymous placeholder image URL
+
+    // State for image upload and image preview URL, default image URL, and file name
+    
     const [profileImage, setProfileImage] = useState(null);
     const [imagePreview, setImagePreview] = useState(defaultImageUrl);
     const [fileName, setFileName] = useState(''); // File name state (initially empty)
