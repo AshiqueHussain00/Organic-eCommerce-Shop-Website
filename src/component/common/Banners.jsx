@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { FaArrowRight } from "react-icons/fa6";
 import { BannerData } from '../../data/common/BannerData'
+import { Link } from 'react-router-dom';
 
 function Banners() {
 
@@ -90,12 +91,14 @@ function Banners() {
                             )}
 
                             <div className="flex items-center justify-center mt-4 sm:mt-5 md:mt-6">
-                                <button className='flex gap-x-2 mmd:gap-x-1 lg:gap-x-3 items-center font-semibold bg-white-100 text-primary transition-all duration-200  hover:text-white-100 hover:bg-primary lg:px-5 mmd:px-3 px-4 py-2 rounded-3xl'>
+                                <Link to='/shop1'>
+                                    <button className='flex items-center px-4 py-2 font-semibold transition-all duration-200 gap-x-2 mmd:gap-x-1 lg:gap-x-3 bg-white-100 text-primary hover:text-white-100 hover:bg-primary lg:px-5 mmd:px-3 rounded-3xl'>
 
-                                    Shop Now
-                                    <FaArrowRight />
+                                        Shop Now
+                                        <FaArrowRight />
 
-                                </button>
+                                    </button>
+                                </Link>
                             </div>
                         </li>
                     ))}
