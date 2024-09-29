@@ -6,7 +6,7 @@ function Error404() {
     return (
         <section> 
               <BreadCrumbs/>
-            <div className="w-10/12 mx-auto p-6">
+            <div data-aos='fade-left' className="w-10/12 mx-auto p-6">
                 <div className="flex flex-col gap-4 xmd:gap-2 justify-center items-center">
                     <div className="">
                         <img src={ErrorImage} className="object-contain h-[200px] md:h-[400px] w-[500px]"></img>

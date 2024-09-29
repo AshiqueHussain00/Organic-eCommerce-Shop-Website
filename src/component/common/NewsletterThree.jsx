@@ -19,7 +19,7 @@ const NewsletterThree = () => {
                             </div>
 
                             {/* Input and Button Section */}
-                            <div className="flex flex-col items-center mt-4 sm:flex-row sm:w-auto lg:gap-2 lg:mt-0">
+                            <div className="flex flex-col items-center mt-4 sm:flex-row sm:w-auto lg:gap-1 lg:mt-0">
                                 <input
                                     type="email"
                                     placeholder="Your email address"

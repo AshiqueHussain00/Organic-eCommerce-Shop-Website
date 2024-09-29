@@ -90,7 +90,7 @@ const HomeHerosection = () => {
               </div>
               <div className="w-full sm:w-[70%] md:w-[50%] pb-20 pt-5">
                 <Link
-                  to="/shop"
+                  to="/shop2"
                   className="px-4 py-3 font-semibold transition duration-300 rounded-full shadow-lg text-black-900 bg-white-100 hover:bg-primary hover:text-white-100"
                 >
                   Shop now →
@@ -118,7 +118,7 @@ const HomeHerosection = () => {
 
               <div className="w-full sm:w-[70%] md:w-[50%] mt-4 mb-4">
                 <Link
-                  to="/shop"
+                  to="/shop1"
                   className="px-4 py-2 text-sm font-semibold text-center transition duration-300 rounded-full shadow-lg text-primary sm:px-6 sm:py-3 md:text-base md:px-8 md:py-4 hover:bg-white-100"
                 >
                   Shop now →
