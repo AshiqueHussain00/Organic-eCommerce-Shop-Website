@@ -1,6 +1,7 @@
 import React from "react";
 import { BsCheckCircleFill } from "react-icons/bs";
 import about3 from '../../assets/about/about3.svg';
+import { Link } from "react-router-dom";
 
 const DeliverySection = () => {
     return (
@@ -29,9 +30,13 @@ const DeliverySection = () => {
                         </li>
                     </ul>
                     <div className="flex justify-center lg:justify-start">
+                        {/* Button */}
+                        <Link to='/shop1'>
                         <button className="px-6 py-3 transition-all rounded-full shadow bg-soft_primary text-white-100 hover:bg-primary">
                             Shop now →
                         </button>
+                        </Link>
+                        
                     </div>
                 </div>
 

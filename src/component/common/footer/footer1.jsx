@@ -57,17 +57,18 @@ function Footer1() {
   return (
     <section className="w-full bg-black-900 text-gray-500">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-16">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-6  ">
           {/* ABOUT SHOPERY */}
-          <div className="col-span-1 lg:col-span-2 flex flex-col gap-4">
+         
+          <div className="col-span-2 flex flex-col items-center gap-4 ">
             <img src={FooterData.shopery.logo} alt="Shopery Logo" className="w-32" />
-            <p className="text-gray-400 text-sm sm:text-base">{FooterData.shopery.para}</p>
+            <p className="text-gray-400 text-sm sm:text-base text-center">{FooterData.shopery.para}</p>
             <div className="flex items-center space-x-4">
-              <span className="text-white-100 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
+              <span className="text-white-100 underline decoration-green-600 decoration-3 underline-offset-8 lg:text-base text-sm font-medium">
                 {FooterData.shopery.number}
               </span>
               <span className="text-gray-500 font-medium">or</span>
-              <span className="text-white-100 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
+              <span className="text-white-100 underline decoration-green-600 lg:text-base text-sm decoration-3 underline-offset-8 font-medium">
                 {FooterData.shopery.email}
               </span>
             </div>
@@ -76,9 +77,9 @@ function Footer1() {
           {/* MY ACCOUNT and HELPS in one row */}
           <div className="grid grid-cols-2 gap-8 col-span-2">
             {/* MY ACCOUNT */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center gap-4">
               <h2 className="text-white-100 text-lg font-medium">{FooterData.myAccount.title}</h2>
-              <ul className="space-y-2">
+              <ul className="flex flex-col  items-center gap-y-2">
                 {FooterData.myAccount.para.map((item, index) => (
                   <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
@@ -86,9 +87,9 @@ function Footer1() {
             </div>
 
             {/* HELPS */}
-            <div className="flex flex-col gap-4">
-              <h2 className="text-white-100 text-lg font-medium">{FooterData.helps.title}</h2>
-              <ul className="space-y-2">
+            <div className="flex flex-col items-center   gap-4">
+              <h2 className="text-white-100 text-lg font-medium  ">{FooterData.helps.title}</h2>
+              <ul className="flex flex-col  items-center gap-y-2">
                 {FooterData.helps.para.map((item, index) => (
                   <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
@@ -99,9 +100,9 @@ function Footer1() {
           {/* PROXY and CATEGORIES in one row */}
           <div className="grid grid-cols-2 gap-8 col-span-2">
             {/* PROXY */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center gap-4">
               <h2 className="text-white-100 text-lg font-medium">{FooterData.proxy.title}</h2>
-              <ul className="space-y-2">
+              <ul className="flex flex-col  items-center gap-y-2">
                 {FooterData.proxy.para.map((item, index) => (
                   <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
@@ -109,9 +110,9 @@ function Footer1() {
             </div>
 
             {/* CATEGORIES */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col items-center gap-4">
               <h2 className="text-white-100 text-lg font-medium">{FooterData.categories.title}</h2>
-              <ul className="space-y-2">
+              <ul className="flex flex-col  items-center gap-y-2">
                 {FooterData.categories.para.map((item, index) => (
                   <li key={index} onClick = {()=>{handleClick(item.path)}} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
@@ -122,9 +123,9 @@ function Footer1() {
 
         {/* BOTTOM SECTION */}
         <hr className="my-6 border-gray-700" />
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col  lg:flex-row justify-between items-center gap-4">
           {/* COPYRIGHT MESSAGE */}
-          <h2 className="text-gray-400 text-sm lg:text-base">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
+          <h2 className="text-gray-400 text-sm lg:text-base text-center">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
 
           {/* PAYMENT ICONS */}
           <div className="flex items-center space-x-4">
