@@ -35,6 +35,7 @@ function ProductTab({ product }) {
             <p>{selectedProduct.description?.dec1 || 'Description not available'}</p>
             <p>{selectedProduct.description?.dec2 || 'Description not available'}</p>
             <p>{selectedProduct.description?.dec3 || 'Description not available'}</p>
+            <p>{selectedProduct.description?.dec4 || 'Description not available'}</p>
           </div>
         );
       case 'additionalInfo':
@@ -60,13 +61,25 @@ function ProductTab({ product }) {
       case 'feedback':
         return (
           <div>
-            {selectedProduct.customerFeedback?.length > 0 ? (
-              selectedProduct.customerFeedback.map((feedback, index) => (
-                <div key={index} className="mb-4">
-                  <p><strong>{feedback.name}</strong></p>
-                  <p>{feedback.feedback}</p>
-                  <p>Rating: {feedback.rating} ⭐</p>
-                  <hr className="my-4 border-gray-300" />
+          {selectedProduct.customerFeedback?.length > 0 ? (
+        selectedProduct.customerFeedback.map((feedback, index) => (
+          <div key={index} className="mb-4 flex items-start">
+            {/* Image */}
+            <img
+              src={feedback.reviewImg} // Make sure to provide the correct path for your image
+              alt={feedback.name}
+              className="w-12 h-12 rounded-full mr-4"
+            />
+            <div>
+              
+              <p><strong>{feedback.name}</strong></p>
+              
+              <p>{feedback.feedback}</p>
+            
+              <p>Rating: {feedback.rating} ⭐</p>
+              <hr className="my-4 border-gray-300 border-1  w-full" />
+
+                </div>
                 </div>
               ))
             ) : (
@@ -91,19 +104,19 @@ function ProductTab({ product }) {
           className={`py-2 px-4 font-semibold ${activeTab === 'description' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'}`}
           onClick={() => setActiveTab('description')}
         >
-          Description
+          Descriptions
         </button>
         <button
           className={`py-2 px-4 font-semibold ${activeTab === 'additionalInfo' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'}`}
           onClick={() => setActiveTab('additionalInfo')}
         >
-          Additional Info
+          Additional Information
         </button>
         <button
           className={`py-2 px-4 font-semibold ${activeTab === 'feedback' ? 'border-b-2 border-blue-500 text-blue-500' : 'text-gray-600'}`}
           onClick={() => setActiveTab('feedback')}
         >
-          Feedback
+          Customer Feedback
         </button>
       </div>
 
