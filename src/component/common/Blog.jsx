@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import LatestNews from './LatestNews';
 import { blogData } from '../../data/common/blogData';
 import { LuSettings2 } from "react-icons/lu";
-
+import Newsletter from './Newsletter';
+import Footer1 from './footer/footer1';
 const Blog = () => {
     const [sortedData, setSortedData] = useState(blogData);
     const [sortOrder, setSortOrder] = useState('Latest');
@@ -202,8 +203,15 @@ const Blog = () => {
                         />
                     </div>
                 </div>
+                
+                
             </div>
-
+            <div>
+                   <Newsletter/>
+                </div>
+                <div>
+                    <Footer1/>
+                </div>
         </section>
 
     );

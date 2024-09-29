@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "./ProductCard"; // Assume you have this component implemented.
+import ProductCard from "../../component/common/ProductCard"; // Assume you have this component implemented.
 import Select from "react-select";
-import Saleofmonth from "./Saleofmonth";
+import Saleofmonth from "../common/Saleofmonth";
 import fruits from "../../assets/home5/countdown/fruits.svg";
-import NewsletterThree from "./NewsletterThree";
+import NewsletterThree from "../common/NewsletterThree";
 import '../../styles/dropdown.css'
 import {calcDiscountPerc} from '../../utils/calcDiscountPerc'
 // List of categories provided

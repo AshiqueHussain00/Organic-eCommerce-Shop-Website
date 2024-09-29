@@ -9,6 +9,9 @@ import { BsLink } from "react-icons/bs";
 import { LiaCommentsSolid } from "react-icons/lia";
 import { FaFacebook, FaTwitter, FaInstagram, FaShare } from "react-icons/fa";
 import Saleofmonth from './Saleofmonth';
+import Newsletter from './Newsletter';
+import Footer1 from './footer/footer1';
+
 import fruits from "../../assets/home5/countdown/fruits.svg";
 const saleData = {
   image: fruits,
@@ -244,7 +247,9 @@ const SingleBlog = () => {
  
 
   return (
-    <div className="w-10/12 dsx:w-10/12 flex flex-col-reverse  mx-auto p-4  sm:flex-col-reverse md:flex-col-reverse  lg:flex-row lg: ">
+    <section>
+      <div>
+      <div className="w-10/12 dsx:w-10/12 flex flex-col-reverse  mx-auto p-4  sm:flex-col-reverse md:flex-col-reverse  lg:flex-row lg: ">
       {/* Main Content */}
       <div className="flex-1 mr-8 mx-auto">
         {/* Big Image */}
@@ -551,6 +556,14 @@ const SingleBlog = () => {
         </ul>
       </div>
     </div>
+      </div>
+      <div>
+        <Newsletter/>
+      </div>
+      <div>
+        <Footer1/>
+      </div>
+    </section>
   );
 };
 
