@@ -8,7 +8,7 @@ import VisaImg from '../../../assets/home2/visa.svg'
 import DiscoverImg from '../../../assets/home2/discover.svg'
 import MastercardImg from '../../../assets/home2/mastercard.svg'
 import LockImg from '../../../assets/home2/cart.svg'
-import { FiLock } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 import post1 from '../../../assets/common/followinstagram/post1.svg'
 import post2 from '../../../assets/common/followinstagram/post2.svg'
@@ -25,32 +25,34 @@ function Footer4() {
             email: 'Proxy@gmail.com'
         },
 
+
         myAccount: {
             title: 'My Account',
-            para: ['My Account',
-                'Order History',
-                'Shopping Cart',
-                'Wishlist',
-                'Settings']
+            para: [{title: 'My Account' , path: ''},
+                {title:'Order History' , path: '/account/order-history'},
+                {title:'Shopping Cart' , path: '/shopping-cart'},
+                {title:'Wishlist' , path:'/wishlist'},
+                {title:'Settings',path:''}]
 
         },
 
+
         helps: {
             title: 'Helps',
-            para: ['Contact',
-                'Faqs',
-                'Terms & Condition',
-                'Privacy Policy']
+            para: [{title:'Contact' , path:'/contact-us'},
+                {title:'Faqs' , path:''},
+                {title:'Terms & Condition',path:''},
+                {title:'Privacy Policy',path:''}]
 
         },
 
         proxy: {
             title: 'Proxy',
-            para: ['About',
-                'Shop',
-                'Product',
-                'Product Details',
-                'Track Order']
+            para: [{title:'About' , path:'/about-us'},
+                {title:'Shop' ,path:'/shop1'},
+                {title:'Product',path:''},
+                {title:'Product Details' , path:''},
+                {title:'Track Order' , path:''}]
         },
 
 
@@ -64,11 +66,17 @@ function Footer4() {
         socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
     }
 
+    const navigate = useNavigate();
+    
+    const handleClick = (page)=>{
+       navigate(page);
+    }
+
     const images = [post1, post2, post3, post4, post5, post6];
     const instagramUrl = "https://www.instagram.com/yourprofile";
     return (
         <section>
-            <div className="w-full mx-auto p-6 md:px-16 py-4 bg-black-900">
+            <div className="w-full mx-auto px-6 md:px-16 pb-8 pt-16 bg-black-900">
 
                 <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
 
@@ -87,7 +95,7 @@ function Footer4() {
                     <div className="col-span-1 md:col-span-1 flex flex-col gap-1 md:gap-4 p-2">
                         <h2 className="text-white-200 text-lg font-medium">{FooterData.myAccount.title}</h2>
                         <ul className="text-gray-500 text-base flex flex-col gap-2">
-                            {FooterData.myAccount.para.map((item, index) => (<li key={index} className="hover:text-white-200 cursor-pointer">{item}</li>))}
+                            {FooterData.myAccount.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}} className="hover:text-white-200 cursor-pointer">{item.title}</li>))}
                         </ul>
                     </div>
 
@@ -95,7 +103,7 @@ function Footer4() {
                     <div className="col-span-1 md:col-span-1 flex flex-col gap-1 md:gap-4 p-2">
                         <h2 className="text-white-200 text-lg font-medium">{FooterData.helps.title}</h2>
                         <ul className="text-gray-500  text-base flex flex-col gap-2">
-                            {FooterData.helps.para.map((item, index) => (<li key={index} className="hover:text-white-200 cursor-pointer">{item}</li>))}
+                            {FooterData.helps.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}} className="hover:text-white-200 cursor-pointer">{item.title}</li>))}
                         </ul>
                     </div>
 
@@ -104,7 +112,7 @@ function Footer4() {
                     <div className="col-span-1 md:col-span-1 flex flex-col gap-1 md:gap-4 p-2">
                         <h2 className="text-white-200 text-lg font-medium">{FooterData.proxy.title}</h2>
                         <ul className="text-gray-500 text-base  flex flex-col gap-2">
-                            {FooterData.proxy.para.map((item, index) => (<li key={index} className="hover:text-white-200 cursor-pointer">{item}</li>))}
+                            {FooterData.proxy.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}}className="hover:text-white-200 cursor-pointer">{item.title}</li>))}
                         </ul>
                     </div>
 

@@ -1,10 +1,11 @@
-
+import danniel from '../../assets/common/customer/danniel.svg'
 
 export const orderHistory = [
 
     {
         id: "1",
         orderId: "101",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "15 September, 2024",
         NoOfProducts: 3,
@@ -90,6 +91,7 @@ export const orderHistory = [
     {
         id: "2",
         orderId: "102",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "1 September, 2024",
         NoOfProducts: 2,
@@ -154,6 +156,7 @@ export const orderHistory = [
     {
         id: "3",
         orderId: "103",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "19 August, 2024",
         NoOfProducts: 3,
@@ -218,6 +221,7 @@ export const orderHistory = [
     {
         id: "4",
         orderId: "104",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 2,
@@ -283,6 +287,7 @@ export const orderHistory = [
     {
         id: "5",
         orderId: "105",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -368,6 +373,7 @@ export const orderHistory = [
     {
         id: "6",
         orderId: "106",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -453,6 +459,7 @@ export const orderHistory = [
     {
         id: "7",
         orderId: "107",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -538,6 +545,7 @@ export const orderHistory = [
     {
         id: "8",
         orderId: "108",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 2,
@@ -623,6 +631,7 @@ export const orderHistory = [
     {
         id: "9",
         orderId: "109",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 2,
@@ -708,6 +717,7 @@ export const orderHistory = [
     {
         id: "10",
         orderId: "110",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -793,6 +803,7 @@ export const orderHistory = [
     {
         id: "11",
         orderId: "111",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -878,6 +889,7 @@ export const orderHistory = [
     {
         id: "12",
         orderId: "112",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -963,6 +975,7 @@ export const orderHistory = [
     {
         id: "13",
         orderId: "113",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1048,6 +1061,7 @@ export const orderHistory = [
     {
         id: "14",
         orderId: "114",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1133,6 +1147,7 @@ export const orderHistory = [
     {
         id: "15",
         orderId: "115",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1218,6 +1233,7 @@ export const orderHistory = [
     {
         id: "16",
         orderId: "116",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,
@@ -1303,6 +1319,7 @@ export const orderHistory = [
     {
         id: "17",
         orderId: "117",
+        customerImg:danniel,
         customerName: "Daniel Russell",
         date: "5 August, 2024",
         NoOfProducts: 3,

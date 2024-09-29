@@ -3,6 +3,7 @@ import CartBottom from './CartBottom';
 import WishlistBottom from './WishlistBottom';
 import Newsletter from '../common/NewsletterThree';
 import BreadCrumbs from '../common/BreadCrumbs';
+import Footer1 from '../common/footer/footer1';
 
 const Container = ({ isCart = true }) => {
   return (
@@ -37,6 +38,7 @@ const Container = ({ isCart = true }) => {
       </div>
 
       <Newsletter />
+      <Footer1/>
 
     </section>
   )
