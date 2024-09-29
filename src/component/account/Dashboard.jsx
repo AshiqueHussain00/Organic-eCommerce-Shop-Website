@@ -45,7 +45,7 @@ const DashBoard = () => {
    
 
     return (
-        <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div data-aos="fade-left" className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between gap-y-8">
                 {/* Left Sidebar: Customer Profile */}
                 <div className="w-full p-4 bg-white border rounded-lg shadow-md">

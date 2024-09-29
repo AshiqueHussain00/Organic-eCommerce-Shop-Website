@@ -87,7 +87,9 @@ const Setting = () => {
     };
 
     return (
-        <div className="w-full xmd:w-[900px] mx-auto p-6">
+        <div 
+        data-aos="fade-left"
+        className="w-full xmd:w-[900px] mx-auto p-6">
             {/* Account Settings Section */}
             <form data-aos="fade-left" onSubmit={handleAccountSubmit(onAccountSubmit)} className="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm ">
 

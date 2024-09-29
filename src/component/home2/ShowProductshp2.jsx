@@ -9,6 +9,7 @@ import RedTomatos from '../../assets/home3/bestSellers/RedTomatos.svg'
 import SmallProductCard from '../common/SmallProductCard';
 import Shop from '../../assets/home2/shop.svg'
 import { FaArrowRight } from "react-icons/fa6";
+import { Link } from 'react-router-dom'
 
 
 
@@ -110,65 +111,67 @@ const ShowProductshp2 = ({ isHotSale = false }) => {
 
     return (
         <section className='w-full py-10'>
-        {/* --------- container -------- */}
-        <div className='w-11/12 xmd:w-10/12 xlg:w-11/12 xl:w-10/12 mx-auto grid xlg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-y-8 gap-x-6 justify-items-center'>
-            {/* -------- hot deals ----- */}
-            <div data-aos="fade-right" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
-                <h1 className='text-xl font-semibold'>Hot Deals</h1>
-                {hotDealData.slice(0, 3).map((product, index) => (
-                    <SmallProductCard key={index} product={product} />
-                ))}
+            {/* --------- container -------- */}
+            <div className='grid w-11/12 grid-cols-1 mx-auto xmd:w-10/12 xlg:w-11/12 xl:w-10/12 xlg:grid-cols-4 sm:grid-cols-2 gap-y-8 gap-x-6 justify-items-center'>
+                {/* -------- hot deals ----- */}
+                <div data-aos="fade-right" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                    <h1 className='text-xl font-semibold'>Hot Deals</h1>
+                    {hotDealData.slice(0, 3).map((product, index) => (
+                        <SmallProductCard key={index} product={product} />
+                    ))}
+                </div>
+
+                {/* --------- best Seller -------- */}
+                <div data-aos="fade-up" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                    <h1 data-aos="fade-up" className='text-xl font-semibold'>Best Seller</h1>
+                    {bestSellerData.slice(0, 3).map((product, index) => (
+                        <SmallProductCard key={index} product={product} />
+                    ))}
+                </div>
+
+                {/* --------- top rated ------------- */}
+                <div data-aos="fade-up" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                    <h1 data-aos="fade-up" className='text-xl font-semibold'>Top Rated</h1>
+                    {topRatedProduct.slice(0, 3).map((product, index) => (
+                        <SmallProductCard key={index} product={product} />
+                    ))}
+                </div>
+
+                {/* --------- Shop Image Column -------- */}
+                <div data-aos="fade-left" className='relative flex justify-center items-center sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
+                    {/* Shop Image */}
+                    <img src={Shop} alt="Shop" className="w-[500px] h-[490px] object-cover" />
+
+                    {/* Overlay Container for Text and Button */}
+
+                    <div className='absolute inset-0 flex-col items-center justify-center bg-opacity-40'>
+                        {/* Static Sale Text */}
+                        <p className='text-[10px] w-[50%] text-center text-sm mt-4 ml-12 font-normal text-white'>
+                            <span className='font-semibold'>HOT SALE</span>
+                        </p>
+
+                        {/* Main Sale Text */}
+                        <p className='text-[32px] w-[80%] text-center ml-6 font-normal text-white mt-2'>
+                            <span className='font-semibold'>Save 37%</span> on Every Order
+                        </p>
+
+                        {/* Shop Now Button */}
+                        <div className="flex items-center justify-center">
+                            <Link to='/shop2'>
+                                <button className='flex items-center justify-center px-6 py-3 mt-4 mb-4 text-sm font-semibold transition-all duration-200 gap-x-3 bg-white-100 text-primary rounded-3xl group hover:text-white-100 hover:bg-primary'>
+                                    Shop Now
+                                    <FaArrowRight />
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
-    
-            {/* --------- best Seller -------- */}
-            <div data-aos="fade-up" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
-                <h1 data-aos="fade-up" className='text-xl font-semibold'>Best Seller</h1>
-                {bestSellerData.slice(0, 3).map((product, index) => (
-                    <SmallProductCard key={index} product={product} />
-                ))}
-            </div>
-    
-            {/* --------- top rated ------------- */}
-            <div data-aos="fade-up" className='flex flex-col gap-y-6 sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
-                <h1 data-aos="fade-up" className='text-xl font-semibold'>Top Rated</h1>
-                {topRatedProduct.slice(0, 3).map((product, index) => (
-                    <SmallProductCard key={index} product={product} />
-                ))}
-            </div>
-    
-            {/* --------- Shop Image Column -------- */}
-            <div data-aos="fade-left" className='relative flex justify-center items-center sm:w-full xs:w-[80%] xxs:w-[90%] w-[95%]'>
-    {/* Shop Image */}
-    <img src={Shop} alt="Shop" className="w-[500px] h-[490px] object-cover" />
+        </section>
 
-    {/* Overlay Container for Text and Button */}
-    
-    <div className='absolute inset-0 flex-col items-center justify-center bg-opacity-40'>
-        {/* Static Sale Text */}
-        <p className='text-[10px] w-[50%] text-center text-sm mt-4 ml-12 font-normal text-white'>
-            <span className='font-semibold'>HOT SALE</span>
-        </p>
-        
-        {/* Main Sale Text */}
-        <p className='text-[32px] w-[80%] text-center ml-6 font-normal text-white mt-2'>
-            <span className='font-semibold'>Save 37%</span> on Every Order
-        </p>
-
-        {/* Shop Now Button */}
-        <div className="flex justify-center items-center">
-        <button className='flex items-center justify-center mb-4 gap-x-3 bg-white-100 text-primary font-semibold text-sm px-6 py-3 rounded-3xl group transition-all duration-200 hover:text-white-100 hover:bg-primary mt-4'>
-            Shop Now
-            <FaArrowRight />
-        </button>
-        </div>
-    </div>
-</div>
-
-
-
-        </div>
-    </section>
-    
     )
 }
 

@@ -2,17 +2,21 @@ import { useState, useEffect } from "react";
 import { PiHandbag } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { useDispatch , useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
+import { addToCart, calculateTotalPrice } from "../../redux/slice/cartSlice";
+import { addToWishlist } from "../../redux/slice/wishlistSlice";
+import { addInView, removeInView } from "../../redux/slice/viewSlice";
 
 const LimitedProductCard = ({
+    product,
     imageSrc,
     productName,
     price,
     oldPrice,
     rating,
     feedbackCount,
-    onAddToCart,
-    onWishlist,
-    onQuickView,
     isSale,
     isBestSeller,
     saleText = "Sale",
@@ -21,6 +25,62 @@ const LimitedProductCard = ({
 }) => {
     const [timeLeft, setTimeLeft] = useState({});
     const [showCountdown, setShowCountdown] = useState(false);
+
+    const cart = useSelector((state) => state.cart.cart)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+
+
+    const handleAddToCart = (product , events) => {
+            
+        events.stopPropagation();
+
+
+        if(cart.find(item => item.id === product.id)){
+            
+            dispatch(addToCart(product));
+        }
+        else if (product.inStock) {
+            dispatch(addToCart(product));
+            toast.success("Added to Cart")
+            dispatch(calculateTotalPrice());
+
+
+        } else {
+            toast.error("Sorry , Product is Out of Stock")
+        }
+
+
+    }
+
+    const handleAddToWIshlist = (product , events) => {
+
+        events.stopPropagation()
+        if (product) {
+            dispatch(addToWishlist(product));
+            toast.success("Added to  Wishlist")
+
+        }
+
+
+    }
+
+    const handleInView = (product , events) => {
+
+        events.stopPropagation();
+
+        if (product) {
+            dispatch(addInView(product));
+        }
+
+
+    }
+
+    const handlePageDescription = (category, id) => {
+        navigate(`/product/${category}/${id}` ,  { state: { productId: true } });
+
+    }
 
     useEffect(() => {
         const calculateTimeLeft = () => {
@@ -49,7 +109,9 @@ const LimitedProductCard = ({
     }, [countdownDate]);
 
     return (
-        <div className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white-100"  data-aos="zoom-in-up">
+        <div 
+        onClick={() => { handlePageDescription(product.category, product.id) }}
+        className="w-full max-w-md mx-auto sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl bg-white-100"  data-aos="zoom-in-up">
             <div className="relative flex flex-col items-center transition duration-200 bg-white border-2 border-white-100 hover:border-primary hover:border-2 ">
 
                 {/* Sale and Best Seller Tags */}
@@ -77,20 +139,20 @@ const LimitedProductCard = ({
                 {/* Add to Cart, Wishlist, and Quick View Buttons */}
                 <div className="flex gap-3 p-3 sm:gap-4 lg:gap-5 sm:p-4 lg:p-5">
                     <button
-                        onClick={onWishlist}
+                        onClick={(events)=> handleAddToWIshlist(product , events)}
                         className="p-2 bg-gray-200 border rounded-full sm:p-3 hover:bg-primary hover:text-white-100"
                     >
                         <FaRegHeart size={20} sm={25} />
                     </button>
                     <button
-                        onClick={onAddToCart}
+                        onClick={(events)=> handleAddToCart(product , events)}
                         className="flex items-center gap-2 px-5 py-2 font-medium bg-gray-200 rounded-full sm:gap-3 sm:px-8 sm:py-3 hover:bg-primary hover:text-white-100"
                     >
                         <span className="text-sm sm:text-base">Add To Cart</span>
                         <PiHandbag size={20} sm={25} />
                     </button>
                     <button
-                        onClick={onQuickView}
+                        onClick={(events) => handleInView(product , events)}
                         className="p-2 bg-gray-200 border rounded-full sm:p-3 hover:bg-primary hover:text-white-100"
                     >
                         <MdOutlineRemoveRedEye size={20} sm={25} />

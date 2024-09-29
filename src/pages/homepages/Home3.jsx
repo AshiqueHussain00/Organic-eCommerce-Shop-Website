@@ -2,7 +2,6 @@ import React from 'react'
 import HeaderBottom from '../../component/home3/HeaderBottom'
 import FeaturedProducts from '../../component/home3/FeaturedProducts'
 import ShowProduct from '../../component/common/ShowProduct'
-// import ShowProductshp3 from '../../component/home3/showProductshp3'
 import TopCategory from '../../component/home3/TopCategory'
 import Banners from '../../component/common/Banners'
 import NewestProducts from '../../component/home3/NewestProducts'
@@ -15,17 +14,16 @@ function Home3() {
     <div>
 
       <div className="relative">
-        <HeroSection/>
+        <HeroSection />
         <HeaderBottom />
       </div>
       <FeaturedProducts />
-      <ShowProduct/>
-      {/* <ShowProductshp3 /> */}
+      <ShowProduct />
       <TopCategory />
       <Banners />
       <NewestProducts />
       <ClientTestimonials />
-      <Footer3/>
+      <Footer3 />
     </div>
   )
 }

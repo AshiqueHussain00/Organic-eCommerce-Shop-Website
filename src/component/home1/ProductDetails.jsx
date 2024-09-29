@@ -7,34 +7,16 @@ import allproductData from '../../data/common/allproductData'; // Assuming this 
 import { addToCart } from '../../redux/slice/cartSlice';
 import { addToWishlist } from '../../redux/slice/wishlistSlice';
 
+
 const ProductDetails = () => {
     // Example handlers
-    const handleAddToCart = (productName) => {
-        console.log(`Add to Cart clicked for ${productName}`);
-    };
 
-    const handleWishlist = () => {
-        console.log("Add to Wishlist clicked");
-    };
 
-    const handleQuickView = () => {
-        console.log("Quick View clicked");
-    };
+    const featuredProductsData= allproductData.filter(item => item.rating > 4 && item.price.discounted < 20)
 
-    // Define a sample product for LimitedProductCard
-    const featuredProduct = {
-        imageSrc: Corn,
-        productName: 'Sample Product',
-        price: '29.99',
-        oldPrice: '39.99',
-        rating: 4,
-        feedbackCount: 123,
-        isSale: true,
-        isBestSeller: true,
-        countdownDate: new Date().getTime() + 1000 * 60 * 60 * 24 * 3
-    };
+    const featuredPro = featuredProductsData[0];
 
-    // Function to fetch only the first 10 products
+   
     const fetchPopularProducts = () => {
         return allproductData.slice(0, 11); // Fetch only the first 10 products
     };
@@ -66,19 +48,16 @@ const ProductDetails = () => {
                         variants={cardAnimation}
                     >
                         <LimitedProductCard
-                           product={featuredProduct}
-                            imageSrc={featuredProduct.imageSrc}
-                            productName={featuredProduct.productName}
-                            price={featuredProduct.price}
-                            oldPrice={featuredProduct.oldPrice}
-                            rating={featuredProduct.rating}
-                            feedbackCount={featuredProduct.feedbackCount}
-                            onAddToCart={() => handleAddToCart(featuredProduct.productName)}
-                            onWishlist={handleWishlist}
-                            onQuickView={handleQuickView}
-                            isSale={featuredProduct.isSale}
-                            isBestSeller={featuredProduct.isBestSeller}
-                            countdownDate={featuredProduct.countdownDate}
+                           product={featuredPro}
+                            imageSrc={featuredPro.images[0].main}
+                            productName={featuredPro.name}
+                            price={featuredPro.price.discounted}
+                            oldPrice={featuredPro.original}
+                            feedbackCount = {featuredPro.reviews}
+                            rating={featuredPro.rating}
+                            isSale={true}
+                            isBestSeller={true}
+                            countdownDate={new Date().getTime() + 1000 * 60 * 60 * 24 * 3}
                         />
                     </motion.div>
 
