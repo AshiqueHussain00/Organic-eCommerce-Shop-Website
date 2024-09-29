@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'; // Add this import
 import { IoPersonOutline } from "react-icons/io5";
 import { GoTag } from "react-icons/go";
 import { LiaCommentsSolid } from "react-icons/lia";
@@ -17,12 +17,14 @@ const LatestNews = ({
           key={index}
           className="news-item bg-white-200 flex flex-col mx-auto m-4 border p-4 rounded-lg shadow-md group"
         >
+          {/* Ensure the div around the image has fixed dimensions */}
           <div className="relative">
-            <div className='overflow-hidden rounded-lg'>
+            <div className="overflow-hidden rounded-lg h-48"> {/* Fixed height */}
               <img
                 src={item.img}
                 alt={`news-${index}`}
-                className="w-full h-48 object-cover rounded-lg transition-all duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover rounded-lg transition-all duration-700 group-hover:scale-110" 
+                // Ensure full height for the image within the fixed container
               />
             </div>
             <div className="absolute bg-white-200 bottom-3 left-3 bg-white p-2 w-16 h-auto rounded-md shadow-md">
@@ -36,6 +38,7 @@ const LatestNews = ({
               </div>
             </div>
           </div>
+
           <div className="news-details mt-2 flex justify-between items-center text-sm text-gray-700">
             <div className="flex items-center space-x-2">
               <div className="category flex items-center text-gray-500">
@@ -52,11 +55,11 @@ const LatestNews = ({
               </div>
             </div>
           </div>
+
           <p className="paragraph mt-2 text-gray-600 font-poppins font-semibold hover:text-[rgb(0,178,7)]">
             {item.p}
           </p>
 
-          {/* Corrected the Link to use the item's id */}
           <Link
             to={`/blog/${item.id}`} // Dynamic path to the SingleBlog component
             className="mt-2 text-primary flex items-center group-hover:text-secondary group-hover:font-[700] transition-all"
@@ -72,7 +75,7 @@ const LatestNews = ({
 LatestNews.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number, // Added id as required
+      id: PropTypes.number.isRequired, // Added id as required
       img: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
