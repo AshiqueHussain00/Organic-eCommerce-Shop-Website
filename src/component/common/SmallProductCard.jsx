@@ -9,7 +9,7 @@ import { addToCart } from '../../redux/slice/cartSlice';
 import { toast } from 'react-hot-toast';
 import { addToWishlist } from '../../redux/slice/wishlistSlice';
 import { addInView } from '../../redux/slice/viewSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const SmallProductCard = ({ product }) => {
@@ -17,22 +17,31 @@ const SmallProductCard = ({ product }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const cart = useSelector((state) => state.cart.cart)
     const [isHover, setIsHover] = useState(false);
 
 
     const handleAddToCart = (product, events) => {
+
         events.stopPropagation();
 
-   
 
-        if (product.inStock) {
+
+        if(cart.find(item => item.id === product.id)){
+            
+            dispatch(addToCart(product));
+        }
+        else if (product.inStock) {
             dispatch(addToCart(product));
             toast.success("Added to Cart")
+            dispatch(calculateTotalPrice());
+
+
         } else {
-
-            toast.success("Sorry, product is out of stock")
-
+            toast.error("Sorry , Product is Out of Stock")
         }
+
+
 
     }
 

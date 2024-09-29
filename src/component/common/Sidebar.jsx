@@ -9,6 +9,8 @@ import { toast } from "react-hot-toast";
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
 
+
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
@@ -17,7 +19,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
   useEffect(() => {
 
     if (isOpen) {
-
+       
+      dispatch(calculateTotalPrice());
       document.body.style.overflow = 'hidden';
     } else {
 
