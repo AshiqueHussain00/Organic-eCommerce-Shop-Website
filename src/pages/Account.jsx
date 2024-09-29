@@ -64,7 +64,7 @@ const Account1 = () => {
 
         {/* -------- other pages (content) ------ */}
 
-        <div className='border rounded-md w-full  py-2'>
+        <div className='border rounded-md w-full  py-2 h-[80vh] overflow-y-scroll'>
 
           <Outlet />
 
