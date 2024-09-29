@@ -87,7 +87,7 @@ const SingleItem = ({ data }) => {
                         <img src={data.images[0].main} alt={data.name} className='w-full h-full object-contain' />
                         <div
                             onClick={() => handleDelete(data.id)}
-                            className=' text-xl xs:text-2xl xlg:text-[28px]  flex items-center  cursor-pointer absolute top-[-20px] left-2 '>
+                            className=' text-xl xs:text-2xl xlg:text-[28px]  flex items-center  cursor-pointer absolute top-[-28px] left-2 '>
                             <IoCloseCircleOutline className='text-gray-700 transition-all duration-300 hover:text-gray-400' />
                         </div>
                     </div>
