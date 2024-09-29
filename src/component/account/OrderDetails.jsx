@@ -161,7 +161,7 @@ const OrderDetails = () => {
 
 
   return (
-    <section className='w-full xmd:px-4 px-3 xl:py-6 py-4'>
+    <section data-aos="fade-left" className='w-full xmd:px-4 px-3 xl:py-6 py-4'>
 
 
       {
