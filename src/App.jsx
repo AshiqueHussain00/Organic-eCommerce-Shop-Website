@@ -79,7 +79,7 @@ const App = () => {
     // Show newsletter popup after 5 seconds (5000 milliseconds)
     const timer = setTimeout(() => {
       setShowNewsletter(true);
-    }, 5000);
+    }, 3000);
 
     // Clear timeout when the component unmounts to avoid memory leaks
     return () => clearTimeout(timer);
