@@ -1,10 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import img1 from '../../assets/home2/leaf.svg';
 import img2 from '../../assets/home2/pricetag.svg';
+import delivery from '../../assets/products/delivery.mp4';
+import { GoPlay } from 'react-icons/go';
 
 function ProductTab({ product }) {
   const [activeTab, setActiveTab] = useState('description');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const videoRef = useRef(null); // Create a reference for the video
+  const [showOverlay, setShowOverlay] = useState(true); // State to control overlay visibility
+
+  const handlePlay = () => {
+    setShowOverlay(false);
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
 
   useEffect(() => {
     if (product) {
@@ -103,17 +114,20 @@ function ProductTab({ product }) {
 
         {/* Right Side: Video */}
         {(activeTab === 'description' || activeTab === 'additionalInfo') && (
-          <div className="flex flex-col items-center">
-            <iframe
-              width="90%" // Use full width on smaller screens
+          <div className="flex flex-col items-center relative"> {/* Add relative class here */}
+            <video
+              ref={videoRef}
+              width="90%"
               height="300"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src={delivery}
               title="Video Player"
+              controls
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className="rounded-md"
-            ></iframe>
+            ></video>
 
+           
             <div className="mt-4 bg-white text-black py-2 rounded-md text-sm border border-gray-300 w-full md:w-11/12 mx-auto"> {/* Responsive width */}
               <div className="flex flex-col md:flex-row justify-between"> {/* Responsive flex direction */}
                 {/* Left section: Discount information with img1 */}

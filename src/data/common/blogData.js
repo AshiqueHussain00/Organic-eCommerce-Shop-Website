@@ -172,4 +172,25 @@ export const blogData = [
           para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
       },
       },
+      {
+        id:9,
+        img: img3,
+        date: "18 July",
+        category: "Beverages",
+        postedBy: "Admin",
+        comments: 65,
+        p: "Maecenas blandit risus elementum mauris malesuada.",
+       
+        tags:['Beauty','low fat','Snacks'],
+        readMore:{
+          title:"Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.",
+          adminImg:img1,
+          isOpen:true,
+          urls:['https://www.facebook.com','https://www.twitter.com','https://www.instagram.com/',''],
+          subTitle:'Maecenas lacinia felis nec placerat sollicitudin. Quisque placerat dolor at scelerisque imperdiet. Phasellus tristique felis dolor.',
+          para1:['Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.','Mauris pretium elit a dui pulvinar, in ornare sapien euismod. Nullam interdum nisl ante, id feugiat quam euismod commodo. Sed ultrices lectus ut iaculis rhoncus. Aenean non dignissim justo, at fermentum turpis. Sed molestie, ligula ut molestie ultrices, tellus ligula viverra neque, malesuada consectetur diam sapien volutpat risus.Quisque eget tortor lobortis, facilisis metus eu, elementum est. Nunc sit amet erat quis ex convallis suscipit. ur ridiculus mus.'],
+          insideImg:[img3,img3],
+          para2:'Maecenas elementum in risus sed condimentum. Duis convallis ante ac tempus maximus. Fusce malesuada sed velit ut dictum. Morbi faucibus vitae orci at euismod. Integer auctor augue in erat vehicula, quis fermentum ex finibus.',
+      },
+      },
   ];

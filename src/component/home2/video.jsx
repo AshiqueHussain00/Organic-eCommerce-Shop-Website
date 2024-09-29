@@ -18,7 +18,7 @@ const VideoComponent = () => {
     return (
         <section className='relative w-full flex justify-center'>
             {/* Container for the video */}
-            <div className='relative w-[95%] max-w-[1130px] mx-auto mt-2'>
+            <div data-aos="fade-right"  className='relative w-[95%] max-w-[1130px] mx-auto mt-2'>
                 <Player
                     ref={videoRef}
                     playsInline

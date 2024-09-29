@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import NewsletterThree from "../common/NewsletterThree";
 import Footer1 from "../common/footer/footer1";
+import BreadCrumbs from '../common/BreadCrumbs';
 
 const CreateAccountForm = () => {
 
@@ -39,6 +40,7 @@ const CreateAccountForm = () => {
 
   return (
     <section>
+       <BreadCrumbs />
  <div className="min-h-screen flex items-center justify-center bg-white-100 px-4 sm:px-6 lg:px-8">
   <div className="bg-white p-6 sm:p-8 lg:p-12 rounded shadow-lg w-full max-w-sm sm:max-w-md lg:max-w-lg">
     <h2 className="text-xl sm:text-2xl font-bold mb-6 text-center">Create Account</h2>
