@@ -71,11 +71,11 @@ function ProductTab({ product }) {
               className="w-12 h-12 rounded-full mr-4"
             />
             <div>
-              {/* Name */}
+              
               <p><strong>{feedback.name}</strong></p>
-              {/* Feedback Text */}
+              
               <p>{feedback.feedback}</p>
-              {/* Rating */}
+            
               <p>Rating: {feedback.rating} ⭐</p>
               <hr className="my-4 border-gray-300" />
                 </div>
