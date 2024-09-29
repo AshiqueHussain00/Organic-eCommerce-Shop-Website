@@ -240,7 +240,7 @@ function ProductDetailsDescription({product}) {
                         {/* MAIN DESCRIPTION */}
 
                         <div>
-                            <p className="text-sm text-gray-500">{selectedProduct.mainDec}</p>
+                            <p className="text-sm text-gray-500 xmd:max-w-[400px] word-wrap">{selectedProduct.mainDec}</p>
                         </div>
 
                     </div>
