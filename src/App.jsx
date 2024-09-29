@@ -65,7 +65,7 @@ const Setting = lazy(() => import('./component/account/Setting'))
 
 
 //Contact
-const ContactForm = lazy(() => import('./component/common/ContactForm'));
+const ContactForm = lazy(() => import('./pages/contact/ContactForm'));
 
 //Error404
 import Error404 from './component/error/Error404';
