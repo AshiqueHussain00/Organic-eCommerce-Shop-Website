@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowRight } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 
 function Saleofmonth({ image, heading1, heading2, isTimer, deadline, discount, textColor = 'text-white' }) {
   const [days, setDays] = useState("00");
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
-
+  
   const getTime = () => {
     const time = Date.parse(deadline) - Date.now();
     setDays(String(Math.floor(time / (1000 * 60 * 60 * 24))).padStart(2, "0"));
@@ -93,10 +95,12 @@ function Saleofmonth({ image, heading1, heading2, isTimer, deadline, discount, t
               )}
 
               <div className="flex items-center justify-start mt-6">
-                <button className="flex gap-x-2 items-center font-semibold bg-white-200 rounded-full text-sm p-2 text-primary transition-all duration-200 hover:text-white-200 hover:bg-primary">
-                  Shop Now
-                  <FaArrowRight />
-                </button>
+              <Link to="/shop2">
+      <button className="flex gap-x-2 items-center font-semibold bg-white-200 rounded-full text-sm p-2 text-primary transition-all duration-200 hover:text-white-200 hover:bg-primary">
+        Shop Now
+        <FaArrowRight />
+      </button>
+    </Link>
               </div>
             </div>
           </li>

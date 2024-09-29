@@ -2,7 +2,7 @@ import FilterTwo from '../../component/shop2/FilterTwo'
 import allproductData from '../../data/common/allproductData'
 import { IoHomeOutline } from "react-icons/io5";
 import Footer1 from '../../component/common/footer/footer1'
-import { GoHome } from 'react-icons/go'
+
 function Shop2() {
   return (
     <section className='relative w-full'>

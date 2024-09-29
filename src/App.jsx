@@ -1,24 +1,14 @@
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import './App.css';
 import Navbar from './component/common/navbar';
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, Suspense, lazy } from 'react';
-import { Route, Routes, useNavigate, Navigate } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
-
-
-
-
-
 import ViewModal from './component/common/ViewModal';
 import Loader from './component/common/Loader';
-import SidebarToggle from './component/common/SidebarToggle';
-import CheckoutPage from './component/checkout/CheckoutPage';
-
-// import SidebarToggle from './component/common/SidebarToggle';
-
+import ScrollTop from './component/common/ScrollTop';
+import PopupNewsletter from './component/common/popup/PopupNewsletter'; // Import the PopupNewsletter component
 
 // Homepage
 const Home1 = lazy(() => import('./pages/homepages/Home1'));
@@ -27,74 +17,51 @@ const Home3 = lazy(() => import('./pages/homepages/Home3'));
 const Home4 = lazy(() => import('./pages/homepages/Home4'));
 const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
-
-
-//Shop
+// Shop
 const Shop1 = lazy(() => import('./pages/shop/Shop1'));
-const Shop2 = lazy(() => import('./pages/shop/Shop2'))
+const Shop2 = lazy(() => import('./pages/shop/Shop2'));
 
-// blog
-const Blog = lazy(() => import('./component/common/Blog'))
-const SingleBlog = lazy(() => import('./component/common/SingleBlog'))
+// Blog
+const Blog = lazy(() => import('./component/common/Blog'));
+const SingleBlog = lazy(() => import('./component/common/SingleBlog'));
 
+// About
+const About = lazy(() => import('./pages/About/About'));
 
-//About 
-const About = lazy(() => import('./pages/About/About'))
-
-//ProductDetails
+// ProductDetails
 import ProductDetailDescriptionPage from './pages/ProductDetailDescriptionPage';
 
-
-//Cart & Wishlist
+// Cart & Wishlist
 const Cart = lazy(() => import('./pages/Cart'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
 
-//Checkout
+// Checkout
 const Checkout = lazy(() => import('./pages/Checkout'));
 
-
 // Account
-
 const Account = lazy(() => import('./pages/Account'));
 const CreateAccount = lazy(() => import('./component/account/CreateAccount'));
-const SignInForm = lazy(() => import('./component/account/sign'))
-const OrderHistory = lazy(() => import('./component/account/OrderHistory'))
+const SignInForm = lazy(() => import('./component/account/sign'));
+const OrderHistory = lazy(() => import('./component/account/OrderHistory'));
 const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
-const Dashboard = lazy(() => import('./component/account/Dashboard'))
-const Setting = lazy(() => import('./component/account/Setting'))
+const Dashboard = lazy(() => import('./component/account/Dashboard'));
+const Setting = lazy(() => import('./component/account/Setting'));
 
-
-//Contact
+// Contact
 const ContactForm = lazy(() => import('./pages/contact/ContactForm'));
 
-//Error404
+// Error404
 const ErrorPage = lazy(() => import('./pages/ErrorPage'));
 
-
-
-
-
-
-const ScrollTop = lazy(() => import('./component/common/ScrollTop'))
-
-
-
-
 const App = () => {
-
-
-  const product = useSelector((state) => state.view.product)
+  const product = useSelector((state) => state.view.product);
   const location = useLocation();
-
+  
+  const [showNewsletter, setShowNewsletter] = useState(false); // State for controlling the newsletter popup visibility
 
   useEffect(() => {
-
-    window.scrollTo({
-      top: 10,
-
-    });
-
-  }, [location.pathname])
+    window.scrollTo({ top: 10 });
+  }, [location.pathname]);
 
   useEffect(() => {
     // Initialize AOS animations
@@ -108,32 +75,41 @@ const App = () => {
 
   AOS.refresh();
 
+  useEffect(() => {
+    // Show newsletter popup after 5 seconds (5000 milliseconds)
+    const timer = setTimeout(() => {
+      setShowNewsletter(true);
+    }, 5000);
 
+    // Clear timeout when the component unmounts to avoid memory leaks
+    return () => clearTimeout(timer);
+  }, []);
 
-  // const navigate = useNavigate();
+  const handleClosePopup = () => {
+    setShowNewsletter(false); // Function to close the newsletter popup
+  };
 
   return (
-    <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
+    <div className="max-w-[100vw] min-h-screen overflow-x-hidden font-poppins">
       <Navbar />
 
       <Suspense fallback={<Loader />}>
         <Routes>
-          {/* ---------- homepages ------- */}
+          {/* ---------- Homepages ------- */}
           <Route path='/' element={<Home1 />} />
           <Route path='/home2' element={<Home2 />} />
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
 
-          <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage />} />
-
           {/* ------------- Shop ------------- */}
           <Route path='/shop1' element={<Shop1 />} />
           <Route path='/shop2' element={<Shop2 />} />
 
-          {/* blog */}
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<SingleBlog />} />
+          {/* Blog */}
+          <Route path='/blog' element={<Blog />} />
+          <Route path='/blog/:id' element={<SingleBlog />} />
+
           {/* ------------ About --------------- */}
           <Route path='/about-us' element={<About />} />
 
@@ -142,55 +118,33 @@ const App = () => {
           <Route path='/wishlist' element={<Wishlist />} />
 
           {/* ------------ Checkout ------------- */}
-
           <Route path='/shopping-cart/checkout' element={<Checkout />} />
 
           {/* --------- Account ------- */}
-
-
-        <Route path='/account/login' element={<SignInForm/>}/>
-        <Route path='/account/create-account' element={<CreateAccount/>}/>
-
-
-          <Route element={<Account />}>
-
+          <Route path='/account/login' element={<SignInForm />} />
+          <Route path='/account/create-account' element={<CreateAccount />} />
+          <Route element={<Account />} >
             <Route path='/account/dashboard' element={<Dashboard />} />
             <Route path='/account/order-history' element={<OrderHistory />} />
             <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
             <Route path='/account/settings' element={<Setting />} />
-
           </Route>
-
-
 
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
 
-
-
-
-
           {/*---------------- Error----------------- */}
-          <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
-          <Route path="/404" element={<ErrorPage />} />
-
+          <Route path='*' element={<Navigate to="/404" state={{ is404: true }} />} />
+          <Route path='/404' element={<ErrorPage />} />
         </Routes>
 
-
         <ScrollTop />
-
       </Suspense>
 
+      {/* Show newsletter popup if visible */}
+      {showNewsletter && <PopupNewsletter onClose={handleClosePopup} />}
 
-
-
-
-
-
-      {
-        product && <ViewModal />
-      }
-
+      {product && <ViewModal />}
     </div>
   );
 };
