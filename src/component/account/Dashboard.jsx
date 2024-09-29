@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import { orderHistory } from "../../data/common/order-history"; // Ensure you have this data
 import { Link } from "react-router-dom"; // Assuming you're using React Router
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Importing arrow icons
+import { useLocation } from "react-router-dom";
+
 
 const DashBoard = () => {
+
+
+    const location = useLocation();
     const [currentPage, setCurrentPage] = useState(1);
     const [isEditProfileOpen, setEditProfileOpen] = useState(false);
     const [isEditAddressOpen, setEditAddressOpen] = useState(false);
@@ -71,6 +76,8 @@ const DashBoard = () => {
             reader.readAsDataURL(file); // Read the file as a data URL
         }
     };
+
+   
 
     return (
         <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">

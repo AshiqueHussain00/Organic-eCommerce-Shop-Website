@@ -50,8 +50,8 @@ const Navbar = () => {
   }
 
   useEffect(() => {
-    setIsOpen(false)
-    setIsAllCategoriesOpen(false)
+    setIsOpen(false);
+    setIsAllCategoriesOpen(false);
   }, [location.pathname])
   const [isFixed, setIsFixed] = useState(false);
   // const navigate = useNavigate();
