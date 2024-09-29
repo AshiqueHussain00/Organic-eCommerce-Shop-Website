@@ -60,7 +60,7 @@ const HomeHerosection = () => {
             </div>
             <div className="w-full sm:w-[70%] md:w-[50%]">
               <Link
-                to="/shop"
+                to="/shop1"
                 className="px-4 py-3 font-semibold transition duration-300 rounded-full shadow-lg bg-white-100 text-black-900 hover:bg-primary hover:text-white-100"
               >
                 Shop now →
