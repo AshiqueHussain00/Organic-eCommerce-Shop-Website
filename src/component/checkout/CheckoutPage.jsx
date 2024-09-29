@@ -3,6 +3,8 @@ import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import BreadCrumbs from '../common/BreadCrumbs';
+import NewsletterThree from '../common/NewsletterThree';
+import Footer1 from '../common/footer/footer1';
 
 const CheckoutPage = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -192,24 +194,24 @@ const CheckoutPage = () => {
 
                     {/* Order Summary */}
                     <div className="space-y-6">
-                        <div className="p-4 border rounded-lg shadow-md">
+                        <div className="p-4 border rounded-lg shadow-md flex flex-col gap-y-3">
                             <h2 className="mb-4 text-xl font-bold">Order Summary</h2>
 
                             {/* Order Items */}
                             <div className="flex items-center justify-between">
                                 <img
-                                    src="https://via.placeholder.com/50"
+                                    src="https://img.freepik.com/free-photo/pomegranate-fruit-isolated_144627-22111.jpg?w=740"
                                     alt="Green Capsicum"
-                                    className="w-10 h-10 rounded"
+                                    className="w-[60px] h-[60px] rounded"
                                 />
                                 <span>Green Capsicum x5</span>
                                 <span>$70.00</span>
                             </div>
                             <div className="flex items-center justify-between">
                                 <img
-                                    src="https://via.placeholder.com/50"
+                                    src="https://www.bigbasket.com/media/uploads/p/l/40296057_4-fresho-papaya.jpg"
                                     alt="Red Capsicum"
-                                    className="w-10 h-10 rounded"
+                                       className="w-[60px]] h-[60px] rounded"
                                 />
                                 <span>Red Capsicum x1</span>
                                 <span>$14.00</span>
@@ -284,6 +286,9 @@ const CheckoutPage = () => {
                     </div>
                 </form>
             </div>
+             
+             <NewsletterThree/>
+            <Footer1/>
         </section>
     );
 };

@@ -11,7 +11,7 @@ const DashBoard = () => {
     const [editedName, setEditedName] = useState(currentOrder.customerName); // State for edited name
     const [editedProfilePic, setEditedProfilePic] = useState(currentOrder.customerImg); // State for edited profile pic
     const [editedAddress, setEditedAddress] = useState(currentOrder.billing.address); // State for edited address
-    const ordersPerPage = 10; // Show a maximum of 10 orders per page
+    const ordersPerPage = 6; // Show a maximum of 6 orders per page
 
     // Calculate total pages
     const totalPages = Math.ceil(orderHistory.length / ordersPerPage);
@@ -77,15 +77,15 @@ const DashBoard = () => {
             <div className="flex flex-col md:flex-row justify-between gap-y-8">
                 {/* Left Sidebar: Customer Profile */}
                 <div className="w-full p-4 bg-white border rounded-lg shadow-md">
-                    <img 
-                        src={currentOrder.customerImg} 
-                        alt="Customer" 
-                        className="w-24 h-24 rounded-full mx-auto mb-4" 
+                    <img
+                        src={currentOrder.customerImg}
+                        alt="Customer"
+                        className="w-24 h-24 rounded-full mx-auto mb-4"
                     />
                     <h3 className="text-lg font-semibold text-center">{currentOrder.customerName}</h3>
                     <p className="text-center text-gray-500">Customer</p>
-                    <button 
-                        onClick={handleEditProfile} 
+                    <button
+                        onClick={handleEditProfile}
                         className="w-full mt-2 text-primary"
                     >
                         Edit Profile
@@ -95,12 +95,12 @@ const DashBoard = () => {
                 {/* Right Sidebar: Billing Address */}
                 <div className="text-left ml-2 w-full  p-4 bg-white border rounded-lg shadow-md">
                     <h3 className="text-base text-gray-500  ">BILLING ADDRESS</h3>
-                    <h2 className="text-lg mt-3">{currentOrder.customerName}</h2>
+                    <h2 className="lg:text-lg text-base mt-3">{currentOrder.customerName}</h2>
                     <p className="text-base text-gray-500 mt-2">{currentOrder.billing.address}</p>
                     <p className="mt-2">{currentOrder.billing.email}</p>
                     <p className="mt-2">{currentOrder.billing.phone}</p>
-                    <button 
-                        onClick={handleEditAddress} 
+                    <button
+                        onClick={handleEditAddress}
                         className="mt-2 text-primary"
                     >
                         Edit Address
@@ -110,9 +110,20 @@ const DashBoard = () => {
 
             <div className="flex flex-col justify-between gap-y-8 mt-8">
                 <div className="overflow-x-auto">
-                    <h2 className="mb-4 text-2xl font-semibold text-left">Recent Order History</h2>
+                    <div className="flex justify-between items-center gap-x-4">
+                        <h2 className="mb-4 text-2xl font-semibold text-left">Recent Order History</h2>
+                        <Link
+                            to={`/account/order-history`}
+                            state={{ id: true }}
+                            className="ml-4 text-primary transition-all duration-300 hover:text-branding-success hover:underline"
+                        >
+                            View All
+                        </Link>
+                    </div>
+
+
                     {/* Responsive Table for Larger Screens */}
-                    <div className="hidden md:block">
+                    <div className="hidden md:block xlg:text-base text-sm">
                         <table className="min-w-full border-collapse table-auto">
                             <thead>
                                 <tr className="bg-gray-200">
@@ -151,7 +162,7 @@ const DashBoard = () => {
                     {/* Card Layout for Smaller Screens */}
                     <div className="md:hidden">
                         {currentOrders.map((order) => (
-                            <div key={order.id} className="p-4 mb-4 bg-white border rounded-lg shadow-md hover:shadow-lg">
+                            <div key={order.id} className="p-4 mb-4 flex flex-col gap-y-3 bg-white border rounded-lg shadow-md text-sm hover:shadow-lg">
                                 <div className="flex justify-between">
                                     <h3 className="font-semibold">{order.orderId}</h3>
                                     <Link to={`/account/order-history/order-detail/${order.orderId}`} state={{ id: true }} className="text-primary">
@@ -203,15 +214,15 @@ const DashBoard = () => {
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 z-50">
                     <div className="bg-white-200 p-6 rounded shadow-lg">
                         <h3 className="text-lg font-semibold ">Edit Profile</h3>
-                        <input 
-                            type="text" 
-                            value={editedName} 
-                            onChange={(e) => setEditedName(e.target.value)} 
-                            placeholder="Enter your name" 
+                        <input
+                            type="text"
+                            value={editedName}
+                            onChange={(e) => setEditedName(e.target.value)}
+                            placeholder="Enter your name"
                             className="mt-2 p-2 border rounded w-full"
                         />
-                        <input 
-                            type="file" 
+                        <input
+                            type="file"
                             accept="image/*" // Accept only image files
                             onChange={handleProfilePicChange} // Handle file input change
                             className="mt-2 p-2 border rounded w-full"
@@ -231,10 +242,10 @@ const DashBoard = () => {
                 <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
                     <div className="bg-white p-6 rounded shadow-lg">
                         <h3 className="text-lg font-semibold ">Edit Address</h3>
-                        <textarea 
-                            value={editedAddress} 
-                            onChange={(e) => setEditedAddress(e.target.value)} 
-                            placeholder="Enter your address" 
+                        <textarea
+                            value={editedAddress}
+                            onChange={(e) => setEditedAddress(e.target.value)}
+                            placeholder="Enter your address"
                             className="mt-2 p-2 border rounded w-full h-24"
                         />
                         <button onClick={saveAddressChanges} className="mt-4  px-4 py-2 bg-primary text-white-200 rounded hover:bg-white-200 hover:text-black-800">
