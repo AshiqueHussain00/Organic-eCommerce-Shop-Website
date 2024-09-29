@@ -76,7 +76,7 @@ function Footer4() {
     const instagramUrl = "https://www.instagram.com/yourprofile";
     return (
         <section>
-            <div className="w-full mx-auto p-6 md:px-16 py-4 bg-black-900">
+            <div className="w-full mx-auto px-6 md:px-16 pb-8 pt-16 bg-black-900">
 
                 <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
 

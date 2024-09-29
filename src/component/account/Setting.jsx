@@ -34,8 +34,10 @@ const Setting = () => {
         }
     };
 
-    // State for image upload and image preview URL, default image URL, and file name
     const defaultImageUrl = 'https://shorturl.at/HT3tB'; // Anonymous placeholder image URL
+
+    // State for image upload and image preview URL, default image URL, and file name
+    
     const [profileImage, setProfileImage] = useState(null);
     const [imagePreview, setImagePreview] = useState(defaultImageUrl);
     const [fileName, setFileName] = useState(''); // File name state (initially empty)
@@ -133,7 +135,7 @@ const Setting = () => {
                         <div className="mb-4">
                             {/* Show default image or uploaded preview */}
                             <div className="mt-4 justify-center">
-                                <img src={imagePreview} alt="Profile Preview" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-2" />
+                                <img src={imagePreview} alt="Profile" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-2" />
                             </div>
                             <input
                                 type="file"

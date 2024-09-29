@@ -64,7 +64,7 @@ function Footer3() {
     }
     return (
         <section>
-            <div className="w-full mx-auto p-6 md:px-16 py-4 bg-black-900">
+            <div className="w-full mx-auto pb-8 py-16 md:px-16 bg-black-900">
 
                 <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
 

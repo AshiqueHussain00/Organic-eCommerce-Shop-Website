@@ -22,8 +22,6 @@ function BreadCrumbs() {
   }
 
 
-
-
   return (
     <section className='h-[100px]  flex items-center banner-bg text-white-100 '>
       <div data-aos="fade-right" className='flex items-center mx-auto w-11/12 xmd:w-10/12 p-2 '>
