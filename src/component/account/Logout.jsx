@@ -72,10 +72,10 @@ const Logout = ({ isLogout, setIsLogout }) => {
                     initial="hidden"
                     animate="visible"
                     exit="exit"
-                    className=' border border-primary rounded-lg p-8 sm:min-w-[420px] xs:min-w-[350px] min-w-[28px] min-h-[240px] flex flex-col justify-between gap-4 bg-white-100 relative' ref={myRef} onClick={(event) => event.stopPropagation()} >
+                    className=' border  rounded-lg p-8 sm:min-w-[420px] xs:min-w-[350px] min-w-[28px] min-h-[240px] flex flex-col justify-between gap-4 bg-white-100 relative' ref={myRef} onClick={(event) => event.stopPropagation()} >
 
                     <div className='flex flex-col gap-y-6'>
-                        <h2 className='xs:text-2xl text-xl font-semibold'> Logout</h2>
+                        <h2 className='text-xl font-semibold xs:text-2xl'> Logout</h2>
                         <p className='xs:text-[16px] text-sm'> Are you sure you want to logout?</p>
                     </div>
 
@@ -84,7 +84,7 @@ const Logout = ({ isLogout, setIsLogout }) => {
                     <div className='flex w-full gap-4'>
                         <button
                         onClick={logoutHandler}
-                         className='border-2 w-full px-4 py-2 transition-all duration-200 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
+                         className='w-full px-4 py-2 transition-all duration-200 border-2 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
                             Yes
                         </button>
 
@@ -92,7 +92,7 @@ const Logout = ({ isLogout, setIsLogout }) => {
 
                         <button
                         onClick={()=> setIsLogout(false)}
-                         className='border-2 w-full px-4 py-2 transition-all duration-200 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
+                         className='w-full px-4 py-2 transition-all duration-200 border-2 border-primary rounded-xl hover:bg-primary hover:text-white-100'>
 
                             No
                         </button>

@@ -171,8 +171,8 @@ const App = () => {
 
 
           {/*---------------- Error----------------- */}
-          {/* <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
-          <Route path="/404" element={<Error404 />} /> */}
+          <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
+          <Route path="/404" element={<Error404 />} />
 
         </Routes>
 

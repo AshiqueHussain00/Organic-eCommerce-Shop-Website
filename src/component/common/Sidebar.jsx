@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiX } from "react-icons/fi"; // Import cross icon
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <FiX size={28} />
       </button>
 
-      <div className="flex flex-col justify-between gap-y-6 h-full   p-6">
+      <div className="flex flex-col justify-between h-full p-6 gap-y-6">
         {/* Cart Content */}
         <div className="flex flex-col gap-y-8 ">
 
@@ -69,12 +69,12 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                 {
                   cart.map((item, index) => (
 
-                    <div key={index} className="flex justify-between items-center border-b py-4 pl-2">
+                    <div key={index} className="flex items-center justify-between py-4 pl-2 border-b">
 
                       <div className="flex items-center gap-x-5">
 
                         <div className="w-[80px] h-[80px]">
-                          <img src={item.images[0].main} alt={item.name} className="w-full h-full object-contain" />
+                          <img src={item.images[0].main} alt={item.name} className="object-contain w-full h-full" />
                         </div>
 
                         <div className="flex flex-col">
@@ -89,7 +89,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
                       <div
                       onClick={()=> handleRemoveFromCart(item.id)}
-                       className="text-2xl mr-4 text-gray-600 cursor-pointer transition-all duration-200 hover:text-gray-400">
+                       className="mr-4 text-2xl text-gray-600 transition-all duration-200 cursor-pointer hover:text-gray-400">
                           <IoCloseCircleOutline/>
                       </div>
 
@@ -121,13 +121,13 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
             <p className="font-bold text-gray-900">$ {totalPrice.toFixed(2)}</p>
           </div>
 
-          <div className="flex-col flex gap-y-4">
+          <div className="flex flex-col gap-y-4">
 
             {/* Link to Checkout Page */}
 
             <button
 
-              className="w-full py-2 font-bold border-2 rounded-full transition-all duration-300 bg-primary text-white-100 hover:bg-white-100 hover:border-primary hover:text-primary"
+              className="w-full py-2 font-bold transition-all duration-300 border-2 rounded-full bg-primary text-white-100 hover:bg-white-100 hover:border-primary hover:text-primary"
               onClick={() => {
                 toggleSidebar()
                 navigate("/shopping-cart/checkout");
@@ -138,7 +138,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
             <button
 
-              className="w-full py-2 font-bold border-2 border-gray-50 rounded-full transition-all duration-300 bg-gray-50 text-primary hover:text-branding-success hover:border-branding-success "
+              className="w-full py-2 font-bold transition-all duration-300 border-2 rounded-full border-gray-50 bg-gray-50 text-primary hover:text-branding-success hover:border-branding-success "
               onClick={() => {
                 toggleSidebar()
                 navigate("/shopping-cart");
