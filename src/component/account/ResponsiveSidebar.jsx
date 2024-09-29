@@ -32,7 +32,7 @@ const navigation = [
         id: 4,
         icon: BsHandbag,
         title: "Shopping Cart",
-        path: "/cart",
+        path: "//shopping-cart",
     },
     {
         id: 5,

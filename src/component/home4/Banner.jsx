@@ -2,6 +2,7 @@
 import React from 'react'
 import { FaArrowRight } from "react-icons/fa6";
 import './home4Common.css'
+import { useNavigate } from 'react-router-dom';
 
 const bannerData = [
     {
@@ -28,6 +29,7 @@ const bannerData = [
 ]
 
 const Banner = () => {
+    const navigate = useNavigate();
     return (
         <section  className='w-full relative  bg-white-100 py-20'>
 
@@ -61,7 +63,9 @@ const Banner = () => {
                                     {card.desc}
                                 </p>
                                 <div>
-                                    <button className='flex gap-x-2 mmd:gap-x-1 lg:gap-x-3 items-center bg-white-100 text-primary transition-all duration-200  hover:text-white-100 hover:bg-primary lg:px-5 mmd:px-3 px-4 py-2 rounded-3xl'>
+                                    <button
+                                    onClick={()=> navigate("/shop1")}
+                                     className='flex gap-x-2 mmd:gap-x-1 lg:gap-x-3 items-center bg-white-100 text-primary transition-all duration-200  hover:text-white-100 hover:bg-primary lg:px-5 mmd:px-3 px-4 py-2 rounded-3xl'>
 
                                         Shop Now
                                         <FaArrowRight />

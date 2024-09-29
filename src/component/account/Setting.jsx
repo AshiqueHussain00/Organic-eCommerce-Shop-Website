@@ -5,6 +5,8 @@ import { ToastContainer, toast } from 'react-toastify'
 import Trusted from '../Home5/Trusted';
 
 
+
+const defaultImageUrl = 'https://shorturl.at/HT3tB';
 const Setting = () => {
     // useForm for each section
     const { register: registerAccount, handleSubmit: handleAccountSubmit } = useForm();
@@ -34,7 +36,7 @@ const Setting = () => {
         }
     };
 
-    const defaultImageUrl = 'https://shorturl.at/HT3tB'; // Anonymous placeholder image URL
+    // Anonymous placeholder image URL
 
     // State for image upload and image preview URL, default image URL, and file name
     
@@ -99,7 +101,7 @@ const Setting = () => {
                                 {...registerAccount('firstName' , {required:true})}
                                 className="w-full px-4 py-2 border focus:outline-none border-gray-300 rounded-md focus:border-2  focus:border-green-600 "
                                 placeholder="Dianne"
-                                control={control}
+                              
                             />
                         </div>
                         <div className="mb-4">
