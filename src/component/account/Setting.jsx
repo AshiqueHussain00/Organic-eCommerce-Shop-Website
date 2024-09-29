@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useForm, Controller, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { ToastContainer, toast } from 'react-toastify'
 import Trusted from '../Home5/Trusted';
@@ -7,7 +7,7 @@ import Trusted from '../Home5/Trusted';
 
 const Setting = () => {
     // useForm for each section
-    const { register: registerAccount, handleSubmit: handleAccountSubmit, control } = useForm();
+    const { register: registerAccount, handleSubmit: handleAccountSubmit } = useForm();
     const { register: registerBilling, handleSubmit: handleBillingSubmit } = useForm();
     const { register: registerPassword, handleSubmit: handlePasswordSubmit } = useForm();
 
