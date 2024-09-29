@@ -23,7 +23,7 @@ const NewsletterThree = () => {
                                 <input
                                     type="email"
                                     placeholder="Your email address"
-                                    className="w-full px-16 py-2 border border-gray-300 rounded-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-gray-400"
+                                    className="w-full px-20 py-2 border border-gray-300 rounded-full sm:w-72 focus:outline-none focus:ring-2 focus:ring-gray-400"
                                 />
                                 <button className="w-full px-4 py-2 mt-2 rounded-full text-white-100 sm:w-auto sm:mt-0 sm:ml-2 bg-primary hover:bg-gray-700">
                                     Subscribe
