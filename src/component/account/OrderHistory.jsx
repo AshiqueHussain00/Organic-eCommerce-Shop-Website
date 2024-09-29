@@ -34,14 +34,14 @@ const OrderHistory = () => {
     };
 
     return (
-        <div className="w-full px-4 mx-auto order-history max-w-7xl sm:px-6 lg:px-8">
+        <div className="w-full px-4 mx-auto order-history max-w-7xl sm:px-6 lg:px-8 " data-aos="fade-left">
             <h2 className="mb-4 text-2xl font-semibold text-left">Order History</h2>
 
 
             <div className="flex flex-col justify-between gap-y-8">
 
 
-                <div className="overflow-x-auto xmd:text-base text-sm">
+                <div className="overflow-x-auto text-sm xmd:text-base">
                     {/* Responsive Table for Larger Screens */}
                     <div className="hidden md:block">
                         <table className="min-w-full border-collapse table-auto">
@@ -67,7 +67,7 @@ const OrderHistory = () => {
                                                 <Link
                                                     to={`/account/order-history/order-detail/${order.orderId}`}
                                                     state={{ id: true }}
-                                                    className="ml-4 text-primary transition-all duration-300 hover:text-branding-success hover:underline"
+                                                    className="ml-4 transition-all duration-300 text-primary hover:text-branding-success hover:underline"
                                                 >
                                                     View Details
                                                 </Link>
@@ -82,7 +82,7 @@ const OrderHistory = () => {
                     {/* Card Layout for Smaller Screens */}
                     <div className="md:hidden">
                         {currentOrders.map((order) => (
-                            <div key={order.id} className="p-4 mb-4 bg-white border rounded-lg shadow-md hover:shadow-lg flex flex-col gap-y-4 ">
+                            <div key={order.id} className="flex flex-col p-4 mb-4 bg-white border rounded-lg shadow-md hover:shadow-lg gap-y-4 ">
                                 <div className="flex justify-between">
                                     <h3 className="font-semibold">{order.orderId}</h3>
                                     <Link to={`/account/order-history/order-detail/${order.orderId}`} state={{ id: true }} className="text-primary">

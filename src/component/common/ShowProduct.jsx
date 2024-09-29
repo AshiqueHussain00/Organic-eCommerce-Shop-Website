@@ -2,11 +2,14 @@ import React from 'react'
 import SmallProductCard from './SmallProductCard';
 import { FaArrowRight } from "react-icons/fa6";
 import allproductData from '../../data/common/allproductData'
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const ShowProduct = ({ isHotSale = true }) => {
+
+    const navigate = useNavigate();
 
     const hotDealData = allproductData.filter(product => product.price.discounted < 20);
     const bestSellerData = allproductData.filter(product => product.reviews > 5);
@@ -94,7 +97,9 @@ const ShowProduct = ({ isHotSale = true }) => {
                        {/* -------- shop now btn -------- */}
 
                        <div>
-                        <button className='flex items-center gap-x-3 bg-white-100 text-branding-success font-semibold text-sm px-6 py-3 rounded-3xl group transition-all duration-200 hover:text-white-100 hover:bg-primary'>
+                        <button
+                        onClick={()=> navigate('/shop1')}
+                         className='flex items-center gap-x-3 bg-white-100 text-branding-success font-semibold text-sm px-6 py-3 rounded-3xl group transition-all duration-200 hover:text-white-100 hover:bg-primary'>
                             Shop Now
                             <FaArrowRight/>
                         </button>

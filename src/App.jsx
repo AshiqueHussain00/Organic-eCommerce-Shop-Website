@@ -54,20 +54,21 @@ const Checkout = lazy(() => import('./pages/Checkout'));
 
 
 // Account
+
 const Account = lazy(() => import('./pages/Account'));
-const CreateAccountForm = lazy(() => import('./component/account/CreateAccount'));
-const SignInForm = lazy(()=> import('./component/account/sign'))
-const OrderHistory = lazy(()=> import('./component/account/OrderHistory'))
+const CreateAccount = lazy(() => import('./component/account/CreateAccount'));
+const SignInForm = lazy(() => import('./component/account/sign'))
+const OrderHistory = lazy(() => import('./component/account/OrderHistory'))
 const OrderDetails = lazy(() => import('./component/account/OrderDetails'));
+const Dashboard = lazy(() => import('./component/account/Dashboard'))
 const Setting = lazy(() => import('./component/account/Setting'))
 
 
 //Contact
-const ContactForm = lazy(() => import('./component/common/ContactForm'));
+const ContactForm = lazy(() => import('./pages/contact/ContactForm'));
 
 //Error404
-import Error404 from './component/error/Error404';
- 
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
 
 
 
@@ -114,7 +115,7 @@ const App = () => {
   return (
     <div className='max-w-[100vw] min-h-screen overflow-x-hidden font-poppins'>
       <Navbar />
-     
+
       <Suspense fallback={<Loader />}>
         <Routes>
           {/* ---------- homepages ------- */}
@@ -123,7 +124,7 @@ const App = () => {
           <Route path='/home3' element={<Home3 />} />
           <Route path='/home4' element={<Home4 />} />
           <Route path='/home5' element={<Home5 />} />
-          
+
           <Route path='/product/:productCategory/:productId' element={<ProductDetailDescriptionPage />} />
 
           {/* ------------- Shop ------------- */}
@@ -146,15 +147,17 @@ const App = () => {
 
           {/* --------- Account ------- */}
 
-          <Route path='/account/create-account' element={<CreateAccountForm/>}/>
-          <Route path='/account/login' element={<SignInForm/>}/>
+
+        <Route path='/account/login' element={<SignInForm/>}/>
+        <Route path='/account/create-account' element={<CreateAccount/>}/>
+
 
           <Route element={<Account />}>
-            
-         
-            <Route path='/account/order-history' element={<OrderHistory/>}/>
+
+            <Route path='/account/dashboard' element={<Dashboard />} />
+            <Route path='/account/order-history' element={<OrderHistory />} />
             <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
-            <Route path='/account/settings' element={<Setting/>}/>
+            <Route path='/account/settings' element={<Setting />} />
 
           </Route>
 
@@ -163,13 +166,13 @@ const App = () => {
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
 
-          
-          
+
+
 
 
           {/*---------------- Error----------------- */}
           <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
-          <Route path="/404" element={<Error404 />} />
+          <Route path="/404" element={<ErrorPage />} />
 
         </Routes>
 

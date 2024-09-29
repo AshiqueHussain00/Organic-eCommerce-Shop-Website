@@ -30,7 +30,7 @@ const Account1 = () => {
 
         {/* ----------- sidebar ------- */}
 
-        <div className='border rounded-md xl:w-[340px] smd:w-[300px] w-[260px] h-max md:flex hidden '>
+        <div data-aos="fade-right" className='border rounded-md xl:w-[340px] smd:w-[300px] w-[260px] h-max md:flex hidden '>
 
           <Sidebar isLogout={isLogout} setIsLogout={setIsLogout}/>
 
@@ -63,7 +63,7 @@ const Account1 = () => {
 
         {/* -------- other pages (content) ------ */}
 
-        <div className='border rounded-md w-full  py-2'>
+        <div  className='border rounded-md w-full  py-2 h-[80vh] overflow-y-scroll'>
 
           <Outlet />
 

@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { useForm, Controller, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { IoEyeOutline, IoEyeOffOutline } from 'react-icons/io5';
 import { ToastContainer, toast } from 'react-toastify'
 import Trusted from '../Home5/Trusted';
 
 
+
+const defaultImageUrl = 'https://shorturl.at/HT3tB';
 const Setting = () => {
     // useForm for each section
-    const { register: registerAccount, handleSubmit: handleAccountSubmit, control } = useForm();
+    const { register: registerAccount, handleSubmit: handleAccountSubmit } = useForm();
     const { register: registerBilling, handleSubmit: handleBillingSubmit } = useForm();
     const { register: registerPassword, handleSubmit: handlePasswordSubmit } = useForm();
 
@@ -34,7 +36,7 @@ const Setting = () => {
         }
     };
 
-    const defaultImageUrl = 'https://shorturl.at/HT3tB'; // Anonymous placeholder image URL
+    // Anonymous placeholder image URL
 
     // State for image upload and image preview URL, default image URL, and file name
     
@@ -87,7 +89,7 @@ const Setting = () => {
     return (
         <div className="w-full xmd:w-[900px] mx-auto p-6">
             {/* Account Settings Section */}
-            <form onSubmit={handleAccountSubmit(onAccountSubmit)} className="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm ">
+            <form data-aos="fade-left" onSubmit={handleAccountSubmit(onAccountSubmit)} className="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm ">
 
                 <h2 className="w-full text-xl font-semibold mb-4 border-b">Account Settings</h2>
 
@@ -99,7 +101,7 @@ const Setting = () => {
                                 {...registerAccount('firstName' , {required:true})}
                                 className="w-full px-4 py-2 border focus:outline-none border-gray-300 rounded-md focus:border-2  focus:border-green-600 "
                                 placeholder="Dianne"
-                                control={control}
+                              
                             />
                         </div>
                         <div className="mb-4">
@@ -135,7 +137,7 @@ const Setting = () => {
                         <div className="mb-4">
                             {/* Show default image or uploaded preview */}
                             <div className="mt-4 justify-center">
-                                <img src={imagePreview} alt="Profile Preview" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-2" />
+                                <img src={imagePreview} alt="Profile" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-2" />
                             </div>
                             <input
                                 type="file"
@@ -160,7 +162,7 @@ const Setting = () => {
             </form>
 
             {/* Billing Address Section */}
-            <form onSubmit={handleBillingSubmit(onBillingSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
+            <form data-aos="fade-left" onSubmit={handleBillingSubmit(onBillingSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
                 <h2 className="text-xl font-semibold mb-4 border-b">Billing Address</h2>
                 <div className="w-full flex flex-col md:flex-row md:space-x-6 justify-center">
 
@@ -263,7 +265,7 @@ const Setting = () => {
             </form>
 
             {/* Change Password Section */}
-            <form onSubmit={handlePasswordSubmit(onPasswordSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
+            <form data-aos="fade-left" onSubmit={handlePasswordSubmit(onPasswordSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
                 <h2 className="w-full text-xl font-semibold mb-4 border-b">Change Password</h2>
                 <div className="mb-4 relative">
                     <label className="block text-gray-700">Current Password</label>

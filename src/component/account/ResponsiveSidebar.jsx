@@ -32,7 +32,7 @@ const navigation = [
         id: 4,
         icon: BsHandbag,
         title: "Shopping Cart",
-        path: "/cart",
+        path: "//shopping-cart",
     },
     {
         id: 5,
@@ -63,15 +63,17 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen, setIsLogout }) => {
 
     return (
         <div
+        
             className={`absolute border top-[-46px] left-0 h-[500px] rounded-lg sm:w-[340px] xs:w-[300px] w-[280px] bg-white-100 text-gray-900 shadow-lg transform transition-transform text-base duration-500 ease-in-out z-[5000] ${sideOpen ? "-translate-x-5" : "translate-x-[-500px]"
                 }`}
+                
         >
             {/* Cross button to close sidebar */}
             <div className='flex justify-end'>
 
             
             <button
-                className=" text-gray-800  w-max  hover:text-gray-500 px-8 py-4 "
+                className="px-8 py-4 text-gray-800 w-max hover:text-gray-500"
                 onClick={() => setSideOpen(false)}
             >
                 <FiX size={28} />
@@ -79,9 +81,9 @@ const ResponsiveSidebar = ({ sideOpen, setSideOpen, setIsLogout }) => {
             </div>
 
 
-            <div className='w-full py-2 flex flex-col gap-y-3 text-gray-900 '>
+            <div className='flex flex-col w-full py-2 text-gray-900 gap-y-3 ' >
 
-                <h1 className=' pl-6 pr-2 lg:text-xl smd:text-lg text-base font-meidum leading-8'>
+                <h1 className='pl-6 pr-2 text-base leading-8 lg:text-xl smd:text-lg font-meidum'>
                     Navigation
                 </h1>
 
