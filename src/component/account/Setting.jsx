@@ -135,7 +135,7 @@ const Setting = () => {
                         <div className="mb-4">
                             {/* Show default image or uploaded preview */}
                             <div className="mt-4 justify-center">
-                                <img src={imagePreview} alt="Profile Preview" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-2" />
+                                <img src={imagePreview} alt="Profile" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover mb-2" />
                             </div>
                             <input
                                 type="file"
