@@ -27,6 +27,7 @@ import CountdownTimer from "../../component/Home5/CountdownTimer";
 import ShowProduct from "../../component/common/ShowProduct";
 import BestSeller from "../../component/Home5/BestSeller";
 import { blogData } from "../../data/common/blogData";
+import Footer5 from "../../component/common/footer/footer5";
 
 
 const Home5 = () => {
@@ -159,6 +160,7 @@ const Home5 = () => {
       <div>
         <Newsletter />
       </div>
+      <Footer5/>
     </section>
   );
 };

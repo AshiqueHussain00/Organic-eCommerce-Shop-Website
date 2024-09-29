@@ -1,17 +1,18 @@
 import React from 'react'
-import { FaApple} from 'react-icons/fa'
+import { FaApple, FaLock } from 'react-icons/fa'
 import { IoLogoGooglePlaystore } from 'react-icons/io5'
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
+import Logo from '../../../assets/home2/Ecologo.svg'
 import Img1 from '../../../assets/home2/ApplePay.svg'
 import VisaImg from '../../../assets/home2/visa.svg'
 import DiscoverImg from '../../../assets/home2/discover.svg'
 import MastercardImg from '../../../assets/home2/mastercard.svg'
 import LockImg from '../../../assets/home2/cart.svg'
-import { NavLink, useNavigate } from 'react-router-dom';
-function Footer3() {
+import { useNavigate } from 'react-router-dom';
+function Footer5() {
     const FooterData = {
         shopery: {
-            title: 'About Shopery',
+            logo: Logo,
             para: 'Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec',
             number: '(219) 555-0114',
             email: 'Proxy@gmail.com'
@@ -64,18 +65,18 @@ function Footer3() {
     }
     return (
         <section>
-            <div className="w-full mx-auto px-6 pb-8 py-16 md:px-16  bg-black-900">
+            <div className="w-full mx-auto px-6 pb-8 py-16 md:px-16 bg-black-900">
 
                 <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
 
                     {/* ABOUT SHOPERY */}
                     <div className="col-span-1 xmd:col-span-2 flex flex-col gap-2 md:gap-4  p-2">
-                        <h2 className="text-white-200 text-lg font-medium">{FooterData.shopery.title}</h2>
+                    <img src={FooterData.shopery.logo} alt="Shopery Logo" className="w-32" />
                         <p className="text-gray-500 text-base font-normal">{FooterData.shopery.para}</p>
                         <div className="flex flex-col xxl:flex-row gap-2 text-sm lg:text-base">
-                            <span  className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium ">{FooterData.shopery.number}</span>
+                            <span className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium ">{FooterData.shopery.number}</span>
                             <p className="text-gray-500 font-medium">or</p>
-                            <span  className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium cursor-pointer"><a href="https://mail.google.com">{FooterData.shopery.email}</a></span>
+                            <span  className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium"><a href="https://mail.google.com">{FooterData.shopery.email}</a></span>
                         </div>
                     </div>
 
@@ -107,24 +108,25 @@ function Footer3() {
                     {/* DOWNLOAD */}
                     <div className="md:col-span-2 flex flex-col gap-2 md:gap-4 p-2">
                         <h2 className="text-white-200 text-lg font-medium whitespace-nowrap">Download our Mobile App</h2>
-                        <div className="flex flex-col xxs:flex-row gap-2 items-center justify-center">
+                        <div className="flex flex-col xxs:flex-row gap-2  justify-center items-center">
 
-                            <a href='https://apps.apple.com'  className="w-[80%] flex flex-row bg-gray-700 px-2 py-2 rounded-md gap-2 justify-center items-center">
+                            <a href='https://apps.apple.com' className="w-[80%] flex flex-row bg-gray-700 px-2 py-2 rounded-md gap-2 justify-center items-center">
                                 <div className="flex">
                                     <FaApple className="h-[45px] w-[45px] lg:h-[30px] lg:w-[30px] xl:h-[40px] xl:w-[40px]" style={{ color: 'white' }} />
                                 </div>
-                                <div className="flex flex-col">
+                                <div  className="flex flex-col">
                                     <p className="text-gray-500 text-md lg:text-sm font-normal whitespace-nowrap">Download on the</p>
                                     <p className="text-white-200 text-lg   font-medium">App Store</p>
                                 </div>
                             </a>
 
-                            <a href='https://play.google.com' className="w-[80%] flex flex-row  bg-gray-700 px-2 py-2 rounded-md gap-1 justify-center items-center">
+                            <a  href='https://play.google.com' className="w-[80%] flex flex-row  bg-gray-700 px-2 py-2 rounded-md gap-1 justify-center items-center">
                                 <div className="flex">
                                     <IoLogoGooglePlaystore className="h-[40px] w-[40px] lg:h-[25px] lg:w-[25px] xl:h-[40px] xl:w-[40px]" style={{ color: 'white' }} />
                                 </div>
-                                <div className="flex flex-col">
-                                    <p className="text-gray-500 text-md lg:text-sm font-normal whitespace-nowrap">Download on the</p>
+                               
+                                <div  className="flex flex-col">
+                                    <p className="text-gray-500 text-md lg:text-sm xl: font-normal whitespace-nowrap">Download on the</p>
                                     <p className="text-white-200 text-lg  font-medium">Google play</p>
                                 </div>
                             </a>
@@ -186,4 +188,4 @@ function Footer3() {
     )
 }
 
-export default Footer3;
+export default Footer5;

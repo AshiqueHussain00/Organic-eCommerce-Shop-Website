@@ -69,7 +69,7 @@ function Footer1() {
               </span>
               <span className="text-gray-500 font-medium">or</span>
               <span className="text-white-100 underline decoration-green-600 lg:text-base text-sm decoration-3 underline-offset-8 font-medium">
-                {FooterData.shopery.email}
+               <a href="https://mail.google.com">{FooterData.shopery.email}</a>
               </span>
             </div>
           </div>
