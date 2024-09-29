@@ -111,11 +111,22 @@ const cartSlice = createSlice({
 
             }
       
+        },
+
+        resetCart : (state)=> {
+               
+            state.cart = [];
+            state.totalPrice = 0;
+            state.totalQuantity = 0;
+
+            localStorage.removeItem("cart");
+            localStorage.removeItem("totalQuantity");
+            localStorage.removeItem("totalPrice");
         }
     }
 
 
 })
 
-export const{addToCart , removeFromCart , increaseQuantity , decreaseQuantity , calculateTotalPrice} = cartSlice.actions;
+export const{addToCart , removeFromCart , increaseQuantity , decreaseQuantity , calculateTotalPrice , resetCart} = cartSlice.actions;
 export default cartSlice.reducer;

@@ -25,7 +25,7 @@ const SidebardLink = ({ nav, setIsLogout }) => {
 
                 ) : (
                     <Link to={nav.path} className='hover:bg-green-gray-scale-50 group'>
-                        <div className='py-3 pl-6 md:pr-2 pr-4 flex items-center gap-x-2 t text-gray-600 smd:text-base text-sm font-normal group-hover:text-gray-900'>
+                        <div className='py-3 pl-6 md:pr-2 pr-4 flex items-center gap-x-2 t text-gray-600 smd:text-base md:text-sm xs:text-base text-sm font-normal group-hover:text-gray-900'>
 
                             <p className='text-lg'><IconComponent /></p>
 
