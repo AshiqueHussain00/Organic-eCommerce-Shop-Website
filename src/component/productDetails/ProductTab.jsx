@@ -88,7 +88,7 @@ function ProductTab({ product }) {
                   <div>
                     <p><strong>{feedback.name}</strong></p>
                     <p>{feedback.feedback}</p>
-                    <p className="flex items-center gap-1">Rating: {renderStars(feedback.rating)}</p>
+                    <p className="flex items-center gap-1">{renderStars(feedback.rating)}</p>
                     <hr className="my-4 border-gray-300 border-1 w-full" />
                   </div>
                 </div>
