@@ -10,12 +10,9 @@ const DashBoard = () => {
 
     const location = useLocation();
     const [currentPage, setCurrentPage] = useState(1);
-    const [isEditProfileOpen, setEditProfileOpen] = useState(false);
-    const [isEditAddressOpen, setEditAddressOpen] = useState(false);
+    
     const [currentOrder, setCurrentOrder] = useState(orderHistory[0]); // Default to the first order
-    const [editedName, setEditedName] = useState(currentOrder.customerName); // State for edited name
-    const [editedProfilePic, setEditedProfilePic] = useState(currentOrder.customerImg); // State for edited profile pic
-    const [editedAddress, setEditedAddress] = useState(currentOrder.billing.address); // State for edited address
+   
     const ordersPerPage = 6; // Show a maximum of 6 orders per page
 
     // Calculate total pages
@@ -43,44 +40,12 @@ const DashBoard = () => {
         }
     };
 
-    const handleEditProfile = () => {
-        setEditProfileOpen(true);
-    };
-
-    const handleEditAddress = () => {
-        setEditAddressOpen(true);
-    };
-
-    const saveProfileChanges = () => {
-        // Logic to save changes to the profile
-        const updatedOrder = { ...currentOrder, customerName: editedName, customerImg: editedProfilePic };
-        setCurrentOrder(updatedOrder); // Update the current order with new values
-        setEditProfileOpen(false); // Close the modal
-    };
-
-    const saveAddressChanges = () => {
-        // Logic to save changes to the address
-        const updatedOrder = { ...currentOrder, billing: { ...currentOrder.billing, address: editedAddress } };
-        setCurrentOrder(updatedOrder); // Update the current order with new values
-        setEditAddressOpen(false); // Close the modal
-    };
-
-    // Handle file upload for profile picture
-    const handleProfilePicChange = (event) => {
-        const file = event.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setEditedProfilePic(reader.result); // Set the profile picture state to the uploaded image URL
-            };
-            reader.readAsDataURL(file); // Read the file as a data URL
-        }
-    };
+   
 
    
 
     return (
-        <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div data-aos="fade-left" className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
             <div className="flex flex-col md:flex-row justify-between gap-y-8">
                 {/* Left Sidebar: Customer Profile */}
                 <div className="w-full p-4 bg-white border rounded-lg shadow-md">
@@ -91,12 +56,13 @@ const DashBoard = () => {
                     />
                     <h3 className="text-lg font-semibold text-center">{currentOrder.customerName}</h3>
                     <p className="text-center text-gray-500">Customer</p>
+                    <Link to="/account/settings">
                     <button
-                        onClick={handleEditProfile}
+                        
                         className="w-full mt-2 text-primary"
                     >
                         Edit Profile
-                    </button>
+                    </button></Link>
                 </div>
 
                 {/* Right Sidebar: Billing Address */}
@@ -107,7 +73,7 @@ const DashBoard = () => {
                     <p className="mt-2">{currentOrder.billing.email}</p>
                     <p className="mt-2">{currentOrder.billing.phone}</p>
                     <button
-                        onClick={handleEditAddress}
+                        
                         className="mt-2 text-primary"
                     >
                         Edit Address
@@ -216,54 +182,7 @@ const DashBoard = () => {
                 </div>
             </div>
 
-            {/* Edit Profile Modal */}
-            {isEditProfileOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-80 z-50">
-                    <div className="bg-white-200 p-6 rounded shadow-lg">
-                        <h3 className="text-lg font-semibold ">Edit Profile</h3>
-                        <input
-                            type="text"
-                            value={editedName}
-                            onChange={(e) => setEditedName(e.target.value)}
-                            placeholder="Enter your name"
-                            className="mt-2 p-2 border rounded w-full"
-                        />
-                        <input
-                            type="file"
-                            accept="image/*" // Accept only image files
-                            onChange={handleProfilePicChange} // Handle file input change
-                            className="mt-2 p-2 border rounded w-full"
-                        />
-                        <button onClick={saveProfileChanges} className="mt-4  px-4 py-2 bg-primary text-white-200 rounded hover:bg-white-200 hover:text-black-800">
-                            Save
-                        </button>
-                        <button onClick={() => setEditProfileOpen(false)} className="mt-2 ml-4 px-4 py-2 bg-gray-500 text-white-200 rounded hover:bg-white-200 hover:text-black-800">
-                            Cancel
-                        </button>
-                    </div>
-                </div>
-            )}
-
-            {/* Edit Address Modal */}
-            {isEditAddressOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
-                    <div className="bg-white p-6 rounded shadow-lg">
-                        <h3 className="text-lg font-semibold ">Edit Address</h3>
-                        <textarea
-                            value={editedAddress}
-                            onChange={(e) => setEditedAddress(e.target.value)}
-                            placeholder="Enter your address"
-                            className="mt-2 p-2 border rounded w-full h-24"
-                        />
-                        <button onClick={saveAddressChanges} className="mt-4  px-4 py-2 bg-primary text-white-200 rounded hover:bg-white-200 hover:text-black-800">
-                            Save
-                        </button>
-                        <button onClick={() => setEditAddressOpen(false)} className="mt-2 ml-4 px-4 py-2 bg-gray-500 text-white-200 rounded hover:bg-white-200 hover:text-black-800">
-                            Cancel
-                        </button>
-                    </div>
-                </div>
-            )}
+         
         </div>
     );
 };

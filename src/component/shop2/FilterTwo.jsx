@@ -188,7 +188,7 @@ const FilterTwo = ({ products }) => {
             heading1="BEST DEALS"
             heading2="Sale of the Month"
             isTimer={true}
-            deadline="September 25, 2024"
+            deadline="October 25, 2024"
             discount="56%"
             textColor="text-white-100"
           />
@@ -339,6 +339,7 @@ const FilterTwo = ({ products }) => {
       <div className="p-4">
         <NewsletterThree />
       </div>
+      
     </section>
   );
 };

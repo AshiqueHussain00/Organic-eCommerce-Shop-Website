@@ -55,16 +55,16 @@ function Footer1() {
   }
 
   return (
-    <section className="w-full bg-black-900 text-gray-500">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 pt-16">
-        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-6  ">
+    <section className="w-full text-gray-500 bg-black-900">
+      <div className="px-4 pt-16 pb-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-14 md:grid-cols-2 lg:grid-cols-6 ">
           {/* ABOUT SHOPERY */}
          
-          <div className="col-span-2 flex flex-col items-center gap-4 ">
+          <div className="flex flex-col col-span-2 gap-4 ">
             <img src={FooterData.shopery.logo} alt="Shopery Logo" className="w-32" />
-            <p className="text-gray-400 text-sm sm:text-base text-center">{FooterData.shopery.para}</p>
-            <div className="flex items-center space-x-4">
-              <span className="text-white-100 underline decoration-green-600 decoration-3 underline-offset-8 lg:text-base text-sm font-medium">
+            <p className="text-sm text-gray-400 sm:text-base">{FooterData.shopery.para}</p>
+            <div className="flex space-x-4">
+              <span className="text-sm font-medium underline text-white-100 decoration-green-600 decoration-3 underline-offset-8 lg:text-base">
                 {FooterData.shopery.number}
               </span>
               <span className="text-gray-500 font-medium">or</span>
@@ -75,46 +75,46 @@ function Footer1() {
           </div>
 
           {/* MY ACCOUNT and HELPS in one row */}
-          <div className="grid grid-cols-2 gap-8 col-span-2">
+          <div className="grid grid-cols-2 col-span-2 gap-8">
             {/* MY ACCOUNT */}
-            <div className="flex flex-col items-center gap-4">
-              <h2 className="text-white-100 text-lg font-medium">{FooterData.myAccount.title}</h2>
-              <ul className="flex flex-col  items-center gap-y-2">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-lg font-medium text-white-100">{FooterData.myAccount.title}</h2>
+              <ul className="flex flex-col gap-y-2">
                 {FooterData.myAccount.para.map((item, index) => (
-                  <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
+                  <li key={index} onClick={() => { handleClick(item.path) }} className="text-sm cursor-pointer hover:text-white-100 md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
 
             {/* HELPS */}
-            <div className="flex flex-col items-center   gap-4">
-              <h2 className="text-white-100 text-lg font-medium  ">{FooterData.helps.title}</h2>
-              <ul className="flex flex-col  items-center gap-y-2">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-lg font-medium text-white-100 ">{FooterData.helps.title}</h2>
+              <ul className="flex flex-col gap-y-2">
                 {FooterData.helps.para.map((item, index) => (
-                  <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
+                  <li key={index} onClick={() => { handleClick(item.path) }} className="text-sm cursor-pointer hover:text-white-100 md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
           </div>
 
           {/* PROXY and CATEGORIES in one row */}
-          <div className="grid grid-cols-2 gap-8 col-span-2">
+          <div className="grid grid-cols-2 col-span-2 gap-8">
             {/* PROXY */}
-            <div className="flex flex-col items-center gap-4">
-              <h2 className="text-white-100 text-lg font-medium">{FooterData.proxy.title}</h2>
-              <ul className="flex flex-col  items-center gap-y-2">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-lg font-medium text-white-100">{FooterData.proxy.title}</h2>
+              <ul className="flex flex-col gap-y-2">
                 {FooterData.proxy.para.map((item, index) => (
-                  <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
+                  <li key={index} onClick={() => { handleClick(item.path) }} className="text-sm cursor-pointer hover:text-white-100 md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
 
             {/* CATEGORIES */}
-            <div className="flex flex-col items-center gap-4">
-              <h2 className="text-white-100 text-lg font-medium">{FooterData.categories.title}</h2>
-              <ul className="flex flex-col  items-center gap-y-2">
+            <div className="flex flex-col gap-4">
+              <h2 className="text-lg font-medium text-white-100">{FooterData.categories.title}</h2>
+              <ul className="flex flex-col gap-y-2">
                 {FooterData.categories.para.map((item, index) => (
-                  <li key={index} onClick = {()=>{handleClick(item.path)}} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
+                  <li key={index} onClick = {()=>{handleClick(item.path)}} className="text-sm cursor-pointer hover:text-white-100 md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
@@ -123,12 +123,12 @@ function Footer1() {
 
         {/* BOTTOM SECTION */}
         <hr className="my-6 border-gray-700" />
-        <div className="flex flex-col  lg:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col justify-between gap-4 lg:flex-row">
           {/* COPYRIGHT MESSAGE */}
-          <h2 className="text-gray-400 text-sm lg:text-base text-center">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
+          <h2 className="text-sm text-center text-gray-400 lg:text-base">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
 
           {/* PAYMENT ICONS */}
-          <div className="flex items-center space-x-4">
+          <div className="flex space-x-4">
             <img src={Img1} alt="Apple Pay" className="w-10 h-auto" />
             <img src={VisaImg} alt="Visa" className="w-10 h-auto" />
             <img src={DiscoverImg} alt="Discover" className="w-10 h-auto" />

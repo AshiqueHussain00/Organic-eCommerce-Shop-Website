@@ -1,6 +1,6 @@
 import reviewimg1 from '../../assets/common/product/reviewimg1.svg'
 import reviewimg2 from '../../assets/common/product/reviewimg2.svg'
-import brand from '../../assets/common/product/brand.svg'
+
 
 const allproductData = [
     {

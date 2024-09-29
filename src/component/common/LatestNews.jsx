@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types'; // Add this import
+import PropTypes from 'prop-types';
 import { IoPersonOutline } from "react-icons/io5";
 import { GoTag } from "react-icons/go";
 import { LiaCommentsSolid } from "react-icons/lia";
@@ -11,7 +11,7 @@ const LatestNews = ({
 }) => {
   return (
     <div className={containerClasses}>
-      {data.map((item, index) => (
+      {data.slice(0, 3).map((item, index) => ( // Slice to show only 3 items
         <div
           data-aos="fade-right"
           key={index}
@@ -75,7 +75,6 @@ const LatestNews = ({
 LatestNews.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      // Added id as required
       img: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
