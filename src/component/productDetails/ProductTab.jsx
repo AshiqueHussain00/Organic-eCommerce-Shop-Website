@@ -77,7 +77,8 @@ function ProductTab({ product }) {
               <p>{feedback.feedback}</p>
             
               <p>Rating: {feedback.rating} ⭐</p>
-              <hr className="my-4 border-gray-300" />
+              <hr className="my-4 border-gray-300 border-1  w-full" />
+
                 </div>
                 </div>
               ))
