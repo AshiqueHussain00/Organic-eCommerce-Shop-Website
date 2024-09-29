@@ -57,19 +57,20 @@ const Testimonials = ({
             {showHeading && (
               <h2
                 data-aos="fade-right"
-                className="pb-8  text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal"
+                className="pb-8 text-xl font-bold leading-snug break-words sm:text-3xl sm:leading-normal"
               >
                 <span className="block ml-2 sm:inline">Client</span>
                 <span className="block ml-2 sm:inline">Testimonials</span>
               </h2>
             )}
             {showButtons && (
-              <div className="absolute flex space-x-4   transform -translate-y-1/2 top-1/2 right-14 pb-8 ">
+              <div className="absolute flex pb-8 space-x-4 transform -translate-y-1/2 top-1/2 right-14 ">
                 <button className="custom-swiper-button-prev ml-4  p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
-                  <FaArrowRight className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
+                <FaArrowLeft className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
                 <button className="custom-swiper-button-next  p-2 text-xs sm:text-sm md:text-base lg:text-lg rounded-full bg-white text-black border border-gray-300 hover:bg-[#00B207] hover:border-[#00B207] transition-colors duration-300">
-                  <FaArrowLeft className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
+                  
+                  <FaArrowRight className="text-xs sm:text-sm md:text-base lg:text-lg hover:text-white" />
                 </button>
               </div>
             )}

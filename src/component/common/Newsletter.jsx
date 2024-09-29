@@ -1,6 +1,6 @@
 // src/Newsletter.jsx
 import React from 'react';
-import logo from '../../../public/Logo.svg'
+import logo from '../../assets/common/Logo.svg'
 
 const Newsletter = ({isHome4 = false}) => {
     return (

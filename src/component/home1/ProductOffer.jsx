@@ -27,7 +27,7 @@ const ProductOffer = () => {
   return (
     <section className='relative w-full py-12'>
       <div
-        className="w-11/12 xmd:w-10/12 mx-auto flex flex-col items-center p-6 text-white lg:items-end lg:col-span-2 lg:pr-20 rounded-lg"
+        className="flex flex-col items-center w-11/12 p-6 mx-auto text-white rounded-lg xmd:w-10/12 lg:items-end lg:col-span-2 lg:pr-20"
         style={{
           backgroundImage: `url(${bannar1})`,
           backgroundPosition: 'center',
@@ -54,7 +54,7 @@ const ProductOffer = () => {
           </div>
           <div className="flex justify-center w-full mt-6 lg:justify-start lg:mt-0">
             <Link
-              to="/shop"
+              to="/shop2"
               className="px-4 py-3 font-semibold text-black transition duration-300 rounded-full shadow-lg bg-white-100 hover:bg-primary hover:text-white-100"
             >
               Shop now  →
