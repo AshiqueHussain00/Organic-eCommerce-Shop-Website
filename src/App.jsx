@@ -31,7 +31,7 @@ const Home5 = lazy(() => import('./pages/homepages/Home5'));
 
 //Shop
 const Shop1 = lazy(() => import('./pages/shop/Shop1'));
-const Shop2 = lazy(() => import('./pages/homepages/Shop2'))
+const Shop2 = lazy(() => import('./pages/shop/Shop2'))
 
 // blog
 const Blog = lazy(() => import('./component/common/Blog'))
