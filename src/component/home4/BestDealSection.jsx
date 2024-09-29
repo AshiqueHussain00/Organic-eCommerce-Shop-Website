@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import bestdeal1 from '../../assets/home4/bestdeal1.svg';
 import bestdeal2 from '../../assets/home4/bestdeal2.svg';
 import { GoArrowRight } from "react-icons/go";
+import { useNavigate } from 'react-router-dom';
 
 const BestDealSection = () => {
+
+    const navigate = useNavigate();
     const [timeLeft, setTimeLeft] = useState({});
     const [showCountdown, setShowCountdown] = useState(false);
     const [isVisible, setIsVisible] = useState(true); // State to handle visibility based on scroll
@@ -97,8 +100,10 @@ const BestDealSection = () => {
                         </div>
                     )}
                      <div className='flex justify-center mt-6'>
-                                    <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg transition-all duration-200 text-white-100 bg-light-branding-success hover:bg-branding-success ">
-                                        <span className='font-poppins text-white-300'>Shop now</span>
+                                    <button
+                                    onClick={()=> navigate("/shop1")}
+                                     className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg transition-all duration-200 text-white-100 bg-light-branding-success hover:bg-branding-success ">
+                                        <span  className='font-poppins text-white-300'>Shop now</span>
                                         <span className='font-poppins text-white-300'><GoArrowRight /></span>
                                     </button>
 
