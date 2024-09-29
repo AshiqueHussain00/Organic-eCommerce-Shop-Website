@@ -68,7 +68,7 @@ const Setting = lazy(() => import('./component/account/Setting'))
 const ContactForm = lazy(() => import('./pages/contact/ContactForm'));
 
 //Error404
-import Error404 from './component/error/Error404';
+const ErrorPage = lazy(() => import('./pages/ErrorPage'));
 
 
 
@@ -172,7 +172,7 @@ const App = () => {
 
           {/*---------------- Error----------------- */}
           <Route path="*" element={<Navigate to="/404" state={{ is404: true }} />} />
-          <Route path="/404" element={<Error404 />} />
+          <Route path="/404" element={<ErrorPage />} />
 
         </Routes>
 

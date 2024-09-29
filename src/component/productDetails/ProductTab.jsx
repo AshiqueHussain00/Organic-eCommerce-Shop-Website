@@ -84,7 +84,7 @@ function ProductTab({ product }) {
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto p-4"> {/* Center and constrain width */}
+    <div data-aos='fade-left' className="w-full max-w-6xl mx-auto p-4"> {/* Center and constrain width */}
       {/* Tabs Navigation */}
       <div className="flex justify-center border-b mb-4">
         <button

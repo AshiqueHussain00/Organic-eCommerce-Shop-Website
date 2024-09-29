@@ -48,7 +48,7 @@ function BreadCrumbs() {
             return isLast ? (
               <span
                 key={breadcrumbPath}
-                className='flex items-center tracking-wider text-sm sm:text-lg text-green-600 capitalize'
+                className='flex items-center tracking-wider text-sm sm:text-lg text-primary capitalize'
               >
                 <PiGreaterThanBold className='mx-2 text-white-100 ' />
                 {name}
