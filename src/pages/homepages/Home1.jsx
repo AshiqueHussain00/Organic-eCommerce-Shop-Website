@@ -8,7 +8,6 @@ import PopularProducts from '../../component/home1/PopularProducts'
 import FeaturedProducts from '../../component/home1/FeaturedProducts'
 import HomeTestimonial from '../../component/home1/HomeTestimonial'
 import HomeLatestNews from '../../component/home1/HomeLatestNews'
-import Newsletter from '../../component/Home5/Newsletter'
 import NewsletterThree from '../../component/common/NewsletterThree'
 import Footer1 from '../../component/common/footer/footer1'
 

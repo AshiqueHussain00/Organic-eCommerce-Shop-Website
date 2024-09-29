@@ -89,7 +89,7 @@ const Setting = () => {
     return (
         <div className="w-full xmd:w-[900px] mx-auto p-6">
             {/* Account Settings Section */}
-            <form onSubmit={handleAccountSubmit(onAccountSubmit)} className="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm ">
+            <form data-aos="fade-left" onSubmit={handleAccountSubmit(onAccountSubmit)} className="mb-6 p-4 border border-gray-300 rounded-lg shadow-sm ">
 
                 <h2 className="w-full text-xl font-semibold mb-4 border-b">Account Settings</h2>
 
@@ -162,7 +162,7 @@ const Setting = () => {
             </form>
 
             {/* Billing Address Section */}
-            <form onSubmit={handleBillingSubmit(onBillingSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
+            <form data-aos="fade-left" onSubmit={handleBillingSubmit(onBillingSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
                 <h2 className="text-xl font-semibold mb-4 border-b">Billing Address</h2>
                 <div className="w-full flex flex-col md:flex-row md:space-x-6 justify-center">
 
@@ -265,7 +265,7 @@ const Setting = () => {
             </form>
 
             {/* Change Password Section */}
-            <form onSubmit={handlePasswordSubmit(onPasswordSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
+            <form data-aos="fade-left" onSubmit={handlePasswordSubmit(onPasswordSubmit)} className="mb-6 p-4 border rounded-lg shadow-sm">
                 <h2 className="w-full text-xl font-semibold mb-4 border-b">Change Password</h2>
                 <div className="mb-4 relative">
                     <label className="block text-gray-700">Current Password</label>

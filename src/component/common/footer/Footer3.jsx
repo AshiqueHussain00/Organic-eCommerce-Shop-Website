@@ -19,11 +19,11 @@ function Footer3() {
 
         myAccount: {
             title: 'My Account',
-            para: [{title: 'My Account' , path: ''},
+            para: [{title: 'My Account' , path: '/account/dashboard'},
                 {title:'Order History' , path: '/account/order-history'},
                 {title:'Shopping Cart' , path: '/shopping-cart'},
                 {title:'Wishlist' , path:'/wishlist'},
-                {title:'Settings',path:''}]
+                {title:'Settings',path:'/account/settings'}]
 
         },
 
@@ -40,9 +40,9 @@ function Footer3() {
             title: 'Proxy',
             para: [{title:'About' , path:'/about-us'},
                 {title:'Shop' ,path:'/shop1'},
-                {title:'Product',path:''},
-                {title:'Product Details' , path:''},
-                {title:'Track Order' , path:''}]
+                {title:'Product',path:'/shop2'},
+                {title:'Product Details' , path:'/product/Fruits/f9'},
+                {title:'Track Order' , path:'/account/dashboard'}]
         },
 
 
