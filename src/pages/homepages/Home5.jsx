@@ -26,41 +26,12 @@ import Newsletter from "../../component/Home5/Newsletter";
 import CountdownTimer from "../../component/Home5/CountdownTimer";
 import ShowProduct from "../../component/common/ShowProduct";
 import BestSeller from "../../component/Home5/BestSeller";
+import { blogData } from "../../data/common/blogData";
 
 
-import allproductData from "../../data/common/allproductData";
 const Home5 = () => {
-  // news data
-
-  const newsData = [
-    {
-      img: img3,
-      date: "21 FEB",
-      category: "Food",
-      postedBy: "Admin",
-      comments: 39,
-      p: "Maecenas blandit risus elementum mauris malesuada.",
-    },
-    {
-      img: img2,
-      date: "23 JAN",
-      category: "Fruit",
-      postedBy: "Admin",
-      comments: 48,
-      p: "Maecenas blandit risus elementum mauris malesuada.",
-    },
-    {
-      img: img4,
-      date: "18 MAY",
-      category: "Food",
-      postedBy: "Admin",
-      comments: 65,
-      p: "Maecenas blandit risus elementum mauris malesuada.",
-    },
-  ];
-
+  
   // Testimonial data
-
   const testimonialsData = [
     {
       name: "Robert Fox",
@@ -152,7 +123,7 @@ const Home5 = () => {
         <h1 className="text-center text-4xl font-[600] font-poppins mb-4">
           Latest News
         </h1>
-        <LatestNews data={newsData} />
+        <LatestNews data={blogData} />
       </div>
 
 

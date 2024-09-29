@@ -75,7 +75,7 @@ const LatestNews = ({
 LatestNews.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number.isRequired, // Added id as required
+      // Added id as required
       img: PropTypes.string.isRequired,
       date: PropTypes.string.isRequired,
       category: PropTypes.string.isRequired,
