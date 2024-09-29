@@ -6,8 +6,10 @@ import VisaImg from '../../../assets/home2/visa.svg'
 import DiscoverImg from '../../../assets/home2/discover.svg'
 import MastercardImg from '../../../assets/home2/mastercard.svg'
 import LockImg from '../../../assets/home2/cart.svg'
+import { useNavigate } from 'react-router-dom';
 
 function Footer1() {
+
   const FooterData = {
     shopery: {
       logo: Logo,
@@ -17,21 +19,39 @@ function Footer1() {
     },
     myAccount: {
       title: 'My Account',
-      para: ['My Account', 'Order History', 'Shopping Cart', 'Wishlist'],
+      para: [{ title: 'My Account', path: '/account/dashboard' },
+      { title: 'Order History', path: '/account/order-history' },
+      { title: 'Shopping Cart', path: '/shopping-cart' },
+      { title: 'Wishlist', path: '/wishlist' },
+      { title: 'Settings', path: '/account/settings' }],
     },
     helps: {
       title: 'Helps',
-      para: ['Contact', 'Faqs', 'Terms & Condition', 'Privacy Policy'],
+      para: [{ title: 'Contact', path: '/contact-us' },
+      { title: 'Faqs', path: '' },
+      { title: 'Terms & Condition', path: '' },
+      { title: 'Privacy Policy', path: '' }],
     },
     proxy: {
       title: 'Proxy',
-      para: ['About', 'Shop', 'Product', 'Track Order'],
+      para: [{ title: 'About', path: '/about-us' },
+      { title: 'Shop', path: '/shop1' },
+      { title: 'Product', path: '/shop2' },
+      { title: 'Product Details', path: '/product/Fruits/f9' },
+      { title: 'Track Order', path: '/account/dashboard' }],
     },
     categories: {
       title: 'Categories',
-      para: ['Fruit & Vegetables', 'Meat & Fish', 'Bread & Bakery', 'Beauty & Health'],
+      para: [{title:'Fruit & Vegetables' , path:'/shop1'}, {title:'Meat & Fish' , path:'/shop1'}, {title:'Bread & Bakery' , path:'/shop1'}, {title:'Beauty & Health',path:'/shop1'}],
     },
     socialLink: ['https://www.facebook.com/', 'https://twitter.com/', 'https://in.pinterest.com/', 'https://www.instagram.com/'],
+  }
+
+
+  const navigate = useNavigate();
+
+  const handleClick = (page) => {
+    navigate(page);
   }
 
   return (
@@ -60,7 +80,7 @@ function Footer1() {
               <h2 className="text-white-100 text-lg font-medium">{FooterData.myAccount.title}</h2>
               <ul className="space-y-2">
                 {FooterData.myAccount.para.map((item, index) => (
-                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
@@ -70,7 +90,7 @@ function Footer1() {
               <h2 className="text-white-100 text-lg font-medium">{FooterData.helps.title}</h2>
               <ul className="space-y-2">
                 {FooterData.helps.para.map((item, index) => (
-                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
@@ -83,7 +103,7 @@ function Footer1() {
               <h2 className="text-white-100 text-lg font-medium">{FooterData.proxy.title}</h2>
               <ul className="space-y-2">
                 {FooterData.proxy.para.map((item, index) => (
-                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} onClick={() => { handleClick(item.path) }} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
@@ -93,7 +113,7 @@ function Footer1() {
               <h2 className="text-white-100 text-lg font-medium">{FooterData.categories.title}</h2>
               <ul className="space-y-2">
                 {FooterData.categories.para.map((item, index) => (
-                  <li key={index} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item}</li>
+                  <li key={index} onClick = {()=>{handleClick(item.path)}} className="hover:text-white-100 cursor-pointer text-sm md:text-base">{item.title}</li>
                 ))}
               </ul>
             </div>
