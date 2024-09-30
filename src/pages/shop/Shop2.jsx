@@ -2,7 +2,7 @@ import FilterTwo from '../../component/shop2/FilterTwo'
 import allproductData from '../../data/common/allproductData'
 import { IoHomeOutline } from "react-icons/io5";
 import Footer1 from '../../component/common/footer/footer1'
-
+import NewsletterThree from '../../component/common/NewsletterThree';
 function Shop2() {
   return (
     <section className='relative w-full'>
@@ -34,7 +34,9 @@ function Shop2() {
       </nav>
         <FilterTwo products={allproductData} />
       </div>
-
+      <div >
+        <NewsletterThree />
+      </div>
       <Footer1 />
     </section>
 

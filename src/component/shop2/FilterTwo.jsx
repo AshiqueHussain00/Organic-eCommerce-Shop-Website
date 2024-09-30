@@ -339,7 +339,7 @@ const FilterTwo = ({ products }) => {
               </div>
             </div>
             <h3> {filteredProducts.length} results found</h3>
-            <div className="absolute bottom-0 left-0 w-full mt-3 border-b border-gray-300"></div>
+            
           </div>
 
           {/* Products Display Section */}
@@ -367,10 +367,7 @@ const FilterTwo = ({ products }) => {
           <div className="flex justify-center mt-8">{renderPagination()}</div>
         </div>
       </div>
-      <div className="p-4">
-        <NewsletterThree />
-      </div>
-      
+    
     </section>
   );
 };
