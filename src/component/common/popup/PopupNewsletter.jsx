@@ -40,7 +40,7 @@ const PopupNewsletter = () => {
             {/* Close Button */}
             <button
               onClick={closePopup}
-              className="absolute top-10 right-2 bg-white-100 text-gray-800 rounded-full p-2 shadow hover:bg-gray-200 focus:outline-none"
+              className="absolute top-2 right-2 bg-white-100 text-gray-800 rounded-full p-2 shadow hover:bg-gray-200 focus:outline-none"
             >
               ✕
             </button>
