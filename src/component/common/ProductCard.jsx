@@ -31,6 +31,7 @@ const ProductCard = ({
 
 
     const cart = useSelector((state) => state.cart.cart)
+    const wishlistItems = useSelector((state)=> state.wishlist.wishlistItems);
     const [isHover, setIsHover] = useState(false);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -61,13 +62,18 @@ const ProductCard = ({
     }
 
     const handleAddToWishlist = (product, events) => {
+            
+        events.stopPropagation();
+        if (wishlistItems.find(item => item.id === product.id)) {
+      
+            toast.success("Already Added");
+       } else{
+           
+           dispatch(addToWishlist(product));
+           toast.success("Added to Wishlist")
 
-        events.stopPropagation()
-        if (product) {
-            dispatch(addToWishlist(product));
-            toast.success("Added to  Wishlist")
+       }
 
-        }
 
 
     }
