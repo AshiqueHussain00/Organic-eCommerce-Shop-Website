@@ -129,9 +129,12 @@ const App = () => {
             <Route path='/account/order-history/order-detail/:orderId' element={<OrderDetails />} />
             <Route path='/account/settings' element={<Setting />} />
           </Route>
-
+ 
           {/* ------------- Contact --------------- */}
           <Route path='/contact-us' element={<ContactForm />} />
+
+            {/* ------------- ProductDetails --------------- */}
+            <Route  path='/product/:Category/:productId' element = {<ProductDetailDescriptionPage/>}></Route>
 
           {/*---------------- Error----------------- */}
           <Route path='*' element={<Navigate to="/404" state={{ is404: true }} />} />

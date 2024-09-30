@@ -123,12 +123,12 @@ function Footer1() {
 
         {/* BOTTOM SECTION */}
         <hr className="my-6 border-gray-700" />
-        <div className="flex flex-col justify-between gap-4 lg:flex-row">
+        <div className="flex flex-col justify-between gap-4 lg:flex-row item-center">
           {/* COPYRIGHT MESSAGE */}
           <h2 className="text-sm text-center text-gray-400 lg:text-base">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
 
           {/* PAYMENT ICONS */}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 justify-center">
             <img src={Img1} alt="Apple Pay" className="w-10 h-auto" />
             <img src={VisaImg} alt="Visa" className="w-10 h-auto" />
             <img src={DiscoverImg} alt="Discover" className="w-10 h-auto" />

@@ -37,7 +37,7 @@ function NewestProducts() {
             <div data-aos = "fade-right" className='w-10/12 mx-auto'>
                 <div className="flex flex-col items-center justify-between pt-10 pb-10 xs:flex-row">
                     <h1 className="text-[2rem] font-semibold">Newest Products</h1>
-                    <Link className="font-medium text-primary">View All →</Link>
+                    <Link to='/shop2' className="font-medium text-primary">View All →</Link>
                 </div>
                 <div className="grid grid-cols-1 gap-1 xs:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
 
