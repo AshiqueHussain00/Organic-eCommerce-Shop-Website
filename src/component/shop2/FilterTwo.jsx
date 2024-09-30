@@ -307,8 +307,8 @@ const FilterTwo = ({ products }) => {
 
           {/* Display active filters with close buttons */}
 
-          <div className="relative flex items-center justify-between mb-4 ">
-          <span className="absolute  top-0 left-0 w-full mb-3 border-t border-gray-300"></span>
+          <div className="flex items-center justify-between mb-4 ">
+          
             <div className="flex items-center">
               <span className="mr-4 ">Active Filters:</span>
               <div className="flex flex-wrap items-center mt-1">
