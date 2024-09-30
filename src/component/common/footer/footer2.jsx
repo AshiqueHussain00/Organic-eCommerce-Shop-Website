@@ -78,7 +78,7 @@ function Footer2() {
                             </span>
                             <p className="text-gray-500 font-medium">or</p>
                             <span className="text-black-900 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">
-                                {FooterData.shopery.email}
+                            <a href="https://mail.google.com">{FooterData.shopery.email}</a>
                             </span>
                         </div>
                     </div>
@@ -117,7 +117,7 @@ function Footer2() {
                     <div className="md:col-span-2 flex flex-col gap-2 md:gap-4 p-2 text-black-900"> {/* Set text to black */}
                         <h2 className="text-black-900 text-lg font-medium whitespace-nowrap">Download our Mobile App</h2>
                         <div className="flex flex-col xxs:flex-row gap-2">
-                            <div className="flex flex-row bg-white-100 px-1 py-2 rounded-md gap-2 justify-center items-center">
+                            <a href='https://apps.apple.com' className="flex flex-row bg-white-100 px-1 py-2 rounded-md gap-2 justify-center items-center">
                                 <div className="flex">
                                     <FaApple className="h-[45px] w-[45px] lg:h-[30px] lg:w-[30px] xl:h-[40px] xl:w-[40px]" style={{ color: 'black' }} />
                                 </div>
@@ -125,9 +125,9 @@ function Footer2() {
                                     <p className="text-gray-500 text-md lg:text-sm font-normal whitespace-nowrap">Download on the</p>
                                     <p className="text-black text-lg font-medium">App Store</p>
                                 </div>
-                            </div>
+                            </a>
 
-                            <div className="flex flex-row bg-white-100 px-1 py-1 rounded-md gap-1 justify-center items-center">
+                            <a href='https://play.google.com' className="flex flex-row bg-white-100 px-2 py-2 rounded-md gap-1 justify-center items-center">
                                 <div className="flex">
                                     <IoLogoGooglePlaystore className="h-[40px] w-[40px] lg:h-[25px] lg:w-[25px] xl:h-[40px] xl:w-[40px]" style={{ color: 'black' }} />
                                 </div>
@@ -135,7 +135,7 @@ function Footer2() {
                                     <p className="text-gray-500 text-md lg:text-sm font-normal whitespace-nowrap">Download on the</p>
                                     <p className="text-black text-lg font-medium">Google Play</p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
 

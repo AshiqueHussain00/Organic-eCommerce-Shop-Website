@@ -8,7 +8,7 @@ import VisaImg from '../../../assets/home2/visa.svg'
 import DiscoverImg from '../../../assets/home2/discover.svg'
 import MastercardImg from '../../../assets/home2/mastercard.svg'
 import LockImg from '../../../assets/home2/cart.svg'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,NavLink } from 'react-router-dom';
 
 import post1 from '../../../assets/common/followinstagram/post1.svg'
 import post2 from '../../../assets/common/followinstagram/post2.svg'
@@ -88,7 +88,7 @@ function Footer4() {
                         <div className="flex flex-col xxl:flex-row gap-2 text-sm lg:text-base">
                             <span className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium ">{FooterData.shopery.number}</span>
                             <p className="text-gray-500 font-medium">or</p>
-                            <span className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium">{FooterData.shopery.email}</span>
+                            <span className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium"><a href="https://mail.google.com">{FooterData.shopery.email}</a></span>
                         </div>
                     </div>
 
@@ -135,13 +135,16 @@ function Footer4() {
                                     <img
                                         src={image}
                                         alt={`Instagram pic ${index + 1}`}
-                                        className="object-cover rounded-md md:w-[110px] md:h-[85px] xmd:w-[90px] xmd:h-[80px] transition-opacity duration-300 group-hover:opacity-70"
+                                        className="object-cover rounded-md  w-full h-full transition-opacity duration-300 group-hover:opacity-70"
                                     />
-                                    <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                                        <FaInstagram className="text-2xl text-white-100" />
+                                    <div className="absolute inset-0 items-center justify-center  flex transition-opacity  duration-300 opacity-0 group-hover:opacity-100">
+                                        <FaInstagram className="text-2xl text-white-100 " />
                                     </div>
                                 </a>
                             ))}
+
+                      
+
                         </div>
                     </div>
                     {/* BOTTOM */}
