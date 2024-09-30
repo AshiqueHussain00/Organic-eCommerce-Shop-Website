@@ -16,7 +16,7 @@ import newsBG from "../../assets/common/latestnews/newsBG.svg";
 // import img2 from "../../assets/common/latestnews/img2.svg";
 // import img3 from "../../assets/common/latestnews/img3.svg";
 // import img4 from "../../assets/common/latestnews/img4.svg";
-import Footer1 from "../../component/common/footer/footer1";
+// import Footer1 from "../../component/common/footer/footer1";
 import FeaturedProducts from "../../component/Home5/FeaturedProducts";
 import "../../index.css";
 import Trusted from "../../component/Home5/Trusted";
@@ -30,9 +30,7 @@ import BestSeller from "../../component/Home5/BestSeller";
 import { blogData } from "../../data/common/blogData";
 import Footer5 from "../../component/common/footer/footer5";
 
-
 const Home5 = () => {
-  
   // Testimonial data
   const testimonialsData = [
     {
@@ -107,13 +105,12 @@ const Home5 = () => {
 
   return (
     <section>
-     
       <Herosection autoplay={true} />
-     <HeaderBottom
-              flexDirection="row"
-               alignItems="center"
-               justifyContent="center"
-/>
+         <HeaderBottom
+            flexDirection="row"
+            alignItems="center"
+            justifyContent="center"
+        />
       <FeaturedProducts />
       <TopCategory />
 
@@ -128,11 +125,10 @@ const Home5 = () => {
         <LatestNews data={blogData} />
       </div>
 
-
       <Trusted />
-     <CountdownTimer/>
-     <BestSeller/>
-     <ShowProduct/>
+      <CountdownTimer />
+      <BestSeller />
+      <ShowProduct />
       {/* Existing Testimonials Component */}
       <TestimonialCard
         testimonialsData={testimonialsData}
@@ -161,7 +157,7 @@ const Home5 = () => {
       <div>
         <Newsletter />
       </div>
-      <Footer5/>
+         <Footer5 />
     </section>
   );
 };

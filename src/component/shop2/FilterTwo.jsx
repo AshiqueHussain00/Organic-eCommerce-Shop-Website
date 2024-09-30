@@ -182,8 +182,9 @@ const FilterTwo = ({ products }) => {
   return (
     <section>
       <div>
-        <div className="flex flex-col flex-wrap w-10/12 mx-auto font-poppins ">
+        <div  className="flex flex-col flex-wrap w-10/12 mx-auto font-poppins ">
           <Saleofmonth
+          data-aos="fade-right"
             image={fruits}
             heading1="BEST DEALS"
             heading2="Sale of the Month"
@@ -193,9 +194,9 @@ const FilterTwo = ({ products }) => {
             textColor="text-white-100"
           />
           {/* Top Filters Section: Horizontally aligned */}
-          <div className="flex flex-wrap items-center justify-between w-full mb-6">
+          <div data-aos="fade-right" className="flex flex-wrap items-center justify-between w-full mb-6">
             {/* Left Side Filters */}
-            <div className="flex flex-wrap w-full mb-4 space-x-4 lg:mb-0 lg:w-auto">
+            <div data-aos="fade-left" className="flex flex-wrap w-full mb-4 space-x-4 lg:mb-0 lg:w-auto">
               {/* Category Filter */}
               <div className="flex-grow min-w-max">
                 <Select
@@ -241,7 +242,7 @@ const FilterTwo = ({ products }) => {
             </div>
 
             {/* Right Side Filters */}
-            <div className="flex flex-wrap w-full space-x-4 lg:w-auto">
+            <div data-aos="fade-left" className="flex flex-wrap w-full space-x-4 lg:w-auto">
               {/* Sort Order Dropdown */}
               <div className="flex items-center space-x-2 min-w-max">
                 <span className="text-gray-700">Sort By:</span>

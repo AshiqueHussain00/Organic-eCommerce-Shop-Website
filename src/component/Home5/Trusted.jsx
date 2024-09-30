@@ -4,6 +4,7 @@ import BG from '../../assets/home5/trusted/BG.svg';
 import image1 from '../../assets/home5/trusted/image1.svg';
 import image2 from '../../assets/home5/trusted/image2.svg';
 import leaf from '../../assets/home5/trusted/leaf.svg';
+import { Link } from 'react-router-dom';
 
 const Trusted = () => {
   return (
@@ -60,8 +61,8 @@ const Trusted = () => {
             </div>
 
             {/* Button */}
-            <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg bg-[rgb(0,178,7)]">
-              <span className="font-poppins text-white-300">Shop now</span>
+            <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg bg-[rgb(0,178,7)] hover:bg-white-600">
+              <Link to="/shop2"><span className="font-poppins text-white-300">Shop now</span></Link>
               <span className="font-poppins text-white-300"><FaArrowRight /></span>
             </button>
           </div>
