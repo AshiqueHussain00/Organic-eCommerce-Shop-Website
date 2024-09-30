@@ -44,6 +44,30 @@ const FilterTwo = ({ products }) => {
       setRating({ value: "all", label: "Select Rating" }); // Reset rating
     }
   };
+  
+  const customStyles = {
+    control: (provided) => ({
+      ...provided,
+      background: 'white',
+      borderColor: 'lightgray',
+      boxShadow: 'none',
+      zIndex: 9999, // Control z-index if necessary
+      '&:hover': {
+        borderColor: 'gray',
+      },
+    }),
+    menu: (provided) => ({
+      ...provided,
+      position: 'absolute', // Set position to absolute
+      zIndex: 9999, // Ensure it appears above other elements
+    }),
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: state.isFocused ? 'lightblue' : 'white',
+      color: 'black',
+    }),
+  };
+
 
   const totalPages = Math.ceil(filteredProducts.length / itemsPerPage);
 
@@ -180,7 +204,7 @@ const FilterTwo = ({ products }) => {
   };
 
   return (
-    <section>
+    <section className="relative ">
       <div>
         <div  className="flex flex-col flex-wrap w-10/12 mx-auto font-poppins ">
           <Saleofmonth
@@ -196,10 +220,11 @@ const FilterTwo = ({ products }) => {
           {/* Top Filters Section: Horizontally aligned */}
           <div data-aos="fade-right" className="flex flex-wrap items-center justify-between w-full mb-6">
             {/* Left Side Filters */}
-            <div data-aos="fade-left" className="flex flex-wrap w-full mb-4 space-x-4 lg:mb-0 lg:w-auto">
+            <div  className=" flex flex-wrap w-full mb-4 space-x-4 lg:mb-0 lg:w-auto">
               {/* Category Filter */}
-              <div className="flex-grow min-w-max">
+              <div className="flex-grow min-w-max ">
                 <Select
+                styles={customStyles}
                   options={categories}
                   onChange={setCategory}
                   value={category}
@@ -210,6 +235,7 @@ const FilterTwo = ({ products }) => {
               {/* Price Range Filter */}
               <div className="flex-grow min-w-max">
                 <Select
+                
                   options={[
                     { value: "all", label: "All Prices" },
                     { value: "0-20", label: "$0 - $20" },
@@ -217,15 +243,18 @@ const FilterTwo = ({ products }) => {
                     { value: "50-100", label: "$50 - $100" },
                     { value: "100-200", label: "$100 - $200" },
                   ]}
+                  styles={customStyles}
                   onChange={setPriceRange}
                   value={priceRange}
                   placeholder="Select Price"
+                  
                 />
               </div>
 
               {/* Rating Filter */}
-              <div className="flex-grow min-w-max">
+              <div className="flex-grow min-w-max ">
                 <Select
+                
                   options={[
                     { value: "all", label: "All Ratings" },
                     { value: "1", label: "1 Star & Up" },
@@ -234,6 +263,7 @@ const FilterTwo = ({ products }) => {
                     { value: "4", label: "4 Stars & Up" },
                     { value: "5", label: "5 Stars" },
                   ]}
+                  styles={customStyles}
                   onChange={setRating}
                   value={rating}
                   placeholder="Select Rating"
@@ -263,7 +293,7 @@ const FilterTwo = ({ products }) => {
               <div className="flex items-center space-x-2 min-w-max">
                 <span className="text-gray-700">Show:</span>
                 <select
-                  className="p-2 border rounded"
+                  className="p-2 border rounded z-999"
                   onChange={(e) => setItemsPerPage(Number(e.target.value))}
                   value={itemsPerPage}
                 >
@@ -278,7 +308,7 @@ const FilterTwo = ({ products }) => {
           {/* Display active filters with close buttons */}
 
           <div className="relative flex items-center justify-between mb-4 ">
-          <span className="absolute top-0 left-0 w-full mb-3 border-t border-gray-300"></span>
+          <span className="absolute  top-0 left-0 w-full mb-3 border-t border-gray-300"></span>
             <div className="flex items-center">
               <span className="mr-4 ">Active Filters:</span>
               <div className="flex flex-wrap items-center mt-1">
@@ -313,7 +343,7 @@ const FilterTwo = ({ products }) => {
           </div>
 
           {/* Products Display Section */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 " >
+          <div className="relative -z-30 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 " >
             {paginatedProducts.map((product) => (
               <ProductCard
                product={product}
