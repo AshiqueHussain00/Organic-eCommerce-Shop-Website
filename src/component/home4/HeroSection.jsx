@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { GoArrowLeft,GoArrowRight } from "react-icons/go";
+import { useNavigate } from 'react-router-dom';
 
 import '../../styles/herosection.css'; // Import the custom CSS file
 import '../../styles/swiper.css'
@@ -39,6 +40,8 @@ const heroSection = [
 ];
 
 const HeroSection = () => {
+
+  const navigate = useNavigate()
   return (
     <section className='w-full xxl:pt-10 pt-16 pb-80 md:pb-56 '>
       <div
@@ -93,7 +96,9 @@ const HeroSection = () => {
                     
                     <p className="text-green-gray-scale-500 xxl:text-lg ">{slide.para}</p>
                     <div className='flex justify-center md:justify-start'>
-                    <button className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg transition-all duration-200 text-white-100 bg-light-branding-success hover:bg-branding-success ">
+                    <button
+                    onClick={()=> navigate("/shop1")}
+                     className="px-4 py-2 flex items-center gap-2 text-white rounded-full shadow-lg transition-all duration-200 text-white-100 bg-light-branding-success hover:bg-branding-success ">
                       <span className='font-poppins text-white-300'>Shop now</span>
                       <span className='font-poppins text-white-300'><GoArrowRight /></span>
                     </button>
