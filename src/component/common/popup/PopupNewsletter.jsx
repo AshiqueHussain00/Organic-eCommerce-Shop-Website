@@ -71,7 +71,7 @@ const PopupNewsletter = () => {
                   />
                   <button
                     type="submit"
-                    className="absolute right-0 top-0 bottom-0 bg-primary text-white px-4 md:px-6 py-2 rounded-full hover:bg-primary-dark transition"
+                    className="absolute right-0 top-0 bottom-0 bg-primary text-white px-4 md:px-6 py-2 rounded-full hover:bg-white-600 border-2 transition"
                   >
                     Subscribe
                   </button>
