@@ -2,7 +2,7 @@ import React from 'react'
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter } from 'react-icons/fa'; // Icons from react-icons
 import Logo from '../../../assets/home2/Ecologo.svg'
 import Img1 from '../../../assets/home2/ApplePay.svg'
-import VisaImg from '../../../assets/home2/visa.svg'
+import VisaImg from '../../../assets/home2/Visa.svg'
 import DiscoverImg from '../../../assets/home2/discover.svg'
 import MastercardImg from '../../../assets/home2/mastercard.svg'
 import LockImg from '../../../assets/home2/cart.svg'
@@ -67,8 +67,8 @@ function Footer1() {
               <span className="text-sm font-medium underline text-white-100 decoration-green-600 decoration-3 underline-offset-8 lg:text-base">
                 {FooterData.shopery.number}
               </span>
-              <span className="text-gray-500 font-medium">or</span>
-              <span className="text-white-100 underline decoration-green-600 lg:text-base text-sm decoration-3 underline-offset-8 font-medium">
+              <span className="font-medium text-gray-500">or</span>
+              <span className="text-sm font-medium underline text-white-100 decoration-green-600 lg:text-base decoration-3 underline-offset-8">
                <a href="https://mail.google.com">{FooterData.shopery.email}</a>
               </span>
             </div>
@@ -128,7 +128,7 @@ function Footer1() {
           <h2 className="text-sm text-center text-gray-400 lg:text-base">Ecobazar eCommerce © 2021. All Rights Reserved</h2>
 
           {/* PAYMENT ICONS */}
-          <div className="flex space-x-4 justify-center">
+          <div className="flex justify-center space-x-4">
             <img src={Img1} alt="Apple Pay" className="w-10 h-auto" />
             <img src={VisaImg} alt="Visa" className="w-10 h-auto" />
             <img src={DiscoverImg} alt="Discover" className="w-10 h-auto" />
