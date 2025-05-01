@@ -4,9 +4,9 @@ import { IoLogoGooglePlaystore } from 'react-icons/io5'
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 import Img1 from '../../../assets/home2/ApplePay.svg'
 // import VisaImg from '../../../assets/home2/visa.svg'
-import DiscoverImg from '../../../assets/home2/discover.svg'
-import MastercardImg from '../../../assets/home2/mastercard.svg'
-import LockImg from '../../../assets/home2/cart.svg'
+import DiscoverImg from '../../../assets/home2/Discover.svg'
+import MastercardImg from '../../../assets/home2/Mastercard.svg'
+import LockImg from '../../../assets/home2/Cart.svg'
 import { NavLink, useNavigate } from 'react-router-dom';
 function Footer3() {
     const FooterData = {

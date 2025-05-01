@@ -5,9 +5,9 @@ import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } fro
 import Logo from '../../../assets/home2/Ecologo.svg'
 import Img1 from '../../../assets/home2/ApplePay.svg'
 // import VisaImg from '../../../assets/home2/visa.svg'
-import DiscoverImg from '../../../assets/home2/discover.svg'
-import MastercardImg from '../../../assets/home2/mastercard.svg'
-import LockImg from '../../../assets/home2/cart.svg'
+import DiscoverImg from '../../../assets/home2/Discover.svg'
+import MastercardImg from '../../../assets/home2/Mastercard.svg'
+import LockImg from '../../../assets/home2/Cart.svg'
 import { useNavigate } from 'react-router-dom';
 function Footer5() {
     const FooterData = {
