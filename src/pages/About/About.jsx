@@ -1,6 +1,6 @@
 import React from 'react'
 import Members from '../../component/home2/Members'
-import AboutTestimonial from '../../component/about/Abouttestimonial'
+import AboutTestimonial from '../../component/about/AboutTestimonial'
 import TrustedOrganicStore2 from '../../component/about/TrustedOrganicStore2'
 import TrustedOrganicStore from '../../component/about/TrustedOrganicStore'
 import DeliverySection from '../../component/about/DeliverySection'
