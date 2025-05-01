@@ -13,10 +13,6 @@ import post5 from "../../assets/common/followinstagram/post5.svg";
 import post6 from "../../assets/common/followinstagram/post6.svg";
 import Herosection from "../../component/Home5/Herosection";
 import newsBG from "../../assets/common/latestnews/newsBG.svg";
-// import img2 from "../../assets/common/latestnews/img2.svg";
-// import img3 from "../../assets/common/latestnews/img3.svg";
-// import img4 from "../../assets/common/latestnews/img4.svg";
-// import Footer1 from "../../component/common/footer/footer1";
 import FeaturedProducts from "../../component/Home5/FeaturedProducts";
 import "../../index.css";
 import Trusted from "../../component/Home5/Trusted";
@@ -28,7 +24,7 @@ import CountdownTimer from "../../component/Home5/CountdownTimer";
 import ShowProduct from "../../component/common/ShowProduct";
 import BestSeller from "../../component/Home5/BestSeller";
 import { blogData } from "../../data/common/blogData";
-import Footer5 from "../../component/common/footer/footer5";
+import Footer5 from "../../component/common/footer/Footer5";
 
 const Home5 = () => {
   // Testimonial data
@@ -115,7 +111,7 @@ const Home5 = () => {
       <TopCategory />
 
       <div
-        className="bg-cover  bg-no-repeat w-11/12 xmd:w-10/12 mx-auto  flex flex-col gap-y-4"
+        className="flex flex-col w-11/12 mx-auto bg-no-repeat bg-cover xmd:w-10/12 gap-y-4"
         style={{ backgroundImage: `url(${newsBG})` }}
       >
         <h6 className="text-center font-caveat text-[#00B207]">BLOG</h6>
