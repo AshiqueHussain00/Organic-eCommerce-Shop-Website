@@ -24,7 +24,7 @@ import CountdownTimer from "../../component/Home5/CountdownTimer";
 import ShowProduct from "../../component/common/ShowProduct";
 import BestSeller from "../../component/Home5/BestSeller";
 import { blogData } from "../../data/common/blogData";
-import Footer5 from "../../component/common/footer/Footer5";
+import Footerfive from "../../component/common/footer/Footer5";
 
 const Home5 = () => {
   // Testimonial data
@@ -102,11 +102,11 @@ const Home5 = () => {
   return (
     <section>
       <Herosection autoplay={true} />
-         <HeaderBottom
-            flexDirection="row"
-            alignItems="center"
-            justifyContent="center"
-        />
+      <HeaderBottom
+        flexDirection="row"
+        alignItems="center"
+        justifyContent="center"
+      />
       <FeaturedProducts />
       <TopCategory />
 
@@ -153,7 +153,7 @@ const Home5 = () => {
       <div>
         <Newsletter />
       </div>
-         <Footer5 />
+      <Footerfive />
     </section>
   );
 };
