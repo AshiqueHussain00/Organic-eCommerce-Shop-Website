@@ -14,7 +14,7 @@ import { HiOutlineShoppingBag } from 'react-icons/hi2'
 import { IoHeartOutline, IoReorderThreeOutline } from 'react-icons/io5'
 import { allCategoryDropdown } from '../../data/common/navbar-links'
 import { useNavigate } from 'react-router-dom'
-import Logo from '../../assets/common/navbar/logo.svg'
+import Logo from '../../assets/common/navbar/Logo.svg'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { useLocation } from 'react-router-dom'
@@ -116,7 +116,7 @@ const Navbar = () => {
       <div className='mt-8 mx-auto xs:max-h-[500px]'>
         <header className='bg-white-100 text-black-800'>
           {/* Store Location */}
-          <div className='flex items-center justify-between h-6 mt-3 sm:px-6 px-4 lg:px-8'>
+          <div className='flex items-center justify-between h-6 px-4 mt-3 sm:px-6 lg:px-8'>
             <div className='flex items-center'>
               <CiLocationOn size={24} className='mr-2' />
               <span className='hidden sm:inline'>
