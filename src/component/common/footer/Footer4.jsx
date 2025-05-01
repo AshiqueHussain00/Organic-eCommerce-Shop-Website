@@ -4,7 +4,7 @@ import { IoLogoGooglePlaystore } from 'react-icons/io5'
 import { FaFacebookF, FaInstagram, FaPinterestP, FaTwitter, FaHeart, FaEye } from 'react-icons/fa'; // Icons from react-icons
 // import { FaCcApplePay , FaCcVisa ,FaCcDiscover ,FaCcMastercard , } from 'react-icons/fa6';
 import Img1 from '../../../assets/home2/ApplePay.svg'
-import VisaImg from '../../../assets/home2/visa.svg'
+// import VisaImg from '../../../assets/home2/visa.svg'
 import DiscoverImg from '../../../assets/home2/discover.svg'
 import MastercardImg from '../../../assets/home2/mastercard.svg'
 import LockImg from '../../../assets/home2/cart.svg'
@@ -77,51 +77,51 @@ function Footer4() {
     const instagramUrl = "https://www.instagram.com/yourprofile";
     return (
         <section>
-            <div className="w-full mx-auto px-6 md:px-16 pb-8 pt-16 bg-black-900">
+            <div className="w-full px-6 pt-16 pb-8 mx-auto md:px-16 bg-black-900">
 
-                <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2">
+                <div className="grid grid-cols-1 gap-2 md:grid-cols-3 xmd:grid-cols-7 md:gap-2">
 
                     {/* ABOUT SHOPERY */}
-                    <div className="col-span-1 xmd:col-span-2 flex flex-col gap-2 md:gap-4  p-2">
-                        <h2 className="text-white-200 text-lg font-medium">{FooterData.shopery.title}</h2>
-                        <p className="text-gray-500 text-base font-normal">{FooterData.shopery.para}</p>
-                        <div className="flex flex-col xxl:flex-row gap-2 text-sm lg:text-base">
-                            <span className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium ">{FooterData.shopery.number}</span>
-                            <p className="text-gray-500 font-medium">or</p>
-                            <span className=" text-white-200 underline decoration-green-600 decoration-3 underline-offset-8 font-medium"><a href="https://mail.google.com">{FooterData.shopery.email}</a></span>
+                    <div className="flex flex-col col-span-1 gap-2 p-2 xmd:col-span-2 md:gap-4">
+                        <h2 className="text-lg font-medium text-white-200">{FooterData.shopery.title}</h2>
+                        <p className="text-base font-normal text-gray-500">{FooterData.shopery.para}</p>
+                        <div className="flex flex-col gap-2 text-sm xxl:flex-row lg:text-base">
+                            <span className="font-medium underline text-white-200 decoration-green-600 decoration-3 underline-offset-8">{FooterData.shopery.number}</span>
+                            <p className="font-medium text-gray-500">or</p>
+                            <span className="font-medium underline text-white-200 decoration-green-600 decoration-3 underline-offset-8"><a href="https://mail.google.com">{FooterData.shopery.email}</a></span>
                         </div>
                     </div>
 
                     {/* MY ACCOUNT */}
-                    <div className="col-span-1 md:col-span-1 flex flex-col gap-1 md:gap-4 p-2">
-                        <h2 className="text-white-200 text-lg font-medium">{FooterData.myAccount.title}</h2>
-                        <ul className="text-gray-500 text-base flex flex-col gap-2">
-                            {FooterData.myAccount.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}} className="hover:text-white-200 cursor-pointer">{item.title}</li>))}
+                    <div className="flex flex-col col-span-1 gap-1 p-2 md:col-span-1 md:gap-4">
+                        <h2 className="text-lg font-medium text-white-200">{FooterData.myAccount.title}</h2>
+                        <ul className="flex flex-col gap-2 text-base text-gray-500">
+                            {FooterData.myAccount.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}} className="cursor-pointer hover:text-white-200">{item.title}</li>))}
                         </ul>
                     </div>
 
                     {/* HELPS */}
-                    <div className="col-span-1 md:col-span-1 flex flex-col gap-1 md:gap-4 p-2">
-                        <h2 className="text-white-200 text-lg font-medium">{FooterData.helps.title}</h2>
-                        <ul className="text-gray-500  text-base flex flex-col gap-2">
-                            {FooterData.helps.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}} className="hover:text-white-200 cursor-pointer">{item.title}</li>))}
+                    <div className="flex flex-col col-span-1 gap-1 p-2 md:col-span-1 md:gap-4">
+                        <h2 className="text-lg font-medium text-white-200">{FooterData.helps.title}</h2>
+                        <ul className="flex flex-col gap-2 text-base text-gray-500">
+                            {FooterData.helps.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}} className="cursor-pointer hover:text-white-200">{item.title}</li>))}
                         </ul>
                     </div>
 
                     {/* PROXY */}
 
-                    <div className="col-span-1 md:col-span-1 flex flex-col gap-1 md:gap-4 p-2">
-                        <h2 className="text-white-200 text-lg font-medium">{FooterData.proxy.title}</h2>
-                        <ul className="text-gray-500 text-base  flex flex-col gap-2">
-                            {FooterData.proxy.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}}className="hover:text-white-200 cursor-pointer">{item.title}</li>))}
+                    <div className="flex flex-col col-span-1 gap-1 p-2 md:col-span-1 md:gap-4">
+                        <h2 className="text-lg font-medium text-white-200">{FooterData.proxy.title}</h2>
+                        <ul className="flex flex-col gap-2 text-base text-gray-500">
+                            {FooterData.proxy.para.map((item, index) => (<li key={index} onClick={()=>{handleClick(item.path)}}className="cursor-pointer hover:text-white-200">{item.title}</li>))}
                         </ul>
                     </div>
 
                     {/* DOWNLOAD */}
-                    <div className="md:col-span-2 flex flex-col gap-2 md:gap-4 p-2">
-                        <h2 className="text-white-200 text-lg font-medium whitespace-nowrap">Instagram</h2>
+                    <div className="flex flex-col gap-2 p-2 md:col-span-2 md:gap-4">
+                        <h2 className="text-lg font-medium text-white-200 whitespace-nowrap">Instagram</h2>
 
-                        <div className="grid gap-2 grid-cols-2  md:grid-cols-3 lg:grid-cols-3">
+                        <div className="grid grid-cols-2 gap-2 md:grid-cols-3 lg:grid-cols-3">
                             {images.map((image, index) => (
                                 <a
                                     href={instagramUrl}
@@ -135,9 +135,9 @@ function Footer4() {
                                     <img
                                         src={image}
                                         alt={`Instagram pic ${index + 1}`}
-                                        className="object-cover rounded-md  w-full h-full transition-opacity duration-300 group-hover:opacity-70"
+                                        className="object-cover w-full h-full transition-opacity duration-300 rounded-md group-hover:opacity-70"
                                     />
-                                    <div className="absolute inset-0 items-center justify-center  flex transition-opacity  duration-300 opacity-0 group-hover:opacity-100">
+                                    <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
                                         <FaInstagram className="text-2xl text-white-100 " />
                                     </div>
                                 </a>
@@ -149,12 +149,12 @@ function Footer4() {
                     </div>
                     {/* BOTTOM */}
 
-                    <hr className="col-span-1 md:col-span-3 xmd:col-span-7 w-full border-t border-gray-500 my-2" />
+                    <hr className="w-full col-span-1 my-2 border-t border-gray-500 md:col-span-3 xmd:col-span-7" />
                 </div>
 
-                <div className=" grid grid-cols-1 md:grid-cols-3 xmd:grid-cols-7 gap-2 md:gap-2 items-center">
+                <div className="grid items-center grid-cols-1 gap-2 md:grid-cols-3 xmd:grid-cols-7 md:gap-2">
                     {/* ICON */}
-                    <div className="col-span-1 md:col-span-1 xmd:col-span-2  flex  gap-3  justify-center">
+                    <div className="flex justify-center col-span-1 gap-3 md:col-span-1 xmd:col-span-2">
 
                         {FooterData.socialMedia.map((social, index) => {
                             const Icon = Object.values(social)[0];
@@ -178,14 +178,14 @@ function Footer4() {
 
                     {/* MESSAGE */}
                     <div className="col-span-1 md:col-span-1 xmd:col-span-3 ">
-                        <h2 className="text-gray-500 text-xs xlg:text-sm text-center">Ecobazar eCommerce © 2021.All Rights Reserved</h2>
+                        <h2 className="text-xs text-center text-gray-500 xlg:text-sm">Ecobazar eCommerce © 2021.All Rights Reserved</h2>
                     </div>
                     {/* ICON */}
 
-                    <div className="col-span-1 md:col-span-1 xmd:col-span-2 flex flex-row  gap-1 xlg:gap-3 items-center justify-center ">
+                    <div className="flex flex-row items-center justify-center col-span-1 gap-1 md:col-span-1 xmd:col-span-2 xlg:gap-3 ">
 
                         <img src={Img1} alt="Apple Pay" className="w-10 h-auto" />
-                        <img src={VisaImg} alt="Visa" className="w-10 h-auto" />
+                        {/* <img src={VisaImg} alt="Visa" className="w-10 h-auto" /> */}
                         <img src={DiscoverImg} alt="Discover" className="w-10 h-auto" />
                         <img src={MastercardImg} alt="Mastercard" className="w-10 h-auto" />
                         <img src={LockImg} alt="Lock" className="w-10 h-auto" />
